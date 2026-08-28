@@ -83,7 +83,27 @@ function setTodayDate() {
 
 function registerSW() {
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === '127.0.0.1' || location.hostname === 'localhost')) {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+    navigator.serviceWorker.register('./sw.js').then((reg) => {
+      // 检测是否有新版本 SW 等待激活；有则在其激活后刷新一次，强制更新缓存
+      if (reg.waiting) {
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+      reg.addEventListener('updatefound', () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener('statechange', () => {
+          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+            // 有控制器说明是旧版页面，新 SW 已装好：刷新一次加载新版
+            nw.postMessage({ type: 'SKIP_WAITING' });
+          }
+        });
+      });
+      // 当新 SW 控制本页时自动 reload（仅一次），确保用户看到的是最新代码
+      let refreshed = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshed) { refreshed = true; location.reload(); }
+      });
+    }).catch(() => {});
   }
 }
 
