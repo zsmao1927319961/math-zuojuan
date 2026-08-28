@@ -16,6 +16,8 @@ let morePane = 'bank';
 const SOURCE_NAMES = { gaoshu880: '高数880', xian_dai: '线代讲义', xian_dai880: '线代880' };
 const $ = s => document.querySelector(s);
 const LS_KEY = 'shuxue_progress_v1';
+// 固定今日卷：8/28 那套 10 道题（用户要求恢复）
+const DEFAULT_PAPER_IDS = ["gd-5-tk-9","gd-4-tk-11","gd-5-tk-11","gd-4-jd-11","gd-6-jd-4","ld-3.5-l5","ld-1.9-l2","ld-3.3-l9","ld-2.6-l4","ld-4.1-l3"];
 
 function todayISO() {
   const d = new Date();
@@ -60,6 +62,21 @@ async function init() {
       STATE = { papers: [], notes: {}, question_state: {} };
       saveState();
     }
+  }
+  // 一次性迁移：旧版本(无 version)时，把"今日卷"替换为 28 号那套 10 道题，
+  // 然后标记版本号。之后不再强制干预（跨天/一键拼卷都按新逻辑正常走）。
+  if (!STATE.version) {
+    const today = todayISO();
+    const old = STATE.today_paper;
+    STATE.today_paper = { date: '2026-08-28', ids: DEFAULT_PAPER_IDS.slice() };
+    if (old && old.ids && old.ids.length) {
+      STATE.paper_history = STATE.paper_history || [];
+      STATE.paper_history.push({ date: today, ids: DEFAULT_PAPER_IDS.slice(), restored: true });
+      STATE.paper_history = STATE.paper_history.slice(-60);
+    }
+    STATE.version = 2;
+    saveState();
+    console.log('已将今日卷替换为 8/28 那套 10 道题');
   }
 
   await Promise.all([refreshCuoti(), refreshStats(), refreshWeekly()]);
@@ -203,11 +220,13 @@ function pickAuto() {
 }
 
 function ensureToday() {
-  const today = todayISO();
-  if (STATE.today_paper && STATE.today_paper.date === today) {
+  // 不因跨天自动换卷：只要已有今日卷就固定复用（除非用户点「一键拼卷」手动换）。
+  // 这样打开网站始终显示用户上次/固定那套，避免"每天自动换题"。
+  if (STATE.today_paper && STATE.today_paper.ids && STATE.today_paper.ids.length) {
     const cur = new Set(STATE.today_paper.ids);
     return STATE.today_paper.ids.filter(id => QUESTIONS.some(q => q.id === id));
   }
+  const today = todayISO();
   const qs = pickAuto();
   const ids = qs.map(q => q.id);
   STATE.today_paper = { date: today, ids };
