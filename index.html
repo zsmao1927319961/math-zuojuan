@@ -92,6 +92,13 @@
       <div id="stats" class="stat-card"></div>
       <div id="weekly"></div>
       <div class="tip-card">
+        <b>数据备份（重要）</b>
+        <p>做题进度与笔记保存在当前浏览器本地。换设备、清缓存前请先导出备份。</p>
+        <button id="btn-export" class="primary" style="width:100%;margin-top:8px;">导出进度备份</button>
+        <button id="btn-import" class="ghost" style="width:100%;margin-top:8px;">导入进度备份</button>
+        <input type="file" id="import-file" accept=".json" hidden>
+      </div>
+      <div class="tip-card">
         <b>使用说明</b>
         <p>· 今日拼卷即日常主界面，出卷后做对/做错即可，错因可选。</p>
         <p>· 做错进入错题本，7 天后自动排回拼卷；做对先到「待巩固」，15 天后再次做对才彻底掌握。</p>

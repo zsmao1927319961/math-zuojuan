@@ -65,6 +65,7 @@ async function init() {
   await Promise.all([refreshCuoti(), refreshStats(), refreshWeekly()]);
   fillFilters();
   bindEvents();
+  bindBackup();
   renderBank();
   renderCuoti();
   await refreshToday();
@@ -454,6 +455,39 @@ async function refreshWeekly() {
   el.innerHTML = html;
 }
 
+/* ---------- 导出 / 导入进度备份 ---------- */
+function bindBackup() {
+  const btnExp = $('#btn-export'), btnImp = $('#btn-import'), file = $('#import-file');
+  if (!btnExp) return;
+  btnExp.onclick = () => {
+    const blob = new Blob([JSON.stringify(STATE, null, 1)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `数学组卷备份_${todayISO()}.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    toast('已导出备份，请存到 iPad 文件/iCloud');
+  };
+  btnImp.onclick = () => file.click();
+  file.onchange = () => {
+    const f = file.files[0];
+    if (!f) return;
+    const rd = new FileReader();
+    rd.onload = () => {
+      try {
+        const obj = JSON.parse(rd.result);
+        if (!obj || typeof obj !== 'object') throw new Error('格式不对');
+        STATE = obj;
+        saveState();
+        refreshCuoti(); refreshStats(); refreshWeekly(); refreshToday(); renderBank();
+        toast('导入成功');
+      } catch (e) { toast('导入失败：' + e.message); }
+    };
+    rd.readAsText(f);
+    file.value = '';
+  };
+}
+
 /* ---------- 题目弹窗 + 笔记 ---------- */
 function showModal(q) {
   const m = $('#modal'); const lv = q.live || {};
@@ -463,7 +497,9 @@ function showModal(q) {
   else if (lv.due) tags += '<span class="tag bad">待重做</span>';
   if (q.kp_sub) tags += `<span class="tag">${q.kp_sub}</span>`;
   const img = q.question_img ? `<img src="data/${q.question_img}" alt="题目">` : '<div class="placeholder">本题无图</div>';
-  const ans = q.answer_img ? `<img src="data/${q.answer_img}" alt="答案">` : (q.answer_text ? `<div class="answer-text katex-render" data-latex="${q.answer_text.replace(/"/g,'&quot;')}"></div>` : (q.note ? `<div class="answer-text">方法：${q.note}</div>` : ''));
+  const ans = q.answer_img ? `<img src="data/${q.answer_img}" alt="答案">`
+    : (q.answer_text ? `<div class="answer-text katex-render" id="katex-answer"></div>`
+      : (q.note ? `<div class="answer-text">方法：${q.note}</div>` : ''));
   m.innerHTML = `
     <div id="modal-mask"></div>
     <div id="modal-box">
@@ -482,9 +518,17 @@ function showModal(q) {
         <button class="btn" data-act="close">关闭</button>
       </div>
     </div>`;
-  const kr = m.querySelector('#modal-ans-box .katex-render');
-  if (kr && window.katex && window.renderMathInElement) {
-    try { window.renderMathInElement(kr, { delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError: false }); } catch(e) {}
+  // 答案公式：katex.render 直接渲染；KaTeX 未加载时降级为纯文本（保证可见）
+  const kr = m.querySelector('#katex-answer');
+  if (kr && q.answer_text) {
+    if (window.katex) {
+      try { window.katex.render(q.answer_text, kr, { throwOnError: false }); }
+      catch(e) { kr.textContent = q.answer_text; }
+    } else {
+      // KaTeX CDN 未加载/离线：显示原始文本（比空白好）
+      let txt = q.answer_text.replace(/\$|\\(frac|sqrt|ln|pi|sin|cos|tan|left|right|cdot|begin|end|pmatrix|int|theta|arcsin|arctan|cosh|Big|O|and|or|text)\{?/g, m => (m[1] ? {frac:'/',sqrt:'√',ln:'ln',pi:'π',sin:'sin',cos:'cos',tan:'tan',left:'',right:'',cdot:'·',begin:'',end:'',pmatrix:'矩阵',int:'∫',theta:'θ',arcsin:'arcsin',arctan:'arctan',cosh:'cosh',Big:'',O:'O',text:''}[m[1]] || '' : m));
+      kr.textContent = txt || q.answer_text;
+    }
   }
   const noteEl = m.querySelector('#modal-note'), hintEl = m.querySelector('#note-save-hint');
   let timer = null;
