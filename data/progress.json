@@ -1,0 +1,3385 @@
+{
+ "papers": [
+  {
+   "id": "外出卷子-2026-08-10",
+   "date": "2026-08-10",
+   "results": {
+    "gd-1-tk-5": "right",
+    "gd-3-jd-3(IV)": "right",
+    "gd-2-tk-3": "right",
+    "gd-6-jd-5": "wrong",
+    "gd-4-jd-2": "wrong"
+   },
+   "reasons": {
+    "gd-4-jd-2": "计算失误",
+    "gd-6-jd-5": "计算失误"
+   }
+  },
+  {
+   "id": "外出卷子-2026-08-11",
+   "date": "2026-08-11",
+   "results": {
+    "gd-1-xz-4": "right",
+    "gd-3-xz-11": "wrong",
+    "gd-2-tk-12": "right",
+    "gd-6-tk-4": "right",
+    "gd-4-jd-11": "wrong"
+   },
+   "reasons": {
+    "gd-3-xz-11": "计算失误",
+    "gd-4-jd-11": "方法不会"
+   }
+  },
+  {
+   "id": "外出卷子-2026-08-12",
+   "date": "2026-08-12",
+   "results": {
+    "gd-1-jd-2(I)": "right",
+    "gd-3-xz-3": "right",
+    "gd-2-tk-10": "right",
+    "gd-6-jd-1": "right",
+    "gd-4-jd-9": "wrong"
+   },
+   "reasons": {
+    "gd-4-jd-9": "方法不会"
+   }
+  },
+  {
+   "id": "外出卷子-2026-08-13",
+   "date": "2026-08-13",
+   "results": {
+    "gd-3-jd-1(I)": "right",
+    "gd-2-xz-2": "right",
+    "gd-6-jd-6": "right",
+    "gd-4-xz-7": "right",
+    "gd-3-xz-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "外出卷子-2026-08-14",
+   "date": "2026-08-14",
+   "results": {
+    "gd-3-jd-6(II)": "right",
+    "gd-2-tk-9": "right",
+    "gd-6-jd-8(II)": "wrong",
+    "gd-4-xz-3": "wrong",
+    "gd-3-xz-5": "right"
+   },
+   "reasons": {
+    "gd-6-jd-8(II)": "方法不会",
+    "gd-4-xz-3": "概念不清"
+   }
+  },
+  {
+   "id": "卷子-2026-08-18",
+   "date": "2026-08-18",
+   "results": {
+    "gd-5-tk-8": "wrong",
+    "gd-1-jd-2(VI)": "right",
+    "gd-3-jd-1(III)": "wrong",
+    "gd-2-xz-9": "right",
+    "gd-6-tk-7": "wrong"
+   },
+   "reasons": {
+    "gd-5-tk-8": "方法不会",
+    "gd-3-jd-1(III)": "方法不会",
+    "gd-6-tk-7": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787107834185",
+   "date": "2026-08-19",
+   "results": {
+    "gd-4-tk-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787107846609",
+   "date": "2026-08-19",
+   "results": {
+    "gd-1-jd-3(II)": "wrong"
+   },
+   "reasons": {
+    "gd-1-jd-3(II)": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787107854487",
+   "date": "2026-08-19",
+   "results": {
+    "gd-3-jd-2(III)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787107865440",
+   "date": "2026-08-19",
+   "results": {
+    "gd-2-tk-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787107872145",
+   "date": "2026-08-19",
+   "results": {
+    "gd-5-tk-10": "wrong"
+   },
+   "reasons": {
+    "gd-5-tk-10": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787197112467",
+   "date": "2026-08-20",
+   "results": {
+    "gd-6-xz-7": "wrong"
+   },
+   "reasons": {
+    "gd-6-xz-7": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787197119030",
+   "date": "2026-08-20",
+   "results": {
+    "gd-1-jd-3(V)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787197123499",
+   "date": "2026-08-20",
+   "results": {
+    "gd-3-xz-9": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787197128318",
+   "date": "2026-08-20",
+   "results": {
+    "gd-2-tk-4": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787197138662",
+   "date": "2026-08-20",
+   "results": {
+    "gd-5-tk-3": "wrong"
+   },
+   "reasons": {
+    "gd-5-tk-3": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787251234330",
+   "date": "2026-08-21",
+   "results": {},
+   "reasons": {}
+  },
+  {
+   "id": "web-1787251236215",
+   "date": "2026-08-21",
+   "results": {},
+   "reasons": {}
+  },
+  {
+   "id": "web-1787251237325",
+   "date": "2026-08-21",
+   "results": {},
+   "reasons": {}
+  },
+  {
+   "id": "web-1787340263444",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-jd-1": "wrong"
+   },
+   "reasons": {
+    "gd-4-jd-1": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787340266507",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-tk-4": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787340270551",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787340273257",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787340276088",
+   "date": "2026-08-22",
+   "results": {
+    "gd-5-jd-1(II)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787392605141",
+   "date": "2026-08-22",
+   "results": {
+    "gd-6-jd-9": "wrong"
+   },
+   "reasons": {
+    "gd-6-jd-9": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787392609648",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787392623859",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-17": "wrong"
+   },
+   "reasons": {
+    "gd-3-xz-17": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787392630112",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-10": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787392633794",
+   "date": "2026-08-22",
+   "results": {
+    "gd-5-xz-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787392639685",
+   "date": "2026-08-22",
+   "results": {
+    "ld-1.1-l13": "wrong"
+   },
+   "reasons": {
+    "ld-1.1-l13": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787392676107",
+   "date": "2026-08-22",
+   "results": {
+    "ld-1.2-l2(1)": "wrong"
+   },
+   "reasons": {
+    "ld-1.2-l2(1)": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787392680595",
+   "date": "2026-08-22",
+   "results": {
+    "ld-1.3-l1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787392685820",
+   "date": "2026-08-22",
+   "results": {
+    "ld-1.4-l6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787392699727",
+   "date": "2026-08-22",
+   "results": {
+    "ld-1.5-l6": "wrong"
+   },
+   "reasons": {
+    "ld-1.5-l6": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787406377901",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406400583",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406751802",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406755353",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406758882",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406770496",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406773586",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406937899",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406943742",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406947349",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406949607",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406955094",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-8": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406963308",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-9": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406967203",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-10": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406971642",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-11": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406980023",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-xz-13": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787406997857",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-tk-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407037325",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-tk-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407040842",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-tk-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407046716",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-tk-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407072381",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-jd-5": "wrong"
+   },
+   "reasons": {
+    "gd-1-jd-5": "计算失误"
+   }
+  },
+  {
+   "id": "web-1787407081070",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-jd-4": "wrong"
+   },
+   "reasons": {
+    "gd-1-jd-4": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787407087969",
+   "date": "2026-08-22",
+   "results": {
+    "gd-1-jd-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407106575",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407290607",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407518062",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407524441",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-8": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407535446",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-11": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407537276",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-12": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407543853",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-14": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407545781",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-15": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407547354",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-15": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407555730",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-16": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407561519",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-17": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407564322",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-18": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407566307",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-19": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407568496",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-20": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407572729",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-21": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407575125",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-xz-22": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407746042",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407748834",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407749543",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-8": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407755875",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-11": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407760476",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-13": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407761253",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-14": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407764234",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-15": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407767615",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-16": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407769010",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-17": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407771722",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-18": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407775033",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-19": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407780395",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-20": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407782608",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-21": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407785216",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-22": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407787523",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-23": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407790233",
+   "date": "2026-08-22",
+   "results": {
+    "gd-2-tk-24": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407808708",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407812332",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-4": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407813159",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407817102",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-8": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407821495",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-13": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407826277",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-xz-18": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407829043",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-tk-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407830239",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-tk-2": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407832992",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-tk-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407835237",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-tk-4": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407837616",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-tk-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407838947",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-tk-6": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787407847379",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-tk-7": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408622730",
+   "date": "2026-08-22",
+   "results": {
+    "gd-3-jd-7(I)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408887945",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-jd-10": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408897007",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-jd-12": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408925739",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-tk-13": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408928800",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-tk-14": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408930683",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-tk-15": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408935536",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-tk-16": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787408949970",
+   "date": "2026-08-22",
+   "results": {
+    "gd-4-jd-12": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787448096488",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-jd-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787448102717",
+   "date": "2026-08-23",
+   "results": {
+    "gd-1-jd-2(IV)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787448105921",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-jd-3(I)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787448110251",
+   "date": "2026-08-23",
+   "results": {
+    "gd-2-tk-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787448116755",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-tk-12": "wrong"
+   },
+   "reasons": {
+    "gd-5-tk-12": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787449801252",
+   "date": "2026-08-23",
+   "results": {
+    "ld-1.1-l16": "wrong"
+   },
+   "reasons": {
+    "ld-1.1-l16": "计算失误"
+   }
+  },
+  {
+   "id": "web-1787449809317",
+   "date": "2026-08-23",
+   "results": {
+    "ld-1.2-l3": "wrong"
+   },
+   "reasons": {
+    "ld-1.2-l3": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787449820213",
+   "date": "2026-08-23",
+   "results": {
+    "ld-1.3-l7": "wrong"
+   },
+   "reasons": {
+    "ld-1.3-l7": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787449824348",
+   "date": "2026-08-23",
+   "results": {
+    "ld-1.4-l2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787449828381",
+   "date": "2026-08-23",
+   "results": {
+    "ld-1.5-l3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457208592",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-tk-8": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457212717",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-tk-9": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457216510",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-tk-10": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457218793",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-tk-11": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457260260",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-jd-7(III)": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457268478",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-jd-7(II)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457276757",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-jd-8(I)": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457280747",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-jd-8(II)": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457284643",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-jd-8(III)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457288449",
+   "date": "2026-08-23",
+   "results": {
+    "gd-3-jd-8(IV)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457300428",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-xz-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457306513",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-xz-8": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457308271",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-xz-9": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457310928",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-tk-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457312835",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-tk-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457320501",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-tk-9": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457322607",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-tk-10": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457328133",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-tk-12": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457331096",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-tk-13": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457344035",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-jd-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457347958",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-jd-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457350401",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-jd-8": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457353821",
+   "date": "2026-08-23",
+   "results": {
+    "gd-4-jd-9": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457385911",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-xz-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457389717",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-xz-4": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457391046",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-xz-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457394269",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-xz-6": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457397875",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-tk-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457400742",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-tk-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457404605",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-2": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457407234",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457584683",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-5": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457587658",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457591316",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-4": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457597549",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-2": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457625290",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-xz-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457629674",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-xz-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457632662",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-tk-1": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457633682",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-tk-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457634624",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-tk-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457645159",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-tk-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457650315",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-jd-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457660295",
+   "date": "2026-08-23",
+   "results": {
+    "gd-6-jd-11": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457736744",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-1(I)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457743140",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-1(III)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457759910",
+   "date": "2026-08-23",
+   "results": {
+    "gd-5-jd-1(IV)": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457807251",
+   "date": "2026-08-23",
+   "results": {
+    "gd-2-xz-23": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787457809937",
+   "date": "2026-08-23",
+   "results": {
+    "gd-2-xz-24": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787565405492",
+   "date": "2026-08-24",
+   "results": {
+    "gd-6-xz-3": "wrong"
+   },
+   "reasons": {
+    "gd-6-xz-3": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787565409737",
+   "date": "2026-08-24",
+   "results": {
+    "gd-1-xz-12": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787565413454",
+   "date": "2026-08-24",
+   "results": {
+    "gd-4-tk-4": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787565418091",
+   "date": "2026-08-24",
+   "results": {
+    "gd-6-jd-5": "wrong"
+   },
+   "reasons": {
+    "gd-6-jd-5": "计算失误"
+   }
+  },
+  {
+   "id": "web-1787565422148",
+   "date": "2026-08-24",
+   "results": {
+    "gd-4-jd-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787565426960",
+   "date": "2026-08-24",
+   "results": {
+    "gd-3-jd-3(V)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787567960457",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.1-l10": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787567973432",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.2-l2(2)": "wrong"
+   },
+   "reasons": {
+    "ld-1.2-l2(2)": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787567980738",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.3-l2": "wrong"
+   },
+   "reasons": {
+    "ld-1.3-l2": "计算失误"
+   }
+  },
+  {
+   "id": "web-1787567987432",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.4-l8": "wrong"
+   },
+   "reasons": {
+    "ld-1.4-l8": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787567993148",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.5-l5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787568781972",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.4-l8": "wrong"
+   },
+   "reasons": {
+    "ld-1.4-l8": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787568906620",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.4-l8": "wrong"
+   },
+   "reasons": {
+    "ld-1.4-l8": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787568912695",
+   "date": "2026-08-24",
+   "results": {
+    "ld-1.4-l8": "wrong"
+   },
+   "reasons": {
+    "ld-1.4-l8": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787573679512",
+   "date": "2026-08-24",
+   "results": {
+    "gd-2-jd-1(I)": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787573741206",
+   "date": "2026-08-24",
+   "results": {
+    "gd-2-jd-1(II)": "wrong"
+   },
+   "reasons": {
+    "gd-2-jd-1(II)": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787573787487",
+   "date": "2026-08-24",
+   "results": {
+    "gd-2-jd-2(I)": "wrong"
+   },
+   "reasons": {
+    "gd-2-jd-2(I)": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787573837366",
+   "date": "2026-08-24",
+   "results": {
+    "gd-2-jd-2(I)": "wrong"
+   },
+   "reasons": {
+    "gd-2-jd-2(I)": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787573842496",
+   "date": "2026-08-24",
+   "results": {
+    "gd-2-jd-2(II)": "wrong"
+   },
+   "reasons": {
+    "gd-2-jd-2(II)": "计算失误"
+   }
+  },
+  {
+   "id": "web-1787573860368",
+   "date": "2026-08-24",
+   "results": {
+    "gd-3-tk-2": "wrong"
+   },
+   "reasons": {
+    "gd-3-tk-2": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787573890735",
+   "date": "2026-08-24",
+   "results": {
+    "gd-3-tk-12": "wrong"
+   },
+   "reasons": {
+    "gd-3-tk-12": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787573896424",
+   "date": "2026-08-24",
+   "results": {
+    "gd-3-tk-13": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787573903956",
+   "date": "2026-08-24",
+   "results": {
+    "gd-3-tk-14": "wrong"
+   },
+   "reasons": {
+    "gd-3-tk-14": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787573930605",
+   "date": "2026-08-24",
+   "results": {
+    "gd-3-jd-10": "wrong"
+   },
+   "reasons": {
+    "gd-3-jd-10": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787573933623",
+   "date": "2026-08-24",
+   "results": {
+    "gd-3-jd-11": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787573969360",
+   "date": "2026-08-24",
+   "results": {
+    "gd-5-jd-7": "wrong"
+   },
+   "reasons": {
+    "gd-5-jd-7": "计算失误"
+   }
+  },
+  {
+   "id": "web-1787644049427",
+   "date": "2026-08-25",
+   "results": {
+    "gd-6-tk-7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787644112245",
+   "date": "2026-08-25",
+   "results": {
+    "gd-4-tk-8": "wrong"
+   },
+   "reasons": {
+    "gd-4-tk-8": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787644172786",
+   "date": "2026-08-25",
+   "results": {
+    "gd-6-tk-8": "wrong"
+   },
+   "reasons": {
+    "gd-6-tk-8": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787644228954",
+   "date": "2026-08-25",
+   "results": {
+    "gd-4-jd-6": "wrong"
+   },
+   "reasons": {
+    "gd-4-jd-6": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787644237178",
+   "date": "2026-08-25",
+   "results": {
+    "gd-2-xz-3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787644241387",
+   "date": "2026-08-25",
+   "results": {
+    "gd-5-tk-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787668321598",
+   "date": "2026-08-25",
+   "results": {
+    "ld-1.1-l18": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787668325848",
+   "date": "2026-08-25",
+   "results": {
+    "ld-1.3-l3": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787668332735",
+   "date": "2026-08-25",
+   "results": {
+    "ld-1.4-l5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787668341725",
+   "date": "2026-08-25",
+   "results": {
+    "ld-1.5-l2": "wrong"
+   },
+   "reasons": {
+    "ld-1.5-l2": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787668349848",
+   "date": "2026-08-25",
+   "results": {
+    "ld-1.6-l5": "wrong"
+   },
+   "reasons": {
+    "ld-1.6-l5": "概念不清"
+   }
+  },
+  {
+   "id": "web-1787710919837",
+   "date": "2026-08-26",
+   "results": {
+    "gd-6-xz-5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787710925129",
+   "date": "2026-08-26",
+   "results": {
+    "gd-4-tk-2": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787710934160",
+   "date": "2026-08-26",
+   "results": {
+    "gd-6-tk-5": "wrong"
+   },
+   "reasons": {
+    "gd-6-tk-5": "计算失误"
+   }
+  },
+  {
+   "id": "web-1787710939080",
+   "date": "2026-08-26",
+   "results": {
+    "gd-4-tk-6": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1787710947362",
+   "date": "2026-08-26",
+   "results": {
+    "gd-4-tk-6": "wrong"
+   },
+   "reasons": {
+    "gd-4-tk-6": "方法不会"
+   }
+  },
+  {
+   "id": "web-1787710958999",
+   "date": "2026-08-26",
+   "results": {
+    "gd-3-xz-11": "wrong"
+   },
+   "reasons": {
+    "gd-3-xz-11": "方法不会"
+   }
+  },
+  {
+   "id": "smoke-test",
+   "date": "2026-08-28",
+   "results": {
+    "gd-1-xz-4": "right"
+   },
+   "reasons": {}
+  }
+ ],
+ "cuoti_manual": [],
+ "paper_history": [
+  {
+   "date": "2026-08-10",
+   "ids": [
+    "gd-1-tk-5",
+    "gd-3-jd-3(IV)",
+    "gd-2-tk-3",
+    "gd-6-jd-5",
+    "gd-4-jd-2"
+   ]
+  },
+  {
+   "date": "2026-08-11",
+   "ids": [
+    "gd-1-xz-4",
+    "gd-3-xz-11",
+    "gd-2-tk-12",
+    "gd-6-tk-4",
+    "gd-4-jd-11"
+   ]
+  },
+  {
+   "date": "2026-08-12",
+   "ids": [
+    "gd-1-jd-2(I)",
+    "gd-3-xz-3",
+    "gd-2-tk-10",
+    "gd-6-jd-1",
+    "gd-4-jd-9"
+   ]
+  },
+  {
+   "date": "2026-08-13",
+   "ids": [
+    "gd-3-jd-1(I)",
+    "gd-2-xz-2",
+    "gd-6-jd-6",
+    "gd-4-xz-7",
+    "gd-3-xz-2"
+   ]
+  },
+  {
+   "date": "2026-08-14",
+   "ids": [
+    "gd-3-jd-6(II)",
+    "gd-2-tk-9",
+    "gd-6-jd-8(II)",
+    "gd-4-xz-3",
+    "gd-3-xz-5"
+   ]
+  },
+  {
+   "date": "2026-08-18",
+   "ids": [
+    "gd-5-tk-8",
+    "gd-1-jd-2(VI)",
+    "gd-3-jd-1(III)",
+    "gd-2-xz-9",
+    "gd-6-tk-7"
+   ]
+  },
+  {
+   "date": "2026-08-19",
+   "ids": [
+    "gd-4-tk-5",
+    "gd-1-jd-3(II)",
+    "gd-3-jd-2(III)",
+    "gd-2-tk-5",
+    "gd-5-tk-10"
+   ]
+  },
+  {
+   "date": "2026-08-20",
+   "ids": [
+    "gd-6-xz-7",
+    "gd-1-jd-3(V)",
+    "gd-3-xz-9",
+    "gd-2-tk-4",
+    "gd-5-tk-3"
+   ]
+  },
+  {
+   "date": "2026-08-21",
+   "ids": [
+    "gd-4-jd-1",
+    "gd-1-tk-4",
+    "gd-3-xz-7",
+    "gd-2-tk-1",
+    "gd-5-jd-1(II)"
+   ]
+  },
+  {
+   "date": "2026-08-22",
+   "ids": [
+    "gd-6-jd-9",
+    "gd-1-xz-2",
+    "gd-3-xz-17",
+    "gd-2-xz-10",
+    "gd-5-xz-2"
+   ]
+  },
+  {
+   "date": "2026-08-23",
+   "ids": [
+    "gd-4-jd-5",
+    "gd-1-jd-2(IV)",
+    "gd-3-jd-3(I)",
+    "gd-2-tk-2",
+    "gd-5-tk-12"
+   ]
+  },
+  {
+   "date": "2026-08-24",
+   "ids": [
+    "gd-6-xz-3",
+    "gd-1-xz-12",
+    "gd-4-tk-4",
+    "gd-6-jd-5",
+    "gd-4-jd-2",
+    "gd-3-jd-3(V)"
+   ]
+  },
+  {
+   "date": "2026-08-25",
+   "ids": [
+    "gd-6-tk-7",
+    "gd-4-tk-8",
+    "gd-6-tk-8",
+    "gd-4-jd-6",
+    "gd-2-xz-3",
+    "gd-5-tk-2"
+   ]
+  },
+  {
+   "date": "2026-08-26",
+   "ids": [
+    "gd-1-jd-3(II)",
+    "gd-6-xz-5",
+    "gd-4-tk-2",
+    "gd-6-tk-5",
+    "gd-4-tk-6",
+    "gd-3-xz-11"
+   ]
+  },
+  {
+   "date": "2026-08-27",
+   "ids": [
+    "gd-4-xz-4",
+    "gd-5-tk-8",
+    "gd-3-xz-14",
+    "gd-2-xz-5",
+    "gd-6-xz-7",
+    "ld-1.3-l5",
+    "ld-3.5-l4",
+    "ld-3.7-l2",
+    "ld-2.9-l4",
+    "ld-1.1-l25"
+   ]
+  },
+  {
+   "date": "2026-08-28",
+   "ids": [
+    "gd-5-tk-10",
+    "gd-4-xz-5",
+    "gd-3-xz-15",
+    "gd-5-tk-4",
+    "gd-2-xz-4",
+    "ld-2.3-l4",
+    "ld-1.1-l24",
+    "ld-3.4-l8",
+    "ld-2.9-l11",
+    "ld-1.1-l2"
+   ]
+  },
+  {
+   "date": "2026-08-28",
+   "ids": [
+    "gd-5-tk-6",
+    "gd-3-xz-12",
+    "gd-5-xz-1",
+    "gd-4-xz-6",
+    "gd-6-jd-3",
+    "ld-3.4-l7",
+    "ld-1.2-l3",
+    "ld-1.1-l8",
+    "ld-3.2-l2",
+    "ld-1.1-l12"
+   ]
+  },
+  {
+   "date": "2026-08-28",
+   "ids": [
+    "gd-5-tk-9",
+    "gd-4-tk-11",
+    "gd-5-tk-11",
+    "gd-4-jd-11",
+    "gd-6-jd-4",
+    "ld-3.5-l5",
+    "ld-1.9-l2",
+    "ld-3.3-l9",
+    "ld-2.6-l4",
+    "ld-4.1-l3"
+   ]
+  }
+ ],
+ "question_state": {
+  "gd-6-tk-9": {
+   "status": "todo",
+   "wrong_date": "2026-08-08",
+   "due": "2026-08-15"
+  },
+  "gd-1-jd-3(V)": {
+   "status": "done",
+   "right_date": "2026-08-20",
+   "right_count": 1
+  },
+  "gd-1-xz-4": {
+   "status": "done",
+   "right_date": "2026-08-11",
+   "right_count": 1
+  },
+  "gd-1-xz-12": {
+   "status": "review",
+   "right_date": "2026-08-24",
+   "review_due": "2026-09-08",
+   "right_count": 1,
+   "wrong_date": "2026-08-04",
+   "reason": null
+  },
+  "gd-1-tk-5": {
+   "status": "done",
+   "right_date": "2026-08-10",
+   "right_count": 1
+  },
+  "gd-1-jd-2(I)": {
+   "status": "done",
+   "right_date": "2026-08-12",
+   "right_count": 1
+  },
+  "gd-1-jd-2(IV)": {
+   "status": "review",
+   "right_date": "2026-08-23",
+   "review_due": "2026-09-07",
+   "right_count": 1,
+   "wrong_date": "2026-07-30",
+   "reason": null
+  },
+  "gd-1-jd-3(II)": {
+   "status": "todo",
+   "wrong_date": "2026-08-19",
+   "due": "2026-08-26",
+   "reason": "方法不会"
+  },
+  "gd-2-xz-2": {
+   "status": "done",
+   "right_date": "2026-08-13",
+   "right_count": 2
+  },
+  "gd-2-xz-3": {
+   "status": "done",
+   "right_date": "2026-08-25",
+   "right_count": 2
+  },
+  "gd-2-xz-4": {
+   "status": "todo",
+   "wrong_date": "2026-07-18",
+   "due": "2026-08-09",
+   "second_wrong": "2026-08-02"
+  },
+  "gd-2-xz-5": {
+   "status": "todo",
+   "wrong_date": "2026-07-19",
+   "right_date": "2026-07-25",
+   "due": "2026-08-01",
+   "quick_redo": true
+  },
+  "gd-2-xz-9": {
+   "status": "done",
+   "right_date": "2026-08-18",
+   "right_count": 1
+  },
+  "gd-2-xz-10": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-13": {
+   "status": "todo",
+   "wrong_date": "2026-07-30",
+   "due": "2026-08-06"
+  },
+  "gd-2-tk-2": {
+   "status": "review",
+   "right_date": "2026-08-23",
+   "review_due": "2026-09-07",
+   "right_count": 1,
+   "wrong_date": "2026-07-14",
+   "reason": "计算失误"
+  },
+  "gd-2-tk-3": {
+   "status": "done",
+   "right_date": "2026-08-10",
+   "right_count": 1
+  },
+  "gd-2-tk-4": {
+   "status": "done",
+   "right_date": "2026-08-20",
+   "right_count": 2
+  },
+  "gd-2-tk-5": {
+   "status": "done",
+   "right_date": "2026-08-19",
+   "right_count": 2
+  },
+  "gd-2-tk-9": {
+   "status": "done",
+   "right_date": "2026-08-14",
+   "right_count": 1
+  },
+  "gd-2-tk-10": {
+   "status": "done",
+   "right_date": "2026-08-12",
+   "right_count": 1
+  },
+  "gd-2-tk-12": {
+   "status": "done",
+   "right_date": "2026-08-11",
+   "right_count": 1
+  },
+  "gd-3-xz-2": {
+   "status": "done",
+   "right_date": "2026-08-13",
+   "right_count": 2
+  },
+  "gd-3-xz-3": {
+   "status": "done",
+   "right_date": "2026-08-12",
+   "right_count": 2
+  },
+  "gd-3-xz-5": {
+   "status": "done",
+   "right_date": "2026-08-14",
+   "right_count": 2
+  },
+  "gd-3-xz-7": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 2
+  },
+  "gd-3-xz-9": {
+   "status": "done",
+   "right_date": "2026-08-20",
+   "right_count": 1
+  },
+  "gd-3-xz-10": {
+   "status": "todo",
+   "wrong_date": "2026-07-24",
+   "right_date": "2026-07-25",
+   "due": "2026-08-01",
+   "quick_redo": true
+  },
+  "gd-3-xz-11": {
+   "status": "todo",
+   "wrong_date": "2026-08-26",
+   "due": "2026-09-02",
+   "reason": "方法不会"
+  },
+  "gd-3-xz-12": {
+   "status": "todo",
+   "wrong_date": "2026-07-28",
+   "due": "2026-08-09",
+   "second_wrong": "2026-08-02"
+  },
+  "gd-3-xz-14": {
+   "status": "todo",
+   "wrong_date": "2026-08-04",
+   "due": "2026-08-11"
+  },
+  "gd-3-xz-15": {
+   "status": "todo",
+   "wrong_date": "2026-08-05",
+   "due": "2026-08-12"
+  },
+  "gd-3-xz-16": {
+   "status": "todo",
+   "wrong_date": "2026-08-06",
+   "due": "2026-08-13"
+  },
+  "gd-3-xz-17": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "方法不会"
+  },
+  "gd-3-jd-1(I)": {
+   "status": "done",
+   "right_date": "2026-08-13",
+   "right_count": 1
+  },
+  "gd-3-jd-1(III)": {
+   "status": "todo",
+   "wrong_date": "2026-08-18",
+   "due": "2026-08-25",
+   "reason": "方法不会"
+  },
+  "gd-3-jd-1(V)": {
+   "status": "todo",
+   "wrong_date": "2026-07-19",
+   "right_date": "2026-07-25",
+   "due": "2026-08-01",
+   "quick_redo": true
+  },
+  "gd-3-jd-2(III)": {
+   "status": "done",
+   "right_date": "2026-08-19",
+   "right_count": 1
+  },
+  "gd-3-jd-3(I)": {
+   "status": "review",
+   "right_date": "2026-08-23",
+   "review_due": "2026-09-07",
+   "right_count": 1,
+   "wrong_date": "2026-07-23",
+   "reason": null
+  },
+  "gd-3-jd-3(IV)": {
+   "status": "done",
+   "right_date": "2026-08-10",
+   "right_count": 2
+  },
+  "gd-3-jd-3(V)": {
+   "status": "done",
+   "right_date": "2026-08-24",
+   "right_count": 2
+  },
+  "gd-3-jd-3(VI)": {
+   "status": "todo",
+   "wrong_date": "2026-07-24",
+   "due": "2026-08-09",
+   "second_wrong": "2026-08-02",
+   "reason": "计算失误"
+  },
+  "gd-3-jd-4(III)": {
+   "status": "todo",
+   "wrong_date": "2026-07-30",
+   "right_date": "2026-08-02",
+   "due": "2026-08-09",
+   "quick_redo": true
+  },
+  "gd-3-jd-4(V)": {
+   "status": "todo",
+   "wrong_date": "2026-08-04",
+   "due": "2026-08-11"
+  },
+  "gd-3-jd-4(VI)": {
+   "status": "todo",
+   "wrong_date": "2026-08-04",
+   "due": "2026-08-11"
+  },
+  "gd-3-jd-5(IV)": {
+   "status": "todo",
+   "wrong_date": "2026-08-06",
+   "due": "2026-08-13"
+  },
+  "gd-3-jd-6(II)": {
+   "status": "done",
+   "right_date": "2026-08-14",
+   "right_count": 1
+  },
+  "gd-4-xz-2": {
+   "status": "review",
+   "wrong_date": "2026-07-14",
+   "right_date": "2026-07-25",
+   "review_due": "2026-08-09",
+   "right_count": 1
+  },
+  "gd-4-xz-3": {
+   "status": "todo",
+   "wrong_date": "2026-08-14",
+   "due": "2026-08-21",
+   "reason": "概念不清"
+  },
+  "gd-4-xz-4": {
+   "status": "review",
+   "wrong_date": "2026-07-18",
+   "right_date": "2026-07-25",
+   "review_due": "2026-08-09",
+   "right_count": 1
+  },
+  "gd-4-xz-5": {
+   "status": "todo",
+   "wrong_date": "2026-07-19",
+   "due": "2026-08-01",
+   "second_wrong": "2026-07-25"
+  },
+  "gd-4-xz-6": {
+   "status": "todo",
+   "wrong_date": "2026-07-20",
+   "right_date": "2026-07-25",
+   "due": "2026-08-01",
+   "quick_redo": true
+  },
+  "gd-4-xz-7": {
+   "status": "done",
+   "right_date": "2026-08-13",
+   "right_count": 1
+  },
+  "gd-4-tk-2": {
+   "status": "review",
+   "right_date": "2026-08-26",
+   "review_due": "2026-09-10",
+   "right_count": 1,
+   "wrong_date": "2026-07-28",
+   "reason": null
+  },
+  "gd-4-tk-4": {
+   "status": "review",
+   "right_date": "2026-08-24",
+   "review_due": "2026-09-08",
+   "right_count": 1,
+   "wrong_date": "2026-08-04",
+   "reason": "计算失误"
+  },
+  "gd-4-jd-1": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "概念不清"
+  },
+  "gd-4-jd-2": {
+   "status": "review",
+   "right_date": "2026-08-24",
+   "review_due": "2026-09-08",
+   "right_count": 1,
+   "wrong_date": "2026-08-10",
+   "reason": "计算失误"
+  },
+  "gd-4-jd-4": {
+   "status": "todo",
+   "wrong_date": "2026-07-18",
+   "due": "2026-08-01",
+   "second_wrong": "2026-07-25",
+   "reason": "计算失误"
+  },
+  "gd-4-jd-5": {
+   "status": "review",
+   "right_date": "2026-08-23",
+   "review_due": "2026-09-07",
+   "right_count": 1,
+   "wrong_date": "2026-07-20",
+   "reason": null
+  },
+  "gd-4-jd-6": {
+   "status": "todo",
+   "wrong_date": "2026-08-25",
+   "due": "2026-09-01",
+   "reason": "概念不清"
+  },
+  "gd-4-jd-9": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-4-jd-11": {
+   "status": "todo",
+   "wrong_date": "2026-08-11",
+   "due": "2026-08-18",
+   "reason": "方法不会"
+  },
+  "gd-6-xz-2": {
+   "status": "todo",
+   "wrong_date": "2026-07-14",
+   "due": "2026-07-21",
+   "second_wrong": "2026-07-14"
+  },
+  "gd-6-xz-3": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "概念不清"
+  },
+  "gd-6-xz-4": {
+   "status": "todo",
+   "wrong_date": "2026-07-20",
+   "due": "2026-07-27"
+  },
+  "gd-6-xz-7": {
+   "status": "todo",
+   "wrong_date": "2026-08-20",
+   "due": "2026-08-27",
+   "reason": "方法不会"
+  },
+  "gd-6-tk-4": {
+   "status": "done",
+   "right_date": "2026-08-11",
+   "right_count": 1
+  },
+  "gd-6-tk-5": {
+   "status": "todo",
+   "wrong_date": "2026-08-26",
+   "due": "2026-09-02",
+   "reason": "计算失误"
+  },
+  "gd-6-tk-7": {
+   "status": "review",
+   "right_date": "2026-08-25",
+   "review_due": "2026-09-09",
+   "right_count": 1,
+   "wrong_date": "2026-08-18",
+   "reason": "概念不清"
+  },
+  "gd-6-jd-1": {
+   "status": "done",
+   "right_date": "2026-08-12",
+   "right_count": 1
+  },
+  "gd-6-jd-3": {
+   "status": "todo",
+   "wrong_date": "2026-07-18",
+   "due": "2026-07-25",
+   "key": true
+  },
+  "gd-6-jd-4": {
+   "status": "review",
+   "wrong_date": "2026-07-20",
+   "right_date": "2026-08-02",
+   "review_due": "2026-08-17",
+   "right_count": 1
+  },
+  "gd-6-jd-5": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "计算失误"
+  },
+  "gd-6-jd-6": {
+   "status": "done",
+   "right_date": "2026-08-13",
+   "right_count": 2
+  },
+  "gd-6-jd-7": {
+   "status": "todo",
+   "wrong_date": "2026-07-24",
+   "due": "2026-07-31"
+  },
+  "gd-6-jd-8(II)": {
+   "status": "todo",
+   "wrong_date": "2026-08-14",
+   "due": "2026-08-21",
+   "reason": "方法不会"
+  },
+  "gd-6-jd-9": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "方法不会"
+  },
+  "gd-6-jd-10(II)": {
+   "status": "todo",
+   "wrong_date": "2026-07-30",
+   "due": "2026-08-06"
+  },
+  "gd-1-xz-2": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-tk-4": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-jd-2(VI)": {
+   "status": "done",
+   "right_date": "2026-08-18",
+   "right_count": 1
+  },
+  "gd-2-tk-1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-4-tk-5": {
+   "status": "done",
+   "right_date": "2026-08-19",
+   "right_count": 1
+  },
+  "gd-4-tk-6": {
+   "status": "todo",
+   "wrong_date": "2026-08-26",
+   "due": "2026-09-02",
+   "reason": "方法不会"
+  },
+  "gd-4-tk-7": {
+   "status": "todo",
+   "wrong_date": "2026-08-06",
+   "due": "2026-08-13"
+  },
+  "gd-4-tk-8": {
+   "status": "todo",
+   "wrong_date": "2026-08-25",
+   "due": "2026-09-01",
+   "reason": "概念不清"
+  },
+  "gd-4-tk-11": {
+   "status": "todo",
+   "wrong_date": "2026-08-08",
+   "due": "2026-08-15",
+   "reason": "计算失误"
+  },
+  "gd-5-xz-1": {
+   "status": "todo",
+   "wrong_date": "2026-08-06",
+   "due": "2026-08-13"
+  },
+  "gd-5-xz-2": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-5-tk-1": {
+   "status": "todo",
+   "wrong_date": "2026-07-13",
+   "due": "2026-07-20"
+  },
+  "gd-5-tk-2": {
+   "status": "review",
+   "right_date": "2026-08-25",
+   "review_due": "2026-09-09",
+   "right_count": 1,
+   "wrong_date": "2026-07-14",
+   "reason": null
+  },
+  "gd-5-tk-3": {
+   "status": "todo",
+   "wrong_date": "2026-08-20",
+   "due": "2026-08-27",
+   "reason": "方法不会"
+  },
+  "gd-5-tk-4": {
+   "status": "todo",
+   "wrong_date": "2026-07-18",
+   "due": "2026-07-25"
+  },
+  "gd-5-tk-6": {
+   "status": "todo",
+   "wrong_date": "2026-07-21",
+   "due": "2026-07-28"
+  },
+  "gd-5-tk-8": {
+   "status": "todo",
+   "wrong_date": "2026-08-18",
+   "due": "2026-08-25",
+   "reason": "方法不会"
+  },
+  "gd-5-tk-9": {
+   "status": "todo",
+   "wrong_date": "2026-07-24",
+   "due": "2026-07-31",
+   "reason": "计算失误"
+  },
+  "gd-5-tk-10": {
+   "status": "todo",
+   "wrong_date": "2026-08-19",
+   "due": "2026-08-26",
+   "reason": "方法不会"
+  },
+  "gd-5-tk-11": {
+   "status": "todo",
+   "wrong_date": "2026-07-28",
+   "due": "2026-08-04"
+  },
+  "gd-5-tk-12": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30",
+   "reason": "方法不会"
+  },
+  "gd-5-tk-13": {
+   "status": "todo",
+   "wrong_date": "2026-08-04",
+   "due": "2026-08-11",
+   "key": true
+  },
+  "gd-5-tk-14": {
+   "status": "todo",
+   "wrong_date": "2026-08-05",
+   "due": "2026-08-12"
+  },
+  "gd-5-jd-1(II)": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-6-xz-5": {
+   "status": "review",
+   "right_date": "2026-08-26",
+   "review_due": "2026-09-10",
+   "right_count": 1,
+   "wrong_date": "2026-07-21",
+   "reason": null
+  },
+  "gd-6-tk-8": {
+   "status": "todo",
+   "wrong_date": "2026-08-25",
+   "due": "2026-09-01",
+   "reason": "方法不会"
+  },
+  "gd-1-xz-1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 2
+  },
+  "gd-1-xz-6": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 2
+  },
+  "gd-1-xz-7": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 2
+  },
+  "gd-1-xz-3": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-xz-5": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-xz-8": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-xz-9": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-xz-10": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-xz-11": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-xz-13": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-tk-1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-tk-2": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-tk-3": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-tk-6": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-1-jd-5": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "计算失误"
+  },
+  "gd-1-jd-4": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "方法不会"
+  },
+  "gd-1-jd-1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-6": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-7": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-8": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-11": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-12": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-14": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-15": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-16": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-xz-17": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-xz-18": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-19": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-xz-20": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-xz-21": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-xz-22": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-tk-6": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-7": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-8": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-11": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-13": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-14": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-15": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-16": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-tk-17": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-18": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-19": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-tk-20": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-tk-21": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-2-tk-22": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-tk-23": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-2-tk-24": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-3-xz-1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-xz-4": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-xz-6": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-xz-8": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-xz-13": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-xz-18": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-tk-1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-tk-2": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "概念不清"
+  },
+  "gd-3-tk-3": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-tk-4": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-tk-5": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-3-tk-6": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-3-tk-7": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-3-jd-7(I)": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-4-jd-10": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-4-jd-12": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "gd-4-tk-13": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-4-tk-14": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-4-tk-15": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-4-tk-16": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29"
+  },
+  "gd-3-tk-8": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-3-tk-9": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-3-tk-10": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-3-tk-11": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-3-jd-7(III)": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-3-jd-7(II)": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-3-jd-8(I)": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-3-jd-8(II)": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-3-jd-8(III)": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-3-jd-8(IV)": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-xz-1": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-xz-8": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-xz-9": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-tk-1": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-tk-3": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-tk-9": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-tk-10": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-tk-12": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-jd-3": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-jd-7": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-4-jd-8": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-xz-3": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-xz-4": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-xz-5": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-xz-6": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-5-tk-5": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-tk-7": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-jd-2": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-5-jd-3": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-jd-5": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-5-jd-6": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-jd-4": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-6-xz-1": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-6-xz-6": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-6-tk-1": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-6-tk-2": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-6-tk-3": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-6-tk-6": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-6-jd-2": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-6-jd-11": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-5-jd-1(I)": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-jd-1(III)": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-5-jd-1(IV)": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30"
+  },
+  "gd-2-xz-23": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-2-xz-24": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "gd-2-jd-1(I)": {
+   "status": "done",
+   "right_date": "2026-08-24",
+   "right_count": 1
+  },
+  "gd-2-jd-1(II)": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "概念不清"
+  },
+  "gd-2-jd-2(I)": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "概念不清"
+  },
+  "gd-2-jd-2(II)": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "计算失误"
+  },
+  "gd-3-tk-12": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "方法不会"
+  },
+  "gd-3-tk-13": {
+   "status": "done",
+   "right_date": "2026-08-24",
+   "right_count": 1
+  },
+  "gd-3-tk-14": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "概念不清"
+  },
+  "gd-3-jd-10": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "方法不会"
+  },
+  "gd-3-jd-11": {
+   "status": "done",
+   "right_date": "2026-08-24",
+   "right_count": 1
+  },
+  "gd-5-jd-7": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "计算失误"
+  },
+  "ld-1.1-l13": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "方法不会"
+  },
+  "ld-1.2-l2(1)": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "方法不会"
+  },
+  "ld-1.3-l1": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "ld-1.4-l6": {
+   "status": "done",
+   "right_date": "2026-08-22",
+   "right_count": 1
+  },
+  "ld-1.5-l6": {
+   "status": "todo",
+   "wrong_date": "2026-08-22",
+   "due": "2026-08-29",
+   "reason": "方法不会"
+  },
+  "ld-1.1-l16": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30",
+   "reason": "计算失误"
+  },
+  "ld-1.2-l3": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30",
+   "reason": "概念不清"
+  },
+  "ld-1.3-l7": {
+   "status": "todo",
+   "wrong_date": "2026-08-23",
+   "due": "2026-08-30",
+   "reason": "方法不会"
+  },
+  "ld-1.4-l2": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "ld-1.5-l3": {
+   "status": "done",
+   "right_date": "2026-08-23",
+   "right_count": 1
+  },
+  "ld-1.1-l10": {
+   "status": "done",
+   "right_date": "2026-08-24",
+   "right_count": 1
+  },
+  "ld-1.2-l2(2)": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "方法不会"
+  },
+  "ld-1.3-l2": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "计算失误"
+  },
+  "ld-1.4-l8": {
+   "status": "todo",
+   "wrong_date": "2026-08-24",
+   "due": "2026-08-31",
+   "reason": "方法不会"
+  },
+  "ld-1.5-l5": {
+   "status": "done",
+   "right_date": "2026-08-24",
+   "right_count": 1
+  },
+  "ld-1.1-l18": {
+   "status": "done",
+   "right_date": "2026-08-25",
+   "right_count": 1
+  },
+  "ld-1.3-l3": {
+   "status": "done",
+   "right_date": "2026-08-25",
+   "right_count": 1
+  },
+  "ld-1.4-l5": {
+   "status": "done",
+   "right_date": "2026-08-25",
+   "right_count": 1
+  },
+  "ld-1.5-l2": {
+   "status": "todo",
+   "wrong_date": "2026-08-25",
+   "due": "2026-09-01",
+   "reason": "方法不会"
+  },
+  "ld-1.6-l5": {
+   "status": "todo",
+   "wrong_date": "2026-08-25",
+   "due": "2026-09-01",
+   "reason": "概念不清"
+  }
+ },
+ "today_paper": {
+  "date": "2026-08-28",
+  "ids": [
+   "gd-5-tk-9",
+   "gd-4-tk-11",
+   "gd-5-tk-11",
+   "gd-4-jd-11",
+   "gd-6-jd-4",
+   "ld-3.5-l5",
+   "ld-1.9-l2",
+   "ld-3.3-l9",
+   "ld-2.6-l4",
+   "ld-4.1-l3"
+  ]
+ },
+ "weekly_summary_monday": "2026-08-24",
+ "notes": {
+  "ld-1.4-l8": "单位列向量不是111，而是100\n",
+  "gd-2-jd-2(I)": "幂指函数要求指数为常数",
+  "gd-5-jd-7": "不要硬算，先观察",
+  "gd-4-tk-8": "链式法则不清楚",
+  "gd-6-tk-8": "非齐相减得齐解，通解＝齐次通解＋一个非齐次特解",
+  "gd-4-jd-6": "分不清目标函数和约束条件，限制动点的是约束条件"
+ }
+}

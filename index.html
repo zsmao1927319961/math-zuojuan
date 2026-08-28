@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>考研数学 · 今日拼卷</title>
+<meta name="theme-color" content="#ff7d1a">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div>
+      <h1 id="page-title">今日拼卷</h1>
+      <div id="today-date" class="top-sub"></div>
+    </div>
+    <div id="top-actions"></div>
+  </header>
+
+  <!-- ============ 主界面：今日拼卷（一日一页） ============ -->
+  <main id="tab-zuojuan" class="tab active">
+    <div id="quick-bar">
+      <button id="btn-auto" class="primary">一键出卷</button>
+      <button id="btn-auto-ans" class="ghost">带答案出卷</button>
+      <button id="btn-print" class="ghost">打印/存PDF</button>
+    </div>
+    <div id="today-panel">
+      <div class="today-head">今日拼卷 <span id="today-count"></span></div>
+      <div id="today-list"></div>
+      <div id="today-empty" class="today-empty" hidden>今天还没出卷，点「一键出卷」生成。</div>
+    </div>
+    <div class="tip-card slim">
+      <p>· 每题做完点「做对 / 做错」。做对一次进入待巩固，15 天后自动再排；做错进入错题本，7 天后自动重排。</p>
+      <p>· 试卷 PDF 会直接生成到桌面并自动打开。</p>
+      <p>· 题目、错题本、统计都在右下「更多」里。</p>
+    </div>
+  </main>
+
+  <!-- ============ 更多：题库 / 错题本 / 我的（低频收纳） ============ -->
+  <main id="tab-more" class="tab">
+    <div id="more-nav">
+      <button class="chip active" data-more="bank">题库</button>
+      <button class="chip" data-more="cuoti">错题本</button>
+      <button class="chip" data-more="mine">我的</button>
+    </div>
+
+    <section id="more-bank" class="more-pane active">
+      <div id="filters">
+        <select id="f-source"><option value="">全部来源</option></select>
+        <select id="f-chapter"><option value="">全部章节</option></select>
+        <select id="f-type"><option value="">全部题型</option></select>
+        <select id="f-kp"><option value="">全部知识点</option></select>
+        <select id="f-level"><option value="">全部层级</option></select>
+      </div>
+      <div id="list"></div>
+    </section>
+
+    <section id="more-cuoti" class="more-pane">
+      <div id="cuoti-filters">
+        <div class="chip-row" id="cuoti-mode">
+          <button class="chip active" data-mode="chapter">按章节</button>
+          <button class="chip" data-mode="kp">按知识点</button>
+        </div>
+        <div class="chip-row" id="cuoti-reason">
+          <button class="chip active" data-reason="">全部错因</button>
+          <button class="chip" data-reason="概念不清">概念不清</button>
+          <button class="chip" data-reason="计算失误">计算失误</button>
+          <button class="chip" data-reason="方法不会">方法不会</button>
+          <button class="chip" data-reason="审题踩坑">审题踩坑</button>
+        </div>
+        <div class="chip-row" id="cuoti-source">
+          <button class="chip active" data-src="">全部</button>
+          <button class="chip" data-src="gaoshu880">高数</button>
+          <button class="chip" data-src="xian_dai">线代</button>
+        </div>
+      </div>
+      <div id="cuoti-count"></div>
+      <div id="cuoti-list"></div>
+      <div id="cuoti-empty" class="empty" hidden>
+        <div class="empty-icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg></div>
+        <div class="empty-title">还没有错题</div>
+        <div class="empty-tip">在「今日拼卷」里点每题的「做错」即可自动收录</div>
+      </div>
+    </section>
+
+    <section id="more-mine" class="more-pane">
+      <div id="stats" class="stat-card"></div>
+      <div id="weekly"></div>
+      <div class="tip-card">
+        <b>使用说明</b>
+        <p>· 今日拼卷即日常主界面，出卷后做对/做错即可，错因可选。</p>
+        <p>· 做错进入错题本，7 天后自动排回拼卷；做对先到「待巩固」，15 天后再次做对才彻底掌握。</p>
+        <p>· 本页可浏览题库、看错题本与统计。</p>
+      </div>
+    </section>
+  </main>
+
+  <nav id="tabbar">
+    <button class="tab-btn active" data-tab="zuojuan">
+      <span class="t-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4"/><path d="M10 12h6M10 16h6M10 8h2"/></svg></span>
+      <span>今日</span>
+    </button>
+    <button class="tab-btn" data-tab="more">
+      <span class="t-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></span>
+      <span>更多</span><span id="cuoti-badge" class="badge" hidden></span>
+    </button>
+  </nav>
+</div>
+
+<div id="modal" hidden></div>
+<div id="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
