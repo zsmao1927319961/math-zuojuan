@@ -198,10 +198,25 @@ function ensureToday() {
   return ids;
 }
 
+function rerollToday() {
+  // 手动换一套：强制重新抽 10 道，并替换今日卷（保留做题历史）
+  const today = todayISO();
+  const qs = pickAuto();
+  const ids = qs.map(q => q.id);
+  STATE.today_paper = { date: today, ids };
+  STATE.paper_history = STATE.paper_history || [];
+  STATE.paper_history.push({ date: today, ids, reroll: true });
+  STATE.paper_history = STATE.paper_history.slice(-60);
+  saveState();
+  return ids;
+}
+
 /* ---------- 今日卷 ---------- */
 function withLive(q) {
   const s = qstate()[q.id] || {};
-  const st = s.status || q.status || 'todo';
+  // 状态只来自做题记录(progress)；无记录才算"未做"(todo)。
+  // 不再用题库自带 status 字段,避免"未做"无法变更/显示被题库 todo 覆盖。
+  const st = s.status || 'todo';
   return { ...q, live: {
     status: st, wrong_date: s.wrong_date, due: s.due, review_due: s.review_due,
     right_count: s.right_count, reason: s.reason, note: notes()[q.id] || '',
@@ -214,6 +229,7 @@ async function refreshToday() {
   const qmap = new Map(QUESTIONS.map(q => [q.id, q]));
   TODAY = ids.map(id => qmap.get(id)).filter(Boolean).map(withLive);
   renderToday();
+  renderTodayActions();
 }
 
 function renderToday() {
@@ -221,6 +237,20 @@ function renderToday() {
   $('#today-empty').hidden = TODAY.length > 0;
   const list = $('#today-list'); list.innerHTML = '';
   TODAY.forEach(q => list.appendChild(todayRow(q)));
+}
+
+function renderTodayActions() {
+  const btn = $('#btn-reroll');
+  if (btn) {
+    btn.onclick = () => {
+      if (!confirm('确定换一套新的 10 道题吗？当前题的做对/做错记录会保留。')) return;
+      const ids = rerollToday();
+      const qmap = new Map(QUESTIONS.map(q => [q.id, q]));
+      TODAY = ids.map(id => qmap.get(id)).filter(Boolean).map(withLive);
+      renderToday();
+      toast('已换一套新题');
+    };
+  }
 }
 
 function todayRow(q) {
@@ -264,12 +294,24 @@ function markResult(id, val, reason) {
   const prev = st[id] || {};
   const today = todayISO();
   if (val === 'right') {
-    if (prev.status !== 'done') {
+    // 已在"已掌握"则不动
+    if (prev.status === 'done') return;
+    // 防误触/连点：同一天内已做过"做对"(review)的题，再点做对不升级为 done(已掌握)
+    // 二刷确认(done)必须发生在 review_due 到期之后(至少隔天)，避免"连点两次就掌握"
+    if (prev.status === 'review') {
+      if (prev.right_date === today) {
+        // 当天重复点"做对"：保持 review，不做任何状态变化
+        toast('今天已标记做对，进入待巩固；二刷确认将在到期后');
+        return;
+      }
       const cnt = (prev.right_count || 0) + 1;
-      if (prev.status === 'review') st[id] = { status: 'done', right_date: today, right_count: cnt };
-      else st[id] = { status: 'review', right_date: today, review_due: addDays(today, 15), right_count: cnt };
+      st[id] = { status: 'done', right_date: today, right_count: cnt };
+    } else {
+      const cnt = (prev.right_count || 0) + 1;
+      st[id] = { status: 'review', right_date: today, review_due: addDays(today, 15), right_count: cnt };
     }
   } else {
+    // 做错：始终覆盖为待重做（todo），无论之前是 review 还是别的
     const s = { status: 'todo', wrong_date: today, due: addDays(today, 7) };
     if (reason) s.reason = reason;
     st[id] = s;
@@ -278,15 +320,20 @@ function markResult(id, val, reason) {
   STATE.papers.push({ id: 'web-' + Date.now(), date: today, results: { [id]: val }, reasons: reason ? { [id]: reason } : {} });
   saveState();
   refreshCuoti(); refreshStats(); refreshWeekly(); refreshToday();
-  toast(val === 'right' ? (st[id].status === 'done' ? '已彻底掌握' : '已做对，15天后二刷确认') : '已标记做错，进入错题本');
+  if (val === 'right') {
+    toast(st[id].status === 'done' ? '二刷确认，已彻底掌握' : '已做对，进入待巩固（15天后二刷）');
+  } else {
+    toast('已标记做错，进入错题本');
+  }
 }
 
 async function autoGenerate(with_answer) {
-  const ids = ensureToday();
+  // 「一键拼卷」：生成一套新的今日卷（换新题），不生成 PDF
+  const ids = rerollToday();
   const qmap = new Map(QUESTIONS.map(q => [q.id, q]));
   TODAY = ids.map(id => qmap.get(id)).filter(Boolean).map(withLive);
   renderToday();
-  toast(with_answer ? '今日卷已生成（静态版：用「打印/存PDF」导出）' : '今日卷已生成');
+  toast('已拼好新卷（10题），需要PDF请点「生成PDF」');
 }
 
 /* ---------- 题库（更多页） ---------- */
@@ -565,7 +612,6 @@ function switchMorePane(name) {
 }
 function bindEvents() {
   $('#btn-auto').onclick = () => autoGenerate(false);
-  $('#btn-auto-ans').onclick = () => autoGenerate(true);
   $('#btn-print').onclick = () => window.print();
   ['#f-source','#f-chapter','#f-type','#f-kp','#f-level'].forEach(s => $(s).onchange = renderBank);
   document.querySelectorAll('#tabbar .tab-btn').forEach(b => b.onclick = () => switchTab(b.dataset.tab));
