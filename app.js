@@ -298,7 +298,7 @@ function todayRow(q) {
   if (lv.status === 'done') tag = '<span class="tag ok">已掌握</span>';
   else if (lv.status === 'review') tag = '<span class="tag review">待巩固</span>';
   else if (lv.status === 'todo' && lv.wrong_date) tag = '<span class="tag bad">已标记做错</span>';
-  const r = document.createElement('div'); r.className = 'today-row';
+  const r = document.createElement('div'); r.className = 'today-row'; r.dataset.qid = q.id;
   const sub = [q.chapter_name || '', q.kp_sub || '', q.page_hint || ''].filter(Boolean).join(' · ');
   const qimg = q.question_img ? `<img class="today-qimg" src="data/${q.question_img}" alt="题目">` : '';
   const noteTxt = (lv.note || '').trim();
@@ -327,6 +327,21 @@ function todayRow(q) {
   if (cancel) cancel.onclick = () => { r.querySelector('.today-reasons').hidden = true; };
   return r;
 }
+
+/* 更新今日列表中某题的笔记预览，避免重新打开弹窗时还是旧内容 */
+function syncNotePreview(q) {
+  const row = document.querySelector(`.today-row[data-qid="${CSS.escape(q.id)}"] .today-note-line`);
+  if (!row) return;
+  const txt = (notes()[q.id] || '').trim();
+  row.innerHTML = txt
+    ? `<span class="note-preview">${txt.replace(/</g, '&lt;').slice(0, 120)}</span>`
+    : '<span class="note-empty">暂无笔记</span>';
+}
+
+/* 离开/刷新页面前，把还在编辑框里的笔记立即保存（防止 600ms 防抖未触发） */
+window.__noteFlush = null;
+window.addEventListener('pagehide', () => { if (window.__noteFlush) window.__noteFlush(); });
+window.addEventListener('beforeunload', () => { if (window.__noteFlush) window.__noteFlush(); });
 
 function markResult(id, val, reason) {
   const st = qstate();
@@ -595,7 +610,7 @@ function showModal(q) {
       ${ans ? `<div id="modal-ans-box"><div class="today-reason-title">答案</div>${ans}</div>` : ''}
       <div id="modal-note-box">
         <div class="today-reason-title">我的笔记（可写思路/易错点，自动保存）</div>
-        <textarea id="modal-note" rows="3" placeholder="例如：这题不能硬算，先观察对称性……">${(lv.note || '').replace(/</g,'&lt;')}</textarea>
+        <textarea id="modal-note" rows="3" placeholder="例如：这题不能硬算，先观察对称性……">${(notes()[q.id] || lv.note || '').replace(/</g,'&lt;')}</textarea>
         <div class="note-save-hint" id="note-save-hint">上次保存：--</div>
       </div>
       <div id="modal-actions">
@@ -621,10 +636,13 @@ function showModal(q) {
   const saveNote = () => {
     clearTimeout(timer);
     notes()[q.id] = noteEl.value;
+    if (q.live) q.live.note = noteEl.value;
     saveState();
+    syncNotePreview(q);
     const d = new Date();
     hintEl.textContent = `上次保存：${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
   };
+  window.__noteFlush = saveNote;
   noteEl.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(saveNote, 600); });
   m.hidden = false;
   m.querySelector('#modal-close').onclick = () => { saveNote(); closeModal(); };
@@ -633,7 +651,10 @@ function showModal(q) {
   m.querySelector('[data-act="wrong"]').onclick = () => { saveNote(); closeModal(); markResult(q.id, 'wrong'); };
   m.querySelector('[data-act="close"]').onclick = () => { saveNote(); closeModal(); };
 }
-function closeModal() { $('#modal').hidden = true; }
+function closeModal() {
+  $('#modal').hidden = true;
+  window.__noteFlush = null;
+}
 
 /* ---------- 导航 / 事件 ---------- */
 function switchTab(name) {
