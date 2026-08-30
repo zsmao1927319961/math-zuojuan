@@ -399,8 +399,10 @@ function fillFilters() {
   fillGroupedSelect('#f-chapter', [
     { label: '高数', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'gaoshu880'))
         .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'gaoshu880').chapter_name })) },
-    { label: '线代', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'xian_dai'))
+    { label: '线代讲义', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'xian_dai'))
         .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai').chapter_name })) },
+    { label: '线代880', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'xian_dai880'))
+        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai880').chapter_name })) },
   ]);
   fillSelect('#f-type', types.map(t => ({ value: t, text: t })));
   const kps = [...new Set(QUESTIONS.map(q => q.kp_sub).filter(Boolean))].sort();
