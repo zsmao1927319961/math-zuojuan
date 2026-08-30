@@ -232,16 +232,19 @@ function pickAuto() {
     }
     if (chosen) gsPicks.push(chosen);
   }
-  // 线代880：只抽"标注过错误且 7 天到期"的题；没标注过、没做过的都不进每日卷。
+  // 线代合计 5 道：优先取线代880的到期错题，不足部分用线代讲义补足。
   const ld880 = QUESTIONS.filter(q => q.source === 'xian_dai880');
   const ld880Due = ld880.filter(q => due.has(q.id) && !done.has(q.id) && !recent.has(q.id) && !String(q.no || '').includes('('));
   shuffle(ld880Due);
-  const ld880Picks = ld880Due.slice(0, 5);
-  // 线代讲义：正常抽取（未做过也能进）。
-  const xd = QUESTIONS.filter(q => q.source === 'xian_dai');
-  const xdPicks = pick(xd, 5, done, due, recent);
-  // 高数 + 线代880错题 + 线代讲义
-  return gsPicks.concat(ld880Picks, xdPicks);
+  const ldPicks = ld880Due.slice(0, 5);
+  if (ldPicks.length < 5) {
+    const have = new Set(ldPicks.map(q => q.id));
+    const xd = QUESTIONS.filter(q => q.source === 'xian_dai');
+    const xdRest = xd.filter(q => !have.has(q.id));
+    const xdPicks = pick(xdRest, 5 - ldPicks.length, done, due, recent);
+    return gsPicks.concat(ldPicks.concat(xdPicks));
+  }
+  return gsPicks.concat(ldPicks);
 }
 
 function ensureToday() {
