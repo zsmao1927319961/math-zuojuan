@@ -448,12 +448,18 @@ function groupBy(items, keyFn) {
 function renderBank() {
   if (!QUESTIONS.length) return;
   const f = { source: $('#f-source').value, chapter: $('#f-chapter').value, type: $('#f-type').value, kp: $('#f-kp').value, level: $('#f-level').value };
-  const qs = QUESTIONS.filter(q => (!f.source || q.source === f.source) && (!f.chapter || String(q.chapter) === String(f.chapter)) && (!f.type || q.type === f.type) && (!f.kp || q.kp_sub === f.kp) && (!f.level || q.level === f.level));
+  const qs = QUESTIONS.filter(q => {
+    if (bankQuick === 'ld880-base') {
+      if (q.source !== 'xian_dai880' || q.level !== '基础') return false;
+    }
+    return (!f.source || q.source === f.source) && (!f.chapter || String(q.chapter) === String(f.chapter)) && (!f.type || q.type === f.type) && (!f.kp || q.kp_sub === f.kp) && (!f.level || q.level === f.level);
+  });
   const list = $('#list'); if (!list) return; list.innerHTML = '';
   const order = ['基础', '综合', '拓展'];
-  const levels = [...new Set(qs.map(q => q.level).filter(Boolean))].sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  // 线代讲义没有 level 字段，统一按"基础"显示，避免题库空白。
+  const levels = [...new Set(qs.map(q => q.level || '基础'))].sort((a, b) => order.indexOf(a) - order.indexOf(b));
   levels.forEach(lv => {
-    const lg = qs.filter(q => q.level === lv);
+    const lg = qs.filter(q => (q.level || '基础') === lv);
     const lhead = document.createElement('div'); lhead.className = 'group-head level-head';
     lhead.innerHTML = `<span>${lv}题</span><span class="tag">${lg.length}</span>`;
     list.appendChild(lhead);
@@ -689,10 +695,17 @@ function switchMorePane(name) {
   if (name === 'bank') renderBank();
   if (name === 'cuoti') renderCuoti();
 }
+let bankQuick = '';
+function setBankQuick(q) {
+  bankQuick = q;
+  document.querySelectorAll('#bank-quick .chip').forEach(c => c.classList.toggle('active', c.dataset.quick === q));
+  renderBank();
+}
 function bindEvents() {
   $('#btn-auto').onclick = () => autoGenerate(false);
   $('#btn-print').onclick = () => window.print();
   ['#f-source','#f-chapter','#f-type','#f-kp','#f-level'].forEach(s => $(s).onchange = renderBank);
+  document.querySelectorAll('#bank-quick .chip').forEach(c => c.onclick = () => setBankQuick(c.dataset.quick || ''));
   document.querySelectorAll('#tabbar .tab-btn').forEach(b => b.onclick = () => switchTab(b.dataset.tab));
   document.querySelectorAll('#more-nav .chip').forEach(c => c.onclick = () => switchMorePane(c.dataset.more));
   document.querySelectorAll('#cuoti-mode .chip').forEach(c => c.onclick = () => { cuotiMode = c.dataset.mode; document.querySelectorAll('#cuoti-mode .chip').forEach(x => x.classList.toggle('active', x === c)); renderCuoti(); });
