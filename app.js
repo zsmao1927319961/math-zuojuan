@@ -214,9 +214,30 @@ function pickAuto() {
   const done = new Set(Object.keys(st).filter(k => st[k].status === 'done'));
   const recent = recentIds(today);
   const due = new Set(dueIds(today));
+  // 高数：六章各抽一道。优先抽"标错且已到期"的题，其次抽该章未做的新题。
+  const gsChapters = ['第一章', '第二章', '第三章', '第四章', '第五章', '第六章'];
   const gaoshu = QUESTIONS.filter(q => q.source === 'gaoshu880' && (q.level || '基础') === '基础');
+  const gsPicks = [];
+  for (const ch of gsChapters) {
+    const pool = gaoshu.filter(q => q.chapter === ch && !done.has(q.id) && !recent.has(q.id) && !String(q.no || '').includes('('));
+    if (!pool.length) continue;
+    const duePool = pool.filter(q => due.has(q.id));
+    let chosen;
+    if (duePool.length) {
+      shuffle(duePool);
+      chosen = duePool[0];
+    } else {
+      shuffle(pool);
+      chosen = pool[0];
+    }
+    if (chosen) gsPicks.push(chosen);
+  }
+  // 线代：只抽"标注过的错误题"且已到 7 天的题；没做过的题不进入每日卷。
   const xd = QUESTIONS.filter(q => q.source === 'xian_dai');
-  return pick(gaoshu, 5, done, due, recent).concat(pick(xd, 5, done, due, recent));
+  const xdDue = xd.filter(q => due.has(q.id) && !done.has(q.id) && !recent.has(q.id) && !String(q.no || '').includes('('));
+  shuffle(xdDue);
+  const xdPicks = xdDue.slice(0, 5);
+  return gsPicks.concat(xdPicks);
 }
 
 function ensureToday() {
@@ -348,22 +369,11 @@ function markResult(id, val, reason) {
   const prev = st[id] || {};
   const today = todayISO();
   if (val === 'right') {
-    // 已在"已掌握"则不动
+    // 已掌握（done）不再变
     if (prev.status === 'done') return;
-    // 防误触/连点：同一天内已做过"做对"(review)的题，再点做对不升级为 done(已掌握)
-    // 二刷确认(done)必须发生在 review_due 到期之后(至少隔天)，避免"连点两次就掌握"
-    if (prev.status === 'review') {
-      if (prev.right_date === today) {
-        // 当天重复点"做对"：保持 review，不做任何状态变化
-        toast('今天已标记做对，进入待巩固；二刷确认将在到期后');
-        return;
-      }
-      const cnt = (prev.right_count || 0) + 1;
-      st[id] = { status: 'done', right_date: today, right_count: cnt };
-    } else {
-      const cnt = (prev.right_count || 0) + 1;
-      st[id] = { status: 'review', right_date: today, review_due: addDays(today, 15), right_count: cnt };
-    }
+    // 第一次做对（或原待巩固题做对）直接显示已掌握
+    const cnt = (prev.right_count || 0) + 1;
+    st[id] = { status: 'done', right_date: today, right_count: cnt };
   } else {
     // 做错：始终覆盖为待重做（todo），无论之前是 review 还是别的
     const s = { status: 'todo', wrong_date: today, due: addDays(today, 7) };
@@ -375,7 +385,7 @@ function markResult(id, val, reason) {
   saveState();
   refreshCuoti(); refreshStats(); refreshWeekly(); refreshToday();
   if (val === 'right') {
-    toast(st[id].status === 'done' ? '二刷确认，已彻底掌握' : '已做对，进入待巩固（15天后二刷）');
+    toast('答对了，已掌握');
   } else {
     toast('已标记做错，进入错题本');
   }
