@@ -3795,14 +3795,14 @@
   "no": "1",
   "label": "【880线代·第九章·填空1】",
   "question_img": "images/ld880_九_tk_1.jpg",
-  "answer_img": null,
+  "answer_img": "images/a_ld880_九_tk_1.jpg",
   "note": "",
   "status": "todo",
   "kp": "其他",
   "kp_sub": "相关无关性与表出问题",
   "chapter_name": "第九章 向量",
   "level": "综合",
-  "answer_text": "答案：$k=-5$"
+  "answer_text": "答案：$k=6$"
  },
  {
   "subject": "gaoshu",
@@ -17431,7 +17431,8 @@
   "kp": "向量",
   "kp_sub": "",
   "chapter_name": "第九章 向量",
-  "level": "基础"
+  "level": "基础",
+  "answer_text": null
  },
  {
   "subject": "xiandai",
