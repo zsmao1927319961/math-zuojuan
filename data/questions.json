@@ -14,11 +14,7 @@
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
   "level": "基础",
-  "answer_img": "images/a_gd-1-xz-4.jpg",
-  "answer_imgs": [
-   "images/a_gd-1-xz-4.jpg",
-   "images/a_gd-1-xz-4__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-1-xz-4.jpg"
  },
  {
   "subject": "gaoshu",
@@ -35,10 +31,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（间断点）",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-1-xz-12.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -55,11 +48,7 @@
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
   "level": "基础",
-  "answer_img": "images/a_gd-1-tk-5.jpg",
-  "answer_imgs": [
-   "images/a_gd-1-tk-5.jpg",
-   "images/a_gd-1-tk-5__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-1-tk-5.jpg"
  },
  {
   "subject": "gaoshu",
@@ -76,10 +65,7 @@
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
   "level": "基础",
-  "answer_img": "images/a_gd-1-jd-2(I).jpg",
-  "answer_imgs": [
-   "images/a_gd-1-jd-2(I).jpg"
-  ]
+  "answer_img": "images/a_gd-1-jd-2(I).jpg"
  },
  {
   "subject": "gaoshu",
@@ -89,17 +75,14 @@
   "type": "解答",
   "no": "2(IV)",
   "label": "【880基础·第一章·解答2(IV)】",
-  "question_img": "images/gs/gd-1-jd-2(IV).jpg",
+  "question_img": "images/gs/gd-1-jd-2(IV).png",
   "answer_img": "images/a_gd-1-jd-2(IV).jpg",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-1-jd-2(IV).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -109,18 +92,14 @@
   "type": "解答",
   "no": "3(II)",
   "label": "【880基础·第一章·解答3(II)】",
-  "question_img": "images/gs/gd-1-jd-3(II).jpg",
+  "question_img": "images/gs/gd-1-jd-3(II).png",
   "answer_img": "images/a_gd-1-jd-3(II).jpg",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-1-jd-3(II).jpg",
-   "images/a_gd-1-jd-3(II)__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -137,10 +116,7 @@
   "kp_sub": "导数的定义",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-xz-2.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-2.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-2.jpg"
  },
  {
   "subject": "gaoshu",
@@ -158,10 +134,7 @@
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
   "answer_text": "B",
-  "answer_img": "images/a_gd-2-xz-3.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-3.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-3.jpg"
  },
  {
   "subject": "gaoshu",
@@ -179,11 +152,7 @@
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
   "answer_text": "A",
-  "answer_img": "images/a_gd-2-xz-4.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-4.jpg",
-   "images/a_gd-2-xz-4__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-4.jpg"
  },
  {
   "subject": "gaoshu",
@@ -201,10 +170,7 @@
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
   "answer_text": "B",
-  "answer_img": "images/a_gd-2-xz-5.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-5.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-5.jpg"
  },
  {
   "subject": "gaoshu",
@@ -221,10 +187,7 @@
   "kp_sub": "导数的应用（凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-xz-9.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-9.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-9.jpg"
  },
  {
   "subject": "gaoshu",
@@ -241,11 +204,7 @@
   "kp_sub": "导数的应用（极值）",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-xz-10.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-10.jpg",
-   "images/a_gd-2-xz-10__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-10.jpg"
  },
  {
   "subject": "gaoshu",
@@ -263,10 +222,7 @@
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
   "answer_text": "C",
-  "answer_img": "images/a_gd-2-xz-13.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-13.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-13.jpg"
  },
  {
   "subject": "gaoshu",
@@ -284,10 +240,7 @@
   "kp_sub": "导数的定义",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_text": "1",
-  "answer_imgs": [
-   "images/a_gd-2-tk-2.jpg"
-  ]
+  "answer_text": "1"
  },
  {
   "subject": "gaoshu",
@@ -304,10 +257,7 @@
   "kp_sub": "导数的定义",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-tk-3.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-tk-3.jpg"
-  ]
+  "answer_img": "images/a_gd-2-tk-3.jpg"
  },
  {
   "subject": "gaoshu",
@@ -324,11 +274,7 @@
   "kp_sub": "导数的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-tk-4.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-tk-4.jpg",
-   "images/a_gd-2-tk-4__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-2-tk-4.jpg"
  },
  {
   "subject": "gaoshu",
@@ -346,10 +292,7 @@
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
   "answer_text": "f(x)=-1+2x+o(x)",
-  "answer_img": "images/a_gd-2-tk-5.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-tk-5.jpg"
-  ]
+  "answer_img": "images/a_gd-2-tk-5.jpg"
  },
  {
   "subject": "gaoshu",
@@ -366,11 +309,7 @@
   "kp_sub": "导数的计算（泰勒展开）",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-tk-9.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-tk-9.jpg",
-   "images/a_gd-2-tk-9__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-2-tk-9.jpg"
  },
  {
   "subject": "gaoshu",
@@ -387,10 +326,7 @@
   "kp_sub": "导数的应用（凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-tk-10.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-tk-10.jpg"
-  ]
+  "answer_img": "images/a_gd-2-tk-10.jpg"
  },
  {
   "subject": "gaoshu",
@@ -407,10 +343,7 @@
   "kp_sub": "导数的应用（切线）",
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-2-tk-12.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-tk-12.jpg"
-  ]
+  "answer_img": "images/a_gd-2-tk-12.jpg"
  },
  {
   "subject": "gaoshu",
@@ -427,10 +360,7 @@
   "kp_sub": "定积分的定义与性质",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-xz-2.jpg",
-  "answer_imgs": [
-   "images/a_gd-3-xz-2.jpg"
-  ]
+  "answer_img": "images/a_gd-3-xz-2.jpg"
  },
  {
   "subject": "gaoshu",
@@ -447,10 +377,7 @@
   "kp_sub": "定积分的定义与性质",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-xz-3.jpg",
-  "answer_imgs": [
-   "images/a_gd-3-xz-3.jpg"
-  ]
+  "answer_img": "images/a_gd-3-xz-3.jpg"
  },
  {
   "subject": "gaoshu",
@@ -468,11 +395,7 @@
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
   "answer_text": "C",
-  "answer_img": "images/a_gd-3-xz-5.jpg",
-  "answer_imgs": [
-   "images/a_gd-3-xz-5.jpg",
-   "images/a_gd-3-xz-5__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-3-xz-5.jpg"
  },
  {
   "subject": "gaoshu",
@@ -489,10 +412,7 @@
   "kp_sub": "定积分的定义与性质",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-xz-7.jpg",
-  "answer_imgs": [
-   "images/a_gd-3-xz-7.jpg"
-  ]
+  "answer_img": "images/a_gd-3-xz-7.jpg"
  },
  {
   "subject": "gaoshu",
@@ -509,11 +429,7 @@
   "kp_sub": "定积分的比较大小",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-xz-9.jpg",
-  "answer_imgs": [
-   "images/a_gd-3-xz-9.jpg",
-   "images/a_gd-3-xz-9__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-3-xz-9.jpg"
  },
  {
   "subject": "gaoshu",
@@ -530,10 +446,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "定积分的比较大小",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-xz-10.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -550,10 +463,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "定积分的比较大小",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-xz-11.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -570,10 +480,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "变上限积分函数",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-xz-12.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -590,10 +497,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "变上限积分函数",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-xz-14.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -610,11 +514,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "含参积分",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-xz-15.jpg",
-   "images/a_gd-3-xz-15__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -631,10 +531,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "反常积分敛散性判断",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-xz-16.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -651,11 +548,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "反常积分敛散性判断",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-xz-17.jpg",
-   "images/a_gd-3-xz-17__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -672,11 +565,7 @@
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-jd-1(I).jpg",
-  "answer_imgs": [
-   "images/a_gd-3-jd-1(I).jpg",
-   "images/a_gd-3-jd-1(I)__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-3-jd-1(I).jpg"
  },
  {
   "subject": "gaoshu",
@@ -686,17 +575,14 @@
   "type": "解答",
   "no": "1(III)",
   "label": "【880基础·第三章·解答1(III)】",
-  "question_img": "images/gs/gd-3-jd-1(III).jpg",
+  "question_img": "images/gs/gd-3-jd-1(III).png",
   "answer_img": "images/a_gd-3-jd-1(III).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-1(III).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -706,18 +592,14 @@
   "type": "解答",
   "no": "1(V)",
   "label": "【880基础·第三章·解答1(V)】",
-  "question_img": "images/gs/gd-3-jd-1(V).jpg",
+  "question_img": "images/gs/gd-3-jd-1(V).png",
   "answer_img": "images/a_gd-3-jd-1(V).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-1(V).jpg",
-   "images/a_gd-3-jd-1(V)__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -734,10 +616,7 @@
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-jd-2(III).jpg",
-  "answer_imgs": [
-   "images/a_gd-3-jd-2(III).jpg"
-  ]
+  "answer_img": "images/a_gd-3-jd-2(III).jpg"
  },
  {
   "subject": "gaoshu",
@@ -747,17 +626,14 @@
   "type": "解答",
   "no": "3(I)",
   "label": "【880基础·第三章·解答3(I)】",
-  "question_img": "images/gs/gd-3-jd-3(I).jpg",
+  "question_img": "images/gs/gd-3-jd-3(I).png",
   "answer_img": "images/a_gd-3-jd-3(I).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-3(I).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -774,11 +650,7 @@
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-jd-3(IV).jpg",
-  "answer_imgs": [
-   "images/a_gd-3-jd-3(IV).jpg",
-   "images/a_gd-3-jd-3(IV)__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-3-jd-3(IV).jpg"
  },
  {
   "subject": "gaoshu",
@@ -795,10 +667,7 @@
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-jd-3(V).jpg",
-  "answer_imgs": [
-   "images/a_gd-3-jd-3(V).jpg"
-  ]
+  "answer_img": "images/a_gd-3-jd-3(V).jpg"
  },
  {
   "subject": "gaoshu",
@@ -808,17 +677,14 @@
   "type": "解答",
   "no": "3(VI)",
   "label": "【880基础·第三章·解答3(VI)】",
-  "question_img": "images/gs/gd-3-jd-3(VI).jpg",
+  "question_img": "images/gs/gd-3-jd-3(VI).png",
   "answer_img": "images/a_gd-3-jd-3(VI).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-3(VI).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -828,18 +694,14 @@
   "type": "解答",
   "no": "4(III)",
   "label": "【880基础·第三章·解答4(III)】",
-  "question_img": "images/gs/gd-3-jd-4(III).jpg",
+  "question_img": "images/gs/gd-3-jd-4(III).png",
   "answer_img": "images/a_gd-3-jd-4(III).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-4(III).jpg",
-   "images/a_gd-3-jd-4(III)__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -849,17 +711,14 @@
   "type": "解答",
   "no": "4(V)",
   "label": "【880基础·第三章·解答4(V)】",
-  "question_img": "images/gs/gd-3-jd-4(V).jpg",
+  "question_img": "images/gs/gd-3-jd-4(V).png",
   "answer_img": "images/a_gd-3-jd-4(V).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-4(V).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -869,18 +728,14 @@
   "type": "解答",
   "no": "4(VI)",
   "label": "【880基础·第三章·解答4(VI)】",
-  "question_img": "images/gs/gd-3-jd-4(VI).jpg",
+  "question_img": "images/gs/gd-3-jd-4(VI).png",
   "answer_img": "images/a_gd-3-jd-4(VI).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-4(VI).jpg",
-   "images/a_gd-3-jd-4(VI)__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -890,17 +745,14 @@
   "type": "解答",
   "no": "5(IV)",
   "label": "【880基础·第三章·解答5(IV)】",
-  "question_img": "images/gs/gd-3-jd-5(IV).jpg",
+  "question_img": "images/gs/gd-3-jd-5(IV).png",
   "answer_img": "images/a_gd-3-jd-5(IV).jpg",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "定积分计算（对称性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-3-jd-5(IV).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -917,10 +769,7 @@
   "kp_sub": "定积分计算（对称性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-3-jd-6(II).jpg",
-  "answer_imgs": [
-   "images/a_gd-3-jd-6(II).jpg"
-  ]
+  "answer_img": "images/a_gd-3-jd-6(II).jpg"
  },
  {
   "subject": "gaoshu",
@@ -937,10 +786,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-xz-2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -957,10 +803,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-xz-3.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -977,11 +820,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-xz-4.jpg",
-   "images/a_gd-4-xz-4__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -998,10 +837,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-xz-5.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1018,10 +854,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-xz-6.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1040,10 +873,7 @@
   "level": "基础",
   "answer_text": "C",
   "solution_page": 133,
-  "answer_img": "images/a_gd-4-xz-7.jpg",
-  "answer_imgs": [
-   "images/a_gd-4-xz-7.jpg"
-  ]
+  "answer_img": "images/a_gd-4-xz-7.jpg"
  },
  {
   "subject": "gaoshu",
@@ -1060,10 +890,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-tk-2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1080,10 +907,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-tk-4.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1100,10 +924,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-jd-1.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1120,11 +941,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-jd-2.jpg",
-   "images/a_gd-4-jd-2__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1141,10 +958,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-jd-4.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1161,11 +975,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值（条件极值）",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-jd-5.jpg",
-   "images/a_gd-4-jd-5__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1199,11 +1009,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值（条件极值）",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-jd-9.jpg",
-   "images/a_gd-4-jd-9__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1220,10 +1026,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-jd-11.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1240,10 +1043,7 @@
   "kp": "线性方程组",
   "kp_sub": "解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-xz-2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1260,10 +1060,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-xz-3.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1280,10 +1077,7 @@
   "kp": "线性方程组",
   "kp_sub": "解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-xz-4.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1300,10 +1094,7 @@
   "kp": "线性方程组",
   "kp_sub": "解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-xz-7.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1322,10 +1113,7 @@
   "level": "基础",
   "answer_text": "y = \\frac{1}{x}(\\sin x - x \\cos x + C)",
   "solution_page": 192,
-  "answer_img": "images/a_gd-6-tk-4.jpg",
-  "answer_imgs": [
-   "images/a_gd-6-tk-4.jpg"
-  ]
+  "answer_img": "images/a_gd-6-tk-4.jpg"
  },
  {
   "subject": "gaoshu",
@@ -1342,10 +1130,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-tk-5.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1362,11 +1147,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-tk-7.jpg",
-   "images/a_gd-6-tk-7__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1383,10 +1164,7 @@
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-6-jd-1.jpg",
-  "answer_imgs": [
-   "images/a_gd-6-jd-1.jpg"
-  ]
+  "answer_img": "images/a_gd-6-jd-1.jpg"
  },
  {
   "subject": "gaoshu",
@@ -1403,10 +1181,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-jd-3.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1423,10 +1198,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-jd-4.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1443,10 +1215,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-jd-5.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1463,11 +1232,7 @@
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-6-jd-6.jpg",
-  "answer_imgs": [
-   "images/a_gd-6-jd-6.jpg",
-   "images/a_gd-6-jd-6__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-6-jd-6.jpg"
  },
  {
   "subject": "gaoshu",
@@ -1484,10 +1249,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-jd-7.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1497,17 +1259,14 @@
   "type": "解答",
   "no": "8(II)",
   "label": "【880基础·第六章·解答8(II)】",
-  "question_img": "images/gs/gd-6-jd-8(II).jpg",
+  "question_img": "images/gs/gd-6-jd-8(II).png",
   "answer_img": "images/a_gd-6-jd-8(II).jpg",
   "note": "",
   "status": "todo",
   "kp": "微分方程",
   "kp_sub": "综合应用",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-jd-8(II).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1524,10 +1283,7 @@
   "kp": "微分方程",
   "kp_sub": "综合应用",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-jd-9.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -1537,17 +1293,14 @@
   "type": "解答",
   "no": "10(II)",
   "label": "【880基础·第六章·解答10(II)】",
-  "question_img": "images/gs/gd-6-jd-10(II).jpg",
+  "question_img": "images/gs/gd-6-jd-10(II).png",
   "answer_img": "images/a_gd-6-jd-10(II).jpg",
   "note": "",
   "status": "todo",
   "kp": "微分方程",
   "kp_sub": "综合应用",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-jd-10(II).jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "xiandai",
@@ -1728,7 +1481,7 @@
   "no": "7",
   "label": "【880线代·第七章·填空7】",
   "question_img": "images/ld880_七_tk_7.jpg",
-  "answer_img": "images/a_ld880_七_tk_7.jpg",
+  "answer_img": "images/a_ld880_七_tk_7.png",
   "note": "",
   "status": "todo",
   "kp": "行列式",
@@ -1915,7 +1668,7 @@
   "no": "7",
   "label": "【880线代·第八章·选择7】",
   "question_img": "images/ld880_八_xz_7.jpg",
-  "answer_img": "images/a_ld880_八_xz_7.jpg",
+  "answer_img": "images/a_ld880_八_xz_7.png",
   "note": "",
   "status": "todo",
   "kp": "矩阵",
@@ -1968,7 +1721,7 @@
   "no": "3",
   "label": "【880线代·第八章·填空3】",
   "question_img": "images/ld880_八_tk_3.jpg",
-  "answer_img": "images/a_ld880_八_tk_3.jpg",
+  "answer_img": "images/a_ld880_八_tk_3.png",
   "note": "",
   "status": "todo",
   "kp": "矩阵",
@@ -2002,7 +1755,7 @@
   "no": "5",
   "label": "【880线代·第八章·填空5】",
   "question_img": "images/ld880_八_tk_5.jpg",
-  "answer_img": "images/a_ld880_八_tk_5.jpg",
+  "answer_img": "images/a_ld880_八_tk_5.png",
   "note": "",
   "status": "todo",
   "kp": "矩阵",
@@ -2019,7 +1772,7 @@
   "no": "6",
   "label": "【880线代·第八章·填空6】",
   "question_img": "images/ld880_八_tk_6.jpg",
-  "answer_img": "images/a_ld880_八_tk_6.jpg",
+  "answer_img": "images/a_ld880_八_tk_6.png",
   "note": "",
   "status": "todo",
   "kp": "矩阵",
@@ -2257,7 +2010,7 @@
   "no": "8",
   "label": "【880线代·第九章·选择8】",
   "question_img": "images/ld880_九_xz_8.jpg",
-  "answer_img": "images/a_ld880_九_xz_8.jpg",
+  "answer_img": "images/a_ld880_九_xz_8.png",
   "note": "",
   "status": "todo",
   "kp": "矩阵",
@@ -2614,7 +2367,7 @@
   "no": "11",
   "label": "【880线代·第十章·选择11】",
   "question_img": "images/ld880_十_xz_11.jpg",
-  "answer_img": "images/a_ld880_十_xz_11.jpg",
+  "answer_img": "images/a_ld880_十_xz_11.png",
   "note": "",
   "status": "todo",
   "kp": "线性方程组",
@@ -2682,7 +2435,7 @@
   "no": "4",
   "label": "【880线代·第十章·填空4】",
   "question_img": "images/ld880_十_tk_4.jpg",
-  "answer_img": "images/a_ld880_十_tk_4.jpg",
+  "answer_img": "images/a_ld880_十_tk_4.png",
   "note": "",
   "status": "todo",
   "kp": "特征值与特征向量",
@@ -3005,7 +2758,7 @@
   "no": "8",
   "label": "【880线代·第十一章·选择8】",
   "question_img": "images/ld880_十一_xz_8.jpg",
-  "answer_img": "images/a_ld880_十一_xz_8.jpg",
+  "answer_img": "images/a_ld880_十一_xz_8.png",
   "note": "",
   "status": "todo",
   "kp": "特征值与特征向量",
@@ -3022,7 +2775,7 @@
   "no": "9",
   "label": "【880线代·第十一章·选择9】",
   "question_img": "images/ld880_十一_xz_9.jpg",
-  "answer_img": "images/a_ld880_十一_xz_9.jpg",
+  "answer_img": "images/a_ld880_十一_xz_9.png",
   "note": "",
   "status": "todo",
   "kp": "特征值与特征向量",
@@ -3073,7 +2826,7 @@
   "no": "3",
   "label": "【880线代·第十一章·填空3】",
   "question_img": "images/ld880_十一_tk_3.jpg",
-  "answer_img": "images/a_ld880_十一_tk_3.jpg",
+  "answer_img": "images/a_ld880_十一_tk_3.png",
   "note": "",
   "status": "todo",
   "kp": "特征值与特征向量",
@@ -3090,7 +2843,7 @@
   "no": "4",
   "label": "【880线代·第十一章·填空4】",
   "question_img": "images/ld880_十一_tk_4.jpg",
-  "answer_img": "images/a_ld880_十一_tk_4.jpg",
+  "answer_img": "images/a_ld880_十一_tk_4.png",
   "note": "",
   "status": "todo",
   "kp": "特征值与特征向量",
@@ -3651,7 +3404,7 @@
   "no": "13",
   "label": "【880线代·第十二章·选择13】",
   "question_img": "images/ld880_十二_xz_13.jpg",
-  "answer_img": "images/a_ld880_十二_xz_13.jpg",
+  "answer_img": "images/a_ld880_十二_xz_13.png",
   "note": "",
   "status": "todo",
   "kp": "二次型",
@@ -3668,7 +3421,7 @@
   "no": "14",
   "label": "【880线代·第十二章·选择14】",
   "question_img": "images/ld880_十二_xz_14.jpg",
-  "answer_img": "images/a_ld880_十二_xz_14.jpg",
+  "answer_img": "images/a_ld880_十二_xz_14.png",
   "note": "",
   "status": "todo",
   "kp": "二次型",
@@ -3702,7 +3455,7 @@
   "no": "2",
   "label": "【880线代·第十二章·填空2】",
   "question_img": "images/ld880_十二_tk_2.jpg",
-  "answer_img": "images/a_ld880_十二_tk_2.jpg",
+  "answer_img": "images/a_ld880_十二_tk_2.png",
   "note": "",
   "status": "todo",
   "kp": "二次型",
@@ -3719,7 +3472,7 @@
   "no": "3",
   "label": "【880线代·第十二章·填空3】",
   "question_img": "images/ld880_十二_tk_3.jpg",
-  "answer_img": "images/a_ld880_十二_tk_3.jpg",
+  "answer_img": "images/a_ld880_十二_tk_3.png",
   "note": "",
   "status": "todo",
   "kp": "二次型",
@@ -3736,7 +3489,7 @@
   "no": "4",
   "label": "【880线代·第十二章·填空4】",
   "question_img": "images/ld880_十二_tk_4.jpg",
-  "answer_img": "images/a_ld880_十二_tk_4.jpg",
+  "answer_img": "images/a_ld880_十二_tk_4.png",
   "note": "",
   "status": "todo",
   "kp": "二次型",
@@ -4066,10 +3819,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4086,10 +3836,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4106,10 +3853,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4126,11 +3870,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-一-xz-4.jpg",
-   "images/a_gs880zh-一-xz-4__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4147,10 +3887,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4167,10 +3904,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_6.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4187,10 +3921,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4207,10 +3938,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_8.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4227,11 +3955,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-一-xz-9.jpg",
-   "images/a_gs880zh-一-xz-9__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4248,10 +3972,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_10.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4268,10 +3989,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_11.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4288,10 +4006,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_xz_12.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4308,11 +4023,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-一-xz-13.jpg",
-   "images/a_gs880zh-一-xz-13__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4431,10 +4142,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（无穷小比阶）",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_tk_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4451,10 +4159,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_tk_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4471,10 +4176,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_tk_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4491,10 +4193,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_tk_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4511,11 +4210,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-一-tk-5.jpg",
-   "images/a_gs880zh-一-tk-5__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4645,7 +4340,7 @@
   "no": "13",
   "label": "【880综合·第一章·填空13】",
   "question_img": "images/gs880zh_一_tk_13.jpg",
-  "answer_img": "images/a_gs880zh_一_tk_13.jpg",
+  "answer_img": "images/a_gs880zh_一_tk_13.png",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
@@ -4668,10 +4363,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_jd_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4688,11 +4380,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-一-jd-2.jpg",
-   "images/a_gs880zh-一-jd-2__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4709,11 +4397,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-一-jd-3.jpg",
-   "images/a_gs880zh-一-jd-3__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4730,10 +4414,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_jd_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4750,10 +4431,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_一_jd_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4974,10 +4652,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -4994,10 +4669,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5014,10 +4686,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5034,11 +4703,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-xz-4.jpg",
-   "images/a_gs880zh-二-xz-4__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5055,10 +4720,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5075,10 +4737,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_6.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5095,10 +4754,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5115,10 +4771,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_8.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5135,10 +4788,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_9.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5155,11 +4805,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-xz-10.jpg",
-   "images/a_gs880zh-二-xz-10__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5176,10 +4822,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_11.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5196,10 +4839,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_12.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5216,10 +4856,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_13.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5236,11 +4873,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-xz-14.jpg",
-   "images/a_gs880zh-二-xz-14__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5257,10 +4890,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_15.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5277,10 +4907,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_16.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5297,10 +4924,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_17.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5317,11 +4941,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-xz-18.jpg",
-   "images/a_gs880zh-二-xz-18__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5338,10 +4958,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_19.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5358,10 +4975,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_20.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5378,10 +4992,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_21.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5398,11 +5009,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-xz-22.jpg",
-   "images/a_gs880zh-二-xz-22__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5419,10 +5026,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_xz_23.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5439,11 +5043,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-xz-24.jpg",
-   "images/a_gs880zh-二-xz-24__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5562,10 +5162,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5582,10 +5179,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5602,10 +5196,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5622,11 +5213,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-tk-4.jpg",
-   "images/a_gs880zh-二-tk-4__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5637,16 +5224,13 @@
   "no": "5",
   "label": "【880综合·第二章·填空5】",
   "question_img": "images/gs880zh_二_tk_5.jpg",
-  "answer_img": "images/a_gs880zh_二_tk_5.jpg",
+  "answer_img": "images/a_gs880zh_二_tk_5.png",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5663,10 +5247,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_6.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5683,10 +5264,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5703,10 +5281,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_8.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5723,11 +5298,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-tk-9.jpg",
-   "images/a_gs880zh-二-tk-9__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5744,10 +5315,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_10.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5764,10 +5332,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_11.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5784,10 +5349,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_tk_12.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5804,10 +5366,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5824,11 +5383,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-jd-2.jpg",
-   "images/a_gs880zh-二-jd-2__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5845,10 +5400,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5865,10 +5417,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5885,10 +5434,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5905,11 +5451,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-jd-6.jpg",
-   "images/a_gs880zh-二-jd-6__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5926,10 +5468,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5946,10 +5485,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_8.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5966,10 +5502,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_9.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -5986,11 +5519,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-jd-10.jpg",
-   "images/a_gs880zh-二-jd-10__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6007,10 +5536,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_11.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6027,10 +5553,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_12.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6047,11 +5570,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-jd-13.jpg",
-   "images/a_gs880zh-二-jd-13__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6068,10 +5587,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_14.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6088,10 +5604,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_15.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6108,10 +5621,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_16.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6128,10 +5638,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_17.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6148,11 +5655,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-jd-18.jpg",
-   "images/a_gs880zh-二-jd-18__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6169,10 +5672,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_二_jd_19.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6189,11 +5689,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-jd-20.jpg",
-   "images/a_gs880zh-二-jd-20__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6227,11 +5723,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-二-jd-22.jpg",
-   "images/a_gs880zh-二-jd-22__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6248,10 +5740,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6268,10 +5757,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6288,10 +5774,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6308,10 +5791,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6328,11 +5808,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-xz-5.jpg",
-   "images/a_gs880zh-三-xz-5__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6349,10 +5825,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_6.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6369,10 +5842,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6389,10 +5859,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_8.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6409,11 +5876,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-xz-9.jpg",
-   "images/a_gs880zh-三-xz-9__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6430,10 +5893,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_10.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6450,10 +5910,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_11.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6470,10 +5927,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "反常积分敛散性判断",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_12.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6490,11 +5944,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-xz-13.jpg",
-   "images/a_gs880zh-三-xz-13__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6511,10 +5961,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_14.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6531,11 +5978,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-xz-15.jpg",
-   "images/a_gs880zh-三-xz-15__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6552,10 +5995,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分中值定理",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_16.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6572,11 +6012,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-xz-17.jpg",
-   "images/a_gs880zh-三-xz-17__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6593,10 +6029,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_xz_18.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6658,7 +6091,7 @@
   "no": "22",
   "label": "【880综合·第三章·选择22】",
   "question_img": "images/gs880zh_三_xz_22.jpg",
-  "answer_img": "images/a_gs880zh_三_xz_22.jpg",
+  "answer_img": "images/a_gs880zh_三_xz_22.png",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
@@ -6681,10 +6114,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6701,10 +6131,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6721,11 +6148,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-tk-3.jpg",
-   "images/a_gs880zh-三-tk-3__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6736,16 +6159,13 @@
   "no": "4",
   "label": "【880综合·第三章·填空4】",
   "question_img": "images/gs880zh_三_tk_4.jpg",
-  "answer_img": "images/a_gs880zh-三-tk-4.jpg",
+  "answer_img": "images/a_gs880zh-三-tk-4.png",
   "note": "",
   "status": "todo",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-tk-4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6762,10 +6182,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6799,11 +6216,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-tk-7.jpg",
-   "images/a_gs880zh-三-tk-7__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6820,11 +6233,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-tk-8.jpg",
-   "images/a_gs880zh-三-tk-8__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6892,10 +6301,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_12.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6912,10 +6318,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_13.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6943,17 +6346,13 @@
   "no": "15",
   "label": "【880综合·第三章·填空15】",
   "question_img": "images/gs880zh_三_tk_15.jpg",
-  "answer_img": "images/a_gs880zh-三-tk-15.jpg",
+  "answer_img": "images/a_gs880zh-三-tk-15.png",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-tk-15.jpg",
-   "images/a_gs880zh-三-tk-15__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6970,10 +6369,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_16.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -6990,10 +6386,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_17.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7027,10 +6420,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_19.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7047,10 +6437,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_20.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7067,11 +6454,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-tk-21.jpg",
-   "images/a_gs880zh-三-tk-21__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7088,10 +6471,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_tk_22.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7108,11 +6488,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-1.jpg",
-   "images/a_gs880zh-三-jd-1__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7129,12 +6505,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-2.jpg",
-   "images/a_gs880zh-三-jd-2__p2.jpg",
-   "images/a_gs880zh-三-jd-2__p3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7151,11 +6522,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-3.jpg",
-   "images/a_gs880zh-三-jd-3__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7172,11 +6539,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-4.jpg",
-   "images/a_gs880zh-三-jd-4__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7193,11 +6556,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-5.jpg",
-   "images/a_gs880zh-三-jd-5__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7214,10 +6573,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_6.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7234,11 +6590,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-7.jpg",
-   "images/a_gs880zh-三-jd-7__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7255,11 +6607,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-8.jpg",
-   "images/a_gs880zh-三-jd-8__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7276,10 +6624,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_9.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7296,11 +6641,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-10.jpg",
-   "images/a_gs880zh-三-jd-10__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7317,10 +6658,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_11.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7337,10 +6675,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_12.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7357,11 +6692,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-13.jpg",
-   "images/a_gs880zh-三-jd-13__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7378,10 +6709,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_14.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7398,10 +6726,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_15.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7418,10 +6743,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_16.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7438,11 +6760,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-17.jpg",
-   "images/a_gs880zh-三-jd-17__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7459,10 +6777,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_18.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7479,11 +6794,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-19.jpg",
-   "images/a_gs880zh-三-jd-19__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7494,16 +6805,13 @@
   "no": "20",
   "label": "【880综合·第三章·解答20】",
   "question_img": "images/gs880zh_三_jd_20.jpg",
-  "answer_img": "images/a_gs880zh-三-jd-20.jpg",
+  "answer_img": "images/a_gs880zh-三-jd-20.png",
   "note": "",
   "status": "todo",
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-三-jd-20.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -7520,10 +6828,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_三_jd_21.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8118,10 +7423,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_xz_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8138,10 +7440,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_xz_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8158,10 +7457,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续性、偏导数、可微性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_xz_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8178,11 +7474,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-xz-4.jpg",
-   "images/a_gs880zh-四-xz-4__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8199,10 +7491,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_xz_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8219,10 +7508,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续性、偏导数、可微性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_xz_6.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8239,10 +7525,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_xz_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8259,11 +7542,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "连续性、偏导数、可微性",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-xz-8.jpg",
-   "images/a_gs880zh-四-xz-8__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8280,10 +7559,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_tk_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8294,16 +7570,13 @@
   "no": "2",
   "label": "【880综合·第四章·填空2】",
   "question_img": "images/gs880zh_四_tk_2.jpg",
-  "answer_img": "images/a_gs880zh-四-tk-2.jpg",
+  "answer_img": "images/a_gs880zh-四-tk-2.png",
   "note": "",
   "status": "todo",
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-tk-2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8314,16 +7587,13 @@
   "no": "3",
   "label": "【880综合·第四章·填空3】",
   "question_img": "images/gs880zh_四_tk_3.jpg",
-  "answer_img": "images/a_gs880zh-四-tk-3.jpg",
+  "answer_img": "images/a_gs880zh-四-tk-3.png",
   "note": "",
   "status": "todo",
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-tk-3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8340,10 +7610,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_tk_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8360,10 +7627,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_jd_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8380,11 +7644,7 @@
   "kp": "其他",
   "kp_sub": "隐函数求导",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-jd-2.jpg",
-   "images/a_gs880zh-四-jd-2__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8401,10 +7661,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_jd_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8421,10 +7678,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_jd_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8441,11 +7695,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-jd-5.jpg",
-   "images/a_gs880zh-四-jd-5__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8479,11 +7729,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-jd-7.jpg",
-   "images/a_gs880zh-四-jd-7__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8500,10 +7746,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_jd_8.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8520,11 +7763,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-jd-9.jpg",
-   "images/a_gs880zh-四-jd-9__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8541,10 +7780,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_jd_10.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8561,10 +7797,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_四_jd_11.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8581,11 +7814,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-四-jd-12.jpg",
-   "images/a_gs880zh-四-jd-12__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -8891,7 +8120,7 @@
   "no": "7",
   "label": "【880综合·第五章·选择7】",
   "question_img": "images/gs880zh_五_xz_7.jpg",
-  "answer_img": "images/a_gs880zh_五_xz_7.jpg",
+  "answer_img": "images/a_gs880zh_五_xz_7.png",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
@@ -9449,10 +8678,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_xz_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9469,10 +8695,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_xz_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9489,10 +8712,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_xz_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9509,10 +8729,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_xz_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9529,10 +8746,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_xz_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9543,17 +8757,13 @@
   "no": "6",
   "label": "【880综合·第六章·选择6】",
   "question_img": "images/gs880zh_六_xz_6.jpg",
-  "answer_img": "images/a_gs880zh-六-xz-6.jpg",
+  "answer_img": "images/a_gs880zh-六-xz-6.png",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-六-xz-6.jpg",
-   "images/a_gs880zh-六-xz-6__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9564,16 +8774,13 @@
   "no": "7",
   "label": "【880综合·第六章·选择7】",
   "question_img": "images/gs880zh_六_xz_7.jpg",
-  "answer_img": "images/a_gs880zh_六_xz_7.jpg",
+  "answer_img": "images/a_gs880zh_六_xz_7.png",
   "note": "",
   "status": "todo",
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_xz_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9590,10 +8797,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_tk_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9610,10 +8814,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_tk_2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9624,7 +8825,7 @@
   "no": "3",
   "label": "【880综合·第六章·填空3】",
   "question_img": "images/gs880zh_六_tk_3.jpg",
-  "answer_img": "images/a_gs880zh-六-tk-3.jpg",
+  "answer_img": "images/a_gs880zh-六-tk-3.png",
   "note": "",
   "status": "todo",
   "kp": "一元函数微分学",
@@ -9632,11 +8833,7 @@
   "chapter_name": "第六章 微分方程及其应用",
   "level": "综合",
   "answer_text": "\\sin \\frac{y}{x} = \\frac{1}{2}x",
-  "solution_page": 192,
-  "answer_imgs": [
-   "images/a_gs880zh-六-tk-3.jpg",
-   "images/a_gs880zh-六-tk-3__p2.jpg"
-  ]
+  "solution_page": 192
  },
  {
   "subject": "gaoshu",
@@ -9653,10 +8850,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_tk_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9673,10 +8867,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_tk_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9693,10 +8884,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_tk_6.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9713,11 +8901,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-六-tk-7.jpg",
-   "images/a_gs880zh-六-tk-7__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9751,10 +8935,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_tk_9.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9765,7 +8946,7 @@
   "no": "10",
   "label": "【880综合·第六章·填空10】",
   "question_img": "images/gs880zh_六_tk_10.jpg",
-  "answer_img": "images/a_gs880zh_六_tk_10.jpg",
+  "answer_img": "images/a_gs880zh_六_tk_10.png",
   "note": "",
   "status": "todo",
   "kp": "一元函数微分学",
@@ -9788,10 +8969,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_jd_1.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9808,11 +8986,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-六-jd-2.jpg",
-   "images/a_gs880zh-六-jd-2__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9829,10 +9003,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_jd_3.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9849,10 +9020,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_jd_4.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9869,10 +9037,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的定义",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_jd_5.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9889,11 +9054,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-六-jd-6.jpg",
-   "images/a_gs880zh-六-jd-6__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9910,10 +9071,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_jd_7.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9930,11 +9088,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-六-jd-8.jpg",
-   "images/a_gs880zh-六-jd-8__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9951,10 +9105,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh_六_jd_9.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9971,11 +9122,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-六-jd-10.jpg",
-   "images/a_gs880zh-六-jd-10__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -9992,11 +9139,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "综合",
-  "answer_imgs": [
-   "images/a_gs880zh-六-jd-11.jpg",
-   "images/a_gs880zh-六-jd-11__p2.jpg"
-  ]
+  "level": "综合"
  },
  {
   "subject": "gaoshu",
@@ -10041,7 +9184,7 @@
   "no": "14",
   "label": "【880综合·第六章·解答14】",
   "question_img": "images/gs880zh_六_jd_14.jpg",
-  "answer_img": "images/a_gs880zh_六_jd_14.jpg",
+  "answer_img": "images/a_gs880zh_六_jd_14.png",
   "note": "",
   "status": "todo",
   "kp": "一元函数微分学",
@@ -10317,13 +9460,10 @@
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
   "question_img": "images/gs/gd-6-tk-9.jpg",
-  "answer_img": "images/a_gd-6-tk-9.jpg",
+  "answer_img": "images/a_gd-6-tk-9.png",
   "note": "",
   "status": "todo",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-tk-9.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -10340,10 +9480,7 @@
   "note": "",
   "status": "todo",
   "level": "基础",
-  "answer_img": "images/a_gd-1-jd-3(V).jpg",
-  "answer_imgs": [
-   "images/a_gd-1-jd-3(V).jpg"
-  ]
+  "answer_img": "images/a_gd-1-jd-3(V).png"
  },
  {
   "subject": "gaoshu",
@@ -10360,10 +9497,7 @@
   "kp_sub": "函数极限定义和性质",
   "chapter_name": "第一章 函数、极限、连续",
   "level": "基础",
-  "answer_img": "images/a_gd-1-xz-2.jpg",
-  "answer_imgs": [
-   "images/a_gd-1-xz-2.jpg"
-  ]
+  "answer_img": "images/a_gd-1-xz-2.jpg"
  },
  {
   "subject": "gaoshu",
@@ -10381,10 +9515,7 @@
   "chapter_name": "第一章 函数、极限、连续",
   "level": "基础",
   "answer_text": "P≤2",
-  "answer_img": "images/a_gd-1-tk-4.jpg",
-  "answer_imgs": [
-   "images/a_gd-1-tk-4.jpg"
-  ]
+  "answer_img": "images/a_gd-1-tk-4.jpg"
  },
  {
   "subject": "gaoshu",
@@ -10394,18 +9525,14 @@
   "type": "解答",
   "no": "2(VI)",
   "label": "【880基础·第一章·解答2(VI)】",
-  "question_img": "images/q_gd-1-jd-2(VI).jpg",
+  "question_img": "images/q_gd-1-jd-2(VI).png",
   "note": "",
   "status": "todo",
   "kp": "函数、极限与连续",
   "kp_sub": "函数/数列极限的计算",
   "chapter_name": "第一章 函数、极限、连续",
   "level": "基础",
-  "answer_img": "images/a_gd-1-jd-2(VI).jpg",
-  "answer_imgs": [
-   "images/a_gd-1-jd-2(VI).jpg",
-   "images/a_gd-1-jd-2(VI)__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-1-jd-2(VI).png"
  },
  {
   "subject": "gaoshu",
@@ -10423,10 +9550,7 @@
   "chapter_name": "第二章 一元函数微分学及其应用",
   "level": "基础",
   "answer_text": "-1, π/2",
-  "answer_img": "images/a_gd-2-tk-1.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-tk-1.jpg"
-  ]
+  "answer_img": "images/a_gd-2-tk-1.jpg"
  },
  {
   "subject": "gaoshu",
@@ -10443,11 +9567,7 @@
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
   "level": "基础",
-  "answer_img": "images/a_gd-4-tk-5.jpg",
-  "answer_imgs": [
-   "images/a_gd-4-tk-5.jpg",
-   "images/a_gd-4-tk-5__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-4-tk-5.jpg"
  },
  {
   "subject": "gaoshu",
@@ -10482,10 +9602,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-tk-7.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -10502,10 +9619,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-tk-8.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -10522,11 +9636,7 @@
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
   "chapter_name": "第四章 多元函数微分学及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-4-tk-11.jpg",
-   "images/a_gd-4-tk-11__p2.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -10812,10 +9922,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分方程求解",
   "chapter_name": "第六章 微分方程及其应用",
-  "level": "基础",
-  "answer_imgs": [
-   "images/a_gd-6-xz-5.jpg"
-  ]
+  "level": "基础"
  },
  {
   "subject": "gaoshu",
@@ -10851,10 +9958,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-jd-1.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -10865,16 +9969,13 @@
   "no": "4",
   "label": "【880基础·第一章·解答4】",
   "question_img": "images/gs/gd-1-jd-4.jpg",
-  "answer_img": "images/a_gd-1-jd-4.jpg",
+  "answer_img": "images/a_gd-1-jd-4.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-jd-4.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -10885,16 +9986,13 @@
   "no": "5",
   "label": "【880基础·第一章·解答5】",
   "question_img": "images/gs/gd-1-jd-5.jpg",
-  "answer_img": "images/a_gd-1-jd-5.jpg",
+  "answer_img": "images/a_gd-1-jd-5.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-jd-5.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -10912,10 +10010,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第一章 函数、极限、连续",
-  "answer_text": "1",
-  "answer_imgs": [
-   "images/a_gd-1-tk-1.jpg"
-  ]
+  "answer_text": "1"
  },
  {
   "subject": "gaoshu",
@@ -10932,10 +10027,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-tk-2.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -10952,10 +10044,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-tk-3.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -10991,10 +10080,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第一章 函数、极限、连续",
-  "answer_text": "C",
-  "answer_imgs": [
-   "images/a_gd-1-xz-1.jpg"
-  ]
+  "answer_text": "C"
  },
  {
   "subject": "gaoshu",
@@ -11011,10 +10097,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-xz-3.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -11031,10 +10114,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-xz-5.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -11052,10 +10132,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第一章 函数、极限、连续",
-  "answer_text": "C",
-  "answer_imgs": [
-   "images/a_gd-1-xz-6.jpg"
-  ]
+  "answer_text": "C"
  },
  {
   "subject": "gaoshu",
@@ -11072,10 +10149,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-xz-7.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -11092,10 +10166,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-xz-8.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -11113,11 +10184,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第一章 函数、极限、连续",
-  "answer_text": "A",
-  "answer_imgs": [
-   "images/a_gd-1-xz-9.jpg",
-   "images/a_gd-1-xz-9__p2.jpg"
-  ]
+  "answer_text": "A"
  },
  {
   "subject": "gaoshu",
@@ -11135,10 +10202,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第一章 函数、极限、连续",
-  "answer_text": "C",
-  "answer_imgs": [
-   "images/a_gd-1-xz-10.jpg"
-  ]
+  "answer_text": "C"
  },
  {
   "subject": "gaoshu",
@@ -11155,10 +10219,7 @@
   "level": "基础",
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
-  "chapter_name": "第一章 函数、极限、连续",
-  "answer_imgs": [
-   "images/a_gd-1-xz-11.jpg"
-  ]
+  "chapter_name": "第一章 函数、极限、连续"
  },
  {
   "subject": "gaoshu",
@@ -11176,11 +10237,7 @@
   "kp": "函数、极限与连续",
   "kp_sub": "函数极限的应用（渐近线、间断点、无穷小比阶、反求参数）",
   "chapter_name": "第一章 函数、极限、连续",
-  "answer_text": "C",
-  "answer_imgs": [
-   "images/a_gd-1-xz-13.jpg",
-   "images/a_gd-1-xz-13__p2.jpg"
-  ]
+  "answer_text": "C"
  },
  {
   "subject": "gaoshu",
@@ -11197,11 +10254,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-10.jpg",
-   "images/a_gd-3-jd-10__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11218,10 +10271,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-11.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11238,10 +10288,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-12.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11258,11 +10305,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-13.jpg",
-   "images/a_gd-3-jd-13__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11279,10 +10322,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-14.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11299,10 +10339,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-15.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11319,10 +10356,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-16.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11339,11 +10373,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-17.jpg",
-   "images/a_gd-3-jd-17__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11354,16 +10384,13 @@
   "no": "20",
   "label": "【880基础·第三章·解答20】",
   "question_img": "images/gs/gd-3-jd-20.jpg",
-  "answer_img": "images/a_gd-3-jd-20.jpg",
+  "answer_img": "images/a_gd-3-jd-20.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-20.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11374,16 +10401,13 @@
   "no": "21",
   "label": "【880基础·第三章·解答21】",
   "question_img": "images/gs/gd-3-jd-21.jpg",
-  "answer_img": "images/a_gd-3-jd-21.jpg",
+  "answer_img": "images/a_gd-3-jd-21.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-21.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11401,10 +10425,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "1/(sinx cosx)",
-  "answer_imgs": [
-   "images/a_gd-3-tk-1.jpg"
-  ]
+  "answer_text": "1/(sinx cosx)"
  },
  {
   "subject": "gaoshu",
@@ -11421,10 +10442,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11442,11 +10460,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "sin(x^2)",
-  "answer_imgs": [
-   "images/a_gd-3-tk-3.jpg",
-   "images/a_gd-3-tk-3__p2.jpg"
-  ]
+  "answer_text": "sin(x^2)"
  },
  {
   "subject": "gaoshu",
@@ -11464,10 +10478,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "x f(x^2)",
-  "answer_imgs": [
-   "images/a_gd-3-tk-4.jpg"
-  ]
+  "answer_text": "x f(x^2)"
  },
  {
   "subject": "gaoshu",
@@ -11484,10 +10495,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-5.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11523,11 +10531,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-7.jpg",
-   "images/a_gd-3-tk-7__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11544,11 +10548,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-8.jpg",
-   "images/a_gd-3-tk-8__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11620,10 +10620,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "1",
-  "answer_imgs": [
-   "images/a_gd-3-tk-12.jpg"
-  ]
+  "answer_text": "1"
  },
  {
   "subject": "gaoshu",
@@ -11640,10 +10637,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-13.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11679,11 +10673,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-15.jpg",
-   "images/a_gd-3-tk-15__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11700,10 +10690,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-16.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11720,10 +10707,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-17.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11758,10 +10742,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-19.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11780,10 +10761,7 @@
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
   "answer_text": "-\\frac{1}{x} + \\frac{1}{2}\\ln\\left|\\frac{1+x}{1-x}\\right| - \\frac{1}{2}\\arctan x + C",
-  "solution_page": 82,
-  "answer_imgs": [
-   "images/a_gd-3-tk-20.jpg"
-  ]
+  "solution_page": 82
  },
  {
   "subject": "gaoshu",
@@ -11800,11 +10778,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-21.jpg",
-   "images/a_gd-3-tk-21__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11815,16 +10789,13 @@
   "no": "22",
   "label": "【880基础·第三章·填空22】",
   "question_img": "images/gs/gd-3-tk-22.jpg",
-  "answer_img": "images/a_gd-3-tk-22.jpg",
+  "answer_img": "images/a_gd-3-tk-22.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-22.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11835,16 +10806,13 @@
   "no": "23",
   "label": "【880基础·第三章·填空23】",
   "question_img": "images/gs/gd-3-tk-23.jpg",
-  "answer_img": "images/a_gd-3-tk-23.jpg",
+  "answer_img": "images/a_gd-3-tk-23.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-tk-23.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11862,10 +10830,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "C",
-  "answer_imgs": [
-   "images/a_gd-3-xz-1.jpg"
-  ]
+  "answer_text": "C"
  },
  {
   "subject": "gaoshu",
@@ -11882,10 +10847,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-xz-4.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11903,10 +10865,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "D",
-  "answer_imgs": [
-   "images/a_gd-3-xz-6.jpg"
-  ]
+  "answer_text": "D"
  },
  {
   "subject": "gaoshu",
@@ -11923,10 +10882,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-xz-8.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11944,11 +10900,7 @@
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "A",
-  "answer_imgs": [
-   "images/a_gd-3-xz-13.jpg",
-   "images/a_gd-3-xz-13__p2.jpg"
-  ]
+  "answer_text": "A"
  },
  {
   "subject": "gaoshu",
@@ -11959,16 +10911,13 @@
   "no": "18",
   "label": "【880基础·第三章·选择18】",
   "question_img": "images/q_gd-3-xz-18.jpg",
-  "answer_img": "images/a_gd-3-xz-18.jpg",
+  "answer_img": "images/a_gd-3-xz-18.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "反常积分敛散性判断",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-xz-18.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -11985,10 +10934,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-3.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12005,10 +10951,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-4.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12025,10 +10968,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-5.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12045,11 +10985,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-6.jpg",
-   "images/a_gd-2-jd-6__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12066,10 +11002,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-7.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12086,10 +11019,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-8.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12106,10 +11036,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-9.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12127,11 +11054,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "$(-\\frac{\\sqrt2}{2},\\frac{\\sqrt2}{2})$",
-  "answer_imgs": [
-   "images/a_gd-2-jd-10.jpg",
-   "images/a_gd-2-jd-10__p2.jpg"
-  ]
+  "answer_text": "$(-\\frac{\\sqrt2}{2},\\frac{\\sqrt2}{2})$"
  },
  {
   "subject": "gaoshu",
@@ -12149,10 +11072,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "$e$",
-  "answer_imgs": [
-   "images/a_gd-2-jd-11.jpg"
-  ]
+  "answer_text": "$e$"
  },
  {
   "subject": "gaoshu",
@@ -12170,10 +11090,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "$\\frac{1}{1+e^2}$",
-  "answer_imgs": [
-   "images/a_gd-2-jd-12.jpg"
-  ]
+  "answer_text": "$\\frac{1}{1+e^2}$"
  },
  {
   "subject": "gaoshu",
@@ -12191,11 +11108,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "微分中值定理",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "$\\frac12$",
-  "answer_imgs": [
-   "images/a_gd-2-jd-13.jpg",
-   "images/a_gd-2-jd-13__p2.jpg"
-  ]
+  "answer_text": "$\\frac12$"
  },
  {
   "subject": "gaoshu",
@@ -12213,10 +11126,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "$\\frac{1}{3x}$",
-  "answer_imgs": [
-   "images/a_gd-2-jd-15.jpg"
-  ]
+  "answer_text": "$\\frac{1}{3x}$"
  },
  {
   "subject": "gaoshu",
@@ -12234,10 +11144,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "$-2$(切线斜率)",
-  "answer_imgs": [
-   "images/a_gd-2-jd-17.jpg"
-  ]
+  "answer_text": "$-2$(切线斜率)"
  },
  {
   "subject": "gaoshu",
@@ -12254,10 +11161,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-19.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12274,11 +11178,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-20.jpg",
-   "images/a_gd-2-jd-20__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12313,11 +11213,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-22.jpg",
-   "images/a_gd-2-jd-22__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12334,10 +11230,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-23.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12354,10 +11247,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-24.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12374,11 +11264,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-25.jpg",
-   "images/a_gd-2-jd-25__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12432,10 +11318,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "2",
-  "answer_imgs": [
-   "images/a_gd-2-tk-6.jpg"
-  ]
+  "answer_text": "2"
  },
  {
   "subject": "gaoshu",
@@ -12452,10 +11335,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-7.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12473,10 +11353,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "2/3, 3",
-  "answer_imgs": [
-   "images/a_gd-2-tk-8.jpg"
-  ]
+  "answer_text": "2/3, 3"
  },
  {
   "subject": "gaoshu",
@@ -12493,10 +11370,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-11.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12513,10 +11387,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-13.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12533,11 +11404,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-14.jpg",
-   "images/a_gd-2-tk-14__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12555,10 +11422,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "1/(3x)",
-  "answer_imgs": [
-   "images/a_gd-2-tk-15.jpg"
-  ]
+  "answer_text": "1/(3x)"
  },
  {
   "subject": "gaoshu",
@@ -12575,10 +11439,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-16.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12595,10 +11456,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-17.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12616,11 +11474,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "y=2x-1/4",
-  "answer_imgs": [
-   "images/a_gd-2-tk-18.jpg",
-   "images/a_gd-2-tk-18__p2.jpg"
-  ]
+  "answer_text": "y=2x-1/4"
  },
  {
   "subject": "gaoshu",
@@ -12637,10 +11491,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-19.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12658,10 +11509,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "曲率、曲率半径、物理应用",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "2/(3a)",
-  "answer_imgs": [
-   "images/a_gd-2-tk-20.jpg"
-  ]
+  "answer_text": "2/(3a)"
  },
  {
   "subject": "gaoshu",
@@ -12697,11 +11545,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "曲率、曲率半径、物理应用",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "x^2+(y+1/2)^2=9/4",
-  "answer_imgs": [
-   "images/a_gd-2-tk-22.jpg",
-   "images/a_gd-2-tk-22__p2.jpg"
-  ]
+  "answer_text": "x^2+(y+1/2)^2=9/4"
  },
  {
   "subject": "gaoshu",
@@ -12718,10 +11562,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-23.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12739,10 +11580,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "e^x+1",
-  "answer_imgs": [
-   "images/a_gd-2-tk-24.jpg"
-  ]
+  "answer_text": "e^x+1"
  },
  {
   "subject": "gaoshu",
@@ -12759,11 +11597,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "曲率、曲率半径、物理应用",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-tk-25.jpg",
-   "images/a_gd-2-tk-25__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -12816,10 +11650,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-1.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-1.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-1.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12836,10 +11667,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-6.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-6.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-6.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12856,10 +11684,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-7.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-7.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-7.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12876,10 +11701,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-8.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-8.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-8.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12896,10 +11718,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-11.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-11.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-11.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12916,10 +11735,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-12.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-12.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-12.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12936,11 +11752,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-14.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-14.jpg",
-   "images/a_gd-2-xz-14__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-14.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12957,10 +11769,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-15.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-15.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-15.jpg"
  },
  {
   "subject": "gaoshu",
@@ -12978,10 +11787,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "C",
-  "answer_imgs": [
-   "images/a_gd-2-xz-16.jpg"
-  ]
+  "answer_text": "C"
  },
  {
   "subject": "gaoshu",
@@ -12999,10 +11805,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "C",
-  "answer_imgs": [
-   "images/a_gd-2-xz-17.jpg"
-  ]
+  "answer_text": "C"
  },
  {
   "subject": "gaoshu",
@@ -13019,11 +11822,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-18.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-18.jpg",
-   "images/a_gd-2-xz-18__p2.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-18.jpg"
  },
  {
   "subject": "gaoshu",
@@ -13040,10 +11839,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_img": "images/a_gd-2-xz-19.jpg",
-  "answer_imgs": [
-   "images/a_gd-2-xz-19.jpg"
-  ]
+  "answer_img": "images/a_gd-2-xz-19.jpg"
  },
  {
   "subject": "gaoshu",
@@ -13061,10 +11857,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "D",
-  "answer_imgs": [
-   "images/a_gd-2-xz-20.jpg"
-  ]
+  "answer_text": "D"
  },
  {
   "subject": "gaoshu",
@@ -13082,10 +11875,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的应用（极值、拐点、单调性、凹凸性）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "B",
-  "answer_imgs": [
-   "images/a_gd-2-xz-21.jpg"
-  ]
+  "answer_text": "B"
  },
  {
   "subject": "gaoshu",
@@ -13103,11 +11893,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "D",
-  "answer_imgs": [
-   "images/a_gd-2-xz-22.jpg",
-   "images/a_gd-2-xz-22__p2.jpg"
-  ]
+  "answer_text": "D"
  },
  {
   "subject": "gaoshu",
@@ -13125,10 +11911,7 @@
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
   "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_text": "D",
-  "answer_imgs": [
-   "images/a_gd-2-xz-23.jpg"
-  ]
+  "answer_text": "D"
  },
  {
   "subject": "gaoshu",
@@ -13145,11 +11928,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-xz-24.jpg",
-   "images/a_gd-2-xz-24__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13509,11 +12288,7 @@
   "level": "基础",
   "kp": "微分方程及其应用",
   "kp_sub": "微分方程求解",
-  "chapter_name": "第六章 微分方程及其应用",
-  "answer_imgs": [
-   "images/a_gd-6-jd-2.jpg",
-   "images/a_gd-6-jd-2__p2.jpg"
-  ]
+  "chapter_name": "第六章 微分方程及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13532,10 +12307,7 @@
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
   "answer_text": "y = \\frac{1}{x}(\\sin x - x \\cos x + C)",
-  "solution_page": 192,
-  "answer_imgs": [
-   "images/a_gd-6-tk-1.jpg"
-  ]
+  "solution_page": 192
  },
  {
   "subject": "gaoshu",
@@ -13554,10 +12326,7 @@
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
   "answer_text": "(2x-1)(1+y^2)=C",
-  "solution_page": 192,
-  "answer_imgs": [
-   "images/a_gd-6-tk-2.jpg"
-  ]
+  "solution_page": 192
  },
  {
   "subject": "gaoshu",
@@ -13576,11 +12345,7 @@
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
   "answer_text": "\\sin \\frac{y}{x} = \\frac{1}{2}x",
-  "solution_page": 192,
-  "answer_imgs": [
-   "images/a_gd-6-tk-3.jpg",
-   "images/a_gd-6-tk-3__p2.jpg"
-  ]
+  "solution_page": 192
  },
  {
   "subject": "gaoshu",
@@ -13599,10 +12364,7 @@
   "kp_sub": "微分方程解的结构和性质",
   "chapter_name": "第六章 微分方程及其应用",
   "answer_text": "a=-3,\\ b=2,\\ c=2,\\ d=2；原方程通解为 y=C_1 e^x+C_2 e^{2x}+x^2 e^{2x}",
-  "solution_page": 205,
-  "answer_imgs": [
-   "images/a_gd-6-tk-6.jpg"
-  ]
+  "solution_page": 205
  },
  {
   "subject": "gaoshu",
@@ -13619,10 +12381,7 @@
   "level": "基础",
   "kp": "微分方程及其应用",
   "kp_sub": "微分方程解的结构和性质",
-  "chapter_name": "第六章 微分方程及其应用",
-  "answer_imgs": [
-   "images/a_gd-6-xz-1.jpg"
-  ]
+  "chapter_name": "第六章 微分方程及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13639,11 +12398,7 @@
   "level": "基础",
   "kp": "微分方程及其应用",
   "kp_sub": "微分方程解的结构和性质",
-  "chapter_name": "第六章 微分方程及其应用",
-  "answer_imgs": [
-   "images/a_gd-6-xz-6.jpg",
-   "images/a_gd-6-xz-6__p2.jpg"
-  ]
+  "chapter_name": "第六章 微分方程及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13660,10 +12415,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-jd-3.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13680,11 +12432,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-jd-7.jpg",
-   "images/a_gd-4-jd-7__p2.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13701,10 +12449,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值问题",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-jd-8.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13721,10 +12466,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-jd-10.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13741,11 +12483,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-jd-12.jpg",
-   "images/a_gd-4-jd-12__p2.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13762,10 +12500,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-tk-1.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13784,10 +12519,7 @@
   "kp_sub": "连续、偏导、可微存在性",
   "chapter_name": "第四章 多元函数微分学及其应用",
   "answer_text": "$e^{-\\frac{1}{2}}$",
-  "solution_page": 134,
-  "answer_imgs": [
-   "images/a_gd-4-tk-3.jpg"
-  ]
+  "solution_page": 134
  },
  {
   "subject": "gaoshu",
@@ -13823,10 +12555,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-tk-10.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13843,10 +12572,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-tk-12.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13881,10 +12607,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-tk-14.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13901,11 +12624,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-tk-15.jpg",
-   "images/a_gd-4-tk-15__p2.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13916,16 +12635,13 @@
   "no": "16",
   "label": "【880基础·第四章·填空16】",
   "question_img": "images/gs/gd-4-tk-16.jpg",
-  "answer_img": "images/a_gd-4-tk-16.jpg",
+  "answer_img": "images/a_gd-4-tk-16.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-tk-16.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13936,16 +12652,13 @@
   "no": "17",
   "label": "【880基础·第四章·填空17】",
   "question_img": "images/gs/gd-4-tk-17.jpg",
-  "answer_img": "images/a_gd-4-tk-17.jpg",
+  "answer_img": "images/a_gd-4-tk-17.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "极值和最值（条件极值）",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-tk-17.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13962,10 +12675,7 @@
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "连续、偏导、可微存在性",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-xz-1.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -13984,11 +12694,7 @@
   "kp_sub": "极值和最值问题",
   "chapter_name": "第四章 多元函数微分学及其应用",
   "answer_text": "A",
-  "solution_page": 133,
-  "answer_imgs": [
-   "images/a_gd-4-xz-8.jpg",
-   "images/a_gd-4-xz-8__p2.jpg"
-  ]
+  "solution_page": 133
  },
  {
   "subject": "gaoshu",
@@ -13999,16 +12705,13 @@
   "no": "9",
   "label": "【880基础·第四章·选择9】",
   "question_img": "images/q_gd-4-xz-9.jpg",
-  "answer_img": "images/a_gd-4-xz-9.jpg",
+  "answer_img": "images/a_gd-4-xz-9.png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "多元函数微分学",
   "kp_sub": "偏导数的计算",
-  "chapter_name": "第四章 多元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-4-xz-9.jpg"
-  ]
+  "chapter_name": "第四章 多元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14018,17 +12721,14 @@
   "type": "解答",
   "no": "7(I)",
   "label": "【880基础·第三章·解答7(I)】",
-  "question_img": "images/q_gd-3-jd-7(I).jpg",
-  "answer_img": "images/a_gd-3-jd-7(I).jpg",
+  "question_img": "images/q_gd-3-jd-7(I).png",
+  "answer_img": "images/a_gd-3-jd-7(I).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-7(I).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14038,18 +12738,14 @@
   "type": "解答",
   "no": "7(II)",
   "label": "【880基础·第三章·解答7(II)】",
-  "question_img": "images/q_gd-3-jd-7(II).jpg",
-  "answer_img": "images/a_gd-3-jd-7(II).jpg",
+  "question_img": "images/q_gd-3-jd-7(II).png",
+  "answer_img": "images/a_gd-3-jd-7(II).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-7(II).jpg",
-   "images/a_gd-3-jd-7(II)__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14059,18 +12755,14 @@
   "type": "解答",
   "no": "8(II)",
   "label": "【880基础·第三章·解答8(II)】",
-  "question_img": "images/gs/gd-3-jd-8(II).jpg",
-  "answer_img": "images/a_gd-3-jd-8(II).jpg",
+  "question_img": "images/gs/gd-3-jd-8(II).png",
+  "answer_img": "images/a_gd-3-jd-8(II).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-8(II).jpg",
-   "images/a_gd-3-jd-8(II)__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14080,17 +12772,14 @@
   "type": "解答",
   "no": "8(I)",
   "label": "【880基础·第三章·解答8(I)】",
-  "question_img": "images/gs/gd-3-jd-8(I).jpg",
-  "answer_img": "images/a_gd-3-jd-8(I).jpg",
+  "question_img": "images/gs/gd-3-jd-8(I).png",
+  "answer_img": "images/a_gd-3-jd-8(I).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-8(I).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14100,17 +12789,14 @@
   "type": "解答",
   "no": "9(I)",
   "label": "【880基础·第三章·解答9(I)】",
-  "question_img": "images/gs/gd-3-jd-9(I).jpg",
-  "answer_img": "images/a_gd-3-jd-9(I).jpg",
+  "question_img": "images/gs/gd-3-jd-9(I).png",
+  "answer_img": "images/a_gd-3-jd-9(I).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-9(I).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14120,17 +12806,14 @@
   "type": "解答",
   "no": "9(II)",
   "label": "【880基础·第三章·解答9(II)】",
-  "question_img": "images/gs/gd-3-jd-9(II).jpg",
-  "answer_img": "images/a_gd-3-jd-9(II).jpg",
+  "question_img": "images/gs/gd-3-jd-9(II).png",
+  "answer_img": "images/a_gd-3-jd-9(II).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-9(II).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14140,17 +12823,14 @@
   "type": "解答",
   "no": "18(I)",
   "label": "【880基础·第三章·解答18(I)】",
-  "question_img": "images/gs/gd-3-jd-18(I).jpg",
-  "answer_img": "images/a_gd-3-jd-18(I).jpg",
+  "question_img": "images/gs/gd-3-jd-18(I).png",
+  "answer_img": "images/a_gd-3-jd-18(I).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-18(I).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14160,17 +12840,14 @@
   "type": "解答",
   "no": "18(II)",
   "label": "【880基础·第三章·解答18(II)】",
-  "question_img": "images/gs/gd-3-jd-18(II).jpg",
-  "answer_img": "images/a_gd-3-jd-18(II).jpg",
+  "question_img": "images/gs/gd-3-jd-18(II).png",
+  "answer_img": "images/a_gd-3-jd-18(II).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-18(II).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14180,17 +12857,14 @@
   "type": "解答",
   "no": "1(II)",
   "label": "【880基础·第二章·解答1(II)】",
-  "question_img": "images/gs/gd-2-jd-1(II).jpg",
-  "answer_img": "images/a_gd-2-jd-1(II).jpg",
+  "question_img": "images/gs/gd-2-jd-1(II).png",
+  "answer_img": "images/a_gd-2-jd-1(II).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-1(II).jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14200,17 +12874,14 @@
   "type": "解答",
   "no": "1(I)",
   "label": "【880基础·第二章·解答1(I)】",
-  "question_img": "images/q_gd-2-jd-1(I).jpg",
-  "answer_img": "images/a_gd-2-jd-1(I).jpg",
+  "question_img": "images/q_gd-2-jd-1(I).png",
+  "answer_img": "images/a_gd-2-jd-1(I).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-1(I).jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14220,18 +12891,14 @@
   "type": "解答",
   "no": "2(I)",
   "label": "【880基础·第二章·解答2(I)】",
-  "question_img": "images/gs/gd-2-jd-2(I).jpg",
-  "answer_img": "images/a_gd-2-jd-2(I).jpg",
+  "question_img": "images/gs/gd-2-jd-2(I).png",
+  "answer_img": "images/a_gd-2-jd-2(I).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-2(I).jpg",
-   "images/a_gd-2-jd-2(I)__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14241,17 +12908,14 @@
   "type": "解答",
   "no": "2(II)",
   "label": "【880基础·第二章·解答2(II)】",
-  "question_img": "images/gs/gd-2-jd-2(II).jpg",
-  "answer_img": "images/a_gd-2-jd-2(II).jpg",
+  "question_img": "images/gs/gd-2-jd-2(II).png",
+  "answer_img": "images/a_gd-2-jd-2(II).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-2(II).jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14261,17 +12925,14 @@
   "type": "解答",
   "no": "16(I)",
   "label": "【880基础·第二章·解答16(I)】",
-  "question_img": "images/gs/gd-2-jd-16(I).jpg",
-  "answer_img": "images/a_gd-2-jd-16(I).jpg",
+  "question_img": "images/gs/gd-2-jd-16(I).png",
+  "answer_img": "images/a_gd-2-jd-16(I).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "微分中值定理",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-16(I).jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14281,17 +12942,14 @@
   "type": "解答",
   "no": "16(II)",
   "label": "【880基础·第二章·解答16(II)】",
-  "question_img": "images/gs/gd-2-jd-16(II).jpg",
-  "answer_img": "images/a_gd-2-jd-16(II).jpg",
+  "question_img": "images/gs/gd-2-jd-16(II).png",
+  "answer_img": "images/a_gd-2-jd-16(II).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "微分中值定理",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-16(II).jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14308,11 +12966,7 @@
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-19.jpg",
-   "images/a_gd-3-jd-19__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14329,10 +12983,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-14.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14349,11 +13000,7 @@
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-18.jpg",
-   "images/a_gd-2-jd-18__p2.jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14388,11 +13035,7 @@
   "level": "基础",
   "kp": "微分方程及其应用",
   "kp_sub": "微分方程求解",
-  "chapter_name": "第六章 微分方程及其应用",
-  "answer_imgs": [
-   "images/a_gd-6-jd-11.jpg",
-   "images/a_gd-6-jd-11__p2.jpg"
-  ]
+  "chapter_name": "第六章 微分方程及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14402,18 +13045,14 @@
   "type": "解答",
   "no": "7(III)",
   "label": "【880基础·第三章·解答7(III)】",
-  "question_img": "images/gs/gd-3-jd-7(III).jpg",
-  "answer_img": "images/a_gd-3-jd-7(III).jpg",
+  "question_img": "images/gs/gd-3-jd-7(III).png",
+  "answer_img": "images/a_gd-3-jd-7(III).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-7(III).jpg",
-   "images/a_gd-3-jd-7(III)__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14423,17 +13062,14 @@
   "type": "解答",
   "no": "7(IV)",
   "label": "【880基础·第三章·解答7(IV)】",
-  "question_img": "images/gs/gd-3-jd-7(IV).jpg",
-  "answer_img": "images/a_gd-3-jd-7(IV).jpg",
+  "question_img": "images/gs/gd-3-jd-7(IV).png",
+  "answer_img": "images/a_gd-3-jd-7(IV).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-7(IV).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14443,17 +13079,14 @@
   "type": "解答",
   "no": "8(III)",
   "label": "【880基础·第三章·解答8(III)】",
-  "question_img": "images/q_gd-3-jd-8(III).jpg",
-  "answer_img": "images/a_gd-3-jd-8(III).jpg",
+  "question_img": "images/q_gd-3-jd-8(III).png",
+  "answer_img": "images/a_gd-3-jd-8(III).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-8(III).jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14463,18 +13096,14 @@
   "type": "解答",
   "no": "8(IV)",
   "label": "【880基础·第三章·解答8(IV)】",
-  "question_img": "images/q_gd-3-jd-8(IV).jpg",
-  "answer_img": "images/a_gd-3-jd-8(IV).jpg",
+  "question_img": "images/q_gd-3-jd-8(IV).png",
+  "answer_img": "images/a_gd-3-jd-8(IV).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
-  "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-3-jd-8(IV).jpg",
-   "images/a_gd-3-jd-8(IV)__p2.jpg"
-  ]
+  "chapter_name": "第三章 一元函数积分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14484,7 +13113,7 @@
   "type": "解答",
   "no": "1(I)",
   "label": "【880基础·第五章·解答1(I)】",
-  "question_img": "images/q_gd-5-jd-1(I).jpg",
+  "question_img": "images/q_gd-5-jd-1(I).png",
   "answer_img": null,
   "note": "",
   "status": "todo",
@@ -14502,7 +13131,7 @@
   "type": "解答",
   "no": "1(III)",
   "label": "【880基础·第五章·解答1(III)】",
-  "question_img": "images/q_gd-5-jd-1(III).jpg",
+  "question_img": "images/q_gd-5-jd-1(III).png",
   "answer_img": null,
   "note": "",
   "status": "todo",
@@ -14520,7 +13149,7 @@
   "type": "解答",
   "no": "1(IV)",
   "label": "【880基础·第五章·解答1(IV)】",
-  "question_img": "images/gs/gd-5-jd-1(IV).jpg",
+  "question_img": "images/gs/gd-5-jd-1(IV).png",
   "answer_img": null,
   "note": "",
   "status": "todo",
@@ -14538,17 +13167,14 @@
   "type": "解答",
   "no": "1(III)",
   "label": "【880基础·第二章·解答1(III)】",
-  "question_img": "images/gs/gd-2-jd-1(III).jpg",
-  "answer_img": "images/a_gd-2-jd-1(III).jpg",
+  "question_img": "images/gs/gd-2-jd-1(III).png",
+  "answer_img": "images/a_gd-2-jd-1(III).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-1(III).jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "gaoshu",
@@ -14558,17 +13184,14 @@
   "type": "解答",
   "no": "1(IV)",
   "label": "【880基础·第二章·解答1(IV)】",
-  "question_img": "images/gs/gd-2-jd-1(IV).jpg",
-  "answer_img": "images/a_gd-2-jd-1(IV).jpg",
+  "question_img": "images/gs/gd-2-jd-1(IV).png",
+  "answer_img": "images/a_gd-2-jd-1(IV).png",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数微分学",
   "kp_sub": "导数的计算（高阶导数、反函数、参数方程、分段函数）",
-  "chapter_name": "第二章 一元函数微分学及其应用",
-  "answer_imgs": [
-   "images/a_gd-2-jd-1(IV).jpg"
-  ]
+  "chapter_name": "第二章 一元函数微分学及其应用"
  },
  {
   "subject": "xiandai",
@@ -20906,5 +19529,702 @@
   "kp": "矩阵等价、相似、合同",
   "kp_sub": "矩阵等价、相似、合同",
   "chapter_name": "4.10 矩阵等价、相似、合同"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-七-jd-1",
+  "source": "xian_dai880",
+  "chapter": "第七章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880线代拓展·第七章·解答1】",
+  "question_img": "images/q_ld880tz_七_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "行列式",
+  "kp_sub": "行列式的性质、展开定理（余子式、代数余子式）",
+  "chapter_name": "第七章 行列式",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_七_jd_1.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-七-jd-2",
+  "source": "xian_dai880",
+  "chapter": "第七章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880线代拓展·第七章·解答2】",
+  "question_img": "images/q_ld880tz_七_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "行列式",
+  "kp_sub": "行列式的性质、展开定理（余子式、代数余子式）",
+  "chapter_name": "第七章 行列式",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_七_jd_2.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-七-jd-3",
+  "source": "xian_dai880",
+  "chapter": "第七章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880线代拓展·第七章·解答3】",
+  "question_img": "images/q_ld880tz_七_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "行列式",
+  "kp_sub": "行列式的性质、展开定理（余子式、代数余子式）",
+  "chapter_name": "第七章 行列式",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_七_jd_3.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-七-jd-4",
+  "source": "xian_dai880",
+  "chapter": "第七章",
+  "type": "解答",
+  "no": "4",
+  "label": "【880线代拓展·第七章·解答4】",
+  "question_img": "images/q_ld880tz_七_jd_4.png",
+  "note": "",
+  "status": "todo",
+  "kp": "行列式",
+  "kp_sub": "行列式的性质、展开定理（余子式、代数余子式）",
+  "chapter_name": "第七章 行列式",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_七_jd_4.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-八-jd-1",
+  "source": "xian_dai880",
+  "chapter": "第八章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880线代拓展·第八章·解答1】",
+  "question_img": "images/q_ld880tz_八_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "矩阵",
+  "kp_sub": "矩阵运算、逆矩阵、伴随矩阵",
+  "chapter_name": "第八章 矩阵",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_八_jd_1.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-八-jd-2",
+  "source": "xian_dai880",
+  "chapter": "第八章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880线代拓展·第八章·解答2】",
+  "question_img": "images/q_ld880tz_八_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "矩阵",
+  "kp_sub": "矩阵运算、逆矩阵、伴随矩阵",
+  "chapter_name": "第八章 矩阵",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_八_jd_2.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十-jd-1",
+  "source": "xian_dai880",
+  "chapter": "第十章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880线代拓展·第十章·解答1】",
+  "question_img": "images/q_ld880tz_十_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "线性方程组",
+  "kp_sub": "解的结构、判定、性质",
+  "chapter_name": "第十章 线性方程组",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十_jd_1.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十-jd-2",
+  "source": "xian_dai880",
+  "chapter": "第十章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880线代拓展·第十章·解答2】",
+  "question_img": "images/q_ld880tz_十_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "线性方程组",
+  "kp_sub": "解的结构、判定、性质",
+  "chapter_name": "第十章 线性方程组",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十_jd_2.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十-jd-3",
+  "source": "xian_dai880",
+  "chapter": "第十章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880线代拓展·第十章·解答3】",
+  "question_img": "images/q_ld880tz_十_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "线性方程组",
+  "kp_sub": "解的结构、判定、性质",
+  "chapter_name": "第十章 线性方程组",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十_jd_3.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十一-jd-1",
+  "source": "xian_dai880",
+  "chapter": "第十一章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880线代拓展·第十一章·解答1】",
+  "question_img": "images/q_ld880tz_十一_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "特征值与特征向量",
+  "kp_sub": "特征值与特征向量的概念与性质",
+  "chapter_name": "第十一章 相似矩阵",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十一_jd_1.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十一-jd-2",
+  "source": "xian_dai880",
+  "chapter": "第十一章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880线代拓展·第十一章·解答2】",
+  "question_img": "images/q_ld880tz_十一_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "特征值与特征向量",
+  "kp_sub": "特征值与特征向量的概念与性质",
+  "chapter_name": "第十一章 相似矩阵",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十一_jd_2.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十二-jd-1",
+  "source": "xian_dai880",
+  "chapter": "第十二章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880线代拓展·第十二章·解答1】",
+  "question_img": "images/q_ld880tz_十二_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "二次型",
+  "kp_sub": "惯性指数与正定判定",
+  "chapter_name": "第十二章 二次型",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十二_jd_1.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十二-jd-2",
+  "source": "xian_dai880",
+  "chapter": "第十二章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880线代拓展·第十二章·解答2】",
+  "question_img": "images/q_ld880tz_十二_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "二次型",
+  "kp_sub": "惯性指数与正定判定",
+  "chapter_name": "第十二章 二次型",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十二_jd_2.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十二-jd-3",
+  "source": "xian_dai880",
+  "chapter": "第十二章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880线代拓展·第十二章·解答3】",
+  "question_img": "images/q_ld880tz_十二_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "二次型",
+  "kp_sub": "惯性指数与正定判定",
+  "chapter_name": "第十二章 二次型",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十二_jd_3.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十二-jd-4",
+  "source": "xian_dai880",
+  "chapter": "第十二章",
+  "type": "解答",
+  "no": "4",
+  "label": "【880线代拓展·第十二章·解答4】",
+  "question_img": "images/q_ld880tz_十二_jd_4.png",
+  "note": "",
+  "status": "todo",
+  "kp": "二次型",
+  "kp_sub": "惯性指数与正定判定",
+  "chapter_name": "第十二章 二次型",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十二_jd_4.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十二-jd-5",
+  "source": "xian_dai880",
+  "chapter": "第十二章",
+  "type": "解答",
+  "no": "5",
+  "label": "【880线代拓展·第十二章·解答5】",
+  "question_img": "images/q_ld880tz_十二_jd_5.png",
+  "note": "",
+  "status": "todo",
+  "kp": "二次型",
+  "kp_sub": "惯性指数与正定判定",
+  "chapter_name": "第十二章 二次型",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十二_jd_5.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十二-jd-6",
+  "source": "xian_dai880",
+  "chapter": "第十二章",
+  "type": "解答",
+  "no": "6",
+  "label": "【880线代拓展·第十二章·解答6】",
+  "question_img": "images/q_ld880tz_十二_jd_6.png",
+  "note": "",
+  "status": "todo",
+  "kp": "二次型",
+  "kp_sub": "惯性指数与正定判定",
+  "chapter_name": "第十二章 二次型",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十二_jd_6.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-十二-jd-7",
+  "source": "xian_dai880",
+  "chapter": "第十二章",
+  "type": "解答",
+  "no": "7",
+  "label": "【880线代拓展·第十二章·解答7】",
+  "question_img": "images/q_ld880tz_十二_jd_7.png",
+  "note": "",
+  "status": "todo",
+  "kp": "二次型",
+  "kp_sub": "惯性指数与正定判定",
+  "chapter_name": "第十二章 二次型",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_十二_jd_7.png"
+ },
+ {
+  "subject": "xiandai",
+  "id": "ld880tz-九-jd-1",
+  "source": "xian_dai880",
+  "chapter": "第九章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880线代拓展·第九章·解答1】",
+  "question_img": "images/q_ld880tz_九_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "其他",
+  "kp_sub": "相关无关性与表出问题",
+  "chapter_name": "第九章 向量",
+  "level": "拓展",
+  "answer_img": "images/a_ld880tz_九_jd_1.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-一-jd-1",
+  "source": "gaoshu880",
+  "chapter": "第一章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880高数拓展·第一章·解答1】",
+  "question_img": "images/q_gs880tz_一_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "函数、极限与连续",
+  "kp_sub": "函数极限定义和性质",
+  "chapter_name": "第一章 函数、极限、连续",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_一_jd_1.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-一-jd-2",
+  "source": "gaoshu880",
+  "chapter": "第一章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880高数拓展·第一章·解答2】",
+  "question_img": "images/q_gs880tz_一_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "函数、极限与连续",
+  "kp_sub": "函数极限定义和性质",
+  "chapter_name": "第一章 函数、极限、连续",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_一_jd_2.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-一-jd-3",
+  "source": "gaoshu880",
+  "chapter": "第一章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880高数拓展·第一章·解答3】",
+  "question_img": "images/q_gs880tz_一_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "函数、极限与连续",
+  "kp_sub": "函数极限定义和性质",
+  "chapter_name": "第一章 函数、极限、连续",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_一_jd_3.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-一-jd-4",
+  "source": "gaoshu880",
+  "chapter": "第一章",
+  "type": "解答",
+  "no": "4",
+  "label": "【880高数拓展·第一章·解答4】",
+  "question_img": "images/q_gs880tz_一_jd_4.png",
+  "note": "",
+  "status": "todo",
+  "kp": "函数、极限与连续",
+  "kp_sub": "函数极限定义和性质",
+  "chapter_name": "第一章 函数、极限、连续",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_一_jd_4.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-二-jd-1",
+  "source": "gaoshu880",
+  "chapter": "第二章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880高数拓展·第二章·解答1】",
+  "question_img": "images/q_gs880tz_二_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "函数、极限与连续",
+  "kp_sub": "函数极限定义和性质",
+  "chapter_name": "第二章 一元函数微分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_二_jd_1.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-二-jd-2",
+  "source": "gaoshu880",
+  "chapter": "第二章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880高数拓展·第二章·解答2】",
+  "question_img": "images/q_gs880tz_二_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "函数、极限与连续",
+  "kp_sub": "函数极限定义和性质",
+  "chapter_name": "第二章 一元函数微分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_二_jd_2.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-二-jd-3",
+  "source": "gaoshu880",
+  "chapter": "第二章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880高数拓展·第二章·解答3】",
+  "question_img": "images/q_gs880tz_二_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "函数、极限与连续",
+  "kp_sub": "函数极限定义和性质",
+  "chapter_name": "第二章 一元函数微分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_二_jd_3.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-三-jd-1",
+  "source": "gaoshu880",
+  "chapter": "第三章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880高数拓展·第三章·解答1】",
+  "question_img": "images/q_gs880tz_三_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "导数的定义",
+  "chapter_name": "第三章 一元函数积分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_三_jd_1.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-三-jd-2",
+  "source": "gaoshu880",
+  "chapter": "第三章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880高数拓展·第三章·解答2】",
+  "question_img": "images/q_gs880tz_三_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "导数的定义",
+  "chapter_name": "第三章 一元函数积分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_三_jd_2.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-三-jd-3",
+  "source": "gaoshu880",
+  "chapter": "第三章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880高数拓展·第三章·解答3】",
+  "question_img": "images/q_gs880tz_三_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "导数的定义",
+  "chapter_name": "第三章 一元函数积分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_三_jd_3.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-三-jd-4",
+  "source": "gaoshu880",
+  "chapter": "第三章",
+  "type": "解答",
+  "no": "4",
+  "label": "【880高数拓展·第三章·解答4】",
+  "question_img": "images/q_gs880tz_三_jd_4.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "导数的定义",
+  "chapter_name": "第三章 一元函数积分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_三_jd_4.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-三-jd-5",
+  "source": "gaoshu880",
+  "chapter": "第三章",
+  "type": "解答",
+  "no": "5",
+  "label": "【880高数拓展·第三章·解答5】",
+  "question_img": "images/q_gs880tz_三_jd_5.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "导数的定义",
+  "chapter_name": "第三章 一元函数积分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_三_jd_5.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-三-jd-6",
+  "source": "gaoshu880",
+  "chapter": "第三章",
+  "type": "解答",
+  "no": "6",
+  "label": "【880高数拓展·第三章·解答6】",
+  "question_img": "images/q_gs880tz_三_jd_6.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "导数的定义",
+  "chapter_name": "第三章 一元函数积分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_三_jd_6.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-五-jd-1",
+  "source": "gaoshu880",
+  "chapter": "第五章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880高数拓展·第五章·解答1】",
+  "question_img": "images/q_gs880tz_五_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数积分学",
+  "kp_sub": "二重积分的概念和性质",
+  "chapter_name": "第五章 二重积分及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_五_jd_1.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-五-jd-2",
+  "source": "gaoshu880",
+  "chapter": "第五章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880高数拓展·第五章·解答2】",
+  "question_img": "images/q_gs880tz_五_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数积分学",
+  "kp_sub": "二重积分的概念和性质",
+  "chapter_name": "第五章 二重积分及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_五_jd_2.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-五-jd-3",
+  "source": "gaoshu880",
+  "chapter": "第五章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880高数拓展·第五章·解答3】",
+  "question_img": "images/q_gs880tz_五_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数积分学",
+  "kp_sub": "二重积分的概念和性质",
+  "chapter_name": "第五章 二重积分及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_五_jd_3.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-五-jd-4",
+  "source": "gaoshu880",
+  "chapter": "第五章",
+  "type": "解答",
+  "no": "4",
+  "label": "【880高数拓展·第五章·解答4】",
+  "question_img": "images/q_gs880tz_五_jd_4.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数积分学",
+  "kp_sub": "二重积分的概念和性质",
+  "chapter_name": "第五章 二重积分及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_五_jd_4.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-五-jd-5",
+  "source": "gaoshu880",
+  "chapter": "第五章",
+  "type": "解答",
+  "no": "5",
+  "label": "【880高数拓展·第五章·解答5】",
+  "question_img": "images/q_gs880tz_五_jd_5.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数积分学",
+  "kp_sub": "二重积分的概念和性质",
+  "chapter_name": "第五章 二重积分及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_五_jd_5.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-六-jd-1",
+  "source": "gaoshu880",
+  "chapter": "第六章",
+  "type": "解答",
+  "no": "1",
+  "label": "【880高数拓展·第六章·解答1】",
+  "question_img": "images/q_gs880tz_六_jd_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "微分方程解的结构和性质",
+  "chapter_name": "第六章 微分方程及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_六_jd_1.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-六-jd-2",
+  "source": "gaoshu880",
+  "chapter": "第六章",
+  "type": "解答",
+  "no": "2",
+  "label": "【880高数拓展·第六章·解答2】",
+  "question_img": "images/q_gs880tz_六_jd_2.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "微分方程解的结构和性质",
+  "chapter_name": "第六章 微分方程及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_六_jd_2.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-六-jd-3",
+  "source": "gaoshu880",
+  "chapter": "第六章",
+  "type": "解答",
+  "no": "3",
+  "label": "【880高数拓展·第六章·解答3】",
+  "question_img": "images/q_gs880tz_六_jd_3.png",
+  "note": "",
+  "status": "todo",
+  "kp": "一元函数微分学",
+  "kp_sub": "微分方程解的结构和性质",
+  "chapter_name": "第六章 微分方程及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_六_jd_3.png"
+ },
+ {
+  "subject": "gaoshu",
+  "id": "gs880tz-四-xz-1",
+  "source": "gaoshu880",
+  "chapter": "第四章",
+  "type": "选择",
+  "no": "1",
+  "label": "【880高数拓展·第四章·选择1】",
+  "question_img": "images/q_gs880tz_四_xz_1.png",
+  "note": "",
+  "status": "todo",
+  "kp": "多元函数微分学",
+  "kp_sub": "极值和最值问题",
+  "chapter_name": "第四章 多元函数微分学及其应用",
+  "level": "拓展",
+  "answer_img": "images/a_gs880tz_四_xz_1.png"
  }
 ]
