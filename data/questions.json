@@ -14375,7 +14375,7 @@
   "answer_img": "images/ld_a_2_5_3.jpg",
   "note": "",
   "status": "todo",
-  "kp": "向量",
+  "kp": "向量空间",
   "kp_sub": "向量空间",
   "chapter_name": "2.5 向量空间"
  },
@@ -14391,7 +14391,7 @@
   "answer_img": "images/ld_a_2_5_4.jpg",
   "note": "",
   "status": "todo",
-  "kp": "向量",
+  "kp": "向量空间",
   "kp_sub": "向量空间",
   "chapter_name": "2.5 向量空间"
  },
@@ -14535,9 +14535,9 @@
   "answer_img": "images/ld_a_2_8_2.jpg",
   "note": "",
   "status": "todo",
-  "kp": "线性方程组",
+  "kp": "线性方程组解的结构",
   "kp_sub": "解的结构",
-  "chapter_name": "2.8 解的结构"
+  "chapter_name": "2.8 线性方程组解的结构"
  },
  {
   "subject": "xiandai",
@@ -14551,9 +14551,9 @@
   "answer_img": "images/ld_a_2_8_3.jpg",
   "note": "",
   "status": "todo",
-  "kp": "线性方程组",
+  "kp": "线性方程组解的结构",
   "kp_sub": "解的结构",
-  "chapter_name": "2.8 解的结构"
+  "chapter_name": "2.8 线性方程组解的结构"
  },
  {
   "subject": "xiandai",
@@ -14567,9 +14567,9 @@
   "answer_img": "images/ld_a_2_8_9.jpg",
   "note": "",
   "status": "todo",
-  "kp": "线性方程组",
+  "kp": "线性方程组解的结构",
   "kp_sub": "解的结构",
-  "chapter_name": "2.8 解的结构"
+  "chapter_name": "2.8 线性方程组解的结构"
  },
  {
   "subject": "xiandai",
@@ -14583,9 +14583,9 @@
   "answer_img": "images/ld_a_2_8_10.jpg",
   "note": "",
   "status": "todo",
-  "kp": "线性方程组",
+  "kp": "线性方程组解的结构",
   "kp_sub": "解的结构",
-  "chapter_name": "2.8 解的结构"
+  "chapter_name": "2.8 线性方程组解的结构"
  },
  {
   "subject": "xiandai",
@@ -18953,9 +18953,9 @@
   "answer_img": "images/ld_a_1_3_4.jpg",
   "note": "",
   "status": "todo",
-  "kp": "代数余子式与伴随矩阵",
+  "kp": "矩阵",
   "kp_sub": "代数余子式与伴随矩阵",
-  "chapter_name": "1.3 代数余子式与伴随矩阵"
+  "chapter_name": "1.3 伴随矩阵"
  },
  {
   "subject": "xiandai",
@@ -18969,9 +18969,9 @@
   "answer_img": "images/ld_a_1_3_6.jpg",
   "note": "",
   "status": "todo",
-  "kp": "代数余子式与伴随矩阵",
+  "kp": "矩阵",
   "kp_sub": "代数余子式与伴随矩阵",
-  "chapter_name": "1.3 代数余子式与伴随矩阵"
+  "chapter_name": "1.3 伴随矩阵"
  },
  {
   "subject": "xiandai",
@@ -18985,9 +18985,9 @@
   "answer_img": "images/ld_a_1_4_1.jpg",
   "note": "",
   "status": "todo",
-  "kp": "矩阵的逆",
+  "kp": "矩阵",
   "kp_sub": "矩阵的逆",
-  "chapter_name": "1.4 矩阵的逆"
+  "chapter_name": "1.4 逆矩阵"
  },
  {
   "subject": "xiandai",
@@ -19001,7 +19001,7 @@
   "answer_img": "images/ld_a_1_8_2.jpg",
   "note": "",
   "status": "todo",
-  "kp": "矩阵的秩",
+  "kp": "矩阵",
   "kp_sub": "矩阵的秩",
   "chapter_name": "1.8 矩阵的秩"
  },
@@ -19017,7 +19017,7 @@
   "answer_img": "images/ld_a_1_8_8.jpg",
   "note": "",
   "status": "todo",
-  "kp": "矩阵的秩",
+  "kp": "矩阵",
   "kp_sub": "矩阵的秩",
   "chapter_name": "1.8 矩阵的秩"
  },
@@ -19033,7 +19033,7 @@
   "answer_img": "images/ld_a_1_8_9.jpg",
   "note": "",
   "status": "todo",
-  "kp": "矩阵的秩",
+  "kp": "矩阵",
   "kp_sub": "矩阵的秩",
   "chapter_name": "1.8 矩阵的秩"
  },
@@ -19049,7 +19049,7 @@
   "answer_img": "images/ld_a_1_9_1.jpg",
   "note": "",
   "status": "todo",
-  "kp": "分块矩阵",
+  "kp": "矩阵",
   "kp_sub": "分块矩阵",
   "chapter_name": "1.9 分块矩阵"
  },
@@ -19065,7 +19065,7 @@
   "answer_img": "images/ld_a_1_9_6.jpg",
   "note": "",
   "status": "todo",
-  "kp": "分块矩阵",
+  "kp": "矩阵",
   "kp_sub": "分块矩阵",
   "chapter_name": "1.9 分块矩阵"
  },
@@ -19081,9 +19081,9 @@
   "answer_img": "images/ld_a_2_2_6.jpg",
   "note": "",
   "status": "todo",
-  "kp": "向量组的线性相关性",
+  "kp": "向量",
   "kp_sub": "向量组的线性相关性",
-  "chapter_name": "2.2 向量组的线性相关性"
+  "chapter_name": "2.2 线性相关"
  },
  {
   "subject": "xiandai",
@@ -19097,9 +19097,9 @@
   "answer_img": "images/ld_a_2_2_7.jpg",
   "note": "",
   "status": "todo",
-  "kp": "向量组的线性相关性",
+  "kp": "向量",
   "kp_sub": "向量组的线性相关性",
-  "chapter_name": "2.2 向量组的线性相关性"
+  "chapter_name": "2.2 线性相关"
  },
  {
   "subject": "xiandai",
@@ -19113,9 +19113,9 @@
   "answer_img": "images/ld_a_2_2_10.jpg",
   "note": "",
   "status": "todo",
-  "kp": "向量组的线性相关性",
+  "kp": "向量",
   "kp_sub": "向量组的线性相关性",
-  "chapter_name": "2.2 向量组的线性相关性"
+  "chapter_name": "2.2 线性相关"
  },
  {
   "subject": "xiandai",
@@ -19129,7 +19129,7 @@
   "answer_img": "images/ld_a_2_3_1.jpg",
   "note": "",
   "status": "todo",
-  "kp": "极大线性无关组",
+  "kp": "向量",
   "kp_sub": "极大线性无关组",
   "chapter_name": "2.3 极大线性无关组"
  },
@@ -19145,7 +19145,7 @@
   "answer_img": "images/ld_a_2_3_2.jpg",
   "note": "",
   "status": "todo",
-  "kp": "极大线性无关组",
+  "kp": "向量",
   "kp_sub": "极大线性无关组",
   "chapter_name": "2.3 极大线性无关组"
  },
@@ -19161,7 +19161,7 @@
   "answer_img": "images/ld_a_2_3_5.jpg",
   "note": "",
   "status": "todo",
-  "kp": "极大线性无关组",
+  "kp": "向量",
   "kp_sub": "极大线性无关组",
   "chapter_name": "2.3 极大线性无关组"
  },
@@ -19177,7 +19177,7 @@
   "answer_img": "images/ld_a_2_4_1.jpg",
   "note": "",
   "status": "todo",
-  "kp": "向量组等价",
+  "kp": "向量",
   "kp_sub": "向量组等价",
   "chapter_name": "2.4 向量组等价"
  },
@@ -19241,9 +19241,9 @@
   "answer_img": "images/ld_a_2_6_1.jpg",
   "note": "",
   "status": "todo",
-  "kp": "线性方程组解的判定",
+  "kp": "线性方程组",
   "kp_sub": "线性方程组解的判定",
-  "chapter_name": "2.6 线性方程组解的判定"
+  "chapter_name": "2.6 解的判定"
  },
  {
   "subject": "xiandai",
@@ -19257,9 +19257,9 @@
   "answer_img": "images/ld_a_2_7_5.jpg",
   "note": "",
   "status": "todo",
-  "kp": "线性方程组的求解",
+  "kp": "线性方程组",
   "kp_sub": "线性方程组的求解",
-  "chapter_name": "2.7 线性方程组的求解"
+  "chapter_name": "2.7 方程组求解"
  },
  {
   "subject": "xiandai",
@@ -19369,9 +19369,9 @@
   "answer_img": "images/ld_a_2_9_2.jpg",
   "note": "",
   "status": "todo",
-  "kp": "公共解与同解问题",
+  "kp": "线性方程组",
   "kp_sub": "公共解与同解问题",
-  "chapter_name": "2.9 公共解与同解问题"
+  "chapter_name": "2.9 同解与公共解"
  },
  {
   "subject": "xiandai",
@@ -19385,9 +19385,9 @@
   "answer_img": "images/ld_a_2_9_5.jpg",
   "note": "",
   "status": "todo",
-  "kp": "公共解与同解问题",
+  "kp": "线性方程组",
   "kp_sub": "公共解与同解问题",
-  "chapter_name": "2.9 公共解与同解问题"
+  "chapter_name": "2.9 同解与公共解"
  },
  {
   "subject": "xiandai",
@@ -19401,9 +19401,9 @@
   "answer_img": "images/ld_a_2_9_8.jpg",
   "note": "",
   "status": "todo",
-  "kp": "公共解与同解问题",
+  "kp": "线性方程组",
   "kp_sub": "公共解与同解问题",
-  "chapter_name": "2.9 公共解与同解问题"
+  "chapter_name": "2.9 同解与公共解"
  },
  {
   "subject": "xiandai",
@@ -19417,9 +19417,9 @@
   "answer_img": "images/ld_a_2_9_9.jpg",
   "note": "",
   "status": "todo",
-  "kp": "公共解与同解问题",
+  "kp": "线性方程组",
   "kp_sub": "公共解与同解问题",
-  "chapter_name": "2.9 公共解与同解问题"
+  "chapter_name": "2.9 同解与公共解"
  },
  {
   "subject": "xiandai",
@@ -19449,9 +19449,9 @@
   "answer_img": "images/ld_a_3_3_3.jpg",
   "note": "",
   "status": "todo",
-  "kp": "矩阵相似对角化",
+  "kp": "特征值与特征向量",
   "kp_sub": "矩阵相似对角化",
-  "chapter_name": "3.3 矩阵相似对角化"
+  "chapter_name": "3.3 相似对角化"
  },
  {
   "subject": "xiandai",
