@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>学习工作台</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#123a8f">
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"></script>
+<script src="pdf.min.js"></script>
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;height:100dvh;display:flex;overflow:hidden;background:#eef1f6;color:#1c2330;
+       font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+  button{font-family:inherit}
+  /* 侧栏 文档库 */
+  #lib{width:250px;flex:0 0 250px;background:#fff;border-right:1px solid #dfe4ee;display:flex;flex-direction:column}
+  #lib header{padding:12px 12px 8px;font-weight:700;color:#123a8f;font-size:15px}
+  #lib .btns{padding:0 10px 8px;display:flex;gap:6px}
+  #doclist{flex:1;overflow:auto;padding:4px 8px}
+  .doc{padding:8px 10px;border-radius:8px;cursor:pointer;margin-bottom:4px}
+  .doc:hover{background:#eef2fb}
+  .doc.active{background:#dbe6fa}
+  .doc .nm{font-size:14px;word-break:break-all}
+  .doc .meta{font-size:11.5px;color:#8a94a6;display:flex;justify-content:space-between;margin-top:2px}
+  .doc .del{color:#c0392b;margin-left:8px}
+  /* 主区 */
+  main{flex:1;display:flex;flex-direction:column;min-width:0}
+  #topbar{background:#123a8f;color:#fff;display:flex;align-items:center;gap:8px;padding:8px 10px}
+  #topbar .tb{background:rgba(255,255,255,.15);border:none;color:#fff;border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer}
+  #topbar .docname{font-size:14.5px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #viewer{flex:1;overflow:auto;background:#525659;text-align:center}
+  #viewer canvas{margin:10px auto;box-shadow:0 2px 14px rgba(0,0,0,.4);background:#fff}
+  #placeholder{color:#cfd6e4;padding-top:40vh;font-size:15px}
+  /* AI 抽屉 */
+  #ai{position:fixed;top:0;right:0;bottom:0;width:min(430px,100vw);background:#fff;z-index:40;
+      transform:translateX(102%);transition:transform .25s;display:flex;flex-direction:column;
+      box-shadow:-6px 0 24px rgba(0,0,0,.18)}
+  #ai.open{transform:none}
+  #ai header{padding:10px 12px;background:#0c5c46;color:#fff;display:flex;align-items:center;font-weight:700}
+  #ai header .x{margin-left:auto;background:none;border:none;color:#fff;font-size:20px;cursor:pointer}
+  #msgs{flex:1;overflow:auto;padding:10px}
+  .msg{margin:8px 0;padding:8px 11px;border-radius:10px;font-size:14.5px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+  .msg.user{background:#dbe6fa;margin-left:34px}
+  .msg.assistant{background:#f1f4f9;margin-right:20px}
+  .msg.err{background:#fdecec;color:#b3261e}
+  #ctxrow{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#f2f5fb;font-size:12.5px;color:#41506b}
+  #chatrow{display:flex;gap:6px;padding:8px 10px;border-top:1px solid #dfe4ee}
+  #chatin{flex:1;resize:none;height:44px;border:1px solid #cfd6e4;border-radius:8px;padding:8px;font-size:14.5px;font-family:inherit}
+  #send{background:#0c5c46;color:#fff;border:none;border-radius:8px;padding:0 16px;font-size:14.5px;cursor:pointer}
+  /* 设置弹窗 */
+  #setmask{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:60;display:none;align-items:center;justify-content:center}
+  #setmask.show{display:flex}
+  #setbox{background:#fff;border-radius:12px;padding:18px 20px;width:min(480px,92vw)}
+  #setbox h3{margin:0 0 12px;color:#123a8f}
+  #setbox label{display:block;font-size:13px;color:#41506b;margin:10px 0 4px}
+  #setbox input{width:100%;border:1px solid #cfd6e4;border-radius:8px;padding:8px 10px;font-size:14px}
+  #setbox .row{display:flex;gap:8px;margin-top:14px;justify-content:flex-end}
+  .hint{font-size:12px;color:#8a94a6;margin-top:10px;line-height:1.6}
+  @media (max-width:760px){ #lib{position:fixed;left:0;top:0;bottom:0;z-index:35;transform:translateX(-102%);transition:.25s;box-shadow:6px 0 24px rgba(0,0,0,.15)} #lib.open{transform:none} }
+</style>
+</head>
+<body>
+
+<aside id="lib">
+  <header>📚 文档库</header>
+  <div class="btns">
+    <button class="tb" id="btn-import" style="flex:1;background:#123a8f;color:#fff;border:none;border-radius:8px;padding:8px;font-size:14px;cursor:pointer">＋ 导入 PDF</button>
+    <button class="tb" id="btn-set" title="设置" style="background:#eef2fb;border:1px solid #dfe4ee;border-radius:8px;padding:8px 10px;cursor:pointer">⚙</button>
+  </div>
+  <input type="file" id="fin" accept="application/pdf" multiple hidden>
+  <div id="doclist"></div>
+  <div style="padding:8px 10px;font-size:11.5px;color:#8a94a6;border-top:1px solid #dfe4ee">
+    文档保存在本机浏览器（IndexedDB），不上传服务器。AI 问答需在 ⚙ 里配置 API Key。
+  </div>
+</aside>
+
+<main>
+  <div id="topbar">
+    <button class="tb" id="btn-lib">☰</button>
+    <span class="docname" id="docname">学习工作台 · 导入 PDF 开始</span>
+    <button class="tb" id="pg-prev">◀</button>
+    <span class="tb" id="pgnum">-/-</span>
+    <button class="tb" id="pg-next">▶</button>
+    <button class="tb" id="zoom-out">－</button>
+    <button class="tb" id="zoom-in">＋</button>
+    <button class="tb" id="btn-ai" style="background:#0c5c46">✦ AI 问答</button>
+  </div>
+  <div id="viewer"><div id="placeholder">从左侧文档库选择一个 PDF<br>或点「＋ 导入 PDF」从文件导入</div><canvas id="cv" hidden></canvas></div>
+</main>
+
+<aside id="ai">
+  <header>✦ AI 问答（GLM）<button class="x" id="ai-close">×</button></header>
+  <div id="msgs"><div class="msg assistant">导入 PDF 后，勾选「引用当前 PDF」，就能针对讲义内容提问。</div></div>
+  <div id="ctxrow">
+    <label><input type="checkbox" id="usepdf" checked> 引用当前 PDF</label>
+    <span>页码</span>
+    <input id="pfrom" type="number" min="1" style="width:56px" placeholder="起"> -
+    <input id="pto" type="number" min="1" style="width:56px" placeholder="止">
+    <span style="margin-left:auto" id="ctxinfo"></span>
+  </div>
+  <div id="chatrow">
+    <textarea id="chatin" placeholder="输入问题…（如：帮我总结这一节；这道题怎么建立辅助函数？）"></textarea>
+    <button id="send">发送</button>
+  </div>
+</aside>
+
+<div id="setmask">
+  <div id="setbox">
+    <h3>⚙ AI 接口设置</h3>
+    <label>API Key（智谱开放平台 open.bigmodel.cn 获取）</label>
+    <input id="s-key" type="password" placeholder="粘贴你的 API Key">
+    <label>接口地址 Base URL</label>
+    <input id="s-base" type="text">
+    <div style="display:flex;gap:6px;margin-top:6px">
+      <button class="tb" onclick="preset('zhipu')" style="background:#eef2fb;border:1px solid #dfe4ee;border-radius:6px;padding:4px 10px;cursor:pointer;font-size:12.5px">智谱</button>
+      <button class="tb" onclick="preset('ds')" style="background:#eef2fb;border:1px solid #dfe4ee;border-radius:6px;padding:4px 10px;cursor:pointer;font-size:12.5px">DeepSeek</button>
+    </div>
+    <label>模型名</label>
+    <input id="s-model" type="text" list="modellist">
+    <datalist id="modellist">
+      <option value="glm-5.3-flash"><option value="glm-4-flash"><option value="glm-4-plus"><option value="deepseek-chat">
+    </datalist>
+    <div class="hint">
+      · Key 只存在本机浏览器（localStorage），不会上传。<br>
+      · 智谱注册地址 open.bigmodel.cn，新用户送额度，Flash 系列便宜。<br>
+      · 若某服务商浏览器直连被拦截（CORS），换另一家即可。<br>
+      · AI 给的推导务必自己验算——以书和老师为准。
+    </div>
+    <div class="row">
+      <button class="tb" id="set-cancel" style="background:#eef2fb;border:1px solid #dfe4ee;border-radius:8px;padding:8px 14px;cursor:pointer">取消</button>
+      <button class="tb" id="set-save" style="background:#123a8f;color:#fff;border:none;border-radius:8px;padding:8px 14px;cursor:pointer">保存</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================= 设置 ================= */
+const PRESETS = {
+  zhipu: { base: 'https://open.bigmodel.cn/api/paas/v4', model: 'glm-5.3-flash' },
+  ds:    { base: 'https://api.deepseek.com/v1',          model: 'deepseek-chat' }
+};
+let S = Object.assign({ key:'', base: PRESETS.zhipu.base, model: PRESETS.zhipu.model },
+                     JSON.parse(localStorage.getItem('study_cfg') || '{}'));
+function saveCfg(){ localStorage.setItem('study_cfg', JSON.stringify(S)); }
+const $ = id => document.getElementById(id);
+
+/* ================= IndexedDB 文档库 ================= */
+let db;
+function openDB(){ return new Promise((res, rej) => {
+  const r = indexedDB.open('studyos', 1);
+  r.onupgradeneeded = e => { const d = e.target.result;
+    if (!d.objectStoreNames.contains('docs')) d.createObjectStore('docs', { keyPath: 'id' }); };
+  r.onsuccess = e => { db = e.target.result; res(); };
+  r.onerror = () => rej(r.error);
+});}
+function allDocs(){ return new Promise((res, rej) => { const r = db.transaction('docs').getAll();
+  r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); });}
+function putDoc(d){ return new Promise((res, rej) => { const r = db.transaction('readwrite').put(d);
+  r.onsuccess = res; r.onerror = () => rej(r.error); });}
+function delDoc(id){ return new Promise((res, rej) => { const r = db.transaction('readwrite').delete(id);
+  r.onsuccess = res; r.onerror = () => rej(r.error); });}
+
+async function refreshLib(){
+  const docs = (await allDocs()).sort((a,b)=>b.added-a.added);
+  const list = $('doclist'); list.innerHTML = '';
+  for (const d of docs){
+    const div = document.createElement('div');
+    div.className = 'doc' + (cur.id === d.id ? ' active' : '');
+    div.innerHTML = '<div class="nm">' + d.name + '</div><div class="meta"><span>' +
+      (d.size/1048576).toFixed(1) + ' MB</span><span class="del">删除</span></div>';
+    div.onclick = e => { if (e.target.classList.contains('del')) { delDoc(d.id).then(refreshLib); e.stopPropagation(); return; } openDoc(d); };
+    list.appendChild(div);
+  }
+}
+
+/* ================= PDF 查看 ================= */
+let cur = { id:null, name:'', pdf:null, page:1, total:0, scale:1.3 };
+const $ = id => document.getElementById(id);
+
+async function openDoc(d){
+  const buf = d.data.slice(0);
+  cur = { id: d.id, name: d.name, pdf: await pdfjsLib.getDocument({ data: buf }).promise,
+          page: 1, total: 0, scale: 1.3 };
+  cur.total = cur.pdf.numPages;
+  $('docname').textContent = d.name;
+  $('pgnum').textContent = '1/' + cur.total;
+  $('pfrom').value = 1; $('pto').value = Math.min(cur.total, 30);
+  document.querySelectorAll('.doc').forEach(x => x.classList.remove('active'));
+  refreshLib();
+  render();
+}
+async function render(){
+  if (!cur.pdf) return;
+  const page = await cur.pdf.getPage(cur.page);
+  const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+  const vp = page.getViewport({ scale: cur.scale });
+  const cv = $('cv'); cv.hidden = false; $('placeholder').style.display = 'none';
+  cv.width = Math.floor(vp.width * dpr); cv.height = Math.floor(vp.height * dpr);
+  cv.style.width = vp.width + 'px'; cv.style.height = vp.height + 'px';
+  const ctx = cv.getContext('2d');
+  await page.render({ canvasContext: ctx, viewport: page.getViewport({ scale: cur.scale * dpr }) }).promise;
+  $('pgnum').textContent = cur.page + '/' + cur.total;
+}
+async function extractText(lo, hi){
+  lo = Math.max(1, lo); hi = Math.min(cur.total, hi);
+  let out = '';
+  for (let p = lo; p <= hi; p++){
+    const pg = await cur.pdf.getPage(p);
+    const tc = await pg.getTextContent();
+    out += '\n【第 ' + p + ' 页】\n' + tc.items.map(it => it.str).join(' ');
+  }
+  return out;
+}
+
+/* ================= AI 问答 ================= */
+const SYS = '你是考研辅导助手，覆盖考研数学（高数/线代/概率）与通信原理。' +
+  '回答给出关键步骤和依据（定理/公式名），公式用 LaTeX（$...$）。' +
+  '不确定或题目信息不足时明确说明，不要编造。';
+let busy = false, ctrl = null;
+
+function addMsg(role, text){
+  const d = document.createElement('div');
+  d.className = 'msg ' + role; d.textContent = text;
+  $('msgs').appendChild(d); $('msgs').scrollTop = $('msgs').scrollHeight;
+  return d;
+}
+
+async function send(){
+  if (busy) return;
+  const q = $('chatin').value.trim(); if (!q) return;
+  if (!S.key){ openSettings(); return; }
+  busy = true; $('send').textContent = '…';
+  addMsg('user', q); $('chatin').value = '';
+  const bub = addMsg('assistant', '思考中…');
+  const msgs = [{ role: 'system', content: SYS }];
+  try {
+    if ($('usepdf').checked && cur.pdf){
+      const lo = parseInt($('pfrom').value) || 1;
+      const hi = parseInt($('pto').value) || Math.min(cur.total, lo + 29);
+      let txt = await extractText(lo, hi);
+      if (txt.length > 55000) txt = txt.slice(0, 55000) + '\n…（内容过长已截断，可用页码范围缩小范围）';
+      msgs.push({ role: 'user', content: '以下是《' + cur.name + '》第 ' + lo + '-' + hi + ' 页内容：\n\n' + txt });
+      msgs.push({ role: 'assistant', content: '已阅读，请提问。' });
+    }
+    msgs.push({ role: 'user', content: q });
+    ctrl = new AbortController();
+    const res = await fetch(S.base.replace(/\/+$/, '') + '/chat/completions', {
+      method: 'POST', signal: ctrl.signal,
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + S.key },
+      body: JSON.stringify({ model: S.model, messages: msgs, stream: true })
+    });
+    if (!res.ok){
+      const t = await res.text();
+      bub.className = 'msg err';
+      bub.textContent = '请求失败 ' + res.status + '：' + t.slice(0, 300) +
+        (res.status === 401 ? '\n→ 检查 API Key 是否正确' : '');
+      busy = false; $('send').textContent = '发送'; return;
+    }
+    const reader = res.body.getReader(); const dec = new TextDecoder();
+    let buf = '', acc = '';
+    while (true){
+      const { done, value } = await reader.read(); if (done) break;
+      buf += dec.decode(value, { stream: true });
+      const lines = buf.split('\n'); buf = lines.pop();
+      for (const ln of lines){
+        const s = ln.trim(); if (!s.startsWith('data:')) continue;
+        const j = s.slice(5).trim(); if (j === '[DONE]') continue;
+        try { const o = JSON.parse(j);
+          const d = o.choices && o.choices[0] && o.choices[0].delta && o.choices[0].delta.content;
+          if (d){ if (acc === '') bub.textContent = ''; acc += d; bub.textContent = acc;
+                  $('msgs').scrollTop = $('msgs').scrollHeight; }
+        } catch(e){}
+      }
+    }
+    if (window.renderMathInElement){
+      try { renderMathInElement(bub, { delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '\\[', right: '\\]', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false }], throwOnError: false }); } catch(e){}
+    }
+  } catch (e){
+    bub.className = 'msg err';
+    bub.textContent = '出错：' + (e.name === 'AbortError' ? '已停止' :
+      e.message + '（若提示 Failed to fetch，可能是该服务商不允许浏览器直连，换一家试试）');
+  }
+  busy = false; $('send').textContent = '发送';
+}
+
+/* ================= 设置 ================= */
+function openSettings(){
+  $('s-key').value = S.key; $('s-base').value = S.base; $('s-model').value = S.model;
+  $('setmask').classList.add('show');
+}
+function preset(k){ $('s-base').value = PRESETS[k].base; $('s-model').value = PRESETS[k].model; }
+
+/* ================= 事件绑定 ================= */
+$('btn-import').onclick = () => $('fin').click();
+$('fin').onchange = async e => {
+  for (const f of e.target.files){
+    const data = await f.arrayBuffer();
+    await putDoc({ id: crypto.randomUUID(), name: f.name, data, size: f.size, added: Date.now() });
+  }
+  e.target.value = ''; refreshLib();
+};
+$('btn-lib').onclick = () => $('lib').classList.toggle('open');
+$('btn-set').onclick = openSettings;
+$('set-cancel').onclick = () => $('setmask').classList.remove('show');
+$('set-save').onclick = () => {
+  S.key = $('s-key').value.trim(); S.base = $('s-base').value.trim(); S.model = $('s-model').value.trim();
+  saveCfg(); $('setmask').classList.remove('show');
+};
+$('btn-ai').onclick = () => $('ai').classList.toggle('open');
+$('ai-close').onclick = () => $('ai').classList.remove('open');
+$('send').onclick = send;
+$('chatin').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); send(); }});
+$('pg-prev').onclick = () => { if (cur.page > 1){ cur.page--; render(); }};
+$('pg-next').onclick = () => { if (cur.page < cur.total){ cur.page++; render(); }};
+$('zoom-in').onclick = () => { cur.scale = Math.min(3, cur.scale * 1.2); render(); };
+$('zoom-out').onclick = () => { cur.scale = Math.max(0.5, cur.scale / 1.2); render(); };
+
+/* ================= 启动 ================= */
+(async () => {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.min.js';
+  await openDB(); await refreshLib();
+})();
+</script>
+</body>
+</html>
