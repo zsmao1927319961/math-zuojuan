@@ -572,6 +572,12 @@ async function refreshWeekly() {
   let html = `<div class="wk-card"><h3>本周总结</h3><div class="wk-sub">${start} ~ ${today}</div>`;
   if (!total) html += '<p style="color:var(--sub);font-size:13px;margin:8px 0;">本周还没有错题记录，继续保持！</p>';
   else {
+    const focus = [];
+    const topKp = byKp.slice(0, 3);
+    topKp.forEach(([k, c]) => focus.push(`错得最多的知识点：「${k}」（本周错 ${c} 次）→ 优先重做该知识点错题，并做 1-2 道同型变式。`));
+    if (byReason.length) focus.push(`最主要错因：${byReason[0][0]}（${byReason[0][1]} 次）→ 在错题本按此错因重练。`);
+    if (byChapter.length) focus.push(`最薄弱章节：${byChapter[0][0]}（本周错 ${byChapter[0][1]} 道）→ 下周主科日优先安排该章。`);
+    if (focus.length) { html += `<div class="wk-section focus-box"><b>📌 下周该注重什么</b>` + focus.map(t => `<div class="focus-line">${t}</div>`).join('') + `</div>`; }
     const maxC = Math.max(...byChapter.map(x=>x[1]),1), maxK = Math.max(...byKp.map(x=>x[1]),1), maxR = Math.max(...byReason.map(x=>x[1]),1);
     html += `<div class="wk-nums"><div class="wk-num"><b>${total}</b><span>做错次数</span></div><div class="wk-num"><b>${Object.keys(wrongCnt).length}</b><span>涉及题目</span></div></div>`;
     if (byChapter.length) { html += `<div class="wk-section"><b>错得最多的章节</b>`; byChapter.forEach(([ch,c])=>{ html += `<div class="wk-row"><span class="wk-label">${ch}</span><span class="wk-cnt">${c} 次</span></div><div class="wk-bar"><i style="width:${Math.round(c/maxC*100)}%"></i></div>`; }); html += '</div>'; }
