@@ -291,3 +291,14 @@ textarea, input, select { font: inherit; }
 }
 .print-only { display: none; }
 @media print { .print-only { display: block !important; } }
+
+/* ---- 错题章节分布柱状图 ---- */
+#chchart{margin-top:6px}
+.chart-top{font-size:14px;font-weight:700;color:#b3261e;margin-bottom:8px}
+.bar-row{display:flex;align-items:center;gap:8px;margin:6px 0}
+.bar-label{flex:0 0 150px;font-size:13px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{flex:1;background:#eef1f6;border-radius:6px;height:18px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#123a8f,#4a6fd0);border-radius:6px}
+.bar-row.top .bar-fill{background:linear-gradient(90deg,#b3261e,#e05a4e)}
+.bar-num{flex:0 0 34px;font-size:13px;font-weight:700;text-align:right}
+.chart-empty{color:#8a94a6;font-size:14px;padding:6px 0}

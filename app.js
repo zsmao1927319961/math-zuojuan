@@ -501,6 +501,7 @@ async function refreshCuoti() {
   CUOTI = wids.map(id => qmap.get(id)).filter(Boolean).map(withLive);
   const badge = $('#cuoti-badge');
   if (badge) { badge.hidden = CUOTI.length === 0; badge.textContent = CUOTI.length > 99 ? '99+' : CUOTI.length; }
+  if (typeof renderChChart === "function") renderChChart();
 }
 
 function renderCuoti() {
@@ -718,3 +719,20 @@ function toast(msg) {
 }
 
 init();
+
+/* ---- 错题章节分布柱状图 ---- */
+function renderChChart(){
+  const box = document.getElementById('chchart');
+  if (!box) return;
+  if (!CUOTI.length){ box.innerHTML = '<div class="chart-empty">暂无错题——保持住！</div>'; return; }
+  const cnt = {};
+  CUOTI.forEach(q => { const c = q.chapter_name || q.chapter || '未分类'; cnt[c] = (cnt[c]||0)+1; });
+  const rows = Object.entries(cnt).sort((a,b) => b[1]-a[1]);
+  const max = rows[0][1];
+  box.innerHTML = '<div class="chart-top">错得最多：' + rows[0][0] + '（' + rows[0][1] + ' 题）</div>' +
+    rows.map(([c,n]) =>
+      '<div class="bar-row' + (n===max?' top':'') + '">' +
+      '<div class="bar-label">' + c + '</div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + Math.round(n/max*100) + '%"></div></div>' +
+      '<div class="bar-num">' + n + '</div></div>').join('');
+}
