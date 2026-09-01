@@ -10506,14 +10506,14 @@
   "no": "6",
   "label": "【880基础·第三章·填空6】",
   "question_img": "images/gs/gd-3-tk-6.jpg",
-  "answer_img": null,
+  "answer_img": "images/a_gd_3_tk_6.jpg",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "不定积分/定积分的计算",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "-\\frac{1}{x} + \\frac{1}{2}\\ln\\left|\\frac{1+x}{1-x}\\right| - \\frac{1}{2}\\arctan x + C",
+  "answer_text": "答案：$f(x)=\\dfrac{\\sqrt{2}}{2}\\,(x^{2}+1)$",
   "solution_page": 82
  },
  {
@@ -10648,14 +10648,14 @@
   "no": "14",
   "label": "【880基础·第三章·填空14】",
   "question_img": "images/gs/gd-3-tk-14.jpg",
-  "answer_img": null,
+  "answer_img": "images/a_gd_3_tk_14.jpg",
   "note": "",
   "status": "todo",
   "level": "基础",
   "kp": "一元函数积分学",
   "kp_sub": "定积分的几何应用",
   "chapter_name": "第三章 一元函数积分学及其应用",
-  "answer_text": "-\\frac{1}{x} + \\frac{1}{2}\\ln\\left|\\frac{1+x}{1-x}\\right| - \\frac{1}{2}\\arctan x + C",
+  "answer_text": "答案：$\\dfrac{1}{2}\\,(e^{a^{2}}-1)$",
   "solution_page": 82
  },
  {
