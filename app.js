@@ -13,7 +13,7 @@ let cuotiSrc = '';
 let cuotiReason = '';
 let morePane = 'bank';
 
-const SOURCE_NAMES = { gaoshu880: '高数880', xian_dai: '线代讲义', xian_dai880: '线代880' };
+const SOURCE_NAMES = { gaoshu880: '高数880', xian_dai: '线代讲义', xian_dai880: '线代880', qhzt: '强化专题' };
 const $ = s => document.querySelector(s);
 const LS_KEY = 'shuxue_progress_v1';
 // 固定今日卷：8/28 那套 10 道题（用户要求恢复）
