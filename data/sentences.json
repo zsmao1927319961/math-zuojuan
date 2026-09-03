@@ -1,0 +1,52 @@
+{
+ "start": "2026-09-01",
+ "note": "每天由 ZCode 追加一天;en/zh/meta 为 HTML 片段(tpl=模板词 blank=考场空)",
+ "days": [
+  {
+   "day": 1,
+   "date": "2026-09-01",
+   "tag": "静态第一段（上）",
+   "sents": [
+    {
+     "en": "<span class=\"tpl\">This pie chart</span> offers a clear visualization of how <span class=\"blank\">题目相关词</span> is distributed across <span class=\"blank\">范围词</span>.",
+     "zh": "这个饼图清晰地展示了 ＿＿ 在 ＿＿ 中的分布。",
+     "meta": "<b>模板词（不变）</b>：This pie chart offers a clear visualization of how ／ is distributed across<br><b>考场空（要换）</b>：题目相关词 ／ 范围词<br><b>图表头可换</b>：This bar chart ／ This line chart"
+    },
+    {
+     "en": "<span class=\"tpl\">Together, these figures</span> illustrate the growing influence of <span class=\"blank\">题目相关词</span> in modern life.",
+     "zh": "总的来说，这些数据体现了 ＿＿ 在现代生活中日益增长的影响力。",
+     "meta": "<b>模板词</b>：Together, these figures illustrate the growing influence of ／ in modern life<br><b>考场空</b>：题目相关词"
+    }
+   ]
+  },
+  {
+   "day": 2,
+   "date": "2026-09-02",
+   "tag": "静态第一段（下）· 最值句",
+   "sents": [
+    {
+     "en": "<span class=\"tpl\">It is immediately apparent that</span> <span class=\"blank\">事物1</span> takes the largest share at <span class=\"blank\">百分比1</span>, followed by <span class=\"blank\">事物2</span> and <span class=\"blank\">事物3</span>, which hold shares of <span class=\"blank\">百分比2</span> and <span class=\"blank\">百分比3</span> <span class=\"tpl\">respectively</span>, serving as notable alternatives.",
+     "zh": "显然，事物1 以百分比1 占最大份额，其次是事物2 和事物3，分别为百分比2 和百分比3，作为有力的替代选项。",
+     "meta": "<b>模板词（不变）</b>：It is immediately apparent that ／ takes the largest share at ／ followed by ／ which hold shares of ／ respectively ／ serving as notable alternatives<br><b>考场空（要换）</b>：事物1、事物2、事物3 ／ 百分比1、2、3"
+    }
+   ]
+  },
+  {
+   "day": 3,
+   "date": "2026-09-03",
+   "tag": "静态第一段（对比句 + 功能句）",
+   "sents": [
+    {
+     "en": "<span class=\"tpl\">In contrast</span>, <span class=\"blank\">事物4</span> and <span class=\"blank\">事物5</span> account for <span class=\"blank\">百分比4</span> and <span class=\"blank\">百分比5</span>.",
+     "zh": "相比之下，事物4 和事物5 仅占百分比4 和百分比5。",
+     "meta": "<b>模板词（不变）</b>：In contrast ／ account for<br><b>考场空（要换）</b>：事物4、事物5 ／ 百分比4、百分比5"
+    },
+    {
+     "en": "<span class=\"tpl\">Compared with</span> <span class=\"blank\">事物2</span> at <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> comes in at <span class=\"blank\">百分比1</span>.",
+     "zh": "与处于百分比2 的事物2 相比，事物1 为百分比1。",
+     "meta": "<b>备用功能句</b>：对比场合二选一备用——考场上哪个顺口用哪个，不都写"
+    }
+   ]
+  }
+ ]
+}
