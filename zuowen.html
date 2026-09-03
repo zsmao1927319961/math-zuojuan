@@ -81,7 +81,7 @@
 
   <div id="content"><div class="empty">加载中…</div></div>
 
-  <div class="tip"><b>用法</b>:看中文(含红色 ＿＿ 提示)→ 心里背 → <b>点卡片显出英文核对</b>。先挣扎后揭晓,记忆才长得牢。每句背完点「✓ 背过」;每批复习完点批次右侧的勾。数据保存在本机浏览器,换设备不同步。</div>
+  <div class="tip"><b>书签式</b>:打开自动停在你<b>第一个没背完的日子</b>,背完打勾,下次自动推进,忘几天都不用管。<br><b>用法</b>:看中文(含红色 ＿＿ 提示)→ 心里背 → <b>点卡片显出英文核对</b>。先挣扎后揭晓,记忆才长得牢。每句背完点「✓ 背过」;每批复习完点批次右侧的勾。数据保存在本机浏览器,换设备不同步。</div>
   <div class="foot">背作文模块 ｜ 数据:data/sentences.json(每日由 ZCode 追加) ｜ 开背日 2026-09-01</div>
 </div>
 
@@ -128,8 +128,10 @@ function render(){
   let html = '';
   if (isToday(n) && n < DATA.max)
     html += `<div class="notice">今天的句子还没录入(最新到 Day ${DATA.max})——先按最近一天背,录好后这里会自动出现新一天。</div>`;
-  if (!isToday(n))
-    html += `<div class="notice">你在看 <b>Day ${n}</b> 的安排${n < todayN() ? '(补复习模式)' : ''}。<a href="#" id="backtoday">回到今天</a></div>`;
+  if (!isToday(n) && n < todayN())
+    html += `<div class="notice">📌 书签停在 <b>Day ${n}</b>(今天日历上已是 Day ${todayN()})——把它背完打勾,下次打开自动推进;急着看新句也可 <a href="#" id="backtoday">跳到今天</a></div>`;
+  if (!isToday(n) && n > todayN())
+    html += `<div class="notice">你已经背到 <b>Day ${n}</b> 了,比日历还快,稳 👍</div>`;
   if (!d) { html += `<div class="empty">这一天没有内容</div>`; $('#content').innerHTML = html; bind(); return; }
 
   // 新学
@@ -222,8 +224,12 @@ async function init(){
   }
   DATA.map = dayMap();
   DATA.max = Math.max(...DATA.days.map(x => x.day));
-  let t = Math.round((today0() - parseD(DATA.start)) / 86400000) + 1;
-  cur = Math.max(1, Math.min(t, DATA.max));
+  const t = Math.max(1, Math.min(Math.round((today0() - parseD(DATA.start)) / 86400000) + 1, DATA.max));
+  cur = t;
+  for (let n = 1; n <= DATA.max; n++) {
+    const d = DATA.map.get(n);
+    if (d && !d.sents.every((s, i) => get(`s_${n}_${i}`))) { cur = n; break; }
+  }
   const q = parseInt(new URLSearchParams(location.search).get('day'), 10);
   if (q) cur = Math.max(1, Math.min(q, DATA.max));
   render();
