@@ -742,3 +742,20 @@ function renderChChart(){
       '<div class="bar-track"><div class="bar-fill" style="width:' + Math.round(n/max*100) + '%"></div></div>' +
       '<div class="bar-num">' + n + '</div></div>').join('');
 }
+
+/* ===== 图片点击放大（全屏查看，点击关闭）===== */
+(function () {
+  const css = document.createElement('style');
+  css.textContent = '#modal-img img,#modal-ans-box img{cursor:zoom-in}#imgzoom{position:fixed;inset:0;background:rgba(12,15,20,.94);z-index:9999;overflow:auto;display:none;-webkit-overflow-scrolling:touch}#imgzoom img{width:100%;height:auto;display:block;max-width:900px;margin:0 auto;cursor:zoom-out}';
+  document.head.appendChild(css);
+  const ov = document.createElement('div');
+  ov.id = 'imgzoom';
+  const im = document.createElement('img');
+  ov.appendChild(im);
+  ov.addEventListener('click', () => { ov.style.display = 'none'; });
+  document.body.appendChild(ov);
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('#modal-img img, #modal-ans-box img');
+    if (t && t.src) { ov.querySelector('img').src = t.src; ov.style.display = 'block'; }
+  });
+})();
