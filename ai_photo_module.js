@@ -106,13 +106,18 @@
     const res = await fetch(AI_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + aiKey() },
-      body: JSON.stringify({ model: aiModel(), messages: msgs, stream: true, max_tokens: 2048, temperature: 0.4 })
+      body: JSON.stringify(Object.assign({ model: aiModel(), messages: msgs, stream: true, max_tokens: 3072, temperature: 0.4 }, window.__ai_no_think ? { thinking: { type: 'disabled' } } : {}))
     });
     if (!res.ok) {
       const t = await res.text().catch(() => '');
+      if (res.status === 400 && t.indexOf('thinking') >= 0 && !window.__ai_no_think) {
+        window.__ai_no_think = true;
+        return aiStream(msgs, onDelta);
+      }
       throw new Error('API ' + res.status + (t ? '：' + t.slice(0, 160) : ''));
     }
     const reader = res.body.getReader(); const dec = new TextDecoder(); let buf = '';
+    let rawTail = '', gotContent = false, gotReason = false, gotAny = false;
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
@@ -120,15 +125,26 @@
       let i;
       while ((i = buf.indexOf('\n')) >= 0) {
         const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1);
-        if (!line.startsWith('data:')) continue;
+        if (!line) continue;
+        if (!line.startsWith('data:')) { rawTail = (rawTail + ' ' + line).slice(-300); continue; }
         const d = line.slice(5).trim();
-        if (d === '[DONE]') return;
+        if (d === '[DONE]') { buf = ''; break; }
         try {
           const j = JSON.parse(d);
-          const c = j.choices && j.choices[0] && j.choices[0].delta && j.choices[0].delta.content;
-          if (c) onDelta(c);
+          gotAny = true;
+          const ch = j.choices && j.choices[0] && j.choices[0].delta;
+          if (!ch) continue;
+          const rc = ch.reasoning_content || ch.reasoning;
+          if (rc && !gotContent) { gotReason = true; onDelta(rc, true); }
+          if (ch.content) { gotContent = true; onDelta(ch.content, false); }
         } catch (e) {}
       }
+    }
+    if (!gotContent && !gotReason && !gotAny) {
+      throw new Error('模型未返回内容。raw=' + (rawTail || buf || '(空)').slice(0, 220));
+    }
+    if (!gotContent && gotReason) {
+      onDelta('\n（以上为模型思考过程；需要正式解答请再点一次「完整讲解」，或在设置关闭思考）', false);
     }
   }
 
@@ -266,14 +282,16 @@
     setBusy(true);
     let acc = '';
     try {
-      await aiStream(msgs, (delta) => {
-        acc += delta;
-        bubble.innerHTML = esc(acc);
+      let accR = '';
+      await aiStream(msgs, (delta, isReason) => {
+        if (isReason) { accR += delta; }
+        else { acc += delta; }
+        bubble.innerHTML = (accR ? '<span style="color:#98a0ad">' + esc(accR) + '</span><br>' : '') + esc(acc);
         const box = document.getElementById('ai-msgs');
         box.scrollTop = box.scrollHeight;
       });
-      if (!acc) acc = '（无返回内容）';
-      bubble.innerHTML = esc(acc);
+      if (!acc && !accR) acc = '（无返回内容）';
+      bubble.innerHTML = (accR ? '<span style="color:#98a0ad">' + esc(accR) + '</span><br>' : '') + esc(acc);
       h.push({ role: 'assistant', text: acc });
       histSave(curQ.id, h);
     } catch (e) {
