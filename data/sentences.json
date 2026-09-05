@@ -1,375 +1,287 @@
 {
  "start": "2026-09-01",
- "note": "每天由 ZCode 追加一天;en/zh/meta 为 HTML 片段(tpl=模板词 blank=考场空)",
+ "note": "2026-09-05 已按《考研的秘密·苦瓜》大作文模板书籍原文重写：英语二积累顺序=静态→动态→经济类第二段→正面尾段；Day3/6 为功能句精选(可只背这些)；Day11 起为备用段(负面/校园/环境体育/文化, 可跳过)。en 标记: tpl=固定模板词(背), blank=考场按题目填(对应书红/蓝字)。",
  "days": [
   {
    "day": 1,
    "date": "2026-09-01",
-   "tag": "静态第一段（上）",
+   "tag": "静态第一段·上(书原文)",
    "sents": [
     {
-     "en": "<span class=\"tpl\">This pie chart</span> offers a clear visualization of how <span class=\"blank\">题目相关词</span> is distributed across <span class=\"blank\">范围词</span>.",
-     "zh": "这个饼图清晰地展示了 ＿＿ 在 ＿＿ 中的分布。",
-     "meta": "<b>模板词（不变）</b>：This pie chart offers a clear visualization of how ／ is distributed across<br><b>考场空（要换）</b>：题目相关词 ／ 范围词<br><b>图表头可换</b>：This bar chart ／ This line chart"
+     "en": "<span class=\"tpl\">This pie chart</span> offers a clear visualization of how <span class=\"blank\">题目相关词</span> is distributed across various everyday choices.",
+     "zh": "该饼图清晰地展示了题目相关词在日常选择中的分配。"
     },
     {
-     "en": "<span class=\"tpl\">Together, these figures</span> illustrate the growing influence of <span class=\"blank\">题目相关词</span> in modern life.",
-     "zh": "总的来说，这些数据体现了 ＿＿ 在现代生活中日益增长的影响力。",
-     "meta": "<b>模板词</b>：Together, these figures illustrate the growing influence of ／ in modern life<br><b>考场空</b>：题目相关词"
+     "en": "It is immediately apparent that <span class=\"blank\">事物1</span> takes the largest share at <span class=\"blank\">百分比1</span>, followed by <span class=\"blank\">事物2</span> and <span class=\"blank\">事物3</span>, which hold shares of <span class=\"blank\">百分比2</span> and <span class=\"blank\">百分比3</span> respectively, serving as notable alternatives.",
+     "zh": "显然，事物1以百分比1占据主导地位，事物2和事物3分别占据百分比2和百分比3，作为有力的替代选项。"
     }
    ]
   },
   {
    "day": 2,
    "date": "2026-09-02",
-   "tag": "静态第一段（下）· 最值句",
+   "tag": "静态第一段·下(书原文)｜末句可写可不写",
    "sents": [
     {
-     "en": "<span class=\"tpl\">It is immediately apparent that</span> <span class=\"blank\">事物1</span> takes the largest share at <span class=\"blank\">百分比1</span>, followed by <span class=\"blank\">事物2</span> and <span class=\"blank\">事物3</span>, which hold shares of <span class=\"blank\">百分比2</span> and <span class=\"blank\">百分比3</span> <span class=\"tpl\">respectively</span>, serving as notable alternatives.",
-     "zh": "显然，事物1 以百分比1 占最大份额，其次是事物2 和事物3，分别为百分比2 和百分比3，作为有力的替代选项。",
-     "meta": "<b>模板词（不变）</b>：It is immediately apparent that ／ takes the largest share at ／ followed by ／ which hold shares of ／ respectively ／ serving as notable alternatives<br><b>考场空（要换）</b>：事物1、事物2、事物3 ／ 百分比1、2、3"
+     "en": "In contrast, <span class=\"blank\">事物4</span> and <span class=\"blank\">事物5</span> account for a much smaller portion, at <span class=\"blank\">百分比4</span> and <span class=\"blank\">百分比5</span>.",
+     "zh": "相较之下，事物4和事物5仅占百分比4和百分比5。"
+    },
+    {
+     "en": "Together, these figures illustrate the growing influence of <span class=\"blank\">题目相关词</span> in modern life.",
+     "zh": "综合来看，这些数据展示了题目相关词在现代生活中日益增长的影响力。"
     }
    ]
   },
   {
    "day": 3,
    "date": "2026-09-03",
-   "tag": "静态第一段（对比句 + 功能句）",
+   "tag": "静态·功能句精选(书10选4)｜图表换法 This pie/bar/line chart",
    "sents": [
     {
-     "en": "<span class=\"tpl\">In contrast</span>, <span class=\"blank\">事物4</span> and <span class=\"blank\">事物5</span> account for <span class=\"blank\">百分比4</span> and <span class=\"blank\">百分比5</span>.",
-     "zh": "相比之下，事物4 和事物5 仅占百分比4 和百分比5。",
-     "meta": "<b>模板词（不变）</b>：In contrast ／ account for<br><b>考场空（要换）</b>：事物4、事物5 ／ 百分比4、百分比5"
+     "en": "<span class=\"tpl\">Turning to</span> <span class=\"blank\">事物1</span>, it <span class=\"tpl\">makes up</span> <span class=\"blank\">百分比1</span> of the total.",
+     "zh": "看事物1，其占总体的百分比1。"
     },
     {
-     "en": "<span class=\"tpl\">Compared with</span> <span class=\"blank\">事物2</span> at <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> comes in at <span class=\"blank\">百分比1</span>.",
-     "zh": "与处于百分比2 的事物2 相比，事物1 为百分比1。",
-     "meta": "<b>备用功能句</b>：对比场合二选一备用——考场上哪个顺口用哪个，不都写"
+     "en": "<span class=\"tpl\">Compared with</span> <span class=\"blank\">事物2</span> at <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">comes in at</span> <span class=\"blank\">百分比1</span>.",
+     "zh": "与处于百分比2的事物2相比，事物1为百分比1。"
+    },
+    {
+     "en": "<span class=\"tpl\">While</span> <span class=\"blank\">事物2</span> <span class=\"tpl\">holds</span> <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">takes</span> <span class=\"blank\">百分比1</span>.",
+     "zh": "事物2占百分比2，而事物1为百分比1。"
+    },
+    {
+     "en": "<span class=\"blank\">事物1</span> and <span class=\"blank\">事物2</span> <span class=\"tpl\">together make up</span> <span class=\"blank\">百分比合计</span>, with individual shares of <span class=\"blank\">百分比1</span> and <span class=\"blank\">百分比2</span>.",
+     "zh": "事物1与事物2合计为百分比合计，单项占比分别为百分比1与百分比2。"
     }
    ]
   },
   {
    "day": 4,
-   "tag": "动态·第一段(上)·补写版",
+   "date": "2026-09-04",
+   "tag": "动态第一段·上(书原文)",
    "sents": [
     {
-     "en": "This line chart offers a clear visualization of how <span class=\"blank\">题目相关词</span> changed across the period from <span class=\"tpl\">年份1</span> to <span class=\"tpl\">年份2</span>.",
-     "zh": "这张折线图清晰地展示了<span class='tpl'>年份1</span>到<span class='tpl'>年份2</span>之间<span class='blank'>题目相关词</span>的数量变化。",
-     "meta": "<b>对照 Day 1① 同款骨架</b>:pie chart → line chart,is distributed across → changed across the period from…to;柱状图=bar chart<br><b>补写版</b>:源图缺失,按静态句型同构补写"
+     "en": "<span class=\"tpl\">This line chart presented</span> the temporal changes of <span class=\"blank\">题目相关词</span> and revealed a clear pattern of development over time.",
+     "zh": "这张折线图展示了题目相关词的时间变化，清晰地呈现了其随时间发展的模式。"
     },
     {
-     "en": "It is immediately apparent that the number of <span class='blank'>事物1</span> witnessed a remarkable rise, surging from <span class=\"tpl\">数字1</span> in <span class=\"tpl\">年份1</span> to <span class=\"tpl\">数字2</span> in <span class=\"tpl\">年份2</span>.",
-     "zh": "显然,<span class='blank'>事物1</span>的数量经历了显著上升,从<span class='tpl'>年份1</span>的<span class='tpl'>数字1</span>飙升至<span class='tpl'>年份2</span>的<span class='tpl'>数字2</span>。",
-     "meta": "<b>对照 Day 2 最值长句</b>:同一开头 It is immediately apparent that…<br><b>可换</b>:surging → climbing / increasing sharply<br><b>补写版</b>:同上"
+     "en": "<span class=\"tpl\">From</span> <span class=\"blank\">时间1</span> <span class=\"tpl\">to</span> <span class=\"blank\">时间2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">rose from</span> <span class=\"blank\">数字1</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字2</span>.",
+     "zh": "自时间1至时间2，事物1从数字1上升至数字2。"
     }
-   ],
-   "date": "2026-09-04"
+   ]
   },
   {
    "day": 5,
-   "tag": "动态·第一段(下)·补写版",
+   "date": "2026-09-05",
+   "tag": "动态第一段·下(书原文)",
    "sents": [
     {
-     "en": "By contrast, the figure for <span class='blank'>事物2</span> saw a steady decline, dropping from <span class=\"tpl\">数字3</span> to <span class=\"tpl\">数字4</span> over the same period.",
-     "zh": "相比之下,<span class='blank'>事物2</span>的数据则稳步下降,同期从<span class='tpl'>数字3</span>降至<span class='tpl'>数字4</span>。",
-     "meta": "<b>模板</b>:By contrast, the figure for ／ saw a steady decline, dropping from ／ to ／ over the same period<br><b>持平表达</b>:remained basically stable(基本持平)<br><b>补写版</b>"
+     "en": "<span class=\"tpl\">During the same period</span>, <span class=\"blank\">事物2</span> <span class=\"tpl\">increased from</span> <span class=\"blank\">数字3</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字4</span>, whereas <span class=\"blank\">事物3</span> <span class=\"tpl\">declined from</span> <span class=\"blank\">数字5</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字6</span>.",
+     "zh": "同一时段内，事物2从数字3上升至数字4，而事物3则从数字5下降至数字6。"
     },
     {
-     "en": "Together, these trends clearly reflect the remarkable changes taking place in <span class=\"blank\">题目相关词</span> over the past years.",
-     "zh": "总的来说,这些趋势清晰地反映了近年来<span class='blank'>题目相关词</span>所发生的显著变化。",
-     "meta": "<b>对照 Day 1② 总结句</b>:Together, these figures illustrate… → Together, these trends clearly reflect…<br><b>补写版</b>"
+     "en": "<span class=\"tpl\">Taken together</span>, these trends outlined the overall trajectory of <span class=\"blank\">题目相关词</span> and underscored its changing influence in modern society.",
+     "zh": "综合来看，这些趋势描绘了题目相关词在当今社会中的整体走向，突出了其不断变化的影响力。"
     }
-   ],
-   "date": "2026-09-05"
+   ]
   },
   {
    "day": 6,
-   "tag": "经济类·第二段(上)·补写版",
+   "date": "2026-09-06",
+   "tag": "动态·功能句精选(书5选4)｜下降句见动态段declined",
    "sents": [
     {
-     "en": "When considered in the context of everyday life, the formation of <span class=\"blank\">题目相关词</span> is driven by the joint influence of multiple factors.",
-     "zh": "放在日常生活中去思考,<span class='blank'>题目相关词</span>的形成是由多方面因素共同推动的。",
-     "meta": "<b>与环境生态首句完全相同</b>;14年英语二真题(中国城镇化进程)即套此句<br><b>补写版</b>:英文据书中中文段回译,原版图到手可替换"
+     "en": "<span class=\"tpl\">From</span> <span class=\"blank\">时间1</span> <span class=\"tpl\">to</span> <span class=\"blank\">时间2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">rose from</span> <span class=\"blank\">数字1</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字2</span>, showing a steady upward trend.",
+     "zh": "自时间1至时间2，事物1由数字1升至数字2，呈现稳定上升趋势。"
     },
     {
-     "en": "The continuously growing economic strength of the nation has undoubtedly laid a solid foundation for the formation of <span class=\"blank\">题目相关词</span>.",
-     "zh": "国家的经济实力不断提升,毫无疑问为<span class='blank'>题目相关词</span>奠定了坚实的形成基础。",
-     "meta": "<b>模板</b>:The continuously growing economic strength of the nation has undoubtedly laid a solid foundation for ／<br><b>补写版</b>:同上"
+     "en": "<span class=\"tpl\">By</span> <span class=\"blank\">时间2</span>, <span class=\"blank\">事物3</span> <span class=\"tpl\">plateaued around</span> <span class=\"blank\">数字5</span>, and its growth slowed and stabilized.",
+     "zh": "到时间2时，事物3在数字5附近进入平台期，其增速放缓并趋于稳定。"
+    },
+    {
+     "en": "<span class=\"tpl\">After</span> <span class=\"blank\">时间1</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">accelerated</span>, and the increase from <span class=\"blank\">数字1</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字2</span> outpaced earlier gains.",
+     "zh": "时间1之后，事物1出现加速，从数字1到数字2的增幅超过此前增幅。"
+    },
+    {
+     "en": "<span class=\"tpl\">Volatility increased for</span> <span class=\"blank\">事物3</span>, <span class=\"tpl\">swings widened around</span> <span class=\"blank\">数字区间</span>, and short-term fluctuations became frequent.",
+     "zh": "事物3的波动性上升，在数字区间附近的振幅加大，短期起伏变得更为频繁。"
     }
-   ],
-   "date": "2026-09-06"
+   ]
   },
   {
    "day": 7,
-   "tag": "经济类·第二段(下)·补写版",
+   "date": "2026-09-07",
+   "tag": "经济类第二段·上(书原文)｜英语二首选",
    "sents": [
     {
-     "en": "In addition, with <span class=\"tpl\">the steady growth of citizens wealth</span> and <span class=\"tpl\">the expanding range of related choices</span>, <span class=\"blank\">题目相关词</span> has become increasingly popular.",
-     "zh": "此外,伴随着<span class='tpl'>公民财富的提升</span>与<span class='tpl'>相关选择增多</span>,<span class='blank'>题目相关词</span>越来越受欢迎。",
-     "meta": "<b>模板</b>:In addition, with ／ and ／, ／ has become increasingly popular<br><b>补写版</b>"
+     "en": "<span class=\"tpl\">Placed in the context of everyday life</span>, the formation of <span class=\"blank\">题目相关词</span> is propelled by the combined influence of multiple factors.",
+     "zh": "放在日常生活中去思考，题目相关词的形成是由多方面因素共同推动的。"
     },
     {
-     "en": "Equally important is that people in modern society pursue more spiritual satisfaction, and thus their focus has shifted from <span class=\"tpl\">function</span> to <span class=\"tpl\">meaning</span>, which enables <span class=\"blank\">题目相关词</span> to gradually integrate into daily life.",
-     "zh": "同样重要的是,当今时代人们更追求于精神满足,因而关注点从<span class='tpl'>功能</span>转向<span class='tpl'>意义</span>,这让<span class='blank'>题目相关词</span>逐渐融入日常生活之中。",
-     "meta": "<b>模板</b>:Equally important is that…, and thus their focus has shifted from ／ to ／, which enables ／ to gradually integrate into daily life<br><b>蓝字(按题换)</b>:function / meaning<br><b>补写版</b>"
+     "en": "<span class=\"tpl\">The continuous growth of national economic strength</span> has undoubtedly laid a solid foundation for the emergence of <span class=\"blank\">题目相关词</span>.",
+     "zh": "国家经济实力的持续增长，毫无疑问为题目相关词的出现奠定了坚实基础。"
     }
-   ],
-   "date": "2026-09-07"
+   ]
   },
   {
    "day": 8,
-   "tag": "通用尾段·正面(上)",
+   "date": "2026-09-08",
+   "tag": "经济类第二段·下(书原文)",
    "sents": [
     {
-     "en": "We need to think rationally about the impact of <span class=\"blank\">题目相关词</span> on the present era, and provide deliberate guidance.",
-     "zh": "我们有必要理性思考<span class='blank'>题目相关词</span>对当今时代的影响并做出人为引导。",
-     "meta": "<b>模板(不变)</b>:We need to think rationally about the impact of ／ on the present era, and provide deliberate guidance<br><b>用法</b>:第三段写一个即可,正面话题用这版"
+     "en": "<span class=\"tpl\">In addition</span>, with the increase in citizens’ wealth and the expansion of available choices, <span class=\"blank\">题目相关词</span> has become increasingly popular.",
+     "zh": "此外，随着公民财富的增加与可选择范围的扩大，题目相关词变得越来越受欢迎。"
     },
     {
-     "en": "Government should clarify relevant strategies, so that <span class=\"blank\">题目相关词</span> can better adapt to the development of today's society.",
-     "zh": "政府应该明确相关策略,让<span class='blank'>题目相关词</span>更好的适应当今社会的发展。",
-     "meta": "<b>模板</b>:Government should clarify relevant strategies, so that ／ can better adapt to the development of today's society<br><b>可换</b>:Government → 学校/媒体/商家/平台(按题目)"
+     "en": "<span class=\"tpl\">Equally important</span>, people in the present age are more inclined to pursue spiritual fulfillment, and their attention has therefore shifted from mere function to deeper meaning, which has gradually enabled <span class=\"blank\">题目相关词</span> to become integrated into everyday life.",
+     "zh": "同样重要的是，当今时代的人们更倾向于追求精神满足，因而关注点从单纯的功能转向更深层的意义，这让题目相关词逐渐融入日常生活。"
     }
-   ],
-   "date": "2026-09-08"
+   ]
   },
   {
    "day": 9,
-   "tag": "通用尾段·正面(下)",
+   "date": "2026-09-09",
+   "tag": "正面尾段·上(书原文)｜第三段用一个即可",
    "sents": [
     {
-     "en": "Schools and media need to carry out targeted education and guidance, enabling the public to gain a deep understanding of <span class=\"blank\">题目相关词</span>.",
-     "zh": "学校与媒体需要开展针对性教育和引导,让大众对<span class='blank'>题目相关词</span>有深度的认知。",
-     "meta": "<b>模板</b>:Schools and media need to carry out targeted education and guidance, enabling the public to gain a deep understanding of ／"
+     "en": "<span class=\"tpl\">We need to think rationally about the impact of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">on the present era, and provide deliberate guidance.</span>",
+     "zh": "我们有必要理性思考题目相关词对当今时代的影响，并做出审慎的引导。"
     },
     {
-     "en": "Notably, individuals should maintain a rational mindset when considering the impact of <span class=\"blank\">题目相关词</span> on today's society.",
-     "zh": "不可忽略的是,个人应该保持理性的思维去看待<span class='blank'>题目相关词</span>对当今社会的影响。",
-     "meta": "<b>模板</b>:Notably, individuals should maintain a rational mindset when considering the impact of ／ on today's society<br><b>结构</b>:政府→学校媒体→个人,三主体各一句,考场按题挑主体换"
+     "en": "<span class=\"tpl\">Government should clarify relevant strategies</span>, so that <span class=\"blank\">题目相关词</span> can better adapt to the development of today’s society.",
+     "zh": "政府应明确相关策略，让题目相关词更好地适应当今社会的发展。"
     }
-   ],
-   "date": "2026-09-09"
+   ]
   },
   {
    "day": 10,
-   "tag": "通用尾段·负面(上)",
+   "date": "2026-09-10",
+   "tag": "正面尾段·下(书原文)｜主体词/行为词可按题目替换",
    "sents": [
     {
-     "en": "We need to examine the harms of <span class=\"blank\">题目相关词</span> with a rational mindset, and impose deliberate constraints.",
-     "zh": "我们有必要以理性思维审视<span class='blank'>题目相关词</span>的危害,并作出有意识的约束。",
-     "meta": "<b>模板</b>:We need to examine the harms of ／ with a rational mindset, and impose deliberate constraints<br><b>用法</b>:负面现象题专用(与正面版骨架同源,对照背)"
+     "en": "<span class=\"tpl\">Schools and media need to carry out targeted education and guidance</span>, enabling the public to gain a deep understanding of <span class=\"blank\">题目相关词</span>.",
+     "zh": "学校与媒体需要开展针对性教育和引导，让大众对题目相关词有深入的认知。"
     },
     {
-     "en": "Government should clarify corrective strategies and implementation steps, so that <span class=\"blank\">题目相关词</span> is contained and guided back on track.",
-     "zh": "政府应明确纠偏策略与执行措施,使<span class='blank'>题目相关词</span>得到遏制并被引导回正轨。",
-     "meta": "<b>模板</b>:Government should clarify corrective strategies and implementation steps, so that ／ is contained and guided back on track"
+     "en": "<span class=\"tpl\">Notably</span>, individuals should maintain a rational mindset when considering the impact of <span class=\"blank\">题目相关词</span> on today’s society.",
+     "zh": "值得注意的是，个人在思考题目相关词对当今社会的影响时应保持理性心态。"
     }
-   ],
-   "date": "2026-09-10"
+   ]
   },
   {
    "day": 11,
-   "tag": "通用尾段·负面(下)",
+   "date": "2026-09-11",
+   "tag": "备用·负面尾段(消极话题用)｜可跳过",
    "sents": [
     {
-     "en": "Schools and media should carry out targeted literacy education and cautionary guidance, helping the public identify risks and resist herd behavior.",
-     "zh": "学校与媒体需要开展针对性的素养教育与警示引导,帮助大众识别风险并抵制跟风。",
-     "meta": "<b>模板</b>:Schools and media should carry out targeted literacy education and cautionary guidance, helping the public identify risks and resist herd behavior"
+     "en": "<span class=\"tpl\">We need to examine the harms of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">with a rational mindset, and impose deliberate constraints.</span>",
+     "zh": "我们有必要以理性思维审视题目相关词的危害，并作出有意识的约束。"
     },
     {
-     "en": "Notably, individuals should keep a rational view of the impact of <span class=\"blank\">题目相关词</span> on today's society.",
-     "zh": "不可忽略的是,个人应该保持理性的思维去看待<span class='blank'>题目相关词</span>对当今社会的影响。",
-     "meta": "<b>模板</b>:Notably, individuals should keep a rational view of the impact of ／ on today's society<br><b>注</b>:与正面版末句几乎相同"
+     "en": "<span class=\"tpl\">Government should clarify corrective strategies and implementation steps</span>, so that <span class=\"blank\">题目相关词</span> is contained and guided back on track.",
+     "zh": "政府应明确纠偏策略与执行措施，使题目相关词得到遏制并被引导回正轨。"
+    },
+    {
+     "en": "<span class=\"tpl\">Schools and media should carry out targeted literacy education and cautionary guidance</span>, helping the public identify risks and resist herd behavior.",
+     "zh": "学校与媒体需要开展针对性的素养教育与警示引导，帮助大众识别风险并抵制跟风。"
+    },
+    {
+     "en": "<span class=\"tpl\">Notably</span>, individuals should keep a rational view of the impact of <span class=\"blank\">题目相关词</span> on today’s society.",
+     "zh": "值得注意的是，个人应保持理性视角看待题目相关词对当今社会的影响。"
     }
-   ],
-   "date": "2026-09-11"
+   ]
   },
   {
    "day": 12,
-   "tag": "环境生态·第二段(上)·母模板",
+   "date": "2026-09-12",
+   "tag": "备用·第二段校园类(英语一品质类)｜可跳过",
    "sents": [
     {
-     "en": "When considered in the context of everyday life, the formation of <span class=\"blank\">题目相关词</span> is driven by the joint influence of multiple factors.",
-     "zh": "放在日常生活中去思考,<span class='blank'>题目相关词</span>的形成是由多方面因素共同推动的。",
-     "meta": "<b>与 Day 6 经济类首句完全相同</b><br><b>注</b>:本段是母模板——体育健康=整段换词版,先吃透这里"
+     "en": "<span class=\"tpl\">When considered in the context of everyday life</span>, the positive influence of <span class=\"blank\">题目相关词</span> on individuals should by no means be overlooked.",
+     "zh": "放在日常生活中去思考，题目相关词对个人的积极影响是不可忽视的。"
     },
     {
-     "en": "As real life continues to develop, people's expectations for their <span class=\"tpl\">living environment</span> no longer remain at the level of superficial satisfaction, which has undoubtedly laid a more solid practical foundation for <span class=\"blank\">题目相关词</span>.",
-     "zh": "随着现实生活不断发展,人们对于<span class='tpl'>生活环境</span>的要求已不再停留于表层满足,这无疑为<span class='blank'>题目相关词</span>奠定了更坚实的现实基础。",
-     "meta": "<b>模板</b>:As real life continues to develop, people's expectations for their ／ no longer remain at the level of superficial satisfaction, which has undoubtedly laid a more solid practical foundation for ／<br><b>蓝字(按题换)</b>:living environment"
+     "en": "<span class=\"tpl\">With active guidance from the nation</span>, <span class=\"blank\">题目相关词</span> continues to take root and grow along the path of personal development.",
+     "zh": "国家的积极引导，使得题目相关词不断在个人成长的道路上生根发芽。"
+    },
+    {
+     "en": "<span class=\"tpl\">In addition</span>, the formation of <span class=\"blank\">题目相关词</span> cannot be separated from the positive example set by peers, and a favorable environment undoubtedly serves as an important factor in fostering it.",
+     "zh": "此外，题目相关词的形成离不开身边同伴的以身作则，良好的氛围无疑是推动其生成的重要因素。"
+    },
+    {
+     "en": "<span class=\"tpl\">Without doubt</span>, when the pressures of daily life increase, <span class=\"blank\">题目相关词</span> helps individuals transform pressure into motivation in the face of difficulties.",
+     "zh": "毫无疑问，日常生活的压力增多时，题目相关词会帮助个人在困难面前将压力转化为动力。"
     }
-   ],
-   "date": "2026-09-12"
+   ]
   },
   {
    "day": 13,
-   "tag": "环境生态·第二段(下)",
+   "date": "2026-09-13",
+   "tag": "备用·环境生态/体育健康类第二段(改几词互换)｜可跳过",
    "sents": [
     {
-     "en": "In addition, with <span class=\"tpl\">public awareness of environmental protection</span> gradually deepening and related needs continuing to grow, <span class=\"blank\">题目相关词</span> has been receiving increasing attention.",
-     "zh": "除此之外,伴随着<span class='tpl'>公众环保意识</span>的逐渐加深与相关需求的不断增长,<span class='blank'>题目相关词</span>也越来越受到重视。",
-     "meta": "<b>模板</b>:In addition, with ／ gradually deepening and related needs continuing to grow, ／ has been receiving increasing attention<br><b>蓝字(按题换)</b>:public awareness of environmental protection"
+     "en": "<span class=\"tpl\">When considered in the context of everyday life</span>, the formation of <span class=\"blank\">题目相关词</span> is driven by the joint influence of multiple factors.",
+     "zh": "放在日常生活中去思考，题目相关词的形成是由多方面因素共同推动的。"
     },
     {
-     "en": "More importantly, when people begin to shift their focus from <span class=\"tpl\">short-term convenience</span> to <span class=\"tpl\">long-term life quality</span>, <span class=\"blank\">题目相关词</span> is able to enter daily life more deeply through such changes and gradually demonstrate a more distinct practical significance.",
-     "zh": "更为重要的是,当人们开始把注意力从<span class='tpl'>短期便利</span>转向<span class='tpl'>长期生活质量</span>时,<span class='blank'>题目相关词</span>便会在这样的变化之中不断融入日常生活,并逐渐展现出更加鲜明的现实意义。",
-     "meta": "<b>模板</b>:More importantly, when people begin to shift their focus from ／ to ／, ／ is able to enter daily life more deeply through such changes and gradually demonstrate a more distinct practical significance<br><b>蓝字(按题换)</b>:short-term convenience / long-term life quality"
+     "en": "<span class=\"tpl\">As real life continues to develop</span>, people’s expectations for their <span class=\"blank\">living environment / physical condition</span> no longer remain at the level of superficial satisfaction, which has undoubtedly laid a more solid practical foundation for <span class=\"blank\">题目相关词</span>.",
+     "zh": "随着现实生活不断发展，人们对生活环境/身体状态的要求已不再停留于表层满足，这无疑为题目相关词奠定了更坚实的现实基础。"
+    },
+    {
+     "en": "<span class=\"tpl\">In addition</span>, with public awareness of <span class=\"blank\">environmental protection / health</span> gradually deepening and related needs continuing to grow, <span class=\"blank\">题目相关词</span> has been receiving increasing attention.",
+     "zh": "除此之外，随着公众环保意识/健康意识的逐渐加深与相关需求的不断增长，题目相关词也越来越受到重视。"
+    },
+    {
+     "en": "<span class=\"tpl\">More importantly</span>, when people begin to shift their focus from short-term convenience to long-term life quality, <span class=\"blank\">题目相关词</span> is able to enter daily life more deeply through such changes and gradually demonstrate a more distinct practical significance.",
+     "zh": "更为重要的是，当人们开始把注意力从短期便利转向长期生活质量时，题目相关词便会在这样的变化之中不断融入日常生活，并逐渐展现出更加鲜明的现实意义。"
     }
-   ],
-   "date": "2026-09-13"
+   ]
   },
   {
    "day": 14,
-   "tag": "体育健康·第二段(上)·换词版",
+   "date": "2026-09-14",
+   "tag": "备用·文化自信类第二段(可与经济类融合)｜可跳过",
    "sents": [
     {
-     "en": "When considered in the context of everyday life, the formation of <span class=\"blank\">题目相关词</span> is driven by the joint influence of multiple factors.",
-     "zh": "放在日常生活中去思考,<span class='blank'>题目相关词</span>的形成是由多方面因素共同推动的。",
-     "meta": "<b>对照 Day 12</b>:此句完全相同——换词应万变"
+     "en": "<span class=\"tpl\">The reason why</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">has become increasingly prominent today lies, to a large extent, in the changing way people understand the meaning of life.</span>",
+     "zh": "题目相关词之所以在今天不断凸显，很大程度上是因为人们对生活意义的理解正在发生变化。"
     },
     {
-     "en": "As real life continues to develop, people's expectations for their <span class=\"tpl\">physical condition</span> no longer remain at the level of superficial satisfaction, which has undoubtedly laid a more solid practical foundation for <span class=\"blank\">题目相关词</span>.",
-     "zh": "随着现实生活不断发展,人们对于<span class='tpl'>身体状况</span>的要求已不再停留于表层满足,这无疑为<span class='blank'>题目相关词</span>奠定了更坚实的现实基础。",
-     "meta": "<b>对照 Day 12 只换</b>:living environment → physical condition<br><b>模板</b>:其余全部不变"
+     "en": "<span class=\"tpl\">In the past</span>, many people were more likely to focus on the outward results of life. However, as real-life experience continues to accumulate, more and more individuals have come to realize that life needs not only to be arranged, but also to be understood.",
+     "zh": "过去，很多人更容易把注意力放在生活的外在结果之上；但随着现实经验不断累积，越来越多的人开始意识到，生活不仅需要被安排，也需要被理解。"
+    },
+    {
+     "en": "<span class=\"tpl\">What</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">embodies is precisely a vital force that helps people affirm their values.</span>",
+     "zh": "题目相关词所承载的，正是一种帮助人们确认价值的重要力量。"
+    },
+    {
+     "en": "<span class=\"tpl\">It is not merely an abstract cultural slogan, but something that, at a deeper level, responds to modern people’s need for meaning and a sense of belonging. For this reason</span>, <span class=\"blank\">题目相关词</span> <span class=\"tpl\">has continued to be strengthened in contemporary society.</span>",
+     "zh": "它并不只是抽象的文化口号，而是在更深层次上回应着现代人对于意义感和归属感的需要。正因如此，题目相关词才会在当代社会中不断得到强化。"
     }
-   ],
-   "date": "2026-09-14"
+   ]
   },
   {
    "day": 15,
-   "tag": "体育健康·第二段(下)",
+   "date": "2026-09-15",
+   "tag": "备用·负面第二段(消极现象用)｜可跳过",
    "sents": [
     {
-     "en": "In addition, with <span class=\"tpl\">public awareness of health</span> gradually deepening and related needs continuing to grow, <span class=\"blank\">题目相关词</span> has been receiving increasing attention.",
-     "zh": "除此之外,伴随着<span class='tpl'>公众健康意识</span>的逐渐加深与相关需求的不断增长,<span class='blank'>题目相关词</span>也越来越受到重视。",
-     "meta": "<b>对照 Day 13 只换</b>:public awareness of environmental protection → public awareness of health"
+     "en": "<span class=\"tpl\">When considered in the context of everyday life</span>, the negative influence of <span class=\"blank\">题目相关词</span> on individuals should by no means be ignored.",
+     "zh": "放在日常生活中去思考，题目相关词对个人的负面影响同样不容忽视。"
     },
     {
-     "en": "More importantly, when people begin to shift their focus from <span class=\"tpl\">short-term convenience</span> to <span class=\"tpl\">long-term life quality</span>, <span class=\"blank\">题目相关词</span> is able to enter daily life more deeply through such changes and gradually demonstrate a more distinct practical significance.",
-     "zh": "更为重要的是,当人们开始把注意力从<span class='tpl'>短期便利</span>转向<span class='tpl'>长期生活质量</span>时,<span class='blank'>题目相关词</span>便会在这样的变化之中不断融入日常生活,并逐渐展现出更加鲜明的现实意义。",
-     "meta": "<b>对照 Day 13</b>:此句完全相同(两版通用)"
-    }
-   ],
-   "date": "2026-09-15"
-  },
-  {
-   "day": 16,
-   "tag": "校园类·第二段·正面(上)",
-   "sents": [
-    {
-     "en": "When considered in the context of everyday life, the positive influence of <span class=\"blank\">题目相关词</span> on individuals should by no means be overlooked.",
-     "zh": "放在日常生活中去思考,<span class='blank'>题目相关词</span>对个人的积极影响是不可忽视的。",
-     "meta": "<b>模板</b>:When considered in the context of everyday life, the positive influence of ／ on individuals should by no means be overlooked<br><b>注</b>:对应英语一品质类;负面题换 Day 18 的 negative 版"
+     "en": "<span class=\"tpl\">Weak or misguided guidance from society</span> may allow <span class=\"blank\">题目相关词</span> to grow gradually along the path of personal development.",
+     "zh": "社会层面若引导不足甚至出现偏差，题目相关词便可能在个人成长的道路上逐渐滋长。"
     },
     {
-     "en": "With <span class=\"tpl\">active guidance from the nation</span>, <span class=\"blank\">题目相关词</span> continues to <span class=\"tpl\">take root and grow</span> along the path of personal development.",
-     "zh": "<span class='tpl'>国家的积极引导</span>,使得<span class='blank'>题目相关词</span>不断在个人成长的道路上<span class='tpl'>生根发芽</span>。",
-     "meta": "<b>模板</b>:With ／, ／ continues to ／ along the path of personal development<br><b>蓝字(按题换)</b>:active guidance from the nation / take root and grow"
-    }
-   ],
-   "date": "2026-09-16"
-  },
-  {
-   "day": 17,
-   "tag": "校园类·第二段·正面(下)",
-   "sents": [
-    {
-     "en": "In addition, the formation of <span class=\"blank\">题目相关词</span> cannot be separated from the <span class=\"tpl\">positive example set by peers</span>, and <span class=\"tpl\">a favorable environment</span> undoubtedly serves as an important factor in fostering it.",
-     "zh": "此外,<span class='blank'>题目相关词</span>的形成离不开身边同伴的<span class='tpl'>以身作则</span>,<span class='tpl'>良好的氛围</span>无疑是推动其生成的重要因素。",
-     "meta": "<b>模板</b>:In addition, the formation of ／ cannot be separated from the ／, and ／ undoubtedly serves as an important factor in fostering it<br><b>蓝字(按题换)</b>:positive example set by peers / a favorable environment"
+     "en": "<span class=\"tpl\">Moreover</span>, the formation of <span class=\"blank\">题目相关词</span> cannot be separated from the negative example set by peers, and an unfavorable environment undoubtedly becomes an important factor in fostering it.",
+     "zh": "此外，题目相关词的形成也离不开身边同伴的负面示范，而不良环境无疑会成为推动其生成的重要因素。"
     },
     {
-     "en": "Without doubt, when the pressures of daily life increase, <span class=\"blank\">题目相关词</span> helps individuals <span class=\"tpl\">transform pressure into motivation</span> in the face of difficulties.",
-     "zh": "毫无疑问,日常生活的压力增多时,<span class='blank'>题目相关词</span>会帮助个人在困难面前<span class='tpl'>将压力转化为动力</span>。",
-     "meta": "<b>模板</b>:Without doubt, when the pressures of daily life increase, ／ helps individuals ／ in the face of difficulties<br><b>蓝字(按题换)</b>:transform pressure into motivation"
+     "en": "<span class=\"tpl\">There is no doubt that</span>, when the pressures of daily life increase, <span class=\"blank\">题目相关词</span> may cause individuals to deal with difficulties in a more fragile and short-sighted manner.",
+     "zh": "毫无疑问，日常生活的压力增多时，题目相关词会使个人在困难面前更容易表现出脆弱而短视的应对方式。"
     }
-   ],
-   "date": "2026-09-17"
-  },
-  {
-   "day": 18,
-   "tag": "校园类·第二段·负面(上)",
-   "sents": [
-    {
-     "en": "When considered in the context of everyday life, the negative influence of <span class=\"blank\">题目相关词</span> on individuals should by no means be ignored.",
-     "zh": "放在日常生活中去思考,<span class='blank'>题目相关词</span>对个人的负面影响同样不容忽视。",
-     "meta": "<b>模板</b>:When considered in the context of everyday life, the negative influence of ／ on individuals should by no means be ignored<br><b>对照 Day 16</b>:positive influence → negative influence"
-    },
-    {
-     "en": "<span class=\"tpl\">Weak or misguided guidance from society</span> may allow <span class=\"blank\">题目相关词</span> to <span class=\"tpl\">grow gradually</span> along the path of personal development.",
-     "zh": "<span class='tpl'>社会层面若引导不足甚至出现偏差</span>,<span class='blank'>题目相关词</span>便可能在个人成长的道路上<span class='tpl'>逐渐滋长</span>。",
-     "meta": "<b>模板</b>:／ may allow ／ to ／ along the path of personal development<br><b>对照 Day 16</b>:骨架同,主语从国家的积极引导换成社会引导不足"
-    }
-   ],
-   "date": "2026-09-18"
-  },
-  {
-   "day": 19,
-   "tag": "校园类·第二段·负面(下)",
-   "sents": [
-    {
-     "en": "Moreover, the formation of <span class=\"blank\">题目相关词</span> cannot be separated from the <span class=\"tpl\">negative example set by peers</span>, and <span class=\"tpl\">an unfavorable environment</span> undoubtedly becomes an important factor in fostering it.",
-     "zh": "此外,<span class='blank'>题目相关词</span>的形成也离不开身边同伴的<span class='tpl'>负面示范</span>,而<span class='tpl'>不良环境</span>无疑会成为推动其生成的重要因素。",
-     "meta": "<b>模板</b>:Moreover, the formation of ／ cannot be separated from the ／, and ／ undoubtedly becomes an important factor in fostering it<br><b>对照 Day 17 只换</b>:positive→negative example / favorable→unfavorable environment"
-    },
-    {
-     "en": "There is no doubt that, when the pressures of daily life increase, <span class=\"blank\">题目相关词</span> may cause individuals to <span class=\"tpl\">deal with difficulties in a more fragile and short-sighted manner</span>.",
-     "zh": "毫无疑问,日常生活的压力增多时,<span class='blank'>题目相关词</span>会使个人在困难面前更容易表现出<span class='tpl'>脆弱而短视的应对方式</span>。",
-     "meta": "<b>模板</b>:There is no doubt that, when the pressures of daily life increase, ／ may cause individuals to ／<br><b>对照 Day 17</b>:helps transform…→ cause…fragile and short-sighted"
-    }
-   ],
-   "date": "2026-09-19"
-  },
-  {
-   "day": 20,
-   "tag": "文化自信·第二段(1/3)",
-   "sents": [
-    {
-     "en": "The reason why <span class=\"blank\">题目相关词</span> has become increasingly prominent today lies, to a large extent, in the changing way people understand <span class=\"tpl\">the meaning of life</span>.",
-     "zh": "<span class='blank'>题目相关词</span>之所以在今天不断凸显,很大程度上是因为人们对<span class='tpl'>生活意义</span>的理解正在发生变化。",
-     "meta": "<b>模板</b>:The reason why ／ has become increasingly prominent today lies, to a large extent, in the changing way people understand ／<br><b>注</b>:文化自信专用骨架,可与经济类融合;本段6句分3天"
-    },
-    {
-     "en": "In the past, many people were more likely to focus on <span class=\"tpl\">the outward results of life</span>.",
-     "zh": "过去,很多人更容易把注意力放在<span class='tpl'>生活的外在结果</span>之上。",
-     "meta": "<b>整句借用</b>,蓝字按题微调"
-    }
-   ],
-   "date": "2026-09-20"
-  },
-  {
-   "day": 21,
-   "tag": "文化自信·第二段(2/3)",
-   "sents": [
-    {
-     "en": "However, as real-life experience continues to accumulate, more and more individuals have come to realize that life needs not only to be <span class=\"tpl\">arranged</span>, but also to be <span class=\"tpl\">understood</span>.",
-     "zh": "但随着现实经验不断累积,越来越多的人开始意识到,生活不仅需要<span class='tpl'>被安排</span>,也需要<span class='tpl'>被理解</span>。",
-     "meta": "<b>模板</b>:However, as real-life experience continues to accumulate, more and more individuals have come to realize that life needs not only to be ／, but also to be ／"
-    },
-    {
-     "en": "What <span class=\"blank\">题目相关词</span> embodies is precisely a vital force that helps people <span class=\"tpl\">affirm their values</span>.",
-     "zh": "<span class='blank'>题目相关词</span>所承载的,正是一种帮助人们<span class='tpl'>确认价值</span>的重要力量。",
-     "meta": "<b>模板</b>:What ／ embodies is precisely a vital force that helps people ／"
-    }
-   ],
-   "date": "2026-09-21"
-  },
-  {
-   "day": 22,
-   "tag": "文化自信·第二段(3/3)",
-   "sents": [
-    {
-     "en": "It is not merely <span class=\"tpl\">an abstract cultural slogan</span>, but something that, at a deeper level, responds to modern people's need for <span class=\"tpl\">meaning and a sense of belonging</span>.",
-     "zh": "它并不只是<span class='tpl'>抽象的文化口号</span>,而是在更深层次上回应着现代人对于<span class='tpl'>意义感和归属感</span>的需要。",
-     "meta": "<b>模板</b>:It is not merely ／, but something that, at a deeper level, responds to modern people's need for ／"
-    },
-    {
-     "en": "For this reason, <span class=\"blank\">题目相关词</span> has continued to be strengthened in contemporary society.",
-     "zh": "正因如此,<span class='blank'>题目相关词</span>才会在当代社会中不断得到强化。",
-     "meta": "<b>模板</b>:For this reason, ／ has continued to be strengthened in contemporary society<br><b>注</b>:可作本段收尾"
-    }
-   ],
-   "date": "2026-09-22"
+   ]
   }
  ]
 }
