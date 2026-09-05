@@ -50,7 +50,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第一章 函数、极限、连续"
+   "chapter": "第一章 函数、极限、连续",
+   "kp": "数列极限的存在性"
   },
   {
    "no": 2,
@@ -65,7 +66,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第二章 一元函数微分学及其应用"
+   "chapter": "第二章 一元函数微分学及其应用",
+   "kp": "变限积分与极值拐点"
   },
   {
    "no": 3,
@@ -78,7 +80,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第二章 一元函数微分学及其应用"
+   "chapter": "第二章 一元函数微分学及其应用",
+   "kp": "微分的线性主部"
   },
   {
    "no": 4,
@@ -92,7 +95,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第三章 一元函数积分学及其应用"
+   "chapter": "第三章 一元函数积分学及其应用",
+   "kp": "反常积分的敛散性"
   },
   {
    "no": 5,
@@ -105,7 +109,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第六章 微分方程及其应用"
+   "chapter": "第六章 微分方程及其应用",
+   "kp": "二阶常系数微分方程(逆问题)"
   },
   {
    "no": 8,
@@ -119,7 +124,8 @@
    "status": "todo",
    "reason": "",
    "subject": "线代",
-   "chapter": "第八章 矩阵"
+   "chapter": "第八章 矩阵",
+   "kp": "矩阵运算与可逆"
   },
   {
    "no": 9,
@@ -133,7 +139,8 @@
    "status": "todo",
    "reason": "",
    "subject": "线代",
-   "chapter": "第八章 矩阵"
+   "chapter": "第八章 矩阵",
+   "kp": "分块矩阵的伴随"
   },
   {
    "no": 10,
@@ -147,7 +154,8 @@
    "status": "todo",
    "reason": "",
    "subject": "线代",
-   "chapter": "第十二章 二次型"
+   "chapter": "第十二章 二次型",
+   "kp": "惯性指数与合同标准形"
   },
   {
    "no": 11,
@@ -160,7 +168,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第一章 函数、极限、连续"
+   "chapter": "第一章 函数、极限、连续",
+   "kp": "等价无穷小"
   },
   {
    "no": 12,
@@ -174,7 +183,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第二章 一元函数微分学及其应用"
+   "chapter": "第二章 一元函数微分学及其应用",
+   "kp": "高阶导数(泰勒/莱布尼茨)"
   },
   {
    "no": 13,
@@ -187,7 +197,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第二章 一元函数微分学及其应用"
+   "chapter": "第二章 一元函数微分学及其应用",
+   "kp": "对称性与分部积分"
   },
   {
    "no": 14,
@@ -201,7 +212,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第一章 函数、极限、连续"
+   "chapter": "第一章 函数、极限、连续",
+   "kp": "飘带函数与数列积"
   },
   {
    "no": 15,
@@ -215,7 +227,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第五章 二重积分及其应用"
+   "chapter": "第五章 二重积分及其应用",
+   "kp": "二重积分的定义"
   },
   {
    "no": 16,
@@ -229,7 +242,8 @@
    "status": "todo",
    "reason": "",
    "subject": "线代",
-   "chapter": "第十一章 相似矩阵"
+   "chapter": "第十一章 相似矩阵",
+   "kp": "相似对角化的判定"
   },
   {
    "no": 17,
@@ -242,7 +256,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第一章 函数、极限、连续"
+   "chapter": "第一章 函数、极限、连续",
+   "kp": "变限积分求极限"
   },
   {
    "no": 18,
@@ -256,7 +271,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第三章 一元函数积分学及其应用"
+   "chapter": "第三章 一元函数积分学及其应用",
+   "kp": "旋转体体积与最值"
   },
   {
    "no": 19,
@@ -270,7 +286,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第五章 二重积分及其应用"
+   "chapter": "第五章 二重积分及其应用",
+   "kp": "二重积分(极坐标分段)"
   },
   {
    "no": 20,
@@ -284,7 +301,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第六章 微分方程及其应用"
+   "chapter": "第六章 微分方程及其应用",
+   "kp": "微分方程与卷积"
   },
   {
    "no": 21,
@@ -298,7 +316,8 @@
    "status": "todo",
    "reason": "",
    "subject": "高数",
-   "chapter": "第二章 一元函数微分学及其应用"
+   "chapter": "第二章 一元函数微分学及其应用",
+   "kp": "中值定理证明"
   },
   {
    "no": 22,
@@ -313,7 +332,8 @@
    "status": "todo",
    "reason": "",
    "subject": "线代",
-   "chapter": "第八章 矩阵"
+   "chapter": "第八章 矩阵",
+   "kp": "矩阵方程与求逆"
   }
  ]
 }

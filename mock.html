@@ -106,7 +106,7 @@
       el.className = 'qcard';
       var done = localStorage.getItem(KEY_D + q.no) === '1';
       el.innerHTML =
-        '<button type="button" class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
+        '<button type="button" class="qhead"><span class="qno">' + esc(q.kp || ('第 ' + q.no + ' 题')) + '</span>' +
         '<span class="tag">' + esc(q.type) + '</span><span class="tag sco">' + q.score + ' 分</span>' +
         '<span class="sp"></span>' +
         '<span role="button" class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</span></button>' +
