@@ -103,10 +103,13 @@
   </div>
 
   <div class="card">
-    <h2 class="g">④ 交深度批改</h2>
-    <div style="font-size:14.5px">点下面按钮复制全文 → <b>微信发给 ZCode</b> → 出扇贝式批改 PDF(逐句标色改写 + 内容/语言/结构分项分 + 总评),PDF 存桌面,批改记录自动归档到本页「历史批改」。</div>
-    <div style="text-align:center;margin-top:10px"><button class="btn primary big" id="btncopy">一键复制全文</button></div>
+    <h2 class="g">④ 深度批改</h2>
+    <button class="btn primary big" id="btnai">🤖 AI 深批</button>
+    <div id="aiout" style="margin-top:10px"></div>
+    <div style="font-size:13.5px;color:#8a94a6;margin-top:8px">AI 深批结果只存本机(最近一次见下)。想让 ZCode 归档进下方「历史批改」(跨设备可见、出 PDF),点下面复制全文发给 ZCode。</div>
+    <div style="text-align:center;margin-top:6px"><button class="btn big" id="btncopy">复制全文发给 ZCode(归档)</button></div>
     <div class="flash" id="flash"></div>
+    <div id="lastai" style="font-size:13px;color:#8a94a6;margin-top:4px"></div>
   </div>
 
   <div class="card">
@@ -232,6 +235,100 @@ function analyze(){
     + '<div class="disc">机检只有体检意义——语言准不准、内容切不切题,发给 AI 深批才算数。</div>';
 }
 
+/* ---------- AI 深批(直连 GLM,key 与问AI模块共用) ---------- */
+const AI_URL = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
+const GRADE_SYS = `你是考研英语二作文阅卷老师,按扇贝考研批改的风格讲评。英语二大作文满分 20 分:内容 8 / 语言 8 / 结构 4。对考生作文输出以下四节(用简体中文说明,英文例句除外):
+## 总分
+**X/20**(内容 a/8 · 语言 b/8 · 结构 c/4)+ 一句话判分理由
+## 逐句批改
+只挑有问题和值得升级的句子,每句三行:
+- 原句:...
+问题:...(标注类型:语法错误/用词不当/中式英语/拼写/搭配)
+改为:...(符合考研写作水平的地道改写,不堆超纲大词)
+## 亮点
+列出写得好、值得保留的表达
+## 总评与下篇行动
+2-3 句总评 + 下篇作文前最该改的一个问题
+直接输出,不要寒暄。`;
+
+async function aiGrade(){
+  const key = localStorage.getItem('glm_key');
+  if (!key){
+    $('#aiout').innerHTML = '<div class="item red"><b>未找到 GLM Key</b>去题库任意题目的「问AI」面板点「测连通」,填一次 Key,本页就能直连批改(Key 只存你本机)。</div>';
+    return;
+  }
+  const t = $('#essay').value.trim();
+  if (!t){ flash('先写正文再批改'); return; }
+  const p = promptOf();
+  const model = localStorage.getItem('glm_model') || 'glm-5.3-flash';
+  const btn = $('#btnai');
+  btn.disabled = true; btn.textContent = '批改中…';
+  $('#aiout').innerHTML = '<div class="disc">连接 GLM,流式批改中…</div>';
+  let acc = '', sawReason = false;
+  try {
+    const resp = await fetch(AI_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+      body: JSON.stringify({
+        model, stream: true, max_tokens: 3072,
+        thinking: { type: 'disabled' },
+        messages: [
+          { role: 'system', content: GRADE_SYS },
+          { role: 'user', content: `题目:${p.title}\n图表信息:${p.desc || '(自定义)'}\nDirections:${p.dir}\n\n考生作文(约 ${words(t).length} 词):\n${t}` }
+        ]
+      })
+    });
+    if (!resp.ok){
+      const tx = await resp.text();
+      throw new Error(resp.status === 401 ? 'Key 无效(401):去问AI面板重新设置一次' : ('HTTP ' + resp.status + ' ' + tx.slice(0, 120)));
+    }
+    const rd = resp.body.getReader(), dec = new TextDecoder();
+    let buf = '';
+    for(;;){
+      const { done, value } = await rd.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      const lines = buf.split('\n');
+      buf = lines.pop();
+      for (const ln of lines){
+        const s = ln.trim();
+        if (!s.startsWith('data:')) continue;
+        const payload = s.slice(5).trim();
+        if (payload === '[DONE]') continue;
+        try {
+          const j = JSON.parse(payload);
+          const d = (j.choices && j.choices[0] && j.choices[0].delta) || {};
+          if (d.content) acc += d.content;
+          else if (d.reasoning_content) sawReason = true;
+        } catch(e) {}
+      }
+      if (acc) $('#aiout').innerHTML = '<div class="essay">' + fmtMD(acc) + '</div>';
+    }
+    if (!acc) throw new Error(sawReason ? '模型只输出了思考内容(空返回)' : '空返回');
+    localStorage.setItem(LS + 'ai', JSON.stringify({ date: new Date().toISOString().slice(0,10), title: p.title, text: acc }));
+    renderLastAI();
+  } catch(e){
+    $('#aiout').innerHTML = '<div class="item red"><b>批改失败</b>' + e.message + '</div>';
+  } finally {
+    btn.disabled = false; btn.textContent = '🤖 AI 深批';
+  }
+}
+function fmtMD(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').split('\n').map(ln => {
+    let x = ln.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+    if (/^#{2,3}\s/.test(x)) x = '<b style="color:#123a8f">' + x.replace(/^#{2,3}\s*/, '') + '</b>';
+    return x;
+  }).join('<br>');
+}
+function renderLastAI(){
+  const v = localStorage.getItem(LS + 'ai');
+  if (!v) return;
+  try {
+    const o = JSON.parse(v);
+    $('#lastai').textContent = `最近一次 AI 深批:${o.date} · ${o.title} · 结果保存在本机`;
+  } catch(e) {}
+}
+
 /* ---------- 复制 ---------- */
 async function copyAll(){
   const t = $('#essay').value.trim();
@@ -267,17 +364,18 @@ function renderHist(list){
     return;
   }
   const arr = [...list].sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  const nz = (v, d) => (v === undefined || v === null) ? d : v;
   $('#hist').innerHTML = arr.map(e => {
     const sc = e.score || {};
     return `<div class="hist">
       <div class="h1row">
-        <span class="score">${sc.total ?? '–'}<small> /${sc.max || 20}</small></span>
+        <span class="score">${nz(sc.total,'–')}<small> /${nz(sc.max,20)}</small></span>
         <span><span class="ht">${e.title || ''}</span><br><span class="hd">${e.date || ''} · 约 ${e.words || '–'} 词</span></span>
       </div>
       <div class="dims">
-        <span class="dim">内容 <b>${sc.content ?? '–'}/${sc.contentMax || 8}</b></span>
-        <span class="dim">语言 <b>${sc.lang ?? '–'}/${sc.langMax || 8}</b></span>
-        <span class="dim">结构 <b>${sc.struct ?? '–'}/${sc.structMax || 4}</b></span>
+        <span class="dim">内容 <b>${nz(sc.content,'–')}/${nz(sc.contentMax,8)}</b></span>
+        <span class="dim">语言 <b>${nz(sc.lang,'–')}/${nz(sc.langMax,8)}</b></span>
+        <span class="dim">结构 <b>${nz(sc.struct,'–')}/${nz(sc.structMax,4)}</b></span>
       </div>
       <div class="cm">${e.comment || ''}</div>
       ${(e.issues && e.issues.length) ? `<ul class="iss">${e.issues.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
@@ -312,6 +410,7 @@ async function init(){
     const r2 = await fetch('data/essays.json?' + Date.now());
     renderHist(await r2.json());
   } catch(e) { renderHist([]); }
+  renderLastAI();
 
   if (location.hash === '#demo'){
     $('#psel').value = 'p1'; renderPrompt();
@@ -323,6 +422,7 @@ async function init(){
   $('#pcustom').addEventListener('input', renderPrompt);
   $('#essay').addEventListener('input', updateCount);
   $('#btncheck').addEventListener('click', analyze);
+  $('#btnai').addEventListener('click', aiGrade);
   $('#btncopy').addEventListener('click', copyAll);
   $('#tstart').addEventListener('click', () => {
     if (tRun){ clearInterval(tRun); tRun = null; $('#tstart').textContent = '继续'; }
