@@ -18,12 +18,12 @@
   .type-head{font-size:15px;font-weight:700;margin:16px 2px 8px;display:flex;align-items:center;gap:8px}
   .type-head .cnt{font-size:12px;color:#7a828f;font-weight:400}
   .qcard{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px;overflow:hidden}
-  .qhead{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer}
+  .qhead{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;width:100%;border:none;background:#fff;font-family:inherit;text-align:left;touch-action:manipulation}
   .qno{font-weight:700;font-size:15px}
   .tag{font-size:11px;background:#eef1f6;color:#5a6472;border-radius:6px;padding:2px 7px}
   .tag.sco{background:#fff4e0;color:#a06b00}
   .qhead .sp{flex:1}
-  .done-chip{font-size:12px;border-radius:8px;padding:3px 10px;border:1px solid #d6dbe3;background:#fff;cursor:pointer}
+  .done-chip{display:inline-block;font-size:12px;border-radius:8px;padding:3px 10px;border:1px solid #d6dbe3;background:#fff;cursor:pointer}
   .done-chip.on{background:#e8f7f0;color:#1d9e6f;border-color:#bfe6d6}
   .qbody{display:none;padding:0 12px 12px}
   .qcard.open .qbody{display:block}
@@ -98,7 +98,7 @@
     var rl = document.createElement('div');
     rl.className = 'right-line';
     rl.innerHTML = '本次做对：第 <b>' + esc((p.right || []).join('、')) + '</b> 题（未收录）｜ 试卷/解析整卷：' +
-      p.spages.map(function(x, i){ return '<a href="' + x + '" target="_blank">试卷' + (i+1) + '</a>'; }).join(' ') ;
+      p.spages.map(function(x, i){ return '<a href="data/' + x + '" target="_blank">试卷' + (i+1) + '</a>'; }).join(' ') ;
     root.appendChild(rl);
 
     function card(q){
@@ -106,24 +106,24 @@
       el.className = 'qcard';
       var done = localStorage.getItem(KEY_D + q.no) === '1';
       el.innerHTML =
-        '<div class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
+        '<button type="button" class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
         '<span class="tag">' + esc(q.type) + '</span><span class="tag sco">' + q.score + ' 分</span>' +
         '<span class="sp"></span>' +
-        '<button class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</button></div>' +
+        '<span role="button" class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</span></button>' +
         '<div class="qbody">' +
-        '<img class="qimg" loading="lazy" src="' + q.qimg + '" alt="第' + q.no + '题">' +
+        '<img class="qimg" loading="lazy" src="data/' + q.qimg + '" alt="第' + q.no + '题">' +
         '<div class="btnrow"><button class="btn" data-act="jie">📚 看解析（第' + q.jpages.join('、') + '页）</button></div>' +
         '<div class="jlist" id="jl' + q.no + '">' +
-        q.jpages.map(function(n){ return '<img loading="lazy" src="images/mock_pages/j' + ('0' + n).slice(-2) + '.jpg" alt="解析第' + n + '页">'; }).join('') +
+        q.jpages.map(function(n){ return '<img loading="lazy" src="data/images/mock_pages/j' + ('0' + n).slice(-2) + '.jpg" alt="解析第' + n + '页">'; }).join('') +
         '</div>' +
         '<textarea class="reason" placeholder="错因（会存在本机）：如 概念不清 / 计算失误 / 没思路…">' +
         esc(nz(localStorage.getItem(KEY_R + q.no), '')) + '</textarea>' +
         '<div class="hint">错因与重做状态仅存本机</div>' +
         '</div>';
-      el.querySelector('.qhead').onclick = function(e){
-        if (e.target.dataset.act === 'done') return;
+      el.querySelector('.qhead').addEventListener('click', function(e){
+        if (e.target.closest('[data-act="done"]')) return;
         el.classList.toggle('open');
-      };
+      });
       el.querySelector('[data-act="done"]').onclick = function(e){
         e.stopPropagation();
         var on = this.classList.toggle('on');
