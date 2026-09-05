@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>作文批改 · 写作台</title>
+<style>
+  :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
+  * { box-sizing:border-box; }
+  html,body{overflow-x:hidden}
+  body { margin:0; background:#f6f7fb; color:var(--ink);
+         font-family:-apple-system,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+         font-size:16.5px; line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:14px 14px 60px; }
+  .top { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+  h1 { font-size:21px; color:var(--blue); margin:4px 0 0; }
+  .back { font-size:13.5px; color:#5a6472; text-decoration:none; flex:0 0 auto; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; }
+  .card h2 { font-size:16.5px; margin:0 0 8px; color:var(--blue); border-left:4px solid var(--blue); padding-left:9px; }
+  .card h2.g { color:var(--green); border-color:var(--green); }
+  .card h2.r { color:var(--red); border-color:var(--red); }
+  select, textarea { font-family:inherit; font-size:16px; color:var(--ink); }
+  select { width:100%; border:1px solid var(--line); border-radius:8px; padding:8px 10px; background:#fff; }
+  .prompt { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:9px 13px; margin-top:9px; font-size:15px; }
+  .prompt b { color:var(--blue); }
+  .prompt .dir { color:#5a6472; font-size:13.5px; margin-top:4px; font-style:italic; }
+  textarea { width:100%; min-height:300px; border:1px solid var(--line); border-radius:10px; padding:12px; line-height:1.75; resize:vertical; background:#fff; }
+  textarea:focus { outline:2px solid #c9d6f2; }
+  .countbar { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:8px; font-size:14px; color:#5a6472; }
+  .countbar b { color:var(--blue); }
+  .timer { margin-left:auto; display:flex; align-items:center; gap:8px; }
+  .ttime { font-size:19px; font-weight:800; font-variant-numeric:tabular-nums; color:var(--ink); }
+  .ttime.low { color:var(--red); }
+  .btn { border:1px solid var(--line); background:#fff; border-radius:999px; padding:5px 14px;
+         font-size:13.5px; cursor:pointer; color:var(--blue); }
+  .btn.primary { background:var(--blue); color:#fff; border-color:var(--blue); font-weight:700; }
+  .btn.big { font-size:15.5px; padding:9px 20px; border-radius:10px; }
+  .item { border-radius:10px; padding:8px 12px; margin:8px 0; font-size:14.5px; }
+  .item b { display:block; margin-bottom:2px; }
+  .item.red { background:#fdecec; border:1px solid #f2c4c0; }
+  .item.red b { color:var(--red); }
+  .item.yellow { background:#fff7e8; border:1px solid #f0dfb8; }
+  .item.yellow b { color:#b26a00; }
+  .item.green { background:#e5f3ea; border:1px solid #bfe0cd; }
+  .item.green b { color:var(--green); }
+  .item ul { margin:4px 0 0; padding-left:18px; }
+  .item li { margin:2px 0; }
+  .disc { font-size:13px; color:#8a94a6; margin-top:8px; }
+  .flash { text-align:center; color:var(--green); font-size:14.5px; font-weight:700; min-height:22px; margin-top:8px; }
+  .hist { border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:10px 0; }
+  .hist .h1row { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .hist .score { font-size:26px; font-weight:800; color:var(--blue); white-space:nowrap; }
+  .hist .score small { font-size:14px; color:#8a94a6; font-weight:400; }
+  .hist .ht { font-weight:700; }
+  .hist .hd { font-size:13px; color:#8a94a6; }
+  .dims { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 2px; }
+  .dim { border-radius:8px; padding:3px 10px; font-size:13.5px; background:#f4f6fa; }
+  .dim b { color:var(--blue); }
+  .hist .cm { font-size:14.5px; margin-top:6px; }
+  .hist details { margin-top:8px; }
+  .hist summary { cursor:pointer; font-size:13.5px; color:var(--blue); }
+  .hist .essay { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:10px 13px; font-size:14.5px; margin-top:8px; white-space:pre-wrap; }
+  .hist .iss { font-size:14px; margin-top:6px; padding-left:2px; }
+  .hist .iss li { margin:3px 0; }
+  .empty { text-align:center; color:#8a94a6; padding:24px 0; font-size:14.5px; }
+  .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
+  @media (max-width:520px){ body{font-size:15.5px} textarea{min-height:240px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>作文批改 · 写作台</h1>
+    <a class="back" href="index.html">← 返回主站</a>
+  </div>
+
+  <div class="card">
+    <h2>① 题目</h2>
+    <select id="psel"></select>
+    <div class="prompt" id="pbox"></div>
+    <textarea id="pcustom" placeholder="自定义题目:把图表信息和 writing directions 写在这里" style="min-height:90px;margin-top:9px" hidden></textarea>
+  </div>
+
+  <div class="card">
+    <h2>② 写作(限时 40 分钟)</h2>
+    <textarea id="essay" placeholder="在这里写正文,写完点下方「机检体检」…&#10;草稿会自动存在本机,切走再回来不丢。"></textarea>
+    <div class="countbar">
+      <span>词数 <b id="cw">0</b></span>
+      <span>句数 <b id="cs">0</b></span>
+      <span>平均句长 <b id="cl">–</b> 词</span>
+      <span class="timer">
+        <span class="ttime" id="ttime">40:00</span>
+        <button class="btn" id="tstart">开始</button>
+        <button class="btn" id="treset">重置</button>
+      </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="r">③ 机检体检(即时)</h2>
+    <button class="btn primary big" id="btncheck">机检体检</button>
+    <div id="report"><div class="disc">体检只查「皮」:字数、句长、连接词、中式残留、模板句命中。语言对不对、切不切题,要发给 AI 深批(第④步)。</div></div>
+  </div>
+
+  <div class="card">
+    <h2 class="g">④ 交深度批改</h2>
+    <div style="font-size:14.5px">点下面按钮复制全文 → <b>微信发给 ZCode</b> → 出扇贝式批改 PDF(逐句标色改写 + 内容/语言/结构分项分 + 总评),PDF 存桌面,批改记录自动归档到本页「历史批改」。</div>
+    <div style="text-align:center;margin-top:10px"><button class="btn primary big" id="btncopy">一键复制全文</button></div>
+    <div class="flash" id="flash"></div>
+  </div>
+
+  <div class="card">
+    <h2>历史批改</h2>
+    <div id="hist"><div class="empty">加载中…</div></div>
+  </div>
+
+  <div class="foot">作文批改模块 ｜ 分项:内容 8 + 语言 8 + 结构 4 = 20(英语二大作文) ｜ 草稿与计时保存在本机</div>
+</div>
+
+<script>
+const PROMPTS = [
+  { id:'p1', title:'模拟 · 饼图:某高校学生课后时间安排',
+    desc:'饼图:学习 45%、娱乐 25%、运动 20%、其他 10%(数据为模拟)。',
+    dir:'Write an essay based on the chart. In your writing, you should 1) interpret the chart, and 2) give your comments. You should write about 150 words.' },
+  { id:'p2', title:'模拟 · 柱状图:某市公共图书馆年借阅量',
+    desc:'柱状图:2019 年 120 万册,此后逐年上升,2024 年达 310 万册(数据为模拟)。',
+    dir:'Write an essay based on the chart. In your writing, you should 1) interpret the chart, and 2) give your comments. You should write about 150 words.' },
+  { id:'p3', title:'模拟 · 表格:某市居民主要健身方式',
+    desc:'表格:散步 52%、跑步 25%、球类 15%、其他 8%(数据为模拟)。',
+    dir:'Write an essay based on the table. In your writing, you should 1) interpret the table, and 2) give your comments. You should write about 150 words.' },
+  { id:'p4', title:'模拟 · 折线图:某国新能源汽车年销量',
+    desc:'折线图:2018 年 125 万辆,持续攀升,2024 年约 1200 万辆(数据为模拟)。',
+    dir:'Write an essay based on the chart. In your writing, you should 1) interpret the chart, and 2) give your comments. You should write about 150 words.' },
+  { id:'custom', title:'自定义题目', desc:'', dir:'' }
+];
+const CLICHES = [
+  ['with the development of', '换成:along with the growth of / as … advances'],
+  ['more and more', '换成:a growing / an increasing number of,或 increasingly'],
+  ['as we all know', '删掉,直接说事实'],
+  ['every coin has two sides', '换成:… is a double-edged sword,或干脆直述两面'],
+  ['last but not least', '换成:finally / above all'],
+  ['it goes without saying', '删掉,直接说']
+];
+const LINKERS = ['however','moreover','furthermore','in addition','therefore','consequently','by contrast','on the contrary','as a result','by comparison','specifically','for instance','for example','in conclusion','to sum up','similarly','meanwhile','nevertheless'];
+const LS = 'pigai_';
+const $ = s => document.querySelector(s);
+
+let TPL = [];          // 从 sentences.json 提取的模板短语
+let tLeft = 40*60, tRun = null;
+
+/* ---------- 题目 ---------- */
+function promptOf(){
+  const id = $('#psel').value;
+  const p = PROMPTS.find(x => x.id === id);
+  return p.id === 'custom'
+    ? { title:'自定义', desc:$('#pcustom').value.trim(), dir:'' }
+    : p;
+}
+function renderPrompt(){
+  const p = promptOf();
+  $('#pcustom').hidden = $('#psel').value !== 'custom';
+  $('#pbox').innerHTML = p.desc
+    ? `<b>${p.title}</b><br>${p.desc}<div class="dir">${p.dir}</div>`
+    : `<b>${p.title}</b>${p.dir ? `<div class="dir">${p.dir}</div>` : ''}`;
+  localStorage.setItem(LS+'sel', $('#psel').value);
+  if ($('#psel').value === 'custom') localStorage.setItem(LS+'custom', $('#pcustom').value);
+}
+
+/* ---------- 计数 ---------- */
+function words(s){ return s.trim().split(/\s+/).filter(Boolean); }
+function sents(s){ return s.split(/[.!?]+/).map(x => x.trim()).filter(x => /[A-Za-z]/.test(x)); }
+function updateCount(){
+  const t = $('#essay').value;
+  const w = words(t), sn = sents(t);
+  $('#cw').textContent = w.length;
+  $('#cs').textContent = sn.length;
+  $('#cl').textContent = sn.length ? Math.round(w.length / sn.length) : '–';
+  localStorage.setItem(LS+'draft', t);
+}
+
+/* ---------- 机检 ---------- */
+function push(items, level, title, body){
+  items.push({ level, title, body: body || '' });
+}
+function analyze(){
+  const t = $('#essay').value;
+  const box = $('#report');
+  if (!words(t).length){ box.innerHTML = '<div class="disc">还没写正文,写完再体检。</div>'; return; }
+  const items = [];
+  const w = words(t), sn = sents(t), low = t.toLowerCase();
+
+  // 红色:硬伤
+  const cjk = t.match(/[\u4e00-\u9fff]/g);
+  if (cjk) push(items, 'red', `正文里混进了中文(${cjk.length} 处)`, `考场写英文要整句英文思维,中文注释一律去掉:${[...new Set(cjk)].slice(0,8).join(' ')}`);
+  const badp = t.match(/[。,、;:?!“”‘’()《》]/g);
+  if (badp) push(items, 'red', '用了中文标点', '全文换英文标点(, . ; : ? !),卷面上中文标点很扎眼。');
+  const dbl = t.match(/\b([A-Za-z]+)\s+\1\b/gi);
+  if (dbl) push(items, 'red', '疑似叠词', '检查:' + dbl.slice(0,6).join(' , '));
+  const noCap = sn.filter(s => /^[a-z]/.test(s));
+  if (noCap.length) push(items, 'red', `${noCap.length} 个句子小写开头`, '例:' + noCap.slice(0,3).map(s => s.slice(0,40) + '…').join(' ｜ '));
+
+  // 黄色:注意
+  if (w.length < 120) push(items, 'red', `字数 ${w.length},不够`, '英语二大作文要求 150 词左右,少于 120 直接压档。');
+  else if (w.length < 150) push(items, 'yellow', `字数 ${w.length},偏少`, '再补一句扩写(图表细节或评论),稳到 150+。');
+  else if (w.length <= 230) push(items, 'green', `字数 ${w.length},达标`, '');
+  else push(items, 'yellow', `字数 ${w.length},偏多`, '考场 40 分钟写 150 左右就够,写多错多、挤占阅读时间。');
+  const longs = sn.filter(s => words(s).length > 35);
+  if (longs.length) push(items, 'yellow', `${longs.length} 个超长句(>35 词)`, '长句是加分项,但超过 35 词极易语法崩:例:' + longs.slice(0,2).map(s => words(s).slice(0,8).join(' ') + '…').join(' ｜ '));
+  const avg = sn.length ? Math.round(w.length / sn.length) : 0;
+  if (avg > 28) push(items, 'yellow', `平均句长 ${avg} 词,偏长`, '理想区间 15–25 词/句:长短句交替才有节奏分。');
+  const aAn = (t.match(/\ba\s+[aeiou]\w+/gi) || []).concat(t.match(/\ban\s+[bcdfgjklmnpqrstvwxyz]\w+/gi) || []);
+  if (aAn.length) push(items, 'yellow', 'a/an 用法粗查报警', aAn.slice(0,5).join(' , ') + '(可能有误报,自己核一遍)');
+  for (const [c, alt] of CLICHES){
+    const m = low.match(new RegExp('\\b' + c.replace(/ /g,'\\s+') + '\\b','g'));
+    if (m) push(items, 'yellow', `烂大街表达 ×${m.length}:${c}`, alt);
+  }
+
+  // 绿色:连接词 + 模板命中
+  const hits = [];
+  LINKERS.forEach(l => { if (new RegExp('\\b' + l.replace(/ /g,'\\s+') + '\\b','i').test(low)) hits.push(l); });
+  if (!hits.length) push(items, 'yellow', '通篇没有连接词', 'however / in addition / by contrast … 至少用 2–3 个,结构分就靠它们。');
+  else if (hits.length > 7) push(items, 'yellow', `连接词 ${hits.length} 个,疑似堆砌`, '堆连接词不加分,删到 3–5 个真正必要的。');
+  else push(items, 'green', `连接词 ${hits.length} 个:${hits.join(' , ')}`, '');
+  if (TPL.length){
+    const hit = TPL.filter(tp => new RegExp(tp.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/\s+/g,'\\s+'),'i').test(low));
+    if (hit.length) push(items, 'green', `模板句命中 ${hit.length} 个`, '<ul>' + hit.slice(0,6).map(h => `<li>${h}</li>`).join('') + (hit.length > 6 ? `<li>…</li>` : '') + '</ul>');
+    else push(items, 'yellow', '背过的模板一句都没用上', '是没想起来还是不会套?去背作文模块把当天的句子先过一遍再写。');
+  }
+
+  box.innerHTML = items.map(i =>
+    `<div class="item ${i.level}"><b>${i.title}</b>${i.body}</div>`).join('')
+    + '<div class="disc">机检只有体检意义——语言准不准、内容切不切题,发给 AI 深批才算数。</div>';
+}
+
+/* ---------- 复制 ---------- */
+async function copyAll(){
+  const t = $('#essay').value.trim();
+  if (!t){ flash('先写正文再复制'); return; }
+  const p = promptOf();
+  const txt = `【英语二大作文 · 批改请求】\n题目:${p.title}\n图表信息:${p.desc || '(见自定义)'}\n\n正文(约 ${words(t).length} 词):\n\n${t}`;
+  try { await navigator.clipboard.writeText(txt); flash('已复制,去微信发给我'); }
+  catch(e){
+    const ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); flash('已复制(兼容模式)'); }
+    catch(e2){ flash('复制失败,手动全选正文复制'); }
+    ta.remove();
+  }
+}
+function flash(msg){ $('#flash').textContent = msg; setTimeout(() => $('#flash').textContent = '', 3500); }
+
+/* ---------- 计时 ---------- */
+function drawT(){
+  const m = Math.floor(tLeft/60), s = tLeft%60;
+  $('#ttime').textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  $('#ttime').classList.toggle('low', tLeft <= 5*60);
+}
+function tick(){
+  if (tLeft > 0){ tLeft--; drawT(); return; }
+  clearInterval(tRun); tRun = null; $('#tstart').textContent = '开始';
+}
+
+/* ---------- 历史批改 ---------- */
+function renderHist(list){
+  if (!list || !list.length){
+    $('#hist').innerHTML = '<div class="empty">还没有批改记录——写完第一篇发给 ZCode,批改结果会出现在这里。</div>';
+    return;
+  }
+  const arr = [...list].sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  $('#hist').innerHTML = arr.map(e => {
+    const sc = e.score || {};
+    return `<div class="hist">
+      <div class="h1row">
+        <span class="score">${sc.total ?? '–'}<small> /${sc.max || 20}</small></span>
+        <span><span class="ht">${e.title || ''}</span><br><span class="hd">${e.date || ''} · 约 ${e.words || '–'} 词</span></span>
+      </div>
+      <div class="dims">
+        <span class="dim">内容 <b>${sc.content ?? '–'}/${sc.contentMax || 8}</b></span>
+        <span class="dim">语言 <b>${sc.lang ?? '–'}/${sc.langMax || 8}</b></span>
+        <span class="dim">结构 <b>${sc.struct ?? '–'}/${sc.structMax || 4}</b></span>
+      </div>
+      <div class="cm">${e.comment || ''}</div>
+      ${(e.issues && e.issues.length) ? `<ul class="iss">${e.issues.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
+      ${e.essay ? `<details><summary>看我的原文</summary><div class="essay">${e.essay}</div></details>` : ''}
+    </div>`;
+  }).join('');
+}
+
+/* ---------- 初始化 ---------- */
+async function init(){
+  $('#psel').innerHTML = PROMPTS.map(p => `<option value="${p.id}">${p.title}</option>`).join('');
+  $('#psel').value = localStorage.getItem(LS+'sel') || 'p1';
+  $('#pcustom').value = localStorage.getItem(LS+'custom') || '';
+  renderPrompt();
+  const draft = localStorage.getItem(LS+'draft');
+  if (draft) $('#essay').value = draft;
+  updateCount();
+
+  try {
+    const r = await fetch('data/sentences.json');
+    const j = await r.json();
+    const seen = new Set();
+    (j.days || []).forEach(d => (d.sents || []).forEach(s => {
+      [...(s.en || '').matchAll(/<span class="tpl">([\s\S]*?)<\/span>/g)].forEach(m => {
+        const t = m[1].replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+        if (t.split(' ').length >= 3 && !seen.has(t.toLowerCase())){ seen.add(t.toLowerCase()); TPL.push(t); }
+      });
+    }));
+  } catch(e) { /* 模板库加载失败就跳过该检查 */ }
+
+  try {
+    const r2 = await fetch('data/essays.json?' + Date.now());
+    renderHist(await r2.json());
+  } catch(e) { renderHist([]); }
+
+  if (location.hash === '#demo'){
+    $('#psel').value = 'p1'; renderPrompt();
+    $('#essay').value = "This pie chart offers a clear visualization of how after-school time is distributed across students in a university . With the development of society , more and more students spend their time on entertainment. However, study still occupies the largest share, which is 45 percent. a interesting phenomenon is that sports take 20 percent, this can help students keep healthy , and relax themselves after a long day of study. In conclusion, students should balance study and rest. the chart shows a clear trend that entertainment keeps growing, however it should not take too much time of students, because study is the most important task for students in the university, and if students spend too much time on playing games they will fail the exams and their parents will be very disappointed about them.";
+    updateCount(); analyze();
+  }
+
+  $('#psel').addEventListener('change', renderPrompt);
+  $('#pcustom').addEventListener('input', renderPrompt);
+  $('#essay').addEventListener('input', updateCount);
+  $('#btncheck').addEventListener('click', analyze);
+  $('#btncopy').addEventListener('click', copyAll);
+  $('#tstart').addEventListener('click', () => {
+    if (tRun){ clearInterval(tRun); tRun = null; $('#tstart').textContent = '继续'; }
+    else { tRun = setInterval(tick, 1000); $('#tstart').textContent = '暂停'; }
+  });
+  $('#treset').addEventListener('click', () => { clearInterval(tRun); tRun = null; tLeft = 40*60; drawT(); $('#tstart').textContent = '开始'; });
+}
+init();
+</script>
+</body>
+</html>
