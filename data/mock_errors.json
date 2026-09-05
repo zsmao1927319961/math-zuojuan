@@ -1,0 +1,319 @@
+{
+ "paper": {
+  "name": "2027考研数学开学大模考（数学二）",
+  "date": "2026-09-05",
+  "total": 22,
+  "right": [
+   6,
+   7
+  ],
+  "score_note": "选择1-10(5分/题) 填空11-16(5分/题) 解答17-22(17题10分,18-22各12分)",
+  "spages": [
+   "images/mock_pages/s01.jpg",
+   "images/mock_pages/s02.jpg",
+   "images/mock_pages/s03.jpg",
+   "images/mock_pages/s04.jpg",
+   "images/mock_pages/s05.jpg"
+  ],
+  "jpages_all": [
+   "images/mock_pages/j01.jpg",
+   "images/mock_pages/j02.jpg",
+   "images/mock_pages/j03.jpg",
+   "images/mock_pages/j04.jpg",
+   "images/mock_pages/j05.jpg",
+   "images/mock_pages/j06.jpg",
+   "images/mock_pages/j07.jpg",
+   "images/mock_pages/j08.jpg",
+   "images/mock_pages/j09.jpg",
+   "images/mock_pages/j10.jpg",
+   "images/mock_pages/j11.jpg",
+   "images/mock_pages/j12.jpg",
+   "images/mock_pages/j13.jpg",
+   "images/mock_pages/j14.jpg",
+   "images/mock_pages/j15.jpg",
+   "images/mock_pages/j16.jpg",
+   "images/mock_pages/j17.jpg",
+   "images/mock_pages/j18.jpg"
+  ]
+ },
+ "errors": [
+  {
+   "no": 1,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_1.jpg",
+   "jpages": [
+    1,
+    2,
+    3
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第一章 函数、极限、连续"
+  },
+  {
+   "no": 2,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_2.jpg",
+   "jpages": [
+    1,
+    2,
+    3
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第二章 一元函数微分学及其应用"
+  },
+  {
+   "no": 3,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_3.jpg",
+   "jpages": [
+    3
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第二章 一元函数微分学及其应用"
+  },
+  {
+   "no": 4,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_4.jpg",
+   "jpages": [
+    3,
+    4
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第三章 一元函数积分学及其应用"
+  },
+  {
+   "no": 5,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_5.jpg",
+   "jpages": [
+    4
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第六章 微分方程及其应用"
+  },
+  {
+   "no": 8,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_8.jpg",
+   "jpages": [
+    5,
+    6
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "线代",
+   "chapter": "第八章 矩阵"
+  },
+  {
+   "no": 9,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_9.jpg",
+   "jpages": [
+    6,
+    7
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "线代",
+   "chapter": "第八章 矩阵"
+  },
+  {
+   "no": 10,
+   "type": "选择",
+   "score": 5,
+   "qimg": "images/mock/q_10.jpg",
+   "jpages": [
+    7,
+    8
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "线代",
+   "chapter": "第十二章 二次型"
+  },
+  {
+   "no": 11,
+   "type": "填空",
+   "score": 5,
+   "qimg": "images/mock/q_11.jpg",
+   "jpages": [
+    8
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第一章 函数、极限、连续"
+  },
+  {
+   "no": 12,
+   "type": "填空",
+   "score": 5,
+   "qimg": "images/mock/q_12.jpg",
+   "jpages": [
+    8,
+    9
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第二章 一元函数微分学及其应用"
+  },
+  {
+   "no": 13,
+   "type": "填空",
+   "score": 5,
+   "qimg": "images/mock/q_13.jpg",
+   "jpages": [
+    9
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第二章 一元函数微分学及其应用"
+  },
+  {
+   "no": 14,
+   "type": "填空",
+   "score": 5,
+   "qimg": "images/mock/q_14.jpg",
+   "jpages": [
+    9,
+    10
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第一章 函数、极限、连续"
+  },
+  {
+   "no": 15,
+   "type": "填空",
+   "score": 5,
+   "qimg": "images/mock/q_15.jpg",
+   "jpages": [
+    10,
+    11
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第五章 二重积分及其应用"
+  },
+  {
+   "no": 16,
+   "type": "填空",
+   "score": 5,
+   "qimg": "images/mock/q_16.jpg",
+   "jpages": [
+    11,
+    12
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "线代",
+   "chapter": "第十一章 相似矩阵"
+  },
+  {
+   "no": 17,
+   "type": "解答",
+   "score": 10,
+   "qimg": "images/mock/q_17.jpg",
+   "jpages": [
+    12
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第一章 函数、极限、连续"
+  },
+  {
+   "no": 18,
+   "type": "解答",
+   "score": 12,
+   "qimg": "images/mock/q_18.jpg",
+   "jpages": [
+    12,
+    13
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第三章 一元函数积分学及其应用"
+  },
+  {
+   "no": 19,
+   "type": "解答",
+   "score": 12,
+   "qimg": "images/mock/q_19.jpg",
+   "jpages": [
+    13,
+    14
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第五章 二重积分及其应用"
+  },
+  {
+   "no": 20,
+   "type": "解答",
+   "score": 12,
+   "qimg": "images/mock/q_20.jpg",
+   "jpages": [
+    14,
+    15
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第六章 微分方程及其应用"
+  },
+  {
+   "no": 21,
+   "type": "解答",
+   "score": 12,
+   "qimg": "images/mock/q_21.jpg",
+   "jpages": [
+    15,
+    16
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "高数",
+   "chapter": "第二章 一元函数微分学及其应用"
+  },
+  {
+   "no": 22,
+   "type": "解答",
+   "score": 12,
+   "qimg": "images/mock/q_22.jpg",
+   "jpages": [
+    16,
+    17,
+    18
+   ],
+   "status": "todo",
+   "reason": "",
+   "subject": "线代",
+   "chapter": "第八章 矩阵"
+  }
+ ]
+}
