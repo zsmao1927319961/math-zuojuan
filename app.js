@@ -14,6 +14,38 @@ let cuotiReason = '';
 let morePane = 'bank';
 
 const SOURCE_NAMES = { gaoshu880: '高数880', xian_dai: '线代讲义', xian_dai880: '线代880', qhzt: '强化专题' };
+
+/* 混排公式渲染：含 $...$ 时按分符切分渲染，其余整段按 LaTeX（兼容旧答案）；KaTeX 缺失时降级纯文本 */
+function renderLatexMixed(el, str) {
+  if (!el) return;
+  if (!window.katex) { el.textContent = str; return; }
+  if (str.indexOf('$') < 0) {
+    /* 含中文的整串不是 LaTeX，按纯文本显示；否则兼容旧答案（如 "C"、"\frac{1}{2}"）按公式渲染 */
+    if (/[\u4e00-\u9fff]/.test(str)) { el.textContent = str; return; }
+    try { window.katex.render(str, el, { throwOnError: false }); } catch (e) { el.textContent = str; }
+    return;
+  }
+  el.textContent = '';
+  const re = /\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g;
+  let m, last = 0;
+  while ((m = re.exec(str)) !== null) {
+    if (m.index > last) el.appendChild(document.createTextNode(str.slice(last, m.index)));
+    const span = document.createElement('span');
+    const tex = m[1] !== undefined ? m[1] : m[2];
+    try { window.katex.render(tex, span, { throwOnError: false, displayMode: m[1] !== undefined }); }
+    catch (e2) { span.textContent = m[0]; }
+    el.appendChild(span);
+    last = re.lastIndex;
+  }
+  if (last < str.length) el.appendChild(document.createTextNode(str.slice(last)));
+}
+const escHtml = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+/* 文字题题面样式（question_text 用） */
+(function () {
+  const css = document.createElement('style');
+  css.textContent = '.qtext{font-size:16px;line-height:2;color:#222;background:#fff;padding:8px 4px;text-align:left;white-space:pre-wrap;overflow-x:auto}';
+  document.head.appendChild(css);
+})();
 const $ = s => document.querySelector(s);
 const LS_KEY = 'shuxue_progress_v1';
 // 固定今日卷：8/28 那套 10 道题（用户要求恢复）
@@ -85,6 +117,8 @@ async function init() {
   bindBackup();
   renderBank();
   renderCuoti();
+  /* 深链：#more 直达更多页·题库 */
+  if (location.hash === '#more') { switchTab('more'); switchMorePane('bank'); }
   await refreshToday();
   if (TODAY.length === 0) {
     toast('今天还没出卷，正在自动生成…');
@@ -348,6 +382,7 @@ function todayRow(q) {
     </div>`;
   const qimgEl = r.querySelector('.today-qimg');
   if (qimgEl) qimgEl.onclick = () => showModal(q);
+  else { const infoEl = r.querySelector('.today-info'); if (infoEl) { infoEl.style.cursor = 'pointer'; infoEl.onclick = () => showModal(q); } }
   r.querySelector('.tbtn.ok').onclick = () => markResult(q.id, 'right');
   r.querySelector('.tbtn.bad').onclick = () => { r.querySelector('.today-reasons').hidden = false; };
   r.querySelectorAll('.today-reasons .chip[data-reason]').forEach(c => c.onclick = () => markResult(q.id, 'wrong', c.dataset.reason));
@@ -420,6 +455,8 @@ function fillFilters() {
         .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai').chapter_name })) },
     { label: '线代880', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'xian_dai880'))
         .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai880').chapter_name })) },
+    { label: '强化专题', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'qhzt'))
+        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'qhzt').chapter_name })) },
   ]);
   fillSelect('#f-type', types.map(t => ({ value: t, text: t })));
   const kps = [...new Set(QUESTIONS.map(q => q.kp_sub).filter(Boolean))].sort();
@@ -465,7 +502,8 @@ function renderBank() {
     list.appendChild(lhead);
     groupBy(lg, q => q.chapter_name || q.chapter).forEach(g => {
       const head = document.createElement('div'); head.className = 'group-head';
-      const srcTag = g.items[0] && g.items[0].source === 'xian_dai' ? '线代' : '高数';
+      const s0 = g.items[0] ? g.items[0].source : '';
+      const srcTag = s0 === 'xian_dai' ? '线代' : (s0 === 'qhzt' ? '强化专题' : '高数');
       head.innerHTML = `<span>${g.name}</span><span class="tag">${srcTag} · ${g.items.length}</span>`;
       list.appendChild(head);
       const byType = {};
@@ -629,7 +667,8 @@ function showModal(q) {
   else if (lv.status === 'review') tags += '<span class="tag review">待巩固</span>';
   else if (lv.due) tags += '<span class="tag bad">待重做</span>';
   if (q.kp_sub) tags += `<span class="tag">${q.kp_sub}</span>`;
-  const img = q.question_img ? `<img src="data/${q.question_img}" alt="题目">` : '<div class="placeholder">本题无图</div>';
+  const img = q.question_img ? `<img src="data/${q.question_img}" alt="题目">`
+    : (q.question_text ? `<div class="qtext katex-auto">${escHtml(q.question_text)}</div>` : '<div class="placeholder">本题无图</div>');
   const ans = q.answer_img ? `<img src="data/${q.answer_img}" alt="答案">`
     : (q.answer_text ? `<div class="answer-text katex-render" id="katex-answer"></div>`
       : (q.note ? `<div class="answer-text">方法：${q.note}</div>` : ''));
@@ -651,18 +690,11 @@ function showModal(q) {
         <button class="btn" data-act="close">关闭</button>
       </div>
     </div>`;
-  // 答案公式：katex.render 直接渲染；KaTeX 未加载时降级为纯文本（保证可见）
+  // KaTeX 渲染：文字题题面 + 答案公式（KaTeX 未加载时 renderLatexMixed 降级纯文本）
+  const qel = m.querySelector('#modal-img .katex-auto');
+  if (qel && q.question_text) renderLatexMixed(qel, q.question_text);
   const kr = m.querySelector('#katex-answer');
-  if (kr && q.answer_text) {
-    if (window.katex) {
-      try { window.katex.render(q.answer_text, kr, { throwOnError: false }); }
-      catch(e) { kr.textContent = q.answer_text; }
-    } else {
-      // KaTeX CDN 未加载/离线：显示原始文本（比空白好）
-      let txt = q.answer_text.replace(/\$|\\(frac|sqrt|ln|pi|sin|cos|tan|left|right|cdot|begin|end|pmatrix|int|theta|arcsin|arctan|cosh|Big|O|and|or|text)\{?/g, m => (m[1] ? {frac:'/',sqrt:'√',ln:'ln',pi:'π',sin:'sin',cos:'cos',tan:'tan',left:'',right:'',cdot:'·',begin:'',end:'',pmatrix:'矩阵',int:'∫',theta:'θ',arcsin:'arcsin',arctan:'arctan',cosh:'cosh',Big:'',O:'O',text:''}[m[1]] || '' : m));
-      kr.textContent = txt || q.answer_text;
-    }
-  }
+  if (kr && q.answer_text) renderLatexMixed(kr, q.answer_text);
   const noteEl = m.querySelector('#modal-note'), hintEl = m.querySelector('#note-save-hint');
   let timer = null;
   const saveNote = () => {
