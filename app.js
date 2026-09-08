@@ -43,7 +43,7 @@ const escHtml = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').repl
 /* 文字题题面样式（question_text 用） */
 (function () {
   const css = document.createElement('style');
-  css.textContent = '.qtext{font-size:16px;line-height:2;color:#222;background:#fff;padding:8px 4px;text-align:left;white-space:pre-wrap;overflow-x:auto}';
+  css.textContent = '.qtext{font-size:16px;line-height:2;color:#222;background:#fff;padding:8px 4px;text-align:left;white-space:pre-wrap;overflow-x:auto}#modal-ans-box .katex-render,#modal-ans-box .katex-sol{white-space:pre-wrap}.ans-sol-title{font-size:12px;font-weight:700;color:#a06b00;margin:8px 0 4px}';
   document.head.appendChild(css);
 })();
 const $ = s => document.querySelector(s);
@@ -670,7 +670,7 @@ function showModal(q) {
   const img = q.question_img ? `<img src="data/${q.question_img}" alt="题目">`
     : (q.question_text ? `<div class="qtext katex-auto">${escHtml(q.question_text)}</div>` : '<div class="placeholder">本题无图</div>');
   const ans = q.answer_img ? `<img src="data/${q.answer_img}" alt="答案">`
-    : (q.answer_text ? `<div class="answer-text katex-render" id="katex-answer"></div>`
+    : ((q.answer_text || q.solution) ? `<div class="answer-text katex-render" id="katex-answer"></div>${q.solution ? '<div class="ans-sol-title">详解（知识点梳理 · 解题步骤 · 易错）</div><div class="answer-text katex-sol" id="katex-solution"></div>' : ''}`
       : (q.note ? `<div class="answer-text">方法：${q.note}</div>` : ''));
   m.innerHTML = `
     <div id="modal-mask"></div>
@@ -695,6 +695,8 @@ function showModal(q) {
   if (qel && q.question_text) renderLatexMixed(qel, q.question_text);
   const kr = m.querySelector('#katex-answer');
   if (kr && q.answer_text) renderLatexMixed(kr, q.answer_text);
+  const ks = m.querySelector('#katex-solution');
+  if (ks && q.solution) renderLatexMixed(ks, q.solution);
   const noteEl = m.querySelector('#modal-note'), hintEl = m.querySelector('#note-save-hint');
   let timer = null;
   const saveNote = () => {

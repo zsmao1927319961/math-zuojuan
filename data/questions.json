@@ -20245,7 +20245,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "模拟调制带宽（AM/DSB/SSB/FM）",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 模拟调幅带宽：AM 与 DSB 均为 $B=2f_m$，与调幅指数无关；SSB 为 $B=f_m$。\n· FM 卡森公式：$B=2(\\Delta f_{max}+f_m)=2(m_f+1)f_m$，其中 $\\Delta f_{max}=m_f f_m$。\n· 载波频率只决定频谱搬移到哪，不影响带宽。\n【解题步骤】\n第1步：AM 带宽 $B=2f_m=2\\times4k=8$ kHz——调幅指数 1/3 不进入带宽公式，是干扰条件。\n第2步：FM：$\\Delta f=m_f f_m=3\\times4k=12$ kHz，卡森公式 $B=2(12k+4k)=32$ kHz。\n【答案】$B_{AM}=8$ kHz；$B_{FM}\\approx32$ kHz。\n【易错提醒】调幅指数 1/3 和载波 20MHz 都是干扰条件；FM 别忘加 $f_m$（不是 $2\\Delta f$）。"
  },
  {
   "subject": "txyl",
@@ -20262,7 +20263,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "带通信号与希尔伯特变换（DSB/SSB 判别）",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 同相/正交载波对 $\\{\\cos\\omega_ct,\\sin\\omega_ct\\}$ 的线性组合不展宽频谱，带宽由基带信号带宽决定。\n· 正交两路都载同一基带 → DSB，$B=2f_m$；出现希尔伯特变换对 → SSB，$B=f_m$。\n· $\\cos\\omega_ct+\\sin\\omega_ct=\\sqrt2\\cos(\\omega_ct-\\pi/4)$（幅度乘 $\\sqrt2$、相位转 $-45°$）。\n【解题步骤】\n第1步：$m_2=0$：普通 DSB，$B=2f_m=2\\times2k=4$ kHz。\n第2步：$m_2$ 是 $m_1$ 的希尔伯特变换 → 恰构成 SSB（取一个边带），$B=f_m=2$ kHz，选 C。\n第3步：$m_2=m_1$：$s=m_1(\\cos+\\sin)=\\sqrt2 m_1\\cos(\\omega_ct-\\pi/4)$，仍是 DSB，$B=4$ kHz…（按 $2f_m=4$ kHz 计，两问带宽同为 4 kHz 与 2 kHz 的组合以选项为准）。\n【答案】(1) 4 kHz；(2) 2 kHz（选 C）；(3) $\\sqrt2m_1\\cos(\\omega_ct-\\pi/4)$，带宽仍 4 kHz。\n【易错提醒】第(3)问“像新信号”实为幅度/相位变化，带宽不变；希尔伯特变换一出现先想 SSB。"
  },
  {
   "subject": "txyl",
@@ -20279,7 +20281,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "传码率与主瓣带宽频带利用率",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 符号速率 $R_B=R_b/\\log_2M$；16QAM 每符号 4 bit、8PSK 每符号 3 bit。\n· 矩形 NRZ 频带传输的主瓣（第一零点）带宽 $=2R_B$，故主瓣频带利用率 $\\eta=\\log_2M/2$。\n【解题步骤】\n第1步：16QAM：$R_B=12M/4=3$ MBaud；8PSK：$R_B=12M/3=4$ MBaud。\n第2步：$\\eta_{16QAM}=4/2=2$ bps/Hz；$\\eta_{8PSK}=3/2=1.5$ bps/Hz。\n【答案】3、4 MBaud；2、1.5 bps/Hz。\n【易错提醒】主瓣带宽是 $2R_B$（频带），$R_B$ 是基带口径；升余弦公式 $(1+\\alpha)R_B/2$ 是“最小带宽”问题的，别混。"
  },
  {
   "subject": "txyl",
@@ -20296,7 +20299,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "最小带宽与滚降带宽",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 未指明发送滤波器 → 按最理想情况：理想低通 $\\eta_{max}=2$ Baud/Hz（基带二进制）。\n· 升余弦滚降：$B=(1+\\alpha)R_B/2$。\n【解题步骤】\n第1步：$B_{min}=R_b/2=640k/2=320$ kHz。\n第2步：$R_B=R_b=640$ kBaud，$B=(1+0.25)\\times640k/2=400$ kHz。\n【答案】320 kHz；400 kHz。"
  },
  {
   "subject": "txyl",
@@ -20313,7 +20317,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "PCM-TDM 传码率与带宽（同步时隙）",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· PCM 一路传码率 $=n f_s$（$n=\\log_2$量化级数，$f_s=2f_m$）。\n· 复用总速率 = 路数（含同步时隙！）× 一路速率；未指明成形 → 用 $\\eta_{max}$。\n【解题步骤】\n第1步：$f_s=2\\times5k=10$kHz，$n=\\log_216=4$。\n第2步：总 $R_b=(15+1)\\times10k\\times4=640$ kb/s（16 = 15 话路 + 1 同步时隙）。\n第3步：$B_{min}=640k/2=320$ kHz；$\\alpha=0.25$：$B=1.25\\times320k=400$ kHz。\n【答案】320 kHz；400 kHz。\n【易错提醒】同步时隙必须计入传码率——漏加就变成 600kb/s、300kHz，全错。"
  },
  {
   "subject": "txyl",
@@ -20330,7 +20335,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "无码间干扰最高传输速率",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 奈奎斯特第一准则：带宽 B 的理想低通信道无 ISI 最高传码率 $R_B=2B$（Baud）。\n· 频带利用率 $\\eta=R_B/B$。\n【答案】最高传输速率 $2W$ 波特；频带利用率 $2$ 波特/Hz。"
  },
  {
   "subject": "txyl",
@@ -20347,7 +20353,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "第一零点带宽（占空比）",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 一路传码率 $R_{B1}=nf_s$，$N$ 路复用 $R_B=N\\cdot R_{B1}$。\n· 占空比 $\\tau/T_b=1/2\\Rightarrow\\tau=\\frac{1}{2R_B}$；矩形脉冲第一零点带宽 $B=1/\\tau$。\n【解题步骤】\n第1步：$n=\\log_2256=8$，$R_{B1}=8\\times8k=64$ kBaud，总 $R_B=10\\times64k=640$ kBaud。\n第2步：$\\tau=T_b/2=\\frac{1}{2\\times640k}$ → $B=1/\\tau=2R_B=1280$ kHz。\n【答案】1280 kHz。\n【易错提醒】占空比 1/2 意味着脉冲变窄一半、带宽翻倍——$\\tau=\\frac{1}{2R_B}$ 不是 $\\frac{1}{R_B}$。"
  },
  {
   "subject": "txyl",
@@ -20364,7 +20371,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "PCM-TDM 带宽（Sa 脉冲）",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 奈奎斯特速率抽样 $f_s=2f_m$；低通矩形频谱脉冲（Sa 脉冲）= 理想低通成形，$\\eta_{max}=2$。\n【解题步骤】\n第1步：$f_s=2\\times5k=10$kHz，$n=8$。\n第2步：一路 $R_{B1}=8\\times10k=80$ kBaud，10 路 $R_B=800$ kBaud。\n第3步：$B=R_B/\\eta_{max}=400$ kHz。\n【答案】400 kHz。"
  },
  {
   "subject": "txyl",
@@ -20381,7 +20389,8 @@
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "PCM-TDM 带宽（三种成形脉冲）",
-  "chapter_name": "专题一 带宽求解"
+  "chapter_name": "专题一 带宽求解",
+  "solution": "【知识点梳理】\n· 三种成形对应三种频带利用率：Sa 脉冲（理想低通）$\\eta=2$；矩形 NRZ 主瓣 $B=R_B$（$\\eta=1$）；升余弦 $\\alpha=1$ 时 $B=(1+\\alpha)R_B/2=R_B$。\n· 复用总速率必须含同步时隙。\n【解题步骤】\n第1步：$f_s=8$kHz，$n=4$，$R_B=(15+1)\\times8k\\times4=512$ kBaud。\n第2步：三种成形分别代入。\n【答案】(1) 256 kHz；(2) 512 kHz；(3) 512 kHz。\n【易错提醒】(2) 矩形脉冲要“完全容纳第一零点”，信道带宽=整个主瓣 $R_B$，不是 $R_B/2$。"
  },
  {
   "subject": "txyl",
@@ -20398,7 +20407,8 @@
   "level": "综合",
   "kp": "功率求解",
   "kp_sub": "随机变量和差积的功率",
-  "chapter_name": "专题二 功率求解"
+  "chapter_name": "专题二 功率求解",
+  "solution": "【知识点梳理】\n· 功率 $=E[Z^2]=D(Z)+m_Z^2$；零均值时功率=方差。\n· 独立 ⇒ $E[n_1^2n_2^2]=E[n_1^2]\\cdot E[n_2^2]$；独立和差方差相加。\n【解题步骤】\n第1步：$E[(n_1n_2)^2]=E[n_1^2]E[n_2^2]=1\\times1=1$。\n第2步：$n_1\\pm n_2$：均值 0、方差 $1+1=2$ → 功率 2。\n【答案】1；2。\n【易错提醒】减法不改变方差（相关系数为 0 时），功率同为 2。"
  },
  {
   "subject": "txyl",
@@ -20415,7 +20425,8 @@
   "level": "综合",
   "kp": "功率求解",
   "kp_sub": "窄带噪声正交分解功率",
-  "chapter_name": "专题二 功率求解"
+  "chapter_name": "专题二 功率求解",
+  "solution": "【知识点梳理】\n· 带通白噪声功率 = PSD ×（正、负频带总宽）。\n· 窄带分解 $n(t)=n_c\\cos-n_s\\sin$：$P_{n_c}=P_{n_s}=P_n$（功率守恒）。\n【解题步骤】\n第1步：通带正频部分宽 $2f_m$、负频部分对称 → $P_n=\\frac{n_0}{2}\\times2f_m\\times2=2n_0f_m$。\n第2步：正交分量各分一半能量但与载波项合成总功率不变 → $P_{n_c}=P_{n_s}=2n_0f_m$。\n【答案】三者均为 $2n_0f_m$；说明功率在正交分量间不损耗不放大——这是包络/相位分析法合法性的基础。\n【易错提醒】带宽 $2f_m$ 是通带总宽，别重复乘 2。"
  },
  {
   "subject": "txyl",
@@ -20432,7 +20443,8 @@
   "level": "综合",
   "kp": "功率求解",
   "kp_sub": "白噪声过滤波器（Parseval）",
-  "chapter_name": "专题二 功率求解"
+  "chapter_name": "专题二 功率求解",
+  "solution": "【知识点梳理】\n· 白噪声过 LTI 系统：$P_y=\\frac{n_0}{2}\\int_{-\\infty}^{\\infty}|H(f)|^2df=\\frac{n_0}{2}\\int h^2(t)dt$（Parseval）。\n【解题步骤】\n第1步：识别 $\\int h^2dt=E_h$ 已直接给出。\n第2步：$P_y=\\frac{n_0}{2}E_h$。\n【答案】$\\dfrac{n_0E_h}{2}$。"
  },
  {
   "subject": "txyl",
@@ -20449,7 +20461,8 @@
   "level": "综合",
   "kp": "功率求解",
   "kp_sub": "采样信号分量与噪声分量统计",
-  "chapter_name": "专题二 功率求解"
+  "chapter_name": "专题二 功率求解",
+  "solution": "【知识点梳理】\n· 信号分量 $u=(s_1*h)(t_0)$ 是确定量，其随机性只来自“发 0/发 1”的等概选择 → $E(u^2)$ 按两点分布平均。\n· 噪声分量 $E(\\xi^2)=\\frac{n_0}{2}\\int h^2dt$（高斯方差，不除 2）。\n· 两个等宽矩形卷积 = 三角形。\n【解题步骤】\n第1步：$s_1*h$：重叠面积线性变化 → $A^2t$（$0\\le t\\le T$）、$A^2(2T-t)$（$T\\le t\\le2T$），$t=T$ 处峰值 $A^2T$。\n第2步：$E(u^2)=\\frac12\\cdot0^2+\\frac12(s_1*h)^2(t_0)$：$t_0\\le T$ 为 $\\frac{A^4t_0^2}{2}$；$T\\le t_0\\le2T$ 为 $\\frac{A^4(2T-t_0)^2}{2}$。\n第3步：$E(\\xi^2)=\\frac{n_0}{2}\\int_0^TA^2dt=\\frac{n_0A^2T}{2}$。\n【易错提醒】两个随机性来源别混：$E(u^2)$ 是离散等概平均（除 2），$E(\\xi^2)$ 是连续高斯方差（不除 2）。"
  },
  {
   "subject": "txyl",
@@ -20466,7 +20479,8 @@
   "level": "综合",
   "kp": "功率求解",
   "kp_sub": "均匀量化功率",
-  "chapter_name": "专题二 功率求解"
+  "chapter_name": "专题二 功率求解",
+  "solution": "【知识点梳理】\n· 均匀分布 $U(-a,a)$ 功率 $=a^2/3$。\n· 量化电平功率 = 各电平平方 × 概率（概率=区间长度占比）。\n【解题步骤】\n第1步：$S=\\int_{-1}^{1}x^2\\cdot\\frac12dx=\\frac13$。\n第2步：四个电平 $\\pm\\frac14$（概率各 $\\frac14$）、$\\pm\\frac34$（概率各 $\\frac14$）：$E(x_q^2)=\\frac14\\left[2\\times\\frac{1}{16}+2\\times\\frac{9}{16}\\right]=\\frac{5}{16}$。\n【答案】$\\frac13$；$\\frac{5}{16}$。"
  },
  {
   "subject": "txyl",
@@ -20483,7 +20497,8 @@
   "level": "综合",
   "kp": "功率求解",
   "kp_sub": "数字调制信号功率与峰均比",
-  "chapter_name": "专题二 功率求解"
+  "chapter_name": "专题二 功率求解",
+  "solution": "【知识点梳理】\n· QAM 码元平均功率 $=E[x_k^2]+E[y_k^2]$（正交分量功率相加）。\n· 峰值功率 = 幅度最大组合的瞬时功率；峰均比 = 峰值/平均。\n【解题步骤】\n第1步：$E[x_k^2]=\\frac{9+1+1+9}{4}=5$，同 $y_k$ → 平均功率 $5+5=10$？——注意每符号只取一对 $(x_k,y_k)$：$E=E[x_k^2+y_k^2]=\\frac{9+1+1+9}{4}=5$。\n第2步：峰值 $3^2+3^2=18$。\n第3步：峰均比 $18/5=3.6$。\n【答案】5；18；3.6。"
  },
  {
   "subject": "txyl",
@@ -20500,7 +20515,8 @@
   "level": "综合",
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "延迟相减系统输出 PSD",
-  "chapter_name": "专题三 平稳随机过程通过线性系统"
+  "chapter_name": "专题三 平稳随机过程通过线性系统",
+  "solution": "【知识点梳理】\n· 延迟相减：$H_0(f)=1-e^{-j2\\pi fT}=2j\\sin(\\pi fT)e^{-j\\pi fT}$（提半周期因子）。\n· 输出谱 $P_Y=P_X|H|^2$；$|e^{-j\\theta}|=1$ 消相位项。\n· 微分器 $j2\\pi f$、积分器 $1/(j2\\pi f)$、理想低通直接限幅频带。\n【解题步骤】\n第1步：总特性 $H=(1-e^{-j2\\pi fT})H_1$。\n第2步：(1) 微分：$P_Y=P_X\\cdot(2\\pi f)^2\\cdot4\\sin^2(\\pi fT)$；(2) 积分：$H=T\\mathrm{Sa}(\\pi fT)e^{-j\\pi fT}$；(3) 低通：$P_Y=P_X\\cdot4\\sin^2(\\pi fT)$（$|f|\\le1/2T$）。\n【易错提醒】$f$ 域指数是 $2\\pi fT$；理想低通只保留 $|f|\\le1/2T$ 内的部分。"
  },
  {
   "subject": "txyl",
@@ -20517,7 +20533,8 @@
   "level": "综合",
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "匹配滤波器结构与冲激响应",
-  "chapter_name": "专题三 平稳随机过程通过线性系统"
+  "chapter_name": "专题三 平稳随机过程通过线性系统",
+  "solution": "【知识点梳理】\n· 冲激响应法：令输入 $x(t)=\\delta(t)$，输出即 $h(t)$——“不管三七二十一，先求 h(t)”。\n· 匹配滤波器 $h(t)=g(T-t)$；对极/同形波形反推。\n【解题步骤】\n第1步：$\\delta-\\delta(t-T)$ 经积分器 → $h(t)=u(t)-u(t-T)$：$(0,T)$ 上高度 1 的矩形门。\n第2步：$H(f)=\\frac{1-e^{-j2\\pi fT}}{j2\\pi f}=T\\,\\mathrm{Sa}(\\pi fT)e^{-j\\pi fT}$。\n第3步：$g(t)=h(T-t)$ → 与 $h(t)$ 同形。\n【答案】见步骤；$H(0)=T$ 可自检。\n【易错提醒】延迟 $T$ 时分母 $j2\\pi f$、指数 $\\pi fT$；延迟 $T/2$ 时指数是 $\\pi fT/2$。"
  },
  {
   "subject": "txyl",
@@ -20534,7 +20551,8 @@
   "level": "综合",
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "延迟相减加微分系统",
-  "chapter_name": "专题三 平稳随机过程通过线性系统"
+  "chapter_name": "专题三 平稳随机过程通过线性系统",
+  "solution": "【知识点梳理】\n· 平稳过程过 LTI 系统输出仍平稳（系统不引入时变因素）。\n· 延迟相减+微分：$H(f)=j2\\pi f(1-e^{-j2\\pi fT})$。\n【解题步骤】\n第1步：平稳性：$m_Y=m_X H(0)$ 常数、$R_Y$ 只依赖 $τ$。\n第2步：$P_Y=P_X\\cdot(2\\pi f)^2\\cdot4\\sin^2(\\pi fT)=P_X\\cdot16\\pi^2f^2\\sin^2(\\pi fT)$。\n第3步：$​sin(\\pi fT)=0$ 处 $H=0$ → $f=k/T$。\n【答案】平稳；$P_Y=P_X\\cdot16\\pi^2f^2\\sin^2(\\pi fT)$；$f=\\dfrac{k}{T}$（整数 $k$）的分量被滤除。\n【易错提醒】零点在 $f=k/T$（$f$ 域），不是 $ω=k/T$。"
  },
  {
   "subject": "txyl",
@@ -20551,7 +20569,8 @@
   "level": "综合",
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "Y=X−aX(t−T) 输出 PSD 与最值",
-  "chapter_name": "专题三 平稳随机过程通过线性系统"
+  "chapter_name": "专题三 平稳随机过程通过线性系统",
+  "solution": "【知识点梳理】\n· $Y=X-aX(t-T)$：$H=1-ae^{-j\\omega T}$，$|H|^2=1+a^2-2a\\cos\\omega T$。\n· 求最值：先写时域功率 $E[Y^2]=R(0)(1+a^2)-2aR(T)$，再对 $a$ 求导。\n【解题步骤】\n第1步：$P_Y=S_X(\\omega)(1+a^2-2a\\cos\\omega T)$。\n第2步：$\\frac{dP}{da}=2aR(0)-2R(T)=0$ → $a^*=\\dfrac{R(T)}{R(0)}$。\n第3步：平稳性：均值 $m_X(1-a)$ 常数；$R_Y=(1+a^2)R(\\tau)-aR(\\tau+T)-aR(\\tau-T)$ 只依赖 $τ$。\n【易错提醒】本题是减法；若是加法 $Y=X+aX(t-T)$，最值点 $a^*=-R(T)/R(0)$——符号随条件翻转。"
  },
  {
   "subject": "txyl",
@@ -20568,7 +20587,8 @@
   "level": "综合",
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "平均器（积分清零）输出噪声",
-  "chapter_name": "专题三 平稳随机过程通过线性系统"
+  "chapter_name": "专题三 平稳随机过程通过线性系统",
+  "solution": "【知识点梳理】\n· 平均器 $h(t)=\\frac1T[u(t)-u(t-T)]$ 与 $H(f)=\\frac{1-e^{-j2\\pi fT}}{j2\\pi fT}$ 是同一系统的两种身份证。\n· $H=\\mathrm{Sa}(\\pi fT)e^{-j\\pi fT}$，$H(0)=1$：信号无失真通过。\n· 输出噪声功率三条等价路线：$R_Y(0)$、$\\frac{n_0}{2}\\int h^2dt$、谱积分。\n【解题步骤】\n第1步：$P_Y=\\frac{n_0}{2}\\mathrm{Sa}^2(\\pi fT)$。\n第2步：时域 $P=\\frac{n_0}{2}\\int h^2dt=\\frac{n_0}{2}\\cdot\\frac{1}{T^2}\\cdot T=\\frac{n_0}{2T}$。\n【答案】$P_Y=\\frac{n_0}{2}\\mathrm{Sa}^2(\\pi fT)$；$P=\\dfrac{n_0}{2T}$。物理意义：平均窗口越长噪声越低（$P\\propto1/T$）——积分清零判决的依据。\n【易错提醒】窗口 $T$ 的平均器是 $\\mathrm{Sa}(\\pi fT)$；窗口 $2T$ 才是 $\\mathrm{Sa}(2\\pi fT)$——别把 2π 丢掉或加错。"
  },
  {
   "subject": "txyl",
@@ -20585,7 +20605,8 @@
   "level": "综合",
   "kp": "随机过程的性质",
   "kp_sub": "R(τ) 三件套（均值方差功率）",
-  "chapter_name": "专题四 随机过程的性质"
+  "chapter_name": "专题四 随机过程的性质",
+  "solution": "【知识点梳理】\n· 三件套：$E=R(\\infty)$，$D=R(0)-R(\\infty)$，$P=R(0)$。\n· $R(\\tau)$ 中的常数项 = 均值平方（直流功率）。\n【解题步骤】\n第1步：$E=R(\\infty)=1$（$e^{-|\\tau|}\\to0$）。\n第2步：$D=R(0)-R(\\infty)=2-1=1$。\n第3步：$P=R(0)=2$；自检：直流 $E^2=1$ + 交流 $D=1$ = 2 ✓。\n【答案】均值 1、方差 1、平均功率 2。\n【易错提醒】直流功率是 $E^2$（=1），不是 $E$ 本身。"
  },
  {
   "subject": "txyl",
@@ -20602,7 +20623,8 @@
   "level": "综合",
   "kp": "随机过程的性质",
   "kp_sub": "随机幅度乘载波的自相关",
-  "chapter_name": "专题四 随机过程的性质"
+  "chapter_name": "专题四 随机过程的性质",
+  "solution": "【知识点梳理】\n· 互不相关 ⇒ $E[\\eta\\xi]=E[\\eta]E[\\xi]=0$，交叉项消失。\n· 判平稳：$R$ 中含 $t$ → 非平稳（若均值常数可称循环平稳）。\n【解题步骤】\n第1步：$E[X(t)]=E[\\eta+\\xi]\\cos=0$。\n第2步：$R=E[(\\eta+\\xi)^2]\\cos\\omega_0t\\cos\\omega_0(t+\\tau)=(D_\\eta+D_\\xi)\\cos\\omega_0t\\cos\\omega_0(t+\\tau)=4\\cos\\omega_0t\\cos\\omega_0(t+\\tau)$。\n【答案】均值 0；$R=4\\cos\\omega_0t\\cos\\omega_0(t+\\tau)$——含 $t$，非平稳（仅循环平稳）。\n【易错提醒】对比正交版 $η\\cos+\\xi\\sin$：那个平稳（积化和差后只剩 $τ$），单一载波版不平稳。"
  },
  {
   "subject": "txyl",
@@ -20619,7 +20641,8 @@
   "level": "综合",
   "kp": "随机过程的性质",
   "kp_sub": "随机相位和的平稳性",
-  "chapter_name": "专题四 随机过程的性质"
+  "chapter_name": "专题四 随机过程的性质",
+  "solution": "【知识点梳理】\n· $\\theta\\sim U[0,2\\pi]$ ⇒ $E[\\cos(\\cdot+\\theta)]=0$；$E[\\cos X\\cos Y]=\\frac12E[\\cos(X-Y)]+\\ldots$\n· 独立相位 ⇒ $i\\ne j$ 交叉项期望为零，只有 $i=j$ 存活。\n【解题步骤】\n第1步：$E[X(t)]=\\frac{1}{\\sqrt N}\\sum_i0=0$。\n第2步：$R=\\frac1N\\sum_i\\frac12\\cos(2\\pi i\\tau)=\\dfrac{1}{2N}\\sum_{i=1}^N\\cos(2\\pi i\\tau)$——只依赖 $τ$，广义平稳。\n【易错提醒】系数是 $\\frac1N$（$\\frac{1}{\\sqrt N}$ 的平方），不是 $\\frac{1}{\\sqrt N}$。"
  },
  {
   "subject": "txyl",
@@ -20636,7 +20659,8 @@
   "level": "综合",
   "kp": "随机过程的性质",
   "kp_sub": "随机相位区间与广义平稳条件",
-  "chapter_name": "专题四 随机过程的性质"
+  "chapter_name": "专题四 随机过程的性质",
+  "solution": "【知识点梳理】\n· $X$ 与 $\\theta$ 独立 ⇒ 期望可拆 $E[X]\\cdot E[\\cos]$。\n· 相关项里角度是 $2\\theta$（周期 π）→ 区间 $[-\\theta_0,\\theta_0]$ 平均后残余 $\\mathrm{Sa}(2\\theta_0)$ 项。\n【解题步骤】\n第1步：$μ_Y=E[X]\\cdot\\frac{\\sin\\theta_0}{\\theta_0}\\cos\\omega_ct$——注意 $E[\\cos]\\neq0$；$μ_Y=0$ 靠的是 $E[X]=0$。\n第2步：$R_Y=\\frac12R_X(\\tau)[\\cos\\omega_c\\tau+\\mathrm{Sa}(2\\theta_0)\\cos(2\\omega_ct+\\omega_c\\tau)]$。\n第3步：平稳 $\\iff\\mathrm{Sa}(2\\theta_0)=0\\iff\\theta_0=k\\pi/2$。\n【答案】$μ_Y=0$；$R_Y$ 如上；$θ_0=\\frac\\pi2$（需 $E[X]=0$）或 $θ_0=\\pi$（无条件）时广义平稳。\n【易错提醒】“均值为零”的真正原因是 $E[X]=0$，不是 $E[\\cos]=0$；半圆起步平稳、整圆无条件平稳。"
  },
  {
   "subject": "txyl",
@@ -20653,7 +20677,8 @@
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "香农公式概念判断",
-  "chapter_name": "专题五 信道容量求解"
+  "chapter_name": "专题五 信道容量求解",
+  "solution": "【知识点梳理】\n· 香农公式两个极限：$\\mathrm{SNR}\\to\\infty$ 时 $C\\to\\infty$；$B\\to\\infty$ 时 $C\\to\\frac{S}{n_0\\ln2}=1.44\\frac{S}{n_0}$（有极限）。\n· 带宽换信噪比（扩频思想）：只能 $B\\uparrow$ 换 $\\mathrm{SNR}$ 要求 $\\downarrow$，反向不成立。\n【答案】(1) 对；(2) 错（$B\\to\\infty$ 有极限 $1.44S/n_0$）；(3) 对（互换有极限）。\n【易错提醒】“无限增大带宽容量趋于无穷”永远是错的——判断题高频考点。"
  },
  {
   "subject": "txyl",
@@ -20670,7 +20695,8 @@
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "香农容量计算与带宽换功率",
-  "chapter_name": "专题五 信道容量求解"
+  "chapter_name": "专题五 信道容量求解",
+  "solution": "【知识点梳理】\n· $N=n_0B$（$n_0$ 单边谱直接乘带宽）；$C=B\\log_2(1+\\frac{S}{n_0B})$。\n· 保持容量反解功率：$S=n_0B(2^{C/B}-1)$。\n【解题步骤】\n第1步：$N=10^{-6}\\times3000=3\\times10^{-3}$W，$\\mathrm{SNR}=3000$。\n第2步：$C=3000\\log_23001\\approx3000\\times11.55\\approx34.7$ kbps。\n第3步：$B'=30$kHz，$C/B'\\approx1.155$，$S'=3\\times10^{-2}\\times(2^{1.155}-1)\\approx0.0368$W。\n第4步：$10\\lg\\frac{0.0368}{9}\\approx-23.9$ dB。\n【答案】约 34.7 kbps；功率可降低约 24 dB。\n【易错提醒】带宽加大 10 倍省的功率远小于 10 倍——香农极限压制，不是线性关系。"
  },
  {
   "subject": "txyl",
@@ -20687,7 +20713,8 @@
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "信息速率与信道带宽/信噪比",
-  "chapter_name": "专题五 信道容量求解"
+  "chapter_name": "专题五 信道容量求解",
+  "solution": "【知识点梳理】\n· 信息速率 = 像素 × 每像素参数 × 每参数比特 × 帧率；$L$ 级 → $\\log_2L$ bit（8 级=3bit！）。\n· dB→倍数：30dB=1000 倍；反解 $\\mathrm{SNR}=2^{R_b/B}-1$。\n【解题步骤】\n第1步：$R_b=1024\\times540\\times4\\times3\\times25\\approx165.9$ Mbps。\n第2步：$B=\\frac{165.9M}{\\log_21001}\\approx\\frac{165.9M}{9.967}\\approx16.6$ MHz。\n第3步：$R_b/B\\approx20.7$ → $\\mathrm{SNR}=2^{20.7}-1\\approx1.8\\times10^6$ → $10\\lg\\approx62.5$ dB。\n【答案】165.9 Mbps；16.6 MHz；约 62.5 dB。\n【易错提醒】8 级是 3 bit 不是 4 bit；第(3)问是反解 SNR，对数别丢。"
  },
  {
   "subject": "txyl",
@@ -20704,7 +20731,8 @@
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "BSC 容量（源分布无关）",
-  "chapter_name": "专题五 信道容量求解"
+  "chapter_name": "专题五 信道容量求解",
+  "solution": "【知识点梳理】\n· BSC 容量 $C=1-H_b(p)$，与信源分布无关（等概输入时取得）。\n【解题步骤】\n第1步：$H_b(0.04)=-0.04\\log_20.04-0.96\\log_20.96\\approx0.242$。\n第2步：$C=1-0.242=0.758$。\n【答案】$C\\approx0.758$ bit/码元。\n【易错提醒】题给的 $P(0)=3/8$、$P(1)=5/8$ 是干扰项——对称信道容量与源分布无关。"
  },
  {
   "subject": "txyl",
@@ -20721,7 +20749,8 @@
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "M 进制对称信道容量",
-  "chapter_name": "专题五 信道容量求解"
+  "chapter_name": "专题五 信道容量求解",
+  "solution": "【知识点梳理】\n· M 进制无记忆对称信道万能公式：$C=\\log_2M+p\\log_2p+(1-p)\\log_2\\frac{1-p}{M-1}$（$p$ 为正确概率）。\n【解题步骤】\n第1步：$\\log_28=3$；$0.93\\log_20.93\\approx-0.10$。\n第2步：$0.07\\log_2\\frac{0.01}{7}\\approx0.07\\times(-9.45)\\approx-0.66$。\n第3步：$C\\approx3-0.10-0.66=2.24$。\n【答案】$C\\approx2.24$ bit/符号。\n【易错提醒】信源分布（1/8、3/16、1/16）是干扰项；错误概率是均分给 7 条错误转移的。"
  },
  {
   "subject": "txyl",
@@ -20738,7 +20767,8 @@
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "BEC 容量",
-  "chapter_name": "专题五 信道容量求解"
+  "chapter_name": "专题五 信道容量求解",
+  "solution": "【知识点梳理】\n· BEC：$P(Y=e)=p$ 被信道钉死不可调，$H(Y)=(1-p)H_b(a)+H_b(p)$，$a=\\frac12$ 时最大。\n· 删除 ≠ 翻转：删除告诉你哪一位丢了，翻转把错误混进正确位。\n【解题步骤】\n第1步：$H(Y)$ 在 $a=\\frac12$ 取最大 $(1-p)\\times1+H_b(p)$。\n第2步：$I=H(Y)-H(Y|X)$，$H(Y|X)=H_b(p)$ → $C=1-p$。\n【答案】$C=1-p$ bit/符号，$a=\\frac12$。\n【易错提醒】对比：同 $p$ 的 BSC 容量 $1-H_b(p)$ 严格小于 $1-p$——删除信道保留更多信息。"
  },
  {
   "subject": "txyl",
@@ -20755,7 +20785,8 @@
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "非对称信道互信息",
-  "chapter_name": "专题五 信道容量求解"
+  "chapter_name": "专题五 信道容量求解",
+  "solution": "【知识点梳理】\n· 非对称信道三步模板：全概率求 $P(Y)$ → $H(Y)$ → 加权 $H(Y|X)=\\sum P(x)H(Y|x)$，相减得互信息。\n· 确定性分支的 $H(Y|x)=0$。\n【解题步骤】\n第1步：$P(Y=0)=0.5\\times1+0.5\\times0.5=0.75$，$P(Y=1)=0.25$。\n第2步：$H(Y)=H_b(0.75)=0.811$。\n第3步：$H(Y|X)=0.5\\times0+0.5\\times H_b(0.5)=0.5$。\n【答案】$I(X,Y)=0.811-0.5=0.311$ bit/符号。\n【易错提醒】$P(0|0)=1$ 是确定性分支（熵 0）；别漏掉“加权”里除以 2 的先验概率。"
  },
  {
   "subject": "txyl",
@@ -20771,7 +20802,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
-  "kp_sub": "DSB/SSB/AM 相干解调信噪比"
+  "kp_sub": "DSB/SSB/AM 相干解调信噪比",
+  "solution": "【知识点梳理】\n· 衰减 50dB → 功率 ×$10^{-5}$；DSB $G=2$、SSB $G=1$、AM 包络 $G=\\frac{2P_m}{1+P_m}$。\n· $N_i=n_0B$（$B$ 为该制式带宽）；AM 调幅指数=|m|max/直流。\n【解题步骤】\n第1步：DSB：$\\frac{A_c^2P_m}{2}=40$ → $A_c=20$V；$B=2W=20$kHz，$N_i=10^{-10}\\times2\\times10^4=2\\times10^{-6}$W，$S_i=40\\times10^{-5}=4\\times10^{-4}$W，$S_i/N_i=200$，输出 $=400$（26dB）。\n第2步：SSB：$\\frac{A_c^2P_m}{4}=40$ → $A_c=40$V；$B=W=10$kHz，$N_i=10^{-6}$W，$S_i/N_i=400$，$G=1$ → 输出 400（26dB）。\n第3步：AM：$\\frac{A_c^2(1+P_m)}{2}=40$ → $A_c\\approx18.3$V；调幅系数 $=|m|_{max}=1$（100%）；效率 $=\\frac{0.2}{1.2}=\\frac16$；$G=\\frac13$ → 输出 $\\approx66.7$（18.2dB）。\n【易错提醒】三问输出信噪比不同——AM 包络解调的制度增益损失清晰可见；DSB 与 SSB 输出相同但 SSB 只用一半带宽。"
  },
  {
   "subject": "txyl",
@@ -20787,7 +20819,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
-  "kp_sub": "SSB 相干解调逐点信噪比"
+  "kp_sub": "SSB 相干解调逐点信噪比",
+  "solution": "【知识点梳理】\n· SSB 功率=基带信号功率；相干解调后信号还原、带宽变基带。\n· 逐点画噪声 PSD：BPF 决定带通型，×2cos 搬移+LPF 截取后变低通型。\n【解题步骤】\n第1步：$s(t)$ 带宽 200Hz、功率 3W（=基带功率）。\n第2步：A 点：双边 PSD 在 $\\pm(900\\sim1200)$Hz 内高 $\\frac{N_0}{2}$，噪声功率 $=N_0\\times300=3\\times10^{-3}$W。\n第3步：B 点：搬移叠加后 $\\pm200$Hz 内平坦，噪声功率 $=N_0\\times200=2\\times10^{-3}$W。\n第4步：B 点信号功率 3W → 信噪比 1500（31.8dB）。\n【答案】带宽 200Hz、功率 3W；B 点信噪比约 1500（31.8dB）。\n【易错提醒】画 PSD 图时区分“单边 N0”与“双边 N0/2”；A、B 点谱型一个带通一个低通。"
  },
  {
   "subject": "txyl",
@@ -20803,7 +20836,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
-  "kp_sub": "给定输出信噪比反求发送功率（DSB/SSB/AM/FM 对比）"
+  "kp_sub": "给定输出信噪比反求发送功率（DSB/SSB/AM/FM 对比）",
+  "solution": "【知识点梳理】\n· 反求发送功率链：输出要求 → ÷制度增益 G → 输入信噪比 → ×噪声功率 → ×信道衰减补偿 $10^5$。\n· 带宽：DSB/AM $2f_m$、SSB $f_m$、FM $2(m_f+1)f_m$。\n【解题步骤】\n第1步：DSB：$N_i=2\\times10^{-12}\\times30k=6\\times10^{-8}$W，需 $S_i/N_i=1000/2=500$ → $S_i=3\\times10^{-5}$W → 发送 3W；$B=30$kHz。\n第2步：SSB：$N_i=3\\times10^{-8}$W，$G=1$ → $S_i=3\\times10^{-5}$W → 发送 3W；$B=15$kHz。\n第3步：AM：$G=\\frac{2\\times0.5}{1.5}=\\frac23$ → $S_i/N_i=1500$ → 发送 9W；$B=30$kHz。\n第4步：FM：$G=\\frac32m_f^2\\frac{B_{FM}}{f_m}=\\frac32\\times25\\times12=450$ → $S_i/N_i=\\frac{1000}{450}\\approx2.22$，$N_i=2\\times10^{-12}\\times180k=3.6\\times10^{-7}$ → 发送 0.08W；$B=180$kHz。\n【答案】DSB 3W/30kHz；SSB 3W/15kHz；AM 9W/30kHz；FM 0.08W/180kHz——FM 用带宽换功率体现得淋漓尽致。\n【易错提醒】30dB=1000 倍；衰减 50dB 别忘了乘回 $10^5$。"
  },
  {
   "subject": "txyl",
@@ -20819,7 +20853,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
-  "kp_sub": "SSB 解调 BPF 位置对噪声的抑制"
+  "kp_sub": "SSB 解调 BPF 位置对噪声的抑制",
+  "solution": "【知识点梳理】\n· SSB 频谱只占 $f_c\\sim f_c+100$Hz；BPF 下边界若低于 $f_c$ 会放进带外噪声。\n【解题步骤】\n第1步：$s(t)$ 功率 2W、带宽 100Hz。\n第2步：BPF=1000～1100Hz 恰好罩住上边带：A 点噪声 100Hz 宽（双边图在 ±1000~1100 高 $n_0/2$）；B 点噪声搬移叠加后 ±100Hz 内平坦、功率 $n_0\\times100=10^{-3}$W；信噪比 $=2/0.001=2000$（33dB）。\n第3步：BPF=950～1100Hz：多放进 50Hz 噪声 → B 点噪声 $1.5\\times10^{-3}$W → 信噪比 $\\approx1333$（31.2dB），下降约 1.8dB。\n【答案】(1) 2W、100Hz；(2) 2000；(3) 约 1333——BPF 下边界对齐信号下边缘最优。\n【易错提醒】画 A 点 PSD 是带通型、B 点是低通型；两边频带都要画。"
  },
  {
   "subject": "txyl",
@@ -20835,7 +20870,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
-  "kp_sub": "宽带 FM 信噪比计算"
+  "kp_sub": "宽带 FM 信噪比计算",
+  "solution": "【知识点梳理】\n· $B_{FM}=2(\\Delta f+f_m)$；$S_i=A^2/2$；$N_i=P_n\\cdot B_{FM}$（单边直接乘）。\n· FM 输出信噪比 $\\frac{S_o}{N_o}=\\frac{3A^2K_f^2\\overline{m^2}}{8\\pi^2n_0f_m^3}$。\n【解题步骤】\n第1步：$H(f)$：中心 100MHz、带宽 $2(75k+5k)=160$kHz 带通。\n第2步：$S_i/N_i=\\frac{100^2/2}{10^{-3}\\times160k}=\\frac{5000}{160}=31.25$。\n第3步：代入输出公式 $=\\frac{3\\times10^4\\times(500\\pi)^2\\times5000}{8\\pi^2\\times10^{-3}\\times(5\\times10^3)^3}\\approx3.75\\times10^4$（45.7dB）。\n【答案】31.25（约 15dB）；约 $3.75\\times10^4$（45.7dB）——制度增益约 1200 倍。"
  },
  {
   "subject": "txyl",
@@ -20851,7 +20887,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
-  "kp_sub": "FM 反求输入幅度"
+  "kp_sub": "FM 反求输入幅度",
+  "solution": "【知识点梳理】\n· 从已调波相位读参数：$m_f=4$（sin 前系数）、$f_m=\\frac{10^4\\pi}{2\\pi}=5$kHz。\n· 单音制度增益 $G=\\frac32m_f^2\\frac{B_{FM}}{f_m}$；$S_i=A^2/2$。\n【解题步骤】\n第1步：$B_{FM}=2(4+1)\\times5k=50$kHz，$G=\\frac32\\times16\\times10=240$。\n第2步：$\\frac{S_o}{N_o}=10^{3.68}\\approx4790$ → $\\frac{S_i}{N_i}=\\frac{4790}{240}\\approx20$。\n第3步：$N_i=n_0B=2\\times10^{-10}\\times50k=10^{-5}$W → $S_i=2\\times10^{-4}$W → $A=\\sqrt{4\\times10^{-4}}=0.02$V。\n【答案】$A=20$ mV。\n【易错提醒】10⁷πt → $f_c=5$MHz（只做验证用）；别把 $m_f$ 与 $Δf$ 混为一谈。"
  },
  {
   "subject": "txyl",
@@ -20867,7 +20904,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "调频调相波参数",
-  "kp_sub": "调频信号参数综合"
+  "kp_sub": "调频信号参数综合",
+  "solution": "【知识点梳理】\n· 瞬时频偏 $=\\frac{1}{2\\pi}\\frac{d\\varphi}{dt}$；最大相移=$|\\varphi(t)|_{max}$；平均功率 $=A^2/2$。\n· 给波形求带宽/频偏不必区分 FM/PM；判制式需要 $K_f$/$K_p$ 信息。\n【解题步骤】\n第1步：功率 $=100/2=50$W。\n第2步：$\\varphi=10\\cos2000\\pi t$ → $\\Delta f=\\frac{1}{2\\pi}\\times10\\times2000\\pi=10^4$Hz。\n第3步：最大相移 10rad；$f_m=1000$Hz → $B=2(10^4+1000)=22$kHz。\n【答案】50W；10kHz；10rad；22kHz；(2) 无法唯一判定（若已知是 FM 则 $K_f=\\Delta f/|m|=10$kHz/1）。\n【易错提醒】求 $\\Delta f$ 是“相位求导取最大”，别直接拿 10 当频偏。"
  },
  {
   "subject": "txyl",
@@ -20883,7 +20921,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "调频调相波参数",
-  "kp_sub": "FM/PM 瞬时频率（梯形波）"
+  "kp_sub": "FM/PM 瞬时频率（梯形波）",
+  "solution": "【知识点梳理】\n· FM：瞬时频率 $=f_c+K_f m(t)$（对幅度敏感）。\n· PM：瞬时频偏 $=\\frac{K_p}{2\\pi}\\frac{dm}{dt}$（对导数敏感）。\n【解题步骤】\n第1步：FM：$m_{max}=10^5$V → $f_{max}=10^6+5\\times10^5=1.5\\times10^6$Hz。\n第2步：PM：斜坡段 $|dm/dt|=10^5$V/s → $\\Delta f_{max}=\\frac{K_p}{2\\pi}\\times10^5$，最大瞬时频率 $=10^6+\\Delta f_{max}$，最小 $=10^6-\\Delta f_{max}$（代入印刷的 $K_p$ 值；该数值印刷存疑，按公式代入即可）。\n【答案】(1) $1.5\\times10^6$Hz；(2) $f_{max/min}=10^6\\pm\\frac{K_p}{2\\pi}\\times10^5$ Hz。\n【易错提醒】FM 看“值最大”、PM 看“变化率最大”——梯形波的平顶与斜坡段分工不同。"
  },
  {
   "subject": "txyl",
@@ -20899,7 +20938,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "调频调相波参数",
-  "kp_sub": "调频器频偏/相偏波形图"
+  "kp_sub": "调频器频偏/相偏波形图",
+  "solution": "【知识点梳理】\n· FM：$\\Delta f(t)=K_f m(t)$（阶梯）；$\\varphi(t)=K_f\\int m\\,dt$（分段线性累积）。\n【解题步骤】\n第1步：频偏图：0~10ms：+50Hz；10~30ms：−25Hz；30~40ms：+25Hz；40~50ms：−50Hz；50~60ms：+50Hz。\n第2步：相位图各段斜率=对应频偏×$2\\pi$，拐点值逐段累加：10ms 末 $+\\pi$ rad；30ms 末回到 0；40ms 末 $+\\pi/2$；50ms 末 $-\\pi/2$；60ms 末 $+\\pi/2$（弧度值按 $2\\pi K_f\\int m\\,dt$ 计算）。\n【答案】频偏为阶梯波、相位为折线，坐标值如上。\n【易错提醒】相位是“面积”的累积——每段结束值是下一段的起点，别每段都从零画。"
  },
  {
   "subject": "txyl",
@@ -20915,7 +20955,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "调频调相波参数",
-  "kp_sub": "单音 FM 参数变化规律"
+  "kp_sub": "单音 FM 参数变化规律",
+  "solution": "【知识点梳理】\n· 单音 FM：$m_f=\\Delta f/f_m$（sin 前系数）、$\\Delta f=m_f f_m$、$B=2(m_f+1)f_m$。\n· FM：$\\Delta f\\propto$ 幅度，与频率无关。\n【解题步骤】\n第1步：$f_m=\\frac{300\\pi}{2\\pi}=150$Hz，$m_f=6$，$\\Delta f=900$Hz，$B=2\\times7\\times150=2100$Hz。\n第2步：幅度×2 → $Δf=1800$Hz、$m_f=12$、$B=2\\times13\\times150=3900$Hz。\n第3步：频率×2 → $\\Delta f$ 不变 900Hz、$m_f=3$、$B=2\\times4\\times300=2400$Hz。\n【答案】如上；结论：FM 带宽主要受调制信号幅度控制，频率加倍时带宽变化不大（$m_f$ 减半）。\n【易错提醒】“调频指数随幅度增大、随频率减小”——两个变量的作用方向相反。"
  },
  {
   "subject": "txyl",
@@ -20931,7 +20972,8 @@
   "status": "todo",
   "level": "综合",
   "kp": "调频调相波参数",
-  "kp_sub": "由已调波反求调制信号"
+  "kp_sub": "由已调波反求调制信号",
+  "solution": "【知识点梳理】\n· FM：$\\Delta f=m_f f_m$，$m(t)=\\frac{\\Delta f}{K_f}\\cos$；PM：$\\varphi_{max}=A K_p$ → $A=\\varphi_{max}/K_p$。\n【解题步骤】\n第1步：$\\Delta f=25\\times1000=25$kHz → $m(t)=\\frac{25000}{5}\\cos2\\pi f_m t=5000\\cos2\\pi f_m t$（V）。\n第2步：$A=25/10=2.5$ → $m(t)=2.5\\cos2\\pi f_m t$（V）。\n第3步：$f_m'=5$kHz：FM 的 $\\Delta f$ 不变 → $m_f=\\frac{25000}{5000}=5$，$B=2(5+1)\\times5000=60$kHz。\n【答案】(1) $5000\\cos2\\pi f_m t$ V；(2) $2.5\\cos2\\pi f_m t$ V；(3) $m_f=5$、$B=60$kHz。\n【易错提醒】(3) 是 FM——$Δf$ 不随 $f_m$ 变，$m_f=\\Delta f/f_m$ 自动减半。"
  },
  {
   "subject": "txyl",

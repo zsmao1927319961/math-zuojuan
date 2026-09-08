@@ -19,6 +19,17 @@
   .stat.ok b{color:#1d9e6f}
   .stat.bad b{color:#d34}
   .qcard{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px;padding:12px 16px}
+  .qcard.done{border-left:4px solid #1d9e6f}
+  .qcard.wrong{border-left:4px solid #d34}
+  .bar{height:8px;background:#e8ecf3;border-radius:4px;overflow:hidden;margin-top:8px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#1d9e6f,#4cc08a);border-radius:4px;transition:width .3s}
+  .ansbox .sec{font-weight:700;margin:8px 0 2px;font-size:13.5px}
+  .ansbox .sec.kp{color:#1a6b47}
+  .ansbox .sec.step{color:#2f6bff}
+  .ansbox .sec.ans{color:#a06b00}
+  .ansbox .sec.warn{color:#c33}
+  .gate-hint{display:none;margin-top:8px;font-size:12px;color:#a06b00;background:#fff7e8;border:1px solid #f0e0bb;border-radius:8px;padding:6px 10px}
+  .gate-hint.show{display:block}
   .qhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
   .qno{font-weight:700;font-size:15px}
   .tag{font-size:11px;background:#eef1f6;color:#5a6472;border-radius:6px;padding:2px 7px}
@@ -63,6 +74,7 @@
   var MODE = null;              /* 'server' | 'static' */
   var STATE = null;             /* 静态版进度 */
   var PICKS = [];               /* 今日三题 */
+  var MARKED = {};              /* 本次会话内的打标覆盖（即时刷新状态用） */
   var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
 
   function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -98,8 +110,9 @@
   function notesObj(){ return STATE.notes || (STATE.notes = {}); }
   function addDays(iso, days){ var d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + days); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 
-  /* ---------- 每题的实时状态（统一成 live 对象） ---------- */
+  /* ---------- 每题的实时状态（统一成 live 对象；本次会话打标优先） ---------- */
   function liveOf(q){
+    if (MARKED[q.id]) return MARKED[q.id];
     if (MODE === 'server') return q.live || {};
     var st = qstate()[q.id] || {};
     return { status: st.status, due: st.due, wrong_date: st.wrong_date, review_due: st.review_due, note: (notesObj()[q.id] || ''), reason: st.reason };
@@ -132,8 +145,10 @@
     return picks;
   }
 
-  /* ---------- 打标（服务端 / 本机双写路径） ---------- */
+  /* ---------- 打标（服务端 / 本机双写路径；并覆盖本会话状态） ---------- */
   function mark(id, val, reason){
+    MARKED[id] = (val === 'right') ? { status: 'done', right_date: TODAY }
+      : { status: 'todo', wrong_date: TODAY, due: addDays(TODAY, 7), reason: reason || '' };
     if (MODE === 'server') {
       var body = { paper_id: 'zy-' + Date.now(), results: {}, reasons: {} };
       body.results[id] = val;
@@ -173,9 +188,26 @@
     if (lv.status === 'todo' && lv.wrong_date) return '<span class="tag bad">已标记做错</span>';
     return '<span class="tag">未做</span>';
   }
+  /* ---------- 详解分区排版：【】行做标题，其余行渲染公式 ---------- */
+  function formatSolution(el, text){
+    el.textContent = '';
+    String(text || '').split('\n').forEach(function(ln){
+      var d = document.createElement('div');
+      if (/^【.+?】/.test(ln)) {
+        d.className = 'sec ' + (ln.indexOf('易错') >= 0 ? 'warn' : ln.indexOf('答案') >= 0 ? 'ans' : ln.indexOf('步骤') >= 0 ? 'step' : 'kp');
+        d.textContent = ln;
+      } else {
+        renderLatexMixed(d, ln);
+      }
+      el.appendChild(d);
+    });
+  }
   function card(q, idx){
     var el = document.createElement('div');
     el.className = 'qcard';
+    var lv0 = liveOf(q);
+    if (lv0.status === 'done') el.classList.add('done');
+    if (lv0.status === 'todo' && lv0.wrong_date) el.classList.add('wrong');
     el.innerHTML =
       '<div class="qhead"><span class="qno">第 ' + (idx + 1) + ' 题</span>' +
       '<span class="tag">' + escHtml(q.chapter_name || q.chapter) + '</span>' +
@@ -186,7 +218,8 @@
       '<button class="btn ok" data-act="right">做对</button>' +
       '<button class="btn bad" data-act="wrong">做错</button>' +
       '<button class="btn" data-act="ans">看答案</button></div>' +
-      '<div class="ansbox"><div class="at">答案</div><div class="ansbody katex-ans"></div></div>' +
+      '<div class="gate-hint">💡 提示：先自己完整做一遍再看答案，效果更好（此提示只出现一次）</div>' +
+      '<div class="ansbox"><div class="at">答案' + (q.solution ? ' + 详解' : '') + '</div><div class="ansbody katex-ans"></div></div>' +
       '<div class="reasons" data-role="reasons">' +
       '<button class="chip" data-reason="概念不清">概念不清</button>' +
       '<button class="chip" data-reason="计算失误">计算失误</button>' +
@@ -196,19 +229,27 @@
       '<textarea class="noteta" placeholder="笔记（自动保存）：突破口 / 易错点…">' + escHtml(liveOf(q).note || '') + '</textarea>' +
       '<div class="hint">' + (MODE === 'server' ? '进度同步到服务器（错题本/统计通用）' : '进度存本机，与主站共用') + '</div>';
     renderLatexMixed(el.querySelector('.katex-auto'), q.question_text || '');
-    renderLatexMixed(el.querySelector('.katex-ans'), q.answer_text || '');
+    formatSolution(el.querySelector('.katex-ans'), q.solution || q.answer_text || '');
     var noteTimer = null;
     var ta = el.querySelector('.noteta');
     ta.addEventListener('input', function(){
       clearTimeout(noteTimer);
       noteTimer = setTimeout(function(){ saveNote(q.id, ta.value); }, 600);
     });
+    var hinted = false;
     el.querySelector('[data-act="ans"]').onclick = function(){
-      el.querySelector('.ansbox').classList.toggle('show');
+      var box = el.querySelector('.ansbox');
+      if (!box.classList.contains('show') && !el.dataset.marked && !hinted) {
+        hinted = true;
+        el.querySelector('.gate-hint').classList.add('show');
+        setTimeout(function(){ el.querySelector('.gate-hint').classList.remove('show'); }, 2800);
+      }
+      box.classList.toggle('show');
     };
     var stEl = el.querySelector('[data-role="st"]');
     el.querySelector('[data-act="right"]').onclick = function(){
       mark(q.id, 'right').then(function(){
+        el.dataset.marked = '1'; el.classList.add('done'); el.classList.remove('wrong');
         stEl.innerHTML = '<span class="tag ok">已掌握</span>';
         refreshStats();
       });
@@ -223,6 +264,7 @@
         c.classList.add('on');
         var reason = c.dataset.reason === '直接确认' ? null : c.dataset.reason;
         mark(q.id, 'wrong', reason).then(function(){
+          el.dataset.marked = '1'; el.classList.add('wrong');
           stEl.innerHTML = '<span class="tag bad">已标记做错' + (reason ? '·' + reason : '') + '</span>';
           refreshStats();
         });
@@ -231,15 +273,16 @@
     return el;
   }
   function refreshStats(){
-    var pool = PICKS.pool, lv;
-    var done = 0, due = 0;
+    var pool = PICKS.pool, lv, done = 0, due = 0, todayDone = 0;
     pool.forEach(function(q){ lv = liveOf(q); if (lv.status === 'done') done++; if (lv.due && lv.due <= TODAY && lv.status !== 'done') due++; });
+    PICKS.forEach(function(q){ lv = liveOf(q); if (lv.status === 'done' || lv.wrong_date === TODAY) todayDone++; });
     var st = document.getElementById('pstats');
     if (st) st.innerHTML =
-      '<div class="stat">题池 <b>' + pool.length + '</b> 题（专题一~' + '七' + '）</div>' +
+      '<div class="stat">题池 <b>' + pool.length + '</b> 题（专题一~七）</div>' +
       '<div class="stat ok">已掌握 <b>' + done + '</b></div>' +
       '<div class="stat bad">待重做 <b>' + due + '</b></div>' +
-      '<div class="stat">今日 <b>' + PICKS.length + '</b> 题</div>';
+      '<div class="stat">今日完成 <b>' + todayDone + '/' + PICKS.length + '</b></div>' +
+      '<div class="bar" style="width:100%"><i style="width:' + Math.round(done / pool.length * 100) + '%"></i></div>';
   }
 
   /* ---------- 启动：探测服务端 → 回退静态 ---------- */
