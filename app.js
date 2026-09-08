@@ -459,10 +459,21 @@ function fillFilters() {
         .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'qhzt').chapter_name })) },
   ]);
   fillSelect('#f-type', types.map(t => ({ value: t, text: t })));
-  const kps = [...new Set(QUESTIONS.map(q => q.kp_sub).filter(Boolean))].sort();
-  fillSelect('#f-kp', kps.map(k => ({ value: k, text: k })));
+  refillKp();
   const levels = [...new Set(QUESTIONS.map(q => q.level).filter(Boolean))];
   fillSelect('#f-level', [{ value: '基础', text: '基础' }, { value: '综合', text: '综合' }, { value: '拓展', text: '拓展' }].filter(o => levels.includes(o.value)));
+}
+// 知识点下拉按已选来源动态刷新（避免通信原理考点混进数学筛选）
+function refillKp() {
+  const el = document.querySelector('#f-kp'); if (!el) return;
+  const src = document.querySelector('#f-source').value;
+  const base = src ? QUESTIONS.filter(q => q.source === src) : QUESTIONS;
+  const kps = [...new Set(base.map(q => q.kp_sub).filter(Boolean))].sort();
+  const cur = el.value;
+  el.innerHTML = '';
+  const all = document.createElement('option'); all.value = ''; all.textContent = '全部知识点'; el.appendChild(all);
+  kps.forEach(k => { const n = document.createElement('option'); n.value = k; n.textContent = k; el.appendChild(n); });
+  if (kps.includes(cur)) el.value = cur;
 }
 function fillSelect(sel, options) {
   const el = document.querySelector(sel); if (!el) return;
@@ -745,7 +756,7 @@ function setBankQuick(q) {
 function bindEvents() {
   $('#btn-auto').onclick = () => autoGenerate(false);
   $('#btn-print').onclick = () => window.print();
-  ['#f-source','#f-chapter','#f-type','#f-kp','#f-level'].forEach(s => $(s).onchange = renderBank);
+  ['#f-source','#f-chapter','#f-type','#f-kp','#f-level'].forEach(s => $(s).onchange = function () { if (s === '#f-source') refillKp(); renderBank(); });
   document.querySelectorAll('#bank-quick .chip').forEach(c => c.onclick = () => setBankQuick(c.dataset.quick || ''));
   document.querySelectorAll('#tabbar .tab-btn').forEach(b => b.onclick = () => switchTab(b.dataset.tab));
   document.querySelectorAll('#more-nav .chip').forEach(c => c.onclick = () => switchMorePane(c.dataset.more));
