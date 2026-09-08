@@ -742,7 +742,7 @@ function switchTab(name) {
 }
 function switchMorePane(name) {
   morePane = name;
-  document.querySelectorAll('#more-nav .chip').forEach(c => c.classList.toggle('active', c.dataset.more === name));
+  document.querySelectorAll('#more-nav .chip').forEach(c => c.classList.toggle('active', c.dataset.more !== undefined && c.dataset.more === name));
   document.querySelectorAll('.more-pane').forEach(p => p.classList.toggle('active', p.id === 'more-' + name));
   if (name === 'bank') renderBank();
   if (name === 'cuoti') renderCuoti();
@@ -759,7 +759,7 @@ function bindEvents() {
   ['#f-source','#f-chapter','#f-type','#f-kp','#f-level'].forEach(s => $(s).onchange = function () { if (s === '#f-source') refillKp(); renderBank(); });
   document.querySelectorAll('#bank-quick .chip').forEach(c => c.onclick = () => setBankQuick(c.dataset.quick || ''));
   document.querySelectorAll('#tabbar .tab-btn').forEach(b => b.onclick = () => switchTab(b.dataset.tab));
-  document.querySelectorAll('#more-nav .chip').forEach(c => c.onclick = () => switchMorePane(c.dataset.more));
+  document.querySelectorAll('#more-nav .chip[data-more]').forEach(c => c.onclick = () => switchMorePane(c.dataset.more));
   document.querySelectorAll('#cuoti-mode .chip').forEach(c => c.onclick = () => { cuotiMode = c.dataset.mode; document.querySelectorAll('#cuoti-mode .chip').forEach(x => x.classList.toggle('active', x === c)); renderCuoti(); });
   document.querySelectorAll('#cuoti-source .chip').forEach(c => c.onclick = () => { cuotiSrc = c.dataset.src; document.querySelectorAll('#cuoti-source .chip').forEach(x => x.classList.toggle('active', x === c)); renderCuoti(); });
   document.querySelectorAll('#cuoti-reason .chip').forEach(c => c.onclick = () => { cuotiReason = c.dataset.reason; document.querySelectorAll('#cuoti-reason .chip').forEach(x => x.classList.toggle('active', x === c)); renderCuoti(); });
