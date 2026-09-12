@@ -118,12 +118,18 @@
     return { status: st.status, due: st.due, wrong_date: st.wrong_date, review_due: st.review_due, note: (notesObj()[q.id] || ''), reason: st.reason };
   }
 
-  /* ---------- 每日选题：到期重做 > 待巩固 > 新题按日期轮转 ---------- */
-  function dayIndex(){ var a = new Date(2026, 8, 1), b = new Date(); return Math.max(0, Math.round((b - a) / 86400000)); }
-  function pickDaily(pool){
+  /* ---------- 钉住式选题：三题存本地，只有按「换一批」才换 ---------- */
+  var PICKS_KEY = 'zy_picks_v1';
+  function loadSavedPicks(){
+    try { var raw = localStorage.getItem(PICKS_KEY); var o = raw ? JSON.parse(raw) : null; return (o && o.ids && o.ids.length) ? o : null; } catch(e){ return null; }
+  }
+  function savePicks(ids, off){ try { localStorage.setItem(PICKS_KEY, JSON.stringify({ ids: ids, off: off })); } catch(e){} }
+  function pickThree(pool, exclude, off){
+    var ex = {}; (exclude || []).forEach(function(i){ ex[i] = 1; });
     var today = TODAY;
     var due = [], review = [], fresh = [], doneList = [];
     pool.forEach(function(q){
+      if (ex[q.id]) return;
       var lv = liveOf(q);
       if (lv.status === 'done') { doneList.push(q); return; }
       if (lv.due && lv.due <= today) { due.push(q); return; }
@@ -135,14 +141,28 @@
     if (picks.length < DAILY) picks = picks.concat(review.slice(0, DAILY - picks.length));
     if (picks.length < DAILY) {
       fresh.sort(function(a,b){ return a.id.localeCompare(b.id); });
-      var off = fresh.length ? (dayIndex() % fresh.length) : 0;
-      for (var i = 0; i < fresh.length && picks.length < DAILY; i++) picks.push(fresh[(off + i) % fresh.length]);
+      var n = fresh.length;
+      for (var i = 0; i < n && picks.length < DAILY; i++) picks.push(fresh[((off || 0) + i) % n]);
     }
     if (picks.length === 0) {   /* 全部掌握 → 复刷最久未做 */
       doneList.sort(function(a,b){ return (liveOf(a).right_date || '').localeCompare(liveOf(b).right_date || ''); });
       picks = doneList.slice(0, DAILY);
     }
     return picks;
+  }
+  function loadPicks(pool){
+    var saved = loadSavedPicks();
+    var out = [];
+    if (saved) {
+      var byId = {}; pool.forEach(function(q){ byId[q.id] = q; });
+      saved.ids.forEach(function(id){ if (byId[id] && out.indexOf(byId[id]) < 0) out.push(byId[id]); });
+    }
+    if (out.length < DAILY) {   /* 首次/题池变化补齐 */
+      var extra = pickThree(pool, out.map(function(q){ return q.id; }), saved ? saved.off : dayIndex());
+      extra.forEach(function(q){ if (out.length < DAILY && out.indexOf(q) < 0) out.push(q); });
+      savePicks(out.map(function(q){ return q.id; }), saved ? saved.off : dayIndex());
+    }
+    return out;
   }
 
   /* ---------- 打标（服务端 / 本机双写路径；并覆盖本会话状态） ---------- */
@@ -285,6 +305,21 @@
       '<div class="bar" style="width:100%"><i style="width:' + Math.round(done / pool.length * 100) + '%"></i></div>';
   }
 
+  function dayIndex(){ var a = new Date(2026, 8, 1), b = new Date(); return Math.max(0, Math.round((b - a) / 86400000)); }
+  function reshuffle(){
+    var cur = PICKS.map(function(q){ return q.id; });
+    var saved = loadSavedPicks();
+    var off = (saved ? saved.off : dayIndex()) + DAILY;
+    var extra = pickThree(PICKS.pool, cur, off);
+    if (!extra.length) return;
+    PICKS = extra.slice(0, DAILY);
+    savePicks(PICKS.map(function(q){ return q.id; }), off);
+    var root = document.getElementById('content');
+    root.innerHTML = '';
+    PICKS.forEach(function(q, i){ root.appendChild(card(q, i)); });
+    refreshStats();
+  }
+
   /* ---------- 启动：探测服务端 → 回退静态 ---------- */
   function start(questions){
     var pool = questions.filter(function(q){
@@ -292,10 +327,16 @@
     });
     pool.sort(function(a,b){ return a.id.localeCompare(b.id); });
     if (!pool.length) { document.getElementById('pmeta').textContent = '题池为空'; return; }
-    PICKS = pickDaily(pool);
+    PICKS = loadPicks(pool);
     PICKS.pool = pool;
-    document.getElementById('pmeta').textContent = TODAY + ' · ' +
-      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 每日固定 3 题，做完自动进错题本';
+    var meta = document.getElementById('pmeta');
+    meta.textContent = TODAY + ' · ' +
+      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 固定 3 题，按「换一批」手动更换 · 做完自动进错题本';
+    var rb = document.createElement('button');
+    rb.textContent = '🔄 换一批';
+    rb.style.cssText = 'margin-left:10px;padding:2px 12px;border:1px solid #b9c6d8;border-radius:14px;background:#fff;color:#1f6fb2;cursor:pointer;font-size:12px;vertical-align:middle;';
+    rb.onclick = reshuffle;
+    meta.appendChild(rb);
     refreshStats();
     var root = document.getElementById('content');
     PICKS.forEach(function(q, i){ root.appendChild(card(q, i)); });
