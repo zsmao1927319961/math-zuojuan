@@ -68,7 +68,7 @@
 <script>
 (function(){
   'use strict';
-  var ZT_MAX = 7;               /* 题池：专题一~专题七（学到新专题后改这里扩池） */
+  var ZT_MAX = 11;              /* 题池：专题一~专题十一（学到新专题后改这里扩池） */
   var DAILY = 3;                /* 每日题数 */
   var LS_KEY = 'shuxue_progress_v1';
   var MODE = null;              /* 'server' | 'static' */
@@ -278,7 +278,7 @@
     PICKS.forEach(function(q){ lv = liveOf(q); if (lv.status === 'done' || lv.wrong_date === TODAY) todayDone++; });
     var st = document.getElementById('pstats');
     if (st) st.innerHTML =
-      '<div class="stat">题池 <b>' + pool.length + '</b> 题（专题一~七）</div>' +
+      '<div class="stat">题池 <b>' + pool.length + '</b> 题（专题一~十一）</div>' +
       '<div class="stat ok">已掌握 <b>' + done + '</b></div>' +
       '<div class="stat bad">待重做 <b>' + due + '</b></div>' +
       '<div class="stat">今日完成 <b>' + todayDone + '/' + PICKS.length + '</b></div>' +
