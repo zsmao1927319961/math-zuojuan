@@ -19,6 +19,10 @@
   .card h2 { font-size:16.5px; margin:0 0 8px; color:var(--blue); border-left:4px solid var(--blue); padding-left:9px; }
   .card h2.g { color:var(--green); border-color:var(--green); }
   .card h2.r { color:var(--red); border-color:var(--red); }
+  .chiprow { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .tchip { border:1px solid var(--line); background:#fff; border-radius:999px; padding:6px 14px;
+           font-size:14.5px; cursor:pointer; color:#5a6472; }
+  .tchip.on { background:var(--blue); color:#fff; border-color:var(--blue); font-weight:700; }
   select, textarea { font-family:inherit; font-size:16px; color:var(--ink); }
   select { width:100%; border:1px solid var(--line); border-radius:8px; padding:8px 10px; background:#fff; }
   .prompt { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:9px 13px; margin-top:9px; font-size:15px; }
@@ -26,6 +30,7 @@
   .prompt .dir { color:#5a6472; font-size:13.5px; margin-top:4px; font-style:italic; }
   textarea { width:100%; min-height:300px; border:1px solid var(--line); border-radius:10px; padding:12px; line-height:1.75; resize:vertical; background:#fff; }
   textarea:focus { outline:2px solid #c9d6f2; }
+  textarea.short { min-height:130px; }
   .countbar { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:8px; font-size:14px; color:#5a6472; }
   .countbar b { color:var(--blue); }
   .timer { margin-left:auto; display:flex; align-items:center; gap:8px; }
@@ -70,19 +75,28 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <h1>作文批改 · 写作台</h1>
+    <h1>批改写作台 · 英语二</h1>
     <a class="back" href="index.html">← 返回主站</a>
   </div>
 
   <div class="card">
-    <h2>① 题目</h2>
-    <select id="psel"></select>
-    <div class="prompt" id="pbox"></div>
-    <textarea id="pcustom" placeholder="自定义题目:把图表信息和 writing directions 写在这里" style="min-height:90px;margin-top:9px" hidden></textarea>
+    <h2>① 题型与题目</h2>
+    <div class="chiprow" id="typerow">
+      <button class="tchip" data-t="big">大作文 15分</button>
+      <button class="tchip" data-t="small">小作文 10分</button>
+      <button class="tchip" data-t="trans">翻译 15分</button>
+    </div>
+    <div id="promptwrap">
+      <select id="psel"></select>
+      <div class="prompt" id="pbox"></div>
+      <textarea id="pcustom" class="short" placeholder="自定义题目:把题目要求和图表/情境信息写在这里" style="margin-top:9px" hidden></textarea>
+    </div>
+    <div class="prompt" id="transnote" hidden>考研英语二翻译 = <b>一个英文段落整段英译汉(15 分)</b>。把英文原文贴进下面的「英文原文」,你的译文写进「我的译文」,点 AI 深批。</div>
   </div>
 
   <div class="card">
-    <h2>② 写作(限时 40 分钟)</h2>
+    <h2 id="h2write">② 写作(限时)</h2>
+    <textarea id="source" class="short" placeholder="粘贴英文原文(翻译题干)…" hidden></textarea>
     <textarea id="essay" placeholder="在这里写正文,写完点下方「机检体检」…&#10;草稿会自动存在本机,切走再回来不丢。"></textarea>
     <div class="countbar">
       <span>词数 <b id="cw">0</b></span>
@@ -96,17 +110,17 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card" id="cardcheck">
     <h2 class="r">③ 机检体检(即时)</h2>
     <button class="btn primary big" id="btncheck">机检体检</button>
-    <div id="report"><div class="disc">体检只查「皮」:字数、句长、连接词、中式残留、模板句命中。语言对不对、切不切题,要发给 AI 深批(第④步)。</div></div>
+    <div id="report"><div class="disc">体检只查「皮」:字数、句长、连接词、中式残留、模板句命中。语言对不对、切不切题,以 AI 深批为准(第④步)。</div></div>
   </div>
 
   <div class="card">
-    <h2 class="g">④ 深度批改</h2>
+    <h2 class="g">④ AI 深批</h2>
     <button class="btn primary big" id="btnai">🤖 AI 深批</button>
     <div id="aiout" style="margin-top:10px"></div>
-    <div style="font-size:13.5px;color:#8a94a6;margin-top:8px">AI 深批结果只存本机(最近一次见下)。想让 ZCode 归档进下方「历史批改」(跨设备可见、出 PDF),点下面复制全文发给 ZCode。</div>
+    <div style="font-size:13.5px;color:#8a94a6;margin-top:8px">按《考研英语批改指令》英语二标准批改(大作文15分/小作文10分/翻译15分):档位定分 + 逐句批改(必须修改/可选优化)+ 修改后全文 + 复盘积累。结果只存本机;想让 ZCode 归档进下方「历史批改」,点下面复制发给 ZCode。</div>
     <div style="text-align:center;margin-top:6px"><button class="btn big" id="btncopy">复制全文发给 ZCode(归档)</button></div>
     <div class="flash" id="flash"></div>
     <div id="lastai" style="font-size:13px;color:#8a94a6;margin-top:4px"></div>
@@ -117,25 +131,46 @@
     <div id="hist"><div class="empty">加载中…</div></div>
   </div>
 
-  <div class="foot">作文批改模块 ｜ 分项:内容 8 + 语言 8 + 结构 4 = 20(英语二大作文) ｜ 草稿与计时保存在本机</div>
+  <div class="foot">批改写作台(英语二) ｜ 评分依据:考研英语批改指令(英语二大作文 15 分 / 小作文 10 分 / 翻译 15 分) ｜ 草稿与计时保存在本机</div>
 </div>
 
 <script>
-const PROMPTS = [
-  { id:'p1', title:'模拟 · 饼图:某高校学生课后时间安排',
-    desc:'饼图:学习 45%、娱乐 25%、运动 20%、其他 10%(数据为模拟)。',
-    dir:'Write an essay based on the chart. In your writing, you should 1) interpret the chart, and 2) give your comments. You should write about 150 words.' },
-  { id:'p2', title:'模拟 · 柱状图:某市公共图书馆年借阅量',
-    desc:'柱状图:2019 年 120 万册,此后逐年上升,2024 年达 310 万册(数据为模拟)。',
-    dir:'Write an essay based on the chart. In your writing, you should 1) interpret the chart, and 2) give your comments. You should write about 150 words.' },
-  { id:'p3', title:'模拟 · 表格:某市居民主要健身方式',
-    desc:'表格:散步 52%、跑步 25%、球类 15%、其他 8%(数据为模拟)。',
-    dir:'Write an essay based on the table. In your writing, you should 1) interpret the table, and 2) give your comments. You should write about 150 words.' },
-  { id:'p4', title:'模拟 · 折线图:某国新能源汽车年销量',
-    desc:'折线图:2018 年 125 万辆,持续攀升,2024 年约 1200 万辆(数据为模拟)。',
-    dir:'Write an essay based on the chart. In your writing, you should 1) interpret the chart, and 2) give your comments. You should write about 150 words.' },
-  { id:'custom', title:'自定义题目', desc:'', dir:'' }
-];
+const LS = 'pigai_';
+const $ = s => document.querySelector(s);
+
+/* ---------- 题目库 ---------- */
+const DIR_BIG = 'Write an essay based on the chart/table. In your writing, you should 1) interpret the chart/table, and 2) give your comments. You should write about 150 words.';
+const PROMPTS = {
+  big: [
+    { id:'b1', title:'模拟 · 饼图:某高校学生课后时间安排',
+      desc:'饼图:学习 45%、娱乐 25%、运动 20%、其他 10%(数据为模拟)。', dir:DIR_BIG },
+    { id:'b2', title:'模拟 · 柱状图:某市公共图书馆年借阅量',
+      desc:'柱状图:2019 年 120 万册,此后逐年上升,2024 年达 310 万册(数据为模拟)。', dir:DIR_BIG },
+    { id:'b3', title:'模拟 · 表格:某市居民主要健身方式',
+      desc:'表格:散步 52%、跑步 25%、球类 15%、其他 8%(数据为模拟)。', dir:DIR_BIG },
+    { id:'b4', title:'模拟 · 折线图:某国新能源汽车年销量',
+      desc:'折线图:2018 年 125 万辆,持续攀升,2024 年约 1200 万辆(数据为模拟)。', dir:DIR_BIG },
+    { id:'custom', title:'自定义题目', desc:'', dir:'' }
+  ],
+  small: [
+    { id:'s1', title:'模拟 · 建议信:给大学图书馆提建议',
+      desc:'Suppose you are Li Ming, a sophomore. Write an email to the university library, suggesting two improvements to its study rooms. About 100 words. Do not use your real name.' },
+    { id:'s2', title:'模拟 · 通知:校园志愿者招募',
+      desc:'Suppose you are Li Ming, chair of the Student Union. Write a notice to recruit volunteers for the campus culture festival. About 100 words. Do not use your real name.' },
+    { id:'s3', title:'模拟 · 邀请信:邀请外教参加中国文化节',
+      desc:'Suppose you are Li Ming. Write an email to your foreign teacher, Ms. Smith, inviting her to the Chinese Culture Festival on campus and telling her what she can see and do there. About 100 words. Do not use your real name.' },
+    { id:'custom', title:'自定义题目', desc:'', dir:'' }
+  ],
+  trans: []
+};
+const TYPE_META = {
+  big:   { name:'大作文', full:'英语二大作文', max:15, min:40,
+           h2:'② 写作(限时 40 分钟)', ph:'在这里写正文(约 150 词),写完点下方「机检体检」…' },
+  small: { name:'小作文', full:'英语二小作文', max:10, min:20,
+           h2:'② 写作(限时 20 分钟)', ph:'在这里写小作文(约 100 词):称呼、正文、落语、署名 Li Ming…' },
+  trans: { name:'翻译',   full:'英语二翻译(英译汉)', max:15, min:25,
+           h2:'② 翻译(限时 25 分钟)', ph:'在这里写你的中文译文…' }
+};
 const CLICHES = [
   ['with the development of', '换成:along with the growth of / as … advances'],
   ['more and more', '换成:a growing / an increasing number of,或 increasingly'],
@@ -145,28 +180,44 @@ const CLICHES = [
   ['it goes without saying', '删掉,直接说']
 ];
 const LINKERS = ['however','moreover','furthermore','in addition','therefore','consequently','by contrast','on the contrary','as a result','by comparison','specifically','for instance','for example','in conclusion','to sum up','similarly','meanwhile','nevertheless'];
-const LS = 'pigai_';
-const $ = s => document.querySelector(s);
 
-let TPL = [];          // 从 sentences.json 提取的模板短语
+let TPL = [];                 // 从 sentences.json 提取的模板短语(大作文机检用)
+let curType = localStorage.getItem(LS + 'type') || 'big';
 let tLeft = 40*60, tRun = null;
 
 /* ---------- 题目 ---------- */
 function promptOf(){
+  if (curType === 'trans') return { title:'英语二翻译(整段英译汉)', desc:'', dir:'' };
   const id = $('#psel').value;
-  const p = PROMPTS.find(x => x.id === id);
-  return p.id === 'custom'
-    ? { title:'自定义', desc:$('#pcustom').value.trim(), dir:'' }
-    : p;
+  const p = PROMPTS[curType].find(x => x.id === id);
+  if (p && p.id === 'custom') return { title:'自定义', desc:$('#pcustom').value.trim(), dir:'' };
+  return p || { title:'自定义', desc:'', dir:'' };
+}
+function renderType(){
+  const m = TYPE_META[curType];
+  document.querySelectorAll('.tchip').forEach(b => b.classList.toggle('on', b.dataset.t === curType));
+  $('#promptwrap').hidden = curType === 'trans';
+  $('#transnote').hidden = curType !== 'trans';
+  $('#source').hidden = curType !== 'trans';
+  $('#cardcheck').style.display = curType === 'trans' ? 'none' : '';
+  $('#h2write').textContent = m.h2;
+  $('#essay').placeholder = m.ph;
+  $('#psel').innerHTML = PROMPTS[curType].map(p => `<option value="${p.id}">${p.title}</option>`).join('');
+  $('#psel').value = localStorage.getItem(LS + 'sel_' + curType) || PROMPTS[curType][0].id;
+  $('#pcustom').value = localStorage.getItem(LS + 'custom_' + curType) || '';
+  renderPrompt();
+  if (!tRun){ tLeft = m.min * 60; drawT(); }
+  localStorage.setItem(LS + 'type', curType);
 }
 function renderPrompt(){
+  if (curType === 'trans') return;
   const p = promptOf();
   $('#pcustom').hidden = $('#psel').value !== 'custom';
   $('#pbox').innerHTML = p.desc
     ? `<b>${p.title}</b><br>${p.desc}<div class="dir">${p.dir}</div>`
     : `<b>${p.title}</b>${p.dir ? `<div class="dir">${p.dir}</div>` : ''}`;
-  localStorage.setItem(LS+'sel', $('#psel').value);
-  if ($('#psel').value === 'custom') localStorage.setItem(LS+'custom', $('#pcustom').value);
+  localStorage.setItem(LS + 'sel_' + curType, $('#psel').value);
+  if ($('#psel').value === 'custom') localStorage.setItem(LS + 'custom_' + curType, $('#pcustom').value);
 }
 
 /* ---------- 计数 ---------- */
@@ -178,77 +229,129 @@ function updateCount(){
   $('#cw').textContent = w.length;
   $('#cs').textContent = sn.length;
   $('#cl').textContent = sn.length ? Math.round(w.length / sn.length) : '–';
-  localStorage.setItem(LS+'draft', t);
+  localStorage.setItem(LS + 'draft_' + curType, t);
+  if (curType === 'trans') localStorage.setItem(LS + 'source', $('#source').value);
 }
 
 /* ---------- 机检 ---------- */
-function push(items, level, title, body){
-  items.push({ level, title, body: body || '' });
-}
+function push(items, level, title, body){ items.push({ level, title, body: body || '' }); }
 function analyze(){
   const t = $('#essay').value;
   const box = $('#report');
+  const m = TYPE_META[curType];
   if (!words(t).length){ box.innerHTML = '<div class="disc">还没写正文,写完再体检。</div>'; return; }
   const items = [];
   const w = words(t), sn = sents(t), low = t.toLowerCase();
 
-  // 红色:硬伤
   const cjk = t.match(/[\u4e00-\u9fff]/g);
-  if (cjk) push(items, 'red', `正文里混进了中文(${cjk.length} 处)`, `考场写英文要整句英文思维,中文注释一律去掉:${[...new Set(cjk)].slice(0,8).join(' ')}`);
+  if (cjk && curType !== 'trans') push(items, 'red', `正文里混进了中文(${cjk.length} 处)`, '考场要整句英文思维,中文注释一律去掉:' + [...new Set(cjk)].slice(0,8).join(' '));
   const badp = t.match(/[。,、;:?!“”‘’()《》]/g);
-  if (badp) push(items, 'red', '用了中文标点', '全文换英文标点(, . ; : ? !),卷面上中文标点很扎眼。');
+  if (badp && curType !== 'trans') push(items, 'red', '用了中文标点', curType === 'small' ? '英文部分全文换英文标点(, . ; : ? !)。' : '全文换英文标点(, . ; : ? !),卷面上中文标点很扎眼。');
   const dbl = t.match(/\b([A-Za-z]+)\s+\1\b/gi);
   if (dbl) push(items, 'red', '疑似叠词', '检查:' + dbl.slice(0,6).join(' , '));
-  const noCap = sn.filter(s => /^[a-z]/.test(s));
+  const noCap = curType === 'small' ? sn.slice(1).filter(s => /^[a-z]/.test(s)) : sn.filter(s => /^[a-z]/.test(s));
   if (noCap.length) push(items, 'red', `${noCap.length} 个句子小写开头`, '例:' + noCap.slice(0,3).map(s => s.slice(0,40) + '…').join(' ｜ '));
 
-  // 黄色:注意
-  if (w.length < 120) push(items, 'red', `字数 ${w.length},不够`, '英语二大作文要求 150 词左右,少于 120 直接压档。');
-  else if (w.length < 150) push(items, 'yellow', `字数 ${w.length},偏少`, '再补一句扩写(图表细节或评论),稳到 150+。');
-  else if (w.length <= 230) push(items, 'green', `字数 ${w.length},达标`, '');
-  else push(items, 'yellow', `字数 ${w.length},偏多`, '考场 40 分钟写 150 左右就够,写多错多、挤占阅读时间。');
+  // 字数(按题型)
+  if (curType === 'big'){
+    if (w.length < 120) push(items, 'red', `词数 ${w.length},不够`, '大作文要求约 150 词,少于 120 直接压档。');
+    else if (w.length < 150) push(items, 'yellow', `词数 ${w.length},偏少`, '再补一句扩写(图表细节或评论),稳到 150+。');
+    else if (w.length <= 230) push(items, 'green', `词数 ${w.length},达标`, '');
+    else push(items, 'yellow', `词数 ${w.length},偏多`, '考场 40 分钟写 150 左右就够,写多错多、挤占阅读时间。');
+  } else {
+    if (w.length < 80) push(items, 'red', `词数 ${w.length},不够`, '小作文要求约 100 词,少于 80 会显得要点不全。');
+    else if (w.length < 100) push(items, 'yellow', `词数 ${w.length},偏少`, '再补一个要点细节,稳到 100+。');
+    else if (w.length <= 140) push(items, 'green', `词数 ${w.length},达标`, '');
+    else push(items, 'yellow', `词数 ${w.length},偏多`, '小作文 100 词左右即可,写多容易引入格式/语气问题。');
+  }
   const longs = sn.filter(s => words(s).length > 35);
-  if (longs.length) push(items, 'yellow', `${longs.length} 个超长句(>35 词)`, '长句是加分项,但超过 35 词极易语法崩:例:' + longs.slice(0,2).map(s => words(s).slice(0,8).join(' ') + '…').join(' ｜ '));
+  if (longs.length) push(items, 'yellow', `${longs.length} 个超长句(>35 词)`, '超过 35 词极易语法崩:例:' + longs.slice(0,2).map(s => words(s).slice(0,8).join(' ') + '…').join(' ｜ '));
   const avg = sn.length ? Math.round(w.length / sn.length) : 0;
-  if (avg > 28) push(items, 'yellow', `平均句长 ${avg} 词,偏长`, '理想区间 15–25 词/句:长短句交替才有节奏分。');
+  if (avg > 28) push(items, 'yellow', `平均句长 ${avg} 词,偏长`, '理想区间 15–25 词/句:长短句交替才有节奏。');
   const aAn = (t.match(/\ba\s+[aeiou]\w+/gi) || []).concat(t.match(/\ban\s+[bcdfgjklmnpqrstvwxyz]\w+/gi) || []);
   if (aAn.length) push(items, 'yellow', 'a/an 用法粗查报警', aAn.slice(0,5).join(' , ') + '(可能有误报,自己核一遍)');
-  for (const [c, alt] of CLICHES){
-    const m = low.match(new RegExp('\\b' + c.replace(/ /g,'\\s+') + '\\b','g'));
-    if (m) push(items, 'yellow', `烂大街表达 ×${m.length}:${c}`, alt);
+  for (const c of CLICHES){
+    const mm = low.match(new RegExp('\\b' + c[0].replace(/ /g,'\\s+') + '\\b','g'));
+    if (mm) push(items, 'yellow', `烂大街表达 ×${mm.length}:${c[0]}`, c[1]);
   }
-
-  // 绿色:连接词 + 模板命中
+  if (curType === 'small'){
+    if (!/dear\s+.\w|dear\s+[a-z]/i.test(t)) push(items, 'yellow', '没看到称呼(Dear …)', '小作文格式分看三件:称呼、结束语、署名。');
+    if (!/yours sincerely|yours faithfully|best regards|kind regards/i.test(t)) push(items, 'yellow', '没看到结束语(Yours sincerely…)', '书信体结束语别漏;通知体则用标题+落款。');
+    if (!/\bLi Ming\b/.test(t)) push(items, 'yellow', '没看到署名 Li Ming', '题目指定署名 Li Ming,别写真名。');
+  }
   const hits = [];
   LINKERS.forEach(l => { if (new RegExp('\\b' + l.replace(/ /g,'\\s+') + '\\b','i').test(low)) hits.push(l); });
-  if (!hits.length) push(items, 'yellow', '通篇没有连接词', 'however / in addition / by contrast … 至少用 2–3 个,结构分就靠它们。');
-  else if (hits.length > 7) push(items, 'yellow', `连接词 ${hits.length} 个,疑似堆砌`, '堆连接词不加分,删到 3–5 个真正必要的。');
+  if (!hits.length) push(items, 'yellow', '通篇没有连接词', 'however / in addition / by contrast … 用 2–3 个,结构分靠它们。');
+  else if (hits.length > 7) push(items, 'yellow', `连接词 ${hits.length} 个,疑似堆砌`, '批改原则:连接词数量不加分,删到 3–5 个真正必要的。');
   else push(items, 'green', `连接词 ${hits.length} 个:${hits.join(' , ')}`, '');
-  if (TPL.length){
+  if (curType === 'big' && TPL.length){
     const hit = TPL.filter(tp => new RegExp(tp.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/\s+/g,'\\s+'),'i').test(low));
-    if (hit.length) push(items, 'green', `模板句命中 ${hit.length} 个`, '<ul>' + hit.slice(0,6).map(h => `<li>${h}</li>`).join('') + (hit.length > 6 ? `<li>…</li>` : '') + '</ul>');
-    else push(items, 'yellow', '背过的模板一句都没用上', '是没想起来还是不会套?去背作文模块把当天的句子先过一遍再写。');
+    if (hit.length) push(items, 'green', `模板句命中 ${hit.length} 个`, '<ul>' + hit.slice(0,6).map(x => `<li>${x}</li>`).join('') + (hit.length > 6 ? '<li>…</li>' : '') + '</ul>');
+    else push(items, 'yellow', '背过的模板一句都没用上', '是没想起来还是不会套?去背作文模块把当前批先过一遍再写。');
   }
 
-  box.innerHTML = items.map(i =>
-    `<div class="item ${i.level}"><b>${i.title}</b>${i.body}</div>`).join('')
-    + '<div class="disc">机检只有体检意义——语言准不准、内容切不切题,发给 AI 深批才算数。</div>';
+  box.innerHTML = items.map(i => `<div class="item ${i.level}"><b>${i.title}</b>${i.body}</div>`).join('')
+    + '<div class="disc">机检只有体检意义——最终以 AI 深批为准(指令:综合定档,不机械扣分)。</div>';
 }
 
 /* ---------- AI 深批(直连 GLM,key 与问AI模块共用) ---------- */
 const AI_URL = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
-const GRADE_SYS = `你是考研英语二作文阅卷老师,按扇贝考研批改的风格讲评。英语二大作文满分 20 分:内容 8 / 语言 8 / 结构 4。对考生作文输出以下四节(用简体中文说明,英文例句除外):
-## 总分
-**X/20**(内容 a/8 · 语言 b/8 · 结构 c/4)+ 一句话判分理由
-## 逐句批改
-只挑有问题和值得升级的句子,每句三行:
-- 原句:...
-问题:...(标注类型:语法错误/用词不当/中式英语/拼写/搭配)
-改为:...(符合考研写作水平的地道改写,不堆超纲大词)
-## 亮点
-列出写得好、值得保留的表达
-## 总评与下篇行动
-2-3 句总评 + 下篇作文前最该改的一个问题
+const RUBRIC_BIG = `你是一名考研英语二阅卷老师,批改考生的大作文,满分 15 分。严格按照以下评分参考与批改原则执行,严格客观,不刻意抬分或压分,结果仅供练习参考。用中文讲解,英文呈现原句与修改内容。
+【评分参考】
+13—15 分:内容切题,完整覆盖任务要点,图表描述准确,评论相关且充分;语言丰富准确,行文自然,层次清晰。
+10—12 分:较好完成任务,主要要点完整,允许遗漏少量次要信息;语言较丰富,偶有错误,整体连贯。
+7—9 分:基本完成任务,涵盖多数要点,描述和评论基本合理;语言存在一些错误,但不影响整体理解。
+4—6 分:遗漏重要内容或存在理解偏差;语言错误较多,影响理解,组织与衔接不足。
+1—3 分:严重偏离任务,遗漏主要内容,语言错误多,难以有效表达意思。
+0 分:未作答、内容完全无关,或没有可评价的英文内容。
+【批改原则】
+1. 先核对题目要求,再结合内容、语言和结构综合定档、给分,不机械按错误数量扣分。
+2. 图表题重点检查对象、时间、单位、数值、比例、排序及变化趋势。区分静态对比与动态变化,不把类别差异写成时间趋势,不混淆百分比与百分点,也不编造数据。
+3. 描述应突出主要特征和关键对比,不要求罗列全部数字。评论须与图表相关、逻辑合理;合理推测不能写成图表已经证明的事实。不强求深入分析原因,具体以题目任务为准。
+4. 统计英文词数,按题目要求评价长度;题目要求约 150 词时,不擅自改成必须不少于 150 词,也不编造固定扣分规则。
+5. 正确、自然的简单表达可以保留,不以生僻词、复杂句或连接词数量决定分数,不因使用常见句式直接扣分。
+【输出要求】(用 Markdown 输出,节标题用 ##)
+①整体评分:给出词数、X/15 分、所属档位,以及内容、语言和结构方面的具体依据。
+②逐句批改:按"原句—修改句—中文解释"呈现,标注【必须修改】或【可选优化】,没有明显问题的句子说明可以保留;特别指出数据和趋势表达问题。
+③修改后全文:尽量保留考生原意和正确句式,加粗主要修改,注明修改后词数,不添加无依据的数据或事实。
+④复盘积累:总结 3 个最需要改进的问题,提炼 3—5 个实用表达并解释含义与用法,简要给出同类题的写作思路和可替换框架。
+直接输出,不要寒暄。`;
+const RUBRIC_SMALL = `你是一名考研英语二阅卷老师,批改考生的小作文,满分 10 分。严格按照以下评分参考与批改原则执行,严格客观,不刻意抬分或压分,结果仅供练习参考。用中文讲解,英文呈现原句与修改内容。
+【评分参考】
+8—9 分:很好地完成任务,要点完整,语言准确自然,表达有变化,行文连贯,格式和语气恰当。各方面表现充分、无明显不足时可给 10 分,不人为封顶。
+6—7 分:较好完成任务,主要要点完整,允许遗漏少量次要信息;语言基本准确,偶有错误,组织清晰,格式和语气适当。
+4—5 分:基本完成任务,涵盖多数要点;有一些语言错误,但不影响整体理解,结构和格式基本合理。
+2—3 分:遗漏重要要点或夹杂无关内容;语言错误较多,影响理解,衔接不足,格式或语气不当。
+1 分:未完成任务,明显遗漏主要内容,语言错误严重,难以有效传达信息。
+0 分:未作答、内容完全无关,或没有可评价的英文内容。
+【批改原则】
+1. 先核对写作身份、对象、目的及任务要点,再结合语言、结构和格式综合定档、给分,不机械按错误数量扣分。
+2. 按具体文体检查格式,如书信的称呼、结束语和署名,通知的标题和落款。检查是否符合题目指定姓名,语气是否适合双方关系,不把所有文章都改成正式公文。
+3. 统计正文词数,称呼、结束语和署名单独说明,按题目要求评价长度,不编造固定扣分规则,不重复扣分。
+4. 优先保证信息完整、表达准确和简洁得体。不以生僻词、复杂句或连接词数量决定分数,正确使用常见句式不扣分。
+【输出要求】(用 Markdown 输出,节标题用 ##)
+①整体评分:给出词数、X/10 分、所属档位及具体依据,指出遗漏的任务要点或格式问题。
+②逐句批改:按"原句—修改句—中文解释"呈现,区分【必须修改】与【可选优化】,正确表达可以保留;涉及语法错误时简要解释规则,必要时给一个例句。
+③修改后全文:尽量保留考生原意和正确句式,加粗主要修改,符合题目字数、文体及语气要求。
+④复盘积累:总结 3 个最需要改进的问题,提炼 3—5 个实用表达并解释用法,简要给出同类题的写作框架。
+直接输出,不要寒暄。`;
+const RUBRIC_TRANS = `你是一名考研英语二阅卷老师,批改考生的英译汉,满分 15 分。严格按照以下评分参考与批改原则执行,严格客观,不刻意抬分或压分,结果仅供练习参考。
+【评分参考】
+13—15 分:很好地完成任务,理解准确,表达通顺清楚,无明显误译、漏译。
+9—12 分:基本完成任务,理解基本准确,表达较通顺,无重大误译、漏译。
+5—8 分:未充分完成任务,理解存在明显偏差,表达欠通顺,有明显误译或漏译。
+0—4 分:大部分内容理解错误或缺失,表达支离破碎,难以传达原意。未作答或译文完全无关时为 0 分。
+【批改原则】
+1. 根据原文及上下文,按句子或意群划分模拟采分点,依据内容量和重要性分配分值,合计 15 分,注明属于模拟划分,不冒充官方标准。
+2. 意思准确、信息完整、符合上下文即可得分,不要求与参考译文用词和语序完全一致。允许合理调整语序、拆句和合句。
+3. 重点检查词义、句子主干、修饰关系、指代、否定和逻辑关系。局部误译或漏译按对应采分点评价,不重复扣分,不把局部错误扩大为整句错误。正确但可以优化的表达不直接判错。
+4. 同一处提供多个备选译法时,若其中有错,按错误译法评价。
+5. 本次练习约定:不影响原意的中文错别字按全文累计,每满 3 个扣 0.5 分,余下 1—2 个扣 0.25 分,没有则不扣。已按误译扣分的错误不再重复计算,总分最低为 0 分。
+【输出要求】(用 Markdown 输出,节标题用 ##)
+①逐句批改:按"英文原句—我的译文—采分点及得分—问题解释—修改译文"呈现,逐点说明应表达的信息、分值及实际得分;复杂句简要拆解结构。
+②总分与依据:汇总各句得分、错别字扣分和最终 X/15 分,结合准确性、完整性及通顺程度说明所属档位;确保分值合计一致,不重复扣分。
+③完整修改版:尽量保留考生正确表达,给出准确、完整、自然的译文,加粗主要修改,不随意增删原文信息。
+④复盘积累:总结 3 个主要薄弱点,整理 3—5 个实用词组或句法,解释含义及同类句子的翻译方法。
 直接输出,不要寒暄。`;
 
 async function aiGrade(){
@@ -257,24 +360,29 @@ async function aiGrade(){
     $('#aiout').innerHTML = '<div class="item red"><b>未找到 GLM Key</b>去题库任意题目的「问AI」面板点「测连通」,填一次 Key,本页就能直连批改(Key 只存你本机)。</div>';
     return;
   }
-  const t = $('#essay').value.trim();
-  if (!t){ flash('先写正文再批改'); return; }
+  const m = TYPE_META[curType];
+  const essay = $('#essay').value.trim();
+  if (!essay){ flash(curType === 'trans' ? '先写译文再批改' : '先写正文再批改'); return; }
   const p = promptOf();
   const model = localStorage.getItem('glm_model') || 'glm-5.3-flash';
   const btn = $('#btnai');
   btn.disabled = true; btn.textContent = '批改中…';
   $('#aiout').innerHTML = '<div class="disc">连接 GLM,流式批改中…</div>';
+  let user = '';
+  if (curType === 'big') user = `题目:${p.title}\n图表信息:${p.desc || '(自定义题目,见下)'}\nDirections:${p.dir}\n\n考生作文(约 ${words(essay).length} 词):\n${essay}`;
+  else if (curType === 'small') user = `题目及要求:${p.desc || '(自定义)'}\n\n考生小作文(约 ${words(essay).length} 词):\n${essay}`;
+  else user = `英文原文:\n${$('#source').value.trim()}\n\n考生译文:\n${essay}`;
   let acc = '', sawReason = false;
   try {
     const resp = await fetch(AI_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
       body: JSON.stringify({
-        model, stream: true, max_tokens: 3072,
+        model, stream: true, max_tokens: 4096,
         thinking: { type: 'disabled' },
         messages: [
-          { role: 'system', content: GRADE_SYS },
-          { role: 'user', content: `题目:${p.title}\n图表信息:${p.desc || '(自定义)'}\nDirections:${p.dir}\n\n考生作文(约 ${words(t).length} 词):\n${t}` }
+          { role: 'system', content: { big: RUBRIC_BIG, small: RUBRIC_SMALL, trans: RUBRIC_TRANS }[curType] },
+          { role: 'user', content: user }
         ]
       })
     });
@@ -285,9 +393,9 @@ async function aiGrade(){
     const rd = resp.body.getReader(), dec = new TextDecoder();
     let buf = '';
     for(;;){
-      const { done, value } = await rd.read();
-      if (done) break;
-      buf += dec.decode(value, { stream: true });
+      const done = await rd.read();
+      if (done.done) break;
+      buf += dec.decode(done.value, { stream: true });
       const lines = buf.split('\n');
       buf = lines.pop();
       for (const ln of lines){
@@ -305,7 +413,7 @@ async function aiGrade(){
       if (acc) $('#aiout').innerHTML = '<div class="essay">' + fmtMD(acc) + '</div>';
     }
     if (!acc) throw new Error(sawReason ? '模型只输出了思考内容(空返回)' : '空返回');
-    localStorage.setItem(LS + 'ai', JSON.stringify({ date: new Date().toISOString().slice(0,10), title: p.title, text: acc }));
+    localStorage.setItem(LS + 'ai', JSON.stringify({ date: new Date().toISOString().slice(0,10), type: m.name, title: p.title, text: acc }));
     renderLastAI();
   } catch(e){
     $('#aiout').innerHTML = '<div class="item red"><b>批改失败</b>' + e.message + '</div>';
@@ -325,31 +433,34 @@ function renderLastAI(){
   if (!v) return;
   try {
     const o = JSON.parse(v);
-    $('#lastai').textContent = `最近一次 AI 深批:${o.date} · ${o.title} · 结果保存在本机`;
+    $('#lastai').textContent = `最近一次 AI 深批:${o.date} · ${o.type || ''} ${o.title || ''} · 结果保存在本机`;
   } catch(e) {}
 }
 
 /* ---------- 复制 ---------- */
 async function copyAll(){
   const t = $('#essay').value.trim();
-  if (!t){ flash('先写正文再复制'); return; }
+  if (!t){ flash('还没有内容可复制'); return; }
   const p = promptOf();
-  const txt = `【英语二大作文 · 批改请求】\n题目:${p.title}\n图表信息:${p.desc || '(见自定义)'}\n\n正文(约 ${words(t).length} 词):\n\n${t}`;
-  try { await navigator.clipboard.writeText(txt); flash('已复制,去微信发给我'); }
+  let txt = '';
+  if (curType === 'big') txt = `【英语二大作文 · 批改请求】\n题目:${p.title}\n图表信息:${p.desc || '(见自定义)'}\n\n正文(约 ${words(t).length} 词):\n\n${t}`;
+  else if (curType === 'small') txt = `【英语二小作文 · 批改请求】\n题目及要求:${p.desc || '(见自定义)'}\n\n正文(约 ${words(t).length} 词):\n\n${t}`;
+  else txt = `【英语二翻译 · 批改请求】\n\n英文原文:\n${$('#source').value.trim()}\n\n我的译文:\n${t}`;
+  try { await navigator.clipboard.writeText(txt); flash('已复制,去发给 ZCode 归档'); }
   catch(e){
     const ta = document.createElement('textarea');
     ta.value = txt; document.body.appendChild(ta); ta.select();
     try { document.execCommand('copy'); flash('已复制(兼容模式)'); }
-    catch(e2){ flash('复制失败,手动全选正文复制'); }
+    catch(e2){ flash('复制失败,手动全选复制'); }
     ta.remove();
   }
 }
-function flash(msg){ $('#flash').textContent = msg; setTimeout(() => $('#flash').textContent = '', 3500); }
+function flash(msg){ $('#flash').textContent = msg; setTimeout(() => { $('#flash').textContent = ''; }, 3500); }
 
 /* ---------- 计时 ---------- */
 function drawT(){
-  const m = Math.floor(tLeft/60), s = tLeft%60;
-  $('#ttime').textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  const mm = Math.floor(tLeft/60), ss = tLeft%60;
+  $('#ttime').textContent = String(mm).padStart(2,'0') + ':' + String(ss).padStart(2,'0');
   $('#ttime').classList.toggle('low', tLeft <= 5*60);
 }
 function tick(){
@@ -360,23 +471,20 @@ function tick(){
 /* ---------- 历史批改 ---------- */
 function renderHist(list){
   if (!list || !list.length){
-    $('#hist').innerHTML = '<div class="empty">还没有批改记录——写完第一篇发给 ZCode,批改结果会出现在这里。</div>';
+    $('#hist').innerHTML = '<div class="empty">还没有批改记录——写完第一篇点 AI 深批,或发给 ZCode 归档后出现在这里。</div>';
     return;
   }
   const arr = [...list].sort((a,b) => (b.date||'').localeCompare(a.date||''));
   const nz = (v, d) => (v === undefined || v === null) ? d : v;
   $('#hist').innerHTML = arr.map(e => {
     const sc = e.score || {};
+    const dims = e.dims ? `<div class="dims">${e.dims.map(d => `<span class="dim">${d}</span>`).join('')}</div>` : '';
     return `<div class="hist">
       <div class="h1row">
-        <span class="score">${nz(sc.total,'–')}<small> /${nz(sc.max,20)}</small></span>
-        <span><span class="ht">${e.title || ''}</span><br><span class="hd">${e.date || ''} · 约 ${e.words || '–'} 词</span></span>
+        <span class="score">${nz(sc.total,'–')}<small> /${nz(sc.max,15)}</small></span>
+        <span><span class="ht">${e.title || ''}</span><br><span class="hd">${e.date || ''} · ${e.type || '大作文'} · 约 ${e.words || '–'} 词</span></span>
       </div>
-      <div class="dims">
-        <span class="dim">内容 <b>${nz(sc.content,'–')}/${nz(sc.contentMax,8)}</b></span>
-        <span class="dim">语言 <b>${nz(sc.lang,'–')}/${nz(sc.langMax,8)}</b></span>
-        <span class="dim">结构 <b>${nz(sc.struct,'–')}/${nz(sc.structMax,4)}</b></span>
-      </div>
+      ${dims}
       <div class="cm">${e.comment || ''}</div>
       ${(e.issues && e.issues.length) ? `<ul class="iss">${e.issues.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
       ${e.essay ? `<details><summary>看我的原文</summary><div class="essay">${e.essay}</div></details>` : ''}
@@ -386,34 +494,32 @@ function renderHist(list){
 
 /* ---------- 初始化 ---------- */
 async function init(){
-  $('#psel').innerHTML = PROMPTS.map(p => `<option value="${p.id}">${p.title}</option>`).join('');
-  $('#psel').value = localStorage.getItem(LS+'sel') || 'p1';
-  $('#pcustom').value = localStorage.getItem(LS+'custom') || '';
-  renderPrompt();
-  const draft = localStorage.getItem(LS+'draft');
-  if (draft) $('#essay').value = draft;
-  updateCount();
-
+  document.querySelectorAll('.tchip').forEach(b =>
+    b.addEventListener('click', () => { curType = b.dataset.t; renderType(); }));
   try {
-    const r = await fetch('data/sentences.json');
+    const r = await fetch('data/sentences.json?' + Date.now());
     const j = await r.json();
     const seen = new Set();
-    (j.days || []).forEach(d => (d.sents || []).forEach(s => {
-      [...(s.en || '').matchAll(/<span class="tpl">([\s\S]*?)<\/span>/g)].forEach(m => {
-        const t = m[1].replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
-        if (t.split(' ').length >= 3 && !seen.has(t.toLowerCase())){ seen.add(t.toLowerCase()); TPL.push(t); }
+    (j.days || []).forEach(dd => (dd.sents || []).forEach(s => {
+      [...(s.en || '').matchAll(/<span class="tpl">([\s\S]*?)<\/span>/g)].forEach(mm => {
+        const tt = mm[1].replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+        if (tt.split(' ').length >= 3 && !seen.has(tt.toLowerCase())){ seen.add(tt.toLowerCase()); TPL.push(tt); }
       });
     }));
   } catch(e) { /* 模板库加载失败就跳过该检查 */ }
-
   try {
     const r2 = await fetch('data/essays.json?' + Date.now());
     renderHist(await r2.json());
   } catch(e) { renderHist([]); }
   renderLastAI();
 
+  $('#essay').value = localStorage.getItem(LS + 'draft_' + curType) || '';
+  $('#source').value = localStorage.getItem(LS + 'source') || '';
+  renderType();
+  updateCount();
+
   if (location.hash === '#demo'){
-    $('#psel').value = 'p1'; renderPrompt();
+    curType = 'big'; renderType();
     $('#essay').value = "This pie chart offers a clear visualization of how after-school time is distributed across students in a university . With the development of society , more and more students spend their time on entertainment. However, study still occupies the largest share, which is 45 percent. a interesting phenomenon is that sports take 20 percent, this can help students keep healthy , and relax themselves after a long day of study. In conclusion, students should balance study and rest. the chart shows a clear trend that entertainment keeps growing, however it should not take too much time of students, because study is the most important task for students in the university, and if students spend too much time on playing games they will fail the exams and their parents will be very disappointed about them.";
     updateCount(); analyze();
   }
@@ -421,6 +527,7 @@ async function init(){
   $('#psel').addEventListener('change', renderPrompt);
   $('#pcustom').addEventListener('input', renderPrompt);
   $('#essay').addEventListener('input', updateCount);
+  $('#source').addEventListener('input', updateCount);
   $('#btncheck').addEventListener('click', analyze);
   $('#btnai').addEventListener('click', aiGrade);
   $('#btncopy').addEventListener('click', copyAll);
@@ -428,7 +535,7 @@ async function init(){
     if (tRun){ clearInterval(tRun); tRun = null; $('#tstart').textContent = '继续'; }
     else { tRun = setInterval(tick, 1000); $('#tstart').textContent = '暂停'; }
   });
-  $('#treset').addEventListener('click', () => { clearInterval(tRun); tRun = null; tLeft = 40*60; drawT(); $('#tstart').textContent = '开始'; });
+  $('#treset').addEventListener('click', () => { clearInterval(tRun); tRun = null; tLeft = TYPE_META[curType].min * 60; drawT(); $('#tstart').textContent = '开始'; });
 }
 init();
 </script>
