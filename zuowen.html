@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>背作文 · 艾宾浩斯 1-3-7-15</title>
+<title>背作文 · 按批推进 1-3-7-15</title>
 <style>
   :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
   * { box-sizing:border-box; }
@@ -28,7 +28,6 @@
   .rhead { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;
            background:#f4f6fa; border-radius:8px; padding:6px 10px; margin:10px 0 4px; font-size:14.5px; }
   .rhead b { color:var(--blue); }
-  .rhead .when { color:#8a94a6; font-size:13px; }
   .sen { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:10px 13px; margin:9px 0; }
   .sen .zh { font-size:16.5px; }
   .sen .zh .blank { color:var(--red); font-weight:700; }
@@ -45,12 +44,15 @@
              background:#fff; color:var(--green); border:1.5px solid #bfe0cd; margin-top:8px; }
   .donebtn.on { background:var(--green); color:#fff; border-color:var(--green); }
   .batchdone .rhead { background:#e5f3ea; }
+  .donetag { display:inline-block; background:#e5f3ea; color:var(--green); border-radius:8px;
+             padding:2px 10px; font-size:13.5px; font-weight:700; margin-left:6px; }
   .tools { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:10px 0 2px; }
   .tools button { border:1px solid var(--line); background:#fff; border-radius:999px;
                   padding:5px 14px; font-size:13.5px; cursor:pointer; color:var(--blue); }
   .notice { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px;
             font-size:14px; margin:10px 0; }
   .notice.red { background:#fdecec; border-color:#f2c4c0; }
+  .notice.green { background:#e5f3ea; border-color:#bfe0cd; }
   .tip { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px; font-size:14px; margin-top:10px; }
   .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
   .empty { text-align:center; color:#8a94a6; padding:30px 0; }
@@ -60,57 +62,58 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <h1>背作文 · 艾宾浩斯 1-3-7-15</h1>
+    <h1>背作文 · 按批推进</h1>
     <a class="back" href="index.html">← 返回主站</a>
   </div>
 
   <div class="daybar">
-    <button id="prev">‹ 前一天</button>
-    <span class="dtitle" id="dtitle">Day –</span>
-    <button id="next">后一天 ›</button>
+    <button id="prev">‹ 前一批</button>
+    <span class="dtitle" id="dtitle">第 – 批</span>
+    <button id="next">后一批 ›</button>
   </div>
   <div class="daybar" style="margin-top:0">
-    <button id="today" style="font-size:13px">回到今天</button>
+    <button id="today" style="font-size:13px">回到当前批</button>
     <span class="dsub" id="dsub"></span>
   </div>
   <div class="prog" id="prog"></div>
   <div class="tools">
     <button id="toggleAll">显示全部英文</button>
-    <button id="resetDay">重置本日打卡</button>
+    <button id="resetDay">重置本批打卡</button>
   </div>
 
   <div id="content"><div class="empty">加载中…</div></div>
 
-  <div class="tip"><b>书签式</b>:打开自动停在你<b>第一个没背完的日子</b>,背完打勾,下次自动推进,忘几天都不用管。<br><b>用法</b>:看中文(含红色 ＿＿ 提示)→ 心里背 → <b>点卡片显出英文核对</b>。先挣扎后揭晓,记忆才长得牢。每句背完点「✓ 背过」;每批复习完点批次右侧的勾。数据保存在本机浏览器,换设备不同步。</div>
-  <div class="foot">背作文模块 ｜ 数据:data/sentences.json(每日由 ZCode 追加) ｜ 开背日 2026-09-01</div>
+  <div class="tip"><b>按批推进,不看日历</b>:打开自动停在你<b>第一个没背完的批</b>,背完打勾,下一批自动顶上;几天不背也不会积压,断了接着背就行。复习按<b>批数间隔</b>排(1-3-7-15 批前),功能句整排在所有大段落之后。<br><b>用法</b>:看中文(含红色 ＿＿ 提示)→ 心里背 → <b>点卡片显出英文核对</b>。先挣扎后揭晓,记忆才长得牢。每句背完点「✓ 背过」;每批复习完点批次右侧的勾。数据保存在本机浏览器,换设备不同步。</div>
+  <div class="foot">背作文模块 ｜ 数据:data/sentences.json(由 ZCode 维护) ｜ 大段落 13 批 → 功能句 2 批</div>
 </div>
 
 <script>
 const LS = 'zuowen_';
 const OFFS = [1, 3, 7, 15];
-const OFFNAME = {1:'① 昨天 D-1', 3:'② 3天前 D-3', 7:'③ 7天前 D-7', 15:'④ 15天前 D-15'};
+const OFFNAME = {1:'① 上一批', 3:'② 3批前', 7:'③ 7批前', 15:'④ 15批前'};
 let DATA = null, cur = null;
 
 const $ = s => document.querySelector(s);
 const esc = s => s; // 数据源是自己写的受信 HTML
-const parseD = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
-const today0 = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
-const dayToDate = n => { const d = parseD(DATA.start); d.setDate(d.getDate() + n - 1); return d; };
-const WD = ['周日','周一','周二','周三','周四','周五','周六'];
-const fmtD = d => `${d.getMonth()+1}月${d.getDate()}日 ${WD[d.getDay()]}`;
-const get = k => localStorage.getItem(LS+k) === '1';
-const set = (k,v) => v ? localStorage.setItem(LS+k,'1') : localStorage.removeItem(LS+k);
+
+// 内容哈希(djb2 加法版):打卡键按句子内容存,重排/改期都不丢打卡
+function hsh(s){ let h = 5381; for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) >>> 0; return h.toString(16); }
+const skey = s => 's2_' + hsh(s.en);
+const get = k => localStorage.getItem(LS + k) === '1';
+const set = (k, v) => v ? localStorage.setItem(LS + k, '1') : localStorage.removeItem(LS + k);
 const dayMap = () => new Map(DATA.days.map(x => [x.day, x]));
 const testDay = n => n >= 6 && (n - 6) % 7 === 0;
 
 function sentsOf(n){ const d = DATA.map.get(n); return d ? d.sents : []; }
+function batchDone(n){ const d = DATA.map.get(n); return !!d && d.sents.every(s => get(skey(s))); }
+function landing(){ for (let n = 1; n <= DATA.max; n++) if (!batchDone(n)) return n; return DATA.max; }
 
 function senHTML(n, i, s, kind){
-  const key = `s_${n}_${i}`;
+  const key = skey(s);
   const done = get(key);
   return `<div class="sen" data-key="${key}">
     <div class="zh">${s.zh}</div>
-    <div class="cue">${kind} · Day ${n} 第 ${i+1} 句 · 点下方区域显示英文</div>
+    <div class="cue">${kind} · 第 ${n} 批 第 ${i+1} 句 · 点下方区域显示英文</div>
     <div class="enwrap"><div class="en">${esc(s.en)}</div>${s.meta ? `<div class="meta">${esc(s.meta)}</div>` : ''}</div>
     <button class="donebtn ${done?'on':''}" data-done="${key}">${done?'✓ 已背过':'✓ 背过'}</button>
   </div>`;
@@ -119,72 +122,73 @@ function senHTML(n, i, s, kind){
 function render(){
   const n = cur;
   const d = DATA.map.get(n);
-  const dt = dayToDate(n);
-  $('#dtitle').textContent = 'Day ' + n;
-  $('#dsub').textContent = fmtD(dt) + (d && d.tag ? ' ｜ ' + d.tag : '') + (isToday(n) ? ' ｜ 今天' : '');
+  $('#dtitle').textContent = `第 ${n} 批 / ${DATA.max}`;
+  $('#dsub').textContent = (d && d.tag) || '';
   $('#prev').disabled = n <= 1;
-  $('#next').disabled = n >= DATA.max && isToday(n);
+  $('#next').disabled = n >= DATA.max;
 
+  const land = landing();
   let html = '';
-  if (isToday(n) && n < DATA.max)
-    html += `<div class="notice">今天的句子还没录入(最新到 Day ${DATA.max})——先按最近一天背,录好后这里会自动出现新一天。</div>`;
-  if (!isToday(n) && n < todayN())
-    html += `<div class="notice">📌 书签停在 <b>Day ${n}</b>(今天日历上已是 Day ${todayN()})——把它背完打勾,下次打开自动推进;急着看新句也可 <a href="#" id="backtoday">跳到今天</a></div>`;
-  if (!isToday(n) && n > todayN())
-    html += `<div class="notice">你已经背到 <b>Day ${n}</b> 了,比日历还快,稳 👍</div>`;
-  if (!d) { html += `<div class="empty">这一天没有内容</div>`; $('#content').innerHTML = html; bind(); return; }
+  if (land > DATA.max || (land === DATA.max && batchDone(DATA.max)))
+    html += `<div class="notice green">🎉 全部 ${DATA.max} 批背完了!接下来:隔几天把后面几批抽着再过一遍,考前默写全套段落。</div>`;
+  else if (n === land)
+    html += `<div class="notice">📍 当前进度:从这批继续。背完打勾,下次打开自动停在这里。</div>`;
+  else if (n < land)
+    html += `<div class="notice">这批已背完 ✓(进度停在第 ${land} 批)——可回看,点「回到当前批」回去背新的。</div>`;
+  else
+    html += `<div class="notice">这批还没排上(进度停在第 ${land} 批)。可以预览,但建议按顺序来。</div>`;
+
+  if (!d) { html += `<div class="empty">这一批没有内容</div>`; $('#content').innerHTML = html; bind(); return; }
 
   // 新学
-  html += `<div class="card"><h2>今日新背(${d.sents.length} 句)</h2>`;
-  d.sents.forEach((s, i) => html += senHTML(n, i, s, '新学'));
+  const done = batchDone(n);
+  html += `<div class="card"><h2>本批新背(${d.sents.length} 句)${done ? '<span class="donetag">✓ 已背完</span>' : ''}</h2>`;
+  d.sents.forEach((s, i) => html += senHTML(n, i, s, done ? '回看' : '新学'));
   html += `</div>`;
+  if (done && n < DATA.max)
+    html += `<div class="notice green">本批完成!点右上「后一批 ›」继续背第 ${n+1} 批。</div>`;
 
-  // 复习批
-  const batches = OFFS.map(o => ({o, m: n - o})).filter(b => b.m >= 1 && DATA.map.has(b.m));
+  // 复习批(按批间隔 1-3-7-15,只列已背完的批)
+  const batches = OFFS.map(o => ({o, m: n - o})).filter(b => b.m >= 1 && batchDone(b.m));
   if (batches.length){
-    html += `<div class="card"><h2 class="g">今日复习(艾宾浩斯 ${OFFS.join('-')})</h2>`;
+    html += `<div class="card"><h2 class="g">本批复习(艾宾浩斯 1-3-7-15 · 按批)</h2>`;
     batches.forEach(b => {
       const bd = DATA.map.get(b.m);
       const rk = `r_${n}_${b.o}`;
       const rdone = get(rk);
-      html += `<div class="rhead ${rdone?'':'need'}"><span>${OFFNAME[b.o]} → <b>Day ${b.m}</b>(${bd.sents.length}句) · ${fmtD(dayToDate(b.m))}</span>
+      html += `<div class="rhead ${rdone?'':'need'}"><span>${OFFNAME[b.o]} → <b>第 ${b.m} 批</b>(${bd.sents.length}句) · ${bd.tag || ''}</span>
                <button class="donebtn ${rdone?'on':''}" data-done="${rk}" style="margin-top:0">${rdone?'✓ 已复习':'✓ 复习完'}</button></div>`;
-      html += `<div class="${rdone?'batchdone':''}">` + bd.sents.map((s,i) => senHTML(b.m, i, s, `复习·D-${b.o}`)).join('') + `</div>`;
+      html += `<div class="${rdone?'batchdone':''}">` + bd.sents.map((s,i) => senHTML(b.m, i, s, `复习·${b.o}批前`)).join('') + `</div>`;
     });
     html += `</div>`;
   } else {
-    html += `<div class="card"><h2 class="g">今日复习</h2><div style="color:#8a94a6;font-size:14.5px">开背首日,暂无复习任务。明天开场:先默写今天的句子。</div></div>`;
+    html += `<div class="card"><h2 class="g">本批复习</h2><div style="color:#8a94a6;font-size:14.5px">前面还没有背完的批,暂无复习任务。</div></div>`;
   }
 
-  // 周测
+  // 周测(每 6 批一次)
   if (testDay(n)){
     const wk = [];
     for (let m = Math.max(1, n-5); m <= n; m++) sentsOf(m).forEach((s,i) => wk.push({m, i, s}));
-    html += `<div class="card"><h2 class="o">周测(本周 ${wk.length} 句)</h2>
-      <div style="font-size:14px;color:#5a6472">本周句子全部以上面卡片形式过一遍(都是提取式),然后——</div>
+    html += `<div class="card"><h2 class="o">周测(近 6 批 ${wk.length} 句)</h2>
+      <div style="font-size:14px;color:#5a6472">近 6 批句子全部以上面卡片形式过一遍(都是提取式),然后——</div>
       <button class="donebtn" id="roll3" style="color:var(--blue);border-color:#c9d6f2">🎲 抽 3 句默写</button>
       <div id="rollbox"></div>
       <button class="donebtn ${get('t_'+n)?'on':''}" data-done="t_${n}">${get('t_'+n)?'✓ 周测完成':'✓ 周测完成打卡'}</button>
     </div>`;
   }
 
-  html += `<div class="foot">Day ${n} ｜ ${esc(d.tag||'')} ｜ 走完 1-3-7-15 的句子进长记忆,周测兜底</div>`;
+  html += `<div class="foot">第 ${n} 批 ｜ ${esc(d.tag||'')} ｜ 走完 1-3-7-15 的批进长记忆,周测兜底</div>`;
   $('#content').innerHTML = html;
   updateProg(n, d, batches);
   bind();
 }
 
-function isToday(n){ return n === todayN(); }
-function todayN(){
-  const v = Math.round((today0() - parseD(DATA.start)) / 86400000) + 1;
-  return Math.max(1, Math.min(v, DATA.max));
-}
 function updateProg(n, d, batches){
-  let done = d.sents.filter((s,i) => get(`s_${n}_${i}`)).length;
+  let done = d.sents.filter(s => get(skey(s))).length;
   let total = d.sents.length + batches.length;
   batches.forEach(b => { if (get(`r_${n}_${b.o}`)) done++; });
   if (testDay(n)){ total++; if (get('t_'+n)) done++; }
-  $('#prog').innerHTML = total ? `今日进度 <b>${done} / ${total}</b>${done===total&&total>0?' 🎉 全部完成,明天见':''}` : '';
+  $('#prog').innerHTML = total ? `本批进度 <b>${done} / ${total}</b>${done===total&&total>0?' 🎉 完成':''}` : '';
 }
 
 function bind(){
@@ -197,8 +201,6 @@ function bind(){
       set(k, !get(k));
       render();
     }));
-  const bt = $('#backtoday');
-  if (bt) bt.addEventListener('click', e => { e.preventDefault(); cur = todayN(); render(); });
   const r3 = $('#roll3');
   if (r3) r3.addEventListener('click', () => {
     const wk = [];
@@ -206,9 +208,9 @@ function bind(){
     const picks = wk.sort(() => Math.random()-.5).slice(0, 3);
     $('#rollbox').innerHTML = picks.map(p =>
       `<div class="sen"><div class="zh">${p.s.zh}</div>
-       <div class="cue">随机默写 · Day ${p.m} · 点显示英文</div>
+       <div class="cue">随机默写 · 第 ${p.m} 批 · 点显示英文</div>
        <div class="enwrap"><div class="en">${esc(p.s.en)}</div></div></div>`).join('')
-      + `<div style="font-size:13px;color:#8a94a6">默写在不看的纸上,写完再核对;错的地方明天加背一遍。</div>`;
+      + `<div style="font-size:13px;color:#8a94a6">默写在不看的纸上,写完再核对;错的地方下一批加背一遍。</div>`;
     $('#rollbox').querySelectorAll('.enwrap').forEach(el =>
       el.addEventListener('click', () => el.closest('.sen').classList.toggle('open')));
   });
@@ -216,7 +218,7 @@ function bind(){
 
 async function init(){
   try {
-    const r = await fetch('data/sentences.json');
+    const r = await fetch('data/sentences.json?' + Date.now());
     DATA = await r.json();
   } catch(e){
     $('#content').innerHTML = '<div class="notice red">句子数据加载失败,请确认已连到组卷网站服务器。</div>';
@@ -224,19 +226,25 @@ async function init(){
   }
   DATA.map = dayMap();
   DATA.max = Math.max(...DATA.days.map(x => x.day));
-  const t = Math.max(1, Math.min(Math.round((today0() - parseD(DATA.start)) / 86400000) + 1, DATA.max));
-  cur = t;
-  for (let n = 1; n <= DATA.max; n++) {
-    const d = DATA.map.get(n);
-    if (d && !d.sents.every((s, i) => get(`s_${n}_${i}`))) { cur = n; break; }
-  }
-  const q = parseInt(new URLSearchParams(location.search).get('day'), 10);
+
+  // 旧版(按日历 day 存)打卡一次性迁移到内容键
+  const MIG = DATA.migrate || {};
+  Object.keys(MIG).forEach(od => (MIG[od] || []).forEach((h, i) => {
+    const ok = LS + 's_' + od + '_' + i;
+    if (localStorage.getItem(ok) === '1'){
+      localStorage.setItem(LS + 's2_' + h, '1');
+      localStorage.removeItem(ok);
+    }
+  }));
+
+  cur = landing();
+  const q = parseInt(new URLSearchParams(location.search).get('p'), 10);
   if (q) cur = Math.max(1, Math.min(q, DATA.max));
   render();
 
   $('#prev').addEventListener('click', () => { if (cur > 1){ cur--; render(); window.scrollTo(0,0); } });
-  $('#next').addEventListener('click', () => { if (!(cur >= DATA.max && isToday(cur))){ cur++; render(); window.scrollTo(0,0); } });
-  $('#today').addEventListener('click', () => { cur = todayN(); render(); window.scrollTo(0,0); });
+  $('#next').addEventListener('click', () => { if (cur < DATA.max){ cur++; render(); window.scrollTo(0,0); } });
+  $('#today').addEventListener('click', () => { cur = landing(); render(); window.scrollTo(0,0); });
   $('#toggleAll').addEventListener('click', () => {
     const sens = document.querySelectorAll('.sen');
     const anyClosed = [...sens].some(x => !x.classList.contains('open'));
@@ -244,7 +252,9 @@ async function init(){
     $('#toggleAll').textContent = anyClosed ? '隐藏全部英文' : '显示全部英文';
   });
   $('#resetDay').addEventListener('click', () => {
-    Object.keys(localStorage).filter(k => k.startsWith(LS) && (k.includes(`_s_${cur}_`) || k.includes(`_r_${cur}_`) || k === LS+'t_'+cur)).forEach(k => localStorage.removeItem(k));
+    const d = DATA.map.get(cur);
+    if (d) d.sents.forEach(s => localStorage.removeItem(LS + skey(s)));
+    Object.keys(localStorage).filter(k => k.startsWith(LS) && (k.includes(`_r_${cur}_`) || k === LS + 't_' + cur)).forEach(k => localStorage.removeItem(k));
     render();
   });
 }

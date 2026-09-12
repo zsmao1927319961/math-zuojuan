@@ -1,10 +1,8 @@
 {
- "start": "2026-09-01",
- "note": "2026-09-05 已按《考研的秘密·苦瓜》大作文模板书籍原文重写：英语二积累顺序=静态→动态→经济类第二段→正面尾段；Day3/6 为功能句精选(可只背这些)；Day11 起为备用段(负面/校园/环境体育/文化, 可跳过)。en 标记: tpl=固定模板词(背), blank=考场按题目填(对应书红/蓝字)。",
+ "note": "2026-09-13 改版:废弃日历排期(无 start/date),day=批次序号,按序推进不按天数;大段落全部排前,功能句(静态/动态精选)在第 14-15 批最后。migrate=旧日历版 day → 各句 en 哈希,供 zuowen.html 一次性迁移旧打卡。en 标记: tpl=固定模板词(背), blank=考场按题目填(对应书红/蓝字)。",
  "days": [
   {
    "day": 1,
-   "date": "2026-09-01",
    "tag": "静态第一段·上(书原文)",
    "sents": [
     {
@@ -19,7 +17,6 @@
   },
   {
    "day": 2,
-   "date": "2026-09-02",
    "tag": "静态第一段·下(书原文)｜末句可写可不写",
    "sents": [
     {
@@ -34,30 +31,6 @@
   },
   {
    "day": 3,
-   "date": "2026-09-03",
-   "tag": "静态·功能句精选(书10选4)｜图表换法 This pie/bar/line chart",
-   "sents": [
-    {
-     "en": "<span class=\"tpl\">Turning to</span> <span class=\"blank\">事物1</span>, it <span class=\"tpl\">makes up</span> <span class=\"blank\">百分比1</span> of the total.",
-     "zh": "看事物1，其占总体的百分比1。"
-    },
-    {
-     "en": "<span class=\"tpl\">Compared with</span> <span class=\"blank\">事物2</span> at <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">comes in at</span> <span class=\"blank\">百分比1</span>.",
-     "zh": "与处于百分比2的事物2相比，事物1为百分比1。"
-    },
-    {
-     "en": "<span class=\"tpl\">While</span> <span class=\"blank\">事物2</span> <span class=\"tpl\">holds</span> <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">takes</span> <span class=\"blank\">百分比1</span>.",
-     "zh": "事物2占百分比2，而事物1为百分比1。"
-    },
-    {
-     "en": "<span class=\"blank\">事物1</span> and <span class=\"blank\">事物2</span> <span class=\"tpl\">together make up</span> <span class=\"blank\">百分比合计</span>, with individual shares of <span class=\"blank\">百分比1</span> and <span class=\"blank\">百分比2</span>.",
-     "zh": "事物1与事物2合计为百分比合计，单项占比分别为百分比1与百分比2。"
-    }
-   ]
-  },
-  {
-   "day": 4,
-   "date": "2026-09-04",
    "tag": "动态第一段·上(书原文)",
    "sents": [
     {
@@ -71,8 +44,7 @@
    ]
   },
   {
-   "day": 5,
-   "date": "2026-09-05",
+   "day": 4,
    "tag": "动态第一段·下(书原文)",
    "sents": [
     {
@@ -86,31 +58,7 @@
    ]
   },
   {
-   "day": 6,
-   "date": "2026-09-06",
-   "tag": "动态·功能句精选(书5选4)｜下降句见动态段declined",
-   "sents": [
-    {
-     "en": "<span class=\"tpl\">From</span> <span class=\"blank\">时间1</span> <span class=\"tpl\">to</span> <span class=\"blank\">时间2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">rose from</span> <span class=\"blank\">数字1</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字2</span>, showing a steady upward trend.",
-     "zh": "自时间1至时间2，事物1由数字1升至数字2，呈现稳定上升趋势。"
-    },
-    {
-     "en": "<span class=\"tpl\">By</span> <span class=\"blank\">时间2</span>, <span class=\"blank\">事物3</span> <span class=\"tpl\">plateaued around</span> <span class=\"blank\">数字5</span>, and its growth slowed and stabilized.",
-     "zh": "到时间2时，事物3在数字5附近进入平台期，其增速放缓并趋于稳定。"
-    },
-    {
-     "en": "<span class=\"tpl\">After</span> <span class=\"blank\">时间1</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">accelerated</span>, and the increase from <span class=\"blank\">数字1</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字2</span> outpaced earlier gains.",
-     "zh": "时间1之后，事物1出现加速，从数字1到数字2的增幅超过此前增幅。"
-    },
-    {
-     "en": "<span class=\"tpl\">Volatility increased for</span> <span class=\"blank\">事物3</span>, <span class=\"tpl\">swings widened around</span> <span class=\"blank\">数字区间</span>, and short-term fluctuations became frequent.",
-     "zh": "事物3的波动性上升，在数字区间附近的振幅加大，短期起伏变得更为频繁。"
-    }
-   ]
-  },
-  {
-   "day": 7,
-   "date": "2026-09-07",
+   "day": 5,
    "tag": "经济类第二段·上(书原文)｜英语二首选",
    "sents": [
     {
@@ -124,8 +72,7 @@
    ]
   },
   {
-   "day": 8,
-   "date": "2026-09-08",
+   "day": 6,
    "tag": "经济类第二段·下(书原文)",
    "sents": [
     {
@@ -139,8 +86,7 @@
    ]
   },
   {
-   "day": 9,
-   "date": "2026-09-09",
+   "day": 7,
    "tag": "正面尾段·上(书原文)｜第三段用一个即可",
    "sents": [
     {
@@ -154,8 +100,7 @@
    ]
   },
   {
-   "day": 10,
-   "date": "2026-09-10",
+   "day": 8,
    "tag": "正面尾段·下(书原文)｜主体词/行为词可按题目替换",
    "sents": [
     {
@@ -169,9 +114,8 @@
    ]
   },
   {
-   "day": 11,
-   "date": "2026-09-11",
-   "tag": "备用·负面尾段(消极话题用)｜可跳过",
+   "day": 9,
+   "tag": "备用·负面尾段(消极话题用)",
    "sents": [
     {
      "en": "<span class=\"tpl\">We need to examine the harms of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">with a rational mindset, and impose deliberate constraints.</span>",
@@ -192,9 +136,8 @@
    ]
   },
   {
-   "day": 12,
-   "date": "2026-09-12",
-   "tag": "备用·第二段校园类(英语一品质类)｜可跳过",
+   "day": 10,
+   "tag": "备用·第二段校园类(英语一品质类)",
    "sents": [
     {
      "en": "<span class=\"tpl\">When considered in the context of everyday life</span>, the positive influence of <span class=\"blank\">题目相关词</span> on individuals should by no means be overlooked.",
@@ -215,9 +158,8 @@
    ]
   },
   {
-   "day": 13,
-   "date": "2026-09-13",
-   "tag": "备用·环境生态/体育健康类第二段(改几词互换)｜可跳过",
+   "day": 11,
+   "tag": "备用·环境生态/体育健康类第二段(改几词互换)",
    "sents": [
     {
      "en": "<span class=\"tpl\">When considered in the context of everyday life</span>, the formation of <span class=\"blank\">题目相关词</span> is driven by the joint influence of multiple factors.",
@@ -238,9 +180,8 @@
    ]
   },
   {
-   "day": 14,
-   "date": "2026-09-14",
-   "tag": "备用·文化自信类第二段(可与经济类融合)｜可跳过",
+   "day": 12,
+   "tag": "备用·文化自信类第二段(可与经济类融合)",
    "sents": [
     {
      "en": "<span class=\"tpl\">The reason why</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">has become increasingly prominent today lies, to a large extent, in the changing way people understand the meaning of life.</span>",
@@ -261,9 +202,8 @@
    ]
   },
   {
-   "day": 15,
-   "date": "2026-09-15",
-   "tag": "备用·负面第二段(消极现象用)｜可跳过",
+   "day": 13,
+   "tag": "备用·负面第二段(消极现象用)",
    "sents": [
     {
      "en": "<span class=\"tpl\">When considered in the context of everyday life</span>, the negative influence of <span class=\"blank\">题目相关词</span> on individuals should by no means be ignored.",
@@ -282,6 +222,126 @@
      "zh": "毫无疑问，日常生活的压力增多时，题目相关词会使个人在困难面前更容易表现出脆弱而短视的应对方式。"
     }
    ]
+  },
+  {
+   "day": 14,
+   "tag": "功能句·静态精选(书10选4)｜所有大段落背完再背",
+   "sents": [
+    {
+     "en": "<span class=\"tpl\">Turning to</span> <span class=\"blank\">事物1</span>, it <span class=\"tpl\">makes up</span> <span class=\"blank\">百分比1</span> of the total.",
+     "zh": "看事物1，其占总体的百分比1。"
+    },
+    {
+     "en": "<span class=\"tpl\">Compared with</span> <span class=\"blank\">事物2</span> at <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">comes in at</span> <span class=\"blank\">百分比1</span>.",
+     "zh": "与处于百分比2的事物2相比，事物1为百分比1。"
+    },
+    {
+     "en": "<span class=\"tpl\">While</span> <span class=\"blank\">事物2</span> <span class=\"tpl\">holds</span> <span class=\"blank\">百分比2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">takes</span> <span class=\"blank\">百分比1</span>.",
+     "zh": "事物2占百分比2，而事物1为百分比1。"
+    },
+    {
+     "en": "<span class=\"blank\">事物1</span> and <span class=\"blank\">事物2</span> <span class=\"tpl\">together make up</span> <span class=\"blank\">百分比合计</span>, with individual shares of <span class=\"blank\">百分比1</span> and <span class=\"blank\">百分比2</span>.",
+     "zh": "事物1与事物2合计为百分比合计，单项占比分别为百分比1与百分比2。"
+    }
+   ]
+  },
+  {
+   "day": 15,
+   "tag": "功能句·动态精选(书5选4)｜所有大段落背完再背",
+   "sents": [
+    {
+     "en": "<span class=\"tpl\">From</span> <span class=\"blank\">时间1</span> <span class=\"tpl\">to</span> <span class=\"blank\">时间2</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">rose from</span> <span class=\"blank\">数字1</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字2</span>, showing a steady upward trend.",
+     "zh": "自时间1至时间2，事物1由数字1升至数字2，呈现稳定上升趋势。"
+    },
+    {
+     "en": "<span class=\"tpl\">By</span> <span class=\"blank\">时间2</span>, <span class=\"blank\">事物3</span> <span class=\"tpl\">plateaued around</span> <span class=\"blank\">数字5</span>, and its growth slowed and stabilized.",
+     "zh": "到时间2时，事物3在数字5附近进入平台期，其增速放缓并趋于稳定。"
+    },
+    {
+     "en": "<span class=\"tpl\">After</span> <span class=\"blank\">时间1</span>, <span class=\"blank\">事物1</span> <span class=\"tpl\">accelerated</span>, and the increase from <span class=\"blank\">数字1</span> <span class=\"tpl\">to</span> <span class=\"blank\">数字2</span> outpaced earlier gains.",
+     "zh": "时间1之后，事物1出现加速，从数字1到数字2的增幅超过此前增幅。"
+    },
+    {
+     "en": "<span class=\"tpl\">Volatility increased for</span> <span class=\"blank\">事物3</span>, <span class=\"tpl\">swings widened around</span> <span class=\"blank\">数字区间</span>, and short-term fluctuations became frequent.",
+     "zh": "事物3的波动性上升，在数字区间附近的振幅加大，短期起伏变得更为频繁。"
+    }
+   ]
   }
- ]
+ ],
+ "migrate": {
+  "1": [
+   "28fdff89",
+   "60d82bb1"
+  ],
+  "2": [
+   "d66a6dca",
+   "a9184b84"
+  ],
+  "3": [
+   "39e6772c",
+   "f4f29490",
+   "a4cef74a",
+   "53e709d5"
+  ],
+  "4": [
+   "e2d22958",
+   "8f1dfd09"
+  ],
+  "5": [
+   "c725d766",
+   "c6baebda"
+  ],
+  "6": [
+   "64ad0ef",
+   "da28c39b",
+   "19e4985d",
+   "51782c29"
+  ],
+  "7": [
+   "5c1b4bc6",
+   "95059d7f"
+  ],
+  "8": [
+   "3bd10ef4",
+   "bf4bd5c3"
+  ],
+  "9": [
+   "3328cbfa",
+   "9ac7bda9"
+  ],
+  "10": [
+   "e6f2a202",
+   "dcbf03fa"
+  ],
+  "11": [
+   "2e651a06",
+   "1b96ca34",
+   "9fe9634d",
+   "9dcb1cc3"
+  ],
+  "12": [
+   "92cf9835",
+   "3017158",
+   "5926c049",
+   "5772708"
+  ],
+  "13": [
+   "2885ff33",
+   "a8ace13b",
+   "243c48ef",
+   "7caff3d4"
+  ],
+  "14": [
+   "f816cea6",
+   "3faf536b",
+   "73593b7e",
+   "95fee1e9"
+  ],
+  "15": [
+   "e90b8f03",
+   "8efea185",
+   "7b7d6178",
+   "7468c0d0"
+  ]
+ }
 }
