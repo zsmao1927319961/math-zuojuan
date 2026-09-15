@@ -27,6 +27,14 @@
   .kp-row .bar{flex:1;height:12px;background:#e8ecf3;border-radius:6px;overflow:hidden}
   .kp-row .bar i{display:block;height:100%;background:linear-gradient(90deg,#d34,#f08a7a);border-radius:6px}
   .kp-row .n{width:34px;font-size:12px;color:#7a828f;flex:none}
+  .ms-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+  .ms{flex:1;min-width:150px;background:#f2f5fb;border-radius:10px;padding:7px 10px;font-size:12px;color:#7a828f;line-height:1.6}
+  .ms b{color:#20242c}
+  .ms.on{background:#e8f0ff;color:#2f6bff;font-weight:700}
+  .cd{margin-top:8px;font-size:13px;color:#c33;font-weight:700}
+  .rp{font-size:11.5px;margin:6px 0 0;color:#98a0ad;line-height:2}
+  .rp i{font-style:normal;display:inline-block;border:1px solid #d6dbe3;border-radius:6px;padding:1px 6px;margin-right:4px}
+  .rp i.due{color:#fff;background:#d34;border-color:#d34}
   .exam-sep{margin:22px 0 6px;font-size:13px;color:#b3bac6;text-align:center}
   .qcard{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px;overflow:hidden}
   .qhead{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;width:100%;border:none;background:#fff;font-family:inherit;text-align:left;touch-action:manipulation}
@@ -66,6 +74,9 @@
   function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
   function nz(v, d){ return (v === undefined || v === null || v === '') ? d : v; }
   var K_D = 'zhenti_done_', K_R = 'zhenti_reason_';
+  var EXAM_DAY = '2026-12-26';   /* 2027 初试预计日期 */
+  function addDays(iso, n){ var d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + n); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  function dIso(){ var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
 
   fetch('data/zhenti_errors.json').then(function(r){ return r.json(); }).then(function(data){
     var exams = (data.exams || []).slice();
@@ -78,6 +89,13 @@
     /* ---- 总览 + 成绩走势 ---- */
     var scored = exams.filter(function(e){ return typeof e.paper.score === 'number'; });
     var avg = scored.length ? Math.round(scored.reduce(function(s, e){ return s + e.paper.score; }, 0) / scored.length) : null;
+    var today = dIso();
+    var days = Math.max(0, Math.round((new Date(EXAM_DAY + 'T00:00:00') - new Date(today + 'T00:00:00')) / 86400000));
+    var mon = new Date().getMonth();
+    var phase = mon >= 11 ? 3 : (mon === 10 ? 2 : 1);
+    var brushed = Math.min(exams.length, 10);
+    var dueN = 0;
+    exams.forEach(function(e){ (e.errors || []).forEach(function(q){ if (e.paper.date && today > e.paper.date) dueN++; }); });
     var ov = document.createElement('div');
     ov.className = 'paper-card';
     var h = '<div class="paper-name">真题台账 · 两天一循环</div>' +
@@ -86,7 +104,14 @@
       '<div class="stat">已刷 <b>' + exams.length + '</b> 套</div>' +
       (avg !== null ? '<div class="stat ok">平均分 <b>' + avg + '</b>/150</div>' : '') +
       '<div class="stat">错题共 <b>' + exams.reduce(function(s, e){ return s + (e.errors || []).length; }, 0) + '</b> 题</div>' +
-      '</div>';
+      (dueN > 0 ? '<div class="stat bad">回炉到期 <b>' + dueN + '</b> 题·找我出同型变式</div>' : '') +
+      '</div>' +
+      '<div class="ms-row">' +
+      '<div class="ms' + (phase === 1 ? ' on' : '') + '">① 一刷近10年 <b>' + brushed + '/10</b> 套</div>' +
+      '<div class="ms' + (phase === 2 ? ' on' : '') + '">② 11月：错题二刷 + 模拟卷</div>' +
+      '<div class="ms' + (phase === 3 ? ' on' : '') + '">③ 12月：回炉 + 全真模考</div>' +
+      '</div>' +
+      '<div class="cd">⏳ 距初试（' + EXAM_DAY + '）约 ' + days + ' 天</div>';
     if (scored.length) {
       h += '<div class="type-head">成绩走势 <span class="cnt">满分 150，盯趋势不盯单套</span></div>';
       scored.slice().reverse().forEach(function(e){
@@ -143,7 +168,7 @@
         head.innerHTML = '错题 <span class="cnt">' + qs.length + ' 题 · 点开写错因 / 打卡重做</span>';
         card.appendChild(head);
         qs.forEach(function(q){
-          card.appendChild(errCard(q, yid));
+          card.appendChild(errCard(q, yid, p.date));
         });
       } else {
         var rl = document.createElement('div');
@@ -154,10 +179,18 @@
       root.appendChild(card);
     });
 
-    function errCard(q, yid){
+    function errCard(q, yid, pdate){
       var el = document.createElement('div');
       el.className = 'qcard';
       var done = localStorage.getItem(K_D + yid + '_' + q.no) === '1';
+      var rp = '';
+      if (pdate) {
+        var t = dIso();
+        rp = '<div class="rp">⏰ 回炉节点（到期找我出同型变式）：' + [1, 3, 7].map(function(n){
+          var d = addDays(pdate, n);
+          return '<i class="' + (d <= t ? 'due' : '') + '">+' + n + '天 ' + d.slice(5) + '</i>';
+        }).join('') + '</div>';
+      }
       el.innerHTML =
         '<button type="button" class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
         '<span class="tag">' + esc(nz(q.type, '')) + '</span>' +
@@ -166,6 +199,7 @@
         '<span role="button" class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</span></button>' +
         '<div class="qbody">' +
         (q.kp ? '<div class="kp-line">🎯 考点：' + esc(q.kp) + (q.chapter ? ' · ' + esc(q.chapter) : '') + '</div>' : '') +
+        rp +
         '<textarea class="reason" placeholder="错因（存在本机）：概念不清 / 计算失误 / 方法不会…">' +
         esc(nz(localStorage.getItem(K_R + yid + '_' + q.no), '')) + '</textarea>' +
         '<div class="hint">错因与重做状态仅存本机；回炉时找助手按考点出同型变式</div>' +
