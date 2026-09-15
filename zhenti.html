@@ -65,6 +65,7 @@
   .rp{font-size:11.5px;margin:6px 0 0;color:#98a0ad;line-height:2}
   .rp i{font-style:normal;display:inline-block;border:1px solid #d6dbe3;border-radius:6px;padding:1px 6px;margin-right:4px}
   .rp i.due{color:#fff;background:#d34;border-color:#d34}
+  .note-line{font-size:12.5px;color:#8a5a00;background:#fff7e8;border:1px solid #f0e0bb;border-radius:8px;padding:6px 10px;margin:6px 0 0;line-height:1.9}
   .back{display:inline-block;margin:12px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
   .empty{padding:34px 20px;text-align:center}
   .empty-icon{font-size:44px}
@@ -295,6 +296,7 @@
       var kpLine = '';
       if (!hideKp && q.kp) kpLine = '<div class="kp-line">🎯 考点：' + esc(q.kp) + (q.chapter ? ' · ' + esc(q.chapter) : '') + '</div>';
       else if (hideKp && q.chapter) kpLine = '<div class="kp-line">章节：' + esc(q.chapter) + '</div>';
+      var noteLine = q.note ? '<div class="note-line">✍️ 批改：' + esc(q.note) + '</div>' : '';
       el.innerHTML =
         '<button type="button" class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
         '<span class="tag">' + esc(nz(q.type, '')) + '</span>' +
@@ -302,7 +304,7 @@
         (F.mode === 'kp' ? '<span class="tag src" title="' + esc(it.ex) + '">📎 ' + esc(it.ex) + '</span>' : '') +
         '<span class="sp"></span>' +
         '<span role="button" class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</span></button>' +
-        '<div class="qbody">' + kpLine + rp +
+        '<div class="qbody">' + kpLine + noteLine + rp +
         '<textarea class="reason" placeholder="错因（存在本机）：概念不清 / 计算失误 / 方法不会…">' +
         esc(nz(localStorage.getItem(K_R + yid + '_' + q.no), '')) + '</textarea>' +
         '<div class="hint">错因与重做状态仅存本机；回炉时找助手按考点出同型变式</div>' +
