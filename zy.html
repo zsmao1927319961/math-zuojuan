@@ -51,6 +51,8 @@
   .chip.on{background:#2f6bff;color:#fff;border-color:#2f6bff}
   .noteta{width:100%;box-sizing:border-box;margin-top:10px;border:1px solid #d8dce4;border-radius:9px;padding:8px 10px;font-size:13px;min-height:46px;font-family:inherit}
   .hint{font-size:11px;color:#98a0ad;margin-top:6px}
+  .replay-hint{margin-top:6px;font-size:12px;color:#a06b00;background:#fff7e8;border:1px solid #f0e0bb;border-radius:8px;padding:5px 10px}
+  .backlog{width:100%;font-size:12px;color:#c33;background:#fdeaea;border:1px solid #f3c9c9;border-radius:8px;padding:6px 10px}
   .back{display:inline-block;margin:12px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
   .empty{padding:30px;text-align:center;color:#7a828f;font-size:14px}
 </style>
@@ -111,11 +113,14 @@
   function addDays(iso, days){ var d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + days); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 
   /* ---------- 每题的实时状态（统一成 live 对象；本次会话打标优先） ---------- */
+  var RELEARN_INT = [1, 3, 7];  /* 回炉池：错后 1/3/7 天递增重现 */
   function liveOf(q){
     if (MARKED[q.id]) return MARKED[q.id];
     if (MODE === 'server') return q.live || {};
     var st = qstate()[q.id] || {};
-    return { status: st.status, due: st.due, wrong_date: st.wrong_date, review_due: st.review_due, note: (notesObj()[q.id] || ''), reason: st.reason };
+    return { status: st.status, due: st.due, wrong_date: st.wrong_date, review_due: st.review_due,
+             right_count: st.right_count, wrong_count: st.wrong_count, right_streak: st.right_streak,
+             note: (notesObj()[q.id] || ''), reason: st.reason };
   }
 
   /* ---------- 钉住式选题：三题存本地，只有按「换一批」才换 ---------- */
@@ -133,7 +138,7 @@
       var lv = liveOf(q);
       if (lv.status === 'done') { doneList.push(q); return; }
       if (lv.due && lv.due <= today) { due.push(q); return; }
-      if (lv.status === 'review') { review.push(q); return; }
+      if (lv.status === 'review' || lv.status === 'relearn' || (lv.status === 'todo' && lv.wrong_date)) { review.push(q); return; }
       fresh.push(q);
     });
     due.sort(function(a,b){ return (liveOf(a).due || '').localeCompare(liveOf(b).due || ''); });
@@ -165,28 +170,41 @@
     return out;
   }
 
-  /* ---------- 打标（服务端 / 本机双写路径；并覆盖本会话状态） ---------- */
-  function mark(id, val, reason){
-    MARKED[id] = (val === 'right') ? { status: 'done', right_date: TODAY }
-      : { status: 'todo', wrong_date: TODAY, due: addDays(TODAY, 7), reason: reason || '' };
+  /* ---------- 打标：回炉池规则（服务端 progress.py / 静态版逻辑一致） ----------
+     做错 → 1/3/7 天递增重现；错后做对一次 → 明天再来，连续做对两次 → done 移出 */
+  function mark(q, val, reason){
+    var prev = MARKED[q.id] || (MODE === 'server' ? (q.live || {}) : (qstate()[q.id] || {}));
+    var s;
+    if (val === 'right') {
+      if (prev.status === 'done') return;
+      var cnt = (prev.right_count || 0) + 1;
+      if (prev.wrong_date) {
+        var streak = (prev.right_streak || 0) + 1;
+        s = (streak >= 2)
+          ? { status: 'done', right_date: TODAY, right_count: cnt }
+          : { status: 'relearn', wrong_date: prev.wrong_date, right_date: TODAY, right_streak: streak,
+              wrong_count: (prev.wrong_count || 1), due: addDays(TODAY, 1) };
+      } else {
+        s = { status: 'review', right_date: TODAY, review_due: addDays(TODAY, 15), right_count: cnt };
+      }
+    } else {
+      var wc = (prev.wrong_count || 0) + 1;
+      s = { status: 'todo', wrong_date: TODAY, wrong_count: wc, right_streak: 0,
+            due: addDays(TODAY, RELEARN_INT[Math.min(wc, RELEARN_INT.length) - 1]) };
+      if (reason) s.reason = reason;
+    }
+    MARKED[q.id] = s;
     if (MODE === 'server') {
       var body = { paper_id: 'zy-' + Date.now(), results: {}, reasons: {} };
-      body.results[id] = val;
-      if (reason) body.reasons[id] = reason;
+      body.results[q.id] = val;
+      if (reason) body.reasons[q.id] = reason;
       return fetch('api/record', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
     }
-    var st = qstate(); var prev = st[id] || {};
-    if (val === 'right') {
-      if (prev.status !== 'done') st[id] = { status: 'done', right_date: TODAY, right_count: (prev.right_count || 0) + 1 };
-    } else {
-      var s = { status: 'todo', wrong_date: TODAY, due: addDays(TODAY, 7) };
-      if (reason) s.reason = reason;
-      st[id] = s;
-    }
+    qstate()[q.id] = s;
     STATE.papers = STATE.papers || [];
     var rec = { id: 'zy-' + Date.now(), date: TODAY, results: {}, reasons: {} };
-    rec.results[id] = val;
-    if (reason) rec.reasons[id] = reason;
+    rec.results[q.id] = val;
+    if (reason) rec.reasons[q.id] = reason;
     STATE.papers.push(rec);
     saveState();
     return Promise.resolve();
@@ -203,9 +221,12 @@
   function tagOf(q){
     var lv = liveOf(q);
     if (lv.status === 'done') return '<span class="tag ok">已掌握</span>';
-    if (lv.status === 'review') return '<span class="tag review">待巩固</span>';
+    if (lv.status === 'relearn') return (lv.due && lv.due <= TODAY)
+      ? '<span class="tag bad">回炉·确认中</span>'
+      : '<span class="tag review">再做对1次即出池</span>';
     if (lv.due && lv.due <= TODAY) return '<span class="tag bad">待重做</span>';
     if (lv.status === 'todo' && lv.wrong_date) return '<span class="tag bad">已标记做错</span>';
+    if (lv.status === 'review') return '<span class="tag review">待巩固</span>';
     return '<span class="tag">未做</span>';
   }
   /* ---------- 详解分区排版：【】行做标题，其余行渲染公式 ---------- */
@@ -239,7 +260,7 @@
       '<button class="btn bad" data-act="wrong">做错</button>' +
       '<button class="btn" data-act="ans">看答案</button></div>' +
       '<div class="gate-hint">💡 提示：先自己完整做一遍再看答案，效果更好（此提示只出现一次）</div>' +
-      '<div class="ansbox"><div class="at">答案' + (q.solution ? ' + 详解' : '') + '</div><div class="ansbody katex-ans"></div></div>' +
+      '<div class="ansbox"><div class="at">答案' + (q.solution ? ' + 详解' : '') + '</div><div data-role="prevwrong"></div><div class="ansbody katex-ans"></div></div>' +
       '<div class="reasons" data-role="reasons">' +
       '<button class="chip" data-reason="概念不清">概念不清</button>' +
       '<button class="chip" data-reason="计算失误">计算失误</button>' +
@@ -249,7 +270,21 @@
       '<textarea class="noteta" placeholder="笔记（自动保存）：突破口 / 易错点…">' + escHtml(liveOf(q).note || '') + '</textarea>' +
       '<div class="hint">' + (MODE === 'server' ? '进度同步到服务器（错题本/统计通用）' : '进度存本机，与主站共用') + '</div>';
     renderLatexMixed(el.querySelector('.katex-auto'), q.question_text || '');
+    var lvR = liveOf(q);
+    if (lvR.wrong_date) {
+      var rh = document.createElement('div');
+      rh.className = 'replay-hint';
+      rh.textContent = '🔁 回炉重做 · 上次做错于 ' + lvR.wrong_date + (lvR.status === 'relearn' ? ' · 已做对1次，再对1次出池' : '');
+      el.querySelector('.qtext').after(rh);
+    }
     formatSolution(el.querySelector('.katex-ans'), q.solution || q.answer_text || '');
+    if (lvR.wrong_date) {
+      var pw = el.querySelector('[data-role="prevwrong"]');
+      var html = '';
+      if (lvR.reason) html += '<div style="font-size:13px;color:#c33;margin:4px 0">上次错因：' + escHtml(lvR.reason) + '</div>';
+      if (lvR.note) html += '<div style="font-size:13px;color:#5a6472;background:#f2f5fb;border-radius:8px;padding:6px 10px;margin:4px 0;white-space:pre-wrap">上次的笔记：' + escHtml(lvR.note) + '</div>';
+      pw.innerHTML = html;
+    }
     var noteTimer = null;
     var ta = el.querySelector('.noteta');
     ta.addEventListener('input', function(){
@@ -268,9 +303,15 @@
     };
     var stEl = el.querySelector('[data-role="st"]');
     el.querySelector('[data-act="right"]').onclick = function(){
-      mark(q.id, 'right').then(function(){
-        el.dataset.marked = '1'; el.classList.add('done'); el.classList.remove('wrong');
-        stEl.innerHTML = '<span class="tag ok">已掌握</span>';
+      mark(q, 'right').then(function(){
+        el.dataset.marked = '1';
+        var lv = liveOf(q);
+        if (lv.status === 'done') {
+          el.classList.add('done'); el.classList.remove('wrong');
+          stEl.innerHTML = '<span class="tag ok">已掌握（出池）</span>';
+        } else {
+          stEl.innerHTML = '<span class="tag review">好！明天再来确认1次（' + lv.due + '）</span>';
+        }
         refreshStats();
       });
     };
@@ -283,9 +324,10 @@
         Array.prototype.forEach.call(reasons.querySelectorAll('.chip'), function(x){ x.classList.remove('on'); });
         c.classList.add('on');
         var reason = c.dataset.reason === '直接确认' ? null : c.dataset.reason;
-        mark(q.id, 'wrong', reason).then(function(){
+        mark(q, 'wrong', reason).then(function(){
           el.dataset.marked = '1'; el.classList.add('wrong');
-          stEl.innerHTML = '<span class="tag bad">已标记做错' + (reason ? '·' + reason : '') + '</span>';
+          var gap = RELEARN_INT[Math.min(liveOf(q).wrong_count, RELEARN_INT.length) - 1];
+          stEl.innerHTML = '<span class="tag bad">已标记做错·' + gap + '天后重现' + (reason ? '·' + reason : '') + '</span>';
           refreshStats();
         });
       };
@@ -293,15 +335,24 @@
     return el;
   }
   function refreshStats(){
-    var pool = PICKS.pool, lv, done = 0, due = 0, todayDone = 0;
-    pool.forEach(function(q){ lv = liveOf(q); if (lv.status === 'done') done++; if (lv.due && lv.due <= TODAY && lv.status !== 'done') due++; });
+    var pool = PICKS.pool, lv, done = 0, due = 0, overdue = 0, todayDone = 0;
+    pool.forEach(function(q){
+      lv = liveOf(q);
+      if (lv.status === 'done') done++;
+      if (lv.due && lv.due <= TODAY && lv.status !== 'done') {
+        due++;
+        if (lv.due < TODAY) overdue++;
+      }
+    });
     PICKS.forEach(function(q){ lv = liveOf(q); if (lv.status === 'done' || lv.wrong_date === TODAY) todayDone++; });
     var st = document.getElementById('pstats');
     if (st) st.innerHTML =
       '<div class="stat">题池 <b>' + pool.length + '</b> 题（专题一~十一）</div>' +
       '<div class="stat ok">已掌握 <b>' + done + '</b></div>' +
       '<div class="stat bad">待重做 <b>' + due + '</b></div>' +
+      (overdue > 0 ? '<div class="stat bad">逾期未清 <b>' + overdue + '</b></div>' : '') +
       '<div class="stat">今日完成 <b>' + todayDone + '/' + PICKS.length + '</b></div>' +
+      (due >= 6 ? '<div class="backlog">⚠️ 回炉池积压 ' + due + ' 题待重做（' + overdue + ' 题已逾期）——建议今天先清回炉，再按「换一批」开新题</div>' : '') +
       '<div class="bar" style="width:100%"><i style="width:' + Math.round(done / pool.length * 100) + '%"></i></div>';
   }
 
@@ -331,7 +382,7 @@
     PICKS.pool = pool;
     var meta = document.getElementById('pmeta');
     meta.textContent = TODAY + ' · ' +
-      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 固定 3 题，按「换一批」手动更换 · 做完自动进错题本';
+      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 固定 3 题，按「换一批」手动更换 · 错题进回炉池：1/3/7天递增重现，连续做对2次才出池';
     var rb = document.createElement('button');
     rb.textContent = '🔄 换一批';
     rb.style.cssText = 'margin-left:10px;padding:2px 12px;border:1px solid #b9c6d8;border-radius:14px;background:#fff;color:#1f6fb2;cursor:pointer;font-size:12px;vertical-align:middle;';
