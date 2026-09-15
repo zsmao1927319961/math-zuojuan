@@ -1810,6 +1810,414 @@
     "gd-1-xz-4": "right"
    },
    "reasons": {}
+  },
+  {
+   "id": "web-1787935566652",
+   "date": "2026-08-29",
+   "results": {
+    "gd-2-tk-25": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788105373864",
+   "date": "2026-08-30",
+   "results": {
+    "ld-1.1-l16": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788105391195",
+   "date": "2026-08-30",
+   "results": {
+    "ld-1.3-l7": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788105405342",
+   "date": "2026-08-30",
+   "results": {
+    "ld-4.3-l5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788105407542",
+   "date": "2026-08-30",
+   "results": {
+    "ld-4.3-l5": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191089370",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-xz-1-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191093806",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-xz-2-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191097850",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-xz-3-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191102232",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-xz-4-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191107424",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-1-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191109356",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-2-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191111045",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-3-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191118129",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-4-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191120630",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-5-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191123288",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-6-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191126096",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-7-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191129531",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-8-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191131574",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-9-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191134574",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-10-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191138467",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-11-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191145381",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-tk-12-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191148659",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-jd-1-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191150602",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-jd-2-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191153730",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-jd-3-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191159103",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-七-jd-4-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191165719",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-xz-1-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191170213",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-xz-2-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191172579",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-xz-3-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191175466",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-xz-4-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191178497",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-xz-5-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191181720",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-xz-6-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191186278",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-xz-7-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191192794",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-1-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191198039",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-2-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191201502",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-3-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191207315",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-4-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191233817",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-5-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191238958",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-6-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191244044",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-7-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191247126",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-8-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191250937",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-9-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191254654",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-10-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191258778",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-11-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191261982",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-12-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191265253",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-13-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191267558",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-tk-14-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191273402",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-jd-1-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191275948",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-jd-2-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191278043",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-jd-3-jc": "wrong"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191281024",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-jd-3-jc": "right"
+   },
+   "reasons": {}
+  },
+  {
+   "id": "web-1788191284642",
+   "date": "2026-08-31",
+   "results": {
+    "ld880-八-jd-4-jc": "wrong"
+   },
+   "reasons": {}
   }
  ],
  "cuoti_manual": [],
@@ -2015,6 +2423,130 @@
     "ld-3.3-l9",
     "ld-2.6-l4",
     "ld-4.1-l3"
+   ]
+  },
+  {
+   "date": "2026-08-29",
+   "ids": [
+    "gd-4-xz-3",
+    "gd-2-xz-13",
+    "gd-2-tk-19",
+    "gd-2-tk-20",
+    "gd-2-tk-22",
+    "ld-1.1-l13",
+    "ld-1.5-l6",
+    "ld-1.8-l4",
+    "ld-3.4-l11",
+    "ld-1.1-l14"
+   ]
+  },
+  {
+   "date": "2026-08-30",
+   "ids": [
+    "gd-5-tk-13",
+    "gd-2-xz-16",
+    "gd-1-jd-5",
+    "gd-6-xz-2",
+    "gd-4-tk-15",
+    "ld-1.3-l7",
+    "ld-1.1-l16",
+    "ld-1.5-l1",
+    "ld-4.3-l5",
+    "ld-1.1-l21"
+   ]
+  },
+  {
+   "date": "2026-08-31",
+   "ids": [
+    "gd-6-jd-7",
+    "gd-4-jd-9",
+    "gd-4-tk-13",
+    "gd-2-xz-17",
+    "gd-3-xz-17",
+    "ld-1.3-l2",
+    "ld-1.4-l8",
+    "ld-1.3-l6",
+    "ld-1.8-l8",
+    "ld-4.2-l1"
+   ]
+  },
+  {
+   "date": "2026-08-31",
+   "ids": [
+    "gd-1-jd-4",
+    "gd-2-xz-20",
+    "gd-3-xz-16",
+    "gd-4-jd-4",
+    "gd-5-jd-7",
+    "gd-6-jd-11",
+    "ld-1.1-l17",
+    "ld-2.8-l5",
+    "ld-3.7-l4",
+    "ld-2.5-l1",
+    "ld-2.1-l3"
+   ]
+  },
+  {
+   "date": "2026-09-01",
+   "ids": [
+    "gd-1-xz-12",
+    "gd-2-tk-23",
+    "gd-3-tk-11",
+    "gd-4-xz-2",
+    "gd-5-jd-5",
+    "gd-6-tk-8",
+    "ld-1.5-l2",
+    "ld-1.6-l5",
+    "ld-4.6-l1",
+    "ld-1.8-l7",
+    "ld-4.9-l6"
+   ]
+  },
+  {
+   "date": "2026-09-05",
+   "ids": [
+    "gd-2-tk-16",
+    "gd-3-tk-6",
+    "gd-4-jd-1",
+    "gd-5-tk-1",
+    "gd-6-jd-9",
+    "ld-1.1-l13",
+    "ld-1.2-l3",
+    "ld-1.5-l6",
+    "ld-4.9-l5",
+    "ld-2.9-l11"
+   ]
+  },
+  {
+   "date": "2026-09-08",
+   "ids": [
+    "gd-1-jd-5",
+    "gd-2-xz-20",
+    "gd-3-jd-10",
+    "gd-4-xz-2",
+    "gd-5-tk-12",
+    "gd-6-tk-9",
+    "ld880-八-tk-14-jc",
+    "ld880-七-jd-3-jc",
+    "ld880-七-jd-2-jc",
+    "ld880-七-tk-10-jc",
+    "ld880-七-tk-11-jc"
+   ]
+  },
+  {
+   "date": "2026-09-09",
+   "ids": [
+    "gd-1-jd-4",
+    "gd-2-tk-19",
+    "gd-3-tk-7",
+    "gd-4-tk-15",
+    "gd-5-jd-7",
+    "gd-6-jd-5",
+    "ld880-八-tk-2-jc",
+    "ld880-八-tk-4-jc",
+    "ld880-八-tk-12-jc",
+    "ld880-七-tk-6-jc",
+    "ld880-七-tk-1-jc"
    ]
   }
  ],
@@ -3275,10 +3807,10 @@
    "reason": "方法不会"
   },
   "ld-1.1-l16": {
-   "status": "todo",
-   "wrong_date": "2026-08-23",
-   "due": "2026-08-30",
-   "reason": "计算失误"
+   "status": "review",
+   "right_date": "2026-08-30",
+   "review_due": "2026-09-14",
+   "right_count": 1
   },
   "ld-1.2-l3": {
    "status": "todo",
@@ -3287,10 +3819,10 @@
    "reason": "概念不清"
   },
   "ld-1.3-l7": {
-   "status": "todo",
-   "wrong_date": "2026-08-23",
-   "due": "2026-08-30",
-   "reason": "方法不会"
+   "status": "review",
+   "right_date": "2026-08-30",
+   "review_due": "2026-09-14",
+   "right_count": 1
   },
   "ld-1.4-l2": {
    "status": "done",
@@ -3356,21 +3888,284 @@
    "wrong_date": "2026-08-25",
    "due": "2026-09-01",
    "reason": "概念不清"
+  },
+  "gd-2-tk-25": {
+   "status": "todo",
+   "wrong_date": "2026-08-29",
+   "due": "2026-09-05"
+  },
+  "ld-4.3-l5": {
+   "status": "done",
+   "right_date": "2026-08-30",
+   "right_count": 2
+  },
+  "ld880-七-xz-1-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-七-xz-2-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-xz-3-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-xz-4-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-1-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-2-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-七-tk-3-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-七-tk-4-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-七-tk-5-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-6-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-7-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-8-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-七-tk-9-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-10-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-11-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-tk-12-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-jd-1-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-七-jd-2-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-jd-3-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-七-jd-4-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-xz-1-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-xz-2-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-xz-3-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-xz-4-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-xz-5-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-xz-6-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-xz-7-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-tk-1-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-2-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-tk-3-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-4-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-tk-5-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-6-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-7-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-8-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-tk-9-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-10-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-11-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-tk-12-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-tk-13-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-tk-14-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-jd-1-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-jd-2-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "ld880-八-jd-3-jc": {
+   "status": "review",
+   "right_date": "2026-08-31",
+   "review_due": "2026-09-15",
+   "right_count": 1
+  },
+  "ld880-八-jd-4-jc": {
+   "status": "todo",
+   "wrong_date": "2026-08-31",
+   "due": "2026-09-07"
+  },
+  "qhzt-1-9": {
+   "status": "todo",
+   "wrong_date": "2026-09-09",
+   "due": "2026-09-16",
+   "reason": "概念不清"
   }
  },
  "today_paper": {
-  "date": "2026-08-28",
+  "date": "2026-09-09",
   "ids": [
-   "gd-5-tk-9",
-   "gd-4-tk-11",
-   "gd-5-tk-11",
-   "gd-4-jd-11",
-   "gd-6-jd-4",
-   "ld-3.5-l5",
-   "ld-1.9-l2",
-   "ld-3.3-l9",
-   "ld-2.6-l4",
-   "ld-4.1-l3"
+   "gd-1-jd-4",
+   "gd-2-tk-19",
+   "gd-3-tk-7",
+   "gd-4-tk-15",
+   "gd-5-jd-7",
+   "gd-6-jd-5",
+   "ld880-八-tk-2-jc",
+   "ld880-八-tk-4-jc",
+   "ld880-八-tk-12-jc",
+   "ld880-七-tk-6-jc",
+   "ld880-七-tk-1-jc"
   ]
  },
  "weekly_summary_monday": "2026-08-24",
