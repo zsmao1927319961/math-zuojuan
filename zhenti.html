@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>真题错题本</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
 <style>
   body{background:#f4f6fa;margin:0;font-family:-apple-system,'PingFang SC',sans-serif;color:#20242c}
   .wrap{max-width:820px;margin:0 auto;padding:14px 14px calc(20px + env(safe-area-inset-bottom))}
@@ -91,6 +93,22 @@
   var FKEY = 'zhenti_filters_v1';
   var EXAM_DAY = '2026-12-26';   /* 2027 初试预计日期 */
   var TYPES = ['选择', '填空', '解答'];
+  function renderLatexMixed(el, str){
+    if (!el) return;
+    if (!window.katex || str.indexOf('$') < 0) { el.textContent = str; return; }
+    el.textContent = '';
+    var re = /\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g, m, last = 0;
+    while ((m = re.exec(str)) !== null) {
+      if (m.index > last) el.appendChild(document.createTextNode(str.slice(last, m.index)));
+      var span = document.createElement('span');
+      var tex = (m[1] !== undefined) ? m[1] : m[2];
+      try { window.katex.render(tex, span, { throwOnError: false, displayMode: m[1] !== undefined }); }
+      catch (e2) { span.textContent = m[0]; }
+      el.appendChild(span);
+      last = re.lastIndex;
+    }
+    if (last < str.length) el.appendChild(document.createTextNode(str.slice(last)));
+  }
   function addDays(iso, n){ var d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + n); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
   function dIso(){ var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
 
@@ -293,10 +311,11 @@
           return '<i class="' + (d <= t ? 'due' : '') + '">+' + n + '天 ' + d.slice(5) + '</i>';
         }).join('') + '</div>';
       }
-      var kpLine = '';
-      if (!hideKp && q.kp) kpLine = '<div class="kp-line">🎯 考点：' + esc(q.kp) + (q.chapter ? ' · ' + esc(q.chapter) : '') + '</div>';
-      else if (hideKp && q.chapter) kpLine = '<div class="kp-line">章节：' + esc(q.chapter) + '</div>';
-      var noteLine = q.note ? '<div class="note-line">✍️ 批改：' + esc(q.note) + '</div>' : '';
+      var kpText = '';
+      if (!hideKp && q.kp) kpText = '🎯 考点：' + q.kp + (q.chapter ? ' · ' + q.chapter : '');
+      else if (hideKp && q.chapter) kpText = '章节：' + q.chapter;
+      var kpLine = kpText ? '<div class="kp-line"></div>' : '';
+      var noteLine = q.note ? '<div class="note-line"></div>' : '';
       el.innerHTML =
         '<button type="button" class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
         '<span class="tag">' + esc(nz(q.type, '')) + '</span>' +
@@ -319,6 +338,8 @@
         localStorage.setItem(K_D + yid + '_' + q.no, on ? '1' : '0');
         this.textContent = on ? '✓ 已重做' : '未重做';
       };
+      if (kpText) renderLatexMixed(el.querySelector('.kp-line'), kpText);
+      if (q.note) renderLatexMixed(el.querySelector('.note-line'), '✍️ 批改：' + q.note);
       var ta = el.querySelector('.reason');
       ta.addEventListener('change', function(){ localStorage.setItem(K_R + yid + '_' + q.no, ta.value); });
       return el;
