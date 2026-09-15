@@ -1,9 +1,10 @@
 {
+ "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。",
  "exams": [
   {
    "paper": {
-    "name": "2027考研数学开学大模考（数学二）",
-    "date": "2026-09-05",
+    "name": "欧几里得9月模考（数学二）",
+    "date": "2026-09-13",
     "total": 22,
     "right": [
      1,
@@ -14,11 +15,146 @@
      11,
      12,
      14,
-     17,
-     18,
-     19,
-     21,
-     22
+     21
+    ],
+    "score_note": "选择1-10(5分/题) 填空11-16(5分/题) 解答17-22(17题10分,18-22各12分)",
+    "reviewed": "2026-09-15",
+    "answers": "1A 2C 3B 4A 5C 6D 7D 8C 9B 10B；11=e 12=−2 13=1/e 14=π/2−1 15=(8/3)ρg 16=(1,2,2,1)ᵀ；17 极大1/(2e) 极小0；18 最长5√2/3 最短√5；19 π/√3−3/4；20 f=√(1−x) 表面积5π(√5+1)/6；21 证明题；22 λ>0 且 λ=1",
+    "spages": [
+     "images/euclid_pages/p1.jpg",
+     "images/euclid_pages/p2.jpg",
+     "images/euclid_pages/p3.jpg",
+     "images/euclid_pages/p4.jpg"
+    ]
+   },
+   "errors": [
+    {
+     "no": 3,
+     "type": "选择",
+     "score": 5,
+     "kp": "常系数齐次线性微分方程（由特解反求阶数）",
+     "chapter": "微分方程",
+     "subject": "高数",
+     "page": 2
+    },
+    {
+     "no": 4,
+     "type": "选择",
+     "score": 5,
+     "kp": "二元函数可微的充要条件",
+     "chapter": "多元函数微分学",
+     "subject": "高数",
+     "page": 2
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 5,
+     "kp": "定积分定义（黎曼和与分割）",
+     "chapter": "定积分",
+     "subject": "高数",
+     "page": 2
+    },
+    {
+     "no": 7,
+     "type": "选择",
+     "score": 5,
+     "kp": "极值判定与差商极限（导数定义）",
+     "chapter": "一元函数微分学",
+     "subject": "高数",
+     "page": 2
+    },
+    {
+     "no": 10,
+     "type": "选择",
+     "score": 5,
+     "kp": "分块矩阵的伴随与秩",
+     "chapter": "矩阵与秩",
+     "subject": "线代",
+     "page": 3
+    },
+    {
+     "no": 13,
+     "type": "填空",
+     "score": 5,
+     "kp": "累次变限积分求导",
+     "chapter": "变限积分",
+     "subject": "高数",
+     "page": 3
+    },
+    {
+     "no": 15,
+     "type": "填空",
+     "score": 5,
+     "kp": "物理应用：水压力（微元法）",
+     "chapter": "积分应用",
+     "subject": "高数",
+     "page": 3
+    },
+    {
+     "no": 16,
+     "type": "填空",
+     "score": 5,
+     "kp": "解的结构与正交",
+     "chapter": "线性方程组",
+     "subject": "线代",
+     "page": 3
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "kp": "分段函数求导与极值（变限积分+拼接点定义）",
+     "chapter": "一元函数微分学",
+     "subject": "高数",
+     "page": 3
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 12,
+     "kp": "二次曲线上的距离最值（条件极值）",
+     "chapter": "多元函数微分学",
+     "subject": "高数",
+     "page": 3
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 12,
+     "kp": "二重积分计算（对称性）",
+     "chapter": "二重积分",
+     "subject": "高数",
+     "page": 3
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 12,
+     "kp": "切线条件建微分方程 + 旋转体表面积",
+     "chapter": "微分方程与积分应用",
+     "subject": "高数",
+     "page": 3
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 12,
+     "kp": "二次型合同变换与惯性定理",
+     "chapter": "二次型",
+     "subject": "线代",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2027考研数学开学大模考（数学二）",
+    "date": "2026-09-05",
+    "total": 22,
+    "right": [
+     6,
+     7
     ],
     "score_note": "选择1-10(5分/题) 填空11-16(5分/题) 解答17-22(17题10分,18-22各12分)",
     "spages": [
@@ -48,9 +184,41 @@
      "images/mock_pages/j17.jpg",
      "images/mock_pages/j18.jpg"
     ],
-    "reviewed": "2026-09-13"
+    "reviewed": "2026-09-05"
    },
    "errors": [
+    {
+     "no": 1,
+     "type": "选择",
+     "score": 5,
+     "qimg": "images/mock/q_1.jpg",
+     "jpages": [
+      1,
+      2,
+      3
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第一章 函数、极限、连续",
+     "kp": "数列极限的存在性"
+    },
+    {
+     "no": 2,
+     "type": "选择",
+     "score": 5,
+     "qimg": "images/mock/q_2.jpg",
+     "jpages": [
+      1,
+      2,
+      3
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第二章 一元函数微分学及其应用",
+     "kp": "变限积分与极值拐点"
+    },
     {
      "no": 3,
      "type": "选择",
@@ -91,22 +259,38 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第三章 一元函数积分学及其应用",
-     "kp": "定积分定义(黎曼和与分割)"
+     "chapter": "第六章 微分方程及其应用",
+     "kp": "二阶常系数微分方程(逆问题)"
     },
     {
-     "no": 7,
+     "no": 8,
      "type": "选择",
      "score": 5,
-     "qimg": "images/mock/q_7.jpg",
+     "qimg": "images/mock/q_8.jpg",
      "jpages": [
-      4
+      5,
+      6
      ],
      "status": "todo",
      "reason": "",
-     "subject": "高数",
-     "chapter": "第五章 二重积分及其应用",
-     "kp": "二重积分的对称性(奇偶性)"
+     "subject": "线代",
+     "chapter": "第八章 矩阵",
+     "kp": "矩阵运算与可逆"
+    },
+    {
+     "no": 9,
+     "type": "选择",
+     "score": 5,
+     "qimg": "images/mock/q_9.jpg",
+     "jpages": [
+      6,
+      7
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "线代",
+     "chapter": "第八章 矩阵",
+     "kp": "分块矩阵的伴随"
     },
     {
      "no": 10,
@@ -124,6 +308,35 @@
      "kp": "惯性指数与合同标准形"
     },
     {
+     "no": 11,
+     "type": "填空",
+     "score": 5,
+     "qimg": "images/mock/q_11.jpg",
+     "jpages": [
+      8
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第一章 函数、极限、连续",
+     "kp": "等价无穷小"
+    },
+    {
+     "no": 12,
+     "type": "填空",
+     "score": 5,
+     "qimg": "images/mock/q_12.jpg",
+     "jpages": [
+      8,
+      9
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第二章 一元函数微分学及其应用",
+     "kp": "高阶导数(泰勒/莱布尼茨)"
+    },
+    {
      "no": 13,
      "type": "填空",
      "score": 5,
@@ -134,8 +347,23 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第三章 一元函数积分学及其应用",
-     "kp": "含参变限积分求导(换元+莱布尼茨)"
+     "chapter": "第二章 一元函数微分学及其应用",
+     "kp": "对称性与分部积分"
+    },
+    {
+     "no": 14,
+     "type": "填空",
+     "score": 5,
+     "qimg": "images/mock/q_14.jpg",
+     "jpages": [
+      9,
+      10
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第一章 函数、极限、连续",
+     "kp": "飘带函数与数列积"
     },
     {
      "no": 15,
@@ -149,8 +377,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第三章 一元函数积分学及其应用",
-     "kp": "物理应用：水压力(微元法)"
+     "chapter": "第五章 二重积分及其应用",
+     "kp": "二重积分的定义"
     },
     {
      "no": 16,
@@ -164,8 +392,52 @@
      "status": "todo",
      "reason": "",
      "subject": "线代",
-     "chapter": "线性方程组与解的结构",
-     "kp": "解的结构与正交"
+     "chapter": "第十一章 相似矩阵",
+     "kp": "相似对角化的判定"
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "qimg": "images/mock/q_17.jpg",
+     "jpages": [
+      12
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第一章 函数、极限、连续",
+     "kp": "变限积分求极限"
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 12,
+     "qimg": "images/mock/q_18.jpg",
+     "jpages": [
+      12,
+      13
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第三章 一元函数积分学及其应用",
+     "kp": "旋转体体积与最值"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 12,
+     "qimg": "images/mock/q_19.jpg",
+     "jpages": [
+      13,
+      14
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第五章 二重积分及其应用",
+     "kp": "二重积分(极坐标分段)"
     },
     {
      "no": 20,
@@ -181,6 +453,37 @@
      "subject": "高数",
      "chapter": "第六章 微分方程及其应用",
      "kp": "微分方程与卷积"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 12,
+     "qimg": "images/mock/q_21.jpg",
+     "jpages": [
+      15,
+      16
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "高数",
+     "chapter": "第二章 一元函数微分学及其应用",
+     "kp": "中值定理证明"
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 12,
+     "qimg": "images/mock/q_22.jpg",
+     "jpages": [
+      16,
+      17,
+      18
+     ],
+     "status": "todo",
+     "reason": "",
+     "subject": "线代",
+     "chapter": "第八章 矩阵",
+     "kp": "矩阵方程与求逆"
     }
    ]
   }

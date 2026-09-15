@@ -3,68 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>模拟卷错题本</title>
+<title>模考错题本</title>
 <link rel="stylesheet" href="style.css">
 <style>
   body{background:#f4f6fa;margin:0;font-family:-apple-system,'PingFang SC',sans-serif;color:#20242c}
   .wrap{max-width:820px;margin:0 auto;padding:14px 14px calc(20px + env(safe-area-inset-bottom))}
-  .paper-card{background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px}
+  .exam{background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:18px;overflow:hidden}
+  .exam-head{padding:14px 16px 10px;background:linear-gradient(180deg,#f6f9ff,#fff);border-bottom:1px solid #eef1f6}
   .paper-name{font-size:17px;font-weight:700}
-  .paper-meta{font-size:12px;color:#7a828f;margin-top:4px}
-  .stats{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
-  .stat{background:#f2f5fb;border-radius:10px;padding:7px 12px;font-size:13px}
-  .stat b{font-size:16px}
+  .paper-meta{font-size:12px;color:#7a828f;margin-top:4px;line-height:1.7}
+  .stats{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .stat{background:#f2f5fb;border-radius:10px;padding:6px 11px;font-size:12.5px}
+  .stat b{font-size:15px}
   .stat.ok b{color:#1d9e6f}
-  .type-head{font-size:15px;font-weight:700;margin:16px 2px 8px;display:flex;align-items:center;gap:8px}
+  details.ans{margin-top:10px;font-size:12px}
+  details.ans summary{cursor:pointer;color:#a06b00;font-weight:700}
+  details.ans .ans-body{margin-top:6px;color:#5a6472;line-height:1.9;background:#fffaf0;border:1px solid #f0e0bb;border-radius:8px;padding:8px 10px}
+  .type-head{font-size:14.5px;font-weight:700;margin:14px 14px 4px;display:flex;align-items:center;gap:8px}
   .type-head .cnt{font-size:12px;color:#7a828f;font-weight:400}
-  .qcard{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px;overflow:hidden}
-  .qhead{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;width:100%;border:none;background:#fff;font-family:inherit;text-align:left;touch-action:manipulation}
-  .qno{font-weight:700;font-size:15px}
-  .tag{font-size:11px;background:#eef1f6;color:#5a6472;border-radius:6px;padding:2px 7px}
+  .qcard{border-top:1px solid #f0f2f6}
+  .qhead{display:flex;align-items:center;gap:8px;padding:11px 14px;cursor:pointer;width:100%;border:none;background:#fff;font-family:inherit;text-align:left;touch-action:manipulation}
+  .qno{font-weight:700;font-size:15px;flex:none}
+  .tag{font-size:11px;background:#eef1f6;color:#5a6472;border-radius:6px;padding:2px 7px;flex:none}
+  .tag.kp{background:#eff8f3;color:#1a6b47;flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
   .tag.sco{background:#fff4e0;color:#a06b00}
   .qhead .sp{flex:1}
-  .done-chip{display:inline-block;font-size:12px;border-radius:8px;padding:3px 10px;border:1px solid #d6dbe3;background:#fff;cursor:pointer}
+  .done-chip{display:inline-block;font-size:12px;border-radius:8px;padding:3px 10px;border:1px solid #d6dbe3;background:#fff;cursor:pointer;flex:none}
   .done-chip.on{background:#e8f7f0;color:#1d9e6f;border-color:#bfe6d6}
-  .qbody{display:none;padding:0 12px 12px}
+  .qbody{display:none;padding:0 14px 12px}
   .qcard.open .qbody{display:block}
-  .qbody img.qimg{width:100%;height:auto;border:1px solid #eef0f4;border-radius:8px;display:block}
+  .qbody img{width:100%;height:auto;border:1px solid #eef0f4;border-radius:8px;display:block;margin-top:8px}
   .jlist{display:none;margin-top:8px}
   .jlist.show{display:block}
-  .jlist img{width:100%;height:auto;margin-bottom:8px;border:1px solid #eef0f4;border-radius:8px}
+  .jlist img{margin-bottom:8px}
   .btnrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
   .btn{border:1px solid #d6dbe3;background:#f7f8fb;border-radius:9px;padding:6px 12px;font-size:13px;cursor:pointer}
   .btn.on{background:#2f6bff;color:#fff;border-color:#2f6bff}
   .reason{width:100%;box-sizing:border-box;margin-top:10px;border:1px solid #d8dce4;border-radius:9px;padding:8px 10px;font-size:13px;min-height:52px;font-family:inherit}
-  .right-line{font-size:13px;color:#98a0ad;margin:4px 2px 14px}
+  .right-line{font-size:12.5px;color:#98a0ad;margin:4px 16px 16px}
   .right-line b{color:#1d9e6f}
   .hint{font-size:11px;color:#98a0ad;margin-top:6px}
   .back{display:inline-block;margin:12px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
   .empty{padding:30px;text-align:center;color:#7a828f;font-size:14px}
-  .exam-sep{margin:22px 0 6px;font-size:13px;color:#b3bac6;text-align:center}
 </style>
 </head>
 <body>
 <a class="back" href="./index.html">← 返回组卷网</a>
 <div class="wrap">
-  <div id="content"><div class="paper-card"><div class="paper-meta" id="pmeta0">加载中…</div></div></div>
+  <div id="content"><div class="exam"><div class="exam-head"><div class="paper-meta" id="meta0">加载中…</div></div></div></div>
 </div>
 <script>
 (function(){
-  var MIG_KEY = 'mock_multi_v2_migrated';
-  function nz(v, d){ return (v === undefined || v === null || v === '') ? d : v; }
+  'use strict';
   function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-  var CN = {'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9,'十':10,'十一':11,'十二':12};
-  function chNum(s){ var m = /第(.+?)章/.exec(s); return m ? (CN[m[1]] || 99) : 99; }
+  function nz(v, d){ return (v === undefined || v === null || v === '') ? d : v; }
+  var MIG_KEY = 'mock_multi_v2_migrated';
+  var K_D = 'mock_done_', K_R = 'mock_reason_';
+  var TYPES = ['选择', '填空', '解答'];
 
   fetch('data/mock_errors.json').then(function(r){ return r.json(); }).then(function(data){
-    var exams = data.exams || [data];   /* 新格式多卷；兼容旧单卷格式 */
-    /* 旧版 key（mock_done_<no>）一次性迁入第一套卷 */
+    var exams = (data.exams || [data]).slice();
+    exams.sort(function(a, b){ return (b.paper.date || '').localeCompare(a.paper.date || ''); });
+
+    /* 旧版单卷 key（mock_done_<no>）一次性迁入日期最老的那套卷 */
     if (!localStorage.getItem(MIG_KEY)) {
-      var first = exams[0], pid = first.paper.date || 'default';
+      var oldest = exams[exams.length - 1], opid = oldest.paper.date || 'default';
       Object.keys(localStorage).forEach(function(k){
         var m;
         if ((m = /^mock_(done|reason)_(\d+)$/.exec(k))) {
-          var nk = 'mock_' + m[1] + '_' + pid + '_' + m[2];
+          var nk = 'mock_' + m[1] + '_' + opid + '_' + m[2];
           if (localStorage.getItem(nk) === null) localStorage.setItem(nk, localStorage.getItem(k));
         }
       });
@@ -73,108 +80,105 @@
 
     var root = document.getElementById('content');
     root.innerHTML = '';
-    exams.forEach(function(exam, ei){ root.appendChild(renderExam(exam, ei, exams.length)); });
+    exams.forEach(function(exam){ root.appendChild(renderExam(exam)); });
 
-    function keysOf(pid){ return { d: 'mock_done_' + pid + '_', r: 'mock_reason_' + pid + '_' }; }
+    function renderExam(exam){
+      var p = exam.paper, qs = exam.errors || [], pid = p.date || 'default';
+      var KD = K_D + pid + '_', KR = K_R + pid + '_';
+      var el = document.createElement('div');
+      el.className = 'exam';
 
-    function renderExam(exam, ei, total){
-      var p = exam.paper, qs = exam.errors, pid = p.date || ('exam' + ei);
-      var K = keysOf(pid);
-      var frag = document.createDocumentFragment();
-      if (total > 1 && ei > 0) {
-        var sep = document.createElement('div');
-        sep.className = 'exam-sep';
-        sep.textContent = '· · · · · ·';
-        frag.appendChild(sep);
-      }
-      var pc = document.createElement('div');
-      pc.className = 'paper-card';
-      pc.innerHTML =
+      var doneCnt = 0;
+      qs.forEach(function(q){ if (localStorage.getItem(KD + q.no) === '1') doneCnt++; });
+
+      var head = '<div class="exam-head">' +
         '<div class="paper-name">' + esc(p.name) + ' · 错题本</div>' +
-        '<div class="paper-meta">考试日期 ' + esc(p.date) + (p.reviewed ? ' ｜ 圈错确认 ' + esc(p.reviewed) : '') +
-        ' ｜ ' + esc(p.score_note) + '</div>' +
-        '<div class="stats"></div>';
-      frag.appendChild(pc);
-      var st = pc.querySelector('.stats');
+        '<div class="paper-meta">考试日期 ' + esc(nz(p.date, '—')) + (p.reviewed ? ' ｜ 圈错确认 ' + esc(p.reviewed) : '') +
+        ' ｜ ' + esc(nz(p.score_note, '')) + '</div>' +
+        '<div class="stats">' +
+        '<div class="stat">总题数 <b>' + nz(p.total, 22) + '</b></div>' +
+        '<div class="stat bad">错题 <b>' + qs.length + '</b></div>' +
+        '<div class="stat ok">已重做 <b>' + doneCnt + '</b></div>' +
+        '</div>' +
+        (p.answers ? '<details class="ans"><summary>📋 答案速查</summary><div class="ans-body">' + esc(p.answers) + '</div></details>' : '') +
+        '</div>';
+      el.innerHTML = head;
 
-      function doneCnt(){ var d = 0; qs.forEach(function(q){ if (localStorage.getItem(K.d + q.no) === '1') d++; }); return d; }
-      function refreshStats(){
-        st.innerHTML = '<div class="stat">总题数 <b>' + p.total + '</b></div>' +
-          '<div class="stat">本次做对 <b>' + (p.right || []).length + ' 题</b></div>' +
-          '<div class="stat">收录错题 <b>' + qs.length + '</b></div>' +
-          '<div class="stat ok">已重做 <b>' + doneCnt() + '</b></div>';
-      }
-      refreshStats();
-
-      var bySub = { '高数': {}, '线代': {} };
-      qs.forEach(function(q){
-        var sub = bySub[q.subject] || (bySub[q.subject] = {});
-        (sub[q.chapter] || (sub[q.chapter] = [])).push(q);
+      /* 按题型分组、题号升序 —— 检查错题时按卷面顺序走 */
+      TYPES.forEach(function(tp){
+        var group = qs.filter(function(q){ return (q.type || '') === tp; }).sort(function(a, b){ return a.no - b.no; });
+        if (!group.length) return;
+        el.insertAdjacentHTML('beforeend', '<div class="type-head">' + tp + '题 <span class="cnt">' + group.length + ' 题</span></div>');
+        group.forEach(function(q){ el.appendChild(card(q, KD, KR)); });
       });
-      ['高数', '线代'].forEach(function(sub){
-        var chapters = bySub[sub]; if (!chapters) return;
-        var sh = document.createElement('div');
-        sh.className = 'type-head';
-        sh.style.fontSize = '17px';
-        sh.innerHTML = '📐 ' + sub + '部分';
-        frag.appendChild(sh);
-        Object.keys(chapters).map(function(c){ return { name: c, num: chNum(c), qs: chapters[c] }; })
-          .sort(function(a, b){ return a.num - b.num; })
-          .forEach(function(ch){
-            var head = document.createElement('div');
-            head.className = 'type-head';
-            head.innerHTML = esc(ch.name) + ' <span class="cnt">' + ch.qs.length + ' 题</span>';
-            frag.appendChild(head);
-            ch.qs.forEach(function(q){ frag.appendChild(card(q)); });
-          });
-      });
-      var rl = document.createElement('div');
-      rl.className = 'right-line';
-      rl.innerHTML = '本次做对：第 <b>' + esc((p.right || []).join('、')) + '</b> 题（未收录）｜ 试卷整卷：' +
-        (p.spages || []).map(function(x, i){ return '<a href="data/' + x + '" target="_blank">试卷' + (i+1) + '</a>'; }).join(' ');
-      frag.appendChild(rl);
 
-      function card(q){
-        var el = document.createElement('div');
-        el.className = 'qcard';
-        var done = localStorage.getItem(K.d + q.no) === '1';
-        el.innerHTML =
-          '<button type="button" class="qhead"><span class="qno">' + esc(q.kp || ('第 ' + q.no + ' 题')) + '</span>' +
-          '<span class="tag">' + esc(q.type) + '</span><span class="tag sco">' + q.score + ' 分</span>' +
-          '<span class="sp"></span>' +
-          '<span role="button" class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</span></button>' +
-          '<div class="qbody">' +
-          '<img class="qimg" loading="lazy" src="data/' + q.qimg + '" alt="第' + q.no + '题">' +
-          '<div class="btnrow"><button class="btn" data-act="jie">📚 看解析（第' + q.jpages.join('、') + '页）</button></div>' +
-          '<div class="jlist" id="jl' + pid + '-' + q.no + '">' +
+      el.insertAdjacentHTML('beforeend',
+        '<div class="right-line">本次做对：第 <b>' + esc((p.right || []).join('、')) + '</b> 题（未收录）' +
+        ((p.spages || []).length ? ' ｜ 整卷：' + p.spages.map(function(x, i){ return '<a href="data/' + x + '" target="_blank">第' + (i + 1) + '页</a>'; }).join(' ') : '') +
+        '</div>');
+      return el;
+    }
+
+    function card(q, KD, KR){
+      var el = document.createElement('div');
+      el.className = 'qcard';
+      var done = localStorage.getItem(KD + q.no) === '1';
+      el.innerHTML =
+        '<button type="button" class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
+        '<span class="tag">' + esc(nz(q.type, '')) + '</span>' +
+        (q.score ? '<span class="tag sco">' + q.score + ' 分</span>' : '') +
+        (q.kp ? '<span class="tag kp" title="' + esc(q.kp) + '">🎯 ' + esc(q.kp) + '</span>' : '') +
+        '<span class="sp"></span>' +
+        '<span role="button" class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</span></button>' +
+        '<div class="qbody">' +
+        (q.qimg ? '<img loading="lazy" src="data/' + q.qimg + '" alt="第' + q.no + '题">' : '') +
+        '<div class="btnrow">' +
+        (q.page ? '<button class="btn" data-act="page">📄 查看试卷第 ' + q.page + ' 页原题</button>' : '') +
+        (q.jpages && q.jpages.length ? '<button class="btn" data-act="jie">📚 看解析（第' + q.jpages.join('、') + '页）</button>' : '') +
+        '</div>' +
+        (q.page ? '<img loading="lazy" data-role="pageimg" style="display:none" src="data/images/euclid_pages/p' + q.page + '.jpg" alt="试卷第' + q.page + '页">' : '') +
+        (q.jpages && q.jpages.length ? '<div class="jlist" data-role="jlist">' +
           q.jpages.map(function(n){ return '<img loading="lazy" src="data/images/mock_pages/j' + ('0' + n).slice(-2) + '.jpg" alt="解析第' + n + '页">'; }).join('') +
-          '</div>' +
-          '<textarea class="reason" placeholder="错因（会存在本机）：如 概念不清 / 计算失误 / 没思路…">' +
-          esc(nz(localStorage.getItem(K.r + q.no), '')) + '</textarea>' +
-          '<div class="hint">错因与重做状态仅存本机（按试卷分开保存）</div>' +
-          '</div>';
-        el.querySelector('.qhead').addEventListener('click', function(e){
-          if (e.target.closest('[data-act="done"]')) return;
-          el.classList.toggle('open');
-        });
-        el.querySelector('[data-act="done"]').onclick = function(e){
-          e.stopPropagation();
-          var on = this.classList.toggle('on');
-          localStorage.setItem(K.d + q.no, on ? '1' : '0');
-          this.textContent = on ? '✓ 已重做' : '未重做';
-          refreshStats();
-        };
-        el.querySelector('[data-act="jie"]').onclick = function(){
-          document.getElementById('jl' + pid + '-' + q.no).classList.toggle('show');
-        };
-        var ta = el.querySelector('.reason');
-        ta.addEventListener('change', function(){ localStorage.setItem(K.r + q.no, ta.value); });
-        return el;
-      }
-      return frag;
+          '</div>' : '') +
+        '<textarea class="reason" placeholder="错因（会存在本机）：如 概念不清 / 计算失误 / 没思路…">' +
+        esc(nz(localStorage.getItem(KR + q.no), '')) + '</textarea>' +
+        '<div class="hint">错因与重做状态仅存本机（按试卷分开保存）</div>' +
+        '</div>';
+      el.querySelector('.qhead').addEventListener('click', function(e){
+        if (e.target.closest('[data-act="done"]')) return;
+        el.classList.toggle('open');
+      });
+      el.querySelector('[data-act="done"]').onclick = function(e){
+        e.stopPropagation();
+        var on = this.classList.toggle('on');
+        localStorage.setItem(KD + q.no, on ? '1' : '0');
+        this.textContent = on ? '✓ 已重做' : '未重做';
+        refreshStat(el);
+      };
+      var pb = el.querySelector('[data-act="page"]');
+      if (pb) pb.onclick = function(){
+        var img = el.querySelector('[data-role="pageimg"]');
+        var show = img.style.display === 'none';
+        img.style.display = show ? 'block' : 'none';
+        this.classList.toggle('on', show);
+      };
+      var jb = el.querySelector('[data-act="jie"]');
+      if (jb) jb.onclick = function(){
+        el.querySelector('[data-role="jlist"]').classList.toggle('show');
+      };
+      var ta = el.querySelector('.reason');
+      ta.addEventListener('change', function(){ localStorage.setItem(KR + q.no, ta.value); });
+      return el;
+    }
+
+    function refreshStat(examEl){
+      var d = 0;
+      examEl.querySelectorAll('.done-chip').forEach(function(c){ if (c.classList.contains('on')) d++; });
+      var st = examEl.querySelector('.stat.ok b');
+      if (st) st.textContent = d;
     }
   }).catch(function(e){
-    document.getElementById('content').innerHTML = '<div class="paper-card"><div class="paper-meta">加载失败：' + esc(e.message) + '</div></div>';
+    document.getElementById('content').innerHTML = '<div class="exam"><div class="exam-head"><div class="paper-meta">加载失败：' + esc(e.message) + '</div></div></div>';
   });
 })();
 </script>
