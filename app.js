@@ -111,7 +111,7 @@ async function init() {
     console.log('已将今日卷替换为 8/28 那套 10 道题');
   }
 
-  await Promise.all([refreshCuoti(), refreshStats(), refreshWeekly()]);
+  await Promise.all([refreshCuoti(), refreshStats()]);
   fillFilters();
   bindEvents();
   bindBackup();
@@ -425,7 +425,7 @@ function markResult(id, val, reason) {
   STATE.papers = STATE.papers || [];
   STATE.papers.push({ id: 'web-' + Date.now(), date: today, results: { [id]: val }, reasons: reason ? { [id]: reason } : {} });
   saveState();
-  refreshCuoti(); refreshStats(); refreshWeekly(); refreshToday();
+  refreshCuoti(); refreshStats(); refreshToday();
   if (val === 'right') {
     toast('答对了，已掌握');
   } else {
@@ -550,7 +550,6 @@ async function refreshCuoti() {
   CUOTI = wids.map(id => qmap.get(id)).filter(Boolean).map(withLive);
   const badge = $('#cuoti-badge');
   if (badge) { badge.hidden = CUOTI.length === 0; badge.textContent = CUOTI.length > 99 ? '99+' : CUOTI.length; }
-  if (typeof renderChChart === "function") renderChChart();
 }
 
 function renderCuoti() {
@@ -594,49 +593,6 @@ async function refreshStats() {
     </div>`;
 }
 
-async function refreshWeekly() {
-  const el = $('#weekly'); if (!el) return;
-  const today = todayISO(), start = addDays(today, -6);
-  const qmap = new Map(QUESTIONS.map(q => [q.id, q]));
-  const wrongCnt = {}, reasonCnt = {}, kpCnt = {}, chCnt = {};
-  const seen = new Set();
-  for (const p of (STATE.papers || [])) {
-    const d = p.date || '';
-    if (!(start <= d && d <= today)) continue;
-    for (const [qid, r] of Object.entries(p.results || {})) {
-      if (r !== 'wrong' || seen.has(qid + '|' + d)) continue;
-      seen.add(qid + '|' + d);
-      const q = qmap.get(qid) || {};
-      const reason = (p.reasons || {})[qid] || '未标注';
-      wrongCnt[qid] = (wrongCnt[qid] || 0) + 1;
-      reasonCnt[reason] = (reasonCnt[reason] || 0) + 1;
-      const kp = q.kp_sub || q.kp || '未分类'; kpCnt[kp] = (kpCnt[kp] || 0) + 1;
-      const ch = q.chapter_name || q.chapter || '未分类'; chCnt[ch] = (chCnt[ch] || 0) + 1;
-    }
-  }
-  const byReason = Object.entries(reasonCnt).sort((a,b)=>b[1]-a[1]);
-  const byKp = Object.entries(kpCnt).sort((a,b)=>b[1]-a[1]).slice(0,8);
-  const byChapter = Object.entries(chCnt).sort((a,b)=>b[1]-a[1]);
-  const total = Object.values(wrongCnt).reduce((a,b)=>a+b,0);
-  let html = `<div class="wk-card"><h3>本周总结</h3><div class="wk-sub">${start} ~ ${today}</div>`;
-  if (!total) html += '<p style="color:var(--sub);font-size:13px;margin:8px 0;">本周还没有错题记录，继续保持！</p>';
-  else {
-    const focus = [];
-    const topKp = byKp.slice(0, 3);
-    topKp.forEach(([k, c]) => focus.push(`错得最多的知识点：「${k}」（本周错 ${c} 次）→ 优先重做该知识点错题，并做 1-2 道同型变式。`));
-    if (byReason.length) focus.push(`最主要错因：${byReason[0][0]}（${byReason[0][1]} 次）→ 在错题本按此错因重练。`);
-    if (byChapter.length) focus.push(`最薄弱章节：${byChapter[0][0]}（本周错 ${byChapter[0][1]} 道）→ 下周主科日优先安排该章。`);
-    if (focus.length) { html += `<div class="wk-section focus-box"><b>📌 下周该注重什么</b>` + focus.map(t => `<div class="focus-line">${t}</div>`).join('') + `</div>`; }
-    const maxC = Math.max(...byChapter.map(x=>x[1]),1), maxK = Math.max(...byKp.map(x=>x[1]),1), maxR = Math.max(...byReason.map(x=>x[1]),1);
-    html += `<div class="wk-nums"><div class="wk-num"><b>${total}</b><span>做错次数</span></div><div class="wk-num"><b>${Object.keys(wrongCnt).length}</b><span>涉及题目</span></div></div>`;
-    if (byChapter.length) { html += `<div class="wk-section"><b>错得最多的章节</b>`; byChapter.forEach(([ch,c])=>{ html += `<div class="wk-row"><span class="wk-label">${ch}</span><span class="wk-cnt">${c} 次</span></div><div class="wk-bar"><i style="width:${Math.round(c/maxC*100)}%"></i></div>`; }); html += '</div>'; }
-    if (byKp.length) { html += `<div class="wk-section"><b>错题涉及的知识点</b>`; byKp.forEach(([k,c])=>{ html += `<div class="wk-row"><span class="wk-label">${k}</span><span class="wk-cnt">${c} 次</span></div><div class="wk-bar"><i style="width:${Math.round(c/maxK*100)}%"></i></div>`; }); html += '</div>'; }
-    if (byReason.length) { html += `<div class="wk-section"><b>错因分布</b>`; byReason.forEach(([r,c])=>{ html += `<div class="wk-row"><span class="wk-label">${r}</span><span class="wk-cnt">${c} 次</span></div><div class="wk-bar"><i style="width:${Math.round(c/maxR*100)}%"></i></div>`; }); html += '</div>'; }
-  }
-  html += '</div>';
-  el.innerHTML = html;
-}
-
 /* ---------- 导出 / 导入进度备份 ---------- */
 function bindBackup() {
   const btnExp = $('#btn-export'), btnImp = $('#btn-import'), file = $('#import-file');
@@ -661,7 +617,7 @@ function bindBackup() {
         if (!obj || typeof obj !== 'object') throw new Error('格式不对');
         STATE = obj;
         saveState();
-        refreshCuoti(); refreshStats(); refreshWeekly(); refreshToday(); renderBank();
+        refreshCuoti(); refreshStats(); refreshToday(); renderBank();
         toast('导入成功');
       } catch (e) { toast('导入失败：' + e.message); }
     };
@@ -770,23 +726,6 @@ function toast(msg) {
 }
 
 init();
-
-/* ---- 错题章节分布柱状图 ---- */
-function renderChChart(){
-  const box = document.getElementById('chchart');
-  if (!box) return;
-  if (!CUOTI.length){ box.innerHTML = '<div class="chart-empty">暂无错题——保持住！</div>'; return; }
-  const cnt = {};
-  CUOTI.forEach(q => { const c = q.chapter_name || q.chapter || '未分类'; cnt[c] = (cnt[c]||0)+1; });
-  const rows = Object.entries(cnt).sort((a,b) => b[1]-a[1]);
-  const max = rows[0][1];
-  box.innerHTML = '<div class="chart-top">错得最多：' + rows[0][0] + '（' + rows[0][1] + ' 题）</div>' +
-    rows.map(([c,n]) =>
-      '<div class="bar-row' + (n===max?' top':'') + '">' +
-      '<div class="bar-label">' + c + '</div>' +
-      '<div class="bar-track"><div class="bar-fill" style="width:' + Math.round(n/max*100) + '%"></div></div>' +
-      '<div class="bar-num">' + n + '</div></div>').join('');
-}
 
 /* ===== 图片点击放大（全屏查看，点击关闭）===== */
 (function () {
