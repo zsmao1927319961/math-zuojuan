@@ -91,7 +91,8 @@
      "date": "2026-09-16",
      "done": false,
      "note": ""
-    }
+    },
+    "answers": "选择：1B 2A 3C 4D 5D 6D 7C 8B 9A 10B ｜ 填空：11. $\\frac16$；12. $1+\\sqrt2$；13. $\\frac{(-1)^n 2^n n!}{3^{n+1}}$；14. $C_1e^x+C_2e^{3x}-2e^{2x}$；15. $2\\frac{x}{y}f_2'-2\\frac{y}{x}f_1'$；16. $1$ ｜ 解答：17. $f(x)=\\ln(\\sin x+\\cos x)$；18. $V(a)=\\dfrac{\\pi a^2}{\\ln^2 a}$，$a=e$ 时最小 $\\pi e^2$；19. $y=\\frac23x^{3/2}+\\frac13$；20. $\\frac{dz}{dx}=0$，$\\frac{d^2z}{dx^2}=1$；21. 证明略；22. $\\frac13+4\\sqrt2\\ln(1+\\sqrt2)$；23. $a=1$：$k(1,0,-1)^T$，$a=2$：$(0,1,-1)^T$；24. $B=I-\\alpha_1\\alpha_1^T=\\begin{pmatrix}0&1&-1\\\\1&0&1\\\\-1&1&0\\end{pmatrix}$"
    },
    "errors": [
     {

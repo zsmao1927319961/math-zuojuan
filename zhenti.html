@@ -68,6 +68,18 @@
   .rp i{font-style:normal;display:inline-block;border:1px solid #d6dbe3;border-radius:6px;padding:1px 6px;margin-right:4px}
   .rp i.due{color:#fff;background:#d34;border-color:#d34}
   .note-line{font-size:12.5px;color:#8a5a00;background:#fff7e8;border:1px solid #f0e0bb;border-radius:8px;padding:6px 10px;margin:6px 0 0;line-height:1.9}
+  .ans{margin-top:10px;font-size:12px}
+  .ans summary{cursor:pointer;color:#a06b00;font-weight:700}
+  .ans .ans-body{margin-top:6px;color:#5a6472;line-height:1.9;background:#fffaf0;border:1px solid #f0e0bb;border-radius:8px;padding:8px 10px}
+  .mark-row{display:flex;align-items:center;gap:6px;margin:8px 0 0;flex-wrap:wrap}
+  .mlab{font-size:12px;color:#7a828f;flex:none}
+  .mark{border:1px solid #d6dbe3;background:#fff;border-radius:8px;padding:3px 10px;font-size:12px;cursor:pointer;color:#5a6472}
+  .mark.on-simple{background:#e8f7f0;color:#1d9e6f;border-color:#bfe6d6;font-weight:700}
+  .mark.on-careless{background:#fff4e0;color:#a06b00;border-color:#f0ddb0;font-weight:700}
+  .mark.on-unknown{background:#fdeaea;color:#d34;border-color:#f3c9c9;font-weight:700}
+  .cause-row{display:flex;align-items:center;gap:6px;margin:6px 0 0;flex-wrap:wrap}
+  .cause{border:1px dashed #d6dbe3;background:#fff;border-radius:8px;padding:3px 10px;font-size:12px;cursor:pointer;color:#5a6472}
+  .cause:hover{background:#eef4ff;color:#2f6bff;border-color:#b9d2f0}
   .back{display:inline-block;margin:12px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
   .empty{padding:34px 20px;text-align:center}
   .empty-icon{font-size:44px}
@@ -89,7 +101,7 @@
   'use strict';
   function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
   function nz(v, d){ return (v === undefined || v === null || v === '') ? d : v; }
-  var K_D = 'zhenti_done_', K_R = 'zhenti_reason_';
+  var K_D = 'zhenti_done_', K_R = 'zhenti_reason_', K_M = 'zhenti_mark_';
   var FKEY = 'zhenti_filters_v1';
   var EXAM_DAY = '2026-12-26';   /* 2027 初试预计日期 */
   var TYPES = ['选择', '填空', '解答'];
@@ -282,11 +294,14 @@
             '<div class="paper-meta">第1天：' + esc(nz(p.date, '—')) +
             (typeof p.score === 'number' ? ' ｜ 得分 <b style="color:#2f6bff">' + p.score + '</b>/150' : '') +
             (p.time_used ? ' ｜ 用时 ' + esc(p.time_used) : '') + '</div>';
+          if (p.answers) bh += '<details class="ans"><summary>📋 答案速查</summary><div class="ans-body" data-ans></div></details>';
           var rf = p.reinforce;
           if (rf && rf.done) bh += '<div class="reinforce ok">✅ 第2天强化（' + esc(nz(rf.date, '')) + '）：' + esc(nz(rf.note, '已完成')) + '</div>';
           else if (rf && rf.date) bh += '<div class="reinforce todo">⏳ 第2天（' + esc(rf.date) + '）强化进行中：' + esc(nz(rf.note, '')) + '</div>';
           else bh += '<div class="reinforce todo">⏳ 第2天强化还没记录——做完把情况发我（变式卷结果 / 880推进到哪）</div>';
           blk.innerHTML = bh;
+          var ansBox = blk.querySelector('[data-ans]');
+          if (ansBox) renderLatexMixed(ansBox, p.answers);
           TYPES.forEach(function(tp){
             var g = items.filter(function(it){ return (it.q.type || '') === tp; }).sort(function(a, b){ return a.q.no - b.q.no; });
             if (!g.length) return;
@@ -316,6 +331,16 @@
       else if (hideKp && q.chapter) kpText = '章节：' + q.chapter;
       var kpLine = kpText ? '<div class="kp-line"></div>' : '';
       var noteLine = q.note ? '<div class="note-line"></div>' : '';
+      var markKey = K_M + yid + '_' + q.no;
+      var curMark = localStorage.getItem(markKey) || '';
+      var markRow = '<div class="mark-row"><span class="mlab">掌握程度：</span>' +
+        [['simple','👍 简单'],['careless','✏️ 粗心'],['unknown','❌ 不会']].map(function(mv){
+          return '<span class="mark' + (curMark === mv[0] ? ' on-' + mv[0] : '') + '" data-mark="' + mv[0] + '">' + mv[1] + '</span>';
+        }).join('') + '</div>';
+      var causeRow = '<div class="cause-row"><span class="mlab">错因快选：</span>' +
+        ['概念不清','计算失误','方法不会','审题踩坑','粗心大意'].map(function(c){
+          return '<span class="cause" data-cause="' + c + '">' + c + '</span>';
+        }).join('') + '</div>';
       el.innerHTML =
         '<button type="button" class="qhead"><span class="qno">第 ' + q.no + ' 题</span>' +
         '<span class="tag">' + esc(nz(q.type, '')) + '</span>' +
@@ -323,7 +348,7 @@
         (F.mode === 'kp' ? '<span class="tag src" title="' + esc(it.ex) + '">📎 ' + esc(it.ex) + '</span>' : '') +
         '<span class="sp"></span>' +
         '<span role="button" class="done-chip' + (done ? ' on' : '') + '" data-act="done">' + (done ? '✓ 已重做' : '未重做') + '</span></button>' +
-        '<div class="qbody">' + kpLine + noteLine + rp +
+        '<div class="qbody">' + kpLine + noteLine + rp + markRow + causeRow +
         '<textarea class="reason" placeholder="错因（存在本机）：概念不清 / 计算失误 / 方法不会…">' +
         esc(nz(localStorage.getItem(K_R + yid + '_' + q.no), '')) + '</textarea>' +
         '<div class="hint">错因与重做状态仅存本机；回炉时找助手按考点出同型变式</div>' +
@@ -340,7 +365,28 @@
       };
       if (kpText) renderLatexMixed(el.querySelector('.kp-line'), kpText);
       if (q.note) renderLatexMixed(el.querySelector('.note-line'), '✍️ 批改：' + q.note);
+      el.querySelectorAll('.mark').forEach(function(mk){
+        mk.addEventListener('click', function(e){
+          e.stopPropagation();
+          var v = mk.dataset.mark;
+          curMark = (curMark === v) ? '' : v;
+          if (curMark) localStorage.setItem(markKey, curMark); else localStorage.removeItem(markKey);
+          el.querySelectorAll('.mark').forEach(function(x){
+            x.className = 'mark' + (x.dataset.mark === curMark ? ' on-' + curMark : '');
+          });
+        });
+      });
       var ta = el.querySelector('.reason');
+      el.querySelectorAll('.cause').forEach(function(cp){
+        cp.addEventListener('click', function(e){
+          e.stopPropagation();
+          var label = cp.dataset.cause;
+          if (ta.value.indexOf(label) >= 0) return;
+          var trimmed = ta.value.replace(/[ \t]+$/, '');
+          ta.value = trimmed ? trimmed + '、' + label : label;
+          localStorage.setItem(K_R + yid + '_' + q.no, ta.value);
+        });
+      });
       ta.addEventListener('change', function(){ localStorage.setItem(K_R + yid + '_' + q.no, ta.value); });
       return el;
     }
