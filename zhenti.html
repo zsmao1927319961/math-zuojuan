@@ -102,6 +102,17 @@
   function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
   function nz(v, d){ return (v === undefined || v === null || v === '') ? d : v; }
   var K_D = 'zhenti_done_', K_R = 'zhenti_reason_', K_M = 'zhenti_mark_';
+  function texToPlain(s){
+    return String(s).replace(/\$([^$]+)\$/g, function(_, t){
+      return t
+        .replace(/\\frac{([^{}]*)}{([^{}]*)}/g, '$1/$2')
+        .replace(/\\sqrt\s*\{?([^{}\s]*)\}?/g, '√$1')
+        .replace(/\\to/g, '→').replace(/\\le/g, '≤').replace(/\\ge/g, '≥')
+        .replace(/\\in/g, '∈').replace(/\\lim/g, 'lim')
+        .replace(/\\,|\\!|\\;/g, '')
+        .replace(/[{}]/g, '');
+    });
+  }
   var FKEY = 'zhenti_filters_v1';
   var EXAM_DAY = '2026-12-26';   /* 2027 初试预计日期 */
   var TYPES = ['选择', '填空', '解答'];
@@ -137,8 +148,9 @@
     var FLAT = [];
     exams.forEach(function(e){
       var nm = e.paper.name || ((e.paper.year || '') + '年真题');
+      var isReal = e.paper.kind !== 'drill';
       (e.errors || []).forEach(function(q){
-        FLAT.push({ ex: nm, date: e.paper.date || '', yid: String(e.paper.year || e.paper.date), q: q });
+        FLAT.push({ ex: nm, date: e.paper.date || '', yid: String(e.paper.year || e.paper.date), q: q, real: isReal });
       });
     });
 
@@ -167,7 +179,7 @@
       var kpCnt = {};
       FLAT.forEach(function(it){ var k = it.q.kp || '未标注'; kpCnt[k] = (kpCnt[k] || 0) + 1; });
       var kpOpts = Object.keys(kpCnt).sort(function(a, b){ return kpCnt[b] - kpCnt[a]; }).map(function(k){
-        return '<option value="' + esc(k) + '"' + (F.kp === k ? ' selected' : '') + '>' + esc(k) + '（' + kpCnt[k] + '）</option>';
+        return '<option value="' + esc(k) + '"' + (F.kp === k ? ' selected' : '') + '>' + esc(texToPlain(k)) + '（' + kpCnt[k] + '）</option>';
       }).join('');
 
       froot.innerHTML = '';
@@ -204,24 +216,25 @@
         (F.mode === 'kp' ? '（按考点整合显示）' : '（按套卷显示）');
     }
 
-    /* ---- 总览（永远显示全部数据，不受筛选影响） ---- */
-    var scored = exams.filter(function(e){ return typeof e.paper.score === 'number'; });
+    /* ---- 总览（只统计真题卷，补刷卷不入统计；不受筛选影响） ---- */
+    var REAL = exams.filter(function(e){ return e.paper.kind !== 'drill'; });
+    var scored = REAL.filter(function(e){ return typeof e.paper.score === 'number'; });
     var avg = scored.length ? Math.round(scored.reduce(function(s, e){ return s + e.paper.score; }, 0) / scored.length) : null;
     var today = dIso();
     var days = Math.max(0, Math.round((new Date(EXAM_DAY + 'T00:00:00') - new Date(today + 'T00:00:00')) / 86400000));
     var mon = new Date().getMonth();
     var phase = mon >= 11 ? 3 : (mon === 10 ? 2 : 1);
-    var brushed = Math.min(exams.filter(function(e){ return e.paper.year; }).length, 10);
+    var brushed = Math.min(REAL.filter(function(e){ return e.paper.year; }).length, 10);
     var dueN = 0;
-    exams.forEach(function(e){ (e.errors || []).forEach(function(q){ if (e.paper.date && today > e.paper.date) dueN++; }); });
+    REAL.forEach(function(e){ (e.errors || []).forEach(function(q){ if (e.paper.date && today > e.paper.date) dueN++; }); });
     var ov = document.createElement('div');
     ov.className = 'paper-card';
     var h = '<div class="paper-name">真题台账 · 两天一循环</div>' +
       '<div class="paper-meta">第1天 整卷限时 + 订正 ｜ 第2天 错题强化 + 推进习题册</div>' +
       '<div class="stats">' +
-      '<div class="stat">已刷 <b>' + exams.length + '</b> 套</div>' +
+      '<div class="stat">已刷 <b>' + REAL.length + '</b> 套</div>' +
       (avg !== null ? '<div class="stat ok">平均分 <b>' + avg + '</b>/150</div>' : '') +
-      '<div class="stat">错题共 <b>' + FLAT.length + '</b> 题</div>' +
+      '<div class="stat">错题共 <b>' + FLAT.filter(function(it){ return it.real; }).length + '</b> 题</div>' +
       (dueN > 0 ? '<div class="stat bad">回炉到期 <b>' + dueN + '</b> 题·找我出同型变式</div>' : '') +
       '</div>' +
       '<div class="ms-row">' +
@@ -240,24 +253,26 @@
       });
     }
     var kpAll = {};
-    FLAT.forEach(function(it){ var k = it.q.kp || '未标注'; kpAll[k] = (kpAll[k] || 0) + 1; });
+    FLAT.forEach(function(it){ if (!it.real) return; var k = it.q.kp || '未标注'; kpAll[k] = (kpAll[k] || 0) + 1; });
     var kps = Object.keys(kpAll).map(function(k){ return [k, kpAll[k]]; }).sort(function(a, b){ return b[1] - a[1]; }).slice(0, 5);
     if (kps.length) {
-      h += '<div class="type-head">失分最多考点 <span class="cnt">喂给耐刷王补刷的选题依据</span></div>';
+      h += '<div class="type-head">失分最多考点 <span class="cnt">只计真题 · 喂给耐刷王补刷的选题依据</span></div>';
       var mx = kps[0][1];
-      kps.forEach(function(t){
-        h += '<div class="kp-row"><span class="lb" title="' + esc(t[0]) + '">' + esc(t[0]) + '</span>' +
+      kps.forEach(function(t, i){
+        h += '<div class="kp-row"><span class="lb" data-i="' + i + '" title="' + esc(texToPlain(t[0])) + '"></span>' +
           '<span class="bar"><i style="width:' + Math.round(t[1] / mx * 100) + '%"></i></span>' +
           '<span class="n">' + t[1] + ' 次</span></div>';
       });
     }
     ov.innerHTML = h;
     root.appendChild(ov);
+    ov.querySelectorAll('.kp-row .lb').forEach(function(lb, i){ renderLatexMixed(lb, kps[i][0]); });
 
     /* ---- 筛选后的错题浏览区 ---- */
     function renderBrowse(){
       browse.innerHTML = '';
       var list = FLAT.filter(applyFilters);
+      if (F.mode === 'kp' && !F.exam) list = list.filter(function(it){ return it.real; });
       updateFcount(list.length);
       if (!list.length) {
         browse.innerHTML = '<div class="paper-card"><div class="empty" style="padding:22px"><div class="empty-title">没有符合筛选的错题</div><div class="empty-tip">换个条件试试，或把筛选清空</div></div></div>';
@@ -269,7 +284,8 @@
         Object.keys(byKp).sort(function(a, b){ return byKp[b].length - byKp[a].length; }).forEach(function(k){
           var g = document.createElement('div');
           g.className = 'paper-card';
-          g.innerHTML = '<div class="type-head" style="margin-top:2px">🎯 ' + esc(k) + ' <span class="cnt">' + byKp[k].length + ' 题</span></div>';
+          g.innerHTML = '<div class="type-head" style="margin-top:2px"><span data-kp></span> <span class="cnt">' + byKp[k].length + ' 题</span></div>';
+          renderLatexMixed(g.querySelector('[data-kp]'), '🎯 ' + k);
           byKp[k].forEach(function(it){ g.appendChild(errCard(it, true)); });
           browse.appendChild(g);
         });
