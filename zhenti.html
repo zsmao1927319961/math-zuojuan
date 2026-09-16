@@ -211,7 +211,7 @@
     var days = Math.max(0, Math.round((new Date(EXAM_DAY + 'T00:00:00') - new Date(today + 'T00:00:00')) / 86400000));
     var mon = new Date().getMonth();
     var phase = mon >= 11 ? 3 : (mon === 10 ? 2 : 1);
-    var brushed = Math.min(exams.length, 10);
+    var brushed = Math.min(exams.filter(function(e){ return e.paper.year; }).length, 10);
     var dueN = 0;
     exams.forEach(function(e){ (e.errors || []).forEach(function(q){ if (e.paper.date && today > e.paper.date) dueN++; }); });
     var ov = document.createElement('div');
