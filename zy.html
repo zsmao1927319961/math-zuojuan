@@ -55,6 +55,7 @@
   .backlog{width:100%;font-size:12px;color:#c33;background:#fdeaea;border:1px solid #f3c9c9;border-radius:8px;padding:6px 10px}
   .back{display:inline-block;margin:12px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
   .empty{padding:30px;text-align:center;color:#7a828f;font-size:14px}
+  .qimg{display:block;max-width:100%;margin:8px 0 2px;border-radius:8px}
 </style>
 </head>
 <body>
@@ -71,7 +72,7 @@
 (function(){
   'use strict';
   var ZT_MAX = 16;              /* 题池：专题一~专题十六（学到新专题后改这里扩池） */
-  var DAILY = 3;                /* 每日题数 */
+  var DAILY = 5;                /* 每日题数 */
   var LS_KEY = 'shuxue_progress_v1';
   var MODE = null;              /* 'server' | 'static' */
   var STATE = null;             /* 静态版进度 */
@@ -123,52 +124,49 @@
              note: (notesObj()[q.id] || ''), reason: st.reason };
   }
 
-  /* ---------- 钉住式选题：三题存本地，只有按「换一批」才换 ---------- */
-  var PICKS_KEY = 'zy_picks_v1';
-  function loadSavedPicks(){
-    try { var raw = localStorage.getItem(PICKS_KEY); var o = raw ? JSON.parse(raw) : null; return (o && o.ids && o.ids.length) ? o : null; } catch(e){ return null; }
+  /* ---------- 选题：每天随机抽 3 道（当天固定，跨天自动换新）；做对的题冷却 7 天后回池 ---------- */
+  var COOLDOWN_DAYS = 7;
+  function hashSeed(str){
+    var h = 2166136261;
+    for (var i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = (h * 16777619) >>> 0; }
+    return h >>> 0;
   }
-  function savePicks(ids, off){ try { localStorage.setItem(PICKS_KEY, JSON.stringify({ ids: ids, off: off })); } catch(e){} }
-  function pickThree(pool, exclude, off){
-    var ex = {}; (exclude || []).forEach(function(i){ ex[i] = 1; });
-    var today = TODAY;
-    var due = [], review = [], fresh = [], doneList = [];
-    pool.forEach(function(q){
-      if (ex[q.id]) return;
-      var lv = liveOf(q);
-      if (lv.status === 'done') { doneList.push(q); return; }
-      if (lv.due && lv.due <= today) { due.push(q); return; }
-      if (lv.status === 'review' || lv.status === 'relearn' || (lv.status === 'todo' && lv.wrong_date)) { review.push(q); return; }
-      fresh.push(q);
-    });
-    due.sort(function(a,b){ return (liveOf(a).due || '').localeCompare(liveOf(b).due || ''); });
-    var picks = due.slice(0, DAILY);
-    if (picks.length < DAILY) picks = picks.concat(review.slice(0, DAILY - picks.length));
-    if (picks.length < DAILY) {
-      fresh.sort(function(a,b){ return a.id.localeCompare(b.id); });
-      var n = fresh.length;
-      for (var i = 0; i < n && picks.length < DAILY; i++) picks.push(fresh[((off || 0) + i) % n]);
-    }
-    if (picks.length === 0) {   /* 全部掌握 → 复刷最久未做 */
-      doneList.sort(function(a,b){ return (liveOf(a).right_date || '').localeCompare(liveOf(b).right_date || ''); });
-      picks = doneList.slice(0, DAILY);
-    }
-    return picks;
+  function mulberry(seed){
+    return function(){
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
   }
-  function loadPicks(pool){
-    var saved = loadSavedPicks();
-    var out = [];
-    if (saved) {
-      var byId = {}; pool.forEach(function(q){ byId[q.id] = q; });
-      saved.ids.forEach(function(id){ if (byId[id] && out.indexOf(byId[id]) < 0) out.push(byId[id]); });
-    }
-    if (out.length < DAILY) {   /* 首次/题池变化补齐 */
-      var extra = pickThree(pool, out.map(function(q){ return q.id; }), saved ? saved.off : dayIndex());
-      extra.forEach(function(q){ if (out.length < DAILY && out.indexOf(q) < 0) out.push(q); });
-      savePicks(out.map(function(q){ return q.id; }), saved ? saved.off : dayIndex());
-    }
-    return out;
+  function daysSince(iso){
+    if (!iso) return 9999;
+    var a = new Date(iso + 'T00:00:00'), b = new Date(TODAY + 'T00:00:00');
+    return Math.round((b - a) / 86400000);
   }
+  function inCooldown(q){
+    var lv = liveOf(q);
+    return lv.status === 'done' && daysSince(lv.right_date) < COOLDOWN_DAYS;
+  }
+  function rollNonce(){ try { return parseInt(localStorage.getItem('zy_roll_nonce') || '0', 10) || 0; } catch(e){ return 0; } }
+  function bumpNonce(){ try { localStorage.setItem('zy_roll_nonce', String(rollNonce() + 1)); } catch(e){} }
+  function drawPicks(pool, nonce){
+    var eligible = [], cooldown = 0;
+    pool.forEach(function(q){ if (inCooldown(q)) { cooldown++; return; } eligible.push(q); });
+    var rng = mulberry(hashSeed(TODAY + '#' + nonce));
+    for (var i = eligible.length - 1; i > 0; i--) {
+      var j = Math.floor(rng() * (i + 1));
+      var tmp = eligible[i]; eligible[i] = eligible[j]; eligible[j] = tmp;
+    }
+    var picks = eligible.slice(0, DAILY);
+    if (picks.length < DAILY) {   /* 冷却中太多导致不够 → 最早做对的优先回池 */
+      var cds = pool.filter(function(q){ return inCooldown(q); });
+      cds.sort(function(a,b){ return (liveOf(a).right_date || '').localeCompare(liveOf(b).right_date || ''); });
+      picks = picks.concat(cds.slice(0, DAILY - picks.length));
+    }
+    return { picks: picks, cooldown: cooldown, eligible: eligible.length };
+  }
+  function loadPicks(pool){ return drawPicks(pool, rollNonce()).picks; }
 
   /* ---------- 打标：回炉池规则（服务端 progress.py / 静态版逻辑一致） ----------
      做错 → 1/3/7 天递增重现；错后做对一次 → 明天再来，连续做对两次 → done 移出 */
@@ -180,7 +178,7 @@
       var cnt = (prev.right_count || 0) + 1;
       if (prev.wrong_date) {
         var streak = (prev.right_streak || 0) + 1;
-        s = (streak >= 2)
+        s = (streak >= 3)
           ? { status: 'done', right_date: TODAY, right_count: cnt }
           : { status: 'relearn', wrong_date: prev.wrong_date, right_date: TODAY, right_streak: streak,
               wrong_count: (prev.wrong_count || 1), due: addDays(TODAY, 1) };
@@ -223,7 +221,7 @@
     if (lv.status === 'done') return '<span class="tag ok">已掌握</span>';
     if (lv.status === 'relearn') return (lv.due && lv.due <= TODAY)
       ? '<span class="tag bad">回炉·确认中</span>'
-      : '<span class="tag review">再做对1次即出池</span>';
+      : '<span class="tag review">再对 ' + (3 - (lv.right_streak || 0)) + ' 次出池</span>';
     if (lv.due && lv.due <= TODAY) return '<span class="tag bad">待重做</span>';
     if (lv.status === 'todo' && lv.wrong_date) return '<span class="tag bad">已标记做错</span>';
     if (lv.status === 'review') return '<span class="tag review">待巩固</span>';
@@ -270,14 +268,28 @@
       '<textarea class="noteta" placeholder="笔记（自动保存）：突破口 / 易错点…">' + escHtml(liveOf(q).note || '') + '</textarea>' +
       '<div class="hint">' + (MODE === 'server' ? '进度同步到服务器（错题本/统计通用）' : '进度存本机，与主站共用') + '</div>';
     renderLatexMixed(el.querySelector('.katex-auto'), q.question_text || '');
+    if (q.question_img) {
+      var qi = document.createElement('img');
+      qi.className = 'qimg';
+      qi.src = 'data/' + q.question_img;
+      qi.alt = '题目配图';
+      el.querySelector('.qtext').after(qi);
+    }
     var lvR = liveOf(q);
     if (lvR.wrong_date) {
       var rh = document.createElement('div');
       rh.className = 'replay-hint';
-      rh.textContent = '🔁 回炉重做 · 上次做错于 ' + lvR.wrong_date + (lvR.status === 'relearn' ? ' · 已做对1次，再对1次出池' : '');
+      rh.textContent = '🔁 回炉重做 · 上次做错于 ' + lvR.wrong_date + (lvR.status === 'relearn' ? ' · 已连对 ' + (lvR.right_streak || 0) + ' 次，再对 ' + (3 - (lvR.right_streak || 0)) + ' 次出池' : '');
       el.querySelector('.qtext').after(rh);
     }
     formatSolution(el.querySelector('.katex-ans'), q.solution || q.answer_text || '');
+    if (q.answer_img) {
+      var ai = document.createElement('img');
+      ai.className = 'qimg';
+      ai.src = 'data/' + q.answer_img;
+      ai.alt = '答案配图';
+      el.querySelector('.katex-ans').after(ai);
+    }
     if (lvR.wrong_date) {
       var pw = el.querySelector('[data-role="prevwrong"]');
       var html = '';
@@ -335,10 +347,11 @@
     return el;
   }
   function refreshStats(){
-    var pool = PICKS.pool, lv, done = 0, due = 0, overdue = 0, todayDone = 0;
+    var pool = PICKS.pool, lv, done = 0, due = 0, overdue = 0, todayDone = 0, cooldown = 0;
     pool.forEach(function(q){
       lv = liveOf(q);
       if (lv.status === 'done') done++;
+      if (inCooldown(q)) cooldown++;
       if (lv.due && lv.due <= TODAY && lv.status !== 'done') {
         due++;
         if (lv.due < TODAY) overdue++;
@@ -348,6 +361,7 @@
     var st = document.getElementById('pstats');
     if (st) st.innerHTML =
       '<div class="stat">题池 <b>' + pool.length + '</b> 题（专题一~十六）</div>' +
+      (cooldown > 0 ? '<div class="stat">冷却回池 <b>' + cooldown + '</b>（做对第 7 天自动回池）</div>' : '') +
       '<div class="stat ok">已掌握 <b>' + done + '</b></div>' +
       '<div class="stat bad">待重做 <b>' + due + '</b></div>' +
       (overdue > 0 ? '<div class="stat bad">逾期未清 <b>' + overdue + '</b></div>' : '') +
@@ -356,15 +370,10 @@
       '<div class="bar" style="width:100%"><i style="width:' + Math.round(done / pool.length * 100) + '%"></i></div>';
   }
 
-  function dayIndex(){ var a = new Date(2026, 8, 1), b = new Date(); return Math.max(0, Math.round((b - a) / 86400000)); }
   function reshuffle(){
-    var cur = PICKS.map(function(q){ return q.id; });
-    var saved = loadSavedPicks();
-    var off = (saved ? saved.off : dayIndex()) + DAILY;
-    var extra = pickThree(PICKS.pool, cur, off);
-    if (!extra.length) return;
-    PICKS = extra.slice(0, DAILY);
-    savePicks(PICKS.map(function(q){ return q.id; }), off);
+    bumpNonce();
+    var res = drawPicks(PICKS.pool, rollNonce());
+    PICKS = res.picks;
     var root = document.getElementById('content');
     root.innerHTML = '';
     PICKS.forEach(function(q, i){ root.appendChild(card(q, i)); });
@@ -382,7 +391,7 @@
     PICKS.pool = pool;
     var meta = document.getElementById('pmeta');
     meta.textContent = TODAY + ' · ' +
-      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 固定 3 题，按「换一批」手动更换 · 错题进回炉池：1/3/7天递增重现，连续做对2次才出池';
+      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 每天随机抽 3 题（做对的题冷却 7 天后自动回池）· 错题按 1/3/7 天回炉，连对 3 次出池 · 按「换一批」立即换新';
     var rb = document.createElement('button');
     rb.textContent = '🔄 换一批';
     rb.style.cssText = 'margin-left:10px;padding:2px 12px;border:1px solid #b9c6d8;border-radius:14px;background:#fff;color:#1f6fb2;cursor:pointer;font-size:12px;vertical-align:middle;';
