@@ -232,9 +232,14 @@
     el.textContent = '';
     String(text || '').split('\n').forEach(function(ln){
       var d = document.createElement('div');
-      if (/^【.+?】/.test(ln)) {
+      var mt = ln.match(/^(【[^】]+】)([\s\S]*)$/);
+      if (mt) {
         d.className = 'sec ' + (ln.indexOf('易错') >= 0 ? 'warn' : ln.indexOf('答案') >= 0 ? 'ans' : ln.indexOf('步骤') >= 0 ? 'step' : 'kp');
-        d.textContent = ln;
+        var ts = document.createElement('span');
+        ts.textContent = mt[1];
+        var cs = document.createElement('span');
+        renderLatexMixed(cs, mt[2]);
+        d.appendChild(ts); d.appendChild(cs);
       } else {
         renderLatexMixed(d, ln);
       }
