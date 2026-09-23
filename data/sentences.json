@@ -1,5 +1,5 @@
 {
- "note": "2026-09-13 改版:废弃日历排期(无 start/date),day=批次序号,按序推进不按天数;大段落全部排前,功能句(静态/动态精选)在第 14-15 批最后。migrate=旧日历版 day → 各句 en 哈希,供 zuowen.html 一次性迁移旧打卡。en 标记: tpl=固定模板词(背), blank=考场按题目填(对应书红/蓝字)。",
+ "note": "2026-09-24 二改:经济类第二段三处\"原因\"内容按用户指示改为汉字占位(按题目换,不必背英文),原书示例英文移入 meta 参考。标记约定:tpl蓝字=必须背的框架;blank红字=考场按题填(汉字占位)。批次顺序:大段落1-13在前,功能句14-15垫后;按批推进不按日历;migrate=旧日历版打卡迁移表。",
  "days": [
   {
    "day": 1,
@@ -59,29 +59,32 @@
   },
   {
    "day": 5,
-   "tag": "经济类第二段·上(书原文)｜英语二首选",
+   "tag": "经济类第二段·上(书原文·原因按题换)｜英语二首选",
    "sents": [
     {
      "en": "<span class=\"tpl\">Placed in the context of everyday life</span>, the formation of <span class=\"blank\">题目相关词</span> is propelled by the combined influence of multiple factors.",
      "zh": "放在日常生活中去思考，题目相关词的形成是由多方面因素共同推动的。"
     },
     {
-     "en": "<span class=\"tpl\">The continuous growth of national economic strength</span> has undoubtedly laid a solid foundation for the emergence of <span class=\"blank\">题目相关词</span>.",
-     "zh": "国家经济实力的持续增长，毫无疑问为题目相关词的出现奠定了坚实基础。"
+     "en": "<span class=\"blank\">原因(按题目换)</span> has undoubtedly laid a solid foundation for the emergence of <span class=\"blank\">题目相关词</span>.",
+     "zh": "＿＿（按题目换的原因）毫无疑问为题目相关词的出现奠定了坚实基础。",
+     "meta": "<b>框架(背)</b>：____ has undoubtedly laid a solid foundation for the emergence of ____<br><b>原因示例(经济类,不必背)</b>：The continuous growth of national economic strength（国家经济实力不断提升）——考场换成与题目匹配的原因英文"
     }
    ]
   },
   {
    "day": 6,
-   "tag": "经济类第二段·下(书原文)",
+   "tag": "经济类第二段·下(书原文·原因按题换)",
    "sents": [
     {
-     "en": "<span class=\"tpl\">In addition</span>, with the increase in citizens’ wealth and the expansion of available choices, <span class=\"blank\">题目相关词</span> has become increasingly popular.",
-     "zh": "此外，随着公民财富的增加与可选择范围的扩大，题目相关词变得越来越受欢迎。"
+     "en": "<span class=\"tpl\">In addition</span>, <span class=\"blank\">原因(按题目换)</span>, <span class=\"blank\">题目相关词</span> has become increasingly popular.",
+     "zh": "此外，＿＿（按题目换的原因），题目相关词变得越来越受欢迎。",
+     "meta": "<b>原因示例(经济类,不必背)</b>：with the increase in citizens’ wealth and the expansion of available choices（公民财富增加、可选择范围扩大）"
     },
     {
-     "en": "<span class=\"tpl\">Equally important</span>, people in the present age are more inclined to pursue spiritual fulfillment, and their attention has therefore shifted from mere function to deeper meaning, which has gradually enabled <span class=\"blank\">题目相关词</span> to become integrated into everyday life.",
-     "zh": "同样重要的是，当今时代的人们更倾向于追求精神满足，因而关注点从单纯的功能转向更深层的意义，这让题目相关词逐渐融入日常生活。"
+     "en": "<span class=\"tpl\">Equally important</span>, <span class=\"blank\">原因(按题目换)</span>, which has gradually enabled <span class=\"blank\">题目相关词</span> to become integrated into everyday life.",
+     "zh": "同样重要的是，＿＿（按题目换的原因），这让题目相关词逐渐融入日常生活。",
+     "meta": "<b>原因示例(经济类,不必背)</b>：people in the present age are more inclined to pursue spiritual fulfillment, and their attention has therefore shifted from mere function to deeper meaning（人们更追求精神满足,关注点从功能转向意义）"
     }
    ]
   },
