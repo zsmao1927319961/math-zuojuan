@@ -99,7 +99,7 @@
 <script>
 (function(){
   'use strict';
-  function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function esc(s){ var d = document.createElement('div'); d.textContent = String(s); return d.innerHTML.replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
   function nz(v, d){ return (v === undefined || v === null || v === '') ? d : v; }
   var K_D = 'zhenti_done_', K_R = 'zhenti_reason_', K_M = 'zhenti_mark_';
   function texToPlain(s){
@@ -147,21 +147,29 @@
     /* ---- 展平：所有错题带上所属卷信息 ---- */
     var FLAT = [];
     exams.forEach(function(e){
+      e.yid = String(e.paper.year || e.paper.date);   /* 卷的唯一键：真题用年份，无年份卷（补刷）用日期 */
       var nm = e.paper.name || ((e.paper.year || '') + '年真题');
       var isReal = e.paper.kind !== 'drill';
       (e.errors || []).forEach(function(q){
-        FLAT.push({ ex: nm, date: e.paper.date || '', yid: String(e.paper.year || e.paper.date), q: q, real: isReal });
+        FLAT.push({ ex: nm, date: e.paper.date || '', yid: e.yid, q: q, real: isReal });
       });
     });
 
-    /* ---- 筛选状态（记忆上次选择） ---- */
+    /* ---- 筛选状态（记忆上次选择；恢复的值已不在当前数据时重置，防止"下拉显示全部实际在过滤"） ---- */
     var F = { exam: '', type: '', kp: '', mode: 'paper' };
     try { var sf = JSON.parse(localStorage.getItem(FKEY) || '{}'); if (sf && typeof sf === 'object') F = Object.assign(F, sf); } catch (e) {}
+    (function () {
+      var yids = {}, kps = {};
+      exams.forEach(function(e){ yids[e.yid] = 1; });
+      FLAT.forEach(function(it){ kps[it.q.kp || '未标注'] = 1; });
+      if (F.exam && !yids[F.exam]) F.exam = '';
+      if (F.kp && !kps[F.kp]) F.kp = '';
+    })();
 
     function saveF(){ try { localStorage.setItem(FKEY, JSON.stringify(F)); } catch (e) {} }
 
     function applyFilters(item){
-      if (F.exam && item.date !== F.exam) return false;
+      if (F.exam && item.yid !== F.exam) return false;
       if (F.type && (item.q.type || '') !== F.type) return false;
       if (F.kp && (item.q.kp || '未标注') !== F.kp) return false;
       return true;
@@ -171,7 +179,7 @@
     function renderFbar(){
       var examsOpts = exams.map(function(e){
         var nm = e.paper.name || ((e.paper.year || '') + '年真题');
-        return '<option value="' + esc(e.paper.date) + '"' + (F.exam === e.paper.date ? ' selected' : '') + '>' + esc(nm) + '</option>';
+        return '<option value="' + esc(e.yid) + '"' + (F.exam === e.yid ? ' selected' : '') + '>' + esc(nm) + '</option>';
       }).join('');
       var typeOpts = TYPES.map(function(t){
         return '<option value="' + t + '"' + (F.type === t ? ' selected' : '') + '>' + t + '题</option>';
@@ -291,10 +299,10 @@
         });
       } else {
         var byExam = {};
-        list.forEach(function(it){ (byExam[it.date] || (byExam[it.date] = [])).push(it); });
+        list.forEach(function(it){ (byExam[it.yid] || (byExam[it.yid] = [])).push(it); });
         var first = true;
         exams.forEach(function(e){
-          var items = byExam[e.paper.date];
+          var items = byExam[e.yid];
           if (!items || !items.length) return;
           var p = e.paper;
           if (!first) {

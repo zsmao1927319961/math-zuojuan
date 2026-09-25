@@ -131,7 +131,7 @@
     <div id="hist"><div class="empty">加载中…</div></div>
   </div>
 
-  <div class="foot">批改写作台(英语二) ｜ 评分依据:考研英语批改指令(英语二大作文 15 分 / 小作文 10 分 / 翻译 15 分) ｜ 草稿与计时保存在本机</div>
+  <div class="foot">批改写作台(英语二) ｜ 评分依据:考研英语批改指令(英语二大作文 15 分 / 小作文 10 分 / 翻译 15 分) ｜ 草稿保存在本机</div>
 </div>
 
 <script>
@@ -202,8 +202,12 @@ function renderType(){
   $('#cardcheck').style.display = curType === 'trans' ? 'none' : '';
   $('#h2write').textContent = m.h2;
   $('#essay').placeholder = m.ph;
-  $('#psel').innerHTML = PROMPTS[curType].map(p => `<option value="${p.id}">${p.title}</option>`).join('');
-  $('#psel').value = localStorage.getItem(LS + 'sel_' + curType) || PROMPTS[curType][0].id;
+  if (curType === 'trans') {
+    $('#psel').innerHTML = '';
+  } else {
+    $('#psel').innerHTML = PROMPTS[curType].map(p => `<option value="${p.id}">${p.title}</option>`).join('');
+    $('#psel').value = localStorage.getItem(LS + 'sel_' + curType) || PROMPTS[curType][0].id;
+  }
   $('#pcustom').value = localStorage.getItem(LS + 'custom_' + curType) || '';
   renderPrompt();
   if (!tRun){ tLeft = m.min * 60; drawT(); }
@@ -226,7 +230,8 @@ function sents(s){ return s.split(/[.!?]+/).map(x => x.trim()).filter(x => /[A-Z
 function updateCount(){
   const t = $('#essay').value;
   const w = words(t), sn = sents(t);
-  $('#cw').textContent = w.length;
+  /* 翻译模式写的是中文译文，按汉字计数才有意义 */
+  $('#cw').textContent = curType === 'trans' ? (t.match(/[\u4e00-\u9fff]/g) || []).length : w.length;
   $('#cs').textContent = sn.length;
   $('#cl').textContent = sn.length ? Math.round(w.length / sn.length) : '–';
   localStorage.setItem(LS + 'draft_' + curType, t);
@@ -373,19 +378,22 @@ async function aiGrade(){
   else if (curType === 'small') user = `题目及要求:${p.desc || '(自定义)'}\n\n考生小作文(约 ${words(essay).length} 词):\n${essay}`;
   else user = `英文原文:\n${$('#source').value.trim()}\n\n考生译文:\n${essay}`;
   let acc = '', sawReason = false;
+  const bodyBase = {
+    model, stream: true, max_tokens: 4096,
+    messages: [
+      { role: 'system', content: { big: RUBRIC_BIG, small: RUBRIC_SMALL, trans: RUBRIC_TRANS }[curType] },
+      { role: 'user', content: user }
+    ]
+  };
+  const callAPI = body => fetch(AI_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+    body: JSON.stringify(body)
+  });
   try {
-    const resp = await fetch(AI_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
-      body: JSON.stringify({
-        model, stream: true, max_tokens: 4096,
-        thinking: { type: 'disabled' },
-        messages: [
-          { role: 'system', content: { big: RUBRIC_BIG, small: RUBRIC_SMALL, trans: RUBRIC_TRANS }[curType] },
-          { role: 'user', content: user }
-        ]
-      })
-    });
+    /* 默认关掉思考模式（流式 token 才会进 content）；个别模型不认 thinking 字段会 400，此时去掉该参数重试一次 */
+    let resp = await callAPI({ ...bodyBase, thinking: { type: 'disabled' } });
+    if (resp.status === 400) resp = await callAPI(bodyBase);
     if (!resp.ok){
       const tx = await resp.text();
       throw new Error(resp.status === 401 ? 'Key 无效(401):去问AI面板重新设置一次' : ('HTTP ' + resp.status + ' ' + tx.slice(0, 120)));
@@ -412,11 +420,17 @@ async function aiGrade(){
       }
       if (acc) $('#aiout').innerHTML = '<div class="essay">' + fmtMD(acc) + '</div>';
     }
+    if (buf.trim().startsWith('data:')) {   /* 流异常截断时末尾残留的一段也要吃掉 */
+      const payload = buf.trim().slice(5).trim();
+      if (payload && payload !== '[DONE]') {
+        try { const j = JSON.parse(payload); const d = (j.choices && j.choices[0] && j.choices[0].delta) || {}; if (d.content) acc += d.content; } catch(e) {}
+      }
+    }
     if (!acc) throw new Error(sawReason ? '模型只输出了思考内容(空返回)' : '空返回');
     localStorage.setItem(LS + 'ai', JSON.stringify({ date: new Date().toISOString().slice(0,10), type: m.name, title: p.title, text: acc }));
     renderLastAI();
   } catch(e){
-    $('#aiout').innerHTML = '<div class="item red"><b>批改失败</b>' + e.message + '</div>';
+    $('#aiout').innerHTML = '<div class="item red"><b>批改失败</b>' + fmtMD(e.message) + '</div>';
   } finally {
     btn.disabled = false; btn.textContent = '🤖 AI 深批';
   }

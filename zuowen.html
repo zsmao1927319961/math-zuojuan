@@ -205,7 +205,11 @@ function bind(){
   if (r3) r3.addEventListener('click', () => {
     const wk = [];
     for (let m = Math.max(1, cur-5); m <= cur; m++) sentsOf(m).forEach((s,i) => wk.push({m, i, s}));
-    const picks = wk.sort(() => Math.random()-.5).slice(0, 3);
+    for (let i = wk.length - 1; i > 0; i--){   /* Fisher-Yates 均匀洗牌 */
+      const j = Math.floor(Math.random() * (i + 1));
+      [wk[i], wk[j]] = [wk[j], wk[i]];
+    }
+    const picks = wk.slice(0, 3);
     $('#rollbox').innerHTML = picks.map(p =>
       `<div class="sen"><div class="zh">${p.s.zh}</div>
        <div class="cue">随机默写 · 第 ${p.m} 批 · 点显示英文</div>
@@ -219,23 +223,19 @@ function bind(){
 async function init(){
   try {
     const r = await fetch('data/sentences.json?' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
     DATA = await r.json();
   } catch(e){
-    $('#content').innerHTML = '<div class="notice red">句子数据加载失败,请确认已连到组卷网站服务器。</div>';
+    $('#content').innerHTML = '<div class="notice red">句子数据加载失败，请联网后刷新重试。</div>';
+    return;
+  }
+  if (!DATA || !Array.isArray(DATA.days) || !DATA.days.length){
+    $('#content').innerHTML = '<div class="notice red">句子数据格式不对，请联系 ZCode 检查 data/sentences.json。</div>';
     return;
   }
   DATA.map = dayMap();
   DATA.max = Math.max(...DATA.days.map(x => x.day));
-
-  // 旧版(按日历 day 存)打卡一次性迁移到内容键
-  const MIG = DATA.migrate || {};
-  Object.keys(MIG).forEach(od => (MIG[od] || []).forEach((h, i) => {
-    const ok = LS + 's_' + od + '_' + i;
-    if (localStorage.getItem(ok) === '1'){
-      localStorage.setItem(LS + 's2_' + h, '1');
-      localStorage.removeItem(ok);
-    }
-  }));
+  /* 注：旧日历版打卡迁移（migrate 表）已于 2026-09-26 移除——s2 内容键上线已久，所有设备早已完成迁移 */
 
   cur = landing();
   const q = parseInt(new URLSearchParams(location.search).get('p'), 10);

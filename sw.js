@@ -1,5 +1,5 @@
 /* Service Worker：网络优先 + 静态壳缓存。支持 iPad PWA 主屏打开，断网时仍能显示界面壳。 */
-const CACHE = 'shuxue-zuojuan-v43';
+const CACHE = 'shuxue-zuojuan-v44';
 const SHELL = [
   './',
   './index.html',
@@ -46,8 +46,10 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
 
   // API、题库图片、外部 CDN：一律走网络，不缓存（避免旧数据/超大缓存）
+  // 用 includes 而非 startsWith：GitHub Pages 部署在 /math-zuojuan/ 子路径下，
+  // pathname 是 /math-zuojuan/data/...，按根路径判断会漏网，把题库和全部图片塞进缓存
   if (url.origin !== location.origin) return;
-  if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/data/')) return;
+  if (url.pathname.includes('/api/') || url.pathname.includes('/data/')) return;
 
   // 静态资源：网络优先，成功则更新缓存；断网回退缓存
   e.respondWith(

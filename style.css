@@ -283,13 +283,21 @@ textarea, input, select { font: inherit; }
 @media print {
   body { background: #fff !important; }
   #topbar, #tabbar, #quick-bar, #today-empty, .tip-card, #modal-actions, #modal-note-box,
-  #modal-close, #modal-mask, .note-save-hint { display: none !important; }
+  #modal-close, #modal-mask, .note-save-hint, .today-btns, .today-reasons, .backup-row { display: none !important; }
   #app { padding: 0 !important; min-height: auto !important; }
-  .tab { display: block !important; padding: 0 !important; }
+  /* 只打印今日卷：更多页（题库/错题本）绝不进打印流 */
+  #tab-zuojuan { display: block !important; padding: 0 !important; }
+  #tab-more { display: none !important; }
   .today-row, .qrow { break-inside: avoid; page-break-inside: avoid; }
   img { max-width: 100% !important; }
 }
 .print-only { display: none; }
+/* 带答案出卷：附加在今日卷每题下方的答案块 */
+.print-ans { border-top: 1px dashed #c9cfda; margin-top: 8px; padding-top: 6px; font-size: 14px; line-height: 1.9; }
+.print-ans img { max-width: 100%; }
+/* 我的页：进度备份按钮行 */
+.backup-row { display: flex; gap: 10px; margin: 12px 0 4px; flex-wrap: wrap; }
+.backup-row .ghost { flex: 1; min-width: 140px; }
 @media print { .print-only { display: block !important; } }
 
 /* ---- 错题章节分布柱状图 ---- */

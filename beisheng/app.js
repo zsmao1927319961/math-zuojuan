@@ -41,7 +41,7 @@ async function loadEnglish(){
 /* ---------- 调度 ---------- */
 const KEY = (d,i) => LS + d.id + '_' + i;
 const getSt = (d,i) => { try{ return JSON.parse(localStorage.getItem(KEY(d,i))); }catch(e){ return null; } };
-const setSt = (d,i,st) => st ? localStorage.setItem(KEY(d,i), JSON.stringify(st)) : localStorage.removeItem(KEY(d,i));
+const setSt = (d,i,st) => { try { st ? localStorage.setItem(KEY(d,i), JSON.stringify(st)) : localStorage.removeItem(KEY(d,i)); } catch(e){} };
 const due = (d,i) => { const s = getSt(d,i); return !s || s.t <= Date.now(); };
 const deckDue = d => d.cards.reduce((n,_,i) => n + (due(d,i)?1:0), 0);
 const deckNew = d => d.cards.reduce((n,_,i) => n + (getSt(d,i)?0:1), 0);
@@ -194,6 +194,7 @@ document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () =>
   loadEnglish().then(()=>updateBadge());
   render();
   // 调试/直达: ?d=牌组id 直接开始复习; ?flip=1 自动翻第一张
+  // 守卫必须在轮询里做：英语牌库是异步 fetch 后才进 DECKS，同步判断永远查不到 eng
   const q = new URLSearchParams(location.search);
   if (q.get('debug')){
     setTimeout(()=>{
@@ -206,9 +207,14 @@ document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () =>
       document.body.appendChild(dv);
     }, 800);
   }
-  if (q.get('d') && DECKS.some(x=>x.id===q.get('d'))){
-    setTimeout(()=>{ startDeck(q.get('d'));
-      if (q.get('flip')) setTimeout(()=>{ const f=$('#flip'); if(f) f.click(); }, 300);
+  if (q.get('d')){
+    let waited = 0;
+    const t = setInterval(()=>{
+      waited += 200;
+      if (DECKS.some(x=>x.id===q.get('d'))){
+        clearInterval(t); startDeck(q.get('d'));
+        if (q.get('flip')) setTimeout(()=>{ const f=$('#flip'); if(f) f.click(); }, 300);
+      } else if (waited > 5000){ clearInterval(t); }
     }, 200);
   }
   // 测试钩子: ?demo=ok 自动翻面并按"认识"作答, 走真实点击路径直到本组完成

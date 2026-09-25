@@ -64,7 +64,7 @@
 <script>
 (function(){
   'use strict';
-  function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function esc(s){ var d = document.createElement('div'); d.textContent = String(s); return d.innerHTML.replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
   function nz(v, d){ return (v === undefined || v === null || v === '') ? d : v; }
   var MIG_KEY = 'mock_multi_v2_migrated';
   var K_D = 'mock_done_', K_R = 'mock_reason_', K_M = 'mock_mark_';
@@ -73,6 +73,11 @@
   fetch('data/mock_errors.json').then(function(r){ return r.json(); }).then(function(data){
     var exams = (data.exams || [data]).slice();
     exams.sort(function(a, b){ return (b.paper.date || '').localeCompare(a.paper.date || ''); });
+
+    if (!exams.length) {
+      document.getElementById('content').innerHTML = '<div class="exam"><div class="exam-head"><div class="paper-meta">mock_errors.json 里还没有卷子。</div></div></div>';
+      return;
+    }
 
     /* 旧版单卷 key（mock_done_<no>）一次性迁入日期最老的那套卷 */
     if (!localStorage.getItem(MIG_KEY)) {
@@ -118,7 +123,7 @@
         var group = qs.filter(function(q){ return (q.type || '') === tp; }).sort(function(a, b){ return a.no - b.no; });
         if (!group.length) return;
         el.insertAdjacentHTML('beforeend', '<div class="type-head">' + tp + '题 <span class="cnt">' + group.length + ' 题</span></div>');
-        group.forEach(function(q){ el.appendChild(card(q, KD, KR)); });
+        group.forEach(function(q){ el.appendChild(card(q, KD, KR, p)); });
       });
 
       el.insertAdjacentHTML('beforeend',
@@ -128,7 +133,7 @@
       return el;
     }
 
-    function card(q, KD, KR){
+    function card(q, KD, KR, p){
       var el = document.createElement('div');
       el.className = 'qcard';
       var done = localStorage.getItem(KD + q.no) === '1';
@@ -145,13 +150,13 @@
         (q.page ? '<button class="btn" data-act="page">📄 查看试卷第 ' + q.page + ' 页原题</button>' : '') +
         (q.jpages && q.jpages.length ? '<button class="btn" data-act="jie">📚 看解析（第' + q.jpages.join('、') + '页）</button>' : '') +
         '</div>' +
-        (q.page ? '<img loading="lazy" data-role="pageimg" style="display:none" src="data/images/euclid_pages/p' + q.page + '.jpg" alt="试卷第' + q.page + '页">' : '') +
+        (q.page ? '<img loading="lazy" data-role="pageimg" style="display:none" src="data/' + (p.page_dir || 'images/euclid_pages') + '/p' + q.page + '.jpg" alt="试卷第' + q.page + '页">' : '') +
         (q.jpages && q.jpages.length ? '<div class="jlist" data-role="jlist">' +
-          q.jpages.map(function(n){ return '<img loading="lazy" src="data/images/mock_pages/j' + ('0' + n).slice(-2) + '.jpg" alt="解析第' + n + '页">'; }).join('') +
+          q.jpages.map(function(n){ return '<img loading="lazy" src="data/images/mock/j' + ('0' + n).slice(-2) + '.jpg" alt="解析第' + n + '页">'; }).join('') +
           '</div>' : '') +
         '<div class="mark-row"><span class="mlab">掌握程度：</span>' +
         [['simple','👍 简单'],['careless','✏️ 粗心'],['unknown','❌ 不会']].map(function(mv){
-          var cur = localStorage.getItem(KM + q.no) || '';
+          var cur = localStorage.getItem(K_M + q.no) || '';
           return '<span class="mark' + (cur === mv[0] ? ' on-' + mv[0] : '') + '" data-mark="' + mv[0] + '">' + mv[1] + '</span>';
         }).join('') + '</div>' +
         '<div class="cause-row"><span class="mlab">错因快选：</span>' +
@@ -190,9 +195,9 @@
         mk.addEventListener('click', function(e){
           e.stopPropagation();
           var v = mk.dataset.mark;
-          var cur = localStorage.getItem(KM + q.no) || '';
-          if (cur === v) localStorage.removeItem(KM + q.no); else localStorage.setItem(KM + q.no, v);
-          cur = localStorage.getItem(KM + q.no) || '';
+          var cur = localStorage.getItem(K_M + q.no) || '';
+          if (cur === v) localStorage.removeItem(K_M + q.no); else localStorage.setItem(K_M + q.no, v);
+          cur = localStorage.getItem(K_M + q.no) || '';
           el.querySelectorAll('.mark').forEach(function(x){
             x.className = 'mark' + (x.dataset.mark === cur ? ' on-' + cur : '');
           });

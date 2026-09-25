@@ -70,7 +70,16 @@ function loadState() {
   return null;
 }
 function saveState() {
-  try { localStorage.setItem(LS_KEY, JSON.stringify(STATE)); } catch (e) { /* 超限时忽略 */ }
+  try { localStorage.setItem(LS_KEY, JSON.stringify(STATE)); }
+  catch (e) { toast('保存失败：浏览器存储空间不足，请先到「更多→我的」导出进度备份'); }
+}
+/* papers 里的 web- 记录是每次打标的冗余流水（结果已并入 question_state，统计时被遮蔽），
+   只保留最近 20 条兜底，否则 localStorage 迟早被撑爆 */
+function prunePapers() {
+  if (!STATE || !Array.isArray(STATE.papers)) return;
+  const keepO = [], keepWeb = [];
+  STATE.papers.forEach(p => (String(p.id || '').startsWith('web-') ? keepWeb : keepO).push(p));
+  STATE.papers = keepO.concat(keepWeb.slice(-20));
 }
 
 async function init() {
@@ -88,6 +97,7 @@ async function init() {
       const pr = await fetch('data/progress.json');
       STATE = await pr.json();
       if (!STATE || typeof STATE !== 'object') STATE = { papers: [], notes: {}, question_state: {} };
+      prunePapers();
       saveState();
       console.log('已导入现有 progress.json 到本地');
     } catch (e) {
@@ -321,7 +331,6 @@ function withLive(q) {
   return { ...q, live: {
     status: st, wrong_date: s.wrong_date, due: s.due, review_due: s.review_due,
     right_count: s.right_count, reason: s.reason, note: notes()[q.id] || '',
-    in_cuoti: wrongIds().includes(q.id),
   }};
 }
 
@@ -365,10 +374,10 @@ function todayRow(q) {
   const qimg = q.question_img ? `<img class="today-qimg" src="data/${q.question_img}" alt="题目">` : '';
   const noteTxt = (lv.note || '').trim();
   r.innerHTML = `
-    <div class="today-info"><div class="qname">${q.label}${tag}</div>
-      <div class="qsub">${sub || SOURCE_NAMES[q.source] || ''}</div></div>
+    <div class="today-info"><div class="qname">${escHtml(q.label)}${tag}</div>
+      <div class="qsub">${escHtml(sub || SOURCE_NAMES[q.source] || '')}</div></div>
     ${qimg}
-    <div class="today-note-line">${noteTxt ? `<span class="note-preview">${noteTxt.replace(/</g,'&lt;').slice(0,120)}</span>` : '<span class="note-empty">暂无笔记</span>'}</div>
+    <div class="today-note-line">${noteTxt ? `<span class="note-preview">${escHtml(noteTxt.slice(0, 120))}</span>` : '<span class="note-empty">暂无笔记</span>'}</div>
     <div class="today-btns"><button class="tbtn ok">做对</button><button class="tbtn bad">做错</button></div>
     <div class="today-reasons" hidden>
       <div class="today-reason-title">这道题错在哪？（可不选）</div>
@@ -397,7 +406,7 @@ function syncNotePreview(q) {
   if (!row) return;
   const txt = (notes()[q.id] || '').trim();
   row.innerHTML = txt
-    ? `<span class="note-preview">${txt.replace(/</g, '&lt;').slice(0, 120)}</span>`
+    ? `<span class="note-preview">${escHtml(txt.slice(0, 120))}</span>`
     : '<span class="note-empty">暂无笔记</span>';
 }
 
@@ -424,6 +433,7 @@ function markResult(id, val, reason) {
   }
   STATE.papers = STATE.papers || [];
   STATE.papers.push({ id: 'web-' + Date.now(), date: today, results: { [id]: val }, reasons: reason ? { [id]: reason } : {} });
+  prunePapers();
   saveState();
   refreshCuoti(); refreshStats(); refreshToday();
   if (val === 'right') {
@@ -439,7 +449,33 @@ async function autoGenerate(with_answer) {
   const qmap = new Map(QUESTIONS.map(q => [q.id, q]));
   TODAY = ids.map(id => qmap.get(id)).filter(Boolean).map(withLive);
   renderToday();
-  toast('已拼好新卷（10题），需要PDF请点「生成PDF」');
+  toast('已拼好新卷（10题）');
+}
+
+/* 「带答案出卷」：换一套新卷，把每题答案附在卡片下方，弹出打印；打完自动收起答案 */
+async function printWithAnswers() {
+  if (!TODAY.length) { toast('先出一套卷再打印'); return; }
+  if (!confirm('给当前这套卷附加答案并打开打印/存PDF？')) return;
+  for (const q of TODAY) {
+    const row = document.querySelector(`.today-row[data-qid="${CSS.escape(q.id)}"]`);
+    if (!row) continue;
+    const div = document.createElement('div');
+    div.className = 'print-ans';
+    if (q.answer_img) {
+      div.innerHTML = `<img src="data/${q.answer_img}" alt="答案">`;
+    } else if (q.answer_text || q.solution) {
+      const s = document.createElement('div');
+      div.appendChild(s);
+      renderLatexMixed(s, q.answer_text ? q.answer_text : (q.solution || ''));
+    } else {
+      div.textContent = '本题无文字答案，请在题库点开该题看解析图';
+    }
+    row.appendChild(div);
+  }
+  const cleanup = () => document.querySelectorAll('.print-ans').forEach(e => e.remove());
+  window.addEventListener('afterprint', cleanup, { once: true });
+  setTimeout(cleanup, 60000); // 兜底：用户取消打印时也能收起
+  window.print();
 }
 
 /* ---------- 题库（更多页） ---------- */
@@ -450,20 +486,20 @@ function fillFilters() {
   fillSelect('#f-source', sources.map(s => ({ value: s, text: SOURCE_NAMES[s] || s })));
   fillGroupedSelect('#f-chapter', [
     { label: '高数', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'gaoshu880'))
-        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'gaoshu880').chapter_name })) },
+        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'gaoshu880').chapter_name || c })) },
     { label: '线代讲义', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'xian_dai'))
-        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai').chapter_name })) },
+        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai').chapter_name || c })) },
     { label: '线代880', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'xian_dai880'))
-        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai880').chapter_name })) },
+        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai880').chapter_name || c })) },
     { label: '强化专题', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'qhzt'))
-        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'qhzt').chapter_name })) },
+        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'qhzt').chapter_name || c })) },
   ]);
   fillSelect('#f-type', types.map(t => ({ value: t, text: t })));
   refillKp();
   const levels = [...new Set(QUESTIONS.map(q => q.level).filter(Boolean))];
   fillSelect('#f-level', [{ value: '基础', text: '基础' }, { value: '综合', text: '综合' }, { value: '拓展', text: '拓展' }].filter(o => levels.includes(o.value)));
 }
-// 知识点下拉按已选来源动态刷新（避免通信原理考点混进数学筛选）
+// 知识点下拉按已选来源动态刷新：选定来源后只显示该来源的考点（未选来源时是全部学科的考点）
 function refillKp() {
   const el = document.querySelector('#f-kp'); if (!el) return;
   const src = document.querySelector('#f-source').value;
@@ -515,7 +551,7 @@ function renderBank() {
       const head = document.createElement('div'); head.className = 'group-head';
       const s0 = g.items[0] ? g.items[0].source : '';
       const srcTag = s0 === 'xian_dai' ? '线代' : (s0 === 'qhzt' ? '强化专题' : '高数');
-      head.innerHTML = `<span>${g.name}</span><span class="tag">${srcTag} · ${g.items.length}</span>`;
+      head.innerHTML = `<span>${escHtml(g.name)}</span><span class="tag">${srcTag} · ${g.items.length}</span>`;
       list.appendChild(head);
       const byType = {};
       g.items.forEach(q => { const t = q.type || '题目'; (byType[t] = byType[t] || []).push(q); });
@@ -529,16 +565,16 @@ function renderBank() {
 }
 
 function qrow(q) {
-  const r = document.createElement('div'); const lv = q.live || {};
+  const r = document.createElement('div'); r.className = 'qrow'; const lv = q.live || {};
   let tags = '';
   if (lv.status === 'done') tags += '<span class="tag ok">已掌握</span>';
   else if (lv.status === 'review') tags += '<span class="tag review">待巩固</span>';
   else if (lv.due) tags += '<span class="tag bad">待重做</span>';
   else if (lv.status === 'todo' && lv.wrong_date) tags += '<span class="tag bad">已标记做错</span>';
   else tags += '<span class="tag">未做</span>';
-  if (lv.reason) tags += `<span class="tag reason">${lv.reason}</span>`;
-  if (q.kp_sub) tags += `<span class="tag">${q.kp_sub}</span>`;
-  r.innerHTML = `<div class="qinfo"><div class="qname">${q.label}${tags}</div><div class="qsub">${SOURCE_NAMES[q.source] || ''}${q.page_hint ? ' · ' + q.page_hint : ''}</div></div>`;
+  if (lv.reason) tags += `<span class="tag reason">${escHtml(lv.reason)}</span>`;
+  if (q.kp_sub) tags += `<span class="tag">${escHtml(q.kp_sub)}</span>`;
+  r.innerHTML = `<div class="qinfo"><div class="qname">${escHtml(q.label)}${tags}</div><div class="qsub">${escHtml(SOURCE_NAMES[q.source] || '')}${q.page_hint ? ' · ' + escHtml(q.page_hint) : ''}</div></div>`;
   r.onclick = () => showModal(q);
   return r;
 }
@@ -562,19 +598,19 @@ function renderCuoti() {
   const groups = cuotiMode === 'kp' ? groupBy(qs, q => q.kp_sub || '未分类') : groupBy(qs, q => q.chapter_name || q.chapter);
   groups.forEach(g => {
     const head = document.createElement('div'); head.className = 'group-head';
-    head.innerHTML = `<span>${g.name}</span><span class="tag">${g.items.length}</span>`;
+    head.innerHTML = `<span>${escHtml(g.name)}</span><span class="tag">${g.items.length}</span>`;
     list.appendChild(head);
     g.items.forEach(q => list.appendChild(cuotiRow(q)));
   });
 }
 function cuotiRow(q) {
   const r = document.createElement('div'); r.className = 'qrow'; const lv = q.live || {};
-  let tags = `<span class="tag">${SOURCE_NAMES[q.source] || ''}</span>`;
+  let tags = `<span class="tag">${escHtml(SOURCE_NAMES[q.source] || '')}</span>`;
   if (lv.status === 'review') tags += '<span class="tag review">待巩固</span>';
   if (lv.due) tags += '<span class="tag bad">第7天重做</span>';
-  if (lv.reason) tags += `<span class="tag reason">${lv.reason}</span>`;
-  if (q.kp_sub) tags += `<span class="tag">${q.kp_sub}</span>`;
-  r.innerHTML = `<div class="qinfo"><div class="qname">${q.label}${tags}</div><div class="qsub">${lv.wrong_date ? '错题日期 ' + lv.wrong_date : ''}${lv.due ? ' · ' + lv.due + ' 重做' : ''}${lv.review_due ? ' · ' + lv.review_due + ' 二刷' : ''}</div></div>`;
+  if (lv.reason) tags += `<span class="tag reason">${escHtml(lv.reason)}</span>`;
+  if (q.kp_sub) tags += `<span class="tag">${escHtml(q.kp_sub)}</span>`;
+  r.innerHTML = `<div class="qinfo"><div class="qname">${escHtml(q.label)}${tags}</div><div class="qsub">${escHtml((lv.wrong_date ? '错题日期 ' + lv.wrong_date : '') + (lv.due ? ' · ' + lv.due + ' 重做' : '') + (lv.review_due ? ' · ' + lv.review_due + ' 二刷' : ''))}</div></div>`;
   r.onclick = () => showModal(q);
   return r;
 }
@@ -633,7 +669,7 @@ function showModal(q) {
   if (lv.status === 'done') tags += '<span class="tag ok">已掌握</span>';
   else if (lv.status === 'review') tags += '<span class="tag review">待巩固</span>';
   else if (lv.due) tags += '<span class="tag bad">待重做</span>';
-  if (q.kp_sub) tags += `<span class="tag">${q.kp_sub}</span>`;
+  if (q.kp_sub) tags += `<span class="tag">${escHtml(q.kp_sub)}</span>`;
   const img = q.question_img ? `<img src="data/${q.question_img}" alt="题目">`
     : (q.question_text ? `<div class="qtext katex-auto">${escHtml(q.question_text)}</div>` : '<div class="placeholder">本题无图</div>');
   const ans = q.answer_img ? `<img src="data/${q.answer_img}" alt="答案">`
@@ -642,13 +678,13 @@ function showModal(q) {
   m.innerHTML = `
     <div id="modal-mask"></div>
     <div id="modal-box">
-      <div id="modal-head"><span id="modal-label">${q.label}</span><button id="modal-close">×</button></div>
+      <div id="modal-head"><span id="modal-label">${escHtml(q.label)}</span><button id="modal-close">×</button></div>
       <div id="modal-tags">${tags}</div>
       <div id="modal-img">${img}</div>
       ${ans ? `<div id="modal-ans-box"><div class="today-reason-title">答案</div>${ans}</div>` : ''}
       <div id="modal-note-box">
         <div class="today-reason-title">我的笔记（可写思路/易错点，自动保存）</div>
-        <textarea id="modal-note" rows="3" placeholder="例如：这题不能硬算，先观察对称性……">${(notes()[q.id] || lv.note || '').replace(/</g,'&lt;')}</textarea>
+        <textarea id="modal-note" rows="3" placeholder="例如：这题不能硬算，先观察对称性……">${escHtml((notes()[q.id] || lv.note || '').slice(0, 2000))}</textarea>
         <div class="note-save-hint" id="note-save-hint">上次保存：--</div>
       </div>
       <div id="modal-actions">
@@ -711,6 +747,7 @@ function setBankQuick(q) {
 }
 function bindEvents() {
   $('#btn-auto').onclick = () => autoGenerate(false);
+  $('#btn-auto-ans').onclick = () => printWithAnswers();
   $('#btn-print').onclick = () => window.print();
   ['#f-source','#f-chapter','#f-type','#f-kp','#f-level'].forEach(s => $(s).onchange = function () { if (s === '#f-source') refillKp(); renderBank(); });
   document.querySelectorAll('#bank-quick .chip').forEach(c => c.onclick = () => setBankQuick(c.dataset.quick || ''));

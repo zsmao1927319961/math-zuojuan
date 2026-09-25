@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>专业课每日三题</title>
+<title>专业课每日五题</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="katex/katex.min.css">
 <script defer src="katex/katex.min.js"></script>
@@ -62,7 +62,7 @@
 <a class="back" href="./index.html">← 返回组卷网</a>
 <div class="wrap">
   <div class="paper-card">
-    <div class="paper-name" id="pname">专业课每日三题</div>
+    <div class="paper-name" id="pname">专业课每日五题</div>
     <div class="paper-meta" id="pmeta">加载中…</div>
     <div class="stats" id="pstats"></div>
   </div>
@@ -76,7 +76,8 @@
   var LS_KEY = 'shuxue_progress_v1';
   var MODE = null;              /* 'server' | 'static' */
   var STATE = null;             /* 静态版进度 */
-  var PICKS = [];               /* 今日三题 */
+  var PICKS = [];               /* 今日五题 */
+  var POOL = [];                /* 题池（换一批/统计都用它；PICKS 每次换批被整体替换，pool 不能挂在它身上） */
   var MARKED = {};              /* 本次会话内的打标覆盖（即时刷新状态用） */
   var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
 
@@ -124,11 +125,11 @@
              note: (notesObj()[q.id] || ''), reason: st.reason };
   }
 
-  /* ---------- 选题：每天随机抽 3 道（当天固定，跨天自动换新）；做对的题冷却 7 天后回池 ---------- */
+  /* ---------- 选题：每天随机抽 5 道（当天固定，跨天自动换新）；到期回炉题优先占坑；做对的题冷却 7 天后回池 ---------- */
   var COOLDOWN_DAYS = 7;
   function hashSeed(str){
     var h = 2166136261;
-    for (var i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = (h * 16777619) >>> 0; }
+    for (var i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
     return h >>> 0;
   }
   function mulberry(seed){
@@ -151,25 +152,31 @@
   function rollNonce(){ try { return parseInt(localStorage.getItem('zy_roll_nonce') || '0', 10) || 0; } catch(e){ return 0; } }
   function bumpNonce(){ try { localStorage.setItem('zy_roll_nonce', String(rollNonce() + 1)); } catch(e){} }
   function drawPicks(pool, nonce){
-    var eligible = [], cooldown = 0;
-    pool.forEach(function(q){ if (inCooldown(q)) { cooldown++; return; } eligible.push(q); });
+    /* 到期回炉题（做错后 1/3/7 天到期）优先占坑（最多 3 题，最逾期优先），其余坑给新题随机 */
+    var dueQs = [], fresh = [], cooldown = 0;
+    pool.forEach(function(q){
+      if (inCooldown(q)) { cooldown++; return; }
+      var lv = liveOf(q);
+      if ((lv.status === 'todo' || lv.status === 'relearn') && lv.due && lv.due <= TODAY) dueQs.push(q);
+      else fresh.push(q);
+    });
     var rng = mulberry(hashSeed(TODAY + '#' + nonce));
-    for (var i = eligible.length - 1; i > 0; i--) {
-      var j = Math.floor(rng() * (i + 1));
-      var tmp = eligible[i]; eligible[i] = eligible[j]; eligible[j] = tmp;
-    }
-    var picks = eligible.slice(0, DAILY);
+    function shuf(a){ for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(rng() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+    shuf(dueQs); shuf(fresh);
+    dueQs.sort(function(a,b){ return (liveOf(a).due || '').localeCompare(liveOf(b).due || ''); });
+    var picks = dueQs.slice(0, 3);
+    if (picks.length < DAILY) picks = picks.concat(fresh.slice(0, DAILY - picks.length));
     if (picks.length < DAILY) {   /* 冷却中太多导致不够 → 最早做对的优先回池 */
       var cds = pool.filter(function(q){ return inCooldown(q); });
       cds.sort(function(a,b){ return (liveOf(a).right_date || '').localeCompare(liveOf(b).right_date || ''); });
       picks = picks.concat(cds.slice(0, DAILY - picks.length));
     }
-    return { picks: picks, cooldown: cooldown, eligible: eligible.length };
+    return { picks: picks, cooldown: cooldown, eligible: fresh.length + dueQs.length };
   }
   function loadPicks(pool){ return drawPicks(pool, rollNonce()).picks; }
 
   /* ---------- 打标：回炉池规则（服务端 progress.py / 静态版逻辑一致） ----------
-     做错 → 1/3/7 天递增重现；错后做对一次 → 明天再来，连续做对两次 → done 移出 */
+     做错 → 1/3/7 天递增重现；错后做对 → 明天再来确认，连续做对三次 → done 移出 */
   function mark(q, val, reason){
     var prev = MARKED[q.id] || (MODE === 'server' ? (q.live || {}) : (qstate()[q.id] || {}));
     var s;
@@ -204,6 +211,10 @@
     rec.results[q.id] = val;
     if (reason) rec.reasons[q.id] = reason;
     STATE.papers.push(rec);
+    /* 只保留最近 20 条本页记录：这些 results 已并入 question_state，纯冗余，不清理会撑爆 localStorage */
+    var keepO = [], keepZ = [];
+    STATE.papers.forEach(function(x){ (String(x.id || '').indexOf('zy-') === 0 ? keepZ : keepO).push(x); });
+    STATE.papers = keepO.concat(keepZ.slice(-20));
     saveState();
     return Promise.resolve();
   }
@@ -278,6 +289,7 @@
       qi.className = 'qimg';
       qi.src = 'data/' + q.question_img;
       qi.alt = '题目配图';
+      qi.onerror = function(){ qi.style.display = 'none'; };
       el.querySelector('.qtext').after(qi);
     }
     var lvR = liveOf(q);
@@ -293,6 +305,7 @@
       ai.className = 'qimg';
       ai.src = 'data/' + q.answer_img;
       ai.alt = '答案配图';
+      ai.onerror = function(){ ai.style.display = 'none'; };
       el.querySelector('.katex-ans').after(ai);
     }
     if (lvR.wrong_date) {
@@ -320,8 +333,9 @@
     };
     var stEl = el.querySelector('[data-role="st"]');
     el.querySelector('[data-act="right"]').onclick = function(){
+      if (el.dataset.marked) return;   /* 防双击双计：一次打标定死 */
+      el.dataset.marked = '1';
       mark(q, 'right').then(function(){
-        el.dataset.marked = '1';
         var lv = liveOf(q);
         if (lv.status === 'done') {
           el.classList.add('done'); el.classList.remove('wrong');
@@ -338,11 +352,11 @@
     };
     Array.prototype.forEach.call(reasons.querySelectorAll('.chip'), function(c){
       c.onclick = function(){
-        Array.prototype.forEach.call(reasons.querySelectorAll('.chip'), function(x){ x.classList.remove('on'); });
-        c.classList.add('on');
+        if (el.dataset.marked) return;   /* 防双击双计 */
+        el.dataset.marked = '1';
         var reason = c.dataset.reason === '直接确认' ? null : c.dataset.reason;
         mark(q, 'wrong', reason).then(function(){
-          el.dataset.marked = '1'; el.classList.add('wrong');
+          el.classList.add('wrong');
           var gap = RELEARN_INT[Math.min(liveOf(q).wrong_count, RELEARN_INT.length) - 1];
           stEl.innerHTML = '<span class="tag bad">已标记做错·' + gap + '天后重现' + (reason ? '·' + reason : '') + '</span>';
           refreshStats();
@@ -352,7 +366,7 @@
     return el;
   }
   function refreshStats(){
-    var pool = PICKS.pool, lv, done = 0, due = 0, overdue = 0, todayDone = 0, cooldown = 0;
+    var pool = POOL, lv, done = 0, due = 0, overdue = 0, todayDone = 0, cooldown = 0;
     pool.forEach(function(q){
       lv = liveOf(q);
       if (lv.status === 'done') done++;
@@ -377,7 +391,7 @@
 
   function reshuffle(){
     bumpNonce();
-    var res = drawPicks(PICKS.pool, rollNonce());
+    var res = drawPicks(POOL, rollNonce());
     PICKS = res.picks;
     var root = document.getElementById('content');
     root.innerHTML = '';
@@ -392,11 +406,11 @@
     });
     pool.sort(function(a,b){ return a.id.localeCompare(b.id); });
     if (!pool.length) { document.getElementById('pmeta').textContent = '题池为空'; return; }
+    POOL = pool;
     PICKS = loadPicks(pool);
-    PICKS.pool = pool;
     var meta = document.getElementById('pmeta');
     meta.textContent = TODAY + ' · ' +
-      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 每天随机抽 3 题（做对的题冷却 7 天后自动回池）· 错题按 1/3/7 天回炉，连对 3 次出池 · 按「换一批」立即换新';
+      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 每天随机抽 5 题（做对的题冷却 7 天后自动回池）· 错题按 1/3/7 天回炉优先重现，连对 3 次出池 · 按「换一批」立即换新';
     var rb = document.createElement('button');
     rb.textContent = '🔄 换一批';
     rb.style.cssText = 'margin-left:10px;padding:2px 12px;border:1px solid #b9c6d8;border-radius:14px;background:#fff;color:#1f6fb2;cursor:pointer;font-size:12px;vertical-align:middle;';
@@ -410,7 +424,7 @@
   fetch('api/questions').then(function(r){ if (!r.ok) throw new Error('no api'); return r.json(); }).then(function(qs){
     MODE = 'server'; start(qs);
   }).catch(function(){
-    fetch('data/questions.json').then(function(r){ return r.json(); }).then(function(qs){
+    fetch('data/questions.json').then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.json(); }).then(function(qs){
       MODE = 'static';
       STATE = loadState();
       if (!STATE) {
@@ -422,6 +436,8 @@
           saveState(); start(qs);
         }).catch(function(){ STATE = { papers: [], notes: {}, question_state: {} }; saveState(); start(qs); });
       } else { start(qs); }
+    }).catch(function(){
+      document.getElementById('pmeta').textContent = '题库加载失败：请确认通过 https 访问本站后刷新（本地双击打开无法加载数据）';
     });
   });
 })();

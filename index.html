@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="katex/katex.min.css">
 <script defer src="katex/katex.min.js"></script>
-<script defer src="katex/contrib/auto-render.min.js"></script>
 </head>
 <body>
 <div id="app">
@@ -35,8 +34,8 @@
       <div id="today-empty" class="today-empty" hidden>今天还没出卷，点「一键出卷」生成。</div>
     </div>
     <div class="tip-card slim">
-      <p>· 每题做完点「做对 / 做错」。做对一次进入待巩固，15 天后自动再排；做错进入错题本，7 天后自动重排。</p>
-      <p>· 试卷 PDF 会直接生成到桌面并自动打开。</p>
+      <p>· 每题做完点「做对 / 做错」。做对即记为已掌握；做错进入错题本，7 天后自动重排。</p>
+      <p>· 「打印/存PDF」把今天的卷子存成 PDF 或打印；「带答案出卷」换一套新卷并附答案打印。</p>
       <p>· 题目、错题本、统计都在右下「更多」里。</p>
     </div>
   </main>
@@ -97,11 +96,16 @@
     <section id="more-mine" class="more-pane">
       <div id="stats" class="stat-card"></div>
       <div id="mine-extra"></div>
+      <div class="backup-row">
+        <button id="btn-export" class="ghost">⬇️ 导出进度备份</button>
+        <button id="btn-import" class="ghost">⬆️ 导入备份</button>
+        <input type="file" id="import-file" accept="application/json,.json" hidden>
+      </div>
       <div class="tip-card">
         <b>使用说明</b>
         <p>· 今日拼卷即日常主界面，出卷后做对/做错即可，错因可选。</p>
-        <p>· 做错进入错题本，7 天后自动排回拼卷；做对先到「待巩固」，15 天后再次做对才彻底掌握。</p>
-        <p>· 本页可浏览题库、看错题本与统计。</p>
+        <p>· 做错进入错题本，7 天后自动排回拼卷；做对直接记为已掌握。</p>
+        <p>· 进度只存在本机浏览器——换设备/清理浏览器前，先点「导出进度备份」。</p>
       </div>
     </section>
   </main>
