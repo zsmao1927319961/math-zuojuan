@@ -124,6 +124,7 @@ function renderCard(){
   $('#main').innerHTML = `
     <div class="rvhead"><span class="cnt">${chip}${idx+1} / ${queue.length}${isNew?' · 新卡':''}</span>
       <button class="backbtn" id="quit">‹ 牌库</button></div>
+    <div class="prog"><i style="width:${Math.round(idx/queue.length*100)}%"></i></div>
     <div class="qcard" id="qcard">
       <div class="q">${c.f}</div>
       <div class="a" id="ans" style="display:none">${c.b}</div>
