@@ -147,6 +147,12 @@ function renderCard(){
   document.querySelectorAll('.abtn').forEach(b => b.addEventListener('click', e => {
     e.stopPropagation();
     answer(d, i, b.dataset.k); state.shown++;
+    // 忘记/模糊: 今天排到队尾再重现一次(每卡本组至多补现2次); 认识: 直接过
+    if (b.dataset.k !== 'ok'){
+      state.req = state.req || {};
+      if ((state.req[i] || 0) < 2){ state.req[i] = (state.req[i] || 0) + 1; state.queue.push(i); }
+    }
+    state.idx++;
     render(); window.scrollTo(0,0);
   }));
   renderMath($('#main'));
@@ -203,5 +209,20 @@ document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () =>
     setTimeout(()=>{ startDeck(q.get('d'));
       if (q.get('flip')) setTimeout(()=>{ const f=$('#flip'); if(f) f.click(); }, 300);
     }, 200);
+  }
+  // 测试钩子: ?demo=ok 自动翻面并按"认识"作答, 走真实点击路径直到本组完成
+  if (q.get('demo')){
+    setTimeout(()=>{
+      const t = setInterval(()=>{
+        const f = $('#flip');
+        if (f && f.offsetParent !== null){ f.click(); return; }
+        const b = document.querySelector('.abtn.' + (q.get('demo') === '1' ? 'ok' : q.get('demo')));
+        if (b){ b.click(); return; }
+        clearInterval(t);
+        const dv = document.createElement('div'); dv.id = 'demoend';
+        dv.textContent = 'DEMO-END ' + ($('#main').textContent || '').replace(/\s+/g, ' ').slice(0, 90);
+        document.body.appendChild(dv);
+      }, 250);
+    }, 400);
   }
 })();
