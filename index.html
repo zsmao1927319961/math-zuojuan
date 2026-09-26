@@ -3,129 +3,178 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>考研数学 · 今日拼卷</title>
-<meta name="theme-color" content="#ff7d1a">
+<title>通信原理 · 专业课题库</title>
+<meta name="theme-color" content="#2b3a67">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="katex/katex.min.css">
-<script defer src="katex/katex.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f5f6fa;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;color:#22262e}
+  /* —— 品牌头部（仿大观园 landing）—— */
+  .hero{background:linear-gradient(135deg,#2b3a67 0%,#3d5aa9 55%,#4f74d8 100%);color:#fff;padding:26px 18px 58px;position:relative;overflow:hidden}
+  .hero::after{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero::before{content:'';position:absolute;right:40px;bottom:-90px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.05)}
+  .hero-in{max-width:860px;margin:0 auto;position:relative;z-index:1}
+  .brand{font-size:26px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+  .brand .logo{width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:20px}
+  .slogan{margin-top:8px;font-size:13px;opacity:.85;letter-spacing:2px}
+  .cd{display:inline-flex;align-items:center;gap:6px;margin-top:16px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 14px;font-size:12.5px}
+  .cd b{font-size:14px}
+  .date{margin-left:10px;font-size:12px;opacity:.75}
+  .wrap{max-width:860px;margin:-36px auto 0;padding:0 14px 40px;position:relative;z-index:2}
+  /* —— 统计卡 —— */
+  .stats-card{background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 6px 24px rgba(35,50,90,.10);margin-bottom:16px}
+  .sec-t{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .sec-t .n{font-size:11px;color:#98a0ad;font-weight:400;margin-left:auto}
+  .stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .stat{flex:1;min-width:70px;background:#f6f7fb;border-radius:12px;padding:10px 6px;text-align:center}
+  .stat b{display:block;font-size:19px;color:#2b3a67}
+  .stat span{font-size:11px;color:#7a828f}
+  .stat.ok b{color:#1d9e6f}.stat.rev b{color:#c07a10}.stat.bad b{color:#c0504d}
+  .sub{font-size:12px;color:#7a828f;margin-top:10px;line-height:1.8}
+  /* —— 功能中心 —— */
+  .sec{margin-top:20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:12px}
+  .fcard{background:#fff;border-radius:16px;padding:16px;display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:inherit;box-shadow:0 2px 10px rgba(30,40,60,.06);border:1px solid #eef0f5;transition:transform .15s,box-shadow .15s}
+  .fcard:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(35,50,90,.12)}
+  .fico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;flex:none}
+  .fcard .ft{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .fcard .fd{font-size:12px;color:#7a828f;margin-top:5px;line-height:1.7}
+  .badge{font-size:10px;border-radius:6px;padding:1.5px 7px;font-weight:600;white-space:nowrap}
+  .badge.open{background:#e8f7f0;color:#1d9e6f}
+  .badge.hot{background:#fdeaea;color:#c0504d}
+  .badge.info{background:#eaf1ff;color:#2f6bff}
+  /* —— 备份卡 —— */
+  .bk{background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 2px 10px rgba(30,40,60,.06);border:1px solid #eef0f5;margin-top:20px}
+  .bk-row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+  .btn{border:1px solid #d6dbe3;background:#f7f8fb;border-radius:10px;padding:8px 18px;font-size:13px;cursor:pointer}
+  .btn.primary{background:#3d5aa9;border-color:#3d5aa9;color:#fff}
+  footer{text-align:center;font-size:11.5px;color:#98a0ad;padding:8px 0 26px}
+  #toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(20,24,32,.92);color:#fff;border-radius:10px;padding:9px 18px;font-size:13.5px;z-index:99}
+</style>
 </head>
 <body>
-<div id="app">
-  <header id="topbar">
-    <div>
-      <h1 id="page-title">今日拼卷</h1>
-      <div id="today-date" class="top-sub"></div>
-    </div>
-    <div id="top-actions"></div>
-  </header>
-
-  <!-- ============ 主界面：今日拼卷（一日一页） ============ -->
-  <main id="tab-zuojuan" class="tab active">
-    <div id="quick-bar">
-      <button id="btn-auto" class="primary">一键出卷</button>
-      <button id="btn-auto-ans" class="ghost">带答案出卷</button>
-      <button id="btn-print" class="ghost">打印/存PDF</button>
-    </div>
-    <div id="today-panel">
-      <div class="today-head">今日拼卷 <span id="today-count"></span></div>
-      <div id="today-list"></div>
-      <div id="today-empty" class="today-empty" hidden>今天还没出卷，点「一键出卷」生成。</div>
-    </div>
-    <div class="tip-card slim">
-      <p>· 每题做完点「做对 / 做错」。做对即记为已掌握；做错进入错题本，7 天后自动重排。</p>
-      <p>· 「打印/存PDF」把今天的卷子存成 PDF 或打印；「带答案出卷」换一套新卷并附答案打印。</p>
-      <p>· 题目、错题本、统计都在右下「更多」里。</p>
-    </div>
-  </main>
-
-  <!-- ============ 更多：题库 / 错题本 / 我的（低频收纳） ============ -->
-  <main id="tab-more" class="tab">
-    <div id="more-nav">
-      <button class="chip active" data-more="bank">题库</button>
-      <button class="chip" data-more="cuoti">错题本</button>
-      <button class="chip" data-more="mine">我的</button>
-      <a class="chip" href="zuowen.html" style="text-decoration:none;display:inline-flex;align-items:center">背作文 ↗</a>
-      <a class="chip" href="pigai.html" style="text-decoration:none;display:inline-flex;align-items:center">作文批改 ↗</a>
-      <a class="chip" href="mock.html" style="text-decoration:none;display:inline-flex;align-items:center">模拟错题 ↗</a>
-      <a class="chip" href="zhenti.html" style="text-decoration:none;display:inline-flex;align-items:center">真题错题 ↗</a>
-      <a class="chip" href="zy.html" style="text-decoration:none;display:inline-flex;align-items:center;background:#e8f7f0;border-color:#bfe6d6;color:#1d9e6f">专业课每日 ↗</a>
-      <a class="chip" href="lianxi.html" style="text-decoration:none;display:inline-flex;align-items:center;background:#eaf1ff;border-color:#c6d8ff;color:#2f6bff">在线刷题 ↗</a>
-      <a class="chip" href="ditu.html" style="text-decoration:none;display:inline-flex;align-items:center;background:#f3ecff;border-color:#ddc8ff;color:#7a3ff2">掌握地图 ↗</a>
-      <a class="chip" href="beisheng/index.html" style="text-decoration:none;display:inline-flex;align-items:center;background:#fff7e0;border-color:#f0dfae;color:#b26a00">背诵宝典 ↗</a>
-    </div>
-
-    <section id="more-bank" class="more-pane active">
-      <div id="filters">
-        <select id="f-source"><option value="">全部来源</option></select>
-        <select id="f-chapter"><option value="">全部章节</option></select>
-        <select id="f-type"><option value="">全部题型</option></select>
-        <select id="f-kp"><option value="">全部知识点</option></select>
-        <select id="f-level"><option value="">全部层级</option></select>
-      </div>
-      <div id="list"></div>
-    </section>
-
-    <section id="more-cuoti" class="more-pane">
-      <div id="cuoti-filters">
-        <div class="chip-row" id="cuoti-mode">
-          <button class="chip active" data-mode="chapter">按章节</button>
-          <button class="chip" data-mode="kp">按知识点</button>
-        </div>
-        <div class="chip-row" id="cuoti-reason">
-          <button class="chip active" data-reason="">全部错因</button>
-          <button class="chip" data-reason="概念不清">概念不清</button>
-          <button class="chip" data-reason="计算失误">计算失误</button>
-          <button class="chip" data-reason="方法不会">方法不会</button>
-          <button class="chip" data-reason="审题踩坑">审题踩坑</button>
-        </div>
-        <div class="chip-row" id="cuoti-source">
-          <button class="chip active" data-src="">全部</button>
-          <button class="chip" data-src="gaoshu880">高数</button>
-          <button class="chip" data-src="xian_dai">线代</button>
-        </div>
-      </div>
-      <div id="cuoti-count"></div>
-      <div id="cuoti-list"></div>
-      <div id="cuoti-empty" class="empty" hidden>
-        <div class="empty-icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg></div>
-        <div class="empty-title">还没有错题</div>
-        <div class="empty-tip">在「今日拼卷」里点每题的「做错」即可自动收录</div>
-      </div>
-    </section>
-
-    <section id="more-mine" class="more-pane">
-      <div id="stats" class="stat-card"></div>
-      <div id="mine-extra"></div>
-      <div class="backup-row">
-        <button id="btn-export" class="ghost">⬇️ 导出进度备份</button>
-        <button id="btn-import" class="ghost">⬆️ 导入备份</button>
-        <input type="file" id="import-file" accept="application/json,.json" hidden>
-      </div>
-      <div class="tip-card">
-        <b>使用说明</b>
-        <p>· 今日拼卷即日常主界面，出卷后做对/做错即可，错因可选。</p>
-        <p>· 做错进入错题本，7 天后自动排回拼卷；做对直接记为已掌握。</p>
-        <p>· 进度只存在本机浏览器——换设备/清理浏览器前，先点「导出进度备份」。</p>
-      </div>
-    </section>
-  </main>
-
-  <nav id="tabbar">
-    <button class="tab-btn active" data-tab="zuojuan">
-      <span class="t-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4"/><path d="M10 12h6M10 16h6M10 8h2"/></svg></span>
-      <span>今日</span>
-    </button>
-    <button class="tab-btn" data-tab="more">
-      <span class="t-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></span>
-      <span>更多</span><span id="cuoti-badge" class="badge" hidden></span>
-    </button>
-  </nav>
+<div class="hero">
+  <div class="hero-in">
+    <div class="brand"><span class="logo">📡</span>通信原理 · 专业课题库</div>
+    <div class="slogan">专题突破 · 智能复测 · 研途相伴</div>
+    <div><span class="cd" id="cd"></span><span class="date" id="date"></span></div>
+  </div>
 </div>
+<div class="wrap">
+  <div class="stats-card">
+    <div class="sec-t">学习总览<span class="n" id="today-line"></span></div>
+    <div class="stats" id="stats"></div>
+    <div class="sub" id="today-status">加载中…</div>
+  </div>
 
-<div id="modal" hidden></div>
+  <div class="sec">
+    <div class="sec-t">功能中心</div>
+    <div class="grid">
+      <a class="fcard" href="zy.html">
+        <div class="fico" style="background:#e8f7f0">📅</div>
+        <div><div class="ft">每日五题<span class="badge open">每天</span></div>
+        <div class="fd">随机抽 5 题，错题回炉优先，做对冷却 7 天回池</div></div>
+      </a>
+      <a class="fcard" href="lianxi.html">
+        <div class="fico" style="background:#eaf1ff">✏️</div>
+        <div><div class="ft">在线刷题<span class="badge info">26 专题</span></div>
+        <div class="fd">按专题连续刷，三键标掌握，错题自动进复测计划</div></div>
+      </a>
+      <a class="fcard" href="ditu.html">
+        <div class="fico" style="background:#f3ecff">🗺️</div>
+        <div><div class="ft">掌握地图<span class="badge info">一图总览</span></div>
+        <div class="fd">113 题逐格着色，点开即看题、改状态</div></div>
+      </a>
+      <a class="fcard" href="lianxi.html#retest">
+        <div class="fico" style="background:#fdeaea">🔁</div>
+        <div><div class="ft">错题复测<span class="badge hot" id="retest-badge">0 待复测</span></div>
+        <div class="fd">「不会」按 1/3/7 天、「不熟练」按 2/5/10 天科学排期</div></div>
+      </a>
+      <a class="fcard" href="beisheng/index.html">
+        <div class="fico" style="background:#fff4e0">📖</div>
+        <div><div class="ft">背诵宝典<span class="badge open">通信 32 卡</span></div>
+        <div class="fd">公式记忆卡 · 艾宾浩斯翻卡复习</div></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="bk">
+    <div class="sec-t">进度备份</div>
+    <div class="sub">做题进度只存在本机浏览器——换设备 / 清理浏览器前，先导出备份。</div>
+    <div class="bk-row">
+      <button class="btn primary" id="btn-export">⬇️ 导出进度备份</button>
+      <button class="btn" id="btn-import">⬆️ 导入备份</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </div>
+  </div>
+
+  <footer>通信原理 · 强化专题题库（26 专题 113 题） · 数据存本机</footer>
+</div>
 <div id="toast" hidden></div>
-<script src="app.js"></script>
+<script>
+(function(){
+'use strict';
+var LS_KEY = 'shuxue_progress_v1';
+var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
+var EXAM = '2026-12-19';
+function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function toast(msg){ var t = document.getElementById('toast'); t.textContent = msg; t.hidden = false; clearTimeout(t._t); t._t = setTimeout(function(){ t.hidden = true; }, 2400); }
+
+var d = new Date();
+document.getElementById('date').textContent = d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日 · 周' + '日一二三四五六'[d.getDay()];
+var n = Math.round((new Date(EXAM + 'T00:00:00') - new Date(TODAY + 'T00:00:00')) / 86400000);
+document.getElementById('cd').innerHTML = '距考研初试还有 <b>' + n + '</b> 天';
+
+var STATE = null;
+try { STATE = JSON.parse(localStorage.getItem(LS_KEY)); } catch(e){}
+if (!STATE) STATE = { papers: [], notes: {}, question_state: {} };
+var qsState = STATE.question_state || {};
+var total = 113, done = 0, wrong = 0, due = 0;
+for (var i = 1; i <= 27; i++) {} /* 计数基于 qhzt-<n>-<k> 的 id 形态 */
+Object.keys(qsState).forEach(function(qid){
+  if (qid.indexOf('qhzt-') !== 0) return;
+  var s = qsState[qid];
+  if (s.status === 'done') done++;
+  else if (s.wrong_date || s.due) { wrong++; if (s.due && s.due <= TODAY) due++; }
+});
+document.getElementById('stats').innerHTML =
+  '<div class="stat"><b>' + total + '</b><span>题库总数</span></div>' +
+  '<div class="stat ok"><b>' + done + '</b><span>已掌握</span></div>' +
+  '<div class="stat rev"><b>' + wrong + '</b><span>有问题</span></div>' +
+  '<div class="stat bad"><b>' + due + '</b><span>今日待复测</span></div>';
+var badge = document.getElementById('retest-badge');
+badge.textContent = due + ' 待复测';
+badge.className = 'badge ' + (due > 0 ? 'hot' : 'open');
+
+/* 备份导出 / 导入（与全站共用 shuxue_progress_v1） */
+document.getElementById('btn-export').onclick = function(){
+  var blob = new Blob([JSON.stringify(STATE, null, 1)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '专业课题库备份_' + TODAY + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast('已导出备份');
+};
+document.getElementById('btn-import').onclick = function(){ document.getElementById('import-file').click(); };
+document.getElementById('import-file').onchange = function(){
+  var f = this.files[0]; if (!f) return;
+  var rd = new FileReader();
+  rd.onload = function(){
+    try {
+      var obj = JSON.parse(rd.result);
+      if (!obj || typeof obj !== 'object') throw new Error('格式不对');
+      localStorage.setItem(LS_KEY, JSON.stringify(obj));
+      toast('导入成功，刷新后生效');
+      setTimeout(function(){ location.reload(); }, 900);
+    } catch (e) { toast('导入失败：' + e.message); }
+  };
+  rd.readAsText(f);
+  this.value = '';
+};
+})();
+</script>
 </body>
 </html>

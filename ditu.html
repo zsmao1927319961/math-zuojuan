@@ -8,10 +8,15 @@
 <link rel="stylesheet" href="katex/katex.min.css">
 <script defer src="katex/katex.min.js"></script>
 <style>
-  body{background:#f4f6fa;margin:0;font-family:-apple-system,'PingFang SC',sans-serif;color:#20242c}
-  .wrap{max-width:980px;margin:0 auto;padding:12px 12px calc(24px + env(safe-area-inset-bottom))}
-  .back{display:inline-block;margin:10px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
-  .cd{font-size:12px;color:#b26a00;background:#fff7e0;border:1px solid #f0dfae;border-radius:12px;padding:2px 10px;margin-left:8px}
+  body{background:#f5f6fa;margin:0;font-family:-apple-system,'PingFang SC',sans-serif;color:#20242c}
+  .hero{background:linear-gradient(135deg,#2b3a67 0%,#3d5aa9 55%,#4f74d8 100%);color:#fff;padding:18px 18px 46px;position:relative;overflow:hidden}
+  .hero::after{content:'';position:absolute;right:-50px;top:-50px;width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero-in{max-width:980px;margin:0 auto;position:relative;z-index:1}
+  .back{display:inline-block;font-size:13px;color:rgba(255,255,255,.85);text-decoration:none}
+  .ht{font-size:21px;font-weight:800;margin-top:6px}
+  .hs{font-size:12.5px;opacity:.85;margin-top:4px}
+  .cd{display:inline-block;margin-top:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:3px 12px;font-size:12px}
+  .wrap{max-width:980px;margin:-34px auto 0;padding:0 12px calc(24px + env(safe-area-inset-bottom));position:relative;z-index:2}
   .card{background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px}
   .title{font-size:17px;font-weight:700}
   .meta{font-size:12px;color:#7a828f;margin-top:4px}
@@ -61,17 +66,14 @@
 </style>
 </head>
 <body>
-<a class="back" href="./index.html">← 返回组卷网</a><span class="cd" id="cd"></span>
+<div class="hero"><div class="hero-in">
+  <a class="back" href="./index.html">← 返回主页</a>
+  <div class="ht">🗺️ 掌握地图</div>
+  <div class="hs">通信原理 · 一格一题 · 颜色 = 掌握状态 · 点格子直接看题 / 改状态</div>
+  <span class="cd" id="cd"></span>
+</div></div>
 <div class="wrap">
   <div class="card">
-    <div class="title">掌握地图</div>
-    <div class="meta">一格一题 · 颜色 = 你的掌握状态 · 点格子直接看题/改状态</div>
-    <div class="chiprow" id="f-subject">
-      <button class="chip on" data-s="">全部</button>
-      <button class="chip" data-s="math-gs">高等数学</button>
-      <button class="chip" data-s="math-xd">线性代数</button>
-      <button class="chip" data-s="qhzt">通信原理</button>
-    </div>
     <div class="chiprow" id="f-status">
       <button class="chip on" data-b="">全部</button>
       <button class="chip" data-b="none">未做</button>
@@ -207,34 +209,30 @@ function subjectOf(q){
   return 'math-xd';
 }
 
-/* ---------- 地图渲染 ---------- */
+/* ---------- 地图渲染（通信 26 专题） ---------- */
 function cellClass(q){
   var b = bucket(q), c = 'cell ' + b;
   if (isFav(q.id)) c += ' favmark';
   return c;
 }
 function renderMap(){
-  var groups = [];   // {key, name, items}
-  var order = [], gm = {};
+  var groups = [], order = [], gm = {};
+  function zhNum(n){ var d = '零一二三四五六七八九'; if (n <= 10) return n === 10 ? '十' : d[n]; if (n < 20) return '十' + d[n % 10]; return d[Math.floor(n / 10)] + '十' + (n % 10 ? d[n % 10] : ''); }
   QS.forEach(function(q){
-    if (F_SUBJECT && subjectOf(q) !== F_SUBJECT) return;
-    var k = subjectOf(q) + '|' + (q.chapter_name || q.chapter);
-    if (!gm[k]) { gm[k] = { key: k, name: q.chapter_name || q.chapter, subj: subjectOf(q), items: [] }; order.push(k); }
+    var k = q.chapter_name || ('专题' + zhNum(parseInt(String(q.chapter).replace('专题', ''), 10)) + (q.kp ? ' · ' + q.kp : ''));
+    if (!gm[k]) { gm[k] = { key: k, name: k, items: [] }; order.push(k); }
     gm[k].items.push(q);
   });
-  var subjName = { 'math-gs': '高等数学', 'math-xd': '线性代数', 'qhzt': '通信原理' };
-  var html = '', openMap = {};
-  order.forEach(function(k){ openMap[gm[k].subj] = openMap[gm[k].subj] || []; openMap[gm[k].subj].push(gm[k]); });
-  Object.keys(openMap).forEach(function(sj){
-    var items = openMap[sj], total = 0, done = 0;
-    items.forEach(function(g){ g.items.forEach(function(q){ total++; if (bucket(q) === 'done') done++; }); });
-    html += '<div class="sec-head">' + escHtml(subjName[sj]) + '<span class="n">' + items.length + ' 节 · 已掌握 ' + done + '/' + total + '</span></div>';
-    items.forEach(function(g){
-      var cells = g.items.map(function(q){
-        return '<button class="' + cellClass(q) + '" data-qid="' + escHtml(q.id) + '" title="' + escHtml(q.label || q.id) + '"></button>';
-      }).join('');
-      html += '<div class="qrowline">' + escHtml(g.name) + '（' + g.items.length + '）</div><div class="grid">' + cells + '</div>';
-    });
+  var html = '';
+  order.forEach(function(k){
+    var g = gm[k];
+    var done = 0;
+    g.items.forEach(function(q){ if (bucket(q) === 'done') done++; });
+    var cells = g.items.map(function(q){
+      return '<button class="' + cellClass(q) + '" data-qid="' + escHtml(q.id) + '" title="' + escHtml(q.label || q.id) + '"></button>';
+    }).join('');
+    html += '<div class="sec-head">' + escHtml(g.name) + '<span class="n">已掌握 ' + done + '/' + g.items.length + '</span></div>' +
+      '<div class="grid">' + cells + '</div>';
   });
   if (!html) html = '<div class="card">这个筛选下没有题</div>';
   document.getElementById('map').innerHTML = html;
@@ -344,12 +342,6 @@ function closeQ(){
 }
 
 /* ---------- 启动 ---------- */
-document.getElementById('f-subject').addEventListener('click', function(e){
-  var c = e.target.closest('.chip'); if (!c) return;
-  F_SUBJECT = c.dataset.s;
-  document.querySelectorAll('#f-subject .chip').forEach(function(x){ x.classList.toggle('on', x === c); });
-  renderMap();
-});
 document.getElementById('f-status').addEventListener('click', function(e){
   var c = e.target.closest('.chip'); if (!c) return;
   F_STATUS = c.dataset.b;
@@ -366,8 +358,9 @@ function countdown(){
   if (n >= 0) document.getElementById('cd').textContent = '距考研初试 ' + n + ' 天';
 }
 
-fetch('data/questions.json').then(function(r){ return r.json(); }).then(function(qs){
-  QS = qs; QS.forEach(function(q){ QMAP[q.id] = q; });
+fetch('data/questions.json').then(function(r){ return r.json(); }).then(function(all){
+  QS = all.filter(function(q){ return q.source === 'qhzt'; });   /* 专业课专属：只留通信题 */
+  QS.forEach(function(q){ QMAP[q.id] = q; });
   STATE = loadState();
   if (!STATE) {
     fetch('data/progress.json').then(function(r){ return r.json(); }).then(function(p){

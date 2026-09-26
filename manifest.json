@@ -1,11 +1,11 @@
 {
-  "name": "考研数学错题组卷",
-  "short_name": "数学组卷",
-  "description": "每日拼卷、错题重做与笔记",
+  "name": "通信原理 · 专业课题库",
+  "short_name": "专业课题库",
+  "description": "每日五题、专题刷题、错题复测与掌握地图",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f5f6f8",
-  "theme_color": "#ff7d1a",
+  "theme_color": "#2b3a67",
   "lang": "zh-CN",
   "icons": [
     {
