@@ -24865,7 +24865,7 @@
   "kp": "无码间干扰判断及相关问题",
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点3 无码间干扰判断及相关问题",
-  "answer_text": "（1）$f_N=14.4\\mathrm{MHz}$，$R_{B\\max}=2f_N=28.8\\mathrm{MHz}$；（2）$\u0007lpha=0.25$，频带利用率 $\\eta=1.6$；（3）满足 $R_{B\\max}/R_B=k$。"
+  "answer_text": "（1）$f_N=14.4\\mathrm{MHz}$，$R_{B\\max}=2f_N=28.8\\mathrm{MHz}$；（2）$\\alpha=0.25$，频带利用率 $\\eta=1.6$；（3）满足 $R_{B\\max}/R_B=k$。"
  },
  {
   "subject": "txyl",
