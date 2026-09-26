@@ -139,7 +139,15 @@ async function init() {
 function setTodayDate() {
   const d = new Date();
   const wd = ['日','一','二','三','四','五','六'][d.getDay()];
-  $('#today-date').textContent = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日 · 周${wd}`;
+  let txt = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日 · 周${wd}`;
+  // 距考研初试倒计时（预计 2026-12-19）
+  try {
+    const exam = new Date('2026-12-19T00:00:00');
+    const today = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    const n = Math.round((exam - today) / 86400000);
+    if (n >= 0) txt += ` · 距初试 ${n} 天`;
+  } catch (e) { /* ignore */ }
+  $('#today-date').textContent = txt;
 }
 
 function registerSW() {

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>掌握地图</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
+<style>
+  body{background:#f4f6fa;margin:0;font-family:-apple-system,'PingFang SC',sans-serif;color:#20242c}
+  .wrap{max-width:980px;margin:0 auto;padding:12px 12px calc(24px + env(safe-area-inset-bottom))}
+  .back{display:inline-block;margin:10px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
+  .cd{font-size:12px;color:#b26a00;background:#fff7e0;border:1px solid #f0dfae;border-radius:12px;padding:2px 10px;margin-left:8px}
+  .card{background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px}
+  .title{font-size:17px;font-weight:700}
+  .meta{font-size:12px;color:#7a828f;margin-top:4px}
+  .stats{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .stat{background:#f2f5fb;border-radius:10px;padding:6px 11px;font-size:12.5px}
+  .stat b{font-size:15px}
+  .stat.ok b{color:#1d9e6f}.stat.bad b{color:#c0504d}.stat.rev b{color:#a06b00}
+  .chiprow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+  .chip{border:1px solid #d6dbe3;background:#fff;border-radius:9px;padding:4px 11px;font-size:12px;cursor:pointer}
+  .chip.on{background:#2f6bff;color:#fff;border-color:#2f6bff}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#5a6472;align-items:center;margin-top:10px}
+  .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+  .sec-head{font-size:14px;font-weight:700;margin:16px 2px 8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .sec-head .n{font-size:11.5px;color:#7a828f;font-weight:400}
+  .grid{display:flex;flex-wrap:wrap;gap:4px}
+  .cell{width:19px;height:19px;border-radius:4px;background:#d9dee7;cursor:pointer;border:none;padding:0}
+  .cell.done{background:#1d9e6f}
+  .cell.shaky{background:#e8a33d}
+  .cell.unknown{background:#c0504d}
+  .cell.favmark{box-shadow:0 0 0 2px #f2b01e inset}
+  .cell:hover{transform:scale(1.25)}
+  .qrowline{font-size:13px;color:#5a6472}
+  /* 弹层 */
+  #ov{position:fixed;inset:0;background:rgba(12,15,20,.45);z-index:50;display:none}
+  #ovbox{position:fixed;z-index:51;left:50%;top:50%;transform:translate(-50%,-50%);width:min(94vw,720px);max-height:88vh;overflow:auto;background:#fff;border-radius:14px;padding:14px 16px;display:none;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+  #ovbox .qhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+  #ovbox .qno{font-weight:700;font-size:15px}
+  .tag{font-size:11px;background:#eef1f6;color:#5a6472;border-radius:6px;padding:2px 7px}
+  .tag.ok{background:#e8f7f0;color:#1d9e6f}
+  .tag.review{background:#fff4e0;color:#a06b00}
+  .tag.bad{background:#fdeaea;color:#d34}
+  .qtext{font-size:16px;line-height:2;color:#222;white-space:pre-wrap;overflow-x:auto}
+  .qimg{display:block;max-width:100%;margin:8px 0 2px;border-radius:8px}
+  .ansbox{margin-top:10px;border-top:1px dashed #d8dce4;padding-top:8px}
+  .ansbox .at{font-size:12px;color:#a06b00;font-weight:700;margin-bottom:4px}
+  .ansbody{font-size:14px;line-height:1.95;color:#333;white-space:pre-wrap}
+  .ansbox .sec{font-weight:700;margin:8px 0 2px;font-size:13.5px}
+  .ansbox .sec.kp{color:#1a6b47}.ansbox .sec.step{color:#2f6bff}.ansbox .sec.ans{color:#a06b00}.ansbox .sec.warn{color:#c33}
+  .btnrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .btn{border:1px solid #d6dbe3;background:#f7f8fb;border-radius:9px;padding:7px 15px;font-size:13px;cursor:pointer}
+  .btn.done.on{background:#1d9e6f;color:#fff;border-color:#1d9e6f}
+  .btn.shaky.on{background:#e8a33d;color:#fff;border-color:#e8a33d}
+  .btn.unknown.on{background:#c0504d;color:#fff;border-color:#c0504d}
+  .noteta{width:100%;box-sizing:border-box;margin-top:10px;border:1px solid #d8dce4;border-radius:9px;padding:8px 10px;font-size:13px;min-height:44px;font-family:inherit}
+  .hint{font-size:11px;color:#98a0ad;margin-top:6px}
+  #ovclose{position:sticky;top:0;float:right;border:none;background:#f2f5fb;border-radius:8px;width:30px;height:30px;font-size:16px;cursor:pointer}
+</style>
+</head>
+<body>
+<a class="back" href="./index.html">← 返回组卷网</a><span class="cd" id="cd"></span>
+<div class="wrap">
+  <div class="card">
+    <div class="title">掌握地图</div>
+    <div class="meta">一格一题 · 颜色 = 你的掌握状态 · 点格子直接看题/改状态</div>
+    <div class="chiprow" id="f-subject">
+      <button class="chip on" data-s="">全部</button>
+      <button class="chip" data-s="math-gs">高等数学</button>
+      <button class="chip" data-s="math-xd">线性代数</button>
+      <button class="chip" data-s="qhzt">通信原理</button>
+    </div>
+    <div class="chiprow" id="f-status">
+      <button class="chip on" data-b="">全部</button>
+      <button class="chip" data-b="none">未做</button>
+      <button class="chip" data-b="done">已掌握</button>
+      <button class="chip" data-b="shaky">不熟练</button>
+      <button class="chip" data-b="unknown">完全不会</button>
+      <button class="chip" data-b="fav">⭐ 收藏</button>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="legend">
+      <span><span class="sw" style="background:#d9dee7"></span>未做</span>
+      <span><span class="sw" style="background:#1d9e6f"></span>已掌握</span>
+      <span><span class="sw" style="background:#e8a33d"></span>不熟练 / 做错</span>
+      <span><span class="sw" style="background:#c0504d"></span>完全不会</span>
+      <span><span class="sw" style="box-shadow:0 0 0 2px #f2b01e inset;background:#fff"></span>收藏</span>
+    </div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<div id="ov" hidden></div>
+<div id="ovbox"></div>
+<div id="toast" hidden style="position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:rgba(20,24,32,.92);color:#fff;border-radius:10px;padding:9px 18px;font-size:13.5px;z-index:99"></div>
+
+<script>
+(function(){
+'use strict';
+var LS_KEY = 'shuxue_progress_v1';
+var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
+var EXAM = '2026-12-19';
+var STATE = null, QS = [], QMAP = {};
+var F_SUBJECT = '', F_STATUS = '';
+var CUR_Q = null;
+
+function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function renderLatexMixed(el, str){
+  if (!el) return;
+  if (!window.katex) { el.textContent = str; return; }
+  if (str.indexOf('$') < 0) {
+    if (/[\u4e00-\u9fff]/.test(str)) { el.textContent = str; return; }
+    try { window.katex.render(str, el, { throwOnError: false }); } catch (e) { el.textContent = str; }
+    return;
+  }
+  el.textContent = '';
+  var re = /\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g, m, last = 0;
+  while ((m = re.exec(str)) !== null) {
+    if (m.index > last) el.appendChild(document.createTextNode(str.slice(last, m.index)));
+    var span = document.createElement('span');
+    var tex = (m[1] !== undefined) ? m[1] : m[2];
+    try { window.katex.render(tex, span, { throwOnError: false, displayMode: m[1] !== undefined }); }
+    catch (e2) { span.textContent = m[0]; }
+    el.appendChild(span);
+    last = re.lastIndex;
+  }
+  if (last < str.length) el.appendChild(document.createTextNode(str.slice(last)));
+}
+function formatSolution(el, text){
+  el.textContent = '';
+  String(text || '').split('\n').forEach(function(ln){
+    var d = document.createElement('div');
+    var mt = ln.match(/^(【[^】]+】)([\s\S]*)$/);
+    if (mt) {
+      d.className = 'sec ' + (ln.indexOf('易错') >= 0 ? 'warn' : ln.indexOf('答案') >= 0 ? 'ans' : ln.indexOf('步骤') >= 0 ? 'step' : 'kp');
+      var ts = document.createElement('span'); ts.textContent = mt[1];
+      var cs = document.createElement('span'); renderLatexMixed(cs, mt[2]);
+      d.appendChild(ts); d.appendChild(cs);
+    } else renderLatexMixed(d, ln);
+    el.appendChild(d);
+  });
+}
+function addDays(iso, days){ var d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + days); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function toast(msg){ var t = document.getElementById('toast'); t.textContent = msg; t.hidden = false; clearTimeout(t._t); t._t = setTimeout(function(){ t.hidden = true; }, 2200); }
+
+function loadState(){ try { var raw = localStorage.getItem(LS_KEY); if (raw) return JSON.parse(raw); } catch(e){} return null; }
+function saveState(){ try { localStorage.setItem(LS_KEY, JSON.stringify(STATE)); } catch(e){} }
+function qstate(){ return STATE.question_state || (STATE.question_state = {}); }
+function notesObj(){ return STATE.notes || (STATE.notes = {}); }
+function favs(){ if (!Array.isArray(STATE.favs)) STATE.favs = []; return STATE.favs; }
+function isFav(id){ return favs().indexOf(id) >= 0; }
+function toggleFav(id){ var f = favs(), i = f.indexOf(id); if (i >= 0) { f.splice(i,1); toast('已取消收藏'); } else { f.push(id); toast('已收藏'); } saveState(); }
+
+/* 掌握三键 + 复测计划（与 lianxi.html 同一套规则） */
+function illGap(r){ return r <= 1 ? 1 : (r === 2 ? 3 : 7); }
+function shakyGap(r){ return r <= 1 ? 2 : (r === 2 ? 5 : 10); }
+function liveOf(q){ return qstate()[q.id] || {}; }
+function applyMark(q, kind){
+  var s = qstate()[q.id] || {};
+  if (kind === 'done') {
+    if (s.status === 'done') return;
+    qstate()[q.id] = { status:'done', mastery:'done', right_date: TODAY, right_count:(s.right_count||0)+1 };
+  } else {
+    var dueReached = s.due && s.due <= TODAY;
+    var firstTime = !s.wrong_date;
+    var b = { status: (kind === 'unknown') ? 'todo' : 'review',
+              mastery: kind,
+              wrong_date: s.wrong_date || TODAY,
+              wrong_count: (s.wrong_count || 0) + (kind === 'unknown' ? 1 : 0),
+              shaky_count: (s.shaky_count || 0) + (kind === 'shaky' ? 1 : 0),
+              round: s.round || 0 };
+    if (s.reason) b.reason = s.reason;
+    if (firstTime) { b.due = addDays(TODAY, 1); b.round = 0; }
+    else if (dueReached || !s.due) { b.round = (s.round || 0) + 1; b.due = addDays(TODAY, kind === 'unknown' ? illGap(b.round) : shakyGap(b.round)); }
+    else { b.due = s.due; }
+    qstate()[q.id] = b;
+  }
+  STATE.papers = STATE.papers || [];
+  var rec = { id: 'lx-' + Date.now(), date: TODAY, results: {} };
+  rec.results[q.id] = kind;
+  STATE.papers.push(rec);
+  var keepO = [], keepL = [];
+  STATE.papers.forEach(function(x){ (String(x.id||'').indexOf('lx-') === 0 ? keepL : keepO).push(x); });
+  STATE.papers = keepO.concat(keepL.slice(-20));
+  saveState();
+}
+function exitRetest(q){
+  var s = qstate()[q.id] || {};
+  if (!s.wrong_date) return;
+  s.due = null; s.out = true;
+  qstate()[q.id] = s; saveState();
+  toast('已移出复测计划（掌握状态不变）');
+}
+function bucket(q){
+  var s = liveOf(q);
+  if (s.status === 'done') return 'done';
+  if (s.status === 'relearn') return 'shaky';
+  if (s.status === 'review') return (s.mastery === 'unknown') ? 'unknown' : 'shaky';
+  if (s.status === 'todo' && (s.wrong_date || s.due)) return (s.mastery === 'unknown') ? 'unknown' : 'shaky';
+  return 'none';
+}
+function subjectOf(q){
+  if (q.source === 'qhzt') return 'qhzt';
+  if (q.source === 'gaoshu880') return 'math-gs';
+  return 'math-xd';
+}
+
+/* ---------- 地图渲染 ---------- */
+function cellClass(q){
+  var b = bucket(q), c = 'cell ' + b;
+  if (isFav(q.id)) c += ' favmark';
+  return c;
+}
+function renderMap(){
+  var groups = [];   // {key, name, items}
+  var order = [], gm = {};
+  QS.forEach(function(q){
+    if (F_SUBJECT && subjectOf(q) !== F_SUBJECT) return;
+    var k = subjectOf(q) + '|' + (q.chapter_name || q.chapter);
+    if (!gm[k]) { gm[k] = { key: k, name: q.chapter_name || q.chapter, subj: subjectOf(q), items: [] }; order.push(k); }
+    gm[k].items.push(q);
+  });
+  var subjName = { 'math-gs': '高等数学', 'math-xd': '线性代数', 'qhzt': '通信原理' };
+  var html = '', openMap = {};
+  order.forEach(function(k){ openMap[gm[k].subj] = openMap[gm[k].subj] || []; openMap[gm[k].subj].push(gm[k]); });
+  Object.keys(openMap).forEach(function(sj){
+    var items = openMap[sj], total = 0, done = 0;
+    items.forEach(function(g){ g.items.forEach(function(q){ total++; if (bucket(q) === 'done') done++; }); });
+    html += '<div class="sec-head">' + escHtml(subjName[sj]) + '<span class="n">' + items.length + ' 节 · 已掌握 ' + done + '/' + total + '</span></div>';
+    items.forEach(function(g){
+      var cells = g.items.map(function(q){
+        return '<button class="' + cellClass(q) + '" data-qid="' + escHtml(q.id) + '" title="' + escHtml(q.label || q.id) + '"></button>';
+      }).join('');
+      html += '<div class="qrowline">' + escHtml(g.name) + '（' + g.items.length + '）</div><div class="grid">' + cells + '</div>';
+    });
+  });
+  if (!html) html = '<div class="card">这个筛选下没有题</div>';
+  document.getElementById('map').innerHTML = html;
+  applyStatusFilter();
+  refreshStats();
+}
+function applyStatusFilter(){
+  document.querySelectorAll('.cell').forEach(function(cell){
+    var q = QMAP[cell.dataset.qid];
+    var show = F_STATUS === '' || (F_STATUS === 'fav' ? isFav(q.id) : bucket(q) === F_STATUS);
+    cell.style.display = show ? '' : 'none';
+  });
+}
+function refreshStats(){
+  var c = { none:0, done:0, shaky:0, unknown:0 };
+  QS.forEach(function(q){ c[bucket(q)]++; });
+  document.getElementById('stats').innerHTML =
+    '<div class="stat">题库 <b>' + QS.length + '</b></div>' +
+    '<div class="stat ok">已掌握 <b>' + c.done + '</b></div>' +
+    '<div class="stat rev">不熟练/做错 <b>' + c.shaky + '</b></div>' +
+    '<div class="stat bad">完全不会 <b>' + c.unknown + '</b></div>' +
+    '<div class="stat">未做 <b>' + c.none + '</b></div>' +
+    '<div class="bar" style="width:100%"><i style="width:' + Math.round(c.done / QS.length * 100) + '%"></i></div>';
+}
+
+/* ---------- 弹层 ---------- */
+function openQ(q){
+  CUR_Q = q;
+  var s = liveOf(q);
+  var ov = document.getElementById('ov'), box = document.getElementById('ovbox');
+  var head = '<button id="ovclose">×</button><div class="qhead"><span class="qno">' + escHtml(q.label || q.id) + '</span>' +
+    '<span class="tag">' + escHtml(q.chapter_name || q.chapter) + '</span>' +
+    (q.type ? '<span class="tag">' + escHtml(q.type) + '</span>' : '') +
+    '<span data-role="st">' + tagHtml(q) + '</span></div>';
+  var body = q.question_img
+    ? '<img class="qimg" src="data/' + q.question_img + '" alt="题目">'
+    : '<div class="qtext katex-auto"></div>';
+  var ans = '<div class="ansbox"><div class="at">答案 + 解析</div>' +
+    (q.answer_text ? '<div class="ansbody katex-ans"></div>' : '') +
+    (q.solution ? '<div class="katex-sol"></div>' : '') +
+    (q.answer_img ? '<img class="qimg" loading="lazy" src="data/' + q.answer_img + '" alt="答案">' : '') +
+    (!q.answer_text && !q.solution && !q.answer_img ? '<div class="ansbody">题库暂无该题答案文本</div>' : '') + '</div>';
+  var b = bucket(q);
+  var btns = '<div class="btnrow">' +
+    '<button class="btn done' + (b === 'done' ? ' on' : '') + '" data-act="done">✓ 掌握</button>' +
+    '<button class="btn shaky' + (b === 'shaky' ? ' on' : '') + '" data-act="shaky">〜 不熟练</button>' +
+    '<button class="btn unknown' + (b === 'unknown' ? ' on' : '') + '" data-act="unknown">✗ 不会</button>' +
+    '<button class="btn" data-act="fav">' + (isFav(q.id) ? '★ 取消收藏' : '☆ 收藏') + '</button>' +
+    (s.wrong_date && s.due && !s.out ? '<button class="btn" data-act="out">移出复测计划</button>' : '') +
+    '</div>' +
+    '<div style="font-size:11.5px;color:#98a0ad;margin-top:6px">首次评「不熟练/不会」明天起进复测计划 · 复测后再评「不会」1/3/7 天、「不熟练」2/5/10 天 · 评「掌握」出池</div>';
+  var note = '<textarea class="noteta" placeholder="笔记（自动保存）">' + escHtml(notesObj()[q.id] || '') + '</textarea>' +
+    '<div class="hint">' + escHtml(q.kp_sub || '') + '</div>';
+  box.innerHTML = head + body + ans + btns + note;
+  var qel = box.querySelector('.katex-auto');
+  if (qel && q.question_text) renderLatexMixed(qel, q.question_text);
+  var ab = box.querySelector('.katex-ans'); if (ab) renderLatexMixed(ab, q.answer_text);
+  var sol = box.querySelector('.katex-sol'); if (sol) formatSolution(sol, q.solution);
+  ov.hidden = false; ov.style.display = 'block'; box.style.display = 'block';
+  box.querySelector('#ovclose').onclick = closeQ;
+  ov.onclick = closeQ;
+  var ta = box.querySelector('.noteta'), timer = null;
+  ta.addEventListener('input', function(){ clearTimeout(timer); timer = setTimeout(function(){ notesObj()[q.id] = ta.value; saveState(); }, 600); });
+  box.querySelector('[data-act="fav"]').onclick = function(){
+    toggleFav(q.id);
+    this.textContent = isFav(q.id) ? '★ 取消收藏' : '☆ 收藏';
+    refreshCell(q);
+  };
+  var outBtn = box.querySelector('[data-act="out"]');
+  if (outBtn) outBtn.onclick = function(){ exitRetest(q); openQ(q); refreshCell(q); };
+  ['done','shaky','unknown'].forEach(function(kind){
+    box.querySelector('[data-act="' + kind + '"]').onclick = function(){
+      applyMark(q, kind);
+      box.querySelector('[data-role="st"]').innerHTML = tagHtml(q);
+      ['done','shaky','unknown'].forEach(function(k){
+        box.querySelector('[data-act="' + k + '"]').classList.toggle('on', bucket(q) === k);
+      });
+      refreshCell(q); refreshStats();
+      toast(kind === 'done' ? '已标记掌握' : (kind === 'shaky' ? '已标记不熟练' : '已加入错题复测'));
+    };
+  });
+}
+function tagHtml(q){
+  var b = bucket(q), s = liveOf(q);
+  if (b === 'done') return '<span class="tag ok">已掌握</span>';
+  if (b === 'unknown') return '<span class="tag bad">完全不会</span>';
+  if (b === 'shaky') {
+    if (s.due && s.due <= TODAY) return '<span class="tag bad">待复测 · ' + s.due + '</span>';
+    if (s.due && s.due > TODAY) return '<span class="tag review">复测排期 · ' + s.due + '</span>';
+    return '<span class="tag review">不熟练</span>';
+  }
+  return '<span class="tag">未做</span>';
+}
+function refreshCell(q){
+  var cell = document.querySelector('.cell[data-qid="' + CSS.escape(q.id) + '"]');
+  if (cell) {
+    cell.className = cellClass(q);
+    cell.title = q.label || q.id;
+    var show = F_STATUS === '' || (F_STATUS === 'fav' ? isFav(q.id) : bucket(q) === F_STATUS);
+    cell.style.display = show ? '' : 'none';
+  }
+}
+function closeQ(){
+  document.getElementById('ov').hidden = true;
+  document.getElementById('ov').style.display = 'none';
+  document.getElementById('ovbox').style.display = 'none';
+}
+
+/* ---------- 启动 ---------- */
+document.getElementById('f-subject').addEventListener('click', function(e){
+  var c = e.target.closest('.chip'); if (!c) return;
+  F_SUBJECT = c.dataset.s;
+  document.querySelectorAll('#f-subject .chip').forEach(function(x){ x.classList.toggle('on', x === c); });
+  renderMap();
+});
+document.getElementById('f-status').addEventListener('click', function(e){
+  var c = e.target.closest('.chip'); if (!c) return;
+  F_STATUS = c.dataset.b;
+  document.querySelectorAll('#f-status .chip').forEach(function(x){ x.classList.toggle('on', x === c); });
+  applyStatusFilter();
+});
+document.getElementById('map').addEventListener('click', function(e){
+  var cell = e.target.closest('.cell'); if (!cell) return;
+  var q = QMAP[cell.dataset.qid]; if (q) openQ(q);
+});
+function countdown(){
+  var ms = new Date(EXAM + 'T00:00:00') - new Date(TODAY + 'T00:00:00');
+  var n = Math.round(ms / 86400000);
+  if (n >= 0) document.getElementById('cd').textContent = '距考研初试 ' + n + ' 天';
+}
+
+fetch('data/questions.json').then(function(r){ return r.json(); }).then(function(qs){
+  QS = qs; QS.forEach(function(q){ QMAP[q.id] = q; });
+  STATE = loadState();
+  if (!STATE) {
+    fetch('data/progress.json').then(function(r){ return r.json(); }).then(function(p){
+      STATE = (p && typeof p === 'object') ? p : { papers: [], notes: {}, question_state: {} };
+      if (!STATE.question_state) STATE.question_state = {};
+      if (!STATE.notes) STATE.notes = {};
+      if (!STATE.papers) STATE.papers = [];
+      saveState(); renderMap();
+    }).catch(function(){ STATE = { papers: [], notes: {}, question_state: {} }; saveState(); renderMap(); });
+  } else renderMap();
+  countdown();
+});
+})();
+</script>
+</body>
+</html>
