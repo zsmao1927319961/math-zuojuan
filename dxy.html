@@ -213,8 +213,10 @@ function viewQuestion(){
   }
   if(s.ansShown){
     h+='<div class="ansbox" id="ansbox"><div class="h">参考答案</div></div>';
-    const explBare=(q.explanation_md||'').replace(/【[^】]*】/g,'').replace(/^[0-9、.．\s]+/,'').trim();
-    const hasRealExpl = explBare.length>=5 || q.asset_refs.some(a=>a.position==='explanation');
+    const bare=x=>String(x||'').replace(/【[^】]*】/g,'').replace(/^[0-9、.．\s]+/,'').replace(/[\s。；;，,]/g,'').trim();
+    const explBare=bare(q.explanation_md);
+    const ansBare=bare(q.answer.reference_answer_md);
+    const hasRealExpl = (explBare.length>=5 && explBare!==ansBare) || q.asset_refs.some(a=>a.position==='explanation');
     if(hasRealExpl)
       h+='<div class="expbox" id="expbox"><div class="h">解析</div></div>';
   }
