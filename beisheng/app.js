@@ -86,7 +86,7 @@ function c(i){ return D.cards[i]; }
 function toggleG(gi){ openG[gi] = !openG[gi]; render(); }
 function toggleC(i){ openC[i] = !openC[i]; render(); }
 function toggleM(i){ MAST[i] = !MAST[i]; if (!MAST[i]) delete MAST[i]; saveM(); render(); }
-function renderMath(el){ if (window.renderMathInElement) renderMathInElement(el, {delimiters:[{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError:false}); }
+function renderMath(el){ if (window.renderMathInElement) renderMathInElement(el, {delimiters:[{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError:false, macros:{'\frac':'\dfrac'}}); }
 
 /* init */
 (function(){

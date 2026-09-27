@@ -109,8 +109,8 @@ function renderMixed(el, text){
   const parts=String(text||'').split(/(\$\$[\s\S]+?\$\$|\$[^$\n]+?\$)/g);
   for(const p of parts){
     if(!p) continue;
-    if(p.indexOf('$$')===0){ const s=document.createElement('div'); katex.render(p.slice(2,-2), s, {displayMode:true, throwOnError:false}); el.appendChild(s); }
-    else if(p.indexOf('$')===0){ const s=document.createElement('span'); katex.render(p.slice(1,-1), s, {throwOnError:false}); el.appendChild(s); }
+    if(p.indexOf('$$')===0){ const s=document.createElement('div'); katex.render(p.slice(2,-2), s, {displayMode:true, throwOnError:false, macros:{'\frac':'\dfrac'}}); el.appendChild(s); }
+    else if(p.indexOf('$')===0){ const s=document.createElement('span'); katex.render(p.slice(1,-1), s, {throwOnError:false, macros:{'\frac':'\dfrac'}}); el.appendChild(s); }
     else el.appendChild(document.createTextNode(p));
   }
 }
