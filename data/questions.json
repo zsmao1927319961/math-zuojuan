@@ -21066,7 +21066,8 @@
   "level": "综合",
   "kp": "频分复用与复合调制",
   "kp_sub": "FM+SSB 相加复合系统",
-  "solution": "【知识点梳理】\n· 两路相加互不重叠 → 各自带宽独立；SSB 带宽=基带带宽；FM 用卡森公式。\n【解题步骤】\n第1步：SSB 带宽 $=m_2$ 带宽 $=1$MHz（占 $100\\sim101$MHz）。\n第2步：FM：$\\Delta f_{max}=K_1|m_1|_{max}=50k\\times1=50$kHz，$B_{FM}=2(50k+10k)=120$kHz（中心 $101.5$MHz）。\n第3步：频谱图：100～101MHz 画 SSB 谱、101.5MHz±60kHz 画 FM 谱（中间 440kHz 空隙）。\n第4步：解调框图：带通分路（100~101MHz → 相干解调 SSB；101.5MHz±60kHz → 鉴频解 FM）。\n【答案】见步骤：(1) 1MHz；(2) 50kHz、120kHz。"
+  "solution": "【知识点梳理】\n· 两路相加互不重叠 → 各自带宽独立；SSB 带宽=基带带宽；FM 用卡森公式。\n【解题步骤】\n第1步：SSB 带宽 $=m_2$ 带宽 $=1$MHz（占 $100\\sim101$MHz）。\n第2步：FM：$\\Delta f_{max}=K_1|m_1|_{max}=50k\\times1=50$kHz，$B_{FM}=2(50k+10k)=120$kHz（中心 $101.5$MHz）。\n第3步：频谱图：100～101MHz 画 SSB 谱、101.5MHz±60kHz 画 FM 谱（中间 440kHz 空隙）。\n第4步：解调框图：带通分路（100~101MHz → 相干解调 SSB；101.5MHz±60kHz → 鉴频解 FM）。\n【答案】见步骤：(1) 1MHz；(2) 50kHz、120kHz。",
+  "question_img": "images/q_qhzt-8-5.png"
  },
  {
   "subject": "txyl",
@@ -21083,7 +21084,8 @@
   "level": "综合",
   "kp": "频分复用与复合调制",
   "kp_sub": "FDM/DSB+FM 各路等信噪比条件",
-  "solution": "【知识点梳理】\n· DSB 每路占 2W，路间距=2W+防护4W=6W；FM 复合：$B=2(m_f+1)f_m$。\n· 鉴频噪声 $\\propto f_k^2$ → 等信噪比要求 $A_k\\propto f_k$。\n【解题步骤】\n第1步：$B_m=8\\times2W+7\\times4W=44$W（8 个主瓣 + 7 个间隔）。\n第2步：$f_m=44W$，$m_f=6$ → $B_s=2\\times7\\times44W=616$W。\n第3步：解调框图：BPF→鉴频器（恢复 FDM 基带 $m(t)$）→8 个 BPF 分路→各自相干解调→LPF。\n第4步：第 $k$ 路 SSB 解调输出信噪比 $\\propto \\frac{A_k^2}{f_k^2}$ → $A_k$ 应与该路副载波频率 $f_k$ 成正比。\n【答案】(1) 44W；(2) 616W；(4) $A_k\\propto f_k$。"
+  "solution": "【知识点梳理】\n· DSB 每路占 2W，路间距=2W+防护4W=6W；FM 复合：$B=2(m_f+1)f_m$。\n· 鉴频噪声 $\\propto f_k^2$ → 等信噪比要求 $A_k\\propto f_k$。\n【解题步骤】\n第1步：$B_m=8\\times2W+7\\times4W=44$W（8 个主瓣 + 7 个间隔）。\n第2步：$f_m=44W$，$m_f=6$ → $B_s=2\\times7\\times44W=616$W。\n第3步：解调框图：BPF→鉴频器（恢复 FDM 基带 $m(t)$）→8 个 BPF 分路→各自相干解调→LPF。\n第4步：第 $k$ 路 SSB 解调输出信噪比 $\\propto \\frac{A_k^2}{f_k^2}$ → $A_k$ 应与该路副载波频率 $f_k$ 成正比。\n【答案】(1) 44W；(2) 616W；(4) $A_k\\propto f_k$。",
+  "question_img": "images/q_qhzt-8-6.png"
  },
  {
   "subject": "txyl",
@@ -21134,7 +21136,8 @@
   "level": "综合",
   "kp": "无码间干扰",
   "kp_sub": "奈奎斯特准则判别四图",
-  "solution": "【知识点梳理】\n· 奈奎斯特准则：$\\sum_i H(\\omega+\\frac{2\\pi i}{T_s})=T_s$（常数）⟺ 折叠后为理想矩形。\n· 理想低通无 ISI 的条件：带宽 $B=n\\cdot\\frac{R_B}{2}$（$n$ 为正整数）；滚降特性（升余弦/梯形）天然满足。\n【解题步骤】\n第1步：(a) 理想低通截止 $2\\pi/T_s$（=奈奎斯特带宽）→ 满足，$\\eta=\\frac{\\frac{2}{T_s}}{\\frac{1}{T_s}}=2$ Baud/Hz。\n第2步：(b) 截止 $3\\pi/T_s=3\\times\\frac{\\pi}{T_s}$（$n=3$ 个半符号率）→ 满足，带宽 $\\frac{1.5}{T_s}$Hz，$\\eta=\\frac{\\frac{2}{T_s}}{\\frac{1.5}{T_s}}=\\frac43$ Baud/Hz。\n第3步：(c) 梯形（平顶 $2\\pi/T_s$、滚降至 $4\\pi/T_s$，$\\alpha=1$）→ 满足，$\\eta=1$；(d) 升余弦 $4\\pi/T_s$（$\\alpha=1$）→ 满足，$\\eta=1$。\n【答案】(a)(b)(c)(d) 均满足无码间干扰；频谱利用率分别为 2、4/3、1、1 Baud/Hz。\n【易错提醒】理想低通带宽必须落在 $n\\cdot \\frac{R_B}{2}$ 上才无 ISI（(b) 恰为 3 倍半符号率）；滚降类则对称即满足。"
+  "solution": "【知识点梳理】\n· 奈奎斯特准则：$\\sum_i H(\\omega+\\frac{2\\pi i}{T_s})=T_s$（常数）⟺ 折叠后为理想矩形。\n· 理想低通无 ISI 的条件：带宽 $B=n\\cdot\\frac{R_B}{2}$（$n$ 为正整数）；滚降特性（升余弦/梯形）天然满足。\n【解题步骤】\n第1步：(a) 理想低通截止 $2\\pi/T_s$（=奈奎斯特带宽）→ 满足，$\\eta=\\frac{\\frac{2}{T_s}}{\\frac{1}{T_s}}=2$ Baud/Hz。\n第2步：(b) 截止 $3\\pi/T_s=3\\times\\frac{\\pi}{T_s}$（$n=3$ 个半符号率）→ 满足，带宽 $\\frac{1.5}{T_s}$Hz，$\\eta=\\frac{\\frac{2}{T_s}}{\\frac{1.5}{T_s}}=\\frac43$ Baud/Hz。\n第3步：(c) 梯形（平顶 $2\\pi/T_s$、滚降至 $4\\pi/T_s$，$\\alpha=1$）→ 满足，$\\eta=1$；(d) 升余弦 $4\\pi/T_s$（$\\alpha=1$）→ 满足，$\\eta=1$。\n【答案】(a)(b)(c)(d) 均满足无码间干扰；频谱利用率分别为 2、4/3、1、1 Baud/Hz。\n【易错提醒】理想低通带宽必须落在 $n\\cdot \\frac{R_B}{2}$ 上才无 ISI（(b) 恰为 3 倍半符号率）；滚降类则对称即满足。",
+  "question_img": "images/q_qhzt-9-3.png"
  },
  {
   "subject": "txyl",
@@ -21409,7 +21412,8 @@
   "level": "综合",
   "kp": "信号矢量空间与星座图",
   "kp_sub": "16PSK 最小欧式距离",
-  "solution": "【知识点梳理】\n· MPSK 相邻星座点夹角 $\\frac{2\\pi}{M}$；$d_{min}=2A_M\\sin\\frac{\\pi}{M}$。\n· 归一化平方最小欧式距离 $=\\frac{d_{min}^2}{E_s}$（$E_s=A_M^2$，星座点能量）。\n【解题步骤】\n第1步：$d_{min}=2A_M\\sin\\frac{\\pi}{16}$。\n第2步：归一化：$\\frac{d_{min}^2}{A_M^2}=4\\sin^2\\frac{\\pi}{16}\\approx0.152$。\n【答案】如上。\n【易错提醒】“归一化平方”=除以信号能量 $E_s$（点到原点距离平方）。"
+  "solution": "【知识点梳理】\n· MPSK 相邻星座点夹角 $\\frac{2\\pi}{M}$；$d_{min}=2A_M\\sin\\frac{\\pi}{M}$。\n· 归一化平方最小欧式距离 $=\\frac{d_{min}^2}{E_s}$（$E_s=A_M^2$，星座点能量）。\n【解题步骤】\n第1步：$d_{min}=2A_M\\sin\\frac{\\pi}{16}$。\n第2步：归一化：$\\frac{d_{min}^2}{A_M^2}=4\\sin^2\\frac{\\pi}{16}\\approx0.152$。\n【答案】如上。\n【易错提醒】“归一化平方”=除以信号能量 $E_s$（点到原点距离平方）。",
+  "question_img": "images/q_qhzt-15-1.png"
  },
  {
   "subject": "txyl",
@@ -21426,7 +21430,8 @@
   "level": "综合",
   "kp": "信号矢量空间与星座图",
   "kp_sub": "施密特正交化求正交基",
-  "solution": "【知识点梳理】\n· 施密特正交化：$V_1=s_1$；$V_i=s_i-\\sum_{j<i}(s_i,f_j)f_j$；$f_i=V_i/\\sqrt{E_i}$。\n· $(s,f)=\\int s(t)f(t)dt$；$V=0$ 说明该信号可被前面的基线性表示。\n【解题步骤】\n第1步：$E_1=2$，$f_1=\\frac{1}{\\sqrt2}[1(0,2)]$。\n第2步：$(s_2,f_1)=0$ → $f_2=\\frac{1}{\\sqrt2}[1(0,1)-1(1,2)]$。\n第3步：$(s_3,f_1)=\\sqrt2$、$(s_3,f_2)=0$ → $f_3=-1(2,3)$。\n第4步：$V_4=s_4+\\sqrt2f_1+\\frac{1}{\\sqrt2}f_2-f_3=0$ → 维数 $N=3$。\n【答案】信号空间 3 维；$s_1=(\\sqrt2,0,0)$、$s_2=(0,\\sqrt2,0)$、$s_3=(\\sqrt2,0,-1)$、$s_4=(-\\sqrt2,-\\frac{1}{\\sqrt2},1)$。\n【易错提醒】最后 $V_4=0$ 是正常结果——4 个信号只需 3 维空间。"
+  "solution": "【知识点梳理】\n· 施密特正交化：$V_1=s_1$；$V_i=s_i-\\sum_{j<i}(s_i,f_j)f_j$；$f_i=V_i/\\sqrt{E_i}$。\n· $(s,f)=\\int s(t)f(t)dt$；$V=0$ 说明该信号可被前面的基线性表示。\n【解题步骤】\n第1步：$E_1=2$，$f_1=\\frac{1}{\\sqrt2}[1(0,2)]$。\n第2步：$(s_2,f_1)=0$ → $f_2=\\frac{1}{\\sqrt2}[1(0,1)-1(1,2)]$。\n第3步：$(s_3,f_1)=\\sqrt2$、$(s_3,f_2)=0$ → $f_3=-1(2,3)$。\n第4步：$V_4=s_4+\\sqrt2f_1+\\frac{1}{\\sqrt2}f_2-f_3=0$ → 维数 $N=3$。\n【答案】信号空间 3 维；$s_1=(\\sqrt2,0,0)$、$s_2=(0,\\sqrt2,0)$、$s_3=(\\sqrt2,0,-1)$、$s_4=(-\\sqrt2,-\\frac{1}{\\sqrt2},1)$。\n【易错提醒】最后 $V_4=0$ 是正常结果——4 个信号只需 3 维空间。",
+  "question_img": "images/q_qhzt-15-2.png"
  },
  {
   "subject": "txyl",
@@ -21443,7 +21448,8 @@
   "level": "综合",
   "kp": "信号矢量空间与星座图",
   "kp_sub": "信号展开为正交函数线性组合",
-  "solution": "【知识点梳理】\n· 正交基展开两种方法：解方程组法 / 内积法 $x_i=\\int s(t)f_i(t)dt$。\n【解题步骤】\n第1步：$x_1=\\int_0^2 2\\cdot\\frac12dt+\\int_2^4 4\\cdot(-\\frac12)dt=2-2=0$。\n第2步：$x_2=\\int_0^4 s(t)\\cdot\\frac12dt=\\frac{2\\times2+4\\times2}{2}=6$。\n第3步：$x_3=\\frac12(2-2+4-4)=0$。\n【答案】$s(t)=6f_2(t)$——该信号恰好只落在第二个基方向上。\n【易错提醒】内积法逐段积分，$f$ 取负值的段要带符号。"
+  "solution": "【知识点梳理】\n· 正交基展开两种方法：解方程组法 / 内积法 $x_i=\\int s(t)f_i(t)dt$。\n【解题步骤】\n第1步：$x_1=\\int_0^2 2\\cdot\\frac12dt+\\int_2^4 4\\cdot(-\\frac12)dt=2-2=0$。\n第2步：$x_2=\\int_0^4 s(t)\\cdot\\frac12dt=\\frac{2\\times2+4\\times2}{2}=6$。\n第3步：$x_3=\\frac12(2-2+4-4)=0$。\n【答案】$s(t)=6f_2(t)$——该信号恰好只落在第二个基方向上。\n【易错提醒】内积法逐段积分，$f$ 取负值的段要带符号。",
+  "question_img": "images/q_qhzt-15-3.png"
  },
  {
   "subject": "txyl",
@@ -21460,7 +21466,8 @@
   "level": "综合",
   "kp": "信号矢量空间与星座图",
   "kp_sub": "三波形维度/星座/MAP 判决区域",
-  "solution": "【知识点梳理】\n· 维度=独立基函数个数；施密特正交化构造。\n· 等概 → MAP 判决域=各星座点的 Voronoi 域（中垂线分割）。\n【解题步骤】\n第1步：$s_2=-s_3$（对极），$s_1$ 与它们正交成分有限 → 维度 2；$f_1=\\sqrt{\\frac2T}\\cos\\omega_ct$（$0\\le t\\le T$），$f_2=\\sqrt{\\frac2T}\\cos\\omega_ct$（前半）$-\\sqrt{\\frac2T}\\cos\\omega_ct$（后半）。\n第2步：$s_1=(\\sqrt T,0)$、$s_2=(0,\\sqrt T)$、$s_3=(0,-\\sqrt T)$——等边三角形星座。\n第3步：判决域=三顶点连线的三条中垂线所划分的三个扇区（含无穷远）。\n【答案】如上。\n【易错提醒】$s_2$ 前后半反相——先写出波形再投影，别直接当成“整周期余弦”。"
+  "solution": "【知识点梳理】\n· 维度=独立基函数个数；施密特正交化构造。\n· 等概 → MAP 判决域=各星座点的 Voronoi 域（中垂线分割）。\n【解题步骤】\n第1步：$s_2=-s_3$（对极），$s_1$ 与它们正交成分有限 → 维度 2；$f_1=\\sqrt{\\frac2T}\\cos\\omega_ct$（$0\\le t\\le T$），$f_2=\\sqrt{\\frac2T}\\cos\\omega_ct$（前半）$-\\sqrt{\\frac2T}\\cos\\omega_ct$（后半）。\n第2步：$s_1=(\\sqrt T,0)$、$s_2=(0,\\sqrt T)$、$s_3=(0,-\\sqrt T)$——等边三角形星座。\n第3步：判决域=三顶点连线的三条中垂线所划分的三个扇区（含无穷远）。\n【答案】如上。\n【易错提醒】$s_2$ 前后半反相——先写出波形再投影，别直接当成“整周期余弦”。",
+  "question_img": "images/q_qhzt-15-4.png"
  },
  {
   "subject": "txyl",
@@ -21495,7 +21502,8 @@
   "level": "综合",
   "kp": "匹配滤波器设计与简化",
   "kp_sub": "二进制波形匹配滤波最佳接收",
-  "solution": "【知识点梳理】\n· 二维正交信号（两波形不共线）→ 两支路匹配滤波 $h_i(t)=s_i(T-t)$ + 比较判决。\n· 双极性差错概率通式 $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_d}{4N_0}}\\right)$，$E_d=\\int(s_0-s_1)^2dt$（差波形能量，$N_0$ 单边）。\n【解题步骤】\n第1步：结构：$r(t)$ 分别送 $h_0、h_1$，$t=T_s$ 抽样比较大小。\n第2步：$h_0(t)=s_0(T_s-t)$：阶梯波（$\\frac{T_s}{4}$ 分段反序，$-1、+1$ 对称镜像）。\n第3步：$E_d=\\int(s_0-s_1)^2dt=4T_s$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{T_s}{N_0}}\\right)$。\n【答案】如上。\n【易错提醒】匹配滤波冲激响应是“镜像+延时”，不是原波形照搬。"
+  "solution": "【知识点梳理】\n· 二维正交信号（两波形不共线）→ 两支路匹配滤波 $h_i(t)=s_i(T-t)$ + 比较判决。\n· 双极性差错概率通式 $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_d}{4N_0}}\\right)$，$E_d=\\int(s_0-s_1)^2dt$（差波形能量，$N_0$ 单边）。\n【解题步骤】\n第1步：结构：$r(t)$ 分别送 $h_0、h_1$，$t=T_s$ 抽样比较大小。\n第2步：$h_0(t)=s_0(T_s-t)$：阶梯波（$\\frac{T_s}{4}$ 分段反序，$-1、+1$ 对称镜像）。\n第3步：$E_d=\\int(s_0-s_1)^2dt=4T_s$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{T_s}{N_0}}\\right)$。\n【答案】如上。\n【易错提醒】匹配滤波冲激响应是“镜像+延时”，不是原波形照搬。",
+  "question_img": "images/q_qhzt-16-1.png"
  },
  {
   "subject": "txyl",
@@ -21529,7 +21537,8 @@
   "level": "综合",
   "kp": "匹配滤波器设计与简化",
   "kp_sub": "对极波形匹配滤波及简化",
-  "solution": "【知识点梳理】\n· 对极信号 $s_0=-s_1$：$ρ=-1$，判决只用一条支路+零门限。\n【解题步骤】\n第1步：双支路匹配滤波+比较正确。\n第2步：$E_b=A^2T$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{N_0}}\\right)$（双边 $\\frac{n_0}{2}$ 口径：$\\frac12\\mathrm{erfc}(\\sqrt{\\frac{E_b}{n_0}})$ 按题面噪声写法代入）。\n第3步：可简化：单支路对 $s_1$（或其差波形）匹配，门限 0——对极时差波形能量最大、结构最简。\n【答案】如上。\n【易错提醒】对极是所有二进制信号里抗噪声最优的（$ρ=-1$ 使 $d$ 最大）。"
+  "solution": "【知识点梳理】\n· 对极信号 $s_0=-s_1$：$ρ=-1$，判决只用一条支路+零门限。\n【解题步骤】\n第1步：双支路匹配滤波+比较正确。\n第2步：$E_b=A^2T$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{N_0}}\\right)$（双边 $\\frac{n_0}{2}$ 口径：$\\frac12\\mathrm{erfc}(\\sqrt{\\frac{E_b}{n_0}})$ 按题面噪声写法代入）。\n第3步：可简化：单支路对 $s_1$（或其差波形）匹配，门限 0——对极时差波形能量最大、结构最简。\n【答案】如上。\n【易错提醒】对极是所有二进制信号里抗噪声最优的（$ρ=-1$ 使 $d$ 最大）。",
+  "question_img": "images/q_qhzt-16-3.png"
  },
  {
   "subject": "txyl",
@@ -21546,7 +21555,8 @@
   "level": "综合",
   "kp": "匹配滤波器设计与简化",
   "kp_sub": "正交不重叠波形简化接收",
-  "solution": "【知识点梳理】\n· 时域错开的等能量正交信号：$ρ=0$，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{E_b}{2n_0}})$。\n· 简化原理：两支路之差可用一个“对差波形匹配”的滤波器等效。\n【解题步骤】\n第1步：双支路框图（$h_1$ 对 $s_1$、$h_2$ 对 $s_2$，$t=T$ 抽样比较）。\n第2步：$E_b=\\frac{A^2T}{2}$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{A^2T}{4n_0}}\\right)$。\n第3步：简化为单支路：对 $g(t)=s_1(t)-s_2(t)$ 匹配（或积分清零：$\\int_0^{T/2}$ 与 $\\int_{T/2}^{T}$ 之差），门限 0。\n【答案】如上。"
+  "solution": "【知识点梳理】\n· 时域错开的等能量正交信号：$ρ=0$，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{E_b}{2n_0}})$。\n· 简化原理：两支路之差可用一个“对差波形匹配”的滤波器等效。\n【解题步骤】\n第1步：双支路框图（$h_1$ 对 $s_1$、$h_2$ 对 $s_2$，$t=T$ 抽样比较）。\n第2步：$E_b=\\frac{A^2T}{2}$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{A^2T}{4n_0}}\\right)$。\n第3步：简化为单支路：对 $g(t)=s_1(t)-s_2(t)$ 匹配（或积分清零：$\\int_0^{T/2}$ 与 $\\int_{T/2}^{T}$ 之差），门限 0。\n【答案】如上。",
+  "question_img": "images/q_qhzt-16-4.png"
  },
  {
   "subject": "txyl",
@@ -21665,7 +21675,8 @@
   "level": "综合",
   "kp": "最佳基带传输系统",
   "kp_sub": "给定 g(t) 的最佳接收分析",
-  "solution": "【知识点梳理】\n· $E_g=\\int g^2dt$；噪声方差 $σ^2=\\frac{N_0}{2}E_h$（单边 $N_0$）；等概双极性门限 0。\n· 最大信噪比滤波器=匹配滤波器 $h(t)=\\frac{g(T-t)}{\\sqrt{E_g}}$（能量归一）。\n【解题步骤】\n第1步：$E_g=\\int_0^{T/2}1^2dt+\\int_{T/2}^T(\\frac12)^2dt=\\frac{T}{2}+\\frac{T}{8}=\\frac{5T}{8}$。\n第2步：$Z\\sim N(0,\\frac{N_0}{2}\\times1)$，$f(z)=\\frac{1}{\\sqrt{\\pi N_0}}e^{-z^2/N_0}$。\n第3步：门限 0；$P_e=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{2}σ}\\right)=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{N_0}}\\right)$。\n第4步：$h(t)=\\frac{g(T-t)}{\\sqrt{E_g}}$（因果满足），波形为 $g$ 的镜像并归一化。\n【答案】如上。\n【易错提醒】单边谱 $N_0$ 的噪声方差是 $\\frac{N_0}{2}E_h$；别再用双边 $\\frac{n_0}{2}$ 的公式。"
+  "solution": "【知识点梳理】\n· $E_g=\\int g^2dt$；噪声方差 $σ^2=\\frac{N_0}{2}E_h$（单边 $N_0$）；等概双极性门限 0。\n· 最大信噪比滤波器=匹配滤波器 $h(t)=\\frac{g(T-t)}{\\sqrt{E_g}}$（能量归一）。\n【解题步骤】\n第1步：$E_g=\\int_0^{T/2}1^2dt+\\int_{T/2}^T(\\frac12)^2dt=\\frac{T}{2}+\\frac{T}{8}=\\frac{5T}{8}$。\n第2步：$Z\\sim N(0,\\frac{N_0}{2}\\times1)$，$f(z)=\\frac{1}{\\sqrt{\\pi N_0}}e^{-z^2/N_0}$。\n第3步：门限 0；$P_e=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{2}σ}\\right)=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{N_0}}\\right)$。\n第4步：$h(t)=\\frac{g(T-t)}{\\sqrt{E_g}}$（因果满足），波形为 $g$ 的镜像并归一化。\n【答案】如上。\n【易错提醒】单边谱 $N_0$ 的噪声方差是 $\\frac{N_0}{2}E_h$；别再用双边 $\\frac{n_0}{2}$ 的公式。",
+  "question_img": "images/q_qhzt-18-1.png"
  },
  {
   "subject": "txyl",
@@ -21682,7 +21693,8 @@
   "level": "综合",
   "kp": "最佳基带传输系统",
   "kp_sub": "归零脉冲经多径信道+匹配滤波",
-  "solution": "【知识点梳理】\n· 最佳基带接收：接收滤波器应与 $G_T(f)C(f)$ 整体匹配，而不是只匹配发送波形。\n· 多径信道 $C(f)=1+0.5e^{-j\\pi fT_s}$ ⟺ 时域 $g(t)+0.5g(t-\\frac{T_s}{2})$。\n【解题步骤】\n第1步：等效发送波形 $g'(t)=g(t)+0.5g(t-\\frac{T_s}{2})$。\n第2步：匹配滤波器对 $g'$ 匹配：$h(t)=g'(T_s-t)\\cdot k$。\n第3步：抽样值 $\\pm E_g'$（$E_g'=\\int g'^2dt$），$σ^2=\\frac{N_0}{2}E_h$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_g'/N_0}\\right)$（归一后）。\n【答案】如上；若只对 $g(t)$ 匹配，多径分量成为码间干扰、性能恶化。\n【易错提醒】“信道非理想时匹配谁”——匹配 $G_T(f)C(f)$ 的整体，这是最佳基带传输的第二条件。"
+  "solution": "【知识点梳理】\n· 最佳基带接收：接收滤波器应与 $G_T(f)C(f)$ 整体匹配，而不是只匹配发送波形。\n· 多径信道 $C(f)=1+0.5e^{-j\\pi fT_s}$ ⟺ 时域 $g(t)+0.5g(t-\\frac{T_s}{2})$。\n【解题步骤】\n第1步：等效发送波形 $g'(t)=g(t)+0.5g(t-\\frac{T_s}{2})$。\n第2步：匹配滤波器对 $g'$ 匹配：$h(t)=g'(T_s-t)\\cdot k$。\n第3步：抽样值 $\\pm E_g'$（$E_g'=\\int g'^2dt$），$σ^2=\\frac{N_0}{2}E_h$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_g'/N_0}\\right)$（归一后）。\n【答案】如上；若只对 $g(t)$ 匹配，多径分量成为码间干扰、性能恶化。\n【易错提醒】“信道非理想时匹配谁”——匹配 $G_T(f)C(f)$ 的整体，这是最佳基带传输的第二条件。",
+  "question_img": "images/q_qhzt-18-2.png"
  },
  {
   "subject": "txyl",
