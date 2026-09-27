@@ -74,6 +74,12 @@ body{font-family:"Microsoft YaHei",system-ui,sans-serif;background:#eef1f7;color
 .rv-item .due{font-size:11px;border-radius:8px;padding:2px 7px}
 .rv-item .due.today{background:#fdecec;color:#c0504d}
 .rv-item .due.fut{background:#eef2ff;color:#4f74d8}
+.paper-meta{font-size:13px;color:#5a6478;margin-bottom:10px}
+.paper-part{font-weight:800;color:#2b3a67;margin:16px 0 8px;font-size:15px}
+.pq{display:flex;gap:6px;margin-bottom:16px}
+.pq-stem b{color:#4f74d8}
+.pq-body{flex:1}
+.pq-body .stem{font-size:15px}
 </style>
 </head>
 <body>
@@ -91,6 +97,7 @@ body{font-family:"Microsoft YaHei",system-ui,sans-serif;background:#eef1f7;color
   <div class="tabs">
     <div class="tab on" id="tab-catalog" onclick="switchTab('catalog')">目录</div>
     <div class="tab" id="tab-review" onclick="switchTab('review')">复测队列</div>
+    <div class="tab" id="tab-paper" onclick="switchTab('paper')">拼卷</div>
   </div>
   <div id="view"></div>
 </div>
@@ -122,7 +129,10 @@ function switchTab(t){
   VIEW.tab=t;
   document.getElementById('tab-catalog').classList.toggle('on', t==='catalog');
   document.getElementById('tab-review').classList.toggle('on', t==='review');
-  if(t==='catalog') viewCatalog(); else viewReview();
+  document.getElementById('tab-paper').classList.toggle('on', t==='paper');
+  if(t==='catalog') viewCatalog();
+  else if(t==='paper') viewPaper();
+  else viewReview();
 }
 function kpStat(kpid){
   let total=0, ok=0, due=0; const td=today();
@@ -273,6 +283,101 @@ function redoQ(){
 }
 function prevQ(){ if(VIEW.qidx>0){ VIEW.qidx--; viewQuestion(); } }
 function nextQ(){ const n=kpQuestions(VIEW.kp).length; if(VIEW.qidx<n-1){ VIEW.qidx++; viewQuestion(); } }
+/* ---------- 拼卷(仿南邮真题结构, 随机抽题广覆盖考点) ---------- */
+const PKEY='dxy_paper_v1';
+const PTEMPLATE=[
+  {label:'一、单项选择题', type:'选择', n:5},
+  {label:'二、填空题', type:'填空', n:5},
+  {label:'三、判断题', type:'判断', n:3},
+  {label:'四、计算与综合题', type:'计算', n:6},
+];
+function loadPaper(){ try{ return JSON.parse(localStorage.getItem(PKEY)); }catch(e){ return null; } }
+function savePaper(p){ if(p) localStorage.setItem(PKEY, JSON.stringify(p)); else localStorage.removeItem(PKEY); }
+function genPaper(){
+  const used_kp={}, used_ch={}, used_id={};
+  const groups=[];
+  for(const t of PTEMPLATE){
+    const wantCn = t.type==='计算' ? ['计算','简答'] : [t.type];
+    let cand = DB.questions.filter(q => q.legacy && wantCn.includes(q.legacy.type_cn) && !used_id[q.question_id]);
+    // 第一遍: 优先未用过的考点+未用过的章
+    shuffle(cand);
+    let pick = cand.filter(q => !used_kp[q.category_id] && !used_ch[chapterOf(q)]);
+    if (pick.length < t.n) pick = pick.concat(cand.filter(q => !pick.includes(q) && !used_kp[q.category_id]));
+    if (pick.length < t.n) pick = pick.concat(cand.filter(q => !pick.includes(q)));
+    pick = pick.slice(0, t.n);
+    groups.push({label:t.label, ids:pick.map(q=>q.question_id)});
+    pick.forEach(q => { used_id[q.question_id]=1; used_kp[q.category_id]=1; used_ch[chapterOf(q)]=1; });
+  }
+  const p={created: today(), groups};
+  savePaper(p);
+  viewPaper();
+}
+function chapterOf(q){ return q.category_full_path.split(' / ')[1] || ''; }
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function paperQs(p){ return p.groups.flatMap(g=>g.ids.map(id=>DB.questions.find(q=>q.question_id===id))); }
+function viewPaper(){
+  const p=loadPaper();
+  const v=document.getElementById('view');
+  let h='<div class="card"><div class="backrow"><span class="lnk" onclick="viewCatalog()">‹ 返回目录</span></div>';
+  if(!p){
+    h+='<div class="empty"><div class="big">📄</div>按南邮近年真题结构随机拼卷<br>选择5 + 填空5 + 判断3 + 计算6 = 19 题<br>考点尽量不重复、覆盖面广'
+      + '<div style="margin-top:16px"><button class="flipbtn" style="width:auto;padding:10px 26px" onclick="genPaper()">🎲 生成试卷</button></div></div>';
+  } else {
+    let answered=0, right=0, total=0;
+    h+='<div class="paper-meta">拼卷时间 '+p.created+' · 共 '+p.groups.reduce((n,g)=>n+g.ids.length,0)+' 题'
+      + ' · <span class="lnk" onclick="genPaper()">重新拼卷</span></div>';
+    for(const g of p.groups){
+      h+='<div class="paper-part">'+esc(g.label)+'</div>';
+      g.ids.forEach((id,qi)=>{
+        const q=DB.questions.find(x=>x.question_id===id); if(!q) return;
+        const s=st(id);
+        const isC=q.question_type==='single_choice'&&q.options.length;
+        h+='<div class="pq"><div class="pq-stem"><b>'+(qi+1)+'.</b> </div><div class="pq-body">';
+        h+='<div class="stem" id="pp-'+id+'"></div>';
+        if(isC){
+          h+='<div class="opts">';
+          for(const o of q.options){
+            let cls='opt';
+            if(s.sel){ cls+=' dis'; if(o.id===q.answer.option_ids[0]) cls+=' right'; else if(s.sel===o.id) cls+=' wrong'; }
+            else if(s.sel===o.id) cls+=' sel';
+            h+='<div class="'+cls+'" onclick="pickPaperOpt(\''+id+'\',\''+o.id+'\')"><span class="lab">'+o.label+'</span><span>'+esc(o.content_md)+'</span></div>';
+          }
+          h+='</div>';
+          total++;
+          if(s.sel){ answered++; if(s.sel===q.answer.option_ids[0]) right++; }
+        } else {
+          if(s.ansShown) h+='<div class="ansbox" id="pa-'+id+'"><div class="h">参考答案</div></div>';
+          else h+='<button class="btn blue" onclick="showPaperAns(\''+id+'\')">看参考答案</button>';
+        }
+        h+='</div></div>';
+      });
+    }
+    h+='<div class="card"><div class="g-nm" style="font-weight:800">📊 本次作答</div><div class="root-meta" style="margin-top:6px">'
+      + '选择已答 '+answered+'/'+total+'，答对 <b style="color:#1d9e6f">'+right+'</b> 题'
+      + ' · 主观题自评后用三键标记</div>'
+      + '<button class="btn grey" style="margin-top:10px" onclick="clearPaper()">丢弃本卷</button></div>';
+  }
+  v.innerHTML=h;
+  const p2=loadPaper();
+  if(p2) for(const id of p2.groups.flatMap(g=>g.ids)){
+    const q=DB.questions.find(x=>x.question_id===id);
+    const el=document.getElementById('pp-'+id);
+    if(q&&el) renderMixed(el, q.stem_md);
+    const ab=document.getElementById('pa-'+id);
+    if(ab) renderMixed(ab, (q.answer.reference_answer_md||'（见解析）'));
+  }
+  refreshStats();
+}
+function pickPaperOpt(id, oid){
+  const q=DB.questions.find(x=>x.question_id===id);
+  const s=st(id);
+  if(s.sel) return;
+  s.sel=oid; s.ansShown=true;
+  savePaper(loadPaper());
+  viewPaper();
+}
+function showPaperAns(id){ const s=st(id); s.ansShown=true; saveState(); viewPaper(); }
+function clearPaper(){ savePaper(null); viewPaper(); }
 function viewReview(){
   const td=today();
   const rows=[];
