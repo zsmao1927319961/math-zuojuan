@@ -286,29 +286,40 @@ function nextQ(){ const n=kpQuestions(VIEW.kp).length; if(VIEW.qidx<n-1){ VIEW.q
 /* ---------- 拼卷(仿南邮真题结构, 随机抽题广覆盖考点) ---------- */
 const PKEY='dxy_paper_v1';
 const PTEMPLATE=[
-  {label:'一、单项选择题', type:'选择', n:5},
-  {label:'二、填空题', type:'填空', n:5},
-  {label:'三、判断题', type:'判断', n:3},
-  {label:'四、计算与综合题', type:'计算', n:6},
+  {label:'一、单项选择题（每空2分，共30分）', cn:['选择'], n:15},
+  {label:'二、判断题（每题2分，共10分）', cn:['判断'], n:5},
+  {label:'三、填空题（每空2分，共20分）', cn:['填空'], n:10},
+  {label:'四、计算题（10分）· 模拟调制', cn:['计算'], chap:5, n:1},
+  {label:'五、计算题（10分）· 数字基带传输', cn:['计算'], chap:6, n:1},
+  {label:'六、计算题（10分）· 数字频带传输', cn:['计算'], chap:7, n:1},
+  {label:'七、综合题（15分）· 信源编码+TDM+频带设计', cn:['计算'], chap:9, prefer:'综合', n:1},
+  {label:'八、计算题（15分）· 最佳接收', cn:['计算'], chap:8, n:1},
+  {label:'九、计算题（15分）· 信道编码', cn:['计算'], chap:10, n:1},
+  {label:'十、计算题（15分）· 信源编码', cn:['计算'], chap:9, n:1},
 ];
+let warnings_paper=[];
 function loadPaper(){ try{ return JSON.parse(localStorage.getItem(PKEY)); }catch(e){ return null; } }
 function savePaper(p){ if(p) localStorage.setItem(PKEY, JSON.stringify(p)); else localStorage.removeItem(PKEY); }
+function chapOfId(q){ return Math.floor((q.category_id - 10000) / 100); }
 function genPaper(){
-  const used_kp={}, used_ch={}, used_id={};
+  const used_kp={}, used_id={};
   const groups=[];
   for(const t of PTEMPLATE){
-    const wantCn = t.type==='计算' ? ['计算','简答'] : [t.type];
-    let cand = DB.questions.filter(q => q.legacy && wantCn.includes(q.legacy.type_cn) && !used_id[q.question_id]);
-    // 第一遍: 优先未用过的考点+未用过的章
+    let cand = DB.questions.filter(q => q.legacy && t.cn.includes(q.legacy.type_cn) && !used_id[q.question_id]
+      && (!t.chap || chapOfId(q) === t.chap));
+    if(t.prefer){
+      const pref = cand.filter(q => (q.legacy.kp||'').indexOf(t.prefer) >= 0);
+      if(pref.length) cand = pref;
+    }
     shuffle(cand);
-    let pick = cand.filter(q => !used_kp[q.category_id] && !used_ch[chapterOf(q)]);
-    if (pick.length < t.n) pick = pick.concat(cand.filter(q => !pick.includes(q) && !used_kp[q.category_id]));
-    if (pick.length < t.n) pick = pick.concat(cand.filter(q => !pick.includes(q)));
+    let pick = cand.filter(q => !used_kp[q.category_id]);
+    if(pick.length < t.n) pick = pick.concat(cand.filter(q => !pick.includes(q)));
     pick = pick.slice(0, t.n);
+    if(pick.length < t.n){ warnings_paper.push(t.label); }
     groups.push({label:t.label, ids:pick.map(q=>q.question_id)});
-    pick.forEach(q => { used_id[q.question_id]=1; used_kp[q.category_id]=1; used_ch[chapterOf(q)]=1; });
+    pick.forEach(q => { used_id[q.question_id]=1; used_kp[q.category_id]=1; });
   }
-  const p={created: today(), groups};
+  const p={created: today(), template:'njupt2023', groups};
   savePaper(p);
   viewPaper();
 }
@@ -320,7 +331,7 @@ function viewPaper(){
   const v=document.getElementById('view');
   let h='<div class="card"><div class="backrow"><span class="lnk" onclick="viewCatalog()">‹ 返回目录</span></div>';
   if(!p){
-    h+='<div class="empty"><div class="big">📄</div>按南邮近年真题结构随机拼卷<br>选择5 + 填空5 + 判断3 + 计算6 = 19 题<br>考点尽量不重复、覆盖面广'
+    h+='<div class="empty"><div class="big">📄</div>按南邮 2023 真题结构随机拼卷，满分 150 分<br>单选 15 空(30分) + 判断 5 题(10分) + 填空 10 空(20分) + 计算综合 7 大题(90分)<br>大题按章定点抽题：模拟调制/基带/频带/综合/最佳接收/信道编码/信源编码'
       + '<div style="margin-top:16px"><button class="flipbtn" style="width:auto;padding:10px 26px" onclick="genPaper()">🎲 生成试卷</button></div></div>';
   } else {
     let answered=0, right=0, total=0;
