@@ -22666,7 +22666,7 @@
   "kp_sub": "",
   "chapter_name": "第2章 确知信号 · 考点1 功率、能量和带宽求解",
   "answer_text": "AB",
-  "question_text": "",
+  "question_text": "2、若 16 进制通信系统的数据速率是 $16\\,\\mathrm{kb/s}$，则符号速率是 ____(1)____ $\\mathrm{kBaud}$；若\n均信号功率是 $8\\,\\mathrm{W}$，则平均比特能量是 ____(2)____ $\\mathrm{mJ}$。\n（北京邮电大学 2015 年一、1）\n(1)A、4　　　　B、8　　　　C、16　　　　D、32\n(2)A、1/4　　　B、1/2　　　C、1　　　　D、4",
   "solution": "2、A；B。\n解析：$R_B=\\frac{R_b}{\\log_2^{16}}=4kBaud$；$E=PT=8\\times\\frac{1}{16\\times10^{-3}}=0.5mJ$"
  },
  {
@@ -22706,7 +22706,7 @@
   "kp_sub": "",
   "chapter_name": "第2章 确知信号 · 考点1 功率、能量和带宽求解",
   "answer_text": "BBCA",
-  "question_text": "",
+  "question_text": "4、设 $x(t) = \\cos(200\\pi) + \\sin(200\\pi)$，其希尔伯特变换 $\\hat{x}(t)$。$x(t)$ 的功率是 ___(1)___ W，\n$\\hat{x}(t)$ 的功率是 ___(2)___ W，$x(t) + \\hat{x}(t)$ 的功率是 ___(3)___ W，$x(t) + \\hat{x}(-t)$ 的功率是 ___(4)___ W。\n（北京邮电大学 2021 年一、1）\nA、0　　　　B、1　　　　C、2　　　　D、4",
   "solution": "4、B；B；C；A。\n解析：$x(t)$ 与 $\\hat{x}(t)$ 的功率相同，并且两者不相关。\n$$\\hat{x}(t) = \\sin(200\\pi) - \\cos(200\\pi) \\qquad \\hat{x}(-t) = -\\sin(200\\pi) - \\cos(200\\pi)$$\n$$x(t) + \\hat{x}(-t) = 0$$"
  },
  {
@@ -22841,7 +22841,7 @@
   "kp": "期望、方差、自相关函数求解",
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点1 期望、方差、自相关函数求解",
-  "answer_text": "",
+  "answer_text": "$[\\cdots(t+T)]=R_X(t+T)$\n6、解：\n(1)\n$$R(\\tau)=E[\\xi(t)\\xi(t+\\tau)]=\\int_0^{2\\pi}K\\cos(\\omega_c t+\\theta)K\\cos(\\omega_c t+\\omega_c\\tau+\\theta)\\frac{1}{2\\pi}d\\theta$$\n$$=\\frac{K^2}{4\\pi}\\left[\\int_0^{2\\pi}\\cos(\\omega_c\\tau)d\\theta+\\int_0^{2\\pi}\\cos(\\omega_c t+\\omega_c\\tau+2\\theta)d\\theta\\right]$$\n$$=\\frac{K^2}{2}\\cos(\\omega_c\\tau)$$\n功率谱密度是自相关函数的傅里叶变换，则有：\n$$P(\\omega)=\\frac{\\pi K^2}{2}[\\delta(\\omega+\\omega_c)+\\delta(\\omega-\\omega_c)]$$\n(2) 总平均功率 $P=R(0)=\\dfrac{K^2}{2}$\n(3) 均值：$a=E[\\xi(t)]=\\int_0^{2\\pi}K\\cos(\\omega_c t+\\theta)\\dfrac{1}{2\\pi}d\\theta=0$\n99\n方差：$\\sigma^2=\\dfrac{K^2}{2}$",
   "question_text": "6、设一个随机相位的正弦波为 $\\xi(t)=K\\cos(\\omega_c t+\\theta)$，其中 $K$ 和 $\\omega_c$ 均为常数，$\\theta$ 是一个在 $(0,2\\pi)$ 内均匀分布的随机变量，试求：\n（1）$\\xi(t)$ 的自相关函数和功率谱密度；\n（2）$\\xi(t)$ 的总平均功率；\n（3）$\\xi(t)$ 的均值和方差。（西安科技大学2022年第二题）"
  },
  {
@@ -22879,7 +22879,7 @@
   "kp": "期望、方差、自相关函数求解",
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点1 期望、方差、自相关函数求解",
-  "answer_text": "",
+  "answer_text": "8、解：\n(1) $E[Z(t)] = E[X(t)] + E[Y(t)] = a_X + a_Y$\n(2)\n$$R_z(t, t+\\tau) = E[Z(t)Z(t+\\tau)] = E\\{[x(t)+y(t)][x(t+\\tau)+y(t+\\tau)]\\}$$\n$$= E[x(t)x(t+\\tau) + x(t)y(t+\\tau) + y(t)x(t+\\tau) + y(t)y(t+\\tau)]$$\n$$= R_X(\\tau) + R_Y(\\tau) + 2a_X a_Y$$\n(3) $Z(t)$ 的期望等于常数，自相关函数与时间 $t$ 无关，因此是平稳随机过程。\n(4) $R_z(\\tau) = R_X(\\tau) + R_Y(\\tau) + 2a_X a_Y = \\sigma_1^2\\cos(w_0\\tau) + \\sigma_2^2\\cos(2w_0\\tau) + 2a^2$\n则： $P_z(w) = \\pi\\sigma_1^2[\\delta(w+w_0) + \\delta(w-w_0)] + \\pi\\sigma_2^2[\\delta(w+2w_0) + \\delta(w-2w_0)] + 4a^2\\pi\\delta(w)$\n平均功率： $P = R(0) = \\sigma_1^2 + \\sigma_2^2 + 2a^2$",
   "question_text": "8、已知 $X(t)$ 和 $Y(t)$ 是统计独立的平稳随机过程，且它们的均值分别为 $a_X$ 和 $a_Y$，自相关函数分别为 $R_X(\\tau)$ 和 $R_Y(\\tau)$；$Z(t)$ 为两者之和的过程 $Z(t)=X(t)+Y(t)$。\n（1）求 $Z(t)$ 的数学期望；\n（2）求 $Z(t)$ 的自相关函数；\n（3）判断 $Z(t)$ 是否平稳，并说明原因；\n（4）若 $a_X=a_Y=a$、$R_X(\\tau)=\\sigma_1^2\\cos(w_0\\tau)$、$R_Y(\\tau)=\\sigma_2^2\\cos(2w_0\\tau)$，求 $Z(t)$ 的功率谱与平均功率。（江苏大学 2018 年二、1）\n9"
  },
  {
@@ -22958,7 +22958,7 @@
   "kp": "平稳随机过程、各态历经性的判断",
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点2 平稳随机过程、各态历经性的判断",
-  "answer_text": "",
+  "answer_text": "$\\omega_0\\tau+\\theta)$\n4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。",
   "question_text": "4、$X(t)=A\\cos(2\\pi f_0 t)$ 时，A 为高斯随机变量，均值为 0，方差为 $\\sigma_A^2$，将 $X(t)$ 输入积分器得 $Y(t)=\\int_0^t X(\\tau)d\\tau$\n（1）求 $t_1$ 时 $Y(t)$ 概率密度函数；\n（2）证明 $Y(t)$ 是否为平稳随机过程；\n（3）证明 $Y(t)$ 是否为遍历随机过程。（北京交通大学 2020 年六、2）\n10"
  },
  {
@@ -23015,8 +23015,8 @@
   "kp": "平稳随机过程、各态历经性的判断",
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点2 平稳随机过程、各态历经性的判断",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "18696\n7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n102\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。",
+  "question_text": "通信原理……（页眉被裁切，仅见此部分）\n7、已知随机过程 $Z(t)=X(t)\\cos(\\omega_c t+\\theta)$。其中，$X(t)$ 是广义平稳随机过程，其自相关函数为\n$$R_X(\\tau)=\\begin{cases}1-|\\tau|/T_B, & |\\tau|\\le T_B \\\\ 0, & \\text{其他}\\end{cases}$$\n$\\theta$ 是在 $[0,2\\pi]$ 上均匀分布的随机变量，$\\theta$ 与 $X(t)$ 相互独立。（南京邮电大学 2017 年第四题）\n（1）$Z(t)$ 是否为广义平稳？\n（2）求 $Z(t)$ 的自相关函数 $R_Z(t,t+\\tau)$；\n（3）求 $Z(t)$ 的功率谱密度及平均功率；\n（4）若 $X(t)$ 各态历经，且 $\\int_{-\\infty}^{\\infty}X(t+t_0)\\cos(\\omega_c t+\\theta_0)\\,dt=0$，$\\int_{-\\infty}^{\\infty}X(t)X(t+t_0)\\cos(2\\omega_c t+\\theta_0)\\,dt=0$。其中，$X(t)$ 为 $X(t)$ 的任一样本函数，"
  },
  {
   "subject": "txyl",
@@ -23072,7 +23072,7 @@
   "kp": "白噪声、低通白噪声、带通白噪声",
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点3 白噪声、低通白噪声、带通白噪声",
-  "answer_text": "",
+  "answer_text": "2、$\\frac{n_0}{2}\\delta(\\tau)$，$\\infty$，$n_0 f_m Sa(2\\pi f_m t)$，$n_0 f_m$\n1 $\\qquad$ $e^{-t^2}$ (2)$e^{j2\\pi f_c t}$ B. $\\cos(2\\pi f_c t)$",
   "question_text": "2、若信道中某高斯白噪声双边功率谱为 $\\frac{n_0}{2}$，则自相关函数_______，噪声总功\n率为_______，若低通白噪声截止频率为 $f_m$，则其自相关函数_______，噪声总功率\n为_______。（南京邮电大学 2020 年一、1）"
  },
  {
@@ -23091,7 +23091,7 @@
   "kp": "白噪声、低通白噪声、带通白噪声",
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点3 白噪声、低通白噪声、带通白噪声",
-  "answer_text": "",
+  "answer_text": "$$n_0 B\\,Sa(\\pi B t)\\cos(2\\pi f_c\\cdot)$$\n3、 $f(x)=\\dfrac{1}{\\sqrt{2\\pi n_0 B}}\\ \\mathrm{e}^{-2n_0 B}$",
   "question_text": "3、单边带功率谱密度为 $n_0$，中心频率为 $f_c$/Hz/，带宽为 $B(Hz)$ 的理想带通白噪声，其概率密度为__________，自相关函数为__________。\n（北京交通大学 2019 年一、1）"
  },
  {
@@ -23188,7 +23188,7 @@
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点3 白噪声、低通白噪声、带通白噪声",
   "answer_text": "CBD",
-  "question_text": "",
+  "question_text": "8、已知窄带平稳随机过程 $X(t) = X_c(t)\\cos 2\\pi f_c t - X_s(t)\\sin 2\\pi f_c t$ 的功率为 2，则\n其同相分量 $X_c(t)$ 的功率等于 ___(1)___。令 $R_c(\\tau)$、$R_s(\\tau)$ 分别表示 $X_c(t)$ 和 $X_s(t)$ 的自\n相关函数，则它们的关系是 ___(2)___。将 $t$ 固定在 $t = t_0$ 时，$X_c(t_0)$ 和 $X_s(t_0)$ 这两个随\n机变量的关系是 ___(3)___。（北京邮电大学 2015 年一、29）\n(1) A. 0　　B. 1　　C. 2　　D. 4\n(2) A. $R_c(\\tau)$ 是 $R_s(\\tau)$ 的希尔伯特变换　　　　B. $R_c(\\tau) = R_s(\\tau)$\nC. $R_c(\\tau)$ 与 $R_s(\\tau)$ 正交　　　　　　　　　D. $R_c(\\tau) = -R_s(\\tau)$\n(3) A. 相等　　　　B. 正相关　　　　C. 负相关　　　　D. 独立",
   "solution": "8、C；B；D"
  },
  {
@@ -23246,7 +23246,7 @@
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点4 平稳随机过程通过线性系统",
   "answer_text": "BBDA",
-  "question_text": "",
+  "question_text": "中求出，或是……\n3、单边功率谱密度为 $N_0 = 2\\,\\mathrm{W/Hz}$ 的高斯噪声通过一个冲激响应为 $h(t)$ 的带通滤波器后成为 $n(t)$，已知 $h(t)$ 的能量为 $1\\,\\mathrm{J}$。$n(t)$ 服从方差为__(1)__的__(2)__分布，其相位服从__(3)__分布，包络服从__(4)__分布。（北京邮电大学 2025 年一、7）\n(1) A. 0.5　　B. 1　　C. 2　　D. 4\n(2) A. 瑞利　　B. 高斯　　C. 指数　　D. 均匀",
   "solution": "3、B、B、D、A。解析：由于带通滤波器输出噪声均值等于 0，方差等于平均功率，则有： $P=\\frac{N_0}{2}\\int_{-\\infty}^{\\infty}|H(f)|^2\\,df=\\frac{N_0}{2}E_h=1$。"
  },
  {
@@ -23266,7 +23266,7 @@
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点4 平稳随机过程通过线性系统",
   "answer_text": "4、解：\n$\\xi_o(t)$ 的功率谱密度为：\n$$P_{\\xi_o}(\\omega) = P_{\\xi_i}(\\omega)|H(\\omega)|^2 = \\frac{n_0}{2}\\left|1 + e^{-j\\omega T}\\right|^2 = n_0\\left[1 + \\cos(\\omega T)\\right]$$\n$\\xi_o(t)$ 的自相关函数为：\n$$R_{\\xi_o}(\\tau) = n_0\\delta(\\tau) + \\frac{n_0}{2}\\left[\\delta(\\tau - T) + \\delta(\\tau + T)\\right]$$",
-  "question_text": ""
+  "question_text": "(2)(3)(4) A. 瑞利\n4、若 $\\xi_i(t)$ 是平稳随机过程，其功率谱密度 $P_{\\xi_i}(\\omega)=n_0/2$，将它加于下图所示系统，试确定该系统输出随机过程 $\\xi_o(t)$ 的功率谱密度和自相关函数。\n（河北工业大学 2018 年 三、6）"
  },
  {
   "subject": "txyl",
@@ -23360,7 +23360,7 @@
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "",
   "chapter_name": "第3章 随机过程 · 考点4 平稳随机过程通过线性系统",
-  "answer_text": "",
+  "answer_text": "$2B$\n$$\\frac{2}{2}B$$\n9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n106\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$",
   "question_text": "9、设随机过程 $Y(t) = X_1 \\cos w_0 t + X_2 \\sin w_0 t$，其中 $X_1$ 和 $X_2$ 是相互独立且均值为 0、方差为 $\\sigma^2$ 的高斯随机过程，通过传输函数为 $H(\\omega) = j\\omega$ 的线性系统，输出随机过程表示为 $Y'(t)$。试求：\n(1) $Y'(t)$ 的功率谱密度；\n(2) $Y'(t)$ 的自相关函数。（河北大学 2020 年三、1）\n17"
  },
  {
@@ -23535,7 +23535,7 @@
   "kp_sub": "",
   "chapter_name": "第4章 信道 · 考点1 恒参信道和随参信道",
   "answer_text": "7、$kx(t-t_0)$",
-  "question_text": ""
+  "question_text": "7、发送信号 $x(t)$ 通过恒参信道不失真的要求是输出信号 $y(t)$=________。\n（北京邮电大学 2011 年 一、7）"
  },
  {
   "subject": "txyl",
@@ -23554,7 +23554,7 @@
   "kp_sub": "",
   "chapter_name": "第4章 信道 · 考点1 恒参信道和随参信道",
   "answer_text": "D",
-  "question_text": "",
+  "question_text": "8、信道传递函数为 $H(f)=|H(f)|e^{j\\varphi(f)}$，称 $-\\dfrac{1}{2\\pi}\\cdot\\dfrac{d}{df}\\varphi(f)$ 为_______特性。\n（北京邮电大学 2016 年一、24）\nC. 微分　　　D. 群时延",
   "solution": "8、D"
  },
  {
@@ -23810,7 +23810,8 @@
   "kp_sub": "",
   "chapter_name": "第4章 信道 · 考点3 香农公式和连续信道容量求解",
   "answer_text": "CA",
-  "question_text": "5、根据香农公式，通过AWGN信道传输信息时，若要求频带利用率为 $\\eta$，所需的比特信噪比 $E_b/N_0$ 应当大于等于___(1)___。给定噪声单边功率谱密度 $N_0$，当频带利用率非常高时，频带利用率每增加1bit/s/Hz，要求比特能量 $E_b$ 至少提高___(2)___。\n（北京邮电大学2025年一、13）\n(1)　A. $\\dfrac{2}{\\eta}$　　　　B. $\\log_2(1+\\eta)$　　　　C. $\\dfrac{2^{\\eta}-1}{\\eta}$　　　　D. $e^{\\eta}$\n(2)　A. 3dB　　　　B. 1J　　　　C. 1dB　　　　D. 50%"
+  "question_text": "5、根据香农公式，通过AWGN信道传输信息时，若要求频带利用率为 $\\eta$，所需的比特信噪比 $E_b/N_0$ 应当大于等于___(1)___。给定噪声单边功率谱密度 $N_0$，当频带利用率非常高时，频带利用率每增加1bit/s/Hz，要求比特能量 $E_b$ 至少提高___(2)___。\n（北京邮电大学2025年一、13）\n(1)　A. $\\dfrac{2}{\\eta}$　　　　B. $\\log_2(1+\\eta)$　　　　C. $\\dfrac{2^{\\eta}-1}{\\eta}$　　　　D. $e^{\\eta}$\n(2)　A. 3dB　　　　B. 1J　　　　C. 1dB　　　　D. 50%",
+  "solution": "5、C、A.\n（右上角残缺页边文字：$B\\to\\infty$ $\\log_2$ $=\\infty$）\n解析：$C = B\\log_2(1+\\frac{S}{N}) \\Rightarrow R_b \\leq B\\log_2(1+\\frac{E_b R_b}{N_0 B})$\n则有：$\\frac{R_b}{B} \\leq \\log_2(1+\\frac{E_b}{N_0} \\times \\frac{R_b}{B}) \\Rightarrow 2^{\\frac{R_b}{B}} \\leq 1+\\frac{E_b}{N_0} \\times \\frac{R_b}{B}$，令 $\\frac{R_b}{B} = \\eta$\n则有：$\\frac{E_b}{N_0} \\geq \\frac{2^{\\eta}-1}{\\eta}$\n当频带利用率增加1bit/s/Hz时，则有：\n$\\frac{E_b'}{N_0} \\geq \\frac{2^{\\eta+1}-1}{\\eta+1} \\approx \\frac{2^{\\eta+1}}{\\eta}$，则有：$\\frac{E_b'}{N_0} = \\frac{2^{\\eta+1}}{2^{\\eta}} = 2 \\Rightarrow 10\\lg(2) = 3dB$"
  },
  {
   "subject": "txyl",
@@ -23904,7 +23905,7 @@
   "kp": "香农公式和连续信道容量求解",
   "kp_sub": "",
   "chapter_name": "第4章 信道 · 考点3 香农公式和连续信道容量求解",
-  "answer_text": "",
+  "answer_text": "10、解：\n112\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\",
   "question_text": "10、某 $FDM$ 系统有 3 个频谱互不交叠的子信道，子信道带宽均为 $1\\,\\mathrm{kHz}$。发端通过 3 个子信道发送信号，子信道 1、2、3 上的发送功率 $P_1$、$P_2$、$P_3$ 满足\n$$P_1 + P_2 + P_3 = 3W$$\n。三个子信道的功率增益分别为 $g_1 = 1$、$g_2 = 2$ 和 $g_3 = 3$，子信道输出端的噪声功率均为 $1\\,\\mathrm{W}$。\n(1) 若子信道 1、2、3 的调制方式分别为 QPSK、16QAM、64QAM，且符号速率能达到奈奎斯特无符号间干扰传输的极限，试分别求出各个子信道的传输速率 (bit/s)，并给出该系统的总传输速率及频带利用率 (bit/s/Hz)；\n(2) 利用香农公式，分别按如下条件求系统的总传输速率：\n(a) $P_1 = 3W$，$P_2 = P_3 = 0W$；\n23\n(b) $P_1 = P_2 = P_3 = 1W$；\n(c) $P_i = \\beta g_i$，其中 $\\beta$ 是能满足 $P_1 + P_2 + P_3 = 3W$ 的系数。\n（北京邮电大学 2021 年第八题、内蒙古大学 2023 年第七题）"
  },
  {
@@ -23981,7 +23982,7 @@
   "kp": "条件熵、联合熵、互信息和离散信道容量求解",
   "kp_sub": "",
   "chapter_name": "第4章 信道 · 考点4 条件熵、联合熵、互信息和离散信道容量求解",
-  "answer_text": "",
+  "answer_text": "4、解：\n（1）\n114\n8696\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_",
   "question_text": "4、某四元对称信道，每个符号正确传输的概率为 $\\frac{125}{128}$。错成其他符号的概率均为 $\\frac{1}{128}$。已知信源分布为 $\\frac{1}{4}$，$\\frac{1}{4}$，$\\frac{3}{8}$，$\\frac{1}{8}$。\n（1）信源信息熵。\n（2）当前信源下信道的传输速率\n（3）信道容量。（南京邮电大学 2019 年第五题）"
  },
  {
@@ -24000,7 +24001,7 @@
   "kp": "条件熵、联合熵、互信息和离散信道容量求解",
   "kp_sub": "",
   "chapter_name": "第4章 信道 · 考点4 条件熵、联合熵、互信息和离散信道容量求解",
-  "answer_text": "",
+  "answer_text": "5、解：\n$$H(X,Y)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_i,y_j)\\log P(x_i,y_j)=-[\\frac{3}{8}\\log_2^{\\frac{3}{8}}+\\frac{1}{8}\\log_2^{\\frac{1}{8}}+\\frac{1}{2}\\log_2^{\\frac{1}{2}}]=1.4bit/symol$$\n根据联合分布，可得到：\n$$P(X=0)=\\frac{1}{2},P(X=1)=\\frac{1}{2}$$\n$$P(Y=0)=\\frac{3}{8},P(Y=1)=\\frac{5}{8}$$\n$$H(Y)=-\\sum_{j=1}^{2}P(y_j)\\log P(y_j)=-[\\frac{5}{8}\\log_2^{\\frac{5}{8}}+\\frac{3}{8}\\log_2^{\\frac{3}{8}}]=0.95bit/symol$$\n115\n$$H(X)=-\\sum_{i=1}^{2}P(x_i)\\log P(x_i)=-[\\frac{1}{2}\\log_2^{\\frac{1}{2}}+\\frac{1}{2}\\log_2^{\\frac{1}{2}}]=1bit/symol$$　　$H(\\ldots$\n$$H(X|Y)=H(X,Y)-H(Y)=0.45bit/symbol$$　　$H(\\ldots$",
   "question_text": "5、已知两个二进制随机变量 $X$ 和 $Y$ 服从下列联合分布：\n$$P(X=Y=0)=\\frac{3}{8},P(X=0,Y=1)=\\frac{1}{8},P(X=Y=1)=\\frac{1}{2}$$\n试求信源熵 $H(X)$、信宿熵 $H(Y)$、条件熵 $H(X|Y)$ 及联合熵 $H(X,Y)$。\n（北京科技大学 2016 年三、2）\n25"
  },
  {
@@ -24019,7 +24020,7 @@
   "kp": "条件熵、联合熵、互信息和离散信道容量求解",
   "kp_sub": "",
   "chapter_name": "第4章 信道 · 考点4 条件熵、联合熵、互信息和离散信道容量求解",
-  "answer_text": "",
+  "answer_text": "6、解：\n(1) $P(Y=0)=P(Y=0\\mid X=0)P(X=0)+P(Y=0\\mid X=1)P(X=1)=0.8p$\n同理：$P(Y=1)=0.8(1-p)$\n$$P(Y=2)=1-0.8p-0.8(1-p)=0.2$$\n(2) $H(Y)=-0.8p\\log_2^{0.8p}-0.8(1-p)\\log_2^{0.8(1-p)}-0.2\\log_2^{0.2}$\n$$H(Y\\mid X)=H(Y\\mid 0)P(X=0)+H(Y\\mid 1)P(X=1)$$\n$$=H(0.8,0.2)P+H(0.8,0.2)(1-P)$$\n$$=H(0.8,0.2)=-1.6+\\log_2 5$$\n(3)\n$$H(Y)=-0.8p\\log_2^{0.8p}-0.8(1-p)\\log_2^{0.8(1-p)}-0.2\\log_2^{0.2}$$\n$$=-\\big[0.8p\\log_2^{0.8}+0.8p\\log_2^{p}+0.8(1-p)\\log_2^{0.8}+0.8(1-p)\\log_2^{1-p}+0.2\\log_2^{0.2}\\big]$$\n$$=-\\big[0.8p\\log_2^{p}+0.8(1-p)\\log_2^{1-p}+0.8\\log_2^{0.8}+0.2\\log_2^{0.2}\\big]$$\n显然，当 $p=0.5$ 时，$H(Y)$ 取的最大值\n此时 $H(Y)$ 最大值为\n$$H_{\\max}(Y)=-\\big[0.8(0.5\\log_2^{0.5}+0.5\\log_2^{0.5})+0.8\\log_2^{0.8}+0.2\\log_2^{0.2}\\big]$$\n$$=0.8+H(0.8,0.2)$$\n$$=-0.8+\\log_2 5$$\n(4) $C=\\max I(X;Y)=\\max H(Y)-H(Y\\mid X)=0.8$ 比特/符号",
   "question_text": "6、设某信道的输入 $X \\in \\{0,1\\}$，输出 $X \\in \\{0,1,2\\}$。已知 $X$ 的概率分布是 $P(X=0)=p$、\n$P(X=1)=1-p$，信道转移概率 $P(Y|X)$ 如下表所示：\n【图】\n试求：\n(1) $Y$ 的概率分布 $P(Y=0)$、$P(Y=1)$、$P(Y=2)$；\n(2) 熵 $H(Y)$、条件熵 $H(Y|X)$；\n(3) 能使 $H(Y)$ 最大的 $p$ 以及 $H(Y)$ 的最大值；\n(4) 此信道的信道容量。（北邮 2019 年第六题）"
  },
  {
@@ -24175,8 +24176,8 @@
   "kp": "求FM、PM信号的调制指数、带宽、最大频偏等",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点2 求FM、PM信号的调制指数、带宽、最大频偏等",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "4、解：\n(1) $P=\\dfrac{50^2}{2}=1250$\n118\n(2) 最大频偏：$\\Delta f_{\\max}=\\dfrac{1}{2\\pi}\\left|\\dfrac{d\\varphi(t)}{dt}\\right|_{\\max}=\\dfrac{1}{2\\pi}\\left|\\dfrac{d[4\\cos 200\\pi t]}{dt}\\right|_{\\max}=400\\,\\text{Hz}$\n(3) 调制指数：$\\beta_f=\\dfrac{\\Delta f_{\\max}}{f_m}=\\dfrac{400}{100}=4$\n(4) 带宽：$B=2(m_f+1)f_m=2(4+1)\\times 100=1\\,\\text{KHz}$\n或 $B=2(\\Delta f_{\\max}+f_m)=2(400+100)=1\\,\\text{KHz}$",
+  "question_text": "4、对模拟基带信号进行 FM 调制，已调信号的表达式为\n$$s(t)=50\\cos(2\\pi\\times10^{8}t+4\\cos 200\\pi t)$$\n(1) 求已调信号的平均功率；\n(2) 求最大频偏；\n(3) 求调制指数；\n(4) 求已调信号带宽。（北京科技大学 2022 年三、2）\n29"
  },
  {
   "subject": "txyl",
@@ -24194,7 +24195,7 @@
   "kp": "求FM、PM信号的调制指数、带宽、最大频偏等",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点2 求FM、PM信号的调制指数、带宽、最大频偏等",
-  "answer_text": "",
+  "answer_text": "5、解：\n(1) $$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\theta(t)}{dt}\\right|_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d5\\sin(200\\pi t)}{dt}\\right|_{\\max} = 500Hz$$\n调频指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{500}{100} = 5$\n带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(500+100) = 1200Hz$\n(2) 依题意：$K_f\\int_{-\\infty}^{t} m_1(\\tau)d\\tau = 5\\sin(200\\pi t) \\Rightarrow K_f m_1(t) = 1000\\pi \\cos(200\\pi t)$\n$$K_f = 500\\pi\\, (rad/s \\cdot V)$$\n(3) $$\\theta_2(t) = K_f\\int_{-\\infty}^{t} m_2(\\tau)d\\tau = 500\\pi\\int_{-\\infty}^{t} 3\\cos(300\\pi\\tau)d\\tau = 5\\sin(300\\pi t)$$\n$$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\theta_2(t)}{dt}\\right|_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d5\\sin(300\\pi t)}{dt}\\right|_{\\max} = 750Hz$$\n调频指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{750}{150} = 5$\n带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(750+150) = 1800Hz$",
   "question_text": "5、调频器输入为 $m_1(t)=2\\cos(200\\pi t)$ 时，输出（右侧被截断）\n输入为 $m_2(t)=3\\cos(300\\pi t)$ 时，输出 $s_2(t)=2\\cos\\left[2\\pi\\times10^6 t+\\theta_2(t)\\right]$，试求：\n（1）$s_1(t)$ 的最大频偏、调频指数、带宽；\n（2）该调频器的调频灵敏度 $K_f$；\n（3）$\\theta_2(t)$ 的表达式、$s_2(t)$ 的最大频偏、调频指数、带宽。\n（北京邮电大学 2023 年第十题）"
  },
  {
@@ -24213,8 +24214,8 @@
   "kp": "求FM、PM信号的调制指数、带宽、最大频偏等",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点2 求FM、PM信号的调制指数、带宽、最大频偏等",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "6、解：\n(1) 最大频偏：$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\varphi(t)}{dt}\\right|_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d(6\\cos 300\\pi t)}{dt}\\right|_{\\max} = 900\\text{Hz}$\n调制指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{900}{150} = 6$\n119\n信号带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(900+150) = 2100\\text{Hz}$\n(2) $S_{FM}(t) = A\\cos\\left(\\omega_c t + 2\\pi K_f \\int_{-\\infty}^{t} m(\\tau)\\,d\\tau\\right)$\n$$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\varphi(t)}{dt}\\right|_{\\max} = K_f|m(t)|_{\\max}$$\n从上式可以看出，当调制信号的幅度增大一倍时，最大频偏加倍，调制指数加倍。\n从而最大频偏：$\\Delta f_{\\max} = 1800\\text{Hz}$，调制指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{1800}{150} = 12$\n信号带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(1800+150) = 3900\\text{Hz}$\n(3) $S_{FM}(t) = A\\cos\\left(\\omega_c t + 2\\pi K_f \\int_{-\\infty}^{t} m(\\tau)\\,d\\tau\\right)$\n$$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\varphi(t)}{dt}\\right|_{\\max} = K_f|m|_{\\max}$$\n从上式可以看出，最大频偏只与 $m(t)$ 的幅值有关，与频率无关。\n从而最大频偏：$\\Delta f_{\\max} = 900\\text{Hz}$，调制指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{900}{300} = 3$\n信号带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(900+300) = 2400\\text{Hz}$\n(4) 当信号 $m(t)$ 的幅度加倍时，FM 信号带宽增幅较大；当信号 $m(t)$ 的频率加倍时，FM 信号带宽略微变大，FM 调制对调制信号的幅度较敏感。",
+  "question_text": "6、对单音信号进行 FM，得到信号 $s(t)=15\\cos(50000\\pi+6\\cos 300\\pi)$。\n(1)求最大频偏、调频指数和带宽；\n(2)若 FM 电路不变，只将调制信号的幅度增大一倍，最大频偏、调制指数及带宽如何变化？\n(3)若 FM 电路不变，只将调制信号的频率增大一倍，最大频偏、调制指数及带宽如何变化？\n(4)通过 2、3 得到什么结论。（北京交通大学 2021 年四、2）\n30"
  },
  {
   "subject": "txyl",
@@ -24232,7 +24233,7 @@
   "kp": "求FM、PM信号的调制指数、带宽、最大频偏等",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点2 求FM、PM信号的调制指数、带宽、最大频偏等",
-  "answer_text": "",
+  "answer_text": "3696\n7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n120\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。",
   "question_text": "7、已知某单一正弦调制信号的频率 $f_m = 1000Hz$，对其进行角度调制，已调信号的表达式为：$s(t) = 10\\cos(2\\pi f_c t + 25\\cos 2\\pi f_m t)$\n(1) 若已调信号为调频波，频率偏移常数为 $5Hz/V$，试求调制信号的表达式？\n(2) 若已调信号为调相波，相位偏移常数为 $10rad/V$，试求调制信号的表达式？\n(3) 当 $f_m$ 增加 5 倍，其他条件不变时，试求调频波的调制指数及已调信号的带宽？\n(北京邮电大学 2014 年第十题)"
  },
  {
@@ -24291,7 +24292,7 @@
   "kp": "AM、SSB、DSB、FM抗噪声性能分析",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点3 AM、SSB、DSB、FM抗噪声性能分析",
-  "answer_text": "",
+  "answer_text": "3、解：\n（1）设信号 $S_{AM}(t)=[A_m+m(t)]\\cos 2\\pi f_c t=[A_m+A_m\\cos 2\\pi f_m t]\\cos 2\\pi f_c t$\n边带功率为：$\\dfrac{P_m}{2}=\\dfrac{1}{2}\\times\\dfrac{A_m^2}{2}$　　总的功率为：$\\dfrac{P_m}{2}+\\dfrac{A_m^2}{2}=\\dfrac{1}{2}\\times\\dfrac{A_m^2}{2}+\\dfrac{A_m^2}{2}$\n功率利用率：$\\dfrac{A_m^2/4}{\\dfrac{A_m^2}{4}+\\dfrac{A_m^2}{2}}=\\dfrac{1}{3}$",
   "question_text": "3、对单音信号 $m(t)=A_m\\cos(2\\pi f_m t)$ 进行 100% AM 调制传输，假设信道高斯白噪声单边功率谱为 $n_0$，接收到的已调信号功率为 $S_i$，接收端采用包络检波解调，输出信号功率 $S_o$，噪声功率 $N_o$。求：\n31"
  },
  {
@@ -24310,7 +24311,7 @@
   "kp": "AM、SSB、DSB、FM抗噪声性能分析",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点3 AM、SSB、DSB、FM抗噪声性能分析",
-  "answer_text": "",
+  "answer_text": "4、解：\n(1) 调制及解调框图如下：\n【图】\n(2) 解调输入输出信号为：\n121\n解调输入信噪比为：\n$$\\frac{S_i}{N_i}=\\frac{P_c+P_s}{n_0 B}=\\frac{(100+20+20)\\times 10^{-3}}{10^{-4}\\times 10^{-3}\\times 4\\times 10^{3}}=350$$\n解调输出信噪比为：\n$$\\frac{S_o}{N_o}=\\frac{P_m}{N_i}=\\frac{80\\times 10^{-3}}{10^{-4}\\times 10^{-3}\\times 4\\times 10^{3}}=200$$\n(3) 对于包络检波，当解调输入信噪比低于门限时，可能会出现门限效应。",
   "question_text": "4、利用包络检波的AM系统中，噪声双边谱密度为 $5\\times10^{-3}\\ mW/Hz$，单频正弦波调制的载频功率为 $100\\ mW$，边带功率为每边带 $20\\ mW$，带通滤波器的带宽 $B=4\\ kHz$。\n(1)画出AM系统调制与解调框图；\n(2)求解调器输入和输出信噪比；\n(3)受信道衰减影响，若输入信噪比持续下降，解调器会出现什么现象，为什么？\n（河北工业大学2020年四、2）\n(2)\n(3)\n32"
  },
  {
@@ -24367,7 +24368,7 @@
   "kp": "AM、SSB、DSB、FM抗噪声性能分析",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点3 AM、SSB、DSB、FM抗噪声性能分析",
-  "answer_text": "",
+  "answer_text": "7、解：\n（1）调制框图如下(下图中 $A_c=\\frac{1}{2}$)：\n【图】\n相干接收框图：\n【图】\n$$P_c=\\frac{1}{4}P_m \\qquad P_m=\\int_{-f_m}^{f_m}a\\frac{f^2}{f_m^2}\\,df=2\\int_0^{f_m}a\\frac{f^2}{f_m^2}\\,df=\\frac{2af_m^2}{3}$$\n（2）解调器输入信号功率 $S_i=\\frac{af_m^2}{6}$\n解调器输出信号为：$s_o(t)=\\left[\\frac{1}{2}m(t)\\cos w_ct\\pm\\frac{1}{2}\\hat{m}(t)\\sin w_ct\\right]\\cos w_ct\\xrightarrow{LPF}\\frac{1}{4}m(t)$\n输出信号功率为：$S_0=\\frac{af_m^2}{24}$\n（3）输入信号功率：$N_i=2n_0f_m$\n解调器输入信噪比 $\\frac{S_i}{N_i}=\\frac{P_c}{2n_0f_m}=\\frac{af_m}{12n_0}$\n由于 SSB 调制制度增益等于 1，因此输出信噪比 $\\frac{S_o}{N_o}=\\frac{af_m}{12n_0}$\n123",
   "question_text": "7、对基带信号 $m(t)$ 采用 SSB 调制方式进行传输。设接收机输入信号为\n$$s_m(t)=\\frac{1}{2}m(t)\\cos\\omega_c t \\pm \\frac{1}{2}\\hat{m}(t)\\sin\\omega_c t$$，接收机输入噪声是均值为 0，双边功率谱密\n度为 $n_0$ 的高斯白噪声，$m(t)$ 的功率谱密度为 $$P_m(f)=\\begin{cases}\\alpha\\cdot\\dfrac{f^2}{f_m}, & |f|\\le f_m\\\\ 0, & |f|>f_m\\end{cases}$$，其中，$\\alpha$ 为\n常数，$f_m$ 为 $m(t)$ 的最高频率。\n(1) 画出 SSB 相移法调制-相干接收系统的原理框图；\n(2) 计算解调器输入和输出信号功率；\n(3) 计算解调器输出信噪功率比。（河北大学 2020 年三、2）\n34\n96"
  },
  {
@@ -24386,7 +24387,7 @@
   "kp": "AM、SSB、DSB、FM抗噪声性能分析",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点3 AM、SSB、DSB、FM抗噪声性能分析",
-  "answer_text": "",
+  "answer_text": "8、解：\n(1)\n设 AM 信号表达式为 $S_{AM}(t)=[A+m(t)]\\cos w_c t$\n$$G=\\frac{S_o}{N_o}/\\frac{S_i}{N_i}=\\frac{2\\overline{m^2(t)}}{\\overline{m^2(t)}+A^2}=\\frac{2}{1+\\frac{A^2}{\\overline{m^2(t)}}}$$\n依据题意峰均比 $\\frac{\\overline{m^2(t)}}{|m(t)|_{max}^2}=\\frac{1}{3}$，调幅系数 $\\frac{|m(t)|_{max}}{A}=0.8$，则有：$\\frac{\\overline{m^2(t)}}{A^2}=\\frac{16}{75}$\n从而 $G=\\frac{2}{1+\\frac{A^2}{\\overline{m^2(t)}}}=\\frac{32}{91}$\n124\n解调器输入信噪比为 $\\frac{S_i}{N_i}=\\frac{P_T\\times 10^{-4.6}}{10^{-12}\\times 2\\times 8\\times 10^3}=\\frac{91}{32}\\frac{S_o}{N_o}=\\frac{91}{32}\\times 1000$\n从而解得 $P_T=1.82W$\n(2) 解调器输入信噪比为 $\\frac{S_i}{N_i}=\\frac{P_T\\times 10^{-4.6}}{10^{-12}\\times 2\\times 8\\times 10^3}=\\frac{1}{2}\\frac{S_o}{N_o}=\\frac{1}{2}\\times 1000$\n从而解得 $P_T=10^{4.6}\\times 8\\times 10^{-6}=0.32W$\n(3) 在相同的基带信号带宽，相同的噪声功率谱前提下，要保证相同的输出信噪比，DSB 需要更小的发送信号功率，DSB 抗噪声性能比 AM 更好。",
   "question_text": "8、设模拟基带信号的带宽为 15kHz，经过截止频率为 4kHz 的理想低通后，峰值功率与平均功率比为 3，发送端到接收端的路径损耗为 46dB，接收端热噪声的双边功率密度为 $10^{-12}\\,\\mathrm{W/Hz}$，若要求解调输出的信噪比为 30dB。\n(1) 采用调幅指数为 0.8 的常规 AM，求所需的"
  },
  {
@@ -24405,7 +24406,7 @@
   "kp": "AM、SSB、DSB、FM抗噪声性能分析",
   "kp_sub": "",
   "chapter_name": "第5章 模拟调制系统 · 考点3 AM、SSB、DSB、FM抗噪声性能分析",
-  "answer_text": "",
+  "answer_text": "9、解：\n（1）$B_{DSB}=2f_m=30k$，$B_{SSB}=f_m=15k$\n$$s_{FM}(t)=A\\cos[\\omega_c t+K_f\\int_{-\\infty}^{t}m(\\tau)d\\tau]$$\n$$B_{FM}=2(\\Delta f_{\\max}+f_m)=2(f_m+\\frac{1}{2\\pi}\\left|k_f m(t)\\right|_{\\max})=2(15+75)=180k$$\n（2）接收机输出信噪比40dB，即 $10^4$ w\n$$m_f=\\frac{\\Delta f_{\\max}}{f_m}=5$$\n$G_{SSB}=1$，$G_{DSB}=2$，$G_{FM}=3m_f^2(m_f+1)=450$\n则 $\\left(\\frac{S_i}{N_i}\\right)_{DSB}=0.5\\times10^4$，$\\left(\\frac{S_i}{N_i}\\right)_{SSB}=10^4$，$\\left(\\frac{S_i}{N_i}\\right)_{FM}=22.2$\n（3）对于 DSB：\n输入噪声功率 $N_q=2\\times10^{-12}\\times2\\times15\\times10^3=0.6\\times10^{-7}$\n输入信号功率为 $S_q=3\\times10^{-4}$，发射机发送功率\n$$P_{DSB}=3\\times10^{-4}\\times10^5=30w$$\n对于 SSB：\n输入噪声功率 $N_q=2\\times10^{-12}\\times15\\times10^3=3\\times10^{-8}$\n输入信号功率为 $S_q=3\\times10^{-4}$，发射机发送信号功率\n125\n$$P_{SSB}=3\\times10^{-4}\\times10^5=30w$$\n对于 FM：\n输入噪声功率 $N_q=2\\times10^{-12}\\times180\\times10^3=0.36\\times10^{-6}$\n输入信号功率为 $S_q\\approx0.8\\times10^{-5}$，发射机发送信号功率\n$$P_{FM}=0.8\\times10^{-5}\\times10^5=0.8w$$",
   "question_text": "9、已知某广播信号 $m(t)$ 最高频率为 $15\\,\\text{kHz}$，最大幅度为 $1\\,\\text{V}$，分别采用 DSB、SSB、FM 三种方式调制，其中 $FM$ 的调频灵敏度为 $150\\pi\\,\\text{krad}/\\text{s}\\cdot\\text{V}$，并假设可按单音调制看待，信道衰减 $50\\,\\text{dB}$，信道噪声功率谱 $n_0=2\\times 10^{-12}\\,\\text{W}/\\text{Hz}$，现要求接收机输出信噪比为 $40\\,\\text{dB}$，分别求它们：\n（1）所占带宽；\n（2）接收机输入信噪比；\n（3）发射机发射功率。（南京邮电大学2015年第6题）"
  },
  {
@@ -24697,7 +24698,7 @@
   "kp": "数字基带信号功率谱以及带宽",
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点1 数字基带信号功率谱以及带宽",
-  "answer_text": "",
+  "answer_text": "6、解：\n(1) 设 $\\tau=\\frac{T_B}{3},a=10^{-3}V$\n$$P_x(f)=f_B P(1-P)\\left|G_1(f)-G_2(f)\\right|^2+f_B^2\\sum_{m=-\\infty}^{+\\infty}\\left|PG_1(mf_B)+(1-P)G_2(mf_B)\\right|^2\\delta(f-mf_B)$$\n$$=f_B p(1-p)\\left|2a\\tau\\frac{\\sin \\pi f\\tau}{\\pi f\\tau}\\right|^2+f_B^2\\sum_{m=-\\infty}^{+\\infty}\\left|(2p-1)a\\tau\\frac{\\sin \\pi m f_B\\tau}{\\pi m f_B\\tau}\\right|^2\\delta(f-mf_B)$$\n$$=4a^2\\tau^2 f_B p(1-p)Sa^2(\\pi f\\tau)+f_B^2 a^2\\tau^2\\sum_{m=-\\infty}^{+\\infty}\\left|(2p-1)\\frac{\\sin \\pi m/3}{\\pi m/3}\\right|^2\\delta(f-mf_B)$$\n$$=\\frac{4\\times 10^{-6}}{9}T_B p(1-p)Sa^2\\left(\\frac{\\pi f T_B}{3}\\right)+\\frac{10^{-6}}{9}\\sum_{m=-\\infty}^{+\\infty}\\left|(2p-1)\\frac{\\sin \\pi m/3}{\\pi m/3}\\right|^2\\delta(f-mf_B)$$\n(2) 要存在离散时钟分量，既存在离散谱 $\\delta(f-f_B)$，必须满足：\n$(2p-1)\\frac{\\sin \\pi/3}{\\pi/3}\\neq 0$　即 $p\\neq \\frac{1}{2}$。",
   "question_text": "6、某二进制数字基带信号波形采用双极性矩形脉冲序列，幅度为 1mV，已知矩形脉冲的占空比为 $\\frac{1}{3}$。符号速率为 $R_B=\\frac{1}{T_B}$，发 1 的概率为 $p$。\n（1）求信号的功率谱。\n（2）什么条件下信号中包含时钟频率分量？（南京邮电大学 2019 年第六题）"
  },
  {
@@ -24717,7 +24718,7 @@
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点2 HDB3、AMI码、双相码和CMI码",
   "answer_text": "CA",
-  "question_text": "",
+  "question_text": "1、数据 1000010000110000 经过 AMI 编码后______，经过 HDB3 编码后是______。\nA. +000+-000-+-+00+\nB. +000+-000-+-000-\nC. +0000-0000+-0000\nD. +000+-000-+0000-\n（北京邮电大学 2023 年一、1）",
   "solution": "AMI 码、双相码和 CMI 码\n1、C；A"
  },
  {
@@ -24776,7 +24777,7 @@
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点2 HDB3、AMI码、双相码和CMI码",
   "answer_text": "$+1000+1-100-1+1$; $10010101$",
-  "question_text": ""
+  "question_text": "4、若信息源为 1000000001，则 HDB3 码为 $(-v)$ ______。（南京邮电大学 2021 年二、1）\n码为 10 110010 -10，则信息码为______。图（11）为______。"
  },
  {
   "subject": "txyl",
@@ -24794,8 +24795,8 @@
   "kp": "HDB3、AMI码、双相码和CMI码",
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点2 HDB3、AMI码、双相码和CMI码",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "5、1001101001；0001110001",
+  "question_text": "码为 10-1100 1010\n5、信息码 10110 对应的双向码为_______，CMI 码（11）为_______\n（从……2010 年二 2.）\nC. $X(nR_s)$\n2、若数字"
  },
  {
   "subject": "txyl",
@@ -24953,7 +24954,7 @@
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点3 无码间干扰判断及相关问题",
   "answer_text": "A",
-  "question_text": "",
+  "question_text": "通信原理（页眉，部分被裁切）\n5、若以下传输特性是可实现的，并设数字信号的码元速率为 $f_b$，则最适合于该数字信号传输的传输特性为________。（河北工业大学 2022 年一、10）\nA、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\frac{\\omega_b}{2}$、$0$、$\\frac{\\omega_b}{2}$）\nB、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\frac{3\\omega_b}{4}$、$0$、$\\frac{3\\omega_b}{4}$）\nC、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\omega_b$、$0$、$\\omega_b$）\nD、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-2\\omega_b$、$0$、$2\\omega_b$）\n右侧页（被裁切，仅可见残句）：\n要的信道……\n采用滚降……\n（北京邮……\nA. 6\n10、欲……\n输特性……",
   "solution": "5、A。解析：A 可以实现无码间干扰，频带利用率最高。"
  },
  {
@@ -25168,7 +25169,8 @@
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点4 部分响应系统",
   "answer_text": "BAB",
-  "question_text": "5、双极性二进制信号独立等概取 $-1$ 和 $+1$，经过第 I 类部分响应系统相关编码器之后有 (1) 个电平，其中 0 出现的概率为 (2)。相关编码引起电平数改变，将导致系统 (3)。（南京邮电大学 2024 年一、5）\n(1)A. 2　　B. 3　　C. 4　　D. 5\n(2)A. 0.5　　B. 0.25　　C. 0.75　　D. 0.2\n(3)A. 有效性下降　　B. 可靠性下降　　C. 可靠性提高　　D. 有效性提高"
+  "question_text": "5、双极性二进制信号独立等概取 $-1$ 和 $+1$，经过第 I 类部分响应系统相关编码器之后有 (1) 个电平，其中 0 出现的概率为 (2)。相关编码引起电平数改变，将导致系统 (3)。（南京邮电大学 2024 年一、5）\n(1)A. 2　　B. 3　　C. 4　　D. 5\n(2)A. 0.5　　B. 0.25　　C. 0.75　　D. 0.2\n(3)A. 有效性下降　　B. 可靠性下降　　C. 可靠性提高　　D. 有效性提高",
+  "solution": "5、B、A、B\n解析：\n131\n【图】\n从上图可以看出：$c_n = a_n + a_{n-1}$，而 $a_n = \\pm 1$，从而 $c_n = -2, 0, 2$\n当 $a_n = -1, a_{n-1} = 1$ 时，$c_n = 0$。对应概率 $P_1 = \\frac{1}{2} \\times \\frac{1}{2} = 0.25$\n$a_n = 1, a_{n-1} = -1$ 时，$c_n = 0$。对应概率 $P_2 = \\frac{1}{2} \\times \\frac{1}{2} = 0.25$\n综上，概率 $P = P_1 + P_2 = 0.5$"
  },
  {
   "subject": "txyl",
@@ -25244,7 +25246,7 @@
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点5 二进制基带信号误码率求解",
   "answer_text": "4、解：\n发送1时，接收端抽样信号 $y(kT) = A + V$，\n发送0时，接收端抽样信号 $y(kT) = -A + V$，\n判决门限 $V_d = 0$，系统总的误码率：\n$$P_e = P(e|1)P(1) + P(e|0)P(0) = \\frac{1}{2}\\{P[(A+V) < 0] + P[(-A+V) > 0]\\}$$\n$$= \\frac{1}{2}[0 + P(V > A)] = \\frac{1}{2}\\left[0 + \\int_A^{3A/2} \\frac{6}{13A}\\, dv\\right]$$\n$$= \\frac{3}{26}$$",
-  "question_text": ""
+  "question_text": "4、无码间串扰的基带传输系统，抽样时刻的信号取值为 $-A$ 或 $+A$。噪声的取值 $V$ 在 $(-2A/3,\\,+3A/2)$ 之间服从均匀分布，且“0”，“1”码出现的概率各为二分之一，判决门限为 0。求此系统的误码率。（河北大学 2018 年第七题）\n2、时\n（南\n3、\n（北\n4、\n（\n5、\nx……"
  },
  {
   "subject": "txyl",
@@ -25262,7 +25264,7 @@
   "kp": "二进制基带信号误码率求解",
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点5 二进制基带信号误码率求解",
-  "answer_text": "",
+  "answer_text": "5、解：\n（1）发送 0 时 y 的条件概率密度为 $p_1(y)=\\frac{1}{2}e^{-|y|}$\n发送 A 时 y 的条件概率密度为 $p_2(y)=\\frac{1}{2}e^{-|y-A|}$\n最佳判决门限是两似然函数相等的分界点，即有 $p_1(V_T)=p_2(V_T)$\n从而得 $V_T=\\frac{A}{2}$\n133\n半并输出码，定义为\n发送 0 而判错的概率是 $P(e\\mid 0)=P(n>\\frac{A}{2})=\\int_{A/2}^{\\infty}\\frac{1}{2}e^{-n}\\,dn=\\frac{1}{2}e^{-\\frac{A}{2}}$\n发送 A 而判错的概率是 $P(e\\mid A)=P(n<-\\frac{A}{2})=\\int_{-\\infty}^{-\\frac{A}{2}}\\frac{1}{2}e^{n}\\,dn=\\frac{1}{2}e^{-\\frac{A}{2}}$\n平均误比特率 $P_b=\\frac{1}{2}P(e\\mid 0)+\\frac{1}{2}P(e\\mid A)=\\frac{1}{2}e^{-\\frac{A}{2}}$",
   "question_text": "5、若二进制通信系统中接收端抽样判决量为 $y=a+n$，其中数字信息 $a$ 等概取值于 $0$ 或 $A$，噪声 $n$ 服从指数分布，其概率密度函数是 $f(n)=\\frac{1}{2}e^{-|n|}$。计算：\n(1) 最佳判决门限 $V_T$；\n(2) 平均误比特率 $P_b$（河北工业大学 2022 年四、1）\n46\n0)、\n值"
  },
  {
@@ -25358,7 +25360,7 @@
   "kp": "时域均衡",
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点6 时域均衡",
-  "answer_text": "",
+  "answer_text": "5、解：(1) 依据迫零的定义，均衡器输出信号 $y_{-1}=y_1=0$，$y_0=1$\n由公式 $y_k=\\sum_{i=-1}^{1}c_i x_{k-i}$ 得\n$$y_{-1}=c_{-1}x_0+c_0x_{-1}+c_1x_{-2}=0$$\n$$y_0=c_{-1}x_1+c_0x_0+c_1x_{-1}=1$$\n$$y_1=c_{-1}x_2+c_0x_1+c_1x_0=0$$\n解方程组得\n$$c_{-1}+0.1c_0=0$$\n$$0.2c_{-1}+c_0+0.1c_1=1$$\n$$0.1c_{-1}+0.2c_0+c_1=0$$\n可得 $c_{-1}=-0.10406$　　$c_0=1.0406$　　$c_1=-0.2084$\n(2) $y_0=1$\n(3) 依据 $y_k=\\sum_{i=-1}^{1}c_i x_{k-i}$\n可得 $y_{-1}=0$，$y_0=1$，$y_1=0$\n134\n$y_2=0.0645$　　$y_{-2}=-0.010406$　　$y_{-3}=0$　　$y_{-3}=-0.01977$\n峰值均变：$D_x=\\frac{1}{x_0}\\sum_{k=-\\infty}^{\\infty}|x_k|=0.4$\n$$D_y=\\frac{1}{y_0}\\sum_{k=-\\infty}^{\\infty}|y_k|=0.09469$$\n改善 4.22 倍。",
   "question_text": "5、已知某数字基带传输系统接收波形 $X(t)$ 的抽样值\n$x_{-2}=0, x_{-1}=0.1, x_0=1, x_1=0.2, x_2=0.1$，其余为 0。\n（1）采用迫零法设计一个 3 抽头时域均衡器；\n（2）计算均衡器输出 $y_0$；\n（3）计算均衡前和均衡后的峰值失真，是否改善及改善倍数。\n（南京邮电大学 2020 年第六题）"
  },
  {
@@ -25533,7 +25535,7 @@
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点1 二进制频带调制解调及误码率求解",
   "answer_text": "3、解：\n(1)\n【图】\n(2)\n【图】\n(3) $B = 2R_B = 4800\\,\\mathrm{Hz}$\n(4) 解调器输入端信噪比 $r = \\frac{P_r\\,10^{-3}}{N_i} = \\frac{(A^2/2)\\times 10^{-3}}{10^{-5}} = 50$\n$$P_e = \\frac{1}{2}e^{-\\frac{r}{4}} = \\frac{1}{2}e^{-12.5}$$",
-  "question_text": ""
+  "question_text": "3、已知 2ASK 调制系统的码元传输速率为 2400 波特，已调信号的载频为 4800Hz，发送“1”码时信号的幅度为 1V，假设信道衰减为 30dB，接收端收到的高斯白噪声功率 $N_i = 10^{-5}\\,\\mathrm{W}$。\n(1) 试画出发送数字信息为 01011 时相应的 2ASK 信号波形图；\n(2) 画出相干接收时接收端解调系统的原理框图；\n(3) 计算 2ASK 信号的第一零点带宽；（河北大学 2020 年三、4）\n49"
  },
  {
   "subject": "txyl",
@@ -25627,7 +25629,7 @@
   "kp": "二进制频带信号的可靠性和有效性比较",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点2 二进制频带信号的可靠性和有效性比较",
-  "answer_text": "",
+  "answer_text": "2、$4:1:2$，$P_{e2PSK}<P_{e2FSK}<P_{e2ASK}$",
   "question_text": "2、在二进制数字调制系统 2ASK、2PSK、2FSK 中，当误比特率相同时，峰值信噪比之比 $\\gamma_{2ASK}:\\gamma_{2PSK}:\\gamma_{2FSK}$ 为________，当峰值信噪比相同时，误比特率从小到大的信号排序为________。（北京交通大学 2019 一、11）"
  },
  {
@@ -25862,7 +25864,7 @@
   "kp": "数字频带信号无码间干扰",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点4 数字频带信号无码间干扰",
-  "answer_text": "",
+  "answer_text": "6、解：\n（1）依题意为带通信道，则频带利用率为 $\\eta=\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}$，$0\\le a\\le 1$\n（a）当带宽为 10kHz 信道时，$\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}=\\dfrac{20k}{10k}=2$，则有 $a=\\dfrac{1}{2}\\log_2^M-1$\n当 $M=2$，$a=-\\dfrac{1}{2}<0$ 不满足题目要求；\n当 $M=4$，$a=0$，即基带成型滤波器为低通滤波器\n当 $M=8$，$a=0.5$，则可以采用滚降系数为 a=0.5 的 8QAM 或 8PSK 传输\n（b）当带宽为 20kHz 信道时，$\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}=\\dfrac{20k}{20k}=1$，则有 $a=\\log_2^M-1$\n当 $M=2$，$a=0$，即基带成型滤波器为低通滤波器\n当 $M=4$，$a=1$，则可以采用滚降系数为 a=1 的 4QAM 或 QPSK 传输\n（c）当带宽为 40kHz 信道时，$\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}=\\dfrac{20k}{40k}=0.5$，则有 $a=2\\log_2^M-1$\n当 $M=2$，$a=1$，则可以采用滚降系数为 a=1 的 2PSK 或 2ASK 传输\n由于 $a=0$ 的理想低通滤波器物理上难以实现，进制数 M 越大，可靠性越差，并且尽量选择带宽较低的信 道。\n综上，选择带宽等于 20kHz，滚降系数为 a=1 的 QPSK 传输。\n（2）发送框图如下：\n【图】\n142\n6\n【图】\n接收框图如下：\n【图】",
   "question_text": "53\n6、拟传送速率为 $R_B = 20\\text{kB/s}$"
  },
  {
@@ -25881,7 +25883,7 @@
   "kp": "数字频带信号无码间干扰",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点4 数字频带信号无码间干扰",
-  "answer_text": "",
+  "answer_text": "7、解：\n$$\\eta=\\frac{\\log_2^M}{1+a}=\\frac{R_b}{B}\\Rightarrow a=\\frac{5}{16}\\log_2^M-1\\quad 0<a\\leq 1$$\n当 $M=2,a=-\\frac{11}{16}<0$ （不满足要求）\n当 $M=4,a=-\\frac{3}{8}<0$ （不满足要求）\n当 $M=8,a=-\\frac{1}{16}$ （不满足要求）\n当 $M=16,a=\\frac{1}{4}$ （满足要求），\n此时符号速率：$R_s=\\frac{R_b}{\\log_2^M}=\\frac{32M}{\\log_2^{16}}=8Mbps$\n可以设计成滚降系数 $a=0.25$ 的16QAM 系统。\n调制框图如下：\n【图】\n143",
   "question_text": "7、已知带通信道的频带范围是 $100\\,\\mathrm{MHz} \\sim 110\\,\\mathrm{MHz}$，欲通过此信道传输 $32\\,\\mathrm{Mbps}$ 的数据，试给出系统设计，包括确定调制进制数、符号速率、滚降系数，画出调制、解调框图。（北京邮电大学 2016 年第七题）\n（北京\n3u •\nu •\n【图】\n-u\n-3u"
  },
  {
@@ -25920,8 +25922,8 @@
   "kp": "星座图",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点5 星座图",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "2、解：\n【图】\n从上面，星座图可看出最小欧式距离 $d_{\\min} = 2a$，\n平均符号是平均符号能量 $Es = \\frac{1}{16}(2a^2 \\times 4 + 10a^2 \\times 8 + 18a^3 \\times 4) = 10a^2$\n$$d_{\\min}^2 / Es = \\frac{2}{5}$$\n144",
+  "question_text": "（题面照片缺失，据解析反推）2、某 16QAM 系统的星座图如下图所示，星座点为 $(\\pm a,\\pm a)$、$(\\pm 3a,\\pm a)$、$(\\pm a,\\pm 3a)$、$(\\pm 3a,\\pm 3a)$ 型方格。试求最小欧式距离 $d_{\\min}$、平均符号能量 $E_s$ 及 $d_{\\min}^2/E_s$。"
  },
  {
   "subject": "txyl",
@@ -25977,8 +25979,8 @@
   "kp": "星座图",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点5 星座图",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "5、解：\n(1)\n【图】\n(2) $x(t)=x_k\\cos(2\\pi f_c t)-y_k\\sin(2\\pi f_c t)$ 平均功率\n$$P_{av}=E[x^2(t)]=E[x_k^2\\cos^2(2\\pi f_c t)+y_k^2\\sin^2(2\\pi f_c t)-2x_k y_k\\sin 2\\pi f_c t\\cos 2\\pi f_c t]$$\n$$=E[x_k^2]\\cos^2(2\\pi f_c t)+E[y_k^2]\\sin^2(2\\pi f_c t)$$\n$$E[x_k^2]=E[y_k^2]=\\frac{1}{4}[1+1+9+9]=5$$\n从而 $P_{av}=5$\n峰值功率：当 $(x_k,y_k)=(\\pm 3,\\pm 3)$ 时，$E[x_k^2]=E[y_k^2]=\\frac{1}{2}[9+9]=9$，从而 $P_{\\max}=9$\n峰均比：$\\dfrac{P_{\\max}}{P_{av}}=\\dfrac{9}{5}=1.8$\n(3) $B=2R_B=\\dfrac{2}{T}$\n146\n所示：\n$$\\eta=\\frac{R_b}{B}=\\frac{\\frac{1}{T}\\log_2^{16}}{2/T}=2\\,\\mathrm{bit/s.Hz}$$",
+  "question_text": "半并出晶，必是精晶\n5、某数字调制信号的 $k$ 码元的表达式为\n$$x_k\\cos(2\\pi f_c t)-y_k\\sin(2\\pi f_c t),\\quad (k-1)T\\leqslant t\\leqslant kT$$\n若 $x_k$ 和 $y_k$ 独立在集合 $\\{+3,+1,-1,-3\\}$ 内等概率取值，求：\n(1)画出该信号的星座示意图；\n(2)该信号的平均功率、峰值功率、峰均比(峰值功率与平均功率之比)；\n(3)该信号的第一零点带宽，并以此估算其频谱效率( bps / Hz)。\n（南京邮电大学 2022 年第八题）\n平界\n8、其\n星座\n$s_4$\n性\n(1\n(2"
  },
  {
   "subject": "txyl",
@@ -26054,7 +26056,7 @@
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点5 星座图",
   "answer_text": "9、解：\n（1）$E_3=\\int_{-\\infty}^{\\infty}s_3^2(t)\\,dt=\\int_{-\\infty}^{\\infty}[s_1^2(t)+s_2^2(t)+2s_1(t)s_2(t)]\\,dt=2+1=3$\n$$E_4=\\int_{-\\infty}^{\\infty}s_4^2(t)\\,dt=\\int_{-\\infty}^{\\infty}[s_1^2(t)+s_2^2(t)-2s_1(t)s_2(t)]\\,dt=1$$\n$$E_s=\\frac{1+1+3+1}{4}=1.5$$\n（2）$d_{\\min}=1$\n（3）令 $f_1(t)=\\dfrac{s_3(t)}{\\sqrt{E_3}}=\\dfrac{1}{\\sqrt{3}}[s_1(t)+s_2(t)]$，$f_2(t)=\\dfrac{s_4(t)}{\\sqrt{E_4}}=s_1(t)-s_2(t)$\n则有：$s_1(t)=\\dfrac{\\sqrt{3}f_1(t)+f_2(t)}{2}$，$s_2(t)=\\dfrac{\\sqrt{3}f_1(t)-f_2(t)}{2}$\n系统星座图及 $s_3(t)$ 的最佳判决域（虚线围成区域）如下图所示：\n【图】\n150\n3696",
-  "question_text": ""
+  "question_text": "9、设有两个能量为 1 的确定信号 $s_1(t)$、$s_2(t)$，已知其相关系数是 $1/2$。令\n$s_3(t)=s_1(t)+s_2(t)$、$s_4(t)=s_1(t)-s_2(t)$。采用 $s_1(t)$、$s_2(t)$、$s_3(t)$、$s_4(t)$ 构成四\n进制通信系统的四种波形。假设四种波形等概出现。试：\n(1)求 $s_3(t)$、$s_4(t)$ 的能量以及该系统的平均符号能 $E_s$；\n(2) $s_1(t)$、$s_2(t)$、$s_3(t)$、$s_4(t)$ 之间的最小欧氏距离；\n(3)若取 $s_3(t)$、$s_4(t)$ 的归一化作为基函数，画出该系统的星座图，并标出 $s_3(t)$ 的\n最佳判决域。（北京邮电大学2019年第五题）\n57\n10、某 16 进制调制在归一化正交基……\nx, y 以独立等概方式取值于 QPSK 星座 $\\{1+j,1-j,-1+j,-1-j\\}$，……\n(1) 画出该 16 进制调制的星座图；\n(2) 求平均符号能量 $E_s=E\\left[|s|^2\\right]$ 及星座点之间的最小距离；\n……出星座点 $s=-3-3j$ 的 ML 判决域；\n(1) 星座点……\n(2) 星座点……\n(3) 星座点……\n(4) 发送 s……"
  },
  {
   "subject": "txyl",
@@ -26073,7 +26075,7 @@
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点5 星座图",
   "answer_text": "10、解：\n(1)星座图如下：\n【图】\n(2)平均符号能量为：$E_s=\\frac{1}{16}\\left[4\\times(2+18+10+10)\\right]=10$，最小距离 $d_{\\min}=2$。\n(3)判决域为相邻点垂直平分线所围成的区域，如下图所示：\n【图】\n(4)相邻点编码结果如下\n【图】",
-  "question_text": ""
+  "question_text": "12"
  },
  {
   "subject": "txyl",
@@ -26091,7 +26093,7 @@
   "kp": "星座图",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点5 星座图",
-  "answer_text": "",
+  "answer_text": "11、解：\n151\n(1) $E_1=b^2$，$E_2=4b^2$。由 $E_s=\\dfrac{4\\times b^2+4\\times 4b^2}{8}=10$\n则有 $b=2$，$E_1=4$，$E_2=16$。\n(2) $s_1$ 到 $s_2$ 为最小距离，$d_{\\min}=\\sqrt{2}b=2\\sqrt{2}$。\n(3) 最佳判决区域是 $s_2$ 与 $s_1$，$s_2$ 与 $s_3$ 的垂直平分线及横轴和纵轴正半轴围成的区域。$s_2$ 的最佳判决域如下所示：\n【图】\n(4) 发送 $s_1$ 时，$r=2+n_c+jn_s$，其中 $n_c\\sim N(0,0.5)$，$n_s\\sim N(0,0.5)$，且 $n_c$ 和 $n_s$ 相互独立，故：\n$$f(r=0|s_1)=f(2+n_c=0|s_1)f(n_s=0|s_1)=\\frac{1}{\\sqrt{\\pi}}e^{-4}\\times\\frac{1}{\\sqrt{\\pi}}=\\frac{1}{\\pi}e^{-4}$$",
   "question_text": "11、下图是某八进制调制系统在归一化正交基函数下的星座图，各星座点等概出\n现在两个正方形的 8 个顶点上。按复数表示，图中 $s_1 = b$，$s_2 = \\sqrt{2}b(1+j)$。已\n知发送信号的平均符号能量是 $E_s = 10$。发送 $s_i$，i=1, 2, …8 时，接收信号为\n$r = s_i + n$，其中噪声 $n = n_c + j \\cdot n_s$ 的实部 $n_c$、虚部 $n_s$ 是两个独立的零均值高斯随\n机变量，方差均为 0.5。定义似然函数为发送 $s_i$ 条件下 r 的条件概率密度函数\n$f(r|s_i)$。试求：\n【图】\n58\n（右页边缘残缺文字）\n12、\n$s_2 = $ …\n概出\n其中\n试\n(1)\n(2)\n(3)\n其中\n(1)星座点 $s_1$、$s_2$ 的信号能量；\n(2)星座点之间的最小距离；\n(3)星座点 $s_i$ 的最佳判决域…"
  },
  {
@@ -26110,7 +26112,7 @@
   "kp": "星座图",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点5 星座图",
-  "answer_text": "",
+  "answer_text": "12、解：\n(1) $E_b=\\dfrac{(-2)^2+(-1)^2+1^2+2^2+2^2+(1^2+1^2)+(1^2+1^2)}{8}=2.25$\n$d_{\\min}=1$\n(2)\n【图】\n152\n(3) 设 $z=n_1+jn_2$，则发送 $s_3$ 条件下，$y=s_3+z=n_1+jn_2$\n$P_E \\approx P(|n_1|<0.5)P(|n_2|<1)$\n$$P(|n_1|<0.5)=1-P(|n_1|>0.5)=1-P(n_1>0.5)-P(n_1<-0.5)=1-\\mathrm{erfc}\\Big(\\frac{1}{2\\sqrt{2}\\sigma}\\Big)$$\n$$P(|n_2|<1)=1-P(|n_2|>1)=1-P(n_2>1)-P(n_2<-1)=1-\\mathrm{erfc}\\Big(\\frac{1}{\\sqrt{2}\\sigma}\\Big)$$\n$$P_e=1-\\Big[1-\\mathrm{erfc}\\Big(\\frac{1}{2\\sqrt{2}\\sigma}\\Big)\\Big]\\Big[1-\\mathrm{erfc}\\Big(\\frac{1}{\\sqrt{2}\\sigma}\\Big)\\Big]=1-[1-\\mathrm{erfc}(5)][1-\\mathrm{erfc}(10)]$$\n$$=\\mathrm{erfc}(5)+\\mathrm{erfc}(10)-\\mathrm{erfc}(5)\\mathrm{erfc}(10)$$",
   "question_text": "12、 某 8 进制调制在归一化正交基下的 8 个星座点的复数表示为 $s_1=-2$、\n$s_2=-1$、$s_3=0$、$s_4=1$、$s_5=2$、$s_6=2j$、$s_7=\\dfrac{s_1-s_6}{2}$、$s_8=\\dfrac{s_5-s_6}{2}$，各星座点等\n概出现。通过 AWGN 信道发送某个星座点 $a_i, i=1,2,\\cdots 8$。接收端收到 $y=s_i+z$，\n其中噪声 $z$ 的实部和虚部是独立同分布的零均值高斯随机变量，方差均为 $0.005$。\n试求：\n(1) 平均符号能量以及星座点之间的最小欧氏距离；\n(2) 各星座点的最大似然判决域（画图标出）；\n(3) 发送条件 $s_3$ 下判决出错的概率的近似值。\n（北京邮电大学2024年第六题）\n59"
  },
  {
@@ -26130,7 +26132,7 @@
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点6 MSK信号",
   "answer_text": "1、频率间隔；相位；0.5；1500",
-  "question_text": ""
+  "question_text": "的时间波形图以及附加相位路径图：\n1、MSK调制是______最小、且______连续的FSK调制，其调制指数为______。若数字序列发送速率为1000bit/s，则MSK信号的主瓣带宽为______Hz。\n此发送速率……（该行下方文字被裁切，仅可见部分字迹）"
  },
  {
   "subject": "txyl",
@@ -26186,7 +26188,7 @@
   "kp": "MSK信号",
   "kp_sub": "",
   "chapter_name": "第7章 数字频带传输系统 · 考点6 MSK信号",
-  "answer_text": "",
+  "answer_text": "4、解：\n（1）$f_1 = f_c + \\dfrac{R_B}{4} = 4250\\,\\text{Hz}$\n$f_0 = f_c - \\dfrac{R_B}{4} = 3750\\,\\text{Hz}$\n从上式可看出传 1 码时，一个码元内有 $4\\dfrac{1}{4}$ 个周期，\n传 0 码时，一个码元内有 $3\\dfrac{3}{4}$ 个周期\n（2）\n【图】\n154\n【图】\n（3）\n$$\\varphi_k = \\varphi_{k-1} + \\frac{k\\pi}{2}\\left(a_k - a_{k-1}\\right) = \\begin{cases} \\varphi_{k-1} & a_k = a_{k-1} \\\\ \\varphi_{k-1} \\pm k\\pi & a_k \\neq a_{k-1} \\end{cases} \\bmod(2\\pi)$$\n【图】\n初相为：0，0，0，$\\pi$，$\\pi$\n【图】\n153",
   "question_text": "4、某 MSK 系统，码元速率为 1000Baud，中心载波频率为 4000Hz，设输入码元为 11010。\n（1）计算 0 码的频率和 1 码的频率。\n（2）画出 MSK 信号波形图。\n（3）画出对应的附加相位路径图。\n（4）确定各码元波形的初相。（南京邮电大学2020年第八题）"
  },
  {
@@ -26284,8 +26286,8 @@
   "kp": "匹配滤波器的设计及误码率求解",
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点1 匹配滤波器的设计及误码率求解",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "1、解：\n（1）因为 $s(t)$ 结束时刻为 $T$，最佳抽样时刻 $t_0 = T$。\n（2）$$h(t) = S(T-t) = \\begin{cases} -A, & 0 < t \\le T/2 \\\\ A, & T/2 < t \\le T \\\\ 0, & \\text{else} \\end{cases}$$\n【图】\n$$y(t) = h(t) * s(t) = \\begin{cases} -A^2 t, & 0 \\le t \\le T/2 \\\\ A^2 (3t - 2T), & T/2 < t \\le T \\\\ A^2 (4T - 3t), & T < t \\le 3T/2 \\\\ A^2 (t - 2T), & 3T/2 < t \\le 2T \\\\ 0, & \\text{其他} \\end{cases}$$\n【图】\n（3）$E = \\int_0^T s^2(t)\\,dt = A^2 T$，$r_{\\max} = \\dfrac{2E}{n_0} = \\dfrac{2A^2 T}{n_0}$",
+  "question_text": "考点1：匹配滤波器的设计及误码率求解\n平原小马哥tips：\n本考点通常以大题形式考查，需掌握匹配滤波器设计、能根据输入信号设计最佳匹配滤波器，求解匹配滤波器输出信号以及最佳接收机的误码率。\n1、已知 $s(t)$ 的波形如下图所示，经过信道传输时叠加了双边功率谱密度为 $\\frac{n_0}{2}$ 的高斯白噪声 $n(t)$，接收端采用匹配滤波器接收。\n【图】\n(1) 接收端在何时抽样判决为宜，解释原因；\n(2) 试求此匹配滤波器的冲激响应和输出信号表达式，并画出波形；\n(3) 试求出最大输出信噪比 $r_{\\max}$。（南京邮电大学 2024 年第九题）\n2、已知某\n(1) 若采\n(2) 设 $s_1$ ……图。（\n3、\n边功\n样\n(1)\n(2)\n(3\n62"
  },
  {
   "subject": "txyl",
@@ -26322,7 +26324,7 @@
   "kp": "匹配滤波器的设计及误码率求解",
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点1 匹配滤波器的设计及误码率求解",
-  "answer_text": "",
+  "answer_text": "3、解：\n（1）$h(t)=S(T-t)=\\begin{cases}A-\\dfrac{A}{T}t & 0\\leq t\\leq T\\\\ 0 & else\\end{cases}$\n【图】\n（2）\n法一：\n$t=T$ 抽样获得样值 $y=\\int_0^T s(t)n(t)\\,dt+\\int_0^T s^2(t)\\,dt=Z+\\dfrac{A^2}{3}T$\n瞬时功率：$P=E_s^2=\\dfrac{A^4}{9}T^2$\n噪声平均功率：$P=\\sigma^2=\\dfrac{n_0}{2}E_s=\\dfrac{A^2T}{6}n_0$\n法二：\n输出信号：$S_o(t)=\\int_{-\\infty}^{\\infty}s(t-a)h(a)\\,da$\n157\n$S_o(T)=\\int_{-\\infty}^{\\infty}S(T-a)S(T-a)\\,da=\\int_0^T S^2(T-a)\\,da=\\int_0^T S^2(a)\\,da=\\int_0^T\\left(\\dfrac{A}{T}t\\right)^2 dt=\\dfrac{A^2}{3}T$\n相关\n输出信号瞬时功率：$P=[S_o(T)]^2=\\dfrac{A^4}{9}T^2$\n输出噪声平均功率：\n$P=\\sigma^2=\\int_{-\\infty}^{\\infty}\\dfrac{n_0}{2}|H(f)|^2\\,df=\\int_{-\\infty}^{\\infty}\\dfrac{n_0}{2}|h(t)|^2\\,dt=\\dfrac{n_0}{2}E_h=\\dfrac{n_0}{2}\\times\\dfrac{A^2T}{3}=\\dfrac{A^2T}{6}n_0$\n（2）$f(x)=\\dfrac{1}{\\sqrt{2\\pi}\\sigma}e^{\\frac{-(x-\\frac{AT}{3})^2}{2\\sigma^2}}$",
   "question_text": "3、已知信号 $s(t)$ 的波形如下图所示，信号经过信道传输时叠加了均值为 0，双边功率谱密度为 $\\frac{n_0}{2}$ 的高斯白噪声 $n(t)$，接收端采用匹配滤波器接收，并在 $t=T$ 抽样获得样值 $y$。（南京邮电大学 2023 年第八题）\n(1) 写出匹配滤波器冲激响应的表达式并画出波形图；\n(2) 求样值 $y$ 中信号瞬时功率及噪声平均功率；\n(3) 写出样值 $y$ 的概率密度函数。\n【图】"
  },
  {
@@ -26341,8 +26343,8 @@
   "kp": "匹配滤波器的设计及误码率求解",
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点1 匹配滤波器的设计及误码率求解",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "4、解：\n（1）$h(t) = s_1(T_b - t)$\n（2）当发 $s_1(t)$ 时，$y = \\int_0^{T_b} s_1^2(t)dt + \\int_0^{T_b} s_1(t)n_w(t)dt = E + \\int_0^{T_b} s_1(t)n_w(t)dt$\n信号分量幅度为：$\\int_0^{T_b} s_1^2(t)dt = A^2T_b$\n信号分量功率为：$P = (A^2T_b)^2 = A^4T_b^2$\n噪声平均功率：$\\sigma^2 = \\frac{N_0}{2}E = \\frac{N_0}{2}A^2T_b$\n（3）当发 $s_2(t)$ 时，$y = \\int_0^{T_b} s_1(t)s_2(t)dt + \\int_0^{T_b} s_1(t)n_w(t)dt = -E + \\int_0^{T_b} s_1(t)n_w(t)dt$\n均值：$E[y] = -E = -A^2T_b$，$D[y] = \\frac{N_0}{2}A^2T_b$\n$$f(y) = \\frac{1}{\\sqrt{\\pi N_0 A^2 T_b}} e^{\\frac{(y+A^2T_b)}{N_0 A^2 T_b}}$$\n（4）$P = \\frac{1}{2}erfc(\\sqrt{\\frac{E}{N_0}}) = \\frac{1}{2}erfc(\\sqrt{\\frac{A^2T_b}{N_0}})$",
+  "question_text": "4、下图中 $s_1(t)$ 与 $s_2(t)$ 等概出现，白高斯噪\n【图】\n【图】\n(1) 画出匹配滤波器的冲激响应 $h(t)$；\n(2) 求发 $s_1(t)$ 条件下在抽样瞬时值 $y$ 中信号分量的幅度及功率、噪声分量的平均功率；\n(3) 求发 $s_2(t)$ 条件下抽样值 $y$ 的均值、方差和概率密度函数 $p_2(y)$；\n(4) 求平均误比特率。（北京科技大学 2018 年三、8）\n64"
  },
  {
   "subject": "txyl",
@@ -26360,7 +26362,7 @@
   "kp": "匹配滤波器的设计及误码率求解",
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点1 匹配滤波器的设计及误码率求解",
-  "answer_text": "",
+  "answer_text": "5、解；\n(1)\n当采用相关器时，接收框图如下所示；\n158\n【图】\n相关器中相乘输出波形和相关器中积分输出波形分别为：\n【图】\n(2) $h(t)=S(T-t)=A\\cos w_0(T-t)=A\\cos w_0 t \\quad 0<t<T$\n输出信号等于输入信号与冲激响应的卷积：\n$$S_o(t)=s(t)*h(t)=\\int_{-\\infty}^{\\infty}s(\\tau)h(t-\\tau)\\,d\\tau$$\n讨论：\n当 $t<0$；$S_o(t)=0$\n当 $0<t\\le T$；$S_o(t)=\\int_{-\\infty}^{\\infty}s(\\tau)h(t-\\tau)\\,d\\tau=A^2\\left[\\frac{t}{2}\\cos w_0 t+\\frac{1}{2w_0}\\sin w_0 t\\right]$\n当 $T<t\\le 2T$；$S_o(t)=\\int_{-\\infty}^{\\infty}s(\\tau)h(t-\\tau)\\,d\\tau=A^2\\left[\\frac{2T-t}{2}\\cos w_0 t+\\frac{1}{2w_0}\\sin w_0 t\\right]$\n当 $t\\ge 2T$；$S_o(t)=0$\n由于频率 $w_0$ 较大，$\\frac{1}{2w_0}\\sin w_0 t$ 近视为 0，则有：\n$$S_o(t)=\\begin{cases}\\dfrac{A^2 t}{2}\\cos w_0 t & 0<t\\le T\\\\[6pt] \\dfrac{A^2(2T-t)}{2}\\cos w_0 t & T<t\\le 2T\\\\[6pt] 0 & else\\end{cases}$$\n波形如下图所示：\n159\n【图】\n(3) $P_e=\\dfrac{1}{2}\\,\\mathrm{erfc}\\sqrt{\\dfrac{E(1-\\rho)}{2n_0}} \\qquad E=\\dfrac{A^2 T}{2} \\qquad \\rho=-1$\n$$P_e=\\dfrac{1}{2}\\,\\mathrm{erfc}\\sqrt{\\dfrac{A^2 T}{2n_0}}$$",
   "question_text": "5、设发送信号的波形为 $s(t)=\\begin{cases} A\\cos w_0 t & 0<t<T \\\\ 0 & \\text{else} \\end{cases}$ $w_0=\\frac{2\\pi}{T}$，如下图所示，信道\n噪声双边功率谱密度为 $\\frac{n_0}{2}$。（南京邮电大学 2019 年第九大题）\n【图】\n（1）若采用相关器接收此波形，画出相干器中相乘器和积分器输出波形。\n（2）若采用匹配滤波器接收此波形，画出输出波形并求相应的最佳接收机码率。\n（3）若用 $s(t)$、$-s(t)$ 分别表示 0、1 码，求相应的最佳接收机误码率。"
  },
  {
@@ -26399,7 +26401,7 @@
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点1 匹配滤波器的设计及误码率求解",
   "answer_text": "7、解：\n(1) $E_s = E_g = \\int_{-\\infty}^{\\infty} g^2(t)dt = \\int_0^1 \\left(\\frac{2}{\\sqrt{5}}\\right)^2 dt + \\int_1^2 \\left(\\frac{1}{",
-  "question_text": ""
+  "question_text": "7、某二进制数字通信系统在 $[0, T_s]$ 时间内等概发送 $s(t)\\in\\{g(t),-g(t)\\}$，$g(t)$ 如下图所示。发送信号叠加了单边功率谱密度为 $N_0$ 的高斯白噪声 $n_w(t)$ 后成为 $r(t)=s(t)+n_w(t)$。在接收端采用匹配滤波器进行最佳接收，其最佳采样时刻的输出值为 $y$。试：\n【图】\n(1) 求 $s(t)$ 的平均比特能量 $E_b$；\n(2) 确定最佳采样时刻，画出匹配滤波器的冲激响应波形；\n(3) 求发送 $-g(t)$ 条件下 $y$ 的均值、方差、概率密度函数；\n(4) 写出最佳判决门限；\n(5) 求该系统的平均误比特率。（北京邮电大学 2018 年第三题）\n66\n（右页边缘残缺）8、设到……\n分别对……"
  },
  {
   "subject": "txyl",
@@ -26455,8 +26457,8 @@
   "kp": "匹配滤波器的设计及误码率求解",
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点1 匹配滤波器的设计及误码率求解",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "10、解：\n（1）由已知条件可知：$E_1 = E_2 = \\int_0^{T_b} s_1^2(t)\\,dt = 2T_b$，$E_{12} = \\int_0^{T_b} s_1(t)s_2(t)\\,dt = 0$\n匹配滤波器的冲激响应为：\n$$h_1(t) = s_1(T_b - t) = \\sqrt{\\frac{2}{T_b}}\\cos\\left(\\frac{22\\pi t}{T_b}\\right), \\quad 0 \\le t \\le T_b$$\n$$h_2(t) = s_2(T_b - t) = \\sqrt{\\frac{2}{T_b}}\\cos\\left(\\frac{20\\pi t}{T_b}\\right), \\quad 0 \\le t \\le T_b$$\n（2）发送 $s_1(t)$ 时；\n$$y = y_1 - y_2 = \\int_0^T [s_1(t) + n_w(t)]h_1(t)\\,dt - \\int_0^T [s_1(t) + n_w(t)]h_2(t)\\,dt$$\n$$= \\int_0^T s_1(t)h_1(t)\\,dt + \\int_0^T n_w(t)h_1(t)\\,dt - \\int_0^T n_w(t)h_2(t)\\,dt$$\n令：$Z = \\int_0^T n_w(t)h_1(t)\\,dt - \\int_0^T n_w(t)h_2(t)\\,dt$\n$$y = \\sqrt{2T_b} + Z \\qquad Z \\sim N(0, N_0)$$\n$$E[y] = \\sqrt{2T_b}$$\n发送 $s_2(t)$ 时；\n163\n$$y = y_1 - y_2 = \\int_0^T [s_2(t) + n_w(t)]h_1(t)\\,dt - \\int_0^T [s_2(t) + n_w(t)]h_2(t)\\,dt$$\n$$= -\\int_0^T s_2(t)h_2(t)\\,dt + \\int_0^T n_w(t)h_1(t)\\,dt - \\int",
+  "question_text": "10、某二进制调制系统在 $[0, T_b]$ 内等概发送 $s_1(t) = 2\\cos\\left(\\frac{22\\pi}{T_b}t\\right)$、\n$s_2(t) = 2\\cos\\left(\\frac{20\\pi}{T_b}t\\right)$ 之一。接收框图如下所示，其中两个匹配滤波器分别对 $s_1(t)$ 和\n$s_2(t)$ 匹配，且其冲激响应 $h_1(t)$ 和 $h_2(t)$ 的能量均为 1，最佳采样时刻均为 $t_0 = T_b$。\n白高斯噪声 $n_w(t)$ 的双边功率谱密度是 $\\frac{N_0}{2}$。（北京邮电大学 2020 年第四题）\n【图】\n试求：\n(1) 两个匹配滤波器的冲激响应；\n(2) 发送 $s_1(t)$、$s_2(t)$ 条件下 $y$ 的均值；\n(3) 判决 $y$ 中的噪声功率；\n(4) 最佳判决门限 $V_T$；\n(5) 该系统的平均误比特率。\n——右侧页（部分被裁切）——\n11、BPSK\n$s_1(t)$ 和 $s_2(t)$\n加性高斯\n1. 画出\n2. 求\n3. 写\n12、下\n$s_1(t) = $\n$n_w(t)$\n滤波器\n能使\n(1) 若\n的概\n(2) 若\n并求\n68"
  },
  {
   "subject": "txyl",
@@ -26493,7 +26495,7 @@
   "kp": "匹配滤波器的设计及误码率求解",
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点1 匹配滤波器的设计及误码率求解",
-  "answer_text": "",
+  "answer_text": "12、解：\n$n_w(t)$ 经过带通滤波器后，输出 $n_o(t)=n_c(t)\\cos 2\\pi f_c t-n_s(t)\\sin 2\\pi f_c t$\n（1）依题意：$h(t)=g(T_b-t)$，在 $t=T_b$ 时刻可以等价成一个相关器。则发送 $s_1(t)$ 时：\n$$y=\\int_0^{T_b}2g^2(t)\\cos^2(2\\pi f_c t)\\,dt+Z$$\n$$E[y]=2\\int_0^{T_b}2g^2(t)\\cos^2(2\\pi f_c t)\\,dt=\\int_0^{T_b}g^2(t)\\,dt=\\frac{1}{3}T_b$$\n$$D(y)=D[Z]=\\int_{-\\infty}^{\\infty}N_0\\left|H(f)\\right|^2\\,df=N_0\\int_{-\\infty}^{\\infty}\\left|h(t)\\right|^2\\,dt=\\frac{N_0T_b}{3}$$\n发送 $s_1(t)$ 时，$y=\\frac{1}{3}T_b+Z$　发送 $s_2(t)$ 时，$y=-\\frac{1}{3}T_b+Z$\n因为等概率发送，则最佳判决门限 $V_{th}=0$\n$$P(e)=P(e\\mid s_1)P(s_1)+P(e\\mid s_2)P(s_2)$$\n$$=\\frac{1}{2}\\left[P\\left(\\frac{T_b}{3}+Z<0\\right)+P\\left(-\\frac{T_b}{3}+Z>0\\right)\\right]$$\n$$=\\frac{1}{2}erfc\\left(\\sqrt{\\frac{T_b}{6N_0}}\\right)$$\n（2）发送 $s_1(t)$ 时：\n输出信号 $s_o(t)=g(t)*h(t)=\\int_{-\\infty}^{\\infty}g(a)g(t-a)\\,da$\n则有 $s_o(T_b)=\\int_{-\\infty}^{\\infty}g(a)g(T_b-a)\\,da=\\int_0^{T_b}\\frac{a}{T_b}\\cdot\\frac{T_b-a}{T_b}\\,da=\\frac{T_b}{6}$\n则：$y=\\frac{T_b}{6}+Z$\n$$D(y)=D[Z]=\\int_{-\\infty}^{\\infty}N_0\\left|H(f)\\right|^2\\,df=N_0\\int_{-\\infty}^{\\infty}\\left|h(t)\\right|^2\\,dt=\\frac{N_0T_b}{3}$$\n$$y=\\frac{T_b}{6}+Z$$\n因为等概率发送，则最佳判决门限 $V_{th}=0$\n$$P(e)=P(e\\mid s_1)P(s_1)+P(e\\mid s_2)P(s_2)$$\n$$=\\frac{1}{2}\\left[P\\left(\\frac{T_b}{6}+Z<0\\right)+P\\left(-\\frac{T_b}{6}+Z>0\\right)\\right]$$\n$$=\\frac{1}{2}erfc\\left(\\sqrt{\\frac{T_b}{24N_0}}\\right)$$\n165",
   "question_text": "12、下图所示接收机中，$r(t)=s_i(t)+n_w(t)$，$i=1,2$，其中\n$s_1(t)=g(t)\\cos(2\\pi f_c t)$，$f_c$ 充分大，$g(t)=\\begin{cases} t/T_b, & 0<t<T_b \\\\ 0, & else \\end{cases}$，$s_2(t)=-s_1(t)$，\n$n_w(t)$ 是单边功率谱密度为 $N_0$ 的加性白高斯噪声。接收信号经过相干解调、低通滤波器后在 $t=T_b$ 时刻采样，然后根据样值 $y$ 的极性进行判决。图中带通滤波器能使 $s_i(t)$ 无失真通过。\n【图】\n(1) 若低通滤波器对 $g(t)$ 匹配，求发送 $s_1(t)$ 条件下 $y$ 的均值和方差，并求判决出错的概率；\n(2) 若低通滤波器的冲激响应为 $h(t)=g(t)$，求发送 $s_1(t)$ 条件下 $y$ 的均值和方差，并求判决出错的概率。（北京邮电大学 2024 年第九题）\n69"
  },
  {
@@ -26569,8 +26571,8 @@
   "kp": "最佳基带传输系统",
   "kp_sub": "",
   "chapter_name": "第8章 数字信号最佳接收 · 考点2 最佳基带传输系统",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "4、解：\n(1) 根据 $H(w)$ 表达式可得，此系统为 a=1 的升余弦滚降系统，\n166\n等效奈奎斯特带宽 $B_N=\\dfrac{\\pi/2T}{2\\pi}=\\dfrac{1}{4T}$，最大传码率\n$$R_{\\max}=2\\times\\frac{1}{4T}=\\frac{1}{2T}\\ \\text{Baud}$$\n最高频带利用率 $\\eta=1\\,\\text{Baud}/\\text{Hz}$\n(2) $G_R(w)=1$，$|w|\\leq\\dfrac{\\pi}{T}$，不是最佳接收\n(3) $$h(t)=\\frac{\\sin \\pi/2T}{\\sin \\pi/2T}\\cdot\\frac{\\cos\\dfrac{\\pi}{2T}}{1-\\dfrac{t^{2}}{T^{2}}}$$\n$$h(k2T)=\\frac{\\sin k\\pi}{k\\pi}\\cdot\\frac{\\cos k\\pi}{1-4k^{2}},\\quad h(k2T)=\\begin{cases}1 & k=0\\\\ 0 & k\\neq 0\\end{cases}$$\n从而当发送 1 时，接收机输出为：$y(k2T)=1+n_{o}(t)$\n当发送 -1 时，接收机输出为：$y(k2T)=-1+n_{o}(t)$\n输出噪声 $n_{o}(t)$ 的平均功率为 $$N_{o}=\\frac{n_{0}}{2}\\cdot\\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}\\left|G_{R}(w)\\right|^{2}dw=\\frac{n_{0}}{2T}$$\n显然，当发送 $\\pm1$ 等概率时，最佳判决门限 $V_{T}=0$\n$$P=P(1)P(e|1)+P(-1)P(e|-1)$$\n$$=\\frac{1}{2}P\\left(1+n_{o}(t)<0\\right)+\\frac{1}{2}P\\left(-1+n_{o}(t)>0\\right)$$\n$$=\\frac{1}{2}\\operatorname{erfc}\\left(\\sqrt{\\frac{T}{n_{0}}}\\right)$$\n167",
+  "question_text": "4、某数字基带系统由发送滤波器 $G_T(w)$，理想信道 $C(w)=1$，接收滤波器 $G_R(w)$ 等组成。已知系统总特性满足：$G_T(w)C(w)G_R(w)=H(w)$，其中\n$$H(w)=T(1+\\cos wT),\\quad |w|\\le \\frac{\\pi}{T}$$\n若信道高斯白噪声单边功率谱密度为 $n_0$，信源独立等概发送数据序列 $\\{a_k\\}$，$a_k\\in\\{1,-1\\}$。求：\n(1) 该系统允许的最高码元速率是多少？最高频带利用率是多少？\n(2) 若 $G_T(w)=H(w)$，设计接收滤波器 $G_R(w)$ 并画图，此时是否是最佳接收？\n(3) 接 (2)，若信源以 $\\frac{1}{2T}$ 波特率发送，求接收机的误码率（需推导过程，结果用 erfc 函数表示）。（南京邮电大学 2022 年第六题）\n71"
  },
  {
   "subject": "txyl",
@@ -26685,7 +26687,7 @@
   "kp": "抽样定理",
   "kp_sub": "",
   "chapter_name": "第9章 信源编码 · 考点1 抽样定理",
-  "answer_text": "",
+  "answer_text": "5、解：\n（1）$F(\\omega)=\\pi[\\delta(\\omega-2\\pi)+\\delta(\\omega+2\\pi)]+2\\pi[\\delta(\\omega+4\\pi)+\\delta(\\omega-4\\pi)]$\n【图】\n（2）抽样频率：$f_s \\geq 2\\times\\dfrac{4\\pi}{2\\pi}=4 \\Rightarrow T_s \\leq \\dfrac{1}{4}$\n（3）已抽样信号 $f_s(t)=f(t)\\times\\displaystyle\\sum_{n=-\\infty}^{\\infty}\\delta(t-nT_s)$\n则已抽样信号频谱 $F_s(\\omega)=\\dfrac{1}{T_s}\\displaystyle\\sum_{n=-\\infty}^{\\infty}F(\\omega-n\\omega_s)=5\\sum_{n=-\\infty}^{\\infty}F(\\omega-10\\pi n)$\n【图】\n168",
   "question_text": "6、对基带信号 $f(t)=\\cos(2\\pi t)+2\\cos(4\\pi t)$ 进行理想抽样，\n（1）写出 $f(t)$ 对应的频谱 $F(\\omega)$ 的表达式，并画出频谱图；\n（2）为了在接收端无失真恢复原始信号 $f(t)$，抽样间隔应如何选择？\n（3）抽样间隔为 $0.2\\mathrm{s}$ 时，写出已抽样信号频谱 $F_s(\\omega)$ 的表达式并画图。\n（西安科技大学 2023 年第三题）"
  },
  {
@@ -26956,7 +26958,7 @@
   "kp": "十三折线编码",
   "kp_sub": "",
   "chapter_name": "第9章 信源编码 · 考点3 十三折线编码",
-  "answer_text": "",
+  "answer_text": "5、解：\n（1）抽样信号电压为 $x=0.31V$，由于 $x=0.31V>0$，极性码为 1\n则量化电平值为：$y_{\\alpha}=\\dfrac{0.31}{4.096}\\times 2048=155$ 个量化单位，155 在 $[128,256]$ 内，因此\n段落码为：100\n此段落的量化间隔 $\\dfrac{128}{16}=8$ 量化单位。因此段内码 $\\left\\lfloor\\dfrac{155-128}{8}\\right\\rfloor=3$，对应的段内码\n为：0011。综上，输出码组为：11000011\n（2）11000011 对应的编码电平为：$I_c=128+3\\times 8=152$\n$\\quad 152=128+116+8$，则 11 位线性码为：00010011000\n（3）译码电平 $I_D=I_c+\\dfrac{8}{2}=156$\n（4）00010011100 0\n（5）7/12 变换末位为 1 时，也就是编码电平处于 $0\\sim 32\\Delta$ 之间。\n根据题意服从均匀分布，则概率 $p=32\\times\\dfrac{1}{2048}=\\dfrac{1}{64}$",
   "question_text": "5、对电压在 $-4.096 \\sim 4.096$ 内均匀分布的 $m(t)$ 进行数字化，若采用临界过载电压为 $4.096\\,\\mathrm{V}$ 的 A 律 13 折线码，某一个时刻的样值电压为 $0.31\\,\\mathrm{V}$。\n(1) 求编码器输出码组；\n(2) 求编码器本地编码器 $7/11$ 变换输出码组；\n(3) 求接收端译码器输出样值；\n(4) 求译码器 $7/12$ 变换输出码组；\n(5) 对于该模拟信号，$7/12$ 变换末位为 1 的概率为多大，说明原因。\n（南京邮电大学 2023 年第十题）"
  },
  {
@@ -27071,7 +27073,7 @@
   "kp_sub": "",
   "chapter_name": "第9章 信源编码 · 考点5 时分复用",
   "answer_text": "B",
-  "question_text": "",
+  "question_text": "考点5：时分复用\n平界小鸟哥tips：\n本考点考查形式包含大题、小题，理解时分复用的基本原理，重点掌握时分复用后信号的速率求解。\n1. 将 32 路 A 律十三折线编码的标准 PCM 数字语音进行时分复用后，数据速率是____。（北京邮电大学 2015 年一、20）\nA. 5.12Mb/s\nB. 2.048Mb/s\nC. 8.048Mb/s\nD. 34.368Mb/s\n平界\n本\n1、\n截止\n(1)\n(2)\n(—",
   "solution": "1、B"
  },
  {
@@ -27244,7 +27246,7 @@
   "kp": "量化编码+时分复用+无码间传输综合题",
   "kp_sub": "",
   "chapter_name": "第9章 信源编码 · 考点6 量化编码+时分复用+无码间传输综合题",
-  "answer_text": "",
+  "answer_text": "6、解：\n(1) $R_A = 2 \\times 4k \\times 8 = 64kbit/s$\n$m_3(t)$ 和 $m_4(t)$ 是带通信号，最低抽样频率：\n$$f_s = 2B\\left(1+\\frac{k}{n}\\right) = 2 \\times 1.5k\\left(1+\\frac{2/3}{2}\\right) = 4kHz$$\n$R_B = 4k \\times 8 = 32kbit/s$\n174\n$R_C = 2 \\times 64k + 2 \\times 32 = 192kbit/s$\n(2) 传码率 $R_B = \\dfrac{R_C}{4} = 48kBaud$，$B = 2R_B = 96kHz$\n单边功率谱密度如下所示：\n【图】\n(3) 调制框图如下所示：\n【图】\n解调框图如下所示：\n【图】",
   "question_text": "6、在下图中，$m_1(t)$ 和 $m_2(t)$ 是带宽为 4kHz 的基带信号，$m_3(t)$ 和 $m_4(t)$ 是带宽为 1.5kHz、最高频率为 4kHz 的带通信号。每路 PCM 按不发生频谱混淆的最小采样率进行采样，对每个样值按 A 律十三折线编码。四路 PCM 的数据复用后，通过升余弦滚降系数为 1 的矩形 16QAM 调制传输。试：\n【图】\n(1) 写出图中 A 点、B 点、C 点的比特速率 $R_A$、$R_B$ 和 $R_C$。\n(2) 画出 D 点的单边功率谱密度图（标出频率值）。\n(3) 画出调制框图、解调框图。（北京邮电大学 2018 年第五题）\n81"
  },
  {
@@ -27282,8 +27284,8 @@
   "kp": "量化编码+时分复用+无码间传输综合题",
   "kp_sub": "",
   "chapter_name": "第9章 信源编码 · 考点6 量化编码+时分复用+无码间传输综合题",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "8、解：\n(1) $R_1 = 2f_{m1} \\times 8 = 3.2\\,\\mathrm{Mbps}$\n对于 $m_2(t)$，抽样速率 $f_s = 2B\\left(1+\\frac{k}{n}\\right) = 2 \\times 2M \\times \\left(1+\\frac{1/2}{2}\\right) = 5\\,\\mathrm{Mbps}$\n$R_2 = f_s \\times 10 = 50\\,\\mathrm{Mbps}$\n176\n$R_b = R_1 + R_2 + R_3 = 77.2\\,\\mathrm{Mbps}$\n(2) $\\eta_b = \\frac{R_b}{B} = \\frac{77.2 \\times 10^6}{0.02 \\times 10^9} = 3.86\\,\\mathrm{bit/s}$\n(3) $\\eta = \\frac{\\log_2^M}{1+a} = \\frac{R_b}{B} \\Rightarrow a = \\frac{1}{3.86}\\log_2^M - 1 \\quad 0 < a \\le 1$\n当 $M = 2,4,8$ 时，$a < 0$，不满足要求\n当 $M = 16$，$a = 0.036$，满足要求，一般取满足要求的 M 最小值，提高可靠性。\n(4) 滤波器 1 是带宽等于 0.2MHz 的理想低通滤波器。\n滤波器 2 是带宽等于 3MHz ~ 5MHz 的理想带通滤波器。\n【图】",
+  "question_text": "8、在下图中，信源 1 和 2 是模拟信源，输出 $m_1(t)$ 和 $m_2(t)$ 是频率范围为 0.2MHz 和 3MHz~5MHz 的模拟信号。对 $m_1(t)$ 和 $m_2(t)$ 各自采用最低的无混叠的采样频率采样并均匀量化，量化比特数分别为 8 比特和 10 比特，量化编码后的数据速率为 $R_1$ 和 $R_2$。信源 3 是 24Mbit/s 的数字信源。三路信源复用为一路速率为 $R$ 的数据后通过带通信道传输。若已调信号占用的频带范围是 1GHz~1.02GHz，试给出最合理的系统参数设计。\n【图】\n(1) 确定 $R_1$、$R_2$、$R_3$ 分别为多少？\n(2) 求系统的频带利用率 $\\eta_b$；\n(3) 若采用 QAM 调制方式，试确定最佳的调制阶数和此时对应的余弦滚降系数 $\\alpha$；\n(4) 画出滤波器 1 和 2 的频域传输特性。（南京邮电大学 2024 年第三题）\n82\n均"
  },
  {
   "subject": "txyl",
@@ -27380,7 +27382,7 @@
   "kp_sub": "",
   "chapter_name": "第10章 信道编码 · 考点1 常见纠错码（码重、最小码距）",
   "answer_text": "考点 1：常见纠错码（海星、集\n1、纠正2位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$。",
-  "question_text": ""
+  "question_text": "本考点通常以小题形式考查，会求解载波\n（北京交通大学2022年一、10）"
  },
  {
   "subject": "txyl",
@@ -27399,7 +27401,7 @@
   "kp_sub": "",
   "chapter_name": "第10章 信道编码 · 考点1 常见纠错码（码重、最小码距）",
   "answer_text": "2、2,3；1,4\n3、6。解析：根据公式 $d_{\\min} \\geq e+t+1$，可得最小汉明距离为 6。",
-  "question_text": ""
+  "question_text": "1、最小距离为 5 的线性分组码，纠错能力为____。\n2、若纠错编码 $d^*=6$，用纠检结合，则它纠检结合的两种方案的 $(t,e)$ 分别为____，\n（南京邮电大学 2021 年二、3）"
  },
  {
   "subject": "txyl",
@@ -27417,7 +27419,7 @@
   "kp": "常见纠错码（码重、最小码距）",
   "kp_sub": "",
   "chapter_name": "第10章 信道编码 · 考点1 常见纠错码（码重、最小码距）",
-  "answer_text": "",
+  "answer_text": "（图片高度被严重压缩，全部内容不可辨认，无法转录出任何文字。）",
   "question_text": "___。($t$ 为纠错个数，$e$ 为检错个数)。（\n3、一个分组码在检 3 位错的同时，纠 2 位错，则最小汉明距离为____。\n（北京交通大学 2019 年一、3）"
  },
  {
@@ -27654,7 +27656,7 @@
   "kp": "线性分组码、循环码",
   "kp_sub": "",
   "chapter_name": "第10章 信道编码 · 考点2 线性分组码、循环码",
-  "answer_text": "",
+  "answer_text": "$(x^7+x^3)\\bmod(x^5+x^3+x^2+1)$\n7、解：\n(1) $x^7+1=(x^3+x+1)(x^3+x^2+1)(x+1)$，因此存在。\n(2) $$G(x)=\\begin{bmatrix} x^3g(x) \\\\ x^2g(x) \\\\ xg(x) \\\\ g(x) \\end{bmatrix}=\\begin{bmatrix} x^6+x^4+x^3 \\\\ x^5+x^3+x^2 \\\\ x^4+x^2+x \\\\ x^3+x+1 \\end{bmatrix}$$ 可得 $$G=\\begin{bmatrix} 1&0&1&1&0&0&0 \\\\ 0&1&0&1&1&0&0 \\\\ 0&0&1&0&1&1&0 \\\\ 0&0&0&1&0&1&1 \\end{bmatrix}$$\n经过初等行变换，化成典型生成矩阵 $$G=\\begin{bmatrix} 1&0&0&0&1&0&1 \\\\ 0&1&0&0&1&1&1 \\\\ 0&0&1&0&1&1&0 \\\\ 0&0&0&1&0&1&1 \\end{bmatrix}$$\n(3) 最小码距等于多项式的项数，因此 $d_{\\min}=3$",
   "question_text": "7、给定多项式 $g(x) = x^3 + x + 1$。\n(1) 是否存在以该多项式为生成多项式，长度为 7 的循环码？\n(2) 若存在，写出系统形式的生成矩阵；\n(3) 若存在，确定该循环码的最小距离。（北京交通大学 2023 年四、4）"
  },
  {
@@ -27692,7 +27694,7 @@
   "kp": "线性分组码、循环码",
   "kp_sub": "",
   "chapter_name": "第10章 信道编码 · 考点2 线性分组码、循环码",
-  "answer_text": "",
+  "answer_text": "9、解：\n(1) $d_{\\min}=3$　$d_{\\min}\\geq 2t+1 \\Rightarrow t=1$　$d_{\\min}\\geq e+1 \\Rightarrow e=2$\n因此，能够检错 2 位或纠正 1 位。\n(2) 信息码组为 0101 的多项式为 $m(x)=x^2+1$\n编码后循环码：$C(x)=x^3m(x)+x^3m(x) \\bmod g(x)$\n$$C(x)=x^3(x^2+1)+x^3(x^2+1) \\bmod (x^3+x^2+1)$$\n$$=x^5+x^3+x^2$$\n从而码组为 $c=[0101100]$\n(3) 依题意，则生成矩阵\n$$G(x)=\\begin{bmatrix} x^3g(x) \\\\ x^2g(x) \\\\ xg(x) \\\\ g(x) \\end{bmatrix}=\\begin{bmatrix} x^6+x^4+x^3 \\\\ x^5+x^3+x^2 \\\\ x^4+x^2+x \\\\ x^3+x+1 \\end{bmatrix}$$ 则有：\n$$G=\\begin{bmatrix} 1 & 0 & 1 & 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 1 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 1 & 1 \\end{bmatrix} \\to \\begin{bmatrix} 1 & 0 & 0 & 0 & 1 & 0 & 1 \\\\ 0 & 1 & 0 & 0 & 1 & 1 & 1 \\\\ 0 & 0 & 1 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 1 & 1 \\end{bmatrix}$$\n可得到典型监督矩阵 $$H=\\begin{bmatrix} 1 & 1 & 1 & 0 & 1 & 0 & 0 \\\\ 0 & 1 & 1 & 1 & 0 & 1 & 0 \\\\ 1 & 1 & 0 & 1 & 0 & 0 & 1 \\end{bmatrix}$$\n$s=eH^T=[010]$，校正子不为零，接收码字不正确。\n从上式校正子可以看出，校正子刚好为监督矩阵第六列，从而 $e=[0000010]$\n正确码字为：$c=r+e=[0001011]$\n181",
   "question_text": "9、已知某 (7, 4) 汉明循环码的生成多项式为 $g(x)=x^3+x+1$。\n(1) 写出该汉明码的最小码距，并确定其检错和纠错能力；\n(2) 若输入信息位为 0101，求系统循环码组；\n(3) 若译码器输入为 0001001，求伴随式 $s$，并判断是否有错。若有错，判断能否纠错。（北京科技大学 2020 年三、2）\n86"
  },
  {
@@ -27711,7 +27713,7 @@
   "kp": "线性分组码、循环码",
   "kp_sub": "",
   "chapter_name": "第10章 信道编码 · 考点2 线性分组码、循环码",
-  "answer_text": "",
+  "answer_text": "10、解：\n方法一：\n(1) 信息码组为 1001 的多项式为 $m(x)=x^3+1$\n编码后循环码：$C(x)=x^3 m(x)+x^3 m(x) \\bmod g(x)$\n$$C(x)=x^3(x^3+1)+x^3(x^3+1) \\bmod (x^3+x^2+1)$$\n$$=x^6+x^3+x+1$$\n从而码组为 $c=[1001011]$\n(2)\n由于生成多项式 $g(x)=x^3+x^2+1$，因此 $d_{\\min}=3$\n纠错能力为：纠正 1 位或者检测 2 位错误。\n方法二：\n（1）依题意，则生成矩阵\n$$G(x)=\\begin{bmatrix} x^3 g(x) \\\\ x^2 g(x) \\\\ x g(x) \\\\ g(x) \\end{bmatrix}=\\begin{bmatrix} x^6+x^5+x^3 \\\\ x^5+x^4+x^2 \\\\ x^4+x^3+x \\\\ x^3+x^2+1 \\end{bmatrix} \\text{ 或 } G=\\begin{bmatrix} 1101000 \\\\ 0110100 \\\\ 0011010 \\\\ 0001101 \\end{bmatrix}$$\n通过初等行变换为典型生成矩阵：$G=\\begin{bmatrix} 1000110 \\\\ 0100011 \\\\ 0010111 \\\\ 0001101 \\end{bmatrix}$\n$C=[1001]G=[1001011]$\n（2）可得到典型监督矩阵 $H=\\begin{bmatrix} 1011100 \\\\ 1110010 \\\\ 0111001 \\end{bmatrix}$\n从上面监督矩阵可以看出至少有 3 列线性相关，因此 $d_{\\min}=3$\n纠错能力为：纠正 1 位或者检测 2 位错误。\n182",
   "question_text": "10、已知 $(7,4)$ 循环码的生成多项式为 $g(x)=x^3+x^2+1$。\n(1) 当信息码组为 1001 时，求编码后的循环码组；\n(2) 求该循环码的纠错能力。（北京科技大学 2023 年三、4）"
  },
  {
@@ -27730,8 +27732,8 @@
   "kp": "线性分组码、循环码",
   "kp_sub": "",
   "chapter_name": "第10章 信道编码 · 考点2 线性分组码、循环码",
-  "answer_text": "",
-  "question_text": ""
+  "answer_text": "11、解：\n(1) 将 $G_0$ 进行初等行变换，可得系统码形式的生成矩阵：\n$$G=\\begin{pmatrix}1&0&0&0&1&1&0&0&0&1\\\\0&1&0&0&1&0&1&0&0&1\\\\0&0&1&0&1&0&0&1&0&1\\\\0&0&0&1&1&0&0&0&1&1\\end{pmatrix}$$\n根据生成矩阵和校验矩阵的关系，则有校验矩阵为：\n$$H=\\begin{pmatrix}1&1&1&1&1&0&0&0&0&0\\\\1&0&0&0&0&1&0&0&0&0\\\\0&1&0&0&0&0&1&0&0&0\\\\0&0&1&0&0&0&0&1&0&0\\\\0&0&0&1&0&0&0&0&1&0\\\\1&1&1&1&0&0&0&0&0&1\\end{pmatrix}$$\n(2) 由 $cH^T=0$ 可知：\n$$\\begin{cases}c_9\\oplus c_8\\oplus c_7\\oplus c_6\\oplus",
+  "question_text": "11、通过将 (10，4) 循环码的生成多项式移位，得到其生成矩阵为：\n$$G_0 = \\begin{pmatrix} 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\\\ 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\end{pmatrix}$$\n(1) 通过初等行变换将 $G_0$ 化为系统码形式的生成矩阵 G（约定系统位在左），并写出对应的校验矩阵 H；\n(2) 设 $c = (c_9 c_8 c_7 c_6 c_5 c_4 c_3 c_2 c_1 c_0)$ 是该码的系统码码字，证明 $c_4 c_3 c_2 c_1 c_0 = c_9 c_8 c_7 c_6 c_5$\n(3) 若接收端收到 y = 1100011001，写出对应的伴随式 $s = Hy^T$、最可能的错误图样以及对应的译码结果。（北京邮电大学2022年第八题）\n87"
  },
  {
   "subject": "txyl",
@@ -27982,7 +27984,7 @@
   "kp_sub": "",
   "chapter_name": "第11章 正交序列与扩频通信 · 考点2 m序列",
   "answer_text": "2、线性反馈移存器",
-  "question_text": ""
+  "question_text": "A. 3　　　　B. 7　　　　C. 15\n……产生的一种序列。（河北工业大学 2018 年二、5）"
  },
  {
   "subject": "txyl",
