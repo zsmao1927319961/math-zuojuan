@@ -225,6 +225,7 @@ function viewQuestion(){
     + '</div>';
   if(s.due && s.mastery!=='ok') h+='<div class="duemsg">🔁 复测计划：'+s.due+'（第 '+s.round+' 轮）</div>';
   h+='<div class="nav"><button class="btn grey" onclick="prevQ()" '+(VIEW.qidx<=0?'disabled':'')+'>‹ 上一题</button>'
+    + '<button class="btn grey" onclick="redoQ()">🔄 重做</button>'
     + '<button class="btn grey" onclick="nextQ()" '+(VIEW.qidx>=qs.length-1?'disabled':'')+'>下一题 ›</button></div>';
   h+='</div>';
   v.innerHTML=h;
@@ -260,6 +261,12 @@ function mark(qid, m){
     const seq = m==='unknown' ? [1,3,7] : [2,5,10];
     s.due = addDays(today(), seq[Math.min((s.round||1)-1, seq.length-1)]);
   }
+  saveState(); viewQuestion();
+}
+function redoQ(){
+  const q=kpQuestions(VIEW.kp)[VIEW.qidx];
+  const s=st(q.question_id);
+  delete s.sel; delete s.ansShown;
   saveState(); viewQuestion();
 }
 function prevQ(){ if(VIEW.qidx>0){ VIEW.qidx--; viewQuestion(); } }
