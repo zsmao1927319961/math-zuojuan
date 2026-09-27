@@ -141,3 +141,35 @@ main.cardmode .qcard{min-height:34vh; flex:0 0 auto;}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important; transition:none!important;}
 }
+
+/* ===== 知识图库模式 (大观园式) ===== */
+body{background:#eef1f7;color:#232c3d;font-size:15px}
+.top{background:linear-gradient(135deg,#2b3a67,#4f74d8);border-radius:0 0 18px 18px;padding:18px 16px}
+.top .brand{color:#fff;font-weight:800;font-size:18px}
+.top .sub{color:rgba(255,255,255,.85);font-size:12px;margin-top:4px}
+nav.tabs{display:none}
+main{padding:14px 12px 60px;max-width:760px;margin:0 auto}
+.card{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 3px 14px rgba(35,50,90,.08)}
+.root-h{display:flex;gap:12px;align-items:center}
+.root-em{font-size:26px}
+.root-nm b{font-size:15px;color:#2b3a67}
+.root-meta{font-size:12px;color:#8a93a8;margin-top:3px}
+#kw{width:100%;margin-top:12px;padding:10px 12px;border:1.5px solid #e3e8f4;border-radius:10px;font-size:14px;outline:none;background:#fbfcff}
+#kw:focus{border-color:#4f74d8}
+.gcard{padding:10px 12px}
+.g-h{display:flex;align-items:center;gap:8px;padding:8px 2px;cursor:pointer}
+.g-h .tw{color:#8a93a8;width:14px}
+.g-nm{font-weight:700;font-size:14px;flex:1}
+.g-meta{font-size:12px;color:#8a93a8}
+.leaf{border:1px solid #eef1f8;border-radius:10px;margin:8px 0;background:#fbfcff;overflow:hidden}
+.leaf-h{display:flex;align-items:center;gap:8px;padding:10px;cursor:pointer}
+.leaf-h .tw{color:#8a93a8;width:12px;font-size:12px}
+.leaf-nm{flex:1;font-size:13.5px;line-height:1.5}
+.mast{font-size:11px;border-radius:8px;padding:3px 8px;border:1px solid #e3e8f4;color:#8a93a8;white-space:nowrap;background:#fff}
+.mast.on{background:#1d9e6f;border-color:#1d9e6f;color:#fff}
+.leaf-b{padding:4px 12px 12px;border-top:1px dashed #e8ecf5}
+.leaf-b .q{font-weight:700;color:#2b3a67;margin:8px 0;line-height:1.7;font-size:14px}
+.leaf-b .a{line-height:2;font-size:14px}
+.leaf-b .fl{margin:6px 0;line-height:1.9}
+.leaf-b mark{background:#fff3c9;padding:1px 4px;border-radius:4px}
+.notice{font-size:12px;color:#8a93a8;padding:10px 4px;line-height:1.8}

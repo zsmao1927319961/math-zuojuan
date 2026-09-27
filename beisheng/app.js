@@ -1,235 +1,96 @@
-/* 背诵宝典 · 艾宾浩斯复习
-   数据源: data_comm.js / data_gd.js / data_xd.js (window.BS_DECKS)
-           ../data/sentences.json (英语作文15批, 与背作文模块同源)
-   调度: localStorage bs_v1_<deckId>_<n> = {s:阶梯, t:到期ms, n:看过次数, k:认识次数}
-   阶梯(天): 忘记→当天重现+1天(归0)  模糊→当天重现+2天(退1阶)  认识→升1阶 */
+/* 知识图库 · 通信原理必背公式（大观园式知识树, 纯浏览速查）
+   数据源: data_comm.js (32卡, 按正面 chip 专题组分 7 组)
+   交互: 组展开收起 / 卡片点击展开公式内容 / 搜索过滤 / 手动掌握标记 (localStorage kg_v1) */
 'use strict';
-
-const LADDER = [0, 1, 2, 4, 7, 15, 30];          // 天; 0=当天收尾
-const NEXTTXT = ['今天再来', '1天后', '2天后', '4天后', '7天后', '15天后', '30天后'];
-const DAY = 86400000;
-const LS = 'bs_v1_';
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const strip = s => String(s).replace(/<span class='chip'>[^<]*<\/span>/,'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+const LSK = 'kg_v1';
 
-let DECKS = [];      // {id,name,em,subject,cards:[{f,b,batch?}]}
-let state = null;    // {id, queue:[], idx, shown}
-let tab = 'library';
-let engLoading = false;
+let D = null, GROUPS = [], openG = {}, openC = {}, KW = '';
+let MAST = null;
+try { MAST = JSON.parse(localStorage.getItem(LSK)) || {}; } catch(e){ MAST = {}; }
+function saveM(){ try{ localStorage.setItem(LSK, JSON.stringify(MAST)); }catch(e){} }
 
-/* ---------- 英语作文: 从背作文数据动态生成卡 ---------- */
-async function loadEnglish(){
-  if (DECKS.some(d => d.id === 'eng')) return;
-  if (engLoading) return; engLoading = true;
-  try{
-    const r = await fetch('../data/sentences.json?' + Date.now());
-    const DATA = await r.json();
-    const cards = [];
-    (DATA.days || []).sort((a,b)=>a.day-b.day).forEach(d => {
-      (d.sents || []).forEach(s => {
-        cards.push({ f: s.zh.replace(/<[^>]+>/g,'').replace(/＿+/g,'____'),
-                     b: '<div class="fl">'+s.en+'</div>' + (s.meta?'<div class="tip">'+esc(String(s.meta).replace(/<[^>]+>/g,''))+'</div>':''),
-                     batch: d.day, tag: d.tag || '' });
-      });
-    });
-    if (cards.length) DECKS.push({id:'eng', name:'英语作文背诵（15批）', em:'✍️', subject:'英语', cards});
-    render();
-  }catch(e){ /* 静默: 英语数据取不到时不阻塞其他牌库 */ }
-}
-
-/* ---------- 调度 ---------- */
-const KEY = (d,i) => LS + d.id + '_' + i;
-const getSt = (d,i) => { try{ return JSON.parse(localStorage.getItem(KEY(d,i))); }catch(e){ return null; } };
-const setSt = (d,i,st) => { try { st ? localStorage.setItem(KEY(d,i), JSON.stringify(st)) : localStorage.removeItem(KEY(d,i)); } catch(e){} };
-const due = (d,i) => { const s = getSt(d,i); return !s || s.t <= Date.now(); };
-const deckDue = d => d.cards.reduce((n,_,i) => n + (due(d,i)?1:0), 0);
-const deckNew = d => d.cards.reduce((n,_,i) => n + (getSt(d,i)?0:1), 0);
-const deckDone = d => d.cards.reduce((n,_,i) => { const s=getSt(d,i); return n + (s && s.s >= LADDER.length-1 ? 1:0); }, 0);
-
-function answer(d, i, kind){
-  const st = getSt(d,i) || {s:0,t:0,n:0,k:0};
-  st.n++;
-  if (kind === 'no'){ st.s = 0; st.t = Date.now() + DAY; }
-  else if (kind === 'mid'){ st.s = Math.max(0, st.s - 1); st.t = Date.now() + 2*DAY; st.k++; }
-  else { st.s = Math.min(LADDER.length-1, st.s + 1); st.k++;
-         st.t = Date.now() + (LADDER[st.s] || 0.007) * DAY; }
-  setSt(d,i,st);
-}
-
-/* ---------- 视图 ---------- */
-function render(){
-  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
-  $('#main').classList.toggle('cardmode', tab==='review' && !!state);
-  $('#topsub').textContent = tab==='library' ? '艾宾浩斯复习' : tab==='review' ? (state ? deckName(state.d) : '今日到期') : '学习进度';
-  if (tab === 'library') return renderLibrary();
-  if (tab === 'review') return state ? renderCard() : renderPick();
-  return renderStats();
-}
-
-function renderLibrary(){
-  const groups = [['数学',['gd','xd']], ['专业课',['comm']], ['英语',['eng']]];
-  let html = '';
-  groups.forEach(([g, ids]) => {
-    html += `<div class="group-h">${g}</div>`;
-    ids.forEach(id => {
-      const d = DECKS.find(x => x.id === id); if (!d) return;
-      const dueN = deckDue(d), tot = d.cards.length, done = deckDone(d);
-      html += `<div class="deck" data-deck="${id}">
-        <div class="em">${d.em}</div>
-        <div class="info"><div class="nm">${esc(d.name)}</div>
-        <div class="meta">${tot} 卡 · 背熟 <b>${done}</b> · 新卡 ${deckNew(d)}</div></div>
-        ${dueN?`<div class="due">${dueN>99?'99+':dueN}</div>`:''}
-        <div class="go">›</div></div>`;
-    });
+/* 分组: 按卡正面 chip 专题 */
+function buildGroups(){
+  const map = new Map();
+  D.cards.forEach((c, i) => {
+    const m = String(c.f).match(/<span class='chip'>([^<]+)<\/span>/);
+    const g = m ? m[1].trim() : '其他';
+    if (!map.has(g)) map.set(g, []);
+    map.get(g).push(i);
   });
-  if (!DECKS.some(d=>d.id==='eng'))
-    html += `<div class="notice">英语作文牌库加载中…（若长时间为空，检查网络后刷新）</div>`;
-  html += `<div class="notice">点击牌组开始复习；算法为艾宾浩斯曲线：<b style="color:var(--green)">认识</b>间隔 1→2→4→7→15→30 天递增，<b style="color:var(--orange)">模糊</b>退 1 阶+2 天，<b style="color:var(--red)">忘记</b>归零+1 天。进度保存在本设备浏览器。</div>`;
-  $('#main').innerHTML = html;
-  document.querySelectorAll('[data-deck]').forEach(el =>
-    el.addEventListener('click', () => startDeck(el.dataset.deck)));
-  updateBadge();
+  GROUPS = [...map.entries()].map(([name, idxs]) => ({name, idxs}));
 }
+const gMastered = g => g.idxs.filter(i => MAST[i]).length;
 
-function startDeck(id){
-  const d = DECKS.find(x => x.id === id); if (!d) return;
-  const q = [];
-  d.cards.forEach((_, i) => { if (due(d, i)) q.push(i); });
-  // 新卡排前, 到期旧卡按到期时间排后
-  q.sort((a,b) => (getSt(d,a)?getSt(d,a).t:0) - (getSt(d,b)?getSt(d,b).t:0));
-  state = { d, queue: q, idx: 0, shown: 0 };
-  tab = 'review'; render();
-}
-
-function renderPick(){
-  const tot = DECKS.reduce((n,d)=>n+deckDue(d),0);
-  $('#main').innerHTML = tot
-    ? `<div class="empty"><div class="big">◔</div>今天还有 ${tot} 张到期<br>回牌库选一个牌组开始</div>`
-    : `<div class="empty"><div class="big">🎉</div>全部背完，今天没有到期的了<br>明天再来</div>`;
-}
-
-function renderCard(){
-  const {d, queue, idx} = state;
-  $('#main').classList.add('cardmode');
-  if (idx >= queue.length){
-    $('#main').innerHTML = `<div class="empty"><div class="big">✅</div>本组完成！<br>${state.shown} 张已过
-      <div style="margin-top:16px"><button class="flipbtn" style="width:auto;padding:10px 26px" id="goLib">回牌库</button></div></div>`;
-    $('#goLib').addEventListener('click', ()=>{ tab='library'; state=null; render(); });
-    updateBadge(); return;
-  }
-  const i = queue[idx], c = d.cards[i], st = getSt(d,i);
-  const isNew = !st;
-  const chip = (d.id==='eng' && c.batch) ? `<span class="chip">第 ${c.batch} 批</span>` : '';
-  $('#main').innerHTML = `
-    <div class="rvhead"><span class="cnt">${chip}${idx+1} / ${queue.length}${isNew?' · 新卡':''}</span>
-      <button class="backbtn" id="quit">‹ 牌库</button></div>
-    <div class="prog"><i style="width:${Math.round(idx/queue.length*100)}%"></i></div>
-    <div class="qcard" id="qcard">
-      <div class="q">${c.f}</div>
-      <div class="a" id="ans" style="display:none">${c.b}</div>
-      <div class="hint" id="hint">点击卡片显示答案</div>
+/* 渲染 */
+function render(){
+  let mastered = 0;
+  D.cards.forEach((_, i) => { if (MAST[i]) mastered++; });
+  let h = `<div class="card root">
+    <div class="root-h"><span class="root-em">📡</span>
+      <div class="root-nm"><b>${esc(D.name)}</b><div class="root-meta">${D.cards.length} 张公式卡 · 已掌握 ${mastered}</div></div>
     </div>
-    <div class="btns" id="btns" style="display:none">
-      <button class="abtn no" data-k="no"><span class="lab">忘记</span><span class="next">今日/1天后</span></button>
-      <button class="abtn mid" data-k="mid"><span class="lab">模糊</span><span class="next">今日/2天后</span></button>
-      <button class="abtn ok" data-k="ok"><span class="lab">认识</span><span class="next">${NEXTTXT[Math.min(LADDER.length-1,(st?st.s:0)+1)]}</span></button>
-    </div>
-    <div id="flipwrap"><button class="flipbtn" id="flip">显示答案</button></div>`;
-  $('#quit').addEventListener('click', ()=>{ tab='library'; state=null; render(); });
-  const flip = () => {
-    $('#ans').style.display='block'; $('#hint').style.display='none';
-    $('#btns').style.display='flex'; $('#flipwrap').style.display='none';
-    renderMath($('#ans'));
-    if (window.renderMathInElement) renderMathInElement($('#qcard'), DELIMS);
-  };
-  $('#qcard').addEventListener('click', flip);
-  $('#flip').addEventListener('click', flip);
-  document.querySelectorAll('.abtn').forEach(b => b.addEventListener('click', e => {
-    e.stopPropagation();
-    answer(d, i, b.dataset.k); state.shown++;
-    // 忘记/模糊: 今天排到队尾再重现一次(每卡本组至多补现2次); 认识: 直接过
-    if (b.dataset.k !== 'ok'){
-      state.req = state.req || {};
-      if ((state.req[i] || 0) < 2){ state.req[i] = (state.req[i] || 0) + 1; state.queue.push(i); }
+    <input id="kw" placeholder="🔍 搜索公式关键词…" value="${esc(KW)}">
+  </div>`;
+  const kw = KW.trim().toLowerCase();
+  let shown = 0;
+  GROUPS.forEach((g, gi) => {
+    const idxs = g.idxs.filter(i => {
+      if (!kw) return true;
+      return (strip(c(i).f) + ' ' + strip(c(i).b)).toLowerCase().indexOf(kw) >= 0;
+    });
+    if (kw && !idxs.length) return;
+    shown += idxs.length;
+    const open = kw ? true : !!openG[gi];
+    const mas = gMastered(g);
+    h += `<div class="card gcard">
+      <div class="g-h" onclick="toggleG(${gi})">
+        <span class="tw">${open?'▾':'▸'}</span>
+        <span class="g-nm">${esc(g.name)}</span>
+        <span class="g-meta">${idxs.length}卡 · 掌握 ${mas}</span>
+      </div>`;
+    if (open){
+      g.idxs.forEach(i => {
+        const cdi = c(i);
+        const front = strip(cdi.f);
+        const open2 = kw ? true : !!openC[i];
+        h += `<div class="leaf ${open2?'open':''}">
+          <div class="leaf-h" onclick="toggleC(${i})">
+            <span class="tw">${open2?'▾':'▸'}</span>
+            <span class="leaf-nm">${esc(front.slice(0, 46))}${front.length>46?'…':''}</span>
+            <span class="mast ${MAST[i]?'on':''}" onclick="event.stopPropagation();toggleM(${i})">${MAST[i]?'✓ 掌握':'标记掌握'}</span>
+          </div>
+          <div class="leaf-b" style="display:${open2?'block':'none'}">
+            <div class="q">${cdi.f.replace(/<span class='chip'>[^<]*<\/span>/,'')}</div>
+            <div class="a">${cdi.b}</div>
+          </div>
+        </div>`;
+      });
     }
-    state.idx++;
-    render(); window.scrollTo(0,0);
-  }));
+    h += `</div>`;
+  });
+  if (kw) h += `<div class="notice">搜索“${esc(KW)}”：命中 ${shown} 张卡</div>`;
+  $('#main').innerHTML = h;
+  const kwEl = $('#kw');
+  kwEl.addEventListener('input', () => {
+    KW = kwEl.value; render();
+    const el = $('#kw'); el.focus(); el.setSelectionRange(el.value.length, el.value.length);
+  });
   renderMath($('#main'));
 }
+function c(i){ return D.cards[i]; }
+function toggleG(gi){ openG[gi] = !openG[gi]; render(); }
+function toggleC(i){ openC[i] = !openC[i]; render(); }
+function toggleM(i){ MAST[i] = !MAST[i]; if (!MAST[i]) delete MAST[i]; saveM(); render(); }
+function renderMath(el){ if (window.renderMathInElement) renderMathInElement(el, {delimiters:[{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError:false}); }
 
-const DELIMS = {delimiters:[{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError:false};
-function renderMath(el){ if (window.renderMathInElement) renderMathInElement(el, DELIMS); }
-
-function renderStats(){
-  let html = '';
-  DECKS.forEach(d => {
-    const tot = d.cards.length;
-    let seen=0, ok=0, dueN=0;
-    d.cards.forEach((_,i)=>{ const s=getSt(d,i); if(s){seen++; ok+=s.k;} if(due(d,i)) dueN++; });
-    const pct = tot? Math.round(seen/tot*100) : 0;
-    html += `<div class="stat"><div class="nm">${d.em} ${esc(d.name)}</div>
-      <div class="bar"><i style="width:${pct}%"></i></div>
-      <div class="row"><span>已学 ${seen} / ${tot}（${pct}%）</span><span>背熟 <b>${deckDone(d)}</b></span></div>
-      <div class="row"><span>今日到期 <b>${dueN}</b></span><span>累计认识 <b>${ok}</b> 次</span></div></div>`;
-  });
-  html += `<div class="notice">「背熟」= 认识满 6 阶（30 天间隔）。更换手机/浏览器或清理浏览器数据会丢进度。</div>`;
-  $('#main').innerHTML = html;
-}
-
-function deckName(d){ return d.name; }
-function updateBadge(){
-  const n = DECKS.reduce((s,d)=>s+deckDue(d),0);
-  const b = $('#dueBadge');
-  b.textContent = n>99?'99+':n; b.classList.toggle('show', n>0);
-}
-
-/* ---------- init ---------- */
-document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => {
-  tab = b.dataset.tab; if (tab!=='review') state=null; render(); window.scrollTo(0,0);
-}));
-(function init(){
-  if (window.BS_DECKS) DECKS.push(...BS_DECKS);
-  loadEnglish().then(()=>updateBadge());
+/* init */
+(function(){
+  if (window.BS_DECKS) D = window.BS_DECKS.find(x => x.id === 'comm') || window.BS_DECKS[0];
+  buildGroups();
   render();
-  // 调试/直达: ?d=牌组id 直接开始复习; ?flip=1 自动翻第一张
-  // 守卫必须在轮询里做：英语牌库是异步 fetch 后才进 DECKS，同步判断永远查不到 eng
-  const q = new URLSearchParams(location.search);
-  if (q.get('debug')){
-    setTimeout(()=>{
-      let w = 0, who = '';
-      document.querySelectorAll('#app *').forEach(el=>{
-        if (el.scrollWidth > w){ w = el.scrollWidth; who = el.tagName + '.' + el.className; }
-      });
-      const dv = document.createElement('div'); dv.id = 'dbg';
-      dv.textContent = 'DBG body=' + document.body.scrollWidth + ' doc=' + document.documentElement.clientWidth + ' max=' + w + ' @' + who;
-      document.body.appendChild(dv);
-    }, 800);
-  }
-  if (q.get('d')){
-    let waited = 0;
-    const t = setInterval(()=>{
-      waited += 200;
-      if (DECKS.some(x=>x.id===q.get('d'))){
-        clearInterval(t); startDeck(q.get('d'));
-        if (q.get('flip')) setTimeout(()=>{ const f=$('#flip'); if(f) f.click(); }, 300);
-      } else if (waited > 5000){ clearInterval(t); }
-    }, 200);
-  }
-  // 测试钩子: ?demo=ok 自动翻面并按"认识"作答, 走真实点击路径直到本组完成
-  if (q.get('demo')){
-    setTimeout(()=>{
-      const t = setInterval(()=>{
-        const f = $('#flip');
-        if (f && f.offsetParent !== null){ f.click(); return; }
-        const b = document.querySelector('.abtn.' + (q.get('demo') === '1' ? 'ok' : q.get('demo')));
-        if (b){ b.click(); return; }
-        clearInterval(t);
-        const dv = document.createElement('div'); dv.id = 'demoend';
-        dv.textContent = 'DEMO-END ' + ($('#main').textContent || '').replace(/\s+/g, ' ').slice(0, 90);
-        document.body.appendChild(dv);
-      }, 250);
-    }, 400);
-  }
 })();
