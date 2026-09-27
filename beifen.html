@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>全站备份 · 通信原理题库</title>
+<meta name="theme-color" content="#2b3a67">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f5f6fa;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;color:#22262e}
+  .hero{background:linear-gradient(135deg,#2b3a67 0%,#3d5aa9 55%,#4f74d8 100%);color:#fff;padding:22px 18px 52px;position:relative;overflow:hidden}
+  .hero::after{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero-in{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  .brand{font-size:22px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+  .brand .logo{width:36px;height:36px;border-radius:11px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:19px}
+  .slogan{margin-top:7px;font-size:12.5px;opacity:.85;letter-spacing:2px}
+  .wrap{max-width:720px;margin:-30px auto 0;padding:0 14px 40px;position:relative;z-index:2}
+  .card{background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 6px 24px rgba(35,50,90,.10);margin-bottom:14px}
+  .sec-t{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .sec-t .n{font-size:11px;color:#98a0ad;font-weight:400;margin-left:auto}
+  .sub{font-size:12px;color:#7a828f;margin-top:8px;line-height:1.8}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:12.5px;table-layout:fixed}
+  th{color:#7a828f;font-weight:600;text-align:left;padding:6px 4px;border-bottom:1px solid #eef0f5}
+  td{padding:7px 4px;border-bottom:1px solid #f4f5f9;word-break:break-word}
+  th.num,td.num{text-align:right;font-variant-numeric:tabular-nums;color:#4a5160;white-space:nowrap;width:62px}
+  .bar{height:6px;border-radius:3px;background:#edf0f6;overflow:hidden;margin-top:4px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#3d5aa9,#4f74d8)}
+  .btn{border:1px solid #d6dbe3;background:#f7f8fb;border-radius:10px;padding:9px 18px;font-size:13px;cursor:pointer}
+  .btn.primary{background:#3d5aa9;border-color:#3d5aa9;color:#fff}
+  .btn.danger{background:#fff5f5;border-color:#eccccc;color:#c0504d}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;align-items:center}
+  label.chk{font-size:12.5px;color:#7a828f;display:flex;align-items:center;gap:6px}
+  .note{font-size:11.5px;color:#98a0ad;margin-top:10px;line-height:1.8}
+  a.back{color:#cdd8f5;font-size:12.5px;text-decoration:none;display:inline-block;margin-top:10px}
+  #toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(20,24,32,.92);color:#fff;border-radius:10px;padding:9px 18px;font-size:13.5px;z-index:99}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-in">
+    <div class="brand"><span class="logo">🧰</span>全站备份</div>
+    <div class="slogan">把做题进度装进口袋 · 换设备 / 清浏览器前先导出</div>
+    <a class="back" href="index.html">← 返回门户</a>
+  </div>
+</div>
+<div class="wrap">
+  <div class="card">
+    <div class="sec-t">本机数据一览<span class="n" id="total-line"></span></div>
+    <div class="sub">所有做题进度、掌握标记、错因笔记都只存在本机浏览器（localStorage）。下表是各模块当前占用。</div>
+    <div id="tbl"></div>
+    <div class="note">ℹ️ 「解答照片」（问AI 拍照、IndexedDB zuoti_media）与服务端公共数据（题库、作文批改历史）不在本页范围内。</div>
+  </div>
+
+  <div class="card">
+    <div class="sec-t">导出备份</div>
+    <div class="sub">一个 JSON 文件装下全部模块。换设备后在本页点「导入备份」即可整体恢复。</div>
+    <div class="row">
+      <button class="btn primary" id="btn-export">⬇️ 导出全站备份</button>
+      <label class="chk"><input type="checkbox" id="inc-secret">包含 AI 密钥（glm_key，换设备想免配置就勾上）</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sec-t">导入备份</div>
+    <div class="sub">选择本站导出的 JSON 文件，恢复其中的全部模块。同键名内容会被<b>备份文件覆盖</b>，本机多出的数据不受影响。</div>
+    <div class="row">
+      <button class="btn" id="btn-import">⬆️ 选择备份文件…</button>
+      <button class="btn danger" id="btn-apply" disabled>确认恢复</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </div>
+    <div id="preview"></div>
+  </div>
+</div>
+<div id="toast" hidden></div>
+<script>
+(function(){
+'use strict';
+var SECRET = {'glm_key': 1};
+function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function toast(msg){ var t = document.getElementById('toast'); t.textContent = msg; t.hidden = false; clearTimeout(t._t); t._t = setTimeout(function(){ t.hidden = true; }, 2600); }
+function kb(n){ return n < 1024 ? n + ' B' : (n / 1024).toFixed(1) + ' KB'; }
+function now2(){ var d = new Date(); function p(x){ return String(x).padStart(2, '0'); }
+  return d.getFullYear() + p(d.getMonth()+1) + p(d.getDate()) + '_' + p(d.getHours()) + p(d.getMinutes()); }
+
+/* 模块识别：前缀 → 展示名 */
+var MODULES = [
+  ['shuxue_progress_v1', '主站 · 在线刷题/每日五题 进度'],
+  ['dxy_state_v1',       '题库刷题 299 · 掌握/复测/收藏/拼卷'],
+  ['kg_v1',              '知识图库 · 掌握标记'],
+  ['zy_',                '每日五题 · 钉住/回炉状态'],
+  ['zhenti_',            '真题错题本 · 错因/重做标记'],
+  ['mock_',              '模拟错题本 · 错因/重做标记'],
+  ['dxy_',               '题库刷题 · 其他'],
+  ['pigai_',             '作文批改 · 本机草稿'],
+  ['ai_chat_',           '问AI 对话历史'],
+  ['bs_',                '背诵宝典(旧) · 打卡']
+];
+function moduleOf(k){
+  for (var i = 0; i < MODULES.length; i++)
+    if (k === MODULES[i][0] || k.indexOf(MODULES[i][0]) === 0) return MODULES[i][1];
+  return '其他数据';
+}
+
+/* —— 本机一览 —— */
+var keys = [], totalBytes = 0, i, k, v;
+for (i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
+var groups = {}, order = [];
+keys.forEach(function(k){
+  var m = moduleOf(k);
+  if (!groups[m]) { groups[m] = { n: 0, bytes: 0 }; order.push(m); }
+  groups[m].n++;
+  groups[m].bytes += (localStorage.getItem(k) || '').length * 2;
+  totalBytes += (localStorage.getItem(k) || '').length * 2;
+});
+order.sort(function(a, b){ return groups[b].bytes - groups[a].bytes; });
+document.getElementById('total-line').textContent = keys.length + ' 键 · ' + kb(totalBytes);
+var maxB = 1, html = '';
+order.forEach(function(m){ if (groups[m].bytes > maxB) maxB = groups[m].bytes; });
+html = '<table><tr><th>模块</th><th class="num">键数</th><th class="num">大小</th></tr>';
+order.forEach(function(m){
+  html += '<tr><td>' + escHtml(m) + '<div class="bar"><i style="width:' + Math.max(2, Math.round(groups[m].bytes / maxB * 100)) + '%"></i></div></td>' +
+          '<td class="num">' + groups[m].n + '</td><td class="num">' + kb(groups[m].bytes) + '</td></tr>';
+});
+if (!keys.length) html += '<tr><td colspan="3" style="color:#98a0ad">本机还没有任何数据</td></tr>';
+html += '</table>';
+document.getElementById('tbl').innerHTML = html;
+
+/* —— 导出 —— */
+document.getElementById('btn-export').onclick = function(){
+  var inc = document.getElementById('inc-secret').checked;
+  var data = {}, cnt = 0;
+  for (i = 0; i < localStorage.length; i++) {
+    k = localStorage.key(i);
+    if (!inc && SECRET[k]) continue;
+    data[k] = localStorage.getItem(k);
+    cnt++;
+  }
+  var pack = { app: 'tzs-tongxin-tiku', type: 'full-backup', v: 1,
+               date: new Date().toISOString(), keys: cnt, secretIncluded: !!inc, data: data };
+  var blob = new Blob([JSON.stringify(pack)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '通信题库全站备份_' + now2() + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast('已导出 ' + cnt + ' 键' + (inc ? '（含密钥，注意保管）' : ''));
+};
+
+/* —— 导入 —— */
+var pending = null;
+document.getElementById('btn-import').onclick = function(){ document.getElementById('import-file').click(); };
+document.getElementById('import-file').onchange = function(){
+  var f = this.files[0]; if (!f) return;
+  var rd = new FileReader();
+  rd.onload = function(){
+    try {
+      var obj = JSON.parse(rd.result);
+      var data = obj && obj.data && typeof obj.data === 'object' ? obj.data :
+                 (obj && typeof obj === 'object' && !obj.data ? obj : null);
+      if (!data) throw new Error('不是本站备份文件（缺 data 字段）');
+      var names = Object.keys(data);
+      var over = 0, fresh = 0;
+      names.forEach(function(k){ if (localStorage.getItem(k) !== null) over++; else fresh++; });
+      pending = data;
+      var modNames = {};
+      names.forEach(function(k){ var m = moduleOf(k); modNames[m] = (modNames[m] || 0) + 1; });
+      var lines = Object.keys(modNames).map(function(m){ return escHtml(m) + ' ×' + modNames[m]; });
+      document.getElementById('preview').innerHTML =
+        '<div class="note">📦 <b>' + escHtml(f.name) + '</b>' +
+        (obj.date ? '（' + escHtml(String(obj.date).slice(0, 10)) + ' 导出）' : '') +
+        '：共 <b>' + names.length + '</b> 键 — 覆盖现有 ' + over + ' 键，新增 ' + fresh + ' 键。<br>' +
+        lines.join(' · ') + '<br>点「确认恢复」写入本机。</div>';
+      document.getElementById('btn-apply').disabled = false;
+      toast('文件读取成功，请确认恢复');
+    } catch (e) {
+      pending = null;
+      document.getElementById('btn-apply').disabled = true;
+      document.getElementById('preview').innerHTML = '';
+      toast('读取失败：' + e.message);
+    }
+  };
+  rd.readAsText(f);
+  this.value = '';
+};
+document.getElementById('btn-apply').onclick = function(){
+  if (!pending) return;
+  var n = 0;
+  Object.keys(pending).forEach(function(k){
+    try { localStorage.setItem(k, String(pending[k])); n++; } catch (e) {}
+  });
+  pending = null;
+  this.disabled = true;
+  document.getElementById('preview').innerHTML = '';
+  toast('已恢复 ' + n + ' 键，刷新生效');
+  setTimeout(function(){ location.reload(); }, 900);
+};
+})();
+</script>
+</body>
+</html>

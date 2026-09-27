@@ -1,5 +1,5 @@
 /* Service Worker：网络优先 + 静态壳缓存。支持 iPad PWA 主屏打开，断网时仍能显示界面壳。 */
-const CACHE = 'shuxue-zuojuan-v49';
+const CACHE = 'shuxue-zuojuan-v50';
 const SHELL = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const SHELL = [
   './lianxi.html',
   './dxy.html',
   './ditu.html',
+  './beifen.html',
   './beisheng/index.html',
   './style.css',
   './app.js',

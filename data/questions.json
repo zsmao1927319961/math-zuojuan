@@ -20264,7 +20264,7 @@
   "kp": "带宽求解",
   "kp_sub": "带通信号与希尔伯特变换（DSB/SSB 判别）",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· 同相/正交载波对 $\\{\\cos\\omega_ct,\\sin\\omega_ct\\}$ 的线性组合不展宽频谱，带宽由基带信号带宽决定。\n· 正交两路都载同一基带 → DSB，$B=2f_m$；出现希尔伯特变换对 → SSB，$B=f_m$。\n· $\\cos\\omega_ct+\\sin\\omega_ct=\\sqrt2\\cos(\\omega_ct-\\pi/4)$（幅度乘 $\\sqrt2$、相位转 $-45°$）。\n【解题步骤】\n第1步：$m_2=0$：普通 DSB，$B=2f_m=2\\times2k=4$ kHz。\n第2步：$m_2$ 是 $m_1$ 的希尔伯特变换 → 恰构成 SSB（取一个边带），$B=f_m=2$ kHz，选 C。\n第3步：$m_2=m_1$：$s=m_1(\\cos+\\sin)=\\sqrt2 m_1\\cos(\\omega_ct-\\pi/4)$，仍是 DSB，$B=4$ kHz…（按 $2f_m=4$ kHz 计，两问带宽同为 4 kHz 与 2 kHz 的组合以选项为准）。\n【答案】(1) 4 kHz；(2) 2 kHz（选 C）；(3) $\\sqrt2m_1\\cos(\\omega_ct-\\pi/4)$，带宽仍 4 kHz。\n【易错提醒】第(3)问“像新信号”实为幅度/相位变化，带宽不变；希尔伯特变换一出现先想 SSB。"
+  "solution": "【知识点梳理】\n· 同相/正交载波对 $\\{\\cos\\omega_ct,\\sin\\omega_ct\\}$ 的线性组合不展宽频谱，带宽由基带信号带宽决定。\n· 正交两路都载同一基带 → DSB，$B=2f_m$；出现希尔伯特变换对 → SSB，$B=f_m$。\n· $\\cos\\omega_ct+\\sin\\omega_ct=\\sqrt2\\cos(\\omega_ct-\\frac{\\pi}{4})$（幅度乘 $\\sqrt2$、相位转 $-45°$）。\n【解题步骤】\n第1步：$m_2=0$：普通 DSB，$B=2f_m=2\\times2k=4$ kHz。\n第2步：$m_2$ 是 $m_1$ 的希尔伯特变换 → 恰构成 SSB（取一个边带），$B=f_m=2$ kHz，选 C。\n第3步：$m_2=m_1$：$s=m_1(\\cos+\\sin)=\\sqrt2 m_1\\cos(\\omega_ct-\\frac{\\pi}{4})$，仍是 DSB，$B=4$ kHz…（按 $2f_m=4$ kHz 计，两问带宽同为 4 kHz 与 2 kHz 的组合以选项为准）。\n【答案】(1) 4 kHz；(2) 2 kHz（选 C）；(3) $\\sqrt2m_1\\cos(\\omega_ct-\\frac{\\pi}{4})$，带宽仍 4 kHz。\n【易错提醒】第(3)问“像新信号”实为幅度/相位变化，带宽不变；希尔伯特变换一出现先想 SSB。"
  },
  {
   "subject": "txyl",
@@ -20275,14 +20275,14 @@
   "no": "3",
   "label": "【强化专题·专题一·3】",
   "question_text": "某数字调制系统的数据速率是 12Mbps，基带采用矩形不归零成形脉冲。若调制方式为 16QAM 和 8PSK，则系统的符号速率分别是____MBaud 和____MBaud，按主瓣带宽计算的频带利用率分别是____bps/Hz 和____bps/Hz。",
-  "answer_text": "突破口：$R_B=R_b/\\log_2M$；矩形 NRZ 频带主瓣带宽 $2R_B$，故 $\\eta=\\log_2M/2$。\n答案：3 MBaud、4 MBaud；$\\eta=2$、1.5 bps/Hz。",
+  "answer_text": "突破口：$R_B=\\frac{R_b}{\\log_2 M}$；矩形 NRZ 频带主瓣带宽 $2R_B$，故 $\\eta=\\frac{\\log_2 M}{2}$。\n答案：3 MBaud、4 MBaud；$\\eta=2$、1.5 bps/Hz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "传码率与主瓣带宽频带利用率",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· 符号速率 $R_B=R_b/\\log_2M$；16QAM 每符号 4 bit、8PSK 每符号 3 bit。\n· 矩形 NRZ 频带传输的主瓣（第一零点）带宽 $=2R_B$，故主瓣频带利用率 $\\eta=\\log_2M/2$。\n【解题步骤】\n第1步：16QAM：$R_B=12M/4=3$ MBaud；8PSK：$R_B=12M/3=4$ MBaud。\n第2步：$\\eta_{16QAM}=4/2=2$ bps/Hz；$\\eta_{8PSK}=3/2=1.5$ bps/Hz。\n【答案】3、4 MBaud；2、1.5 bps/Hz。\n【易错提醒】主瓣带宽是 $2R_B$（频带），$R_B$ 是基带口径；升余弦公式 $(1+\\alpha)R_B/2$ 是“最小带宽”问题的，别混。"
+  "solution": "【知识点梳理】\n· 符号速率 $R_B=\\frac{R_b}{\\log_2 M}$；16QAM 每符号 4 bit、8PSK 每符号 3 bit。\n· 矩形 NRZ 频带传输的主瓣（第一零点）带宽 $=2R_B$，故主瓣频带利用率 $\\eta=\\frac{\\log_2 M}{2}$。\n【解题步骤】\n第1步：16QAM：$R_B=\\frac{12M}{4}=3$ MBaud；8PSK：$R_B=\\frac{12M}{3}=4$ MBaud。\n第2步：$\\eta_{16QAM}=\\frac{4}{2}=2$ bps/Hz；$\\eta_{8PSK}=\\frac{3}{2}=1.5$ bps/Hz。\n【答案】3、4 MBaud；2、1.5 bps/Hz。\n【易错提醒】主瓣带宽是 $2R_B$（频带），$R_B$ 是基带口径；升余弦公式 $(1+\\alpha)\\frac{R_B}{2}$ 是“最小带宽”问题的，别混。"
  },
  {
   "subject": "txyl",
@@ -20293,14 +20293,14 @@
   "no": "4",
   "label": "【强化专题·专题一·4】",
   "question_text": "某数字调制系统采用二进制基带传输，信息速率为 640kb/s，需要的最小带宽为____kHz。若采用 $\\alpha=0.25$ 的滚降特性传输，需要带宽为____kHz。",
-  "answer_text": "突破口：未指明成形时用 $\\eta_{max}=2$（理想低通）；滚降时 $B=(1+\\alpha)R_B/2$。\n答案：$B_{min}=640k/2=320$ kHz；$B=1.25\\times320=400$ kHz。",
+  "answer_text": "突破口：未指明成形时用 $\\eta_{max}=2$（理想低通）；滚降时 $B=(1+\\alpha)\\frac{R_B}{2}$。\n答案：$B_{min}=\\frac{640k}{2}=320$ kHz；$B=1.25\\times320=400$ kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "最小带宽与滚降带宽",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· 未指明发送滤波器 → 按最理想情况：理想低通 $\\eta_{max}=2$ Baud/Hz（基带二进制）。\n· 升余弦滚降：$B=(1+\\alpha)R_B/2$。\n【解题步骤】\n第1步：$B_{min}=R_b/2=640k/2=320$ kHz。\n第2步：$R_B=R_b=640$ kBaud，$B=(1+0.25)\\times640k/2=400$ kHz。\n【答案】320 kHz；400 kHz。"
+  "solution": "【知识点梳理】\n· 未指明发送滤波器 → 按最理想情况：理想低通 $\\eta_{max}=2$ Baud/Hz（基带二进制）。\n· 升余弦滚降：$B=(1+\\alpha)\\frac{R_B}{2}$。\n【解题步骤】\n第1步：$B_{min}=\\frac{R_b}{2}=\\frac{640k}{2}=320$ kHz。\n第2步：$R_B=R_b=640$ kBaud，$B=(1+0.25)\\times640k/2=400$ kHz。\n【答案】320 kHz；400 kHz。"
  },
  {
   "subject": "txyl",
@@ -20318,7 +20318,7 @@
   "kp": "带宽求解",
   "kp_sub": "PCM-TDM 传码率与带宽（同步时隙）",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· PCM 一路传码率 $=n f_s$（$n=\\log_2$量化级数，$f_s=2f_m$）。\n· 复用总速率 = 路数（含同步时隙！）× 一路速率；未指明成形 → 用 $\\eta_{max}$。\n【解题步骤】\n第1步：$f_s=2\\times5k=10$kHz，$n=\\log_216=4$。\n第2步：总 $R_b=(15+1)\\times10k\\times4=640$ kb/s（16 = 15 话路 + 1 同步时隙）。\n第3步：$B_{min}=640k/2=320$ kHz；$\\alpha=0.25$：$B=1.25\\times320k=400$ kHz。\n【答案】320 kHz；400 kHz。\n【易错提醒】同步时隙必须计入传码率——漏加就变成 600kb/s、300kHz，全错。"
+  "solution": "【知识点梳理】\n· PCM 一路传码率 $=n f_s$（$n=\\log_2$量化级数，$f_s=2f_m$）。\n· 复用总速率 = 路数（含同步时隙！）× 一路速率；未指明成形 → 用 $\\eta_{max}$。\n【解题步骤】\n第1步：$f_s=2\\times5k=10$kHz，$n=\\log_216=4$。\n第2步：总 $R_b=(15+1)\\times10k\\times4=640$ kb/s（16 = 15 话路 + 1 同步时隙）。\n第3步：$B_{min}=\\frac{640k}{2}=320$ kHz；$\\alpha=0.25$：$B=1.25\\times320k=400$ kHz。\n【答案】320 kHz；400 kHz。\n【易错提醒】同步时隙必须计入传码率——漏加就变成 600kb/s、300kHz，全错。"
  },
  {
   "subject": "txyl",
@@ -20336,7 +20336,7 @@
   "kp": "带宽求解",
   "kp_sub": "无码间干扰最高传输速率",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· 奈奎斯特第一准则：带宽 B 的理想低通信道无 ISI 最高传码率 $R_B=2B$（Baud）。\n· 频带利用率 $\\eta=R_B/B$。\n【答案】最高传输速率 $2W$ 波特；频带利用率 $2$ 波特/Hz。"
+  "solution": "【知识点梳理】\n· 奈奎斯特第一准则：带宽 B 的理想低通信道无 ISI 最高传码率 $R_B=2B$（Baud）。\n· 频带利用率 $\\eta=\\frac{R_B}{B}$。\n【答案】最高传输速率 $2W$ 波特；频带利用率 $2$ 波特/Hz。"
  },
  {
   "subject": "txyl",
@@ -20346,15 +20346,15 @@
   "type": "习题",
   "no": "7",
   "label": "【强化专题·专题一·7】",
-  "question_text": "若 10 路话音信号 $m_i(t)$（$i=1,2,\\dots 10$）进行时分复用，信号的频率范围为 0～4kHz。抽样频率为 $f_s=8$kHz，采用 256 级量化。传输码波形为矩形脉冲，脉冲宽度为 $\\tau$，周期为 $T_b$，占空比 $\\tau/T_b=1/2$。计算该系统的第一零点带宽。",
-  "answer_text": "突破口：一路 $R_{B1}=nf_s=8\\times8k=64$kBaud，总 $R_B=10\\times64k=640$kBaud；$\\tau=T_b/2=\\frac{1}{2R_B}$，$B=1/\\tau$。\n答案：$B=2R_B=1280$ kHz。",
+  "question_text": "若 10 路话音信号 $m_i(t)$（$i=1,2,\\dots 10$）进行时分复用，信号的频率范围为 0～4kHz。抽样频率为 $f_s=8$kHz，采用 256 级量化。传输码波形为矩形脉冲，脉冲宽度为 $\\tau$，周期为 $T_b$，占空比 $\\frac{\\tau}{T_b}=\\frac{1}{2}$。计算该系统的第一零点带宽。",
+  "answer_text": "突破口：一路 $R_{B1}=nf_s=8\\times8k=64$kBaud，总 $R_B=10\\times64k=640$kBaud；$\\tau=\\frac{T_b}{2}=\\frac{1}{2R_B}$，$B=\\frac{1}{\\tau}$。\n答案：$B=2R_B=1280$ kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "第一零点带宽（占空比）",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· 一路传码率 $R_{B1}=nf_s$，$N$ 路复用 $R_B=N\\cdot R_{B1}$。\n· 占空比 $\\tau/T_b=1/2\\Rightarrow\\tau=\\frac{1}{2R_B}$；矩形脉冲第一零点带宽 $B=1/\\tau$。\n【解题步骤】\n第1步：$n=\\log_2256=8$，$R_{B1}=8\\times8k=64$ kBaud，总 $R_B=10\\times64k=640$ kBaud。\n第2步：$\\tau=T_b/2=\\frac{1}{2\\times640k}$ → $B=1/\\tau=2R_B=1280$ kHz。\n【答案】1280 kHz。\n【易错提醒】占空比 1/2 意味着脉冲变窄一半、带宽翻倍——$\\tau=\\frac{1}{2R_B}$ 不是 $\\frac{1}{R_B}$。"
+  "solution": "【知识点梳理】\n· 一路传码率 $R_{B1}=nf_s$，$N$ 路复用 $R_B=N\\cdot R_{B1}$。\n· 占空比 $\\frac{\\tau}{T_b}=\\frac{1}{2}\\Rightarrow\\tau=\\frac{1}{2R_B}$；矩形脉冲第一零点带宽 $B=\\frac{1}{\\tau}$。\n【解题步骤】\n第1步：$n=\\log_2256=8$，$R_{B1}=8\\times8k=64$ kBaud，总 $R_B=10\\times64k=640$ kBaud。\n第2步：$\\tau=\\frac{T_b}{2}=\\frac{1}{2\\times640k}$ → $B=\\frac{1}{\\tau}=2R_B=1280$ kHz。\n【答案】1280 kHz。\n【易错提醒】占空比 1/2 意味着脉冲变窄一半、带宽翻倍——$\\tau=\\frac{1}{2R_B}$ 不是 $\\frac{1}{R_B}$。"
  },
  {
   "subject": "txyl",
@@ -20372,7 +20372,7 @@
   "kp": "带宽求解",
   "kp_sub": "PCM-TDM 带宽（Sa 脉冲）",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· 奈奎斯特速率抽样 $f_s=2f_m$；低通矩形频谱脉冲（Sa 脉冲）= 理想低通成形，$\\eta_{max}=2$。\n【解题步骤】\n第1步：$f_s=2\\times5k=10$kHz，$n=8$。\n第2步：一路 $R_{B1}=8\\times10k=80$ kBaud，10 路 $R_B=800$ kBaud。\n第3步：$B=R_B/\\eta_{max}=400$ kHz。\n【答案】400 kHz。"
+  "solution": "【知识点梳理】\n· 奈奎斯特速率抽样 $f_s=2f_m$；低通矩形频谱脉冲（Sa 脉冲）= 理想低通成形，$\\eta_{max}=2$。\n【解题步骤】\n第1步：$f_s=2\\times5k=10$kHz，$n=8$。\n第2步：一路 $R_{B1}=8\\times10k=80$ kBaud，10 路 $R_B=800$ kBaud。\n第3步：$B=\\frac{R_B}{\\eta}_{max}=400$ kHz。\n【答案】400 kHz。"
  },
  {
   "subject": "txyl",
@@ -20382,15 +20382,15 @@
   "type": "习题",
   "no": "9",
   "label": "【强化专题·专题一·9】",
-  "question_text": "将 15 路话音信号进行 PCM 时分复用方式传输，已知话音信号的最高频率为 4kHz，采用 16 级量化，二进制编码，每帧第一时隙用于传输帧同步信号。总速率 $R_B=16\\times f_s\\times n=16\\times8k\\times4=512$kBaud。试求信道最小带宽：\n(1) 传输脉冲为 $g_1(t)=\\dfrac{\\sin(\\pi t/T_s)}{\\pi t/T_s}$（$T_s$ 为码元周期）；\n(2) 传输脉冲为矩形脉冲（$0\\le t\\le T_s$ 为 1，其余为 0）；\n(3) 传输脉冲为升余弦频谱脉冲（$\\alpha=1$）。",
-  "answer_text": "答案：总速率 512 kBaud。(1) Sa 脉冲 $\\eta_{max}=2$ → $B=256$ kHz；(2) 矩形脉冲信道需容纳第一零点 $B=R_B=512$ kHz；(3) $\\alpha=1$：$B=(1+\\alpha)R_B/2=512$ kHz。",
+  "question_text": "将 15 路话音信号进行 PCM 时分复用方式传输，已知话音信号的最高频率为 4kHz，采用 16 级量化，二进制编码，每帧第一时隙用于传输帧同步信号。总速率 $R_B=16\\times f_s\\times n=16\\times8k\\times4=512$kBaud。试求信道最小带宽：\n(1) 传输脉冲为 $g_1(t)=\\dfrac{\\sin(\\pi \\frac{t}{T_s})}{\\pi \\frac{t}{T_s}}$（$T_s$ 为码元周期）；\n(2) 传输脉冲为矩形脉冲（$0\\le t\\le T_s$ 为 1，其余为 0）；\n(3) 传输脉冲为升余弦频谱脉冲（$\\alpha=1$）。",
+  "answer_text": "答案：总速率 512 kBaud。(1) Sa 脉冲 $\\eta_{max}=2$ → $B=256$ kHz；(2) 矩形脉冲信道需容纳第一零点 $B=R_B=512$ kHz；(3) $\\alpha=1$：$B=(1+\\alpha)\\frac{R_B}{2}=512$ kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "带宽求解",
   "kp_sub": "PCM-TDM 带宽（三种成形脉冲）",
   "chapter_name": "专题一 带宽求解",
-  "solution": "【知识点梳理】\n· 三种成形对应三种频带利用率：Sa 脉冲（理想低通）$\\eta=2$；矩形 NRZ 主瓣 $B=R_B$（$\\eta=1$）；升余弦 $\\alpha=1$ 时 $B=(1+\\alpha)R_B/2=R_B$。\n· 复用总速率必须含同步时隙。\n【解题步骤】\n第1步：$f_s=8$kHz，$n=4$，$R_B=(15+1)\\times8k\\times4=512$ kBaud。\n第2步：三种成形分别代入。\n【答案】(1) 256 kHz；(2) 512 kHz；(3) 512 kHz。\n【易错提醒】(2) 矩形脉冲要“完全容纳第一零点”，信道带宽=整个主瓣 $R_B$，不是 $R_B/2$。"
+  "solution": "【知识点梳理】\n· 三种成形对应三种频带利用率：Sa 脉冲（理想低通）$\\eta=2$；矩形 NRZ 主瓣 $B=R_B$（$\\eta=1$）；升余弦 $\\alpha=1$ 时 $B=(1+\\alpha)\\frac{R_B}{2}=R_B$。\n· 复用总速率必须含同步时隙。\n【解题步骤】\n第1步：$f_s=8$kHz，$n=4$，$R_B=(15+1)\\times8k\\times4=512$ kBaud。\n第2步：三种成形分别代入。\n【答案】(1) 256 kHz；(2) 512 kHz；(3) 512 kHz。\n【易错提醒】(2) 矩形脉冲要“完全容纳第一零点”，信道带宽=整个主瓣 $R_B$，不是 $\\frac{R_B}{2}$。"
  },
  {
   "subject": "txyl",
@@ -20480,7 +20480,7 @@
   "kp": "功率求解",
   "kp_sub": "均匀量化功率",
   "chapter_name": "专题二 功率求解",
-  "solution": "【知识点梳理】\n· 均匀分布 $U(-a,a)$ 功率 $=a^2/3$。\n· 量化电平功率 = 各电平平方 × 概率（概率=区间长度占比）。\n【解题步骤】\n第1步：$S=\\int_{-1}^{1}x^2\\cdot\\frac12dx=\\frac13$。\n第2步：四个电平 $\\pm\\frac14$（概率各 $\\frac14$）、$\\pm\\frac34$（概率各 $\\frac14$）：$E(x_q^2)=\\frac14\\left[2\\times\\frac{1}{16}+2\\times\\frac{9}{16}\\right]=\\frac{5}{16}$。\n【答案】$\\frac13$；$\\frac{5}{16}$。"
+  "solution": "【知识点梳理】\n· 均匀分布 $U(-a,a)$ 功率 $=\\frac{a^2}{3}$。\n· 量化电平功率 = 各电平平方 × 概率（概率=区间长度占比）。\n【解题步骤】\n第1步：$S=\\int_{-1}^{1}x^2\\cdot\\frac12dx=\\frac13$。\n第2步：四个电平 $\\pm\\frac14$（概率各 $\\frac14$）、$\\pm\\frac34$（概率各 $\\frac14$）：$E(x_q^2)=\\frac14\\left[2\\times\\frac{1}{16}+2\\times\\frac{9}{16}\\right]=\\frac{5}{16}$。\n【答案】$\\frac13$；$\\frac{5}{16}$。"
  },
  {
   "subject": "txyl",
@@ -20491,14 +20491,14 @@
   "no": "6",
   "label": "【强化专题·专题二·6】",
   "question_text": "某数字调制信号的 k 码元表达式为 $x_k\\cos(2\\pi f_c t)-y_k\\sin(2\\pi f_c t)$，$(k-1)T\\le t\\le kT$，若 $x_k$ 和 $y_k$ 独立在集合 $\\{+3,+1,-1,-3\\}$ 内等概率取值，求该信号的平均功率、峰值功率、峰均比。",
-  "answer_text": "答案：平均功率 $E[x_k^2+y_k^2]=\\frac{9+1+1+9}{4}=5$；峰值功率 $3^2+3^2=18$；峰均比 $18/5=3.6$。",
+  "answer_text": "答案：平均功率 $E[x_k^2+y_k^2]=\\frac{9+1+1+9}{4}=5$；峰值功率 $3^2+3^2=18$；峰均比 $\\frac{18}{5}=3.6$。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "功率求解",
   "kp_sub": "数字调制信号功率与峰均比",
   "chapter_name": "专题二 功率求解",
-  "solution": "【知识点梳理】\n· QAM 码元平均功率 $=E[x_k^2]+E[y_k^2]$（正交分量功率相加）。\n· 峰值功率 = 幅度最大组合的瞬时功率；峰均比 = 峰值/平均。\n【解题步骤】\n第1步：$E[x_k^2]=\\frac{9+1+1+9}{4}=5$，同 $y_k$ → 平均功率 $5+5=10$？——注意每符号只取一对 $(x_k,y_k)$：$E=E[x_k^2+y_k^2]=\\frac{9+1+1+9}{4}=5$。\n第2步：峰值 $3^2+3^2=18$。\n第3步：峰均比 $18/5=3.6$。\n【答案】5；18；3.6。"
+  "solution": "【知识点梳理】\n· QAM 码元平均功率 $=E[x_k^2]+E[y_k^2]$（正交分量功率相加）。\n· 峰值功率 = 幅度最大组合的瞬时功率；峰均比 = 峰值/平均。\n【解题步骤】\n第1步：$E[x_k^2]=\\frac{9+1+1+9}{4}=5$，同 $y_k$ → 平均功率 $5+5=10$？——注意每符号只取一对 $(x_k,y_k)$：$E=E[x_k^2+y_k^2]=\\frac{9+1+1+9}{4}=5$。\n第2步：峰值 $3^2+3^2=18$。\n第3步：峰均比 $\\frac{18}{5}=3.6$。\n【答案】5；18；3.6。"
  },
  {
   "subject": "txyl",
@@ -20508,7 +20508,7 @@
   "type": "习题",
   "no": "1",
   "label": "【强化专题·专题三·1】",
-  "question_text": "输入信号 $X(t)$ 是功率谱密度为 $P_X(f)$ 的平稳随机过程，该随机过程通过下图所示的系统：输入分两路，直路进加法器“+”，另一路经延迟 $T$ 进加法器“−”，相减后经 $H_1(f)$ 输出。求系统的输出功率谱密度：\n(1) $H_1(f)$ 为微分器；\n(2) $H_1(f)$ 为积分器；\n(3) $H_1(f)$ 为截止频率为 $1/2T$ 的理想低通滤波器。",
+  "question_text": "输入信号 $X(t)$ 是功率谱密度为 $P_X(f)$ 的平稳随机过程，该随机过程通过下图所示的系统：输入分两路，直路进加法器“+”，另一路经延迟 $T$ 进加法器“−”，相减后经 $H_1(f)$ 输出。求系统的输出功率谱密度：\n(1) $H_1(f)$ 为微分器；\n(2) $H_1(f)$ 为积分器；\n(3) $H_1(f)$ 为截止频率为 $\\frac{1}{2T}$ 的理想低通滤波器。",
   "answer_text": "突破口：延迟相减 $H=(1-e^{-j2\\pi fT})H_1=2j\\sin(\\pi fT)e^{-j\\pi fT}H_1$，$P_Y=P_X|H|^2$。\n答案：(1) $P_Y=P_X\\cdot(2\\pi f)^2\\cdot4\\sin^2(\\pi fT)$；(2) $H_1=1/(j2\\pi f)$ 时 $H=\\mathrm{Sa}$ 形，$|H|^2=T^2\\mathrm{Sa}^2(\\pi fT)$；(3) $P_Y=P_X\\cdot4\\sin^2(\\pi fT)$（限 $|f|\\le1/2T$）。",
   "note": "",
   "status": "todo",
@@ -20535,7 +20535,7 @@
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "匹配滤波器结构与冲激响应",
   "chapter_name": "专题三 平稳随机过程通过线性系统",
-  "solution": "【知识点梳理】\n· 冲激响应法：令输入 $x(t)=\\delta(t)$，输出即 $h(t)$——“不管三七二十一，先求 h(t)”。\n· 匹配滤波器 $h(t)=g(T-t)$；对极/同形波形反推。\n【解题步骤】\n第1步：$\\delta-\\delta(t-T)$ 经积分器 → $h(t)=u(t)-u(t-T)$：$(0,T)$ 上高度 1 的矩形门。\n第2步：$H(f)=\\frac{1-e^{-j2\\pi fT}}{j2\\pi f}=T\\,\\mathrm{Sa}(\\pi fT)e^{-j\\pi fT}$。\n第3步：$g(t)=h(T-t)$ → 与 $h(t)$ 同形。\n【答案】见步骤；$H(0)=T$ 可自检。\n【易错提醒】延迟 $T$ 时分母 $j2\\pi f$、指数 $\\pi fT$；延迟 $T/2$ 时指数是 $\\pi fT/2$。",
+  "solution": "【知识点梳理】\n· 冲激响应法：令输入 $x(t)=\\delta(t)$，输出即 $h(t)$——“不管三七二十一，先求 h(t)”。\n· 匹配滤波器 $h(t)=g(T-t)$；对极/同形波形反推。\n【解题步骤】\n第1步：$\\delta-\\delta(t-T)$ 经积分器 → $h(t)=u(t)-u(t-T)$：$(0,T)$ 上高度 1 的矩形门。\n第2步：$H(f)=\\frac{1-e^{-j2\\pi fT}}{j2\\pi f}=T\\,\\mathrm{Sa}(\\pi fT)e^{-j\\pi fT}$。\n第3步：$g(t)=h(T-t)$ → 与 $h(t)$ 同形。\n【答案】见步骤；$H(0)=T$ 可自检。\n【易错提醒】延迟 $T$ 时分母 $j2\\pi f$、指数 $\\pi fT$；延迟 $\\frac{T}{2}$ 时指数是 $\\frac{\\pi fT}{2}$。",
   "question_img": "images/q_qhzt-3-2.png"
  },
  {
@@ -20554,7 +20554,7 @@
   "kp": "平稳随机过程通过线性系统",
   "kp_sub": "延迟相减加微分系统",
   "chapter_name": "专题三 平稳随机过程通过线性系统",
-  "solution": "【知识点梳理】\n· 平稳过程过 LTI 系统输出仍平稳（系统不引入时变因素）。\n· 延迟相减+微分：$H(f)=j2\\pi f(1-e^{-j2\\pi fT})$。\n【解题步骤】\n第1步：平稳性：$m_Y=m_X H(0)$ 常数、$R_Y$ 只依赖 $τ$。\n第2步：$P_Y=P_X\\cdot(2\\pi f)^2\\cdot4\\sin^2(\\pi fT)=P_X\\cdot16\\pi^2f^2\\sin^2(\\pi fT)$。\n第3步：$​sin(\\pi fT)=0$ 处 $H=0$ → $f=k/T$。\n【答案】平稳；$P_Y=P_X\\cdot16\\pi^2f^2\\sin^2(\\pi fT)$；$f=\\dfrac{k}{T}$（整数 $k$）的分量被滤除。\n【易错提醒】零点在 $f=k/T$（$f$ 域），不是 $ω=k/T$。",
+  "solution": "【知识点梳理】\n· 平稳过程过 LTI 系统输出仍平稳（系统不引入时变因素）。\n· 延迟相减+微分：$H(f)=j2\\pi f(1-e^{-j2\\pi fT})$。\n【解题步骤】\n第1步：平稳性：$m_Y=m_X H(0)$ 常数、$R_Y$ 只依赖 $τ$。\n第2步：$P_Y=P_X\\cdot(2\\pi f)^2\\cdot4\\sin^2(\\pi fT)=P_X\\cdot16\\pi^2f^2\\sin^2(\\pi fT)$。\n第3步：$​sin(\\pi fT)=0$ 处 $H=0$ → $f=\\frac{k}{T}$。\n【答案】平稳；$P_Y=P_X\\cdot16\\pi^2f^2\\sin^2(\\pi fT)$；$f=\\dfrac{k}{T}$（整数 $k$）的分量被滤除。\n【易错提醒】零点在 $f=\\frac{k}{T}$（$f$ 域），不是 $ω=\\frac{k}{T}$。",
   "question_img": "images/q_qhzt-3-3.png"
  },
  {
@@ -20681,7 +20681,7 @@
   "kp": "信道容量",
   "kp_sub": "香农公式概念判断",
   "chapter_name": "专题五 信道容量求解",
-  "solution": "【知识点梳理】\n· 香农公式两个极限：$\\mathrm{SNR}\\to\\infty$ 时 $C\\to\\infty$；$B\\to\\infty$ 时 $C\\to\\frac{S}{n_0\\ln2}=1.44\\frac{S}{n_0}$（有极限）。\n· 带宽换信噪比（扩频思想）：只能 $B\\uparrow$ 换 $\\mathrm{SNR}$ 要求 $\\downarrow$，反向不成立。\n【答案】(1) 对；(2) 错（$B\\to\\infty$ 有极限 $1.44S/n_0$）；(3) 对（互换有极限）。\n【易错提醒】“无限增大带宽容量趋于无穷”永远是错的——判断题高频考点。"
+  "solution": "【知识点梳理】\n· 香农公式两个极限：$\\mathrm{SNR}\\to\\infty$ 时 $C\\to\\infty$；$B\\to\\infty$ 时 $C\\to\\frac{S}{n_0\\ln2}=1.44\\frac{S}{n_0}$（有极限）。\n· 带宽换信噪比（扩频思想）：只能 $B\\uparrow$ 换 $\\mathrm{SNR}$ 要求 $\\downarrow$，反向不成立。\n【答案】(1) 对；(2) 错（$B\\to\\infty$ 有极限 $\\frac{1.44S}{n_0}$）；(3) 对（互换有极限）。\n【易错提醒】“无限增大带宽容量趋于无穷”永远是错的——判断题高频考点。"
  },
  {
   "subject": "txyl",
@@ -20692,14 +20692,14 @@
   "no": "2",
   "label": "【强化专题·专题五·2】",
   "question_text": "已知信道的带宽 B 为 3kHz，信号在信道传输中受到单边功率谱密度 $N_0$ 为 $10^{-6}$W/Hz 的加性白高斯噪声的干扰，信号的平均功率 S 为 9W。\n(1) 求信道的容量；\n(2) 若信道带宽增加到原来的 10 倍，并保持信道容量不变，那么信号平均功率要改变多少 dB？",
-  "answer_text": "答案：(1) $N=n_0B=3\\times10^{-3}$W，$\\mathrm{SNR}=3000$，$C=3000\\log_23001\\approx34.7$ kbps；(2) $B'=30$kHz，$C/B'\\approx1.155$，$S'=n_0B'(2^{1.155}-1)\\approx0.0368$W，$10\\lg\\frac{0.0368}{9}\\approx-23.9$ dB，即功率可降低约 24 dB。",
+  "answer_text": "答案：(1) $N=n_0B=3\\times10^{-3}$W，$\\mathrm{SNR}=3000$，$C=3000\\log_23001\\approx34.7$ kbps；(2) $B'=30$kHz，$\\frac{C}{B}'\\approx1.155$，$S'=n_0B'(2^{1.155}-1)\\approx0.0368$W，$10\\lg\\frac{0.0368}{9}\\approx-23.9$ dB，即功率可降低约 24 dB。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "信道容量",
   "kp_sub": "香农容量计算与带宽换功率",
   "chapter_name": "专题五 信道容量求解",
-  "solution": "【知识点梳理】\n· $N=n_0B$（$n_0$ 单边谱直接乘带宽）；$C=B\\log_2(1+\\frac{S}{n_0B})$。\n· 保持容量反解功率：$S=n_0B(2^{C/B}-1)$。\n【解题步骤】\n第1步：$N=10^{-6}\\times3000=3\\times10^{-3}$W，$\\mathrm{SNR}=3000$。\n第2步：$C=3000\\log_23001\\approx3000\\times11.55\\approx34.7$ kbps。\n第3步：$B'=30$kHz，$C/B'\\approx1.155$，$S'=3\\times10^{-2}\\times(2^{1.155}-1)\\approx0.0368$W。\n第4步：$10\\lg\\frac{0.0368}{9}\\approx-23.9$ dB。\n【答案】约 34.7 kbps；功率可降低约 24 dB。\n【易错提醒】带宽加大 10 倍省的功率远小于 10 倍——香农极限压制，不是线性关系。"
+  "solution": "【知识点梳理】\n· $N=n_0B$（$n_0$ 单边谱直接乘带宽）；$C=B\\log_2(1+\\frac{S}{n_0B})$。\n· 保持容量反解功率：$S=n_0B(2^{C/B}-1)$。\n【解题步骤】\n第1步：$N=10^{-6}\\times3000=3\\times10^{-3}$W，$\\mathrm{SNR}=3000$。\n第2步：$C=3000\\log_23001\\approx3000\\times11.55\\approx34.7$ kbps。\n第3步：$B'=30$kHz，$\\frac{C}{B}'\\approx1.155$，$S'=3\\times10^{-2}\\times(2^{1.155}-1)\\approx0.0368$W。\n第4步：$10\\lg\\frac{0.0368}{9}\\approx-23.9$ dB。\n【答案】约 34.7 kbps；功率可降低约 24 dB。\n【易错提醒】带宽加大 10 倍省的功率远小于 10 倍——香农极限压制，不是线性关系。"
  },
  {
   "subject": "txyl",
@@ -20717,7 +20717,7 @@
   "kp": "信道容量",
   "kp_sub": "信息速率与信道带宽/信噪比",
   "chapter_name": "专题五 信道容量求解",
-  "solution": "【知识点梳理】\n· 信息速率 = 像素 × 每像素参数 × 每参数比特 × 帧率；$L$ 级 → $\\log_2L$ bit（8 级=3bit！）。\n· dB→倍数：30dB=1000 倍；反解 $\\mathrm{SNR}=2^{R_b/B}-1$。\n【解题步骤】\n第1步：$R_b=1024\\times540\\times4\\times3\\times25\\approx165.9$ Mbps。\n第2步：$B=\\frac{165.9M}{\\log_21001}\\approx\\frac{165.9M}{9.967}\\approx16.6$ MHz。\n第3步：$R_b/B\\approx20.7$ → $\\mathrm{SNR}=2^{20.7}-1\\approx1.8\\times10^6$ → $10\\lg\\approx62.5$ dB。\n【答案】165.9 Mbps；16.6 MHz；约 62.5 dB。\n【易错提醒】8 级是 3 bit 不是 4 bit；第(3)问是反解 SNR，对数别丢。"
+  "solution": "【知识点梳理】\n· 信息速率 = 像素 × 每像素参数 × 每参数比特 × 帧率；$L$ 级 → $\\log_2L$ bit（8 级=3bit！）。\n· dB→倍数：30dB=1000 倍；反解 $\\mathrm{SNR}=2^{R_b/B}-1$。\n【解题步骤】\n第1步：$R_b=1024\\times540\\times4\\times3\\times25\\approx165.9$ Mbps。\n第2步：$B=\\frac{165.9M}{\\log_21001}\\approx\\frac{165.9M}{9.967}\\approx16.6$ MHz。\n第3步：$\\frac{R_b}{B}\\approx20.7$ → $\\mathrm{SNR}=2^{20.7}-1\\approx1.8\\times10^6$ → $10\\lg\\approx62.5$ dB。\n【答案】165.9 Mbps；16.6 MHz；约 62.5 dB。\n【易错提醒】8 级是 3 bit 不是 4 bit；第(3)问是反解 SNR，对数别丢。"
  },
  {
   "subject": "txyl",
@@ -20735,7 +20735,7 @@
   "kp": "信道容量",
   "kp_sub": "BSC 容量（源分布无关）",
   "chapter_name": "专题五 信道容量求解",
-  "solution": "【知识点梳理】\n· BSC 容量 $C=1-H_b(p)$，与信源分布无关（等概输入时取得）。\n【解题步骤】\n第1步：$H_b(0.04)=-0.04\\log_20.04-0.96\\log_20.96\\approx0.242$。\n第2步：$C=1-0.242=0.758$。\n【答案】$C\\approx0.758$ bit/码元。\n【易错提醒】题给的 $P(0)=3/8$、$P(1)=5/8$ 是干扰项——对称信道容量与源分布无关。"
+  "solution": "【知识点梳理】\n· BSC 容量 $C=1-H_b(p)$，与信源分布无关（等概输入时取得）。\n【解题步骤】\n第1步：$H_b(0.04)=-0.04\\log_20.04-0.96\\log_20.96\\approx0.242$。\n第2步：$C=1-0.242=0.758$。\n【答案】$C\\approx0.758$ bit/码元。\n【易错提醒】题给的 $P(0)=\\frac{3}{8}$、$P(1)=\\frac{5}{8}$ 是干扰项——对称信道容量与源分布无关。"
  },
  {
   "subject": "txyl",
@@ -20802,13 +20802,13 @@
   "no": "1",
   "label": "【强化专题·专题6·1】",
   "question_text": "已知 $m(t)$ 的带宽 $W=10$kHz、功率 $P_m=0.2$W、最大值 $|m(t)|_{max}=1$V。调制器载波频率 $f_c$ 充分大，已调信号 $s(t)$ 的功率是 40W。加性白高斯噪声单边功率谱密度 $n_0=10^{-10}$W/Hz。系统框图：调制器→衰减器（50dB）→叠加噪声→理想 BPF（恰好使 $s(t)$ 通过）→相乘 $2\\cos\\omega_c t$→LPF（截止 $W$）。\n(1) 若 $s(t)=A_c m(t)\\cos 2\\pi f_c t$（DSB），求 $A_c$ 及输出信噪比；\n(2) 若 $s(t)=A_c[m\\cos 2\\pi f_c t-\\hat m\\sin 2\\pi f_c t]$（SSB），求 $A_c$ 及输出信噪比；\n(3) 若 $s(t)=A_c[1+m(t)]\\cos 2\\pi f_c t$（AM），求调幅系数、调制效率、$A_c$ 及输出信噪比。",
-  "answer_text": "突破口：衰减 50dB→功率降 $10^5$ 倍；DSB $G=2$、SSB $G=1$、AM 包络解调 $G=\\frac{2\\overline{m^2}}{A_0^2+\\overline{m^2}}$。\n答案：(1) $A_c^2P_m\\cdot10^{-5}=40$ 先求发送端功率——注意 40W 是衰减后功率，$A_c=\\sqrt{40\\cdot10^5/0.2}\\approx1.41\\times10^4$；DSB 输出信噪比 $=2\\times$输入信噪比；(2) SSB 带宽减半、$G=1$；(3) 调幅系数 $=|m|_{max}=1$（100%），效率 $\\eta=\\overline{m^2}/(1+\\overline{m^2})$。",
+  "answer_text": "突破口：衰减 50dB→功率降 $10^5$ 倍；DSB $G=2$、SSB $G=1$、AM 包络解调 $G=\\frac{2\\overline{m^2}}{A_0^2+\\overline{m^2}}$。\n答案：(1) $A_c^2P_m\\cdot10^{-5}=40$ 先求发送端功率——注意 40W 是衰减后功率，$A_c=\\sqrt{\\frac{40\\cdot10^5}{0.2}}\\approx1.41\\times10^4$；DSB 输出信噪比 $=2\\times$输入信噪比；(2) SSB 带宽减半、$G=1$；(3) 调幅系数 $=|m|_{max}=1$（100%），效率 $\\eta=\\overline{m^2}/(1+\\overline{m^2})$。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
   "kp_sub": "DSB/SSB/AM 相干解调信噪比",
-  "solution": "【知识点梳理】\n· 衰减 50dB → 功率 ×$10^{-5}$；DSB $G=2$、SSB $G=1$、AM 包络 $G=\\frac{2P_m}{1+P_m}$。\n· $N_i=n_0B$（$B$ 为该制式带宽）；AM 调幅指数=|m|max/直流。\n【解题步骤】\n第1步：DSB：$\\frac{A_c^2P_m}{2}=40$ → $A_c=20$V；$B=2W=20$kHz，$N_i=10^{-10}\\times2\\times10^4=2\\times10^{-6}$W，$S_i=40\\times10^{-5}=4\\times10^{-4}$W，$S_i/N_i=200$，输出 $=400$（26dB）。\n第2步：SSB：$\\frac{A_c^2P_m}{4}=40$ → $A_c=40$V；$B=W=10$kHz，$N_i=10^{-6}$W，$S_i/N_i=400$，$G=1$ → 输出 400（26dB）。\n第3步：AM：$\\frac{A_c^2(1+P_m)}{2}=40$ → $A_c\\approx18.3$V；调幅系数 $=|m|_{max}=1$（100%）；效率 $=\\frac{0.2}{1.2}=\\frac16$；$G=\\frac13$ → 输出 $\\approx66.7$（18.2dB）。\n【易错提醒】三问输出信噪比不同——AM 包络解调的制度增益损失清晰可见；DSB 与 SSB 输出相同但 SSB 只用一半带宽。",
+  "solution": "【知识点梳理】\n· 衰减 50dB → 功率 ×$10^{-5}$；DSB $G=2$、SSB $G=1$、AM 包络 $G=\\frac{2P_m}{1+P_m}$。\n· $N_i=n_0B$（$B$ 为该制式带宽）；AM 调幅指数=|m|max/直流。\n【解题步骤】\n第1步：DSB：$\\frac{A_c^2P_m}{2}=40$ → $A_c=20$V；$B=2W=20$kHz，$N_i=10^{-10}\\times2\\times10^4=2\\times10^{-6}$W，$S_i=40\\times10^{-5}=4\\times10^{-4}$W，$\\frac{S_i}{N_i}=200$，输出 $=400$（26dB）。\n第2步：SSB：$\\frac{A_c^2P_m}{4}=40$ → $A_c=40$V；$B=W=10$kHz，$N_i=10^{-6}$W，$\\frac{S_i}{N_i}=400$，$G=1$ → 输出 400（26dB）。\n第3步：AM：$\\frac{A_c^2(1+P_m)}{2}=40$ → $A_c\\approx18.3$V；调幅系数 $=|m|_{max}=1$（100%）；效率 $=\\frac{0.2}{1.2}=\\frac16$；$G=\\frac13$ → 输出 $\\approx66.7$（18.2dB）。\n【易错提醒】三问输出信噪比不同——AM 包络解调的制度增益损失清晰可见；DSB 与 SSB 输出相同但 SSB 只用一半带宽。",
   "question_img": "images/q_qhzt-6-1.png"
  },
  {
@@ -20820,7 +20820,7 @@
   "no": "2",
   "label": "【强化专题·专题6·2】",
   "question_text": "SSB 相干解调框图：$m(t)$ 经希尔伯特变换与正交载波合成 $s(t)$，叠加噪声后经 BPF（900～1200Hz）→A 点→相乘 $2\\cos(2\\pi f_c t)$→LPF（截止 200Hz）→B 点。已知 $m(t)$ 均值为零、带宽 200Hz、功率 3W、$f_c=1$kHz，噪声单边 $N_0=10^{-5}$W/Hz。求：(1) $s(t)$ 的带宽、功率；(2) 画 A 点噪声功率谱密度图；(3) 画 B 点噪声功率谱密度图；(4) B 点有用信号功率、噪声功率、信噪比。",
-  "answer_text": "突破口：SSB 功率=基带功率；相乘后 LPF 内噪声 PSD=$N_0$（单边截为双边 $N_0/2$ 后乘系数）。\n答案：(1) 带宽 200Hz、功率 3W；(4) B 点信号功率 $=3\\times2^2/4$（相乘系数折算）$=3$W 量级、噪声功率 $=N_0\\times200=2\\times10^{-3}$W、信噪比 $=1500$（31.8dB）量级——具体系数按框图逐点推。",
+  "answer_text": "突破口：SSB 功率=基带功率；相乘后 LPF 内噪声 PSD=$N_0$（单边截为双边 $\\frac{N_0}{2}$ 后乘系数）。\n答案：(1) 带宽 200Hz、功率 3W；(4) B 点信号功率 $=3\\times\\frac{2^2}{4}$（相乘系数折算）$=3$W 量级、噪声功率 $=N_0\\times200=2\\times10^{-3}$W、信噪比 $=1500$（31.8dB）量级——具体系数按框图逐点推。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -20837,14 +20837,14 @@
   "type": "习题",
   "no": "3",
   "label": "【强化专题·专题6·3】",
-  "question_text": "假设音频信号 $m(t)$ 经调制后在高频通道上传输，要求接收机输出信噪比 $S_o/N_o=30$dB。已知信道衰减 50dB，信道噪声为带限高斯白噪声，双边功率谱密度 $n_0/2=10^{-12}$W/Hz。音频信号最高频率 $f_m=15$kHz，且 $E[m(t)]=0$、$E[m^2(t)]=0.5$、$|m|_{max}=1$。求平均发送功率与传输带宽：\n(1) DSB 调制（同步解调）；(2) SSB 调制（同步解调）；(3) 100% 振幅调制（包络解调）；(4) $m_f=5$ 的 FM（非同步解调）。",
-  "answer_text": "突破口：先折算解调器输入端噪声功率 $N_i=n_0B\\times10^5$（衰减补偿），再按各制式 $G$ 反推。\n答案要点：DSB：$B=30$kHz、$G=2$；SSB：$B=15$kHz、$G=1$（SSB 的 $S_i/N_i$ 定义不同，二者发送功率相近）；AM：$B=30$kHz、$G=\\frac{2\\times0.5}{1+0.5}=\\frac23$、发送功率最大；FM：$B=2(m_f+1)f_m=180$kHz、$G=\\frac32m_f^2\\frac{B_{FM}}{f_m}=\\frac32\\times25\\times12=450$、发送功率最小——体现 FM 用带宽换功率。",
+  "question_text": "假设音频信号 $m(t)$ 经调制后在高频通道上传输，要求接收机输出信噪比 $\\frac{S_o}{N_o}=30$dB。已知信道衰减 50dB，信道噪声为带限高斯白噪声，双边功率谱密度 $\\frac{n_0}{2}=10^{-12}$W/Hz。音频信号最高频率 $f_m=15$kHz，且 $E[m(t)]=0$、$E[m^2(t)]=0.5$、$|m|_{max}=1$。求平均发送功率与传输带宽：\n(1) DSB 调制（同步解调）；(2) SSB 调制（同步解调）；(3) 100% 振幅调制（包络解调）；(4) $m_f=5$ 的 FM（非同步解调）。",
+  "answer_text": "突破口：先折算解调器输入端噪声功率 $N_i=n_0B\\times10^5$（衰减补偿），再按各制式 $G$ 反推。\n答案要点：DSB：$B=30$kHz、$G=2$；SSB：$B=15$kHz、$G=1$（SSB 的 $\\frac{S_i}{N_i}$ 定义不同，二者发送功率相近）；AM：$B=30$kHz、$G=\\frac{2\\times0.5}{1+0.5}=\\frac23$、发送功率最大；FM：$B=2(m_f+1)f_m=180$kHz、$G=\\frac32m_f^2\\frac{B_{FM}}{f_m}=\\frac32\\times25\\times12=450$、发送功率最小——体现 FM 用带宽换功率。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
   "kp_sub": "给定输出信噪比反求发送功率（DSB/SSB/AM/FM 对比）",
-  "solution": "【知识点梳理】\n· 反求发送功率链：输出要求 → ÷制度增益 G → 输入信噪比 → ×噪声功率 → ×信道衰减补偿 $10^5$。\n· 带宽：DSB/AM $2f_m$、SSB $f_m$、FM $2(m_f+1)f_m$。\n【解题步骤】\n第1步：DSB：$N_i=2\\times10^{-12}\\times30k=6\\times10^{-8}$W，需 $S_i/N_i=1000/2=500$ → $S_i=3\\times10^{-5}$W → 发送 3W；$B=30$kHz。\n第2步：SSB：$N_i=3\\times10^{-8}$W，$G=1$ → $S_i=3\\times10^{-5}$W → 发送 3W；$B=15$kHz。\n第3步：AM：$G=\\frac{2\\times0.5}{1.5}=\\frac23$ → $S_i/N_i=1500$ → 发送 9W；$B=30$kHz。\n第4步：FM：$G=\\frac32m_f^2\\frac{B_{FM}}{f_m}=\\frac32\\times25\\times12=450$ → $S_i/N_i=\\frac{1000}{450}\\approx2.22$，$N_i=2\\times10^{-12}\\times180k=3.6\\times10^{-7}$ → 发送 0.08W；$B=180$kHz。\n【答案】DSB 3W/30kHz；SSB 3W/15kHz；AM 9W/30kHz；FM 0.08W/180kHz——FM 用带宽换功率体现得淋漓尽致。\n【易错提醒】30dB=1000 倍；衰减 50dB 别忘了乘回 $10^5$。"
+  "solution": "【知识点梳理】\n· 反求发送功率链：输出要求 → ÷制度增益 G → 输入信噪比 → ×噪声功率 → ×信道衰减补偿 $10^5$。\n· 带宽：DSB/AM $2f_m$、SSB $f_m$、FM $2(m_f+1)f_m$。\n【解题步骤】\n第1步：DSB：$N_i=2\\times10^{-12}\\times30k=6\\times10^{-8}$W，需 $\\frac{S_i}{N_i}=\\frac{1000}{2}=500$ → $S_i=3\\times10^{-5}$W → 发送 3W；$B=30$kHz。\n第2步：SSB：$N_i=3\\times10^{-8}$W，$G=1$ → $S_i=3\\times10^{-5}$W → 发送 3W；$B=15$kHz。\n第3步：AM：$G=\\frac{2\\times0.5}{1.5}=\\frac23$ → $\\frac{S_i}{N_i}=1500$ → 发送 9W；$B=30$kHz。\n第4步：FM：$G=\\frac32m_f^2\\frac{B_{FM}}{f_m}=\\frac32\\times25\\times12=450$ → $\\frac{S_i}{N_i}=\\frac{1000}{450}\\approx2.22$，$N_i=2\\times10^{-12}\\times180k=3.6\\times10^{-7}$ → 发送 0.08W；$B=180$kHz。\n【答案】DSB 3W/30kHz；SSB 3W/15kHz；AM 9W/30kHz；FM 0.08W/180kHz——FM 用带宽换功率体现得淋漓尽致。\n【易错提醒】30dB=1000 倍；衰减 50dB 别忘了乘回 $10^5$。"
  },
  {
   "subject": "txyl",
@@ -20861,7 +20861,7 @@
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
   "kp_sub": "SSB 解调 BPF 位置对噪声的抑制",
-  "solution": "【知识点梳理】\n· SSB 频谱只占 $f_c\\sim f_c+100$Hz；BPF 下边界若低于 $f_c$ 会放进带外噪声。\n【解题步骤】\n第1步：$s(t)$ 功率 2W、带宽 100Hz。\n第2步：BPF=1000～1100Hz 恰好罩住上边带：A 点噪声 100Hz 宽（双边图在 ±1000~1100 高 $n_0/2$）；B 点噪声搬移叠加后 ±100Hz 内平坦、功率 $n_0\\times100=10^{-3}$W；信噪比 $=2/0.001=2000$（33dB）。\n第3步：BPF=950～1100Hz：多放进 50Hz 噪声 → B 点噪声 $1.5\\times10^{-3}$W → 信噪比 $\\approx1333$（31.2dB），下降约 1.8dB。\n【答案】(1) 2W、100Hz；(2) 2000；(3) 约 1333——BPF 下边界对齐信号下边缘最优。\n【易错提醒】画 A 点 PSD 是带通型、B 点是低通型；两边频带都要画。",
+  "solution": "【知识点梳理】\n· SSB 频谱只占 $f_c\\sim f_c+100$Hz；BPF 下边界若低于 $f_c$ 会放进带外噪声。\n【解题步骤】\n第1步：$s(t)$ 功率 2W、带宽 100Hz。\n第2步：BPF=1000～1100Hz 恰好罩住上边带：A 点噪声 100Hz 宽（双边图在 ±1000~1100 高 $\\frac{n_0}{2}$）；B 点噪声搬移叠加后 ±100Hz 内平坦、功率 $n_0\\times100=10^{-3}$W；信噪比 $=\\frac{2}{0.001}=2000$（33dB）。\n第3步：BPF=950～1100Hz：多放进 50Hz 噪声 → B 点噪声 $1.5\\times10^{-3}$W → 信噪比 $\\approx1333$（31.2dB），下降约 1.8dB。\n【答案】(1) 2W、100Hz；(2) 2000；(3) 约 1333——BPF 下边界对齐信号下边缘最优。\n【易错提醒】画 A 点 PSD 是带通型、B 点是低通型；两边频带都要画。",
   "question_img": "images/q_qhzt-6-4.png"
  },
  {
@@ -20873,13 +20873,13 @@
   "no": "5",
   "label": "【强化专题·专题6·5】",
   "question_text": "设一宽带 FM 系统，载波振幅 100V、频率 100MHz，调制信号 $m(t)$ 频带限制在 5kHz，$\\overline{m^2(t)}=5000$V²，$K_f=500\\pi$ rad/(s·V)，最大频偏 $\\Delta f=75$kHz，信道噪声功率谱密度均匀，单边 $P_n(f)=10^{-3}$W/Hz。求：(1) 接收机输入端理想带通滤波器的传输特性 $H(f)$；(2) 解调器输入端的信噪功率比；(3) 解调器输出端的信噪功率比。",
-  "answer_text": "答案：(1) 中心 100MHz、带宽 $B_{FM}=2(\\Delta f+f_m)=160$kHz 的带通；(2) $S_i/N_i=\\frac{100^2/2}{10^{-3}\\times160k}\\approx31.25$；(3) 输出 $\\frac{S_o}{N_o}=\\frac{3A^2K_f^2\\overline{m^2}}{8\\pi^2n_0f_m^3}$，代入得约 $3\\times10^4$（44.8dB）——制度增益约 1430。",
+  "answer_text": "答案：(1) 中心 100MHz、带宽 $B_{FM}=2(\\Delta f+f_m)=160$kHz 的带通；(2) $\\frac{S_i}{N_i}=\\frac{100^2}{210^{-3}\\times160k}\\approx31.25$；(3) 输出 $\\frac{S_o}{N_o}=\\frac{3A^2K_f^2\\overline{m^2}}{8\\pi^2n_0f_m^3}$，代入得约 $3\\times10^4$（44.8dB）——制度增益约 1430。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
   "kp_sub": "宽带 FM 信噪比计算",
-  "solution": "【知识点梳理】\n· $B_{FM}=2(\\Delta f+f_m)$；$S_i=A^2/2$；$N_i=P_n\\cdot B_{FM}$（单边直接乘）。\n· FM 输出信噪比 $\\frac{S_o}{N_o}=\\frac{3A^2K_f^2\\overline{m^2}}{8\\pi^2n_0f_m^3}$。\n【解题步骤】\n第1步：$H(f)$：中心 100MHz、带宽 $2(75k+5k)=160$kHz 带通。\n第2步：$S_i/N_i=\\frac{100^2/2}{10^{-3}\\times160k}=\\frac{5000}{160}=31.25$。\n第3步：代入输出公式 $=\\frac{3\\times10^4\\times(500\\pi)^2\\times5000}{8\\pi^2\\times10^{-3}\\times(5\\times10^3)^3}\\approx3.75\\times10^4$（45.7dB）。\n【答案】31.25（约 15dB）；约 $3.75\\times10^4$（45.7dB）——制度增益约 1200 倍。"
+  "solution": "【知识点梳理】\n· $B_{FM}=2(\\Delta f+f_m)$；$S_i=\\frac{A^2}{2}$；$N_i=P_n\\cdot B_{FM}$（单边直接乘）。\n· FM 输出信噪比 $\\frac{S_o}{N_o}=\\frac{3A^2K_f^2\\overline{m^2}}{8\\pi^2n_0f_m^3}$。\n【解题步骤】\n第1步：$H(f)$：中心 100MHz、带宽 $2(75k+5k)=160$kHz 带通。\n第2步：$\\frac{S_i}{N_i}=\\frac{100^2}{210^{-3}\\times160k}=\\frac{5000}{160}=31.25$。\n第3步：代入输出公式 $=\\frac{3\\times10^4\\times(500\\pi)^2\\times5000}{8\\pi^2\\times10^{-3}\\times(5\\times10^3)^3}\\approx3.75\\times10^4$（45.7dB）。\n【答案】31.25（约 15dB）；约 $3.75\\times10^4$（45.7dB）——制度增益约 1200 倍。"
  },
  {
   "subject": "txyl",
@@ -20890,13 +20890,13 @@
   "no": "6",
   "label": "【强化专题·专题6·6】",
   "question_text": "某 FM 传输系统，接收机输入信号 $S(t)=A\\cos(10^7\\pi t+4\\sin 10^4\\pi t)$，调频灵敏度 $K_f=5\\times10^3\\pi$ rad/s·V，信道噪声功率谱密度 $n_0=2\\times10^{-10}$W/Hz。若输出信噪比为 36.8dB，求接收机输入信号幅度 A。",
-  "answer_text": "突破口：从相位项读出 $m_f=4$、$f_m=5$kHz（$\\sin10^4\\pi t$ 的角频率 $10^4\\pi$）。\n答案：$B_{FM}=2(m_f+1)f_m=50$kHz；$\\frac{S_o}{N_o}=\\frac32m_f^2\\frac{B_{FM}}{f_m}\\cdot\\frac{S_i}{N_i}=\\frac32\\times16\\times10\\times\\frac{A^2/2}{n_0B}=240\\times\\frac{A^2/2}{10^{-8}}$；令 $=10^{3.68}\\approx4790$ → $A\\approx2\\times10^{-2}$V 量级（约 20mV）。",
+  "answer_text": "突破口：从相位项读出 $m_f=4$、$f_m=5$kHz（$\\sin10^4\\pi t$ 的角频率 $10^4\\pi$）。\n答案：$B_{FM}=2(m_f+1)f_m=50$kHz；$\\frac{S_o}{N_o}=\\frac32m_f^2\\frac{B_{FM}}{f_m}\\cdot\\frac{S_i}{N_i}=\\frac32\\times16\\times10\\times\\frac{\\frac{A^2}{2}}{n_0B}=240\\times\\frac{\\frac{A^2}{2}}{10^{-8}}$；令 $=10^{3.68}\\approx4790$ → $A\\approx2\\times10^{-2}$V 量级（约 20mV）。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "模拟通信抗噪声性能",
   "kp_sub": "FM 反求输入幅度",
-  "solution": "【知识点梳理】\n· 从已调波相位读参数：$m_f=4$（sin 前系数）、$f_m=\\frac{10^4\\pi}{2\\pi}=5$kHz。\n· 单音制度增益 $G=\\frac32m_f^2\\frac{B_{FM}}{f_m}$；$S_i=A^2/2$。\n【解题步骤】\n第1步：$B_{FM}=2(4+1)\\times5k=50$kHz，$G=\\frac32\\times16\\times10=240$。\n第2步：$\\frac{S_o}{N_o}=10^{3.68}\\approx4790$ → $\\frac{S_i}{N_i}=\\frac{4790}{240}\\approx20$。\n第3步：$N_i=n_0B=2\\times10^{-10}\\times50k=10^{-5}$W → $S_i=2\\times10^{-4}$W → $A=\\sqrt{4\\times10^{-4}}=0.02$V。\n【答案】$A=20$ mV。\n【易错提醒】10⁷πt → $f_c=5$MHz（只做验证用）；别把 $m_f$ 与 $Δf$ 混为一谈。"
+  "solution": "【知识点梳理】\n· 从已调波相位读参数：$m_f=4$（sin 前系数）、$f_m=\\frac{10^4\\pi}{2\\pi}=5$kHz。\n· 单音制度增益 $G=\\frac32m_f^2\\frac{B_{FM}}{f_m}$；$S_i=\\frac{A^2}{2}$。\n【解题步骤】\n第1步：$B_{FM}=2(4+1)\\times5k=50$kHz，$G=\\frac32\\times16\\times10=240$。\n第2步：$\\frac{S_o}{N_o}=10^{3.68}\\approx4790$ → $\\frac{S_i}{N_i}=\\frac{4790}{240}\\approx20$。\n第3步：$N_i=n_0B=2\\times10^{-10}\\times50k=10^{-5}$W → $S_i=2\\times10^{-4}$W → $A=\\sqrt{4\\times10^{-4}}=0.02$V。\n【答案】$A=20$ mV。\n【易错提醒】10⁷πt → $f_c=5$MHz（只做验证用）；别把 $m_f$ 与 $Δf$ 混为一谈。"
  },
  {
   "subject": "txyl",
@@ -20907,13 +20907,13 @@
   "no": "1",
   "label": "【强化专题·专题7·1】",
   "question_text": "某调频信号 $s(t)=10\\cos(2\\times10^6\\pi t+10\\cos 2000\\pi t)$。\n(1) 求其平均功率、最大频偏、最大相移、带宽；\n(2) 该已调波是频率调制还是相位调制？",
-  "answer_text": "答案：(1) 功率 $10^2/2=50$W；$\\Delta f=\\frac{1}{2\\pi}|d\\varphi/dt|_{max}=10\\times1000=10^4$Hz；最大相移 10rad；$B=2(\\Delta f+f_m)=2(10^4+1000)=22$kHz；(2) 仅凭波形不能唯一判定是 FM 还是 PM（若已知 $K_f$ 才能判定 FM）——给波形求带宽/频偏无需区分制式。",
+  "answer_text": "答案：(1) 功率 $\\frac{10^2}{2}=50$W；$\\Delta f=\\frac{1}{2\\pi}|d\\varphi/dt|_{max}=10\\times1000=10^4$Hz；最大相移 10rad；$B=2(\\Delta f+f_m)=2(10^4+1000)=22$kHz；(2) 仅凭波形不能唯一判定是 FM 还是 PM（若已知 $K_f$ 才能判定 FM）——给波形求带宽/频偏无需区分制式。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "调频调相波参数",
   "kp_sub": "调频信号参数综合",
-  "solution": "【知识点梳理】\n· 瞬时频偏 $=\\frac{1}{2\\pi}\\frac{d\\varphi}{dt}$；最大相移=$|\\varphi(t)|_{max}$；平均功率 $=A^2/2$。\n· 给波形求带宽/频偏不必区分 FM/PM；判制式需要 $K_f$/$K_p$ 信息。\n【解题步骤】\n第1步：功率 $=100/2=50$W。\n第2步：$\\varphi=10\\cos2000\\pi t$ → $\\Delta f=\\frac{1}{2\\pi}\\times10\\times2000\\pi=10^4$Hz。\n第3步：最大相移 10rad；$f_m=1000$Hz → $B=2(10^4+1000)=22$kHz。\n【答案】50W；10kHz；10rad；22kHz；(2) 无法唯一判定（若已知是 FM 则 $K_f=\\Delta f/|m|=10$kHz/1）。\n【易错提醒】求 $\\Delta f$ 是“相位求导取最大”，别直接拿 10 当频偏。"
+  "solution": "【知识点梳理】\n· 瞬时频偏 $=\\frac{1}{2\\pi}\\frac{d\\varphi}{dt}$；最大相移=$|\\varphi(t)|_{max}$；平均功率 $=\\frac{A^2}{2}$。\n· 给波形求带宽/频偏不必区分 FM/PM；判制式需要 $K_f$/$K_p$ 信息。\n【解题步骤】\n第1步：功率 $=\\frac{100}{2}=50$W。\n第2步：$\\varphi=10\\cos2000\\pi t$ → $\\Delta f=\\frac{1}{2\\pi}\\times10\\times2000\\pi=10^4$Hz。\n第3步：最大相移 10rad；$f_m=1000$Hz → $B=2(10^4+1000)=22$kHz。\n【答案】50W；10kHz；10rad；22kHz；(2) 无法唯一判定（若已知是 FM 则 $K_f=\\Delta f/|m|=10$kHz/1）。\n【易错提醒】求 $\\Delta f$ 是“相位求导取最大”，别直接拿 10 当频偏。"
  },
  {
   "subject": "txyl",
@@ -20947,7 +20947,7 @@
   "level": "综合",
   "kp": "调频调相波参数",
   "kp_sub": "调频器频偏/相偏波形图",
-  "solution": "【知识点梳理】\n· FM：$\\Delta f(t)=K_f m(t)$（阶梯）；$\\varphi(t)=K_f\\int m\\,dt$（分段线性累积）。\n【解题步骤】\n第1步：频偏图：0~10ms：+50Hz；10~30ms：−25Hz；30~40ms：+25Hz；40~50ms：−50Hz；50~60ms：+50Hz。\n第2步：相位图各段斜率=对应频偏×$2\\pi$，拐点值逐段累加：10ms 末 $+\\pi$ rad；30ms 末回到 0；40ms 末 $+\\pi/2$；50ms 末 $-\\pi/2$；60ms 末 $+\\pi/2$（弧度值按 $2\\pi K_f\\int m\\,dt$ 计算）。\n【答案】频偏为阶梯波、相位为折线，坐标值如上。\n【易错提醒】相位是“面积”的累积——每段结束值是下一段的起点，别每段都从零画。"
+  "solution": "【知识点梳理】\n· FM：$\\Delta f(t)=K_f m(t)$（阶梯）；$\\varphi(t)=K_f\\int m\\,dt$（分段线性累积）。\n【解题步骤】\n第1步：频偏图：0~10ms：+50Hz；10~30ms：−25Hz；30~40ms：+25Hz；40~50ms：−50Hz；50~60ms：+50Hz。\n第2步：相位图各段斜率=对应频偏×$2\\pi$，拐点值逐段累加：10ms 末 $+\\pi$ rad；30ms 末回到 0；40ms 末 $+\\frac{\\pi}{2}$；50ms 末 $-\\frac{\\pi}{2}$；60ms 末 $+\\frac{\\pi}{2}$（弧度值按 $2\\pi K_f\\int m\\,dt$ 计算）。\n【答案】频偏为阶梯波、相位为折线，坐标值如上。\n【易错提醒】相位是“面积”的累积——每段结束值是下一段的起点，别每段都从零画。"
  },
  {
   "subject": "txyl",
@@ -20964,7 +20964,7 @@
   "level": "综合",
   "kp": "调频调相波参数",
   "kp_sub": "单音 FM 参数变化规律",
-  "solution": "【知识点梳理】\n· 单音 FM：$m_f=\\Delta f/f_m$（sin 前系数）、$\\Delta f=m_f f_m$、$B=2(m_f+1)f_m$。\n· FM：$\\Delta f\\propto$ 幅度，与频率无关。\n【解题步骤】\n第1步：$f_m=\\frac{300\\pi}{2\\pi}=150$Hz，$m_f=6$，$\\Delta f=900$Hz，$B=2\\times7\\times150=2100$Hz。\n第2步：幅度×2 → $Δf=1800$Hz、$m_f=12$、$B=2\\times13\\times150=3900$Hz。\n第3步：频率×2 → $\\Delta f$ 不变 900Hz、$m_f=3$、$B=2\\times4\\times300=2400$Hz。\n【答案】如上；结论：FM 带宽主要受调制信号幅度控制，频率加倍时带宽变化不大（$m_f$ 减半）。\n【易错提醒】“调频指数随幅度增大、随频率减小”——两个变量的作用方向相反。"
+  "solution": "【知识点梳理】\n· 单音 FM：$m_f=\\Delta \\frac{f}{f_m}$（sin 前系数）、$\\Delta f=m_f f_m$、$B=2(m_f+1)f_m$。\n· FM：$\\Delta f\\propto$ 幅度，与频率无关。\n【解题步骤】\n第1步：$f_m=\\frac{300\\pi}{2\\pi}=150$Hz，$m_f=6$，$\\Delta f=900$Hz，$B=2\\times7\\times150=2100$Hz。\n第2步：幅度×2 → $Δf=1800$Hz、$m_f=12$、$B=2\\times13\\times150=3900$Hz。\n第3步：频率×2 → $\\Delta f$ 不变 900Hz、$m_f=3$、$B=2\\times4\\times300=2400$Hz。\n【答案】如上；结论：FM 带宽主要受调制信号幅度控制，频率加倍时带宽变化不大（$m_f$ 减半）。\n【易错提醒】“调频指数随幅度增大、随频率减小”——两个变量的作用方向相反。"
  },
  {
   "subject": "txyl",
@@ -20975,13 +20975,13 @@
   "no": "5",
   "label": "【强化专题·专题7·5】",
   "question_text": "已知单一正弦调制信号频率 $f_m=1000$Hz，对其角度调制，已调信号 $s(t)=10\\cos(2\\pi f_c t+25\\cos 2\\pi f_m t)$。\n(1) 若为调频波（$K_f=5$Hz/V），求调制信号表达式；\n(2) 若为调相波（$K_p=10$ rad/V），求调制信号表达式；\n(3) 当 $f_m$ 增加 5 倍（其他条件不变）时，求调频波的调制指数及已调信号带宽。",
-  "answer_text": "答案：(1) $\\Delta f=m_f f_m=25\\times1000=25$kHz → $m(t)=\\frac{\\Delta f}{K_f}\\cos2\\pi f_mt=5000\\cos2\\pi f_mt$（V）；\n(2) $\\varphi_{max}=25=A K_p$ → $m(t)=2.5\\cos2\\pi f_mt$（V）；\n(3) $f_m=5$kHz：FM 的 $\\Delta f$ 不变 → $m_f=\\Delta f/f_m=5$，$B=2(5+1)\\times5000=60$kHz。",
+  "answer_text": "答案：(1) $\\Delta f=m_f f_m=25\\times1000=25$kHz → $m(t)=\\frac{\\Delta f}{K_f}\\cos2\\pi f_mt=5000\\cos2\\pi f_mt$（V）；\n(2) $\\varphi_{max}=25=A K_p$ → $m(t)=2.5\\cos2\\pi f_mt$（V）；\n(3) $f_m=5$kHz：FM 的 $\\Delta f$ 不变 → $m_f=\\Delta \\frac{f}{f_m}=5$，$B=2(5+1)\\times5000=60$kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "调频调相波参数",
   "kp_sub": "由已调波反求调制信号",
-  "solution": "【知识点梳理】\n· FM：$\\Delta f=m_f f_m$，$m(t)=\\frac{\\Delta f}{K_f}\\cos$；PM：$\\varphi_{max}=A K_p$ → $A=\\varphi_{max}/K_p$。\n【解题步骤】\n第1步：$\\Delta f=25\\times1000=25$kHz → $m(t)=\\frac{25000}{5}\\cos2\\pi f_m t=5000\\cos2\\pi f_m t$（V）。\n第2步：$A=25/10=2.5$ → $m(t)=2.5\\cos2\\pi f_m t$（V）。\n第3步：$f_m'=5$kHz：FM 的 $\\Delta f$ 不变 → $m_f=\\frac{25000}{5000}=5$，$B=2(5+1)\\times5000=60$kHz。\n【答案】(1) $5000\\cos2\\pi f_m t$ V；(2) $2.5\\cos2\\pi f_m t$ V；(3) $m_f=5$、$B=60$kHz。\n【易错提醒】(3) 是 FM——$Δf$ 不随 $f_m$ 变，$m_f=\\Delta f/f_m$ 自动减半。"
+  "solution": "【知识点梳理】\n· FM：$\\Delta f=m_f f_m$，$m(t)=\\frac{\\Delta f}{K_f}\\cos$；PM：$\\varphi_{max}=A K_p$ → $A=\\varphi_{max}/K_p$。\n【解题步骤】\n第1步：$\\Delta f=25\\times1000=25$kHz → $m(t)=\\frac{25000}{5}\\cos2\\pi f_m t=5000\\cos2\\pi f_m t$（V）。\n第2步：$A=\\frac{25}{10}=2.5$ → $m(t)=2.5\\cos2\\pi f_m t$（V）。\n第3步：$f_m'=5$kHz：FM 的 $\\Delta f$ 不变 → $m_f=\\frac{25000}{5000}=5$，$B=2(5+1)\\times5000=60$kHz。\n【答案】(1) $5000\\cos2\\pi f_m t$ V；(2) $2.5\\cos2\\pi f_m t$ V；(3) $m_f=5$、$B=60$kHz。\n【易错提醒】(3) 是 FM——$Δf$ 不随 $f_m$ 变，$m_f=\\Delta \\frac{f}{f_m}$ 自动减半。"
  },
  {
   "subject": "txyl",
@@ -21076,14 +21076,14 @@
   "type": "习题",
   "no": "6",
   "label": "【强化专题·专题8·6】",
-  "question_text": "8 路语音 $m_k(t)$（$k=0..7$）分别经 DSB 幅度调制实现频分复用得 $m(t)$，再 FM 后通过 AWGN 信道（双边 $N_0/2$）。各路平均功率 $P_0$、带宽 W，DSB 载波 $A_k\\cos 2\\pi f_1t$（$A_1=1$），各路保护间隔 4W，FM 调制指数 6。求：\n(1) $m(t)$ 的带宽并画功率谱示意图；\n(2) $s(t)$ 的带宽；\n(3) 画解调框图；\n(4) 若要保证接收端解调后各路信号具有相同的输出信噪比，$A_k$ 应满足何种条件？",
-  "answer_text": "答案：(1) 每路 DSB 占 2W、路间距 $2W+4W=6W$：$B_m=8\\times2W+7\\times4W=44W$；(2) $f_m=44W$、$m_f=6$ → $B_s=2(m_f+1)f_m=528$W；(3) 鉴频→BPF 分路→相干解调→LPF；(4) 鉴频噪声 $\\propto f_k^2$ → $A_k\\propto f_k$（与专题八-4 同理，DSB 各路信号功率 $\\propto A_k^2$，需 $A_k^2/f_k^2$=常数）。",
+  "question_text": "8 路语音 $m_k(t)$（$k=0..7$）分别经 DSB 幅度调制实现频分复用得 $m(t)$，再 FM 后通过 AWGN 信道（双边 $\\frac{N_0}{2}$）。各路平均功率 $P_0$、带宽 W，DSB 载波 $A_k\\cos 2\\pi f_1t$（$A_1=1$），各路保护间隔 4W，FM 调制指数 6。求：\n(1) $m(t)$ 的带宽并画功率谱示意图；\n(2) $s(t)$ 的带宽；\n(3) 画解调框图；\n(4) 若要保证接收端解调后各路信号具有相同的输出信噪比，$A_k$ 应满足何种条件？",
+  "answer_text": "答案：(1) 每路 DSB 占 2W、路间距 $2W+4W=6W$：$B_m=8\\times2W+7\\times4W=44W$；(2) $f_m=44W$、$m_f=6$ → $B_s=2(m_f+1)f_m=528$W；(3) 鉴频→BPF 分路→相干解调→LPF；(4) 鉴频噪声 $\\propto f_k^2$ → $A_k\\propto f_k$（与专题八-4 同理，DSB 各路信号功率 $\\propto A_k^2$，需 $\\frac{A_k^2}{f_k^2}$=常数）。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "频分复用与复合调制",
   "kp_sub": "FDM/DSB+FM 各路等信噪比条件",
-  "solution": "【知识点梳理】\n· DSB 每路占 2W，路间距=2W+防护4W=6W；FM 复合：$B=2(m_f+1)f_m$。\n· 鉴频噪声 $\\propto f_k^2$ → 等信噪比要求 $A_k\\propto f_k$。\n【解题步骤】\n第1步：$B_m=8\\times2W+7\\times4W=44$W（8 个主瓣 + 7 个间隔）。\n第2步：$f_m=44W$，$m_f=6$ → $B_s=2\\times7\\times44W=616$W。\n第3步：解调框图：BPF→鉴频器（恢复 FDM 基带 $m(t)$）→8 个 BPF 分路→各自相干解调→LPF。\n第4步：第 $k$ 路 SSB 解调输出信噪比 $\\propto A_k^2/f_k^2$ → $A_k$ 应与该路副载波频率 $f_k$ 成正比。\n【答案】(1) 44W；(2) 616W；(4) $A_k\\propto f_k$。"
+  "solution": "【知识点梳理】\n· DSB 每路占 2W，路间距=2W+防护4W=6W；FM 复合：$B=2(m_f+1)f_m$。\n· 鉴频噪声 $\\propto f_k^2$ → 等信噪比要求 $A_k\\propto f_k$。\n【解题步骤】\n第1步：$B_m=8\\times2W+7\\times4W=44$W（8 个主瓣 + 7 个间隔）。\n第2步：$f_m=44W$，$m_f=6$ → $B_s=2\\times7\\times44W=616$W。\n第3步：解调框图：BPF→鉴频器（恢复 FDM 基带 $m(t)$）→8 个 BPF 分路→各自相干解调→LPF。\n第4步：第 $k$ 路 SSB 解调输出信噪比 $\\propto \\frac{A_k^2}{f_k^2}$ → $A_k$ 应与该路副载波频率 $f_k$ 成正比。\n【答案】(1) 44W；(2) 616W；(4) $A_k\\propto f_k$。"
  },
  {
   "subject": "txyl",
@@ -21110,14 +21110,14 @@
   "type": "习题",
   "no": "2",
   "label": "【强化专题·专题9·2】",
-  "question_text": "二进制数字基带系统，抽样时刻为 $kT_s$，冲激响应抽样值 $h(kT_s)=A$（$k=0$）、$A/4$（$k=1$）、0（$k\\ne0,1$）。发送码元 $a_n=+1$ 发 1 码、$-1$ 发 0 码。\n(1) 写出抽样时刻码间干扰的各种可能取值及出现的概率；\n(2) 设发代码为 11001，求第 2、3、4、5 个代码相应的抽样值。",
-  "answer_text": "答案：(1) ISI $=\\frac{A}{4}a_{k-1}$：$\\pm A/4$ 各 1/2；(2) $y_k=Aa_k+\\frac{A}{4}a_{k-1}$：码 11001 → 序列 +1,+1,0? 按双极性 1→+1,1→+1,0→−1,0→−1,1→+1：第2码 $A+\\frac{A}{4}=5A/4$；第3码 $-A+\\frac{A}{4}=-3A/4$；第4码 $-A-\\frac{A}{4}=-5A/4$；第5码 $+A-\\frac{A}{4}=3A/4$。",
+  "question_text": "二进制数字基带系统，抽样时刻为 $kT_s$，冲激响应抽样值 $h(kT_s)=A$（$k=0$）、$\\frac{A}{4}$（$k=1$）、0（$k\\ne0,1$）。发送码元 $a_n=+1$ 发 1 码、$-1$ 发 0 码。\n(1) 写出抽样时刻码间干扰的各种可能取值及出现的概率；\n(2) 设发代码为 11001，求第 2、3、4、5 个代码相应的抽样值。",
+  "answer_text": "答案：(1) ISI $=\\frac{A}{4}a_{k-1}$：$\\pm \\frac{A}{4}$ 各 1/2；(2) $y_k=Aa_k+\\frac{A}{4}a_{k-1}$：码 11001 → 序列 +1,+1,0? 按双极性 1→+1,1→+1,0→−1,0→−1,1→+1：第2码 $A+\\frac{A}{4}=\\frac{5A}{4}$；第3码 $-A+\\frac{A}{4}=-\\frac{3A}{4}$；第4码 $-A-\\frac{A}{4}=-\\frac{5A}{4}$；第5码 $+A-\\frac{A}{4}=\\frac{3A}{4}$。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "无码间干扰",
   "kp_sub": "码间干扰取值与抽样值计算",
-  "solution": "【知识点梳理】\n· ISI 来自响应拖尾：$h(kT_s)$ 在 $k=1$ 的 $A/4$ 乘上前一码元。\n· $y_k=Aa_k+\\frac{A}{4}a_{k-1}$。\n【解题步骤】\n第1步：ISI $=\\frac{A}{4}a_{k-1}$：$\\pm A/4$ 各 1/2。\n第2步：代码 11001 → 双极性 $+1,+1,-1,-1,+1$。\n第3步：$y_2=A+\\frac{A}{4}=\\frac{5A}{4}$；$y_3=-A+\\frac{A}{4}=-\\frac{3A}{4}$；$y_4=-A-\\frac{A}{4}=-\\frac{5A}{4}$；$y_5=A-\\frac{A}{4}=\\frac{3A}{4}$。\n【答案】如上。\n【易错提醒】第 1 个码没有前导（无 ISI 项），从第 2 个码开始才有拖尾叠加。"
+  "solution": "【知识点梳理】\n· ISI 来自响应拖尾：$h(kT_s)$ 在 $k=1$ 的 $\\frac{A}{4}$ 乘上前一码元。\n· $y_k=Aa_k+\\frac{A}{4}a_{k-1}$。\n【解题步骤】\n第1步：ISI $=\\frac{A}{4}a_{k-1}$：$\\pm \\frac{A}{4}$ 各 1/2。\n第2步：代码 11001 → 双极性 $+1,+1,-1,-1,+1$。\n第3步：$y_2=A+\\frac{A}{4}=\\frac{5A}{4}$；$y_3=-A+\\frac{A}{4}=-\\frac{3A}{4}$；$y_4=-A-\\frac{A}{4}=-\\frac{5A}{4}$；$y_5=A-\\frac{A}{4}=\\frac{3A}{4}$。\n【答案】如上。\n【易错提醒】第 1 个码没有前导（无 ISI 项），从第 2 个码开始才有拖尾叠加。"
  },
  {
   "subject": "txyl",
@@ -21127,14 +21127,14 @@
   "type": "习题",
   "no": "3",
   "label": "【强化专题·专题9·3】",
-  "question_text": "设基带传输系统的发送滤波器、信道及接收滤波器组成总特性 $H(\\omega)$，要求以 $R_B=2/T_s$ 波特速率传输，判断下列四种 $H(\\omega)$ 能否消除抽样点上的码间干扰，并求无码间干扰传输特性的频谱利用率：\n(a) 理想低通，截止 $\\pm2\\pi/T_s$；(b) 理想低通，截止 $\\pm3\\pi/T_s$；(c) 梯形（平顶至 $\\pm2\\pi/T_s$，斜边降至 $\\pm4\\pi/T_s$）；(d) 升余弦型，截止 $\\pm4\\pi/T_s$。",
-  "answer_text": "突破口：验证叠加原则 $\\sum_i H(\\omega+2\\pi i/T_s)=T_s$（$|\\omega|\\le\\pi/T_s$）是否为常数。\n答案：(a) 满足，$\\eta=2$ Baud/Hz；(b) 满足（等效带宽 $1.5\\pi/T_s>\\pi/T_s$，折叠后为常数），$\\eta=4/3$ Baud/Hz；(c) 满足（升余弦类滚降），$\\eta=2/(1+\\alpha)=\\frac{4}{3}$？——梯形 $α=1$ 时 $\\eta=1$ Baud/Hz，按 $R_B/B=\\frac{2/T_s}{4\\pi/T_s/2\\pi}=1$；(d) 满足，$\\eta=1$ Baud/Hz。",
+  "question_text": "设基带传输系统的发送滤波器、信道及接收滤波器组成总特性 $H(\\omega)$，要求以 $R_B=\\frac{2}{T_s}$ 波特速率传输，判断下列四种 $H(\\omega)$ 能否消除抽样点上的码间干扰，并求无码间干扰传输特性的频谱利用率：\n(a) 理想低通，截止 $\\pm2\\pi/T_s$；(b) 理想低通，截止 $\\pm3\\pi/T_s$；(c) 梯形（平顶至 $\\pm2\\pi/T_s$，斜边降至 $\\pm4\\pi/T_s$）；(d) 升余弦型，截止 $\\pm4\\pi/T_s$。",
+  "answer_text": "突破口：验证叠加原则 $\\sum_i H(\\omega+2\\pi \\frac{i}{T_s})=T_s$（$|\\omega|\\le\\pi/T_s$）是否为常数。\n答案：(a) 满足，$\\eta=2$ Baud/Hz；(b) 满足（等效带宽 $1.5\\pi/T_s>\\frac{\\pi}{T_s}$，折叠后为常数），$\\eta=\\frac{4}{3}$ Baud/Hz；(c) 满足（升余弦类滚降），$\\eta=2/(1+\\alpha)=\\frac{4}{3}$？——梯形 $α=1$ 时 $\\eta=1$ Baud/Hz，按 $\\frac{R_B}{B}=\\frac{\\frac{2}{T_s}}{4\\pi/\\frac{T_s}{2}\\pi}=1$；(d) 满足，$\\eta=1$ Baud/Hz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "无码间干扰",
   "kp_sub": "奈奎斯特准则判别四图",
-  "solution": "【知识点梳理】\n· 奈奎斯特准则：$\\sum_i H(\\omega+\\frac{2\\pi i}{T_s})=T_s$（常数）⟺ 折叠后为理想矩形。\n· 理想低通无 ISI 的条件：带宽 $B=n\\cdot\\frac{R_B}{2}$（$n$ 为正整数）；滚降特性（升余弦/梯形）天然满足。\n【解题步骤】\n第1步：(a) 理想低通截止 $2\\pi/T_s$（=奈奎斯特带宽）→ 满足，$\\eta=\\frac{2/T_s}{1/T_s}=2$ Baud/Hz。\n第2步：(b) 截止 $3\\pi/T_s=3\\times\\frac{\\pi}{T_s}$（$n=3$ 个半符号率）→ 满足，带宽 $\\frac{1.5}{T_s}$Hz，$\\eta=\\frac{2/T_s}{1.5/T_s}=\\frac43$ Baud/Hz。\n第3步：(c) 梯形（平顶 $2\\pi/T_s$、滚降至 $4\\pi/T_s$，$\\alpha=1$）→ 满足，$\\eta=1$；(d) 升余弦 $4\\pi/T_s$（$\\alpha=1$）→ 满足，$\\eta=1$。\n【答案】(a)(b)(c)(d) 均满足无码间干扰；频谱利用率分别为 2、4/3、1、1 Baud/Hz。\n【易错提醒】理想低通带宽必须落在 $n\\cdot R_B/2$ 上才无 ISI（(b) 恰为 3 倍半符号率）；滚降类则对称即满足。"
+  "solution": "【知识点梳理】\n· 奈奎斯特准则：$\\sum_i H(\\omega+\\frac{2\\pi i}{T_s})=T_s$（常数）⟺ 折叠后为理想矩形。\n· 理想低通无 ISI 的条件：带宽 $B=n\\cdot\\frac{R_B}{2}$（$n$ 为正整数）；滚降特性（升余弦/梯形）天然满足。\n【解题步骤】\n第1步：(a) 理想低通截止 $2\\pi/T_s$（=奈奎斯特带宽）→ 满足，$\\eta=\\frac{\\frac{2}{T_s}}{\\frac{1}{T_s}}=2$ Baud/Hz。\n第2步：(b) 截止 $3\\pi/T_s=3\\times\\frac{\\pi}{T_s}$（$n=3$ 个半符号率）→ 满足，带宽 $\\frac{1.5}{T_s}$Hz，$\\eta=\\frac{\\frac{2}{T_s}}{\\frac{1.5}{T_s}}=\\frac43$ Baud/Hz。\n第3步：(c) 梯形（平顶 $2\\pi/T_s$、滚降至 $4\\pi/T_s$，$\\alpha=1$）→ 满足，$\\eta=1$；(d) 升余弦 $4\\pi/T_s$（$\\alpha=1$）→ 满足，$\\eta=1$。\n【答案】(a)(b)(c)(d) 均满足无码间干扰；频谱利用率分别为 2、4/3、1、1 Baud/Hz。\n【易错提醒】理想低通带宽必须落在 $n\\cdot \\frac{R_B}{2}$ 上才无 ISI（(b) 恰为 3 倍半符号率）；滚降类则对称即满足。"
  },
  {
   "subject": "txyl",
@@ -21144,14 +21144,14 @@
   "type": "习题",
   "no": "4",
   "label": "【强化专题·专题9·4】",
-  "question_text": "速率为 $R_b=1/T_b$ 的双极性 NRZ 信号经过一个带宽为 $1/(2T_b)$ 的理想低通滤波器，判断采样点是否存在码间干扰？",
-  "answer_text": "答案：存在。NRZ 主瓣带宽 $R_b=1/T_b$，滤波器带宽只有其一半，频谱被截短，时域响应不再是零点间隔 $T_b$ 的波形——不满足无 ISI 条件（该滤波器是理想低通成形时对应的奈奎斯特带宽 $=R_b/2$，只能传 $R_B=1/T_b$ 的理想低通成形码元，不能传 NRZ 矩形码元）。",
+  "question_text": "速率为 $R_b=\\frac{1}{T_b}$ 的双极性 NRZ 信号经过一个带宽为 $1/(2T_b)$ 的理想低通滤波器，判断采样点是否存在码间干扰？",
+  "answer_text": "答案：存在。NRZ 主瓣带宽 $R_b=\\frac{1}{T_b}$，滤波器带宽只有其一半，频谱被截短，时域响应不再是零点间隔 $T_b$ 的波形——不满足无 ISI 条件（该滤波器是理想低通成形时对应的奈奎斯特带宽 $=\\frac{R_b}{2}$，只能传 $R_B=\\frac{1}{T_b}$ 的理想低通成形码元，不能传 NRZ 矩形码元）。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "无码间干扰",
   "kp_sub": "NRZ 过窄带理想低通是否无 ISI",
-  "solution": "【知识点梳理】\n· NRZ 矩形码元频谱无限宽（Sa 形），主瓣带宽 $=R_b$。\n· 理想低通只能传“带宽恰为 $nR_B/2$ 的成形波形”；频谱被截短 → 时域响应改变 → ISI。\n【解题步骤】\n第1步：滤波器带宽 $1/(2T_b)=R_b/2$，只有 NRZ 频谱的一半。\n第2步：截短后的总响应不再是“本码元峰值、其他抽样点为零”的波形 → 抽样点存在码间干扰。\n【答案】存在码间干扰（理想低通带宽只能配套理想低通成形脉冲，不能配 NRZ 矩形脉冲）。"
+  "solution": "【知识点梳理】\n· NRZ 矩形码元频谱无限宽（Sa 形），主瓣带宽 $=R_b$。\n· 理想低通只能传“带宽恰为 $nR_\\frac{B}{2}$ 的成形波形”；频谱被截短 → 时域响应改变 → ISI。\n【解题步骤】\n第1步：滤波器带宽 $1/(2T_b)=\\frac{R_b}{2}$，只有 NRZ 频谱的一半。\n第2步：截短后的总响应不再是“本码元峰值、其他抽样点为零”的波形 → 抽样点存在码间干扰。\n【答案】存在码间干扰（理想低通带宽只能配套理想低通成形脉冲，不能配 NRZ 矩形脉冲）。"
  },
  {
   "subject": "txyl",
@@ -21162,13 +21162,13 @@
   "no": "5",
   "label": "【强化专题·专题9·5】",
   "question_text": "某基带传输系统收发总体的冲激响应是 $x(t)$，总体传递函数是 $X(f)$。\n(1) 若 $x(t)=\\frac{\\sin 2\\pi t}{2\\pi t}$（即 $\\mathrm{Sa}(2\\pi t)$），写出能使采样值满足 $X(nT_B)=\\delta_{n0}$ 的最小 $T_B$、该系统无符号间干扰的最大传输速率 $R_B$、系统带宽及频带利用率（Baud/Hz）；\n(2) 若 $x(t)=\\frac{\\sin 2\\pi t}{2\\pi t}\\times\\frac{\\sin \\pi t}{\\pi t}$，写出该系统无符号间干扰的最大传输速率 $R_B$、$x(t)$ 的带宽、频带利用率，并画出 $X(f)$ 图。",
-  "answer_text": "答案：(1) $x(t)$ 零点间隔 $1/2$s → $T_B=1/2$s，$R_B=2$ Baud/s；$X(f)$ 为理想低通（宽 1Hz）→ 带宽 1Hz，$\\eta=2$ Baud/Hz；\n(2) 时域相乘=频域卷积：两个矩形（宽 1 与 1/2 Hz）卷积成梯形，带宽 $=\\frac{1+1/2}{2}=\\frac34$Hz；梯形满足奈奎斯特准则（对称中心 $3/4$Hz 处折叠为常数）→ $R_B=\\frac34\\times2=1.5$？——按梯形平顶宽 1/2Hz：$R_B=1/\\text{平顶}\\times...$（梯形 $\\alpha=1/2$：$B=(1+\\alpha)R_B/2$ → $R_B=1$ Baud/s），$\\eta=4/3$ Baud/Hz。",
+  "answer_text": "答案：(1) $x(t)$ 零点间隔 $\\frac{1}{2}$s → $T_B=\\frac{1}{2}$s，$R_B=2$ Baud/s；$X(f)$ 为理想低通（宽 1Hz）→ 带宽 1Hz，$\\eta=2$ Baud/Hz；\n(2) 时域相乘=频域卷积：两个矩形（宽 1 与 1/2 Hz）卷积成梯形，带宽 $=\\frac{1+\\frac{1}{2}}{2}=\\frac34$Hz；梯形满足奈奎斯特准则（对称中心 $\\frac{3}{4}$Hz 处折叠为常数）→ $R_B=\\frac34\\times2=1.5$？——按梯形平顶宽 1/2Hz：$R_B=1/\\text{平顶}\\times...$（梯形 $\\alpha=\\frac{1}{2}$：$B=(1+\\alpha)\\frac{R_B}{2}$ → $R_B=1$ Baud/s），$\\eta=\\frac{4}{3}$ Baud/Hz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "无码间干扰",
   "kp_sub": "Sa 波形与 Sa 乘积波形的无 ISI 速率",
-  "solution": "【知识点梳理】\n· $\\mathrm{Sa}(at)$ 零点间隔 $1/a\\times\\pi$…：$\\mathrm{Sa}(2\\pi t)$ 零点在 $t=k/2$。\n· 时域相乘 ⟺ 频域卷积；两矩形卷积=梯形；梯形（对称中心折叠为常数）满足奈奎斯特准则。\n【解题步骤】\n第1步：$x(t)=\\mathrm{Sa}(2\\pi t)$：最小 $T_B=\\frac12$s，$R_B=2$ Baud/s；$X(f)$ 为宽 1Hz 理想矩形 → 带宽 1Hz，$\\eta=2$ Baud/Hz。\n第2步：$x=\\mathrm{Sa}(2\\pi t)\\cdot\\mathrm{Sa}(\\pi t)$：$X(f)$=宽1与宽$\\frac12$两矩形之卷积=梯形（平顶 $\\pm\\frac14$Hz、斜边至 $\\pm\\frac34$Hz）。\n第3步：折叠检验为常数 → $R_B=1$ Baud/s，带宽 $\\frac34$Hz，$\\eta=\\frac43$ Baud/Hz。\n【答案】如上。\n【易错提醒】梯形平顶宽度决定 $R_B$（$R_B=\\frac{2\\times\\text{平顶半宽}}{}$口径），不是用总带宽除。"
+  "solution": "【知识点梳理】\n· $\\mathrm{Sa}(at)$ 零点间隔 $\\frac{1}{a}\\times\\pi$…：$\\mathrm{Sa}(2\\pi t)$ 零点在 $t=\\frac{k}{2}$。\n· 时域相乘 ⟺ 频域卷积；两矩形卷积=梯形；梯形（对称中心折叠为常数）满足奈奎斯特准则。\n【解题步骤】\n第1步：$x(t)=\\mathrm{Sa}(2\\pi t)$：最小 $T_B=\\frac12$s，$R_B=2$ Baud/s；$X(f)$ 为宽 1Hz 理想矩形 → 带宽 1Hz，$\\eta=2$ Baud/Hz。\n第2步：$x=\\mathrm{Sa}(2\\pi t)\\cdot\\mathrm{Sa}(\\pi t)$：$X(f)$=宽1与宽$\\frac12$两矩形之卷积=梯形（平顶 $\\pm\\frac14$Hz、斜边至 $\\pm\\frac34$Hz）。\n第3步：折叠检验为常数 → $R_B=1$ Baud/s，带宽 $\\frac34$Hz，$\\eta=\\frac43$ Baud/Hz。\n【答案】如上。\n【易错提醒】梯形平顶宽度决定 $R_B$（$R_B=\\frac{2\\times\\text{平顶半宽}}{}$口径），不是用总带宽除。"
  },
  {
   "subject": "txyl",
@@ -21219,7 +21219,7 @@
   "level": "综合",
   "kp": "二进制频带接收方式",
   "kp_sub": "OOK 信号带宽（矩形/根号升余弦）",
-  "solution": "【知识点梳理】\n· 矩形 NRZ：基带主瓣 $R_b$ → OOK 频带主瓣 $2R_b$。\n· 根号升余弦（$\\alpha$）：带宽 $(1+\\alpha)R_b/2$（基带），调制后同样的 $(1+\\alpha)R_b$？——OOK 频带带宽 $=(1+\\alpha)R_b$。\n【解题步骤】\n第1步：矩形：$B=2\\times10k=20$ kHz。\n第2步：根号升余弦 $\\alpha=0.5$：$B=(1+0.5)\\times10k=15$ kHz。\n【答案】20 kHz；15 kHz。"
+  "solution": "【知识点梳理】\n· 矩形 NRZ：基带主瓣 $R_b$ → OOK 频带主瓣 $2R_b$。\n· 根号升余弦（$\\alpha$）：带宽 $(1+\\alpha)\\frac{R_b}{2}$（基带），调制后同样的 $(1+\\alpha)R_b$？——OOK 频带带宽 $=(1+\\alpha)R_b$。\n【解题步骤】\n第1步：矩形：$B=2\\times10k=20$ kHz。\n第2步：根号升余弦 $\\alpha=0.5$：$B=(1+0.5)\\times10k=15$ kHz。\n【答案】20 kHz；15 kHz。"
  },
  {
   "subject": "txyl",
@@ -21230,13 +21230,13 @@
   "no": "2",
   "label": "【强化专题·专题11·2】",
   "question_text": "设二进制调制系统的码元速率 $R_B=2\\times10^6$ Baud，信道加性高斯白噪声的单边功率谱密度 $n_0=4\\times10^{-15}$W/Hz，接收端解调器输入信号的峰值振幅 $a=800\\mu$V。试求相干接收 2ASK 信号的误码率。",
-  "answer_text": "答案：BPF 带宽取 $2/T_s=4$MHz？——按相干解调 $r=\\frac{a^2/2}{\\sigma^2}$：噪声方差 $\\sigma^2=n_0 B$（$B$ 为 LPF 等效带宽 $\\approx R_B/2$ 量级，按讲义取 $B=2\\times10^6$Hz）→ $r=\\frac{(8\\times10^{-4})^2/2}{4\\times10^{-15}\\times2\\times10^6}=\\frac{3.2\\times10^{-7}}{8\\times10^{-9}}=40$；$P_e=\\frac12\\mathrm{erfc}(\\sqrt{r/4})$，$r\\gg1$ 时 $P_e\\approx\\frac{1}{\\sqrt{\\pi r}}e^{-r/4}$，极小（$\\approx10^{-5}$ 量级以下）。",
+  "answer_text": "答案：BPF 带宽取 $\\frac{2}{T_s}=4$MHz？——按相干解调 $r=\\frac{a^2}{2\\sigma^2}$：噪声方差 $\\sigma^2=n_0 B$（$B$ 为 LPF 等效带宽 $\\approx \\frac{R_B}{2}$ 量级，按讲义取 $B=2\\times10^6$Hz）→ $r=\\frac{(8\\times10^{-4})^2}{24\\times10^{-15}\\times2\\times10^6}=\\frac{3.2\\times10^{-7}}{8\\times10^{-9}}=40$；$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{r}{4}})$，$r\\gg1$ 时 $P_e\\approx\\frac{1}{\\sqrt{\\pi r}}e^{-r/4}$，极小（$\\approx10^{-5}$ 量级以下）。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "二进制频带接收方式",
   "kp_sub": "相干 2ASK 误码率",
-  "solution": "【知识点梳理】\n· 相干 2ASK：$P_e=\\frac12\\mathrm{erfc}(\\sqrt{r/4})$，$r=\\frac{a^2/2}{\\sigma^2}$，$\\sigma^2=n_0B$。\n【解题步骤】\n第1步：BPF 带宽按 $2R_B=4$MHz 取 → $\\sigma^2=4\\times10^{-15}\\times4\\times10^6=1.6\\times10^{-8}$W。\n第2步：$r=\\frac{(8\\times10^{-4})^2/2}{1.6\\times10^{-8}}=20$。\n第3步：$P_e=\\frac12\\mathrm{erfc}(\\sqrt5)\\approx\\frac{e^{-5}}{2\\sqrt{5\\pi}}\\approx8.5\\times10^{-4}$。\n【答案】$P_e\\approx8.5\\times10^{-4}$。\n【易错提醒】$r$ 用的是峰值振幅平方的一半（功率），别直接用 $a^2$。"
+  "solution": "【知识点梳理】\n· 相干 2ASK：$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{r}{4}})$，$r=\\frac{a^2}{2\\sigma^2}$，$\\sigma^2=n_0B$。\n【解题步骤】\n第1步：BPF 带宽按 $2R_B=4$MHz 取 → $\\sigma^2=4\\times10^{-15}\\times4\\times10^6=1.6\\times10^{-8}$W。\n第2步：$r=\\frac{(8\\times10^{-4})^2}{21.6\\times10^{-8}}=20$。\n第3步：$P_e=\\frac12\\mathrm{erfc}(\\sqrt5)\\approx\\frac{e^{-5}}{2\\sqrt{5\\pi}}\\approx8.5\\times10^{-4}$。\n【答案】$P_e\\approx8.5\\times10^{-4}$。\n【易错提醒】$r$ 用的是峰值振幅平方的一半（功率），别直接用 $a^2$。"
  },
  {
   "subject": "txyl",
@@ -21246,14 +21246,14 @@
   "type": "习题",
   "no": "3",
   "label": "【强化专题·专题11·3】",
-  "question_text": "某 OOK 系统在 $[0,T_b]$ 时间内等概发送 $s_1(t)=A\\cos(2\\pi f_c t)$ 或 $s_2(t)=0$ 之一。接收框图：$r(t)$→相乘 $\\cos(2\\pi f_c t)$→$\\int_0^{T_b}(\\cdot)dt$→抽样 y→判决，$n_w(t)$ 为双边 $N_0/2$ 零均值白高斯噪声，$f_c$ 充分大。\n(1) 写出最佳判决门限；(2) 求发送 $s_2(t)$ 条件下判决出现错误的概率。",
-  "answer_text": "答案：(1) 发 1 时抽样均值 $u_1=AT_b/2$，发 0 时为 0，等概 → 门限 $V_T=u_1/2=AT_b/4$；\n(2) $P(e|s_2)=P(y>V_T)=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_b/2n_0}\\right)$，其中 $E_b=A^2T_b/4$（$\\frac{A^2}{2}\\cdot\\frac{T_b}{2}$）。",
+  "question_text": "某 OOK 系统在 $[0,T_b]$ 时间内等概发送 $s_1(t)=A\\cos(2\\pi f_c t)$ 或 $s_2(t)=0$ 之一。接收框图：$r(t)$→相乘 $\\cos(2\\pi f_c t)$→$\\int_0^{T_b}(\\cdot)dt$→抽样 y→判决，$n_w(t)$ 为双边 $\\frac{N_0}{2}$ 零均值白高斯噪声，$f_c$ 充分大。\n(1) 写出最佳判决门限；(2) 求发送 $s_2(t)$ 条件下判决出现错误的概率。",
+  "answer_text": "答案：(1) 发 1 时抽样均值 $u_1=AT_\\frac{b}{2}$，发 0 时为 0，等概 → 门限 $V_T=\\frac{u_1}{2}=AT_\\frac{b}{4}$；\n(2) $P(e|s_2)=P(y>V_T)=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2n_0}}\\right)$，其中 $E_b=A^2T_\\frac{b}{4}$（$\\frac{A^2}{2}\\cdot\\frac{T_b}{2}$）。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "二进制频带接收方式",
   "kp_sub": "OOK 最佳接收：门限与错误概率",
-  "solution": "【知识点梳理】\n· 相干解调+积分清零：发 1 抽样均值 $u_1=\\frac{AT_b}{2}$，发 0 均值 0；噪声方差 $σ^2=\\frac{N_0T_b}{4}$。\n· 等概 → 最佳门限=$\\frac{u_1}{2}$。\n【解题步骤】\n第1步：$V_T=\\frac{AT_b}{4}$。\n第2步：$P(e|s_2)=P(y>V_T)=Q\\left(\\frac{V_T}{σ}\\right)=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{A^2T_b}{4N_0}}\\right)=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2N_0}}\\right)$，其中 $E_b=\\frac{A^2T_b}{2}$。\n【答案】门限 $AT_b/4$；$P(e|s_2)=\\frac12\\mathrm{erfc}(\\sqrt{E_b/2N_0})$。",
+  "solution": "【知识点梳理】\n· 相干解调+积分清零：发 1 抽样均值 $u_1=\\frac{AT_b}{2}$，发 0 均值 0；噪声方差 $σ^2=\\frac{N_0T_b}{4}$。\n· 等概 → 最佳门限=$\\frac{u_1}{2}$。\n【解题步骤】\n第1步：$V_T=\\frac{AT_b}{4}$。\n第2步：$P(e|s_2)=P(y>V_T)=Q\\left(\\frac{V_T}{σ}\\right)=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{A^2T_b}{4N_0}}\\right)=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2N_0}}\\right)$，其中 $E_b=\\frac{A^2T_b}{2}$。\n【答案】门限 $AT_\\frac{b}{4}$；$P(e|s_2)=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{E_b}{2N_0}})$。",
   "question_img": "images/q_qhzt-11-3.png"
  },
  {
@@ -21264,14 +21264,14 @@
   "type": "习题",
   "no": "4",
   "label": "【强化专题·专题11·4】",
-  "question_text": "某 2PSK 系统在 $[0,T_b]$ 内等概发送 $s_1(t)=A\\cos(2\\pi f_c t)$ 或 $s_2(t)=-s_1(t)$。接收框图：$r(t)$→相乘 $\\cos(2\\pi f_c t)$→$\\int_0^{T_b}(\\cdot)dt$→抽样 z→判决，$n_w(t)$ 为双边 $N_0/2$ 白高斯噪声，$f_c$ 充分大。\n(1) 求发送 $s_1(t)$ 条件下判决量 z 的均值、方差及概率密度函数 $f_1(z)$；\n(2) 写出判决器的最佳判决规则；\n(3) 求发送 $s_1(t)$ 条件下判决出现错误的概率。",
-  "answer_text": "答案：(1) $z\\sim N(E_b,\\,N_0E_b/2)$？——积分器输出信号分量 $AT_b/2=E_b$（$E_b=A^2T_b/2$），噪声方差 $\\sigma^2=N_0E_b/2$：$f_1(z)=\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{-(z-E_b)^2/2\\sigma^2}$；\n(2) $z>0$ 判 $s_1$，$z<0$ 判 $s_2$（门限 0）；\n(3) $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_b/n_0}\\right)$。",
+  "question_text": "某 2PSK 系统在 $[0,T_b]$ 内等概发送 $s_1(t)=A\\cos(2\\pi f_c t)$ 或 $s_2(t)=-s_1(t)$。接收框图：$r(t)$→相乘 $\\cos(2\\pi f_c t)$→$\\int_0^{T_b}(\\cdot)dt$→抽样 z→判决，$n_w(t)$ 为双边 $\\frac{N_0}{2}$ 白高斯噪声，$f_c$ 充分大。\n(1) 求发送 $s_1(t)$ 条件下判决量 z 的均值、方差及概率密度函数 $f_1(z)$；\n(2) 写出判决器的最佳判决规则；\n(3) 求发送 $s_1(t)$ 条件下判决出现错误的概率。",
+  "answer_text": "答案：(1) $z\\sim N(E_b,\\,N_0E_\\frac{b}{2})$？——积分器输出信号分量 $AT_\\frac{b}{2}=E_b$（$E_b=A^2T_\\frac{b}{2}$），噪声方差 $\\sigma^2=N_0E_\\frac{b}{2}$：$f_1(z)=\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{-(z-E_b)^2/2\\sigma^2}$；\n(2) $z>0$ 判 $s_1$，$z<0$ 判 $s_2$（门限 0）；\n(3) $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{n_0}}\\right)$。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "二进制频带接收方式",
   "kp_sub": "2PSK 最佳接收：判决量分布与误码率",
-  "solution": "【知识点梳理】\n· 2PSK 判决量 $z=\\pm E_b+Z$，$E_b=\\frac{A^2T_b}{2}$，$Z\\sim N(0,\\frac{N_0T_b}{4})$。\n· 等概双极性最佳门限 0。\n【解题步骤】\n第1步：$\\mu=\\frac{AT_b}{2}=E_b$，$σ^2=\\frac{N_0T_b}{4}$，$f_1(z)=\\frac{1}{\\sqrt{2\\pi}σ}e^{-(z-E_b)^2/2σ^2}$。\n第2步：$z>0$ 判 $s_1$、$z<0$ 判 $s_2$。\n第3步：$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_b/N_0}\\right)$。\n【答案】如上。\n【易错提醒】2PSK 与 OOK 相比：门限 0 且 $P_e$ 公式根号内差 2 倍（同能量下 PSK 好 3dB）。",
+  "solution": "【知识点梳理】\n· 2PSK 判决量 $z=\\pm E_b+Z$，$E_b=\\frac{A^2T_b}{2}$，$Z\\sim N(0,\\frac{N_0T_b}{4})$。\n· 等概双极性最佳门限 0。\n【解题步骤】\n第1步：$\\mu=\\frac{AT_b}{2}=E_b$，$σ^2=\\frac{N_0T_b}{4}$，$f_1(z)=\\frac{1}{\\sqrt{2\\pi}σ}e^{-(z-E_b)^2/2σ^2}$。\n第2步：$z>0$ 判 $s_1$、$z<0$ 判 $s_2$。\n第3步：$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{N_0}}\\right)$。\n【答案】如上。\n【易错提醒】2PSK 与 OOK 相比：门限 0 且 $P_e$ 公式根号内差 2 倍（同能量下 PSK 好 3dB）。",
   "question_img": "images/q_qhzt-11-4.png"
  },
  {
@@ -21282,14 +21282,14 @@
   "type": "习题",
   "no": "5",
   "label": "【强化专题·专题11·5】",
-  "question_text": "某 2FSK 系统在 $[0,T_b]$ 内等概发送 $s_1(t)=\\sqrt2\\cos(10\\pi t)$ 或 $s_2(t)=\\sqrt2\\cos(12\\pi t)$ 之一。接收框图：$r(t)$→相乘 $g(t)$→$\\int_0^{T_b}(\\cdot)dt$→z→判决（门限 0），其中 $g(t)=2\\sin(\\pi t)\\sin(11\\pi t)$，$n_w(t)$ 为双边 $N_0/2$ 白高斯噪声。\n(1) 求能使 $s_1(t)$ 和 $s_2(t)$ 正交的最小 $T_b$ 值；\n(2) 求发送 $s_1(t)$ 条件下判决量 z 的均值、方差及概率密度函数 $f_1(z)$；\n(3) 求发送 $s_1(t)$ 条件下判决出现错误的概率。",
-  "answer_text": "答案：(1) 正交条件 $2T_b(f_2\\pm f_1)\\in\\mathbb{Z}$：$2T_b\\times11=22T_b\\in\\mathbb{Z}$ 且 $2T_b\\times1\\in\\mathbb{Z}$ → $T_b=0.5$s；\n(2) $z=E_b+Z$，$E_b=T_b$（$\\sqrt2$ 幅度、$T_b=0.5$s → 能量 1），$Z\\sim N(0,N_0E_b/2)$：$f_1(z)=\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{-(z-1)^2/2\\sigma^2}$；\n(3) $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_b/2n_0}\\right)$。",
+  "question_text": "某 2FSK 系统在 $[0,T_b]$ 内等概发送 $s_1(t)=\\sqrt2\\cos(10\\pi t)$ 或 $s_2(t)=\\sqrt2\\cos(12\\pi t)$ 之一。接收框图：$r(t)$→相乘 $g(t)$→$\\int_0^{T_b}(\\cdot)dt$→z→判决（门限 0），其中 $g(t)=2\\sin(\\pi t)\\sin(11\\pi t)$，$n_w(t)$ 为双边 $\\frac{N_0}{2}$ 白高斯噪声。\n(1) 求能使 $s_1(t)$ 和 $s_2(t)$ 正交的最小 $T_b$ 值；\n(2) 求发送 $s_1(t)$ 条件下判决量 z 的均值、方差及概率密度函数 $f_1(z)$；\n(3) 求发送 $s_1(t)$ 条件下判决出现错误的概率。",
+  "answer_text": "答案：(1) 正交条件 $2T_b(f_2\\pm f_1)\\in\\mathbb{Z}$：$2T_b\\times11=22T_b\\in\\mathbb{Z}$ 且 $2T_b\\times1\\in\\mathbb{Z}$ → $T_b=0.5$s；\n(2) $z=E_b+Z$，$E_b=T_b$（$\\sqrt2$ 幅度、$T_b=0.5$s → 能量 1），$Z\\sim N(0,N_0E_\\frac{b}{2})$：$f_1(z)=\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{-(z-1)^2/2\\sigma^2}$；\n(3) $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2n_0}}\\right)$。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "二进制频带接收方式",
   "kp_sub": "2FSK 正交条件与判决量分布",
-  "solution": "【知识点梳理】\n· 正交条件：$\\int_0^{T_b}s_1s_2dt=0$ ⟺ $T_b(f_2-f_1)=k/2$ 与 $T_b(f_1+f_2)=m/2$ 同时成立。\n· 简化接收 $g=s_1-s_2$ 时判决量均值 $=E_b/\\sqrt2\\cdot\\sqrt2$…按给定 $g$ 直接积分。\n【解题步骤】\n第1步：$g=2\\sin\\pi t\\sin11\\pi t=\\cos10\\pi t-\\cos12\\pi t$；$f_2-f_1=1$Hz、$f_1+f_2=11$Hz → $T_b=0.5$s（$k=m=1$？验证 $2T_b(f_2\\pm f_1)\\in\\mathbb{Z}$：$2\\times0.5\\times1=1$、$2\\times0.5\\times11=11$ ✓）。\n第2步：发 $s_1$：$μ=\\int_0^{T_b}s_1g\\,dt=\\sqrt2\\int\\cos10\\pi t(\\cos10\\pi t-\\cos12\\pi t)dt=\\frac{\\sqrt2}{2}T_b=\\frac{\\sqrt2}{4}$；$σ^2=\\frac{N_0}{2}\\int g^2dt=\\frac{N_0}{2}\\times\\frac12=\\frac{N_0}{4}$。\n第3步：$f_1(z)=\\frac{1}{\\sqrt{2\\pi}σ}e^{-(z-μ)^2/2σ^2}$；$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2N_0}}\\right)$，$E_b=0.5$J。\n【答案】如上。\n【易错提醒】正交条件要用 $f_2-f_1$ 与 $f_1+f_2$ 两条同时是 $\\frac{1}{2T_b}$ 的整数倍。",
+  "solution": "【知识点梳理】\n· 正交条件：$\\int_0^{T_b}s_1s_2dt=0$ ⟺ $T_b(f_2-f_1)=\\frac{k}{2}$ 与 $T_b(f_1+f_2)=\\frac{m}{2}$ 同时成立。\n· 简化接收 $g=s_1-s_2$ 时判决量均值 $=\\frac{E_b}{\\sqrt2}\\cdot\\sqrt2$…按给定 $g$ 直接积分。\n【解题步骤】\n第1步：$g=2\\sin\\pi t\\sin11\\pi t=\\cos10\\pi t-\\cos12\\pi t$；$f_2-f_1=1$Hz、$f_1+f_2=11$Hz → $T_b=0.5$s（$k=m=1$？验证 $2T_b(f_2\\pm f_1)\\in\\mathbb{Z}$：$2\\times0.5\\times1=1$、$2\\times0.5\\times11=11$ ✓）。\n第2步：发 $s_1$：$μ=\\int_0^{T_b}s_1g\\,dt=\\sqrt2\\int\\cos10\\pi t(\\cos10\\pi t-\\cos12\\pi t)dt=\\frac{\\sqrt2}{2}T_b=\\frac{\\sqrt2}{4}$；$σ^2=\\frac{N_0}{2}\\int g^2dt=\\frac{N_0}{2}\\times\\frac12=\\frac{N_0}{4}$。\n第3步：$f_1(z)=\\frac{1}{\\sqrt{2\\pi}σ}e^{-(z-μ)^2/2σ^2}$；$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2N_0}}\\right)$，$E_b=0.5$J。\n【答案】如上。\n【易错提醒】正交条件要用 $f_2-f_1$ 与 $f_1+f_2$ 两条同时是 $\\frac{1}{2T_b}$ 的整数倍。",
   "question_img": "images/q_qhzt-11-5.png"
  },
  {
@@ -21301,13 +21301,13 @@
   "no": "1",
   "label": "【强化专题·专题12·1】",
   "question_text": "采用 OOK 方式传送二进制数字信息，码元传输速率 $R_B=2\\times10^6$ B，接收端解调器输入信号振幅 $a=40\\mu$V，信道加性噪声为高斯白噪声，单边功率谱密度 $n_0=6\\times10^{-18}$W/Hz。求：(1) 非相干接收时系统的误码率；(2) 相干接收时系统的误码率；(3) 比较两种接收方式。",
-  "answer_text": "答案：$r=\\frac{a^2}{2\\sigma^2}$，$\\sigma^2=n_0 B$（$B\\approx R_B=2\\times10^6$Hz）→ $\\sigma^2=1.2\\times10^{-11}$，$r=\\frac{(4\\times10^{-5})^2/2}{1.2\\times10^{-11}}\\approx66.7$。(1) 非相干 $P_e=\\frac12e^{-r/4}\\approx\\frac12e^{-16.7}\\approx3\\times10^{-8}$；(2) 相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{r/4})\\approx\\frac{e^{-r/4}}{\\sqrt{\\pi r}}\\approx2\\times10^{-9}$；(3) 相干优于非相干约一个量级（大信噪比下），但相干需要载波同步、设备复杂。",
+  "answer_text": "答案：$r=\\frac{a^2}{2\\sigma^2}$，$\\sigma^2=n_0 B$（$B\\approx R_B=2\\times10^6$Hz）→ $\\sigma^2=1.2\\times10^{-11}$，$r=\\frac{(4\\times10^{-5})^2}{21.2\\times10^{-11}}\\approx66.7$。(1) 非相干 $P_e=\\frac12e^{-r/4}\\approx\\frac12e^{-16.7}\\approx3\\times10^{-8}$；(2) 相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{r}{4}})\\approx\\frac{e^{-r/4}}{\\sqrt{\\pi r}}\\approx2\\times10^{-9}$；(3) 相干优于非相干约一个量级（大信噪比下），但相干需要载波同步、设备复杂。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "二进制频带误码率",
   "kp_sub": "OOK 非相干/相干误码率对比",
-  "solution": "【知识点梳理】\n· $r=\\frac{a^2/2}{σ^2}$，$σ^2=n_0B$（BPF 带宽取 $2R_B$）。\n· OOK：非相干 $P_e=\\frac12e^{-r/4}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{r/4})$。\n【解题步骤】\n第1步：$σ^2=6\\times10^{-18}\\times4\\times10^6=2.4\\times10^{-11}$W。\n第2步：$r=\\frac{(4\\times10^{-5})^2/2}{2.4\\times10^{-11}}\\approx33.3$。\n第3步：非相干 $P_e=\\frac12e^{-8.33}\\approx1.2\\times10^{-4}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{8.33})\\approx2.4\\times10^{-5}$。\n【答案】如上；相干比非相干好约一个数量级，但需要载波同步、设备复杂。\n【易错提醒】大信噪比近似 $\\mathrm{erfc}(x)\\approx\\frac{e^{-x^2}}{x\\sqrt\\pi}$ 直接算数值。"
+  "solution": "【知识点梳理】\n· $r=\\frac{a^2}{2σ^2}$，$σ^2=n_0B$（BPF 带宽取 $2R_B$）。\n· OOK：非相干 $P_e=\\frac12e^{-r/4}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{r}{4}})$。\n【解题步骤】\n第1步：$σ^2=6\\times10^{-18}\\times4\\times10^6=2.4\\times10^{-11}$W。\n第2步：$r=\\frac{(4\\times10^{-5})^2}{22.4\\times10^{-11}}\\approx33.3$。\n第3步：非相干 $P_e=\\frac12e^{-8.33}\\approx1.2\\times10^{-4}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{8.33})\\approx2.4\\times10^{-5}$。\n【答案】如上；相干比非相干好约一个数量级，但需要载波同步、设备复杂。\n【易错提醒】大信噪比近似 $\\mathrm{erfc}(x)\\approx\\frac{e^{-x^2}}{x\\sqrt\\pi}$ 直接算数值。"
  },
  {
   "subject": "txyl",
@@ -21318,13 +21318,13 @@
   "no": "2",
   "label": "【强化专题·专题12·2】",
   "question_text": "某 2FSK 系统码元传输速率 $R_B=2\\times10^6$ B，数字信息“1”的频率 $f_1=10$MHz，“0”的频率 $f_2=10.4$MHz，输入解调器信号峰值振幅 $a=40\\mu$V，噪声单边 $n_0=6\\times10^{-18}$W/Hz。求：(1) 2FSK 信号的第一零点带宽；(2) 非相干接收误码率；(3) 相干接收误码率。",
-  "answer_text": "答案：(1) $B=|f_1-f_2|+2R_B=0.4M+4M=4.4$ MHz；(2) 每路 BPF 带宽 $2R_B=4$MHz，$\\sigma^2=n_0B=2.4\\times10^{-11}$，$r=\\frac{a^2/2}{\\sigma^2}\\approx33.3$：非相干 $P_e=\\frac12e^{-r/2}\\approx\\frac12e^{-16.7}\\approx3\\times10^{-8}$；(3) 相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{r/2})$，更小。",
+  "answer_text": "答案：(1) $B=|f_1-f_2|+2R_B=0.4M+4M=4.4$ MHz；(2) 每路 BPF 带宽 $2R_B=4$MHz，$\\sigma^2=n_0B=2.4\\times10^{-11}$，$r=\\frac{a^2}{2\\sigma^2}\\approx33.3$：非相干 $P_e=\\frac12e^{-r/2}\\approx\\frac12e^{-16.7}\\approx3\\times10^{-8}$；(3) 相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{r}{2}})$，更小。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "二进制频带误码率",
   "kp_sub": "2FSK 带宽与误码率",
-  "solution": "【知识点梳理】\n· 2FSK 第一零点带宽 $B=|f_1-f_2|+2R_B$；每条支路 BPF 带宽 $2R_B$。\n· 2FSK：非相干 $P_e=\\frac12e^{-r/2}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{r/2})$。\n【解题步骤】\n第1步：$B=0.4M+4M=4.4$ MHz。\n第2步：$σ^2=6\\times10^{-18}\\times4\\times10^6=2.4\\times10^{-11}$W，$r=\\frac{8\\times10^{-10}}{2.4\\times10^{-11}}\\approx33.3$。\n第3步：非相干 $P_e=\\frac12e^{-16.7}\\approx2.9\\times10^{-8}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{16.7})\\approx3.5\\times10^{-9}$。\n【答案】如上。\n【易错提醒】2FSK 的根号里是 $r/2$（不是 $r/4$）——同 $r$ 下 2FSK 天然优于 2ASK。"
+  "solution": "【知识点梳理】\n· 2FSK 第一零点带宽 $B=|f_1-f_2|+2R_B$；每条支路 BPF 带宽 $2R_B$。\n· 2FSK：非相干 $P_e=\\frac12e^{-r/2}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{r}{2}})$。\n【解题步骤】\n第1步：$B=0.4M+4M=4.4$ MHz。\n第2步：$σ^2=6\\times10^{-18}\\times4\\times10^6=2.4\\times10^{-11}$W，$r=\\frac{8\\times10^{-10}}{2.4\\times10^{-11}}\\approx33.3$。\n第3步：非相干 $P_e=\\frac12e^{-16.7}\\approx2.9\\times10^{-8}$；相干 $P_e=\\frac12\\mathrm{erfc}(\\sqrt{16.7})\\approx3.5\\times10^{-9}$。\n【答案】如上。\n【易错提醒】2FSK 的根号里是 $\\frac{r}{2}$（不是 $\\frac{r}{4}$）——同 $r$ 下 2FSK 天然优于 2ASK。"
  },
  {
   "subject": "txyl",
@@ -21352,13 +21352,13 @@
   "no": "2",
   "label": "【强化专题·专题14·2】",
   "question_text": "某数字基带传输系统以三元码传输，信号幅度为 $-A$、$0$、$A$，信道中存在均值为 0、方差为 $\\sigma_n^2$ 的 AWGN。两种情况下分别求接收机的最佳判决门限和误码率：\n(1) $-A$、$0$、$A$ 的发送概率分别为 1/3、1/3、1/3；\n(2) 发送概率分别为 1/4、1/2、1/4。",
-  "answer_text": "答案：(1) 等概 → 门限 $\\pm A/2$（ML），$P_e=\\frac43Q\\left(\\frac{A}{2\\sigma_n}\\right)$；\n(2) 不等概（MAP 门限偏向前验概率大的一侧，即向 0 靠拢）：$V_{T1}=\\frac{A}{2}+\\frac{\\sigma_n^2}{A}\\ln\\frac{P(0)}{P(-A)}$、$V_{T2}=\\frac{A}{2}-\\frac{\\sigma_n^2}{A}\\ln\\frac{P(0)}{P(A)}$，代入 $P(-A)=P(A)=\\frac14$、$P(0)=\\frac12$ 得门限 $\\pm\\left(\\frac{A}{2}-\\frac{\\sigma_n^2\\ln2}{A}\\right)$；误码率相应下降（先验信息利用）。",
+  "answer_text": "答案：(1) 等概 → 门限 $\\pm \\frac{A}{2}$（ML），$P_e=\\frac43Q\\left(\\frac{A}{2\\sigma_n}\\right)$；\n(2) 不等概（MAP 门限偏向前验概率大的一侧，即向 0 靠拢）：$V_{T1}=\\frac{A}{2}+\\frac{\\sigma_n^2}{A}\\ln\\frac{P(0)}{P(-A)}$、$V_{T2}=\\frac{A}{2}-\\frac{\\sigma_n^2}{A}\\ln\\frac{P(0)}{P(A)}$，代入 $P(-A)=P(A)=\\frac14$、$P(0)=\\frac12$ 得门限 $\\pm\\left(\\frac{A}{2}-\\frac{\\sigma_n^2\\ln2}{A}\\right)$；误码率相应下降（先验信息利用）。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "多进制误码率与判决",
   "kp_sub": "三元码最佳门限（等概/不等概）",
-  "solution": "【知识点梳理】\n· 等概 → ML 门限=中点 $\\pm A/2$；不等概 → MAP 门限含先验比项 $\\frac{σ_n^2}{A}\\ln\\frac{P(0)}{P(\\pm A)}$，向先验概率大的电平偏移。\n【解题步骤】\n第1步：(1) 门限 $\\pm\\frac{A}{2}$；$P_e=\\frac13 Q(\\frac{A}{2σ_n})+\\frac13\\cdot2Q(\\frac{A}{2σ_n})+\\frac13 Q(\\frac{A}{2σ_n})=\\frac43Q(\\frac{A}{2σ_n})$。\n第2步：(2) $V_{T1}=-\\frac{A}{2}+\\frac{σ_n^2}{A}\\ln2$、$V_{T2}=\\frac{A}{2}-\\frac{σ_n^2}{A}\\ln2$（向 0 偏）；误码率按新门限逐项 $Q$ 加权（比等概时略小）。\n【答案】如上。\n【易错提醒】不等概时“最佳”门限不再是中点——先验概率差越大偏移越多。"
+  "solution": "【知识点梳理】\n· 等概 → ML 门限=中点 $\\pm \\frac{A}{2}$；不等概 → MAP 门限含先验比项 $\\frac{σ_n^2}{A}\\ln\\frac{P(0)}{P(\\pm A)}$，向先验概率大的电平偏移。\n【解题步骤】\n第1步：(1) 门限 $\\pm\\frac{A}{2}$；$P_e=\\frac13 Q(\\frac{A}{2σ_n})+\\frac13\\cdot2Q(\\frac{A}{2σ_n})+\\frac13 Q(\\frac{A}{2σ_n})=\\frac43Q(\\frac{A}{2σ_n})$。\n第2步：(2) $V_{T1}=-\\frac{A}{2}+\\frac{σ_n^2}{A}\\ln2$、$V_{T2}=\\frac{A}{2}-\\frac{σ_n^2}{A}\\ln2$（向 0 偏）；误码率按新门限逐项 $Q$ 加权（比等概时略小）。\n【答案】如上。\n【易错提醒】不等概时“最佳”门限不再是中点——先验概率差越大偏移越多。"
  },
  {
   "subject": "txyl",
@@ -21368,14 +21368,14 @@
   "type": "习题",
   "no": "3",
   "label": "【强化专题·专题14·3】",
-  "question_text": "某数字基带信道中传输三元码，码元周期为 T，幅度 $-A$、$0$、$+A$。信道噪声为均值 0、双边功率谱密度 $n_0/2$ 的高斯白噪声，求以下情况的误码率：\n(1) 接收端采用低通滤波器接收（带宽取 $1/2T$）；\n(2) 接收端采用匹配滤波器接收。",
-  "answer_text": "答案：(1) 低通接收：$\\sigma^2=\\frac{n_0}{2}\\cdot\\frac{1}{T}\\cdot\\frac12\\times2=n_0/(2T)$？——带宽 $1/2T$ 内双边谱积分 $\\sigma^2=\\frac{n_0}{2T}$；$P_e=\\frac43Q\\left(\\frac{A}{2\\sigma}\\right)=\\frac43Q\\left(A\\sqrt{T/n_0}\\right)$？按 $\\sigma=\\sqrt{n_0/2T}$：$P_e=\\frac43Q\\left(\\frac{A}{2}\\sqrt{2T/n_0}\\right)$；\n(2) 匹配滤波：$\\sigma^2=\\frac{n_0E_g}{2}$、抽样信号分量 $A E_g$（归一后 $A$）→ $P_e=\\frac43Q\\left(A\\sqrt{\\frac{E_g}{2n_0}}\\right)$——匹配滤波信噪比最大、误码率最小（结论：匹配滤波优于低通）。",
+  "question_text": "某数字基带信道中传输三元码，码元周期为 T，幅度 $-A$、$0$、$+A$。信道噪声为均值 0、双边功率谱密度 $\\frac{n_0}{2}$ 的高斯白噪声，求以下情况的误码率：\n(1) 接收端采用低通滤波器接收（带宽取 $\\frac{1}{2T}$）；\n(2) 接收端采用匹配滤波器接收。",
+  "answer_text": "答案：(1) 低通接收：$\\sigma^2=\\frac{n_0}{2}\\cdot\\frac{1}{T}\\cdot\\frac12\\times2=n_0/(2T)$？——带宽 $\\frac{1}{2T}$ 内双边谱积分 $\\sigma^2=\\frac{n_0}{2T}$；$P_e=\\frac43Q\\left(\\frac{A}{2\\sigma}\\right)=\\frac43Q\\left(A\\sqrt{\\frac{T}{n_0}}\\right)$？按 $\\sigma=\\sqrt{\\frac{n_0}{2T}}$：$P_e=\\frac43Q\\left(\\frac{A}{2}\\sqrt{\\frac{2T}{n_0}}\\right)$；\n(2) 匹配滤波：$\\sigma^2=\\frac{n_0E_g}{2}$、抽样信号分量 $A E_g$（归一后 $A$）→ $P_e=\\frac43Q\\left(A\\sqrt{\\frac{E_g}{2n_0}}\\right)$——匹配滤波信噪比最大、误码率最小（结论：匹配滤波优于低通）。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "多进制误码率与判决",
   "kp_sub": "三元码低通接收 vs 匹配滤波接收",
-  "solution": "【知识点梳理】\n· 低通接收：$σ^2=n_0B$（双边 $n_0/2$ 乘 $2B$）；三元码 $P_e=\\frac43Q(\\frac{A}{2σ})$。\n· 匹配滤波：$σ^2=\\frac{n_0E_g}{2}$，抽样信号分量 $=A E_g$（归一后比值提升 $\\sqrt{2}$）。\n【解题步骤】\n第1步：低通（$B=\\frac{1}{2T}$）：$σ=\\sqrt{\\frac{n_0}{2T}}$ → $P_e=\\frac43Q\\left(\\frac{A}{2}\\sqrt{\\frac{2T}{n_0}}\\right)$。\n第2步：匹配滤波（对宽 $T$ 矩形）：$P_e=\\frac43Q\\left(A\\sqrt{\\frac{T}{n_0}}\\right)$——根号内是低通的 $\\sqrt2$ 倍。\n【答案】如上；结论：匹配滤波输出信噪比最大、误码率最小。\n【易错提醒】三元码中间电平双向出错，系数是 $\\frac43$ 不是 $Q$ 本身。"
+  "solution": "【知识点梳理】\n· 低通接收：$σ^2=n_0B$（双边 $\\frac{n_0}{2}$ 乘 $2B$）；三元码 $P_e=\\frac43Q(\\frac{A}{2σ})$。\n· 匹配滤波：$σ^2=\\frac{n_0E_g}{2}$，抽样信号分量 $=A E_g$（归一后比值提升 $\\sqrt{2}$）。\n【解题步骤】\n第1步：低通（$B=\\frac{1}{2T}$）：$σ=\\sqrt{\\frac{n_0}{2T}}$ → $P_e=\\frac43Q\\left(\\frac{A}{2}\\sqrt{\\frac{2T}{n_0}}\\right)$。\n第2步：匹配滤波（对宽 $T$ 矩形）：$P_e=\\frac43Q\\left(A\\sqrt{\\frac{T}{n_0}}\\right)$——根号内是低通的 $\\sqrt2$ 倍。\n【答案】如上；结论：匹配滤波输出信噪比最大、误码率最小。\n【易错提醒】三元码中间电平双向出错，系数是 $\\frac43$ 不是 $Q$ 本身。"
  },
  {
   "subject": "txyl",
@@ -21385,14 +21385,14 @@
   "type": "习题",
   "no": "4",
   "label": "【强化专题·专题14·4】",
-  "question_text": "已知 4ASK 信号 $s_i(t)=a_i f_1(t)$，$a_i\\in\\{-3,-1,+1,+3\\}$，$f_1(t)=\\sqrt{\\frac{2}{T_s}}\\cos\\omega_c t$（$0\\le t\\le T_s$）为归一化正交基函数。\n(1) 画出 4ASK 信号空间图（星座图）；\n(2) 信道白噪声 $n_w(t)$ 功率谱密度 $N_0/2$，画出最佳匹配接收框图，并计算系统平均误符号率。",
-  "answer_text": "答案：(1) 一维星座：$\\{-\\sqrt{2E_g/T_s}\\times3,-1,+1,+3\\}$ 四点（即 $\\pm\\sqrt{2/T_s}\\cdot a_i$ 投影，等距四点在 $f_1$ 轴上）；\n(2) 框图：$r(t)$×$f_1(t)$→$\\int_0^{T_s}$→抽样→三电平判决（门限 $-2,0,2$）→符号；$P_{e,M}=\\frac{M-1}{M}\\mathrm{erfc}\\left(\\sqrt{\\frac{d^2}{4n_0}}\\right)$（$d=2$ 电平间隔折算），即 $P_e=\\frac34\\cdot\\frac{2}{\\sqrt\\pi}\\int_{\\sqrt{2/n_0}}^{\\infty}e^{-t^2}dt=\\frac32Q\\left(\\sqrt{2/n_0}\\right)$。",
+  "question_text": "已知 4ASK 信号 $s_i(t)=a_i f_1(t)$，$a_i\\in\\{-3,-1,+1,+3\\}$，$f_1(t)=\\sqrt{\\frac{2}{T_s}}\\cos\\omega_c t$（$0\\le t\\le T_s$）为归一化正交基函数。\n(1) 画出 4ASK 信号空间图（星座图）；\n(2) 信道白噪声 $n_w(t)$ 功率谱密度 $\\frac{N_0}{2}$，画出最佳匹配接收框图，并计算系统平均误符号率。",
+  "answer_text": "答案：(1) 一维星座：$\\{-\\sqrt{2E_\\frac{g}{T_s}}\\times3,-1,+1,+3\\}$ 四点（即 $\\pm\\sqrt{\\frac{2}{T_s}}\\cdot a_i$ 投影，等距四点在 $f_1$ 轴上）；\n(2) 框图：$r(t)$×$f_1(t)$→$\\int_0^{T_s}$→抽样→三电平判决（门限 $-2,0,2$）→符号；$P_{e,M}=\\frac{M-1}{M}\\mathrm{erfc}\\left(\\sqrt{\\frac{d^2}{4n_0}}\\right)$（$d=2$ 电平间隔折算），即 $P_e=\\frac34\\cdot\\frac{2}{\\sqrt\\pi}\\int_{\\sqrt{\\frac{2}{n_0}}}^{\\infty}e^{-t^2}dt=\\frac32Q\\left(\\sqrt{\\frac{2}{n_0}}\\right)$。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "多进制误码率与判决",
   "kp_sub": "4ASK 星座图与最佳接收",
-  "solution": "【知识点梳理】\n· 4ASK 星座：一维四点 $a_i$（间隔 2d，$d=1$）；判决门限 $-2,0,+2$。\n· MASK 相干误符号率通式：$P_e=\\frac{M-1}{M}\\cdot2Q(\\frac{d}{σ})$，匹配接收 $σ=\\sqrt{N_0/2}$。\n【解题步骤】\n第1步：星座：$-3、-1、+1、+3$ 四点（沿 $f_1$ 轴等距）。\n第2步：框图：$r(t)\\times f_1(t)\\to\\int_0^{T_s}dt\\to$抽样→三电平判决（$-2,0,+2$）→符号输出。\n第3步：$P_e=\\frac{4-1}{4}\\times2Q\\left(\\frac{1}{\\sqrt{N_0/2}}\\right)=3Q\\left(\\sqrt{\\frac{2}{N_0}}\\right)$。\n【答案】如上。\n【易错提醒】边缘电平单向错、中间双向错 → 通式系数 $\\frac{M-1}{M}\\times2$。"
+  "solution": "【知识点梳理】\n· 4ASK 星座：一维四点 $a_i$（间隔 2d，$d=1$）；判决门限 $-2,0,+2$。\n· MASK 相干误符号率通式：$P_e=\\frac{M-1}{M}\\cdot2Q(\\frac{d}{σ})$，匹配接收 $σ=\\sqrt{\\frac{N_0}{2}}$。\n【解题步骤】\n第1步：星座：$-3、-1、+1、+3$ 四点（沿 $f_1$ 轴等距）。\n第2步：框图：$r(t)\\times f_1(t)\\to\\int_0^{T_s}dt\\to$抽样→三电平判决（$-2,0,+2$）→符号输出。\n第3步：$P_e=\\frac{4-1}{4}\\times2Q\\left(\\frac{1}{\\sqrt{\\frac{N_0}{2}}}\\right)=3Q\\left(\\sqrt{\\frac{2}{N_0}}\\right)$。\n【答案】如上。\n【易错提醒】边缘电平单向错、中间双向错 → 通式系数 $\\frac{M-1}{M}\\times2$。"
  },
  {
   "subject": "txyl",
@@ -21453,8 +21453,8 @@
   "type": "习题",
   "no": "4",
   "label": "【强化专题·专题15·4】",
-  "question_text": "在 AWGN 信道（噪声双边 $n_0/2$、均值为零）中传输三种等概信号波形：\n$s_1(t)=\\sqrt2\\cos 2\\pi f_c t$（$0\\le t\\le T$）；$s_2(t)=-s_3(t)=\\begin{cases}\\sqrt2\\cos 2\\pi f_c t & 0\\le t\\le T/2\\\\ -\\sqrt2\\cos 2\\pi f_c t & T/2\\le t\\le T\\end{cases}$。\n(1) 试确定信号空间的维度和一组合适的归一化正交基函数；\n(2) 试确定各波形对应的信号矢量并画出信号星座图；\n(3) 试根据 MAP 准则确定并画出最佳判决区域。",
-  "answer_text": "答案：(1) 维度 2：$f_1=\\sqrt{2/T}\\cos\\omega_ct$（全 T）、$f_2=\\sqrt{2/T}\\cos\\omega_ct$（前 T/2）−$\\sqrt{2/T}\\cos\\omega_ct$（后 T/2）（即半周期反转基）；\n(2) $s_1=(\\sqrt T,0)$、$s_2=(0,\\sqrt T)$、$s_3=(0,-\\sqrt T)$（等概等距三角星座）；\n(3) 判决区域=以三星座点为顶点、各边中垂线构成的 Voronoi 三角形及其外延（三区以 $\\pm30°$ 线分界）。",
+  "question_text": "在 AWGN 信道（噪声双边 $\\frac{n_0}{2}$、均值为零）中传输三种等概信号波形：\n$s_1(t)=\\sqrt2\\cos 2\\pi f_c t$（$0\\le t\\le T$）；$s_2(t)=-s_3(t)=\\begin{cases}\\sqrt2\\cos 2\\pi f_c t & 0\\le t\\le \\frac{T}{2}\\\\ -\\sqrt2\\cos 2\\pi f_c t & \\frac{T}{2}\\le t\\le T\\end{cases}$。\n(1) 试确定信号空间的维度和一组合适的归一化正交基函数；\n(2) 试确定各波形对应的信号矢量并画出信号星座图；\n(3) 试根据 MAP 准则确定并画出最佳判决区域。",
+  "answer_text": "答案：(1) 维度 2：$f_1=\\sqrt{\\frac{2}{T}}\\cos\\omega_ct$（全 T）、$f_2=\\sqrt{\\frac{2}{T}}\\cos\\omega_ct$（前 T/2）−$\\sqrt{\\frac{2}{T}}\\cos\\omega_ct$（后 T/2）（即半周期反转基）；\n(2) $s_1=(\\sqrt T,0)$、$s_2=(0,\\sqrt T)$、$s_3=(0,-\\sqrt T)$（等概等距三角星座）；\n(3) 判决区域=以三星座点为顶点、各边中垂线构成的 Voronoi 三角形及其外延（三区以 $\\pm30°$ 线分界）。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21488,14 +21488,14 @@
   "type": "习题",
   "no": "1",
   "label": "【强化专题·专题16·1】",
-  "question_text": "二进制等概通信系统中，“0”与“1”符号分别由两信号波形表示：$s_0(t)$：$-1$（$0\\le t<T_s/2$）、$+1$（$T_s/2\\le t<T_s$）；$s_1(t)$：$+1$、$-1$、$+1$（四段交替，每段 $T_s/4$）。信号受单边功率谱密度 $N_0$ 的零均值高斯白噪声干扰，接收端采用匹配滤波器最佳接收。\n(1) 画出匹配滤波器形式的最佳接收机结构；\n(2) 画出与 $s_0(t)$ 匹配的滤波器冲激响应；\n(3) 若信源发送 0 和 1 概率相等，写出最小符号差错概率的表达式。",
-  "answer_text": "答案：(1) 两支路：$r(t)$→$h_0(t)$→$T_s$ 抽样，$r(t)$→$h_1(t)$→$T_s$ 抽样→比较判决；(2) $h_0(t)=s_0(T_s-t)$（关于 $T_s/2$ 镜像的阶梯波形）；(3) $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_d}{4N_0}}\\right)$，$E_d=\\int(s_0-s_1)^2dt=4T_s$？——按两波形差能量代入（$s_0$ 与 $s_1$ 差为 ±2 电平方波，$E_d=4T_s$）：$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{T_s/N_0}\\right)$。",
+  "question_text": "二进制等概通信系统中，“0”与“1”符号分别由两信号波形表示：$s_0(t)$：$-1$（$0\\le t<\\frac{T_s}{2}$）、$+1$（$\\frac{T_s}{2}\\le t<T_s$）；$s_1(t)$：$+1$、$-1$、$+1$（四段交替，每段 $\\frac{T_s}{4}$）。信号受单边功率谱密度 $N_0$ 的零均值高斯白噪声干扰，接收端采用匹配滤波器最佳接收。\n(1) 画出匹配滤波器形式的最佳接收机结构；\n(2) 画出与 $s_0(t)$ 匹配的滤波器冲激响应；\n(3) 若信源发送 0 和 1 概率相等，写出最小符号差错概率的表达式。",
+  "answer_text": "答案：(1) 两支路：$r(t)$→$h_0(t)$→$T_s$ 抽样，$r(t)$→$h_1(t)$→$T_s$ 抽样→比较判决；(2) $h_0(t)=s_0(T_s-t)$（关于 $\\frac{T_s}{2}$ 镜像的阶梯波形）；(3) $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_d}{4N_0}}\\right)$，$E_d=\\int(s_0-s_1)^2dt=4T_s$？——按两波形差能量代入（$s_0$ 与 $s_1$ 差为 ±2 电平方波，$E_d=4T_s$）：$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{T_s}{N_0}}\\right)$。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "匹配滤波器设计与简化",
   "kp_sub": "二进制波形匹配滤波最佳接收",
-  "solution": "【知识点梳理】\n· 二维正交信号（两波形不共线）→ 两支路匹配滤波 $h_i(t)=s_i(T-t)$ + 比较判决。\n· 双极性差错概率通式 $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_d}{4N_0}}\\right)$，$E_d=\\int(s_0-s_1)^2dt$（差波形能量，$N_0$ 单边）。\n【解题步骤】\n第1步：结构：$r(t)$ 分别送 $h_0、h_1$，$t=T_s$ 抽样比较大小。\n第2步：$h_0(t)=s_0(T_s-t)$：阶梯波（$T_s/4$ 分段反序，$-1、+1$ 对称镜像）。\n第3步：$E_d=\\int(s_0-s_1)^2dt=4T_s$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{T_s}{N_0}}\\right)$。\n【答案】如上。\n【易错提醒】匹配滤波冲激响应是“镜像+延时”，不是原波形照搬。"
+  "solution": "【知识点梳理】\n· 二维正交信号（两波形不共线）→ 两支路匹配滤波 $h_i(t)=s_i(T-t)$ + 比较判决。\n· 双极性差错概率通式 $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_d}{4N_0}}\\right)$，$E_d=\\int(s_0-s_1)^2dt$（差波形能量，$N_0$ 单边）。\n【解题步骤】\n第1步：结构：$r(t)$ 分别送 $h_0、h_1$，$t=T_s$ 抽样比较大小。\n第2步：$h_0(t)=s_0(T_s-t)$：阶梯波（$\\frac{T_s}{4}$ 分段反序，$-1、+1$ 对称镜像）。\n第3步：$E_d=\\int(s_0-s_1)^2dt=4T_s$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{T_s}{N_0}}\\right)$。\n【答案】如上。\n【易错提醒】匹配滤波冲激响应是“镜像+延时”，不是原波形照搬。"
  },
  {
   "subject": "txyl",
@@ -21505,7 +21505,7 @@
   "type": "习题",
   "no": "2",
   "label": "【强化专题·专题16·2】",
-  "question_text": "某二进制调制系统在 $[0,T_b]$ 内等概发送 $s_1(t)=2\\cos\\frac{20\\pi t}{T_b}$ 和 $s_2(t)=\\sqrt2\\cos\\left(\\frac{22\\pi t}{T_b}+\\frac{\\pi}{4}\\right)$ 之一，信号受功率谱密度 $N_0/2$ 的白高斯噪声 $n_w(t)$ 干扰。\n(1) 画出匹配滤波器形式的最佳接收机结构；\n(2) 若该二进制信号等概发送，求平均误符号率。",
+  "question_text": "某二进制调制系统在 $[0,T_b]$ 内等概发送 $s_1(t)=2\\cos\\frac{20\\pi t}{T_b}$ 和 $s_2(t)=\\sqrt2\\cos\\left(\\frac{22\\pi t}{T_b}+\\frac{\\pi}{4}\\right)$ 之一，信号受功率谱密度 $\\frac{N_0}{2}$ 的白高斯噪声 $n_w(t)$ 干扰。\n(1) 画出匹配滤波器形式的最佳接收机结构；\n(2) 若该二进制信号等概发送，求平均误符号率。",
   "answer_text": "答案：(1) 二维正交信号→两支路匹配滤波 $h_1=h$ 对 $s_1$、$h_2$ 对 $s_2$，$t=T_b$ 抽样比较判决；(2) $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_1+E_2-2\\sqrt{E_1E_2}\\rho_{12}}{4n_0}}\\right)$：$E_1=\\frac{4}{2}T_b=2T_b$、$E_2=T_b$，$\\rho_{12}$ 由内积积分算出后代入。",
   "note": "",
   "status": "todo",
@@ -21522,14 +21522,14 @@
   "type": "习题",
   "no": "3",
   "label": "【强化专题·专题16·3】",
-  "question_text": "等概率二进制信号波形 $s_0(t)$（$-A$ on $(0,T/2)$、$+A$ on $(T/2,T)$）、$s_1(t)$（$+A$ on $(0,T/2)$、$-A$ on $(T/2,T)$），信道高斯白噪声双边功率谱 $n_0/2$。\n(1) 画出最佳接收框图；(2) 求该接收机的误码率；(3) 接收机可否简化？若可以，画出简化框图，并说明原理。",
-  "answer_text": "答案：(1) 两支路匹配滤波+比较；(2) $s_0=-s_1$（对极）→ $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_b/n_0}\\right)$，$E_b=A^2T$；\n(3) 可以：对极信号只需单支路对 $g(t)=s_1(t)$ 匹配（或积分清零），门限 0——对极时 $\\rho=-1$，$\\sqrt{E_1+E_2-2\\sqrt{E_1E_2}\\rho}=2\\sqrt{E_b}$ 最大、性能最好且结构最简。",
+  "question_text": "等概率二进制信号波形 $s_0(t)$（$-A$ on $(0,\\frac{T}{2})$、$+A$ on $(\\frac{T}{2},T)$）、$s_1(t)$（$+A$ on $(0,\\frac{T}{2})$、$-A$ on $(\\frac{T}{2},T)$），信道高斯白噪声双边功率谱 $\\frac{n_0}{2}$。\n(1) 画出最佳接收框图；(2) 求该接收机的误码率；(3) 接收机可否简化？若可以，画出简化框图，并说明原理。",
+  "answer_text": "答案：(1) 两支路匹配滤波+比较；(2) $s_0=-s_1$（对极）→ $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{n_0}}\\right)$，$E_b=A^2T$；\n(3) 可以：对极信号只需单支路对 $g(t)=s_1(t)$ 匹配（或积分清零），门限 0——对极时 $\\rho=-1$，$\\sqrt{E_1+E_2-2\\sqrt{E_1E_2}\\rho}=2\\sqrt{E_b}$ 最大、性能最好且结构最简。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "匹配滤波器设计与简化",
   "kp_sub": "对极波形匹配滤波及简化",
-  "solution": "【知识点梳理】\n· 对极信号 $s_0=-s_1$：$ρ=-1$，判决只用一条支路+零门限。\n【解题步骤】\n第1步：双支路匹配滤波+比较正确。\n第2步：$E_b=A^2T$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_b/N_0}\\right)$（双边 $n_0/2$ 口径：$\\frac12\\mathrm{erfc}(\\sqrt{E_b/n_0})$ 按题面噪声写法代入）。\n第3步：可简化：单支路对 $s_1$（或其差波形）匹配，门限 0——对极时差波形能量最大、结构最简。\n【答案】如上。\n【易错提醒】对极是所有二进制信号里抗噪声最优的（$ρ=-1$ 使 $d$ 最大）。"
+  "solution": "【知识点梳理】\n· 对极信号 $s_0=-s_1$：$ρ=-1$，判决只用一条支路+零门限。\n【解题步骤】\n第1步：双支路匹配滤波+比较正确。\n第2步：$E_b=A^2T$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{N_0}}\\right)$（双边 $\\frac{n_0}{2}$ 口径：$\\frac12\\mathrm{erfc}(\\sqrt{\\frac{E_b}{n_0}})$ 按题面噪声写法代入）。\n第3步：可简化：单支路对 $s_1$（或其差波形）匹配，门限 0——对极时差波形能量最大、结构最简。\n【答案】如上。\n【易错提醒】对极是所有二进制信号里抗噪声最优的（$ρ=-1$ 使 $d$ 最大）。"
  },
  {
   "subject": "txyl",
@@ -21539,14 +21539,14 @@
   "type": "习题",
   "no": "4",
   "label": "【强化专题·专题16·4】",
-  "question_text": "等概率二进制信号波形 $s_1(t)$（$+A$ on $(0,T/2)$）、$s_2(t)$（$+A$ on $(T/2,T)$），采用匹配滤波器最佳接收，信道噪声功率为 $n_0$。\n(1) 画出最佳接收框图；(2) 求该接收机的误码率；(3) 接收机可否简化？若可以，画出简化框图，并说明原理。",
-  "answer_text": "答案：(1) 两支路匹配滤波；(2) $s_1,s_2$ 正交（$\\rho=0$，等能量）：$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2n_0}}\\right)$，$E_b=A^2T/2$；\n(3) 可以：两信号能量相同且时域错开 → 简化为对差信号 $g(t)=s_1-s_2$ 的单匹配滤波（或积分清零+判决 $\\pm$），等效两支路之差。",
+  "question_text": "等概率二进制信号波形 $s_1(t)$（$+A$ on $(0,\\frac{T}{2})$）、$s_2(t)$（$+A$ on $(\\frac{T}{2},T)$），采用匹配滤波器最佳接收，信道噪声功率为 $n_0$。\n(1) 画出最佳接收框图；(2) 求该接收机的误码率；(3) 接收机可否简化？若可以，画出简化框图，并说明原理。",
+  "answer_text": "答案：(1) 两支路匹配滤波；(2) $s_1,s_2$ 正交（$\\rho=0$，等能量）：$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{E_b}{2n_0}}\\right)$，$E_b=\\frac{A^2T}{2}$；\n(3) 可以：两信号能量相同且时域错开 → 简化为对差信号 $g(t)=s_1-s_2$ 的单匹配滤波（或积分清零+判决 $\\pm$），等效两支路之差。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "匹配滤波器设计与简化",
   "kp_sub": "正交不重叠波形简化接收",
-  "solution": "【知识点梳理】\n· 时域错开的等能量正交信号：$ρ=0$，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{E_b/2n_0})$。\n· 简化原理：两支路之差可用一个“对差波形匹配”的滤波器等效。\n【解题步骤】\n第1步：双支路框图（$h_1$ 对 $s_1$、$h_2$ 对 $s_2$，$t=T$ 抽样比较）。\n第2步：$E_b=A^2T/2$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{A^2T}{4n_0}}\\right)$。\n第3步：简化为单支路：对 $g(t)=s_1(t)-s_2(t)$ 匹配（或积分清零：$\\int_0^{T/2}$ 与 $\\int_{T/2}^{T}$ 之差），门限 0。\n【答案】如上。"
+  "solution": "【知识点梳理】\n· 时域错开的等能量正交信号：$ρ=0$，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{E_b}{2n_0}})$。\n· 简化原理：两支路之差可用一个“对差波形匹配”的滤波器等效。\n【解题步骤】\n第1步：双支路框图（$h_1$ 对 $s_1$、$h_2$ 对 $s_2$，$t=T$ 抽样比较）。\n第2步：$E_b=\\frac{A^2T}{2}$ → $P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{A^2T}{4n_0}}\\right)$。\n第3步：简化为单支路：对 $g(t)=s_1(t)-s_2(t)$ 匹配（或积分清零：$\\int_0^{T/2}$ 与 $\\int_{T/2}^{T}$ 之差），门限 0。\n【答案】如上。"
  },
  {
   "subject": "txyl",
@@ -21556,8 +21556,8 @@
   "type": "习题",
   "no": "5",
   "label": "【强化专题·专题16·5】",
-  "question_text": "系统在 $[0,T_b]$ 内发送 $s_1(t)=g(t)$ 或 $s_2(t)=-g(t)$（$g(t)=+2$，$0\\le t\\le T_b$），叠加双边功率谱密度 $n_0/2$ 的白高斯噪声 $n_w(t)$，然后用一个对 $g(t)$ 匹配的滤波器 $h(t)$ 接收（已知 $h(t)$ 的能量 $E_h=1$），滤波器输出 $y(t)=\\pm a(t)+n(t)$。求：\n(1) 匹配滤波器的冲激响应 $h(t)$；(2) 画出 $a(t)$ 的波形；(3) 求 $n(t)$ 的功率、功率谱密度；(4) 求发送 $s_2(t)$ 条件下 $y(T_b)$ 的均值、方差、概率密度函数。",
-  "answer_text": "答案：(1) $h(t)=\\frac{g(T_b-t)}{\\sqrt{E_g}}\\cdot\\sqrt{E_h}$——按归一：$h(t)=1$（$0\\le t\\le T_b$）（$g=2$ 时 $\\frac{g(T_b-t)}{\\sqrt{E_g}}$，$E_g=4T_b$，配 $E_h=1$ 得高度 1）；\n(2) $a(t)=g*h$ 为三角形：$2t$（$0\\le t\\le T_b$）、$2(2T_b-t)$（$T_b\\le t\\le2T_b$）×比例系数；\n(3) $P_{PSD}=\\frac{n_0}{2}|H(f)|^2$，功率 $=\\frac{n_0}{2}E_h=\\frac{n_0}{2}$；\n(4) $y(T_b)\\sim N(-a(T_b),\\,n_0/2)$，$a(T_b)=4T_b$（按 $h$ 高 1、$g=2$：信号分量 $=\\int g h=4T_b$）。",
+  "question_text": "系统在 $[0,T_b]$ 内发送 $s_1(t)=g(t)$ 或 $s_2(t)=-g(t)$（$g(t)=+2$，$0\\le t\\le T_b$），叠加双边功率谱密度 $\\frac{n_0}{2}$ 的白高斯噪声 $n_w(t)$，然后用一个对 $g(t)$ 匹配的滤波器 $h(t)$ 接收（已知 $h(t)$ 的能量 $E_h=1$），滤波器输出 $y(t)=\\pm a(t)+n(t)$。求：\n(1) 匹配滤波器的冲激响应 $h(t)$；(2) 画出 $a(t)$ 的波形；(3) 求 $n(t)$ 的功率、功率谱密度；(4) 求发送 $s_2(t)$ 条件下 $y(T_b)$ 的均值、方差、概率密度函数。",
+  "answer_text": "答案：(1) $h(t)=\\frac{g(T_b-t)}{\\sqrt{E_g}}\\cdot\\sqrt{E_h}$——按归一：$h(t)=1$（$0\\le t\\le T_b$）（$g=2$ 时 $\\frac{g(T_b-t)}{\\sqrt{E_g}}$，$E_g=4T_b$，配 $E_h=1$ 得高度 1）；\n(2) $a(t)=g*h$ 为三角形：$2t$（$0\\le t\\le T_b$）、$2(2T_b-t)$（$T_b\\le t\\le2T_b$）×比例系数；\n(3) $P_{PSD}=\\frac{n_0}{2}|H(f)|^2$，功率 $=\\frac{n_0}{2}E_h=\\frac{n_0}{2}$；\n(4) $y(T_b)\\sim N(-a(T_b),\\,\\frac{n_0}{2})$，$a(T_b)=4T_b$（按 $h$ 高 1、$g=2$：信号分量 $=\\int g h=4T_b$）。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21573,7 +21573,7 @@
   "type": "习题",
   "no": "6",
   "label": "【强化专题·专题16·6】",
-  "question_text": "某基带传输系统在 $[0,T]$ 时间内以 1/3 的概率发送信号 $s_1(t)$（高度 1、宽 $T_s$ 的矩形脉冲），以 2/3 的概率发送信号 $s_2(t)=0$。信号叠加均值为零、双边功率谱密度 $n_0/2$ 的加性白高斯噪声后，用冲激响应为 $h(t)$ 的匹配滤波器进行最佳接收。试：(1) 写出发送信号的平均功率；(2) 写出匹配滤波器的冲激响应；(3) 求发送 $s_1(t)$ 条件下 y 的概率密度函数；(4) 求发送 $s_2(t)$ 条件下 y 的概率密度函数；(5) 求最佳判决门限 $V_T$。",
+  "question_text": "某基带传输系统在 $[0,T]$ 时间内以 1/3 的概率发送信号 $s_1(t)$（高度 1、宽 $T_s$ 的矩形脉冲），以 2/3 的概率发送信号 $s_2(t)=0$。信号叠加均值为零、双边功率谱密度 $\\frac{n_0}{2}$ 的加性白高斯噪声后，用冲激响应为 $h(t)$ 的匹配滤波器进行最佳接收。试：(1) 写出发送信号的平均功率；(2) 写出匹配滤波器的冲激响应；(3) 求发送 $s_1(t)$ 条件下 y 的概率密度函数；(4) 求发送 $s_2(t)$ 条件下 y 的概率密度函数；(5) 求最佳判决门限 $V_T$。",
   "answer_text": "答案：(1) $P=\\frac13\\cdot\\frac{T_s\\cdot1^2}{T}=\\frac{1}{3}$（占空比 1）；(2) $h(t)=1$（$0\\le t\\le T_s$）；(3) 发 $s_1$：$y\\sim N(E_s,\\,\\sigma^2)$，$E_s=T_s$，$\\sigma^2=\\frac{n_0T_s}{2}$；(4) 发 $s_2$：$y\\sim N(0,\\sigma^2)$；(5) MAP 门限 $V_T=\\frac{E_s}{2}+\\frac{\\sigma^2}{E_s}\\ln\\frac{P(s_2)}{P(s_1)}=\\frac{T_s}{2}+\\frac{n_0}{2}\\cdot\\frac{1}{T_s}\\ln2$（偏向 0 一侧，即门限上移）。",
   "note": "",
   "status": "todo",
@@ -21590,14 +21590,14 @@
   "type": "习题",
   "no": "7",
   "label": "【强化专题·专题16·7】",
-  "question_text": "某基带系统在 $[0,T_b]$ 内等概发送 +1 或 −1 两种电压，发送信号叠加双边功率谱密度 $n_0/2$ 的高斯白噪声后通过一个冲激响应为 $h(t)$ 的滤波器，在 $t=kT_b$ 时刻采样得到取样值 y。\n(1) 若 $h(t)$ 是匹配滤波器，试画出 $h(t)$ 的冲激响应，写出发送 +1 条件下 y 的均值、方差，写出输出误码率的表达式；\n(2) 若 $h(t)=1$（$0\\le t\\le2T_b$，其余为 0），判断 $h(t)$ 是否是匹配滤波器，并写出发送 +1 条件下 y 的均值、方差及误码率表达式。",
-  "answer_text": "答案：(1) $h(t)=1$（$0\\le t\\le T_b$）；$y\\sim N(T_b,\\frac{n_0T_b}{2})$；$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{T_b/n_0}\\right)$；\n(2) 不是——匹配滤波应为 $h(t)=s(T_b-t)$，窗长应为 $T_b$；$h(t)=1(0,2T_b)$ 时 $y\\sim N(T_b,\\frac{n_0\\cdot2T_b}{2}=n_0T_b)$：均值同但方差翻倍，$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{T_b/2n_0}\\right)$ 更差。",
+  "question_text": "某基带系统在 $[0,T_b]$ 内等概发送 +1 或 −1 两种电压，发送信号叠加双边功率谱密度 $\\frac{n_0}{2}$ 的高斯白噪声后通过一个冲激响应为 $h(t)$ 的滤波器，在 $t=kT_b$ 时刻采样得到取样值 y。\n(1) 若 $h(t)$ 是匹配滤波器，试画出 $h(t)$ 的冲激响应，写出发送 +1 条件下 y 的均值、方差，写出输出误码率的表达式；\n(2) 若 $h(t)=1$（$0\\le t\\le2T_b$，其余为 0），判断 $h(t)$ 是否是匹配滤波器，并写出发送 +1 条件下 y 的均值、方差及误码率表达式。",
+  "answer_text": "答案：(1) $h(t)=1$（$0\\le t\\le T_b$）；$y\\sim N(T_b,\\frac{n_0T_b}{2})$；$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{T_b}{n_0}}\\right)$；\n(2) 不是——匹配滤波应为 $h(t)=s(T_b-t)$，窗长应为 $T_b$；$h(t)=1(0,2T_b)$ 时 $y\\sim N(T_b,\\frac{n_0\\cdot2T_b}{2}=n_0T_b)$：均值同但方差翻倍，$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{\\frac{T_b}{2n_0}}\\right)$ 更差。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "匹配滤波器设计与简化",
   "kp_sub": "匹配滤波器判定（h 是否匹配）",
-  "solution": "【知识点梳理】\n· 等概双极性 + 匹配滤波：$h=1(0,T_b)$，$y\\sim N(\\pm T_b,\\frac{n_0T_b}{2})$，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{T_b/n_0})$。\n· 判定匹配滤波：$h(t)=k\\cdot s(T_b-t)$；窗长与波形时长一致才算匹配。\n【解题步骤】\n第1步：$h(t)=1(0,T_b)$；$μ=T_b$、$σ^2=\\frac{n_0T_b}{2}$、$P_e=\\frac12\\mathrm{erfc}(\\sqrt{T_b/n_0})$。\n第2步：$h(t)=1(0,2T_b)$：积分窗含一个无信号码元周期，$μ=T_b$ 不变但 $σ^2=n_0T_b$ 翻倍 → 不是匹配滤波器，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{T_b/2n_0})$ 更差。\n【答案】如上。\n【易错提醒】“均值一样、方差翻倍”——匹配滤波的优势全在噪声抑制上。"
+  "solution": "【知识点梳理】\n· 等概双极性 + 匹配滤波：$h=1(0,T_b)$，$y\\sim N(\\pm T_b,\\frac{n_0T_b}{2})$，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{T_b}{n_0}})$。\n· 判定匹配滤波：$h(t)=k\\cdot s(T_b-t)$；窗长与波形时长一致才算匹配。\n【解题步骤】\n第1步：$h(t)=1(0,T_b)$；$μ=T_b$、$σ^2=\\frac{n_0T_b}{2}$、$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{T_b}{n_0}})$。\n第2步：$h(t)=1(0,2T_b)$：积分窗含一个无信号码元周期，$μ=T_b$ 不变但 $σ^2=n_0T_b$ 翻倍 → 不是匹配滤波器，$P_e=\\frac12\\mathrm{erfc}(\\sqrt{\\frac{T_b}{2n_0}})$ 更差。\n【答案】如上。\n【易错提醒】“均值一样、方差翻倍”——匹配滤波的优势全在噪声抑制上。"
  },
  {
   "subject": "txyl",
@@ -21614,7 +21614,7 @@
   "level": "综合",
   "kp": "基带/频带系统设计",
   "kp_sub": "卷积码+16QAM 系统设计",
-  "solution": "【知识点梳理】\n· 设计链路：信道带宽 → 频带利用率 $\\eta=\\frac{\\log_2M}{1+\\alpha}$ → 符号速率 → 卷积码码率折算信源速率。\n· $M=16$ 选 16QAM；格雷映射相邻星座点仅 1 bit 差。\n【解题步骤】\n第1步：$\\alpha=0.25$：$\\eta=\\frac{4}{1.25}=3.2$ bit/s/Hz → 信道比特速率 $R_b=20M\\times3.2=64$Mbps。\n第2步：(2,1,4) 码率 $\\frac12$ → 信源速率 $=64/2=32$Mbps；$R_B=64M/4=16$MBaud。\n第3步：接收框图：BPF→相干解调（×cos/×sin）→LPF→匹配成形→多电平判决→并串→Viterbi 译码。\n【答案】信源最高 32Mbps；功率谱为中心 2GHz、滚降 $\\alpha=0.25$ 的谱；星座 (±1,±3)×(±1,±3) 格雷映射。\n【易错提醒】卷积码码率 $\\frac{k}{n}=\\frac12$——信道速率是信源速率的 2 倍，别倒过来。"
+  "solution": "【知识点梳理】\n· 设计链路：信道带宽 → 频带利用率 $\\eta=\\frac{\\log_2M}{1+\\alpha}$ → 符号速率 → 卷积码码率折算信源速率。\n· $M=16$ 选 16QAM；格雷映射相邻星座点仅 1 bit 差。\n【解题步骤】\n第1步：$\\alpha=0.25$：$\\eta=\\frac{4}{1.25}=3.2$ bit/s/Hz → 信道比特速率 $R_b=20M\\times3.2=64$Mbps。\n第2步：(2,1,4) 码率 $\\frac12$ → 信源速率 $=\\frac{64}{2}=32$Mbps；$R_B=\\frac{64M}{4}=16$MBaud。\n第3步：接收框图：BPF→相干解调（×cos/×sin）→LPF→匹配成形→多电平判决→并串→Viterbi 译码。\n【答案】信源最高 32Mbps；功率谱为中心 2GHz、滚降 $\\alpha=0.25$ 的谱；星座 (±1,±3)×(±1,±3) 格雷映射。\n【易错提醒】卷积码码率 $\\frac{k}{n}=\\frac12$——信道速率是信源速率的 2 倍，别倒过来。"
  },
  {
   "subject": "txyl",
@@ -21625,7 +21625,7 @@
   "no": "2",
   "label": "【强化专题·专题17·2】",
   "question_text": "已知带通信道的频带范围是 100MHz～110MHz，欲通过此信道传输 32Mbps 的数据，试给出系统设计，包括确定调制进制数、符号速率、滚降系数，画出调制、解调框图。",
-  "answer_text": "答案：$B=10$MHz → 所需 $\\eta=3.2$ bit/s.Hz；选 16QAM（$\\log_216=4$）：$1+\\alpha=\\frac{4}{3.2}=1.25$ → $\\alpha=0.25$；$R_B=32M/4=8$MBaud；框图：发端串并→两路 2-4 电平变换→成形（$\\alpha=0.25$）→×cos/×sin→相加→BPF；收端 BPF→相干解调→LPF→判决→并串。",
+  "answer_text": "答案：$B=10$MHz → 所需 $\\eta=3.2$ bit/s.Hz；选 16QAM（$\\log_216=4$）：$1+\\alpha=\\frac{4}{3.2}=1.25$ → $\\alpha=0.25$；$R_B=\\frac{32M}{4}=8$MBaud；框图：发端串并→两路 2-4 电平变换→成形（$\\alpha=0.25$）→×cos/×sin→相加→BPF；收端 BPF→相干解调→LPF→判决→并串。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21658,8 +21658,8 @@
   "type": "习题",
   "no": "1",
   "label": "【强化专题·专题18·1】",
-  "question_text": "某数字基带通信系统传输独立等概的数据 0、1，对应的发送脉冲是 $\\pm g(t)$，$g(t)=+1$（$0\\le t\\le T/2$）、$1/2$（$T/2\\le t\\le T$）。经过信道时叠加单边功率谱密度为 $N_0$ 的白高斯噪声，$r(t)=\\pm g(t)+n_w(t)$。接收端将 $r(t)$ 通过冲激响应为 $h(t)$ 的滤波器后在 $t_0$ 时刻采样判决，采样值 $y=\\pm A+Z$（A 是信号分量、Z 是噪声分量），$h(t)$ 能量为 1 且为因果滤波器。\n(1) 求 $g(t)$ 的能量 $E_g$；\n(2) 求 Z 的均值、方差及概率密度函数；\n(3) 给定 A 写出最佳判决门限，并推导出平均错误概率；\n(4) 给出能使采样点信噪比最大的 $h(t)$（能量仍为 1），并画出波形。",
-  "answer_text": "答案：(1) $E_g=\\int_0^{T/2}1+\\int_{T/2}^{T}\\frac14=T/2+T/8=\\frac{5T}{8}$；\n(2) $Z\\sim N(0,\\frac{N_0}{2}E_h=N_0/2)$，$f(z)=\\frac{1}{\\sqrt{\\pi N_0}}e^{-z^2/N_0}$；\n(3) 等概门限 0，$P_e=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{2}\\sigma}\\right)=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{N_0}}\\right)$；\n(4) 最大信噪比→匹配滤波：$h(t)=g(T-t)/\\sqrt{E_g}$（镜像归一化，因果满足）。",
+  "question_text": "某数字基带通信系统传输独立等概的数据 0、1，对应的发送脉冲是 $\\pm g(t)$，$g(t)=+1$（$0\\le t\\le \\frac{T}{2}$）、$\\frac{1}{2}$（$\\frac{T}{2}\\le t\\le T$）。经过信道时叠加单边功率谱密度为 $N_0$ 的白高斯噪声，$r(t)=\\pm g(t)+n_w(t)$。接收端将 $r(t)$ 通过冲激响应为 $h(t)$ 的滤波器后在 $t_0$ 时刻采样判决，采样值 $y=\\pm A+Z$（A 是信号分量、Z 是噪声分量），$h(t)$ 能量为 1 且为因果滤波器。\n(1) 求 $g(t)$ 的能量 $E_g$；\n(2) 求 Z 的均值、方差及概率密度函数；\n(3) 给定 A 写出最佳判决门限，并推导出平均错误概率；\n(4) 给出能使采样点信噪比最大的 $h(t)$（能量仍为 1），并画出波形。",
+  "answer_text": "答案：(1) $E_g=\\int_0^{T/2}1+\\int_{T/2}^{T}\\frac14=\\frac{T}{2}+\\frac{T}{8}=\\frac{5T}{8}$；\n(2) $Z\\sim N(0,\\frac{N_0}{2}E_h=\\frac{N_0}{2})$，$f(z)=\\frac{1}{\\sqrt{\\pi N_0}}e^{-z^2/N_0}$；\n(3) 等概门限 0，$P_e=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{2}\\sigma}\\right)=\\frac12\\mathrm{erfc}\\left(\\frac{A}{\\sqrt{N_0}}\\right)$；\n(4) 最大信噪比→匹配滤波：$h(t)=g(T-t)/\\sqrt{E_g}$（镜像归一化，因果满足）。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21675,8 +21675,8 @@
   "type": "习题",
   "no": "2",
   "label": "【强化专题·专题18·2】",
-  "question_text": "某二进制通信系统以独立等概方式发送归零脉冲 $s_1(t)=1$（$0\\le t\\le T_s/2$）或 $s_2(t)=-s_1(t)$（$T_s$ 为码元间隔）。发送脉冲经过传递函数为 $C(f)$ 的信道后叠加了双边功率谱密度 $N_0/2$ 的高斯白噪声，再通过一个匹配滤波器后进行取样判决。信道结构：输入直路与“延迟 $T_s/2$、乘 0.5”的支路相加（即 $C(f)=1+0.5e^{-j\\pi fT_s}$）。试分析该系统的匹配滤波接收方案与误码率。",
-  "answer_text": "突破口：匹配滤波器应与 $G_T(f)C(f)$ 整体匹配（即对 $g(t)+0.5g(t-T_s/2)$ 匹配），而不是仅对 $g(t)$。\n答案：等效发送波形 $g'(t)=g+0.5g(\\cdot-T_s/2)$；对 $g'$ 匹配滤波后抽样值 $\\pm E_g'$，噪声方差 $\\frac{N_0E_g'}{2}$；$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_g'/N_0}\\right)$——若只对 $g(t)$ 匹配，多径分量成为 ISI，性能恶化。",
+  "question_text": "某二进制通信系统以独立等概方式发送归零脉冲 $s_1(t)=1$（$0\\le t\\le \\frac{T_s}{2}$）或 $s_2(t)=-s_1(t)$（$T_s$ 为码元间隔）。发送脉冲经过传递函数为 $C(f)$ 的信道后叠加了双边功率谱密度 $\\frac{N_0}{2}$ 的高斯白噪声，再通过一个匹配滤波器后进行取样判决。信道结构：输入直路与“延迟 $\\frac{T_s}{2}$、乘 0.5”的支路相加（即 $C(f)=1+0.5e^{-j\\pi fT_s}$）。试分析该系统的匹配滤波接收方案与误码率。",
+  "answer_text": "突破口：匹配滤波器应与 $G_T(f)C(f)$ 整体匹配（即对 $g(t)+0.5g(t-\\frac{T_s}{2})$ 匹配），而不是仅对 $g(t)$。\n答案：等效发送波形 $g'(t)=g+0.5g(\\cdot-\\frac{T_s}{2})$；对 $g'$ 匹配滤波后抽样值 $\\pm E_g'$，噪声方差 $\\frac{N_0E_g'}{2}$；$P_e=\\frac12\\mathrm{erfc}\\left(\\sqrt{E_g'/N_0}\\right)$——若只对 $g(t)$ 匹配，多径分量成为 ISI，性能恶化。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21693,7 +21693,7 @@
   "no": "1",
   "label": "【强化专题·专题19·1】",
   "question_text": "10 路带宽为 5kHz 的模拟基带信号数字化，然后进行 TDM-PCM 时分复用方式传输，采用 256 级均匀量化编码。\n(1) 试求出该时分复用系统的帧长、时隙宽度以及码元宽度；\n(2) 求信号的传码率；(3) 求无码间串扰时所需最小系统带宽；(4) 求时分复用后的信号第一零点带宽。",
-  "answer_text": "答案：$f_s=10$kHz、$N=10$、$n=8$。(1) 帧长 $T_s=1/f_s=0.1$ms；时隙 $T_l=T_s/10=10\\mu$s；码元宽度 $T_B=T_l/8=1.25\\mu$s；(2) $R_B=1/T_B=800$kBaud；(3) 最小带宽 $B=R_B/2=400$kHz；(4) 矩形 NRZ 第一零点带宽 $=R_B=800$ kHz。",
+  "answer_text": "答案：$f_s=10$kHz、$N=10$、$n=8$。(1) 帧长 $T_s=\\frac{1}{f_s}=0.1$ms；时隙 $T_l=\\frac{T_s}{10}=10\\mu$s；码元宽度 $T_B=\\frac{T_l}{8}=1.25\\mu$s；(2) $R_B=\\frac{1}{T_B}=800$kBaud；(3) 最小带宽 $B=\\frac{R_B}{2}=400$kHz；(4) 矩形 NRZ 第一零点带宽 $=R_B=800$ kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21710,7 +21710,7 @@
   "no": "2",
   "label": "【强化专题·专题19·2】",
   "question_text": "有 6 路独立的信源，其频带宽度分别为 W、W、2W、3W、3W Hz（5 路列出，第 6 路按 W 处理，以原题为准）。若采用时分复用方式进行传输，每路信源均采用 8 位对数 PCM 编码，码元波形为非归零矩形脉冲。\n(1) 设计该系统的帧结构和总时隙数；(2) 求帧长和每个时隙的宽度；(3) 求最小信道的带宽。",
-  "answer_text": "突破口：各路抽样率 $f_{si}=2f_{mi}$ 不同 → 时隙数之比=抽样率之比；同一路信号间隔必须小于最大抽样间隔且恒定。\n答案：按 $f_s$ 之比 1:1:2:3:3(:1) 分配时隙（如各配 1,1,2,3,3 个基础时隙单元，总时隙=帧内单元数×8bit）；帧长=最大抽样间隔 $=1/(2W)$；时隙宽=帧长/总时隙数；最小带宽 $B=R_B/2$。",
+  "answer_text": "突破口：各路抽样率 $f_{si}=2f_{mi}$ 不同 → 时隙数之比=抽样率之比；同一路信号间隔必须小于最大抽样间隔且恒定。\n答案：按 $f_s$ 之比 1:1:2:3:3(:1) 分配时隙（如各配 1,1,2,3,3 个基础时隙单元，总时隙=帧内单元数×8bit）；帧长=最大抽样间隔 $=1/(2W)$；时隙宽=帧长/总时隙数；最小带宽 $B=\\frac{R_B}{2}$。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21727,13 +21727,13 @@
   "no": "1",
   "label": "【强化专题·专题20·1】",
   "question_text": "对于均匀分布、频带受限于 $[0,f_h]$ 的模拟信号 $m(t)$ 进行抽样，16 级均匀量化、编码和 8PAM 调制，并通过滚降因子 $\\alpha=0.6$、截止频率为 4kHz 的升余弦滚降基带成形滤波器传输。\n(1) 求量化器输出信噪比；\n(2) 求该基带系统最大无符号间干扰传输的比特速率；\n(3) 求该系统允许通过的模拟信号 $m(t)$ 的最高频率分量 $f_h$。",
-  "answer_text": "答案：(1) $S/N=M^2=256$（24dB）；(2) $\\eta=\\frac{2\\log_28}{1+0.6}=\\frac{6}{1.6}=3.75$ bit/s.Hz → $R_b=4k\\times3.75=15$kbps；(3) $n=\\log_216=4$、$f_s=R_b/4=3.75$kHz → $f_h=f_s/2=1.875$ kHz。",
+  "answer_text": "答案：(1) $\\frac{S}{N}=M^2=256$（24dB）；(2) $\\eta=\\frac{2\\log_28}{1+0.6}=\\frac{6}{1.6}=3.75$ bit/s.Hz → $R_b=4k\\times3.75=15$kbps；(3) $n=\\log_216=4$、$f_s=\\frac{R_b}{4}=3.75$kHz → $f_h=\\frac{f_s}{2}=1.875$ kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "PCM/TDM/无ISI综合",
   "kp_sub": "量化+8PAM 基带传输综合",
-  "solution": "【知识点梳理】\n· 均匀量化（匹配）信噪比 $=M^2$；基带滚降 $\\eta=\\frac{2\\log_2M}{1+\\alpha}$。\n· 反推 $f_h$：$R_b=f_s\\times n$，$f_s=2f_h$。\n【解题步骤】\n第1步：$S/N=16^2=256$（24dB）。\n第2步：8PAM：$\\eta=\\frac{2\\times3}{1.6}=3.75$ bit/s/Hz → $R_b=4k\\times3.75=15$ kbps。\n第3步：$n=\\log_216=4$ → $f_s=\\frac{15k}{4}=3.75$kHz → $f_h=1.875$ kHz。\n【答案】256（24dB）；15 kbps；1.875 kHz。\n【易错提醒】8PAM 每符号 3bit；抽样率从“比特速率÷每样值比特数”反推。"
+  "solution": "【知识点梳理】\n· 均匀量化（匹配）信噪比 $=M^2$；基带滚降 $\\eta=\\frac{2\\log_2M}{1+\\alpha}$。\n· 反推 $f_h$：$R_b=f_s\\times n$，$f_s=2f_h$。\n【解题步骤】\n第1步：$\\frac{S}{N}=16^2=256$（24dB）。\n第2步：8PAM：$\\eta=\\frac{2\\times3}{1.6}=3.75$ bit/s/Hz → $R_b=4k\\times3.75=15$ kbps。\n第3步：$n=\\log_216=4$ → $f_s=\\frac{15k}{4}=3.75$kHz → $f_h=1.875$ kHz。\n【答案】256（24dB）；15 kbps；1.875 kHz。\n【易错提醒】8PAM 每符号 3bit；抽样率从“比特速率÷每样值比特数”反推。"
  },
  {
   "subject": "txyl",
@@ -21744,7 +21744,7 @@
   "no": "2",
   "label": "【强化专题·专题20·2】",
   "question_text": "将一个均匀分布的随机模拟信号进行采样、均匀量化，再编码为二进制 PCM 信号，其量化信噪比为 42.1442dB。对于每个抽样值所对应的 PCM 码字，其结尾加一比特的同步脉冲，然后再用具有升余弦频谱的四元 PAM 系统发送，升余弦滚降因子是 $\\alpha=0.5$，传输信道的带宽是 12kHz。\n(1) 求出信道中传输的符号速率 $R_s$；\n(2) 该模拟信号的最高频率分量 $f_H$ 是多少？",
-  "answer_text": "答案：(1) $S/N=2^{2n}=10^{42.1442/10}$ → $2n=14$（$2^{14}=16384$，10lg=42.14dB）→ $n=7$；每样值传 $7+1=8$bit；4 元 PAM 每符号 2bit → 符号率 $=\\frac{8f_s}{2}=4f_s$；$\\eta=\\frac{2\\log_24}{1.5}=\\frac{4}{1.5}=\\frac83$ bit/s.Hz → $R_b=12k\\times\\frac83=32$kbps → $R_B=16$kBaud；(2) $f_s=4$kHz → $f_H=2$kHz。",
+  "answer_text": "答案：(1) $\\frac{S}{N}=2^{2n}=10^{42.1442/10}$ → $2n=14$（$2^{14}=16384$，10lg=42.14dB）→ $n=7$；每样值传 $7+1=8$bit；4 元 PAM 每符号 2bit → 符号率 $=\\frac{8f_s}{2}=4f_s$；$\\eta=\\frac{2\\log_24}{1.5}=\\frac{4}{1.5}=\\frac83$ bit/s.Hz → $R_b=12k\\times\\frac83=32$kbps → $R_B=16$kBaud；(2) $f_s=4$kHz → $f_H=2$kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21760,14 +21760,14 @@
   "type": "习题",
   "no": "3",
   "label": "【强化专题·专题20·3】",
-  "question_text": "有 12 路模拟信号，其最高频率分量均为 $f_H$。分别对这 12 路信号按奈奎斯特速率采样，然后进行 A 律十三折线 PCM 编码（8bit），再将 12 路 PCM 输出数据时分复用为一路后通过限带信道传输。假设信道传输采用 M 进制，其基带脉冲成形采用 $\\alpha=2/3$ 的根升余弦滚降，接收端采样点无码间干扰。\n(1) 写出信道传输的总数据速率 $R_b$ 与 $f_H$ 的关系式；\n(2) 若信道的频带范围是 0～480kHz，传输方式为 4PAM，求最大可允许的 $f_H$；\n(3) 若信道的频带范围是 2000～2480kHz，传输方式为 8PSK，求最大可允许的 $f_H$。",
-  "answer_text": "答案：(1) $R_b=12\\times2f_H\\times8=192f_H$；(2) 基带 $\\eta=\\frac{2\\log_24}{1+2/3}=\\frac{4}{5/3}=2.4$ bit/s.Hz → $R_b=480k\\times2.4=1152$kbps → $f_H=6$kHz；(3) 频带 $\\eta=\\frac{\\log_28}{5/3}=1.8$ → $R_b=480k\\times1.8=864$kbps → $f_H=4.5$ kHz。",
+  "question_text": "有 12 路模拟信号，其最高频率分量均为 $f_H$。分别对这 12 路信号按奈奎斯特速率采样，然后进行 A 律十三折线 PCM 编码（8bit），再将 12 路 PCM 输出数据时分复用为一路后通过限带信道传输。假设信道传输采用 M 进制，其基带脉冲成形采用 $\\alpha=\\frac{2}{3}$ 的根升余弦滚降，接收端采样点无码间干扰。\n(1) 写出信道传输的总数据速率 $R_b$ 与 $f_H$ 的关系式；\n(2) 若信道的频带范围是 0～480kHz，传输方式为 4PAM，求最大可允许的 $f_H$；\n(3) 若信道的频带范围是 2000～2480kHz，传输方式为 8PSK，求最大可允许的 $f_H$。",
+  "answer_text": "答案：(1) $R_b=12\\times2f_H\\times8=192f_H$；(2) 基带 $\\eta=\\frac{2\\log_24}{1+\\frac{2}{3}}=\\frac{12}{5}=2.4$ bit/s.Hz → $R_b=480k\\times2.4=1152$kbps → $f_H=6$kHz；(3) 频带 $\\eta=\\frac{\\log_28}{\\frac{5}{3}}=1.8$ → $R_b=480k\\times1.8=864$kbps → $f_H=4.5$ kHz。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "PCM/TDM/无ISI综合",
   "kp_sub": "12 路 PCM+根升余弦信道容量分配",
-  "solution": "【知识点梳理】\n· 总速率 $R_b=$路数×抽样率×每样值 bit；A 律 PCM 固定 8bit。\n· 根升余弦：基带用 $\\frac{2\\log_2M}{1+\\alpha}$、频带用 $\\frac{\\log_2M}{1+\\alpha}$（PSK 无基带口径时用频带式）。\n【解题步骤】\n第1步：$R_b=12\\times2f_H\\times8=192f_H$。\n第2步：4PAM 基带：$\\eta=\\frac{4}{5/3}=2.4$ → $R_b=1152$kbps → $f_H=6$ kHz。\n第3步：8PSK 频带：$\\eta=\\frac{3}{5/3}=1.8$ → $R_b=480k\\times1.8=864$kbps → $f_H=4.5$ kHz。\n【答案】如上。\n【易错提醒】频带范围 2000~2480kHz 带宽是 480kHz（不是 2480kHz）。"
+  "solution": "【知识点梳理】\n· 总速率 $R_b=$路数×抽样率×每样值 bit；A 律 PCM 固定 8bit。\n· 根升余弦：基带用 $\\frac{2\\log_2M}{1+\\alpha}$、频带用 $\\frac{\\log_2M}{1+\\alpha}$（PSK 无基带口径时用频带式）。\n【解题步骤】\n第1步：$R_b=12\\times2f_H\\times8=192f_H$。\n第2步：4PAM 基带：$\\eta=\\frac{12}{5}=2.4$ → $R_b=1152$kbps → $f_H=6$ kHz。\n第3步：8PSK 频带：$\\eta=\\frac{3}{\\frac{5}{3}}=1.8$ → $R_b=480k\\times1.8=864$kbps → $f_H=4.5$ kHz。\n【答案】如上。\n【易错提醒】频带范围 2000~2480kHz 带宽是 480kHz（不是 2480kHz）。"
  },
  {
   "subject": "txyl",
@@ -21796,7 +21796,7 @@
   "no": "5",
   "label": "【强化专题·专题20·5】",
   "question_text": "下图中，两路模拟信号 $m_1(t)$、$m_2(t)$ 分别经过理想奈奎斯特采样、A 律十三折线编码，然后时分复用为一路，再经过 (15,7) 循环码编码、64QAM 调制后送入无线信道传输。已知 $m_1(t)$ 是最高频率为 4kHz 的模拟基带信号，$m_2(t)$ 是通带为 3.5kHz～6kHz 的带通信号，64QAM 的升余弦滚降系数为 1/4。试：\n(1) 写出两路模拟信号的采样率；\n(2) 写出图中 A、B、C、D 处的比特速率，E 处的符号速率；\n(3) 画出 64QAM 的调制解调框图，画出 E 点的单边功率谱密度图。",
-  "answer_text": "答案：(1) $m_1$：$f_s=8$kHz；$m_2$（带通 3.5~6kHz）：$f_s=2\\times6=12$kHz；(2) A=64kbps、B=96kbps（A 律 8bit）、C=160kbps、D=$160\\times\\frac{15}{7}\\approx342.9$kbps、E=$342.9/6\\approx57.1$kBaud；(3) 框图：串并→两路 √8→成形→×cos/×sin→相加；收端反之；E 点单边谱：中心 $f_c$、滚降 $\\alpha=1/4$ 主瓣宽 $2R_B$。",
+  "answer_text": "答案：(1) $m_1$：$f_s=8$kHz；$m_2$（带通 3.5~6kHz）：$f_s=2\\times6=12$kHz；(2) A=64kbps、B=96kbps（A 律 8bit）、C=160kbps、D=$160\\times\\frac{15}{7}\\approx342.9$kbps、E=$\\frac{342.9}{6}\\approx57.1$kBaud；(3) 框图：串并→两路 √8→成形→×cos/×sin→相加；收端反之；E 点单边谱：中心 $f_c$、滚降 $\\alpha=\\frac{1}{4}$ 主瓣宽 $2R_B$。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21848,7 +21848,7 @@
   "no": "1",
   "label": "【强化专题·专题22·1】",
   "question_text": "某 16 级均匀量化器的设计输入范围是 −16V～16V，其量化间隔为____。若输入信号在 −16V～16V 内均匀分布，则量化信噪比为____。若输入信号在 −8V～8V 均匀分布，量化器不变，则量化信噪比是____。",
-  "answer_text": "答案：间隔 $\\Delta V=\\frac{32}{16}=2$V；匹配时 $S/N=M^2=256$（24dB）；欠载时有效级数 $M_1=8$ → $S/N=64$（18dB）。",
+  "answer_text": "答案：间隔 $\\Delta V=\\frac{32}{16}=2$V；匹配时 $\\frac{S}{N}=M^2=256$（24dB）；欠载时有效级数 $M_1=8$ → $\\frac{S}{N}=64$（18dB）。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21864,8 +21864,8 @@
   "type": "习题",
   "no": "2",
   "label": "【强化专题·专题22·2】",
-  "question_text": "将 x 通过一个 M=3 的量化器，已知 x 的概率密度函数 $p(x)=\\frac{1}{\\sqrt\\pi}e^{-x^2}$，三个量化区间是 $I_1=(-\\infty,-1)$、$I_2=(-1,1)$、$I_3=(1,\\infty)$，三个量化电平是 $x_{q1}=-2,x_{q2}=0,x_{q3}=2$。\n(1) 求这三个电平各自出现的概率；\n(2) 求量化噪声功率 $N_q$ 和量化信噪比 $S/N_q$。",
-  "answer_text": "答案：(1) $P_1=P_3=\\frac12\\mathrm{erfc}(1)$，$P_2=1-2P_1$；(2) $N_q=\\sum\\int_{I_k}(x-y_k)^2p(x)dx$（高斯 PDF 分段积分，利用对称性只算正半轴），$S=\\int x^2p(x)dx=\\frac12$（方差），$S/N_q$ 按积分值求比。",
+  "question_text": "将 x 通过一个 M=3 的量化器，已知 x 的概率密度函数 $p(x)=\\frac{1}{\\sqrt\\pi}e^{-x^2}$，三个量化区间是 $I_1=(-\\infty,-1)$、$I_2=(-1,1)$、$I_3=(1,\\infty)$，三个量化电平是 $x_{q1}=-2,x_{q2}=0,x_{q3}=2$。\n(1) 求这三个电平各自出现的概率；\n(2) 求量化噪声功率 $N_q$ 和量化信噪比 $\\frac{S}{N_q}$。",
+  "answer_text": "答案：(1) $P_1=P_3=\\frac12\\mathrm{erfc}(1)$，$P_2=1-2P_1$；(2) $N_q=\\sum\\int_{I_k}(x-y_k)^2p(x)dx$（高斯 PDF 分段积分，利用对称性只算正半轴），$S=\\int x^2p(x)dx=\\frac12$（方差），$\\frac{S}{N_q}$ 按积分值求比。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21882,7 +21882,7 @@
   "no": "3",
   "label": "【强化专题·专题22·3】",
   "question_text": "模拟信号的采样值 X 在区间 [0,4] 内均匀分布，量化 Y 与输入 X 的关系为：$Y=0.25$（$0\\le X<0.5$）、$0.75$（$0.5\\le X<1$）、$1.5$（$1\\le X<2$）、$3$（$2\\le X<4$）。试：\n(1) 写出 Y 各可能取值的出现概率、Y 的熵；\n(2) 求出量化器输入功率 $E[X^2]$、输出功率 $E[Y^2]$，证明 $E[XY]=E[Y^2]$，并求量化噪声功率 $E[(Y-X)^2]$。",
-  "answer_text": "答案：(1) $P=1/8,1/8,1/4,1/2$；$H(Y)=\\frac18\\log_28\\times2+\\frac14\\log_24+\\frac12\\log_22=\\frac34+\\frac12+\\frac12=1.75$ bit；\n(2) $E[X^2]=\\frac{16}{3}$、$E[Y^2]=\\frac{1}{16}\\cdot\\frac{1}{16}+\\frac{1}{8}\\cdot\\frac{9}{16}+\\frac14\\cdot2.25+\\frac12\\cdot9=5.29$ 量级；$E[XY]=\\sum y_k\\int_{I_k}x p(x)dx=\\sum y_k\\cdot E[Y_{I_k}]P_k$——分层内均值×电平恰好等于 $y_k^2P_k$（每层 x 均值=y_k/2? 需逐层验证），$N_q=E[Y^2]-E[XY]+E[X^2]-E[XY]$ 按定义式算。",
+  "answer_text": "答案：(1) $P=\\frac{1}{8},\\frac{1}{8},\\frac{1}{4},\\frac{1}{2}$；$H(Y)=\\frac18\\log_28\\times2+\\frac14\\log_24+\\frac12\\log_22=\\frac34+\\frac12+\\frac12=1.75$ bit；\n(2) $E[X^2]=\\frac{16}{3}$、$E[Y^2]=\\frac{1}{16}\\cdot\\frac{1}{16}+\\frac{1}{8}\\cdot\\frac{9}{16}+\\frac14\\cdot2.25+\\frac12\\cdot9=5.29$ 量级；$E[XY]=\\sum y_k\\int_{I_k}x p(x)dx=\\sum y_k\\cdot E[Y_{I_k}]P_k$——分层内均值×电平恰好等于 $y_k^2P_k$（每层 x 均值=y_k/2? 需逐层验证），$N_q=E[Y^2]-E[XY]+E[X^2]-E[XY]$ 按定义式算。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21905,7 +21905,7 @@
   "level": "综合",
   "kp": "抽样信号的量化",
   "kp_sub": "分段均匀 PDF 量化器指标",
-  "solution": "【知识点梳理】\n· 分段均匀 PDF 分层积分；质心不成立时 $N_q=S+S_q-2E[XY]\\neq S-S_q$。\n【解题步骤】\n第1步：$S=2\\left[\\frac{8}{24}+\\frac{56}{36}+\\frac{152}{72}\\right]=8$。\n第2步：$P(Y=\\pm4)=\\frac14$（各）、$P(Y=0)=\\frac12$；$S_q=16\\times\\frac12=8$。\n第3步：$E[XY]=2\\left[4\\int_2^4\\frac{x}{12}dx+4\\int_4^6\\frac{x}{24}dx\\right]=2\\left[2+\\frac53\\right]=\\frac{22}{3}$。\n第4步：$ρ=\\frac{22/3}{\\sqrt{8\\times8}}=\\frac{11}{12}\\approx0.917$；$N_q=8+8-2\\times\\frac{22}{3}=\\frac43$。\n【答案】$S=8$；$S_q=8$、$ρ\\approx0.917$；$N_q=\\frac43$。\n【易错提醒】本题电平 ±4 不是层的质心 → $N_q$ 要用完整公式，不能偷懒 $S-S_q$。"
+  "solution": "【知识点梳理】\n· 分段均匀 PDF 分层积分；质心不成立时 $N_q=S+S_q-2E[XY]\\neq S-S_q$。\n【解题步骤】\n第1步：$S=2\\left[\\frac{8}{24}+\\frac{56}{36}+\\frac{152}{72}\\right]=8$。\n第2步：$P(Y=\\pm4)=\\frac14$（各）、$P(Y=0)=\\frac12$；$S_q=16\\times\\frac12=8$。\n第3步：$E[XY]=2\\left[4\\int_2^4\\frac{x}{12}dx+4\\int_4^6\\frac{x}{24}dx\\right]=2\\left[2+\\frac53\\right]=\\frac{22}{3}$。\n第4步：$ρ=\\frac{11}{12}=\\frac{11}{12}\\approx0.917$；$N_q=8+8-2\\times\\frac{22}{3}=\\frac43$。\n【答案】$S=8$；$S_q=8$、$ρ\\approx0.917$；$N_q=\\frac43$。\n【易错提醒】本题电平 ±4 不是层的质心 → $N_q$ 要用完整公式，不能偷懒 $S-S_q$。"
  },
  {
   "subject": "txyl",
@@ -21950,7 +21950,7 @@
   "no": "7",
   "label": "【强化专题·专题22·7】",
   "question_text": "如下图 X 的概率密度函数 $f_X(x)=\\frac{a/\\ln(1+a)}{1+ax}$（$0<x<1$，a 为常数），X 先通过非线性变换 $Y=g(X)=\\frac{\\ln(1+ax)}{\\ln(1+a)}$，然后对 Y 进行四电平均匀量化成为 $Y_q$，接收端通过反变换得到 X 的量化值 $X_q=g^{-1}(Y_q)$。\n(1) 求 Y 的概率密度函数 $f_Y(y)$；\n(2) 求 Y 的平均功率 $E(Y^2)$ 以及量化后的量化噪声功率 $N_{Y_q}=E[(Y-Y_q)^2]$；\n(3) 从 X 到 X_q 形成了一种四电平的非均匀量化，若 $a=1$，试写出此非均匀量化的 5 个量化边界（分层电平）。",
-  "answer_text": "答案：(1) 单调变换：$x=\\frac{e^{y\\ln(1+a)}-1}{a}$，$f_Y(y)=f_X(x(y))\\cdot\\frac{dx}{dy}=\\frac{a/\\ln(1+a)}{1+ax}\\cdot\\frac{\\ln(1+a)}{a}e^{y\\ln(1+a)}=1$（$0\\le y\\le1$）——变换后 Y 均匀分布！\n(2) $E(Y^2)=\\frac13$；$N_{Y_q}=\\frac{\\Delta^2}{12}=\\frac{1}{16\\times12}=\\frac{1}{192}$（$\\Delta=1/4$）；\n(3) Y 均匀量化边界 $0,\\frac14,\\frac12,\\frac34,1$ → 反变换 $x_k=\\frac{e^{y_k\\ln2}-1}{1}=2^{y_k}-1$：$0, 0.19, 0.41, 0.68, 1$。",
+  "answer_text": "答案：(1) 单调变换：$x=\\frac{e^{y\\ln(1+a)}-1}{a}$，$f_Y(y)=f_X(x(y))\\cdot\\frac{dx}{dy}=\\frac{a/\\ln(1+a)}{1+ax}\\cdot\\frac{\\ln(1+a)}{a}e^{y\\ln(1+a)}=1$（$0\\le y\\le1$）——变换后 Y 均匀分布！\n(2) $E(Y^2)=\\frac13$；$N_{Y_q}=\\frac{\\Delta^2}{12}=\\frac{1}{16\\times12}=\\frac{1}{192}$（$\\Delta=\\frac{1}{4}$）；\n(3) Y 均匀量化边界 $0,\\frac14,\\frac12,\\frac34,1$ → 反变换 $x_k=\\frac{e^{y_k\\ln2}-1}{1}=2^{y_k}-1$：$0, 0.19, 0.41, 0.68, 1$。",
   "note": "",
   "status": "todo",
   "level": "综合",
@@ -21974,7 +21974,7 @@
   "level": "综合",
   "kp": "抽样信号的量化",
   "kp_sub": "压缩器 Y=10√X 量化",
-  "solution": "【知识点梳理】\n· 单调变换量化区间的映射：Y 的均匀区间经 $x=(y/10)^2$ 反演成 X 的非均匀区间。\n【解题步骤】\n第1步：Y 区间 $[0,25),[25,50),[50,75),[75,100]$ → X 区间 $[0,6.25),[6.25,25),[25,56.25),[56.25,100]$（小信号处细）。\n第2步：$F_Y(y)=P(10\\sqrt X<y)=P(X<\\frac{y^2}{100})=\\frac{y^2}{10^4}$；$f_Y(y)=\\frac{2y}{10^4}$（$0\\le y\\le100$）。\n第3步：$E[X^2]=\\frac{100^2}{3}\\approx3333$；$E[Y^2]=\\int_0^{100}y^2\\frac{2y}{10^4}dy=\\frac{2\\times10^8}{4\\times10^4}=5000$。\n【答案】如上。\n【易错提醒】$E[Y^2]=100E[X]$（因 $Y^2=100X$）——用关系式秒算，不必硬积分。"
+  "solution": "【知识点梳理】\n· 单调变换量化区间的映射：Y 的均匀区间经 $x=(\\frac{y}{10})^2$ 反演成 X 的非均匀区间。\n【解题步骤】\n第1步：Y 区间 $[0,25),[25,50),[50,75),[75,100]$ → X 区间 $[0,6.25),[6.25,25),[25,56.25),[56.25,100]$（小信号处细）。\n第2步：$F_Y(y)=P(10\\sqrt X<y)=P(X<\\frac{y^2}{100})=\\frac{y^2}{10^4}$；$f_Y(y)=\\frac{2y}{10^4}$（$0\\le y\\le100$）。\n第3步：$E[X^2]=\\frac{100^2}{3}\\approx3333$；$E[Y^2]=\\int_0^{100}y^2\\frac{2y}{10^4}dy=\\frac{2\\times10^8}{4\\times10^4}=5000$。\n【答案】如上。\n【易错提醒】$E[Y^2]=100E[X]$（因 $Y^2=100X$）——用关系式秒算，不必硬积分。"
  },
  {
   "subject": "txyl",
@@ -22158,13 +22158,13 @@
   "no": "2",
   "label": "【强化专题·专题26·2】",
   "question_text": "下图示出了一个线性反馈移存器序列，其输出序列是 $\\{a_k\\}$，反馈 $a_k=a_{k-1}\\oplus a_{k-4}$，已知 $(a_0a_1a_2a_3)=(1000)$。\n(a) 请写出 $\\{a_4\\dots a_{15}\\}$；\n(b) 此序列是否为 m 序列？\n(c) 请写出此序列发生器的特征多项式 f(x)；\n(d) 若 d(t) 是此序列所对应的双极性 NRZ 波形（0 映射为 +1V，1 映射为 −1V），请利用该序列的性质推导出 $R(m)=\\frac{1}{nT_c}\\int_0^{nT_c}d(t)d(t-mT_c)dt$（$m=0,1,2\\dots n$，$T_c$ 是码片宽度，n 是该 m 序列的一个周期）。",
-  "answer_text": "答案：(a) 111101011001；(b) 周期 15=2⁴−1（验证 a₁₆a₁₇a₁₈a₁₉=1000 回到初态）→ 是 m 序列；(c) $f(x)=x^4+x^3+1$；(d) 要点：m 序列与其任意移位之模二和仍为原序列的某一移位（移位相加特性）→ 一个周期内 1 比 0 多一个 → $R(0)=1$、$R(m)=−1/n$（m≠0，模 n）——双极性 NRZ 乘积按码片积分即得。",
+  "answer_text": "答案：(a) 111101011001；(b) 周期 15=2⁴−1（验证 a₁₆a₁₇a₁₈a₁₉=1000 回到初态）→ 是 m 序列；(c) $f(x)=x^4+x^3+1$；(d) 要点：m 序列与其任意移位之模二和仍为原序列的某一移位（移位相加特性）→ 一个周期内 1 比 0 多一个 → $R(0)=1$、$R(m)=−\\frac{1}{n}$（m≠0，模 n）——双极性 NRZ 乘积按码片积分即得。",
   "note": "",
   "status": "todo",
   "level": "综合",
   "kp": "m 序列",
   "kp_sub": "m 序列递推/判别/自相关推导",
-  "solution": "【知识点梳理】\n· 递推 $a_k=a_{k-1}\\oplus a_{k-4}$；周期验证=回到初态。\n· m 序列性质：一个周期 1 比 0 多一个；移位相加仍是移位序列 → 自相关双值（$1$ 与 $-1/n$）。\n【解题步骤】\n第1步：(a) $a_4..a_{15}=111101011001$。\n第2步：(b) $a_{16}..a_{19}=0100$ 回到初态 → 周期 15 → 是 m 序列。\n第3步：(c) $f(x)=x^4+x^3+1$。\n第4步：(d) 双极性映射下，同相乘积全 +1；m≠0 时错位乘积中 1×(−1) 的个数比 (−1)×(−1) 多一个 → 一个周期内均值 $=-\\frac1n$ → $R(m)=1$（m≡0）、$R(m)=-\\frac1n$（其余）。\n【答案】如上。\n【易错提醒】(d) 的推导核心是“移位相加特性”+“0 比 1 多一个”两条 m 序列性质。",
+  "solution": "【知识点梳理】\n· 递推 $a_k=a_{k-1}\\oplus a_{k-4}$；周期验证=回到初态。\n· m 序列性质：一个周期 1 比 0 多一个；移位相加仍是移位序列 → 自相关双值（$1$ 与 $-\\frac{1}{n}$）。\n【解题步骤】\n第1步：(a) $a_4..a_{15}=111101011001$。\n第2步：(b) $a_{16}..a_{19}=0100$ 回到初态 → 周期 15 → 是 m 序列。\n第3步：(c) $f(x)=x^4+x^3+1$。\n第4步：(d) 双极性映射下，同相乘积全 +1；m≠0 时错位乘积中 1×(−1) 的个数比 (−1)×(−1) 多一个 → 一个周期内均值 $=-\\frac1n$ → $R(m)=1$（m≡0）、$R(m)=-\\frac1n$（其余）。\n【答案】如上。\n【易错提醒】(d) 的推导核心是“移位相加特性”+“0 比 1 多一个”两条 m 序列性质。",
   "question_img": "images/q_qhzt-26-2.png"
  },
  {
@@ -22182,7 +22182,7 @@
   "level": "综合",
   "kp": "载波同步及位同步",
   "kp_sub": "SSB 平方变换法提取载波证明",
-  "solution": "【知识点梳理】\n· 平方变换法提取载波的适用条件：$s^2(t)$ 中含 $2f_c$ 离散线谱（如 DSB/PSK：$s^2$ 含 $\\frac{A^2}{2}\\cos2\\omega_ct$）。\n· SSB 无载波分量、I/Q 正交结构 → 平方谱相消。\n【解题步骤】\n第1步：$s^2=m^2\\cos^2+m\\hat m^2\\sin^2+2m\\hat m\\sin\\cos$。\n第2步：展开：直流与基带项 $(m^2+ĥm^2)/2$、$(m^2-ĥm^2)\\cos2ω_ct/2$——系数 $m^2-ĥm^2$ 是基带随机过程（无离散线谱）；交叉项 $mĥm\\sin2ω_ct$ 同为连续谱调制。\n第3步：$2f_c$ 处只有连续谱、无线谱 → 窄带滤波器取不出稳定载波分量 → 二分频无从进行。\n【答案】证毕：SSB 信号平方后不含 $2f_c$ 离散分量，故不能用平方变换法提取载波。\n【易错提醒】对比记忆：DSB/2PSK 平方后有 $2f_c$ 线谱（可平方变换法）；SSB 没有。",
+  "solution": "【知识点梳理】\n· 平方变换法提取载波的适用条件：$s^2(t)$ 中含 $2f_c$ 离散线谱（如 DSB/PSK：$s^2$ 含 $\\frac{A^2}{2}\\cos2\\omega_ct$）。\n· SSB 无载波分量、I/Q 正交结构 → 平方谱相消。\n【解题步骤】\n第1步：$s^2=m^2\\cos^2+m\\hat m^2\\sin^2+2m\\hat m\\sin\\cos$。\n第2步：展开：直流与基带项 $\\frac{m^2+ĥm^2}{2}$、$\\frac{m^2-ĥm^2}{2}\\cos2ω_ct$——系数 $m^2-ĥm^2$ 是基带随机过程（无离散线谱）；交叉项 $mĥm\\sin2ω_ct$ 同为连续谱调制。\n第3步：$2f_c$ 处只有连续谱、无线谱 → 窄带滤波器取不出稳定载波分量 → 二分频无从进行。\n【答案】证毕：SSB 信号平方后不含 $2f_c$ 离散分量，故不能用平方变换法提取载波。\n【易错提醒】对比记忆：DSB/2PSK 平方后有 $2f_c$ 线谱（可平方变换法）；SSB 没有。",
   "question_img": "images/q_qhzt-27-1.png"
  },
  {
