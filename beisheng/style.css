@@ -173,3 +173,14 @@ main{padding:14px 12px 60px;max-width:760px;margin:0 auto}
 .leaf-b .fl{margin:6px 0;line-height:1.9}
 .leaf-b mark{background:#fff3c9;padding:1px 4px;border-radius:4px}
 .notice{font-size:12px;color:#8a93a8;padding:10px 4px;line-height:1.8}
+
+/* 深色模式 */
+body.kg-dark{background:#12161f;color:#dfe4ee}
+body.kg-dark .card{background:#1a202b;box-shadow:0 3px 14px rgba(0,0,0,.35)}
+body.kg-dark .g-nm,body.kg-dark .root-nm b,body.kg-dark .leaf-b .q{color:#dfe4ee}
+body.kg-dark .leaf{background:#202836;border-color:#2a3345}
+body.kg-dark .leaf-b{border-top:1px dashed #2a3345}
+body.kg-dark #kw{background:#202836;color:#dfe4ee;border-color:#2a3345}
+body.kg-dark .mast{background:#202836;color:#cfd6e4;border-color:#2a3345}
+body.kg-dark .mast.on{background:#1d9e6f;color:#fff}
+body.kg-dark .notice{color:#8a93a8}

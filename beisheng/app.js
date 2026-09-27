@@ -35,6 +35,7 @@ function render(){
       <div class="root-nm"><b>${esc(D.name)}</b><div class="root-meta">${D.cards.length} 张公式卡 · 已掌握 ${mastered}</div></div>
     </div>
     <input id="kw" placeholder="🔍 搜索公式关键词…" value="${esc(KW)}">
+    <button class="mini" onclick="toggleDark()">🌙 深色模式</button>
   </div>`;
   const kw = KW.trim().toLowerCase();
   let shown = 0;
@@ -88,8 +89,11 @@ function toggleC(i){ openC[i] = !openC[i]; render(); }
 function toggleM(i){ MAST[i] = !MAST[i]; if (!MAST[i]) delete MAST[i]; saveM(); render(); }
 function renderMath(el){ if (window.renderMathInElement) renderMathInElement(el, {delimiters:[{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError:false, macros:{'\frac':'\dfrac'}}); }
 
+function toggleDark(){ const d=document.body.classList.toggle('kg-dark'); localStorage.setItem('kg_dark', d?'1':'0'); }
+
 /* init */
 (function(){
+  if (localStorage.getItem('kg_dark') === '1') document.body.classList.add('kg-dark');
   if (window.BS_DECKS) D = window.BS_DECKS.find(x => x.id === 'comm') || window.BS_DECKS[0];
   buildGroups();
   render();

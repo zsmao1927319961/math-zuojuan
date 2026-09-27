@@ -153,6 +153,8 @@
 <div id="toast" hidden style="position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:rgba(20,24,32,.92);color:#fff;border-radius:10px;padding:9px 18px;font-size:13.5px;z-index:99"></div>
 
 <script>
+const DMACROS = { '\frac': '\dfrac' };
+
 (function(){
 'use strict';
 var LS_KEY = 'shuxue_progress_v1';
@@ -170,7 +172,7 @@ function renderLatexMixed(el, str){
   if (!window.katex) { el.textContent = str; return; }
   if (str.indexOf('$') < 0) {
     if (/[\u4e00-\u9fff]/.test(str)) { el.textContent = str; return; }
-    try { window.katex.render(str, el, { throwOnError: false }); } catch (e) { el.textContent = str; }
+    try { window.katex.render(str, el, { throwOnError: false, macros: DMACROS }); } catch (e) { el.textContent = str; }
     return;
   }
   el.textContent = '';
@@ -179,7 +181,7 @@ function renderLatexMixed(el, str){
     if (m.index > last) el.appendChild(document.createTextNode(str.slice(last, m.index)));
     var span = document.createElement('span');
     var tex = (m[1] !== undefined) ? m[1] : m[2];
-    try { window.katex.render(tex, span, { throwOnError: false, displayMode: m[1] !== undefined }); }
+    try { window.katex.render(tex, span, { throwOnError: false, displayMode: m[1] !== undefined, macros: DMACROS }); }
     catch (e2) { span.textContent = m[0]; }
     el.appendChild(span);
     last = re.lastIndex;

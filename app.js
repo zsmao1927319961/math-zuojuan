@@ -1,3 +1,4 @@
+const DMACROS = { '\frac': '\dfrac' };
 /* ============================================================
    纯静态版：无 Python 后端，全部逻辑在浏览器运行
    - questions.json / progress.json 通过 fetch 加载
@@ -22,7 +23,7 @@ function renderLatexMixed(el, str) {
   if (str.indexOf('$') < 0) {
     /* 含中文的整串不是 LaTeX，按纯文本显示；否则兼容旧答案（如 "C"、"\frac{1}{2}"）按公式渲染 */
     if (/[\u4e00-\u9fff]/.test(str)) { el.textContent = str; return; }
-    try { window.katex.render(str, el, { throwOnError: false }); } catch (e) { el.textContent = str; }
+    try { window.katex.render(str, el, { throwOnError: false, macros: DMACROS }); } catch (e) { el.textContent = str; }
     return;
   }
   el.textContent = '';
@@ -32,7 +33,7 @@ function renderLatexMixed(el, str) {
     if (m.index > last) el.appendChild(document.createTextNode(str.slice(last, m.index)));
     const span = document.createElement('span');
     const tex = m[1] !== undefined ? m[1] : m[2];
-    try { window.katex.render(tex, span, { throwOnError: false, displayMode: m[1] !== undefined }); }
+    try { window.katex.render(tex, span, { throwOnError: false, displayMode: m[1] !== undefined, macros: DMACROS }); }
     catch (e2) { span.textContent = m[0]; }
     el.appendChild(span);
     last = re.lastIndex;
