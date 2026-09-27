@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>题库刷题 · 299题 · 通信原理</title>
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:"Microsoft YaHei",system-ui,sans-serif;background:#eef1f7;color:#232c3d;font-size:15px;padding-bottom:40px}
+.hero{background:linear-gradient(135deg,#2b3a67,#4f74d8);color:#fff;padding:18px 16px 16px;border-radius:0 0 18px 18px}
+.hero .row{display:flex;align-items:center;gap:10px}
+.hero .back{color:#fff;text-decoration:none;font-size:20px;line-height:1;padding:4px 8px;border-radius:8px;background:rgba(255,255,255,.14)}
+.hero h1{font-size:17px;font-weight:700;flex:1}
+.hero .sub{font-size:12px;opacity:.85;margin-top:6px}
+.stats{display:flex;gap:8px;margin-top:12px}
+.stat{flex:1;background:rgba(255,255,255,.13);border-radius:10px;padding:8px 4px;text-align:center}
+.stat b{display:block;font-size:17px}
+.stat span{font-size:11px;opacity:.85}
+.wrap{padding:14px 12px;max-width:760px;margin:0 auto}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab{flex:1;text-align:center;padding:9px 0;border-radius:10px;background:#fff;color:#5a6478;font-weight:600;font-size:14px;cursor:pointer;border:1px solid #e3e8f4}
+.tab.on{background:#4f74d8;color:#fff;border-color:#4f74d8}
+.card{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 3px 14px rgba(35,50,90,.08)}
+.chap-h{display:flex;align-items:center;justify-content:space-between;padding:12px 4px;cursor:pointer;font-weight:700;font-size:15px}
+.chap-h .arr{color:#8a93a8;transition:transform .2s}
+.chap-h.open .arr{transform:rotate(90deg)}
+.chap-h .meta{font-size:12px;color:#8a93a8;font-weight:400}
+.kp-item{display:flex;align-items:center;gap:10px;padding:11px 10px;border-radius:10px;cursor:pointer;border:1px solid #eef1f8;margin-bottom:8px;background:#fbfcff}
+.kp-item:active{background:#eef2ff}
+.kp-item .nm{flex:1;font-size:14px}
+.kp-item .cnt{font-size:12px;color:#8a93a8}
+.kp-item .due{font-size:11px;background:#fdecec;color:#c0504d;border-radius:8px;padding:2px 7px}
+.kp-item .done{font-size:11px;background:#e7f6ef;color:#1d9e6f;border-radius:8px;padding:2px 7px}
+.qtop{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.qno{font-weight:800;color:#4f74d8;font-size:15px}
+.badge{font-size:11px;border-radius:8px;padding:2px 8px;background:#eef2ff;color:#4f74d8}
+.badge.src{background:#fdf3e7;color:#c07a10}
+.stem{line-height:1.95;font-size:15px;white-space:pre-wrap;word-break:break-word}
+.stem img,.exp img{max-width:100%;border-radius:8px;margin:8px 0;display:block}
+.opts{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1.5px solid #e3e8f4;border-radius:11px;cursor:pointer;font-size:15px;line-height:1.7;background:#fff}
+.opt .lab{font-weight:800;color:#4f74d8}
+.opt.sel{border-color:#4f74d8;background:#f4f7ff}
+.opt.right{border-color:#1d9e6f;background:#e9f7f0}
+.opt.right .lab{color:#1d9e6f}
+.opt.wrong{border-color:#c0504d;background:#fdf0f0}
+.opt.wrong .lab{color:#c0504d}
+.opt.dis{pointer-events:none}
+.btn{display:block;width:100%;text-align:center;padding:11px 0;border-radius:11px;border:none;font-size:15px;font-weight:700;cursor:pointer;margin-top:12px}
+.btn.blue{background:#4f74d8;color:#fff}
+.btn.grey{background:#eef1f7;color:#41506e}
+.ansbox,.expbox{margin-top:12px;border-radius:11px;padding:12px;line-height:1.9;font-size:15px;white-space:pre-wrap;word-break:break-word}
+.ansbox{background:#e9f7f0;border:1px solid #bfe6d4}
+.expbox{background:#f6f4ea;border:1px solid #e8e2c8}
+.ansbox .h,.expbox .h{font-weight:800;margin-bottom:6px}
+.ansbox .h{color:#1d9e6f}.expbox .h{color:#8a6d1a}
+.ansbox img,.expbox img{max-width:100%;border-radius:8px;margin:6px 0}
+.keys{display:flex;gap:9px;margin-top:14px}
+.key{flex:1;text-align:center;padding:10px 0;border-radius:11px;border:1.5px solid #e3e8f4;cursor:pointer;font-weight:700;font-size:14px;background:#fff;color:#5a6478}
+.key.on-ok{background:#1d9e6f;border-color:#1d9e6f;color:#fff}
+.key.on-mid{background:#c07a10;border-color:#c07a10;color:#fff}
+.key.on-no{background:#c0504d;border-color:#c0504d;color:#fff}
+.nav{display:flex;gap:10px;margin-top:14px}
+.nav .btn{margin-top:0}
+.duemsg{margin-top:10px;font-size:12px;color:#8a93a8}
+.backrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.backrow .lnk{color:#4f74d8;cursor:pointer;font-size:14px;font-weight:600}
+.empty{text-align:center;color:#8a93a8;padding:40px 0}
+.review-h{font-size:13px;color:#8a93a8;margin:14px 4px 8px}
+.rv-item{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:#fff;margin-bottom:8px;cursor:pointer;border:1px solid #eef1f8}
+.rv-item .nm{flex:1;font-size:14px}
+.rv-item .due{font-size:11px;border-radius:8px;padding:2px 7px}
+.rv-item .due.today{background:#fdecec;color:#c0504d}
+.rv-item .due.fut{background:#eef2ff;color:#4f74d8}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="row"><a class="back" href="index.html">‹</a><h1>题库刷题 · 通信原理299题</h1></div>
+  <div class="sub">分类树刷题 · 三键掌握 · 错题复测计划</div>
+  <div class="stats">
+    <div class="stat"><b id="st-total">-</b><span>总题数</span></div>
+    <div class="stat"><b id="st-ok">0</b><span>已掌握</span></div>
+    <div class="stat"><b id="st-mid">0</b><span>不熟练</span></div>
+    <div class="stat"><b id="st-due">0</b><span>今日待复测</span></div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="tabs">
+    <div class="tab on" id="tab-catalog" onclick="switchTab('catalog')">目录</div>
+    <div class="tab" id="tab-review" onclick="switchTab('review')">复测队列</div>
+  </div>
+  <div id="view"></div>
+</div>
+<script>
+const LS='dxy_state_v1';
+let DB=null, STATE=null, VIEW={tab:'catalog', chap:null, kp:null, qidx:0};
+function loadState(){ try{STATE=JSON.parse(localStorage.getItem(LS))||{}}catch(e){STATE={}} }
+function saveState(){ localStorage.setItem(LS, JSON.stringify(STATE)); }
+function st(qid){ return STATE[qid] || (STATE[qid]={mastery:null, due:null, round:0, last:null}); }
+function today(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function addDays(base,n){ const d=new Date(base+'T12:00:00'); d.setDate(d.getDate()+n); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function daysBetween(a,b){ return Math.round((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/864e5); }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function renderMixed(el, text){
+  el.innerHTML='';
+  const parts=String(text||'').split(/(\$\$[\s\S]+?\$\$|\$[^$\n]+?\$)/g);
+  for(const p of parts){
+    if(!p) continue;
+    if(p.indexOf('$$')===0){ const s=document.createElement('div'); katex.render(p.slice(2,-2), s, {displayMode:true, throwOnError:false}); el.appendChild(s); }
+    else if(p.indexOf('$')===0){ const s=document.createElement('span'); katex.render(p.slice(1,-1), s, {throwOnError:false}); el.appendChild(s); }
+    else el.appendChild(document.createTextNode(p));
+  }
+}
+function renderImg(el, ref){
+  if(!ref) return;
+  const im=document.createElement('img'); im.src='data/'+ref; im.loading='lazy'; el.appendChild(im);
+}
+function switchTab(t){
+  VIEW.tab=t;
+  document.getElementById('tab-catalog').classList.toggle('on', t==='catalog');
+  document.getElementById('tab-review').classList.toggle('on', t==='review');
+  if(t==='catalog') viewCatalog(); else viewReview();
+}
+function kpStat(kpid){
+  let total=0, ok=0, due=0; const td=today();
+  for(const q of DB.questions){
+    if(q.category_id!==kpid) continue;
+    total++;
+    const s=STATE[q.question_id];
+    if(s && s.mastery==='ok') ok++;
+    if(s && s.due && s.mastery!=='ok' && daysBetween(td, s.due)<=0) due++;
+  }
+  return {total, ok, due};
+}
+function viewCatalog(){
+  VIEW.kp=null;
+  const v=document.getElementById('view');
+  let h='';
+  for(const chap of DB.categories[0].children){
+    const open = VIEW.chap===chap.id;
+    h+='<div class="card"><div class="chap-h'+(open?' open':'')+'" onclick="toggleChap('+chap.id+')"><span><span class="arr">▶</span> '+esc(chap.name)+'</span><span class="meta">'+chap.question_count+' 题</span></div>';
+    if(open){
+      for(const kp of chap.children){
+        const stt=kpStat(kp.id);
+        h+='<div class="kp-item" onclick="openKp('+chap.id+','+kp.id+',\''+esc(kp.name)+'\')"><span class="nm">'+esc(kp.name)+'</span>'
+          + (stt.due?'<span class="due">待复测'+stt.due+'</span>':'')
+          + (stt.ok? '<span class="done">已掌握 '+stt.ok+'/'+stt.total+'</span>':'<span class="cnt">'+stt.total+' 题</span>')
+          + '</div>';
+      }
+    }
+    h+='</div>';
+  }
+  v.innerHTML=h;
+  refreshStats();
+}
+function toggleChap(id){ VIEW.chap = VIEW.chap===id ? null : id; viewCatalog(); }
+function kpName(kpid){
+  for(const chap of DB.categories[0].children)
+    for(const kp of chap.children)
+      if(kp.id===kpid) return {chap:chap.name, kp:kp.name};
+  return {chap:'', kp:''};
+}
+function kpQuestions(kpid){ return DB.questions.filter(q=>q.category_id===kpid); }
+function openKp(chapId, kpid, kpname){
+  VIEW.chap=chapId; VIEW.kp=kpid;
+  const qs=kpQuestions(kpid);
+  const s=st(qs[0].question_id);
+  let idx=0;
+  // 优先: 到期复测 > 未掌握第一题
+  const td=today();
+  for(let i=0;i<qs.length;i++){
+    const s2=st(qs[i].question_id);
+    if(s2.due && s2.mastery!=='ok' && daysBetween(td,s2.due)<=0){ idx=i; break; }
+    if(s2.mastery && s2.mastery!=='ok'){ idx=i; break; }
+  }
+  VIEW.qidx=idx;
+  viewQuestion();
+}
+function viewQuestion(){
+  const qs=kpQuestions(VIEW.kp);
+  const q=qs[VIEW.qidx];
+  if(!q){ viewCatalog(); return; }
+  const names=kpName(VIEW.kp);
+  const s=st(q.question_id);
+  const v=document.getElementById('view');
+  let h='<div class="card"><div class="backrow"><span class="lnk" onclick="viewCatalog()">‹ 返回目录</span><span class="qno">第 '+q.serial_number+' 题</span><span class="lnk" onclick="viewReview()">复测队列</span></div>';
+  h+='<div class="qtop"><span class="badge">'+esc(names.chap)+'</span><span class="badge">'+esc(names.kp)+'</span>'
+    + '<span class="badge src">'+esc(q.question_type_label||q.question_type)+'</span>'
+    + (q.source? '<span class="badge src">'+esc(q.source)+'</span>':'') + '</div>';
+  h+='<div class="stem" id="stem"></div>';
+  const isChoice = q.question_type==='single_choice' && q.options.length;
+  if(isChoice){
+    h+='<div class="opts" id="opts">';
+    const sel=s.sel;
+    for(const o of q.options){
+      let cls='opt';
+      if(sel){
+        cls+=' dis';
+        if(o.id===q.answer.option_ids[0]) cls+=' right';
+        else if(sel===o.id) cls+=' wrong';
+      } else if(sel===o.id) cls+=' sel';
+      h+='<div class="'+cls+'" onclick="pickOpt(\''+o.id+'\')"><span class="lab">'+o.label+'</span><span>'+esc(o.content_md)+'</span></div>';
+    }
+    h+='</div>';
+  } else if(!s.ansShown){
+    h+='<button class="btn blue" onclick="showAns()">看参考答案</button>';
+  }
+  if(s.ansShown || !isChoice){
+    h+='<div class="ansbox" id="ansbox"><div class="h">参考答案</div></div>';
+    if(q.explanation_md || q.asset_refs.some(a=>a.position==='explanation'))
+      h+='<div class="expbox" id="expbox"><div class="h">解析</div></div>';
+  }
+  h+='<div class="keys">'
+    + '<div class="key '+(s.mastery==='ok'?'on-ok':'')+'" onclick="mark(\''+q.question_id+'\',\'ok\')">👍 掌握</div>'
+    + '<div class="key '+(s.mastery==='shaky'?'on-mid':'')+'" onclick="mark(\''+q.question_id+'\',\'shaky\')">✏️ 不熟练</div>'
+    + '<div class="key '+(s.mastery==='unknown'?'on-no':'')+'" onclick="mark(\''+q.question_id+'\',\'unknown\')">❌ 不会</div>'
+    + '</div>';
+  if(s.due && s.mastery!=='ok') h+='<div class="duemsg">🔁 复测计划：'+s.due+'（第 '+s.round+' 轮）</div>';
+  h+='<div class="nav"><button class="btn grey" onclick="prevQ()" '+(VIEW.qidx<=0?'disabled':'')+'>‹ 上一题</button>'
+    + '<button class="btn grey" onclick="nextQ()" '+(VIEW.qidx>=qs.length-1?'disabled':'')+'>下一题 ›</button></div>';
+  h+='</div>';
+  v.innerHTML=h;
+  renderMixed(document.getElementById('stem'), q.stem_md);
+  for(const a of (q.asset_refs||[])) if(a.position==='stem') renderImg(document.getElementById('stem'), a.ref);
+  if(document.getElementById('ansbox')){
+    renderMixed(document.getElementById('ansbox'), (q.answer.reference_answer_md||'（见解析）'));
+    const refA=(q.answer.asset_refs_ok)?null:null;
+  }
+  if(document.getElementById('expbox')){
+    renderMixed(document.getElementById('expbox'), q.explanation_md||'（无文字解析，看解析图）');
+    for(const a of (q.asset_refs||[])) if(a.position==='explanation') renderImg(document.getElementById('expbox'), a.ref);
+  }
+  refreshStats();
+}
+function showAns(){ const s=st(kpQuestions(VIEW.kp)[VIEW.qidx].question_id); s.ansShown=true; saveState(); viewQuestion(); }
+function pickOpt(oid){
+  const q=kpQuestions(VIEW.kp)[VIEW.qidx];
+  const s=st(q.question_id);
+  if(s.sel) return;
+  s.sel=oid; s.ansShown=true;
+  const right=q.answer.option_ids[0];
+  s.lastRight = (oid===right);
+  saveState(); viewQuestion();
+}
+function mark(qid, m){
+  const s=st(qid);
+  const first = s.mastery!==m;
+  s.mastery=m; s.last=today();
+  if(m==='ok'){ s.due=null; s.round=0; }
+  else {
+    if(first || !s.due){ s.round=(s.round||0)+1; }
+    const seq = m==='unknown' ? [1,3,7] : [2,5,10];
+    s.due = addDays(today(), seq[Math.min((s.round||1)-1, seq.length-1)]);
+  }
+  saveState(); viewQuestion();
+}
+function prevQ(){ if(VIEW.qidx>0){ VIEW.qidx--; viewQuestion(); } }
+function nextQ(){ const n=kpQuestions(VIEW.kp).length; if(VIEW.qidx<n-1){ VIEW.qidx++; viewQuestion(); } }
+function viewReview(){
+  const td=today();
+  const rows=[];
+  for(const q of DB.questions){
+    const s=STATE[q.question_id];
+    if(!s || !s.due || s.mastery==='ok') continue;
+    const d=daysBetween(td, s.due);
+    if(d>3) continue;
+    rows.push({q, s, d});
+  }
+  rows.sort((a,b)=>a.d-b.d);
+  const v=document.getElementById('view');
+  let h='<div class="card"><div class="backrow"><span class="lnk" onclick="viewCatalog()">‹ 返回目录</span></div>';
+  if(!rows.length){ h+='<div class="empty">暂无复测任务，去目录挑一个考点开刷吧</div>'; }
+  for(const r of rows.slice(0,60)){
+    const names=kpName(r.q.category_id);
+    h+='<div class="rv-item" onclick="jumpQ('+r.q.category_id+',\''+r.q.question_id+'\')"><span class="nm">'+esc(names.kp)+' · 第'+r.q.serial_number+'题</span>'
+      + '<span class="due '+(r.d<=0?'today':'fut')+'">'+(r.d<=0?'今天到期':'还差'+r.d+'天')+'</span></div>';
+  }
+  h+='</div>';
+  v.innerHTML=h;
+}
+function jumpQ(kpid, qid){
+  VIEW.chap=Math.floor(kpid/100)*100===kpid?kpid:Math.floor(kpid/100);
+  VIEW.kp=kpid;
+  const qs=kpQuestions(kpid);
+  VIEW.qidx=Math.max(0, qs.findIndex(x=>x.question_id===qid));
+  viewQuestion();
+}
+function refreshStats(){
+  let ok=0, mid=0, due=0; const td=today();
+  for(const q of DB.questions){
+    const s=STATE[q.question_id];
+    if(!s) continue;
+    if(s.mastery==='ok') ok++;
+    else if(s.mastery==='shaky') mid++;
+    if(s.due && s.mastery!=='ok' && daysBetween(td,s.due)<=0) due++;
+  }
+  document.getElementById('st-total').textContent=DB.questions.length;
+  document.getElementById('st-ok').textContent=ok;
+  document.getElementById('st-mid').textContent=mid;
+  document.getElementById('st-due').textContent=due;
+}
+fetch('data/tk299_dxy.json').then(r=>r.json()).then(j=>{
+  DB=j; loadState(); viewCatalog();
+}).catch(e=>{
+  document.getElementById('view').innerHTML='<div class="card empty">数据加载失败: '+esc(String(e))+'</div>';
+});
+</script>
+</body>
+</html>
