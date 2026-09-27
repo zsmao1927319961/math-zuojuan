@@ -61,7 +61,7 @@ function render(){
         h += `<div class="leaf ${open2?'open':''}">
           <div class="leaf-h" onclick="toggleC(${i})">
             <span class="tw">${open2?'▾':'▸'}</span>
-            <span class="leaf-nm">${esc(front.slice(0, 46))}${front.length>46?'…':''}</span>
+            <span class="leaf-nm">${esc(front)}</span>
             <span class="mast ${MAST[i]?'on':''}" onclick="event.stopPropagation();toggleM(${i})">${MAST[i]?'✓ 掌握':'标记掌握'}</span>
           </div>
           <div class="leaf-b" style="display:${open2?'block':'none'}">
