@@ -53,6 +53,8 @@
   .hint{font-size:11px;color:#98a0ad;margin-top:6px}
   .replay-hint{margin-top:6px;font-size:12px;color:#a06b00;background:#fff7e8;border:1px solid #f0e0bb;border-radius:8px;padding:5px 10px}
   .backlog{width:100%;font-size:12px;color:#c33;background:#fdeaea;border:1px solid #f3c9c9;border-radius:8px;padding:6px 10px}
+  .reheat-h{margin:20px 0 10px;font-size:13.5px;font-weight:700;color:#8a5a00;background:#fff4e0;border:1px solid #f0dfb8;border-radius:10px;padding:7px 12px}
+  .reheat-empty{color:#8a94a6;font-size:13px;padding:4px 2px 8px}
   .back{display:inline-block;margin:12px 14px 0;font-size:14px;color:#2f6bff;text-decoration:none}
   .empty{padding:30px;text-align:center;color:#7a828f;font-size:14px}
   .qimg{display:block;max-width:100%;margin:8px 0 2px;border-radius:8px}
@@ -154,7 +156,7 @@ const DMACROS = { '\frac': '\dfrac' };
   function rollNonce(){ try { return parseInt(localStorage.getItem('zy_roll_nonce') || '0', 10) || 0; } catch(e){ return 0; } }
   function bumpNonce(){ try { localStorage.setItem('zy_roll_nonce', String(rollNonce() + 1)); } catch(e){} }
   function drawPicks(pool, nonce){
-    /* 到期回炉题（做错后 1/3/7 天到期）优先占坑（最多 3 题，最逾期优先），其余坑给新题随机 */
+    /* 每日五题只抽"干净"新题（非冷却、非到期回炉）；到期回炉题单独列在下方回炉区，不占坑 */
     var dueQs = [], fresh = [], cooldown = 0;
     pool.forEach(function(q){
       if (inCooldown(q)) { cooldown++; return; }
@@ -164,16 +166,36 @@ const DMACROS = { '\frac': '\dfrac' };
     });
     var rng = mulberry(hashSeed(TODAY + '#' + nonce));
     function shuf(a){ for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(rng() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-    shuf(dueQs); shuf(fresh);
-    dueQs.sort(function(a,b){ return (liveOf(a).due || '').localeCompare(liveOf(b).due || ''); });
-    var picks = dueQs.slice(0, 3);
-    if (picks.length < DAILY) picks = picks.concat(fresh.slice(0, DAILY - picks.length));
+    shuf(fresh);
+    var picks = fresh.slice(0, DAILY);
     if (picks.length < DAILY) {   /* 冷却中太多导致不够 → 最早做对的优先回池 */
       var cds = pool.filter(function(q){ return inCooldown(q); });
       cds.sort(function(a,b){ return (liveOf(a).right_date || '').localeCompare(liveOf(b).right_date || ''); });
       picks = picks.concat(cds.slice(0, DAILY - picks.length));
     }
+    if (picks.length < DAILY) {   /* 实在不够才用到期回炉题补位（最逾期优先） */
+      dueQs.sort(function(a,b){ return (liveOf(a).due || '').localeCompare(liveOf(b).due || ''); });
+      picks = picks.concat(dueQs.slice(0, DAILY - picks.length));
+    }
     return { picks: picks, cooldown: cooldown, eligible: fresh.length + dueQs.length };
+  }
+  function dueReheat(){
+    var arr = POOL.filter(function(q){
+      if (PICKS.indexOf(q) >= 0) return false;   /* 兜底补位进五题的不重复列 */
+      var lv = liveOf(q);
+      return (lv.status === 'todo' || lv.status === 'relearn') && lv.due && lv.due <= TODAY;
+    });
+    arr.sort(function(a,b){ return (liveOf(a).due || '').localeCompare(liveOf(b).due || ''); });
+    return arr;
+  }
+  function renderRetest(root){
+    var qs = dueReheat();
+    var sec = document.createElement('div');
+    sec.className = 'reheat-sec';
+    sec.innerHTML = '<div class="reheat-h">🔁 回炉重做（' + qs.length + '）· 到期错题单独刷，不占今日五题</div>';
+    if (!qs.length) sec.innerHTML += '<div class="reheat-empty">当前没有到期的回炉题 ✓ 做错的题会按 1/3/7 天排到这里</div>';
+    root.appendChild(sec);
+    qs.forEach(function(q, i){ sec.appendChild(card(q, i, '回炉 ' + (i + 1))); });
   }
   function loadPicks(pool){ return drawPicks(pool, rollNonce()).picks; }
 
@@ -259,14 +281,14 @@ const DMACROS = { '\frac': '\dfrac' };
       el.appendChild(d);
     });
   }
-  function card(q, idx){
+  function card(q, idx, label){
     var el = document.createElement('div');
     el.className = 'qcard';
     var lv0 = liveOf(q);
     if (lv0.status === 'done') el.classList.add('done');
     if (lv0.status === 'todo' && lv0.wrong_date) el.classList.add('wrong');
     el.innerHTML =
-      '<div class="qhead"><span class="qno">第 ' + (idx + 1) + ' 题</span>' +
+      '<div class="qhead"><span class="qno">' + (label || ('第 ' + (idx + 1) + ' 题')) + '</span>' +
       '<span class="tag">' + escHtml(q.chapter_name || q.chapter) + '</span>' +
       (q.kp_sub ? '<span class="tag">' + escHtml(q.kp_sub) + '</span>' : '') +
       '<span data-role="st">' + tagOf(q) + '</span></div>' +
@@ -387,7 +409,7 @@ const DMACROS = { '\frac': '\dfrac' };
       '<div class="stat bad">待重做 <b>' + due + '</b></div>' +
       (overdue > 0 ? '<div class="stat bad">逾期未清 <b>' + overdue + '</b></div>' : '') +
       '<div class="stat">今日完成 <b>' + todayDone + '/' + PICKS.length + '</b></div>' +
-      (due >= 6 ? '<div class="backlog">⚠️ 回炉池积压 ' + due + ' 题待重做（' + overdue + ' 题已逾期）——建议今天先清回炉，再按「换一批」开新题</div>' : '') +
+      (due >= 6 ? '<div class="backlog">⚠️ 回炉池积压 ' + due + ' 题待重做（' + overdue + ' 题已逾期）——到期回炉题已单列在下方「回炉重做」区，不占今日五题</div>' : '') +
       '<div class="bar" style="width:100%"><i style="width:' + Math.round(done / pool.length * 100) + '%"></i></div>';
   }
 
@@ -398,6 +420,7 @@ const DMACROS = { '\frac': '\dfrac' };
     var root = document.getElementById('content');
     root.innerHTML = '';
     PICKS.forEach(function(q, i){ root.appendChild(card(q, i)); });
+    renderRetest(root);
     refreshStats();
   }
 
@@ -412,7 +435,7 @@ const DMACROS = { '\frac': '\dfrac' };
     PICKS = loadPicks(pool);
     var meta = document.getElementById('pmeta');
     meta.textContent = TODAY + ' · ' +
-      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 每天随机抽 5 题（做对的题冷却 7 天后自动回池）· 错题按 1/3/7 天回炉优先重现，连对 3 次出池 · 按「换一批」立即换新';
+      (MODE === 'server' ? '本机版（进度同步服务器）' : '静态版（进度存本机）') + ' · 每天随机抽 5 道不重复新题（做对的题冷却 7 天后自动回池）· 错题按 1/3/7 天回炉，单独列在五题下方不占坑 · 按「换一批」立即换新';
     var rb = document.createElement('button');
     rb.textContent = '🔄 换一批';
     rb.style.cssText = 'margin-left:10px;padding:2px 12px;border:1px solid #b9c6d8;border-radius:14px;background:#fff;color:#1f6fb2;cursor:pointer;font-size:12px;vertical-align:middle;';
@@ -421,6 +444,7 @@ const DMACROS = { '\frac': '\dfrac' };
     refreshStats();
     var root = document.getElementById('content');
     PICKS.forEach(function(q, i){ root.appendChild(card(q, i)); });
+    renderRetest(root);
   }
   document.getElementById('pmeta').textContent = '加载中…';
   fetch('api/questions').then(function(r){ if (!r.ok) throw new Error('no api'); return r.json(); }).then(function(qs){
