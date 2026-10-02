@@ -188,9 +188,26 @@ var CUR_TITLE = '';
 var P_FILTER = '';
 
 function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+/* KaTeX 迟到恢复：脚本未就绪时先露文本并登记，动态补拉，就绪后自动重渲染（修"字体变了"竞态） */
+var KXQ = [], KXT = 0;
+function kxLate(str, el){
+  KXQ.push([el, str]);
+  if (KXT) return;
+  var tries = 0, ticks = 0;
+  KXT = setInterval(function(){
+    if (window.katex) {
+      clearInterval(KXT); KXT = 0;
+      var q = KXQ.splice(0);
+      for (var i = 0; i < q.length; i++) renderLatexMixed(q[i][0], q[i][1]);
+      return;
+    }
+    if (++ticks > 75) { clearInterval(KXT); KXT = 0; return; }
+    if (tries < 8) { tries++; var s = document.createElement('script'); s.src = 'katex/katex.min.js'; s.async = true; document.head.appendChild(s); }
+  }, 400);
+}
 function renderLatexMixed(el, str){
   if (!el) return;
-  if (!window.katex) { el.textContent = str; return; }
+  if (!window.katex) { el.textContent = str; kxLate(str, el); return; }
   if (str.indexOf('$') < 0) {
     if (/[\u4e00-\u9fff]/.test(str)) { el.textContent = str; return; }
     try { window.katex.render(str, el, { throwOnError: false, macros: DMACROS }); } catch (e) { el.textContent = str; }

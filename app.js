@@ -16,10 +16,27 @@ let morePane = 'bank';
 
 const SOURCE_NAMES = { gaoshu880: '高数880', xian_dai: '线代讲义', xian_dai880: '线代880', qhzt: '强化专题' };
 
-/* 混排公式渲染：含 $...$ 时按分符切分渲染，其余整段按 LaTeX（兼容旧答案）；KaTeX 缺失时降级纯文本 */
+/* 混排公式渲染：含 $...$ 时按分符切分渲染，其余整段按 LaTeX（兼容旧答案）；KaTeX 缺失时先露文本并走迟到恢复 */
+/* KaTeX 迟到恢复：脚本未就绪时登记任务，动态补拉脚本，就绪后自动重渲染（修"字体变了"竞态） */
+const KXQ = [], KXST = { t: 0 };
+function kxLate(str, el) {
+  KXQ.push([el, str]);
+  if (KXST.t) return;
+  let tries = 0, ticks = 0;
+  KXST.t = setInterval(() => {
+    if (window.katex) {
+      clearInterval(KXST.t); KXST.t = 0;
+      const q = KXQ.splice(0);
+      for (const [e2, s2] of q) renderLatexMixed(e2, s2);
+      return;
+    }
+    if (++ticks > 75) { clearInterval(KXST.t); KXST.t = 0; return; }
+    if (tries < 8) { tries++; const s = document.createElement('script'); s.src = 'katex/katex.min.js'; s.async = true; document.head.appendChild(s); }
+  }, 400);
+}
 function renderLatexMixed(el, str) {
   if (!el) return;
-  if (!window.katex) { el.textContent = str; return; }
+  if (!window.katex) { el.textContent = str; kxLate(str, el); return; }
   if (str.indexOf('$') < 0) {
     /* 含中文的整串不是 LaTeX，按纯文本显示；否则兼容旧答案（如 "C"、"\frac{1}{2}"）按公式渲染 */
     if (/[\u4e00-\u9fff]/.test(str)) { el.textContent = str; return; }

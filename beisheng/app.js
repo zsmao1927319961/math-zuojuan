@@ -87,7 +87,30 @@ function c(i){ return D.cards[i]; }
 function toggleG(gi){ openG[gi] = !openG[gi]; render(); }
 function toggleC(i){ openC[i] = !openC[i]; render(); }
 function toggleM(i){ MAST[i] = !MAST[i]; if (!MAST[i]) delete MAST[i]; saveM(); render(); }
-function renderMath(el){ if (window.renderMathInElement) renderMathInElement(el, {delimiters:[{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError:false, macros:{'\frac':'\dfrac'}}); }
+function renderMath(el){ if (window.renderMathInElement) renderMathInElement(el, {delimiters:[{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError:false, macros:{'\\frac':'\\dfrac'}}); else kxBs(el); }
+/* KaTeX 迟到恢复：脚本未就绪时登记容器，动态补拉两段脚本，就绪后自动重渲染 */
+const KXBQ = []; let KXBT = 0;
+function kxBs(el){
+  KXBQ.push(el);
+  if (KXBT) return;
+  let tries = 0, ticks = 0;
+  KXBT = setInterval(() => {
+    if (window.katex && window.renderMathInElement) {
+      clearInterval(KXBT); KXBT = 0;
+      const q = KXBQ.splice(0);
+      for (const e2 of q) renderMath(e2);
+      return;
+    }
+    if (++ticks > 75) { clearInterval(KXBT); KXBT = 0; return; }
+    if (tries < 8) {
+      tries++;
+      var o1 = document.getElementById('kx-late-katex'); if (o1) o1.remove();
+      var o2 = document.getElementById('kx-late-auto'); if (o2) o2.remove();
+      var a = document.createElement('script'); a.id = 'kx-late-katex'; a.src = '../katex/katex.min.js'; a.async = false; document.head.appendChild(a);
+      var b = document.createElement('script'); b.id = 'kx-late-auto'; b.src = '../katex/auto-render.min.js'; b.async = false; document.head.appendChild(b);
+    }
+  }, 400);
+}
 
 function toggleDark(){ const d=document.body.classList.toggle('kg-dark'); localStorage.setItem('kg_dark', d?'1':'0'); }
 

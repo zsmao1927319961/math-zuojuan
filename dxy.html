@@ -132,13 +132,32 @@ function today(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMon
 function addDays(base,n){ const d=new Date(base+'T12:00:00'); d.setDate(d.getDate()+n); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function daysBetween(a,b){ return Math.round((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/864e5); }
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+/* KaTeX 迟到恢复：脚本未就绪时先露原文并登记，动态补拉，就绪后自动重渲染（防 ReferenceError 崩卡片） */
+const KXQ = []; let KXT = 0;
+function kxDxy(p, s, disp){
+  if (window.katex) { katex.render(disp ? p.slice(2,-2) : p.slice(1,-1), s, {displayMode:disp, throwOnError:false, macros:{'\\frac':'\\dfrac'}}); return; }
+  s.textContent = p;
+  KXQ.push([s, p, disp]);
+  if (KXT) return;
+  let tries = 0, ticks = 0;
+  KXT = setInterval(() => {
+    if (window.katex) {
+      clearInterval(KXT); KXT = 0;
+      const q = KXQ.splice(0);
+      for (const [e2, p2, d2] of q) kxDxy(p2, e2, d2);
+      return;
+    }
+    if (++ticks > 75) { clearInterval(KXT); KXT = 0; return; }
+    if (tries < 8) { tries++; const sc = document.createElement('script'); sc.src = 'katex/katex.min.js'; sc.async = true; document.head.appendChild(sc); }
+  }, 400);
+}
 function renderMixed(el, text){
   el.innerHTML='';
   const parts=String(text||'').split(/(\$\$[\s\S]+?\$\$|\$[^$\n]+?\$)/g);
   for(const p of parts){
     if(!p) continue;
-    if(p.indexOf('$$')===0){ const s=document.createElement('div'); katex.render(p.slice(2,-2), s, {displayMode:true, throwOnError:false, macros:{'\frac':'\dfrac'}}); el.appendChild(s); }
-    else if(p.indexOf('$')===0){ const s=document.createElement('span'); katex.render(p.slice(1,-1), s, {throwOnError:false, macros:{'\frac':'\dfrac'}}); el.appendChild(s); }
+    if(p.indexOf('$$')===0){ const s=document.createElement('div'); el.appendChild(s); kxDxy(p, s, true); }
+    else if(p.indexOf('$')===0){ const s=document.createElement('span'); el.appendChild(s); kxDxy(p, s, false); }
     else el.appendChild(document.createTextNode(p));
   }
 }
