@@ -20687,7 +20687,7 @@
   "kp_sub": "随机相位区间与广义平稳条件",
   "chapter_name": "专题四 随机过程的性质",
   "solution": "【知识点梳理】\n· $X$ 与 $\\theta$ 独立 ⇒ 期望可拆 $E[X]\\cdot E[\\cos]$。\n· 相关项里角度是 $2\\theta$（周期 π）→ 区间 $[-\\theta_0,\\theta_0]$ 平均后残余 $\\mathrm{Sa}(2\\theta_0)$ 项。\n【解题步骤】\n第1步：$μ_Y=E[X]\\cdot\\frac{\\sin\\theta_0}{\\theta_0}\\cos\\omega_ct$——注意 $E[\\cos]\\neq0$；$μ_Y=0$ 靠的是 $E[X]=0$。\n第2步：$R_Y=\\frac12R_X(\\tau)[\\cos\\omega_c\\tau+\\mathrm{Sa}(2\\theta_0)\\cos(2\\omega_ct+\\omega_c\\tau)]$。\n第3步：平稳 $\\iff\\mathrm{Sa}(2\\theta_0)=0\\iff\\theta_0=k\\pi/2$。\n【答案】$μ_Y=0$；$R_Y$ 如上；$θ_0=\\frac\\pi2$（需 $E[X]=0$）或 $θ_0=\\pi$（无条件）时广义平稳。\n【易错提醒】“均值为零”的真正原因是 $E[X]=0$，不是 $E[\\cos]=0$；半圆起步平稳、整圆无条件平稳。",
-  "answer_img": "images/qa_t4.jpg"
+  "answer_img": "images/qa_qhzt-4-4.jpg"
  },
  {
   "subject": "txyl",
