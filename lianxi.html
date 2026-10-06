@@ -36,6 +36,7 @@
   .qbtn{border:1px solid #d6dbe3;background:#fff;border-radius:20px;padding:7px 14px;font-size:13px;cursor:pointer}
   .qbtn.hot{background:#fdeaea;border-color:#f3c9c9;color:#c33}
   .qbtn.star{background:#f3ecff;border-color:#ddc8ff;color:#7a3ff2}
+  .qbtn.paper{background:#eaf1ff;border-color:#c9d8ff;color:#2f6bff}
   .chrow{display:flex;align-items:center;gap:10px;padding:11px 10px;border-radius:10px;cursor:pointer;transition:background .18s ease,transform .18s ease}
   @media(hover:hover){.chrow:hover{background:#f2f5fb;transform:translateX(3px)}.chrow:hover .chl{color:#2f6bff}}
   .chrow+.chrow{border-top:1px dashed #eef0f5}
@@ -135,6 +136,7 @@
     <div class="quick">
       <button class="qbtn hot" id="btn-retest">🔁 错题复测</button>
       <button class="qbtn star" id="btn-favs">⭐ 我的收藏</button>
+      <button class="qbtn paper" id="btn-zujuan">📝 组卷</button>
     </div>
     <input id="dirkw" class="dirsearch" placeholder="🔍 搜分组 / 考点 / 题号，如“MSK”“第6章”“卷积”" autocomplete="off">
     <div class="paper-card tree" id="tree"></div>
@@ -157,8 +159,28 @@
     <div id="plist"></div>
   </div>
 
-  <!-- ====== 复测视图 ====== -->
-  <div id="view-retest" hidden>
+  <!-- ====== 组卷视图 ====== -->
+  <div id="view-zujuan" hidden>
+    <div class="paper-card">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="btn-back3">← 目录</button>
+        <div class="paper-name" style="font-size:15px">📝 智能组卷 · 299题</div>
+      </div>
+      <div class="paper-meta">从《299题》317 题中按真卷命题结构抽题：单选 / 判断 / 填空 + 计算综合大题按章定点（模拟调制・基带・频带・最佳接收・信源编码・信道编码・综合），兼顾各校命题风格。</div>
+      <div class="chiprow" id="pj-kind">
+        <button class="chip on" data-k="full">整卷 · 约37题</button>
+        <button class="chip" data-k="half">半卷 · 约20题</button>
+        <button class="chip" data-k="quick">快练 · 10题</button>
+      </div>
+      <div class="btnrow"><button class="btn" id="btn-make" style="background:#2f6bff;color:#fff;border-color:#2f6bff;font-weight:700">✨ 生成试卷</button></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-name" style="font-size:14px">我的卷子</div>
+      <div id="pjlist"></div>
+    </div>
+  </div>
+
+  <!-- ====== 复测视图 ====== -->  <div id="view-retest" hidden>
     <div class="paper-card">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
         <button class="btn" id="btn-back2">← 目录</button>
@@ -424,6 +446,7 @@ function pathName(rec){
 function showPractice(){
   document.getElementById('view-dir').hidden = true;
   document.getElementById('view-retest').hidden = true;
+  document.getElementById('view-zujuan').hidden = true;
   document.getElementById('view-practice').hidden = false;
   document.getElementById('ptitle').textContent = CUR_TITLE + '（' + CUR_LIST.length + ' 题）';
   renderPractice();
@@ -657,6 +680,102 @@ function globalStats(){
   return { done: done, shaky: shaky, unknown: unknown, none: QS.length - done - shaky - unknown };
 }
 
+/* ---------- 智能组卷：299题按真卷命题结构抽题 ---------- */
+var PJ_KIND = 'full';
+var PJ_PAPERS = null;   /* localStorage lianxi_papers_v1 */
+function pjPapers(){
+  if (PJ_PAPERS === null) {
+    try { PJ_PAPERS = JSON.parse(localStorage.getItem('lianxi_papers_v1')) || []; } catch (e) { PJ_PAPERS = []; }
+  }
+  return PJ_PAPERS;
+}
+function pjSave(){ localStorage.setItem('lianxi_papers_v1', JSON.stringify(PJ_PAPERS)); }
+function pjShuffle(a){
+  var r = a.slice();
+  for (var i = r.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = r[i]; r[i] = r[j]; r[j] = t; }
+  return r;
+}
+function pjUsed(){
+  var u = {};
+  pjPapers().forEach(function(p){ (p.qids || []).forEach(function(id){ u[id] = 1; }); });
+  return u;
+}
+function pjPick(cand, n, used, chapLimit){
+  /* 未组过卷的题优先，组内洗牌；chapLimit=同章上限（0不限） */
+  var pri = pjShuffle(cand.filter(function(q){ return !used[q.id]; })).concat(pjShuffle(cand.filter(function(q){ return used[q.id]; })));
+  var out = [], cc = {};
+  for (var i = 0; i < pri.length && out.length < n; i++) {
+    var ch = String(pri[i].chapter || '');
+    if (chapLimit && (cc[ch] || 0) >= chapLimit) continue;
+    cc[ch] = (cc[ch] || 0) + 1;
+    out.push(pri[i]);
+  }
+  return out;
+}
+function pjByType(tk, types){ return tk.filter(function(q){ return types.indexOf(q.type) >= 0; }); }
+function makePaper(kind){
+  var tk = QS.filter(function(q){ return q.source === 'tk299'; });
+  var used = pjUsed();
+  var picked = [];
+  if (kind === 'quick') {
+    picked = pjPick(pjByType(tk, ['选择']), 4, used, 2)
+      .concat(pjPick(pjByType(tk, ['填空']), 2, used, 0))
+      .concat(pjPick(pjByType(tk, ['计算', '简答']), 4, used, 1));
+  } else {
+    var cap = kind === 'half' ? { xz: 8, pd: 3, tk: 5, js: 4 } : { xz: 15, pd: 5, tk: 10, js: 7 };
+    picked = pjPick(pjByType(tk, ['选择']), cap.xz, used, 3)
+      .concat(pjPick(pjByType(tk, ['判断']), cap.pd, used, 0))
+      .concat(pjPick(pjByType(tk, ['填空']), cap.tk, used, 0));
+    /* 计算大题按章定点：模拟调制/基带/频带/最佳接收/信源编码/信道编码 */
+    var slots = kind === 'half'
+      ? [/^第5章/, /^第6章/, /^第7章/, /^第8章/]
+      : [/^第5章/, /^第6章/, /^第7章/, /^第8章/, /^第9章/, /^第10章/];
+    var jsq = [];
+    slots.forEach(function(re){
+      var got = pjPick(pjByType(tk, ['计算', '简答']).filter(function(q){ return re.test(String(q.chapter || '')) && jsq.indexOf(q) < 0; }), 1, used, 0);
+      if (got.length) jsq.push(got[0]);
+    });
+    /* 综合槽：第9章考点6优先，其次任意未用计算题补位；章内无题的槽也兜底 */
+    if (kind === 'full') {
+      var pref = pjPick(pjByType(tk, ['计算', '简答']).filter(function(q){ return /第9章考点6/.test(String(q.chapter || '')) && jsq.indexOf(q) < 0; }), 1, used, 0);
+      if (pref.length) jsq.push(pref[0]);
+    }
+    jsq = jsq.filter(Boolean);
+    var need = cap.js - jsq.length;
+    if (need > 0) jsq = jsq.concat(pjPick(pjByType(tk, ['计算', '简答']).filter(function(q){ return jsq.indexOf(q) < 0; }), need, used, 1));
+    picked = picked.concat(jsq);
+  }
+  return picked;
+}
+function openPaper(p){
+  var qs = (p.qids || []).map(function(id){ return QMAP[id]; }).filter(Boolean);
+  if (!qs.length) { toast('卷子题目缺失，删掉重组吧'); return; }
+  CUR_LIST = qs; CUR_TITLE = p.title;
+  showPractice();
+}
+function renderZujuan(){
+  var el = document.getElementById('pjlist');
+  var ps = pjPapers();
+  if (!ps.length) { el.innerHTML = '<div class="empty">还没有卷子，选好卷型点「生成试卷」</div>'; return; }
+  el.innerHTML = ps.map(function(p){
+    var q0 = (p.qids || []).map(function(id){ return QMAP[id]; }).filter(Boolean);
+    var ny = q0.filter(function(q){ return q.school === '南京邮电大学'; }).length;
+    return '<div class="due-item" data-pj="' + p.id + '">' +
+      '<div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13.5px">' + escHtml(p.title) + '</div>' +
+      '<div style="font-size:11.5px;color:#98a0ad;margin-top:2px">' + p.date + ' · ' + (p.qids || []).length + ' 题' + (ny ? ' · 含南邮真题 ' + ny + ' 道' : '') + '</div></div>' +
+      '<button class="btn" data-pj-open="' + p.id + '">开始刷</button>' +
+      '<button class="btn" data-pj-del="' + p.id + '" style="color:#c33">✕</button></div>';
+  }).join('');
+}
+function showZujuan(){
+  document.getElementById('view-dir').hidden = true;
+  document.getElementById('view-practice').hidden = true;
+  document.getElementById('view-retest').hidden = true;
+  document.getElementById('view-zujuan').hidden = false;
+  location.hash = 'zujuan';
+  renderZujuan();
+}
+
 /* ---------- 启动 ---------- */
 function start(){
   KB = buildKnowledge();
@@ -682,6 +801,40 @@ function start(){
   renderTree();
   document.getElementById('btn-retest').onclick = showRetest;
   document.getElementById('btn-favs').onclick = openFavs;
+  document.getElementById('btn-zujuan').onclick = showZujuan;
+  document.getElementById('btn-back3').onclick = goDir;
+  document.querySelectorAll('#pj-kind .chip').forEach(function(c){
+    c.onclick = function(){
+      PJ_KIND = c.dataset.k;
+      document.querySelectorAll('#pj-kind .chip').forEach(function(x){ x.classList.toggle('on', x === c); });
+    };
+  });
+  document.getElementById('btn-make').onclick = function(){
+    var qs = makePaper(PJ_KIND);
+    if (!qs.length) { toast('题库为空，刷不到题'); return; }
+    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : '快练';
+    var p = { id: Date.now(), title: '299题' + kindName + ' · ' + TODAY + ' #' + (pjPapers().length + 1), date: TODAY, kind: PJ_KIND, qids: qs.map(function(q){ return q.id; }) };
+    PJ_PAPERS = pjPapers();
+    PJ_PAPERS.unshift(p);
+    if (PJ_PAPERS.length > 20) PJ_PAPERS = PJ_PAPERS.slice(0, 20);
+    pjSave();
+    openPaper(p);
+  };
+  document.getElementById('pjlist').onclick = function(e){
+    var del = e.target.closest('[data-pj-del]');
+    if (del) {
+      var id0 = Number(del.getAttribute('data-pj-del'));
+      PJ_PAPERS = pjPapers().filter(function(p){ return p.id !== id0; });
+      pjSave(); renderZujuan();
+      return;
+    }
+    var open = e.target.closest('[data-pj-open]');
+    if (open) {
+      var id1 = Number(open.getAttribute('data-pj-open'));
+      var p = pjPapers().filter(function(x){ return x.id === id1; })[0];
+      if (p) openPaper(p);
+    }
+  };
   document.getElementById('btn-back').onclick = goDir;
   document.getElementById('btn-back2').onclick = goDir;
   document.querySelectorAll('#pfilter .chip').forEach(function(c){
@@ -702,6 +855,7 @@ function start(){
   var h = location.hash.slice(1);
   if (h === 'retest') showRetest();
   else if (h === 'favs') openFavs();
+  else if (h === 'zujuan') showZujuan();
   else if (h.indexOf('n=') === 0) {
     var nid = decodeURIComponent(h.slice(2));
     var rec = KB.map[nid] || KB.map[Number(nid)];
@@ -711,6 +865,7 @@ function start(){
 function goDir(){
   document.getElementById('view-practice').hidden = true;
   document.getElementById('view-retest').hidden = true;
+  document.getElementById('view-zujuan').hidden = true;
   document.getElementById('view-dir').hidden = false;
   if (location.hash) history.pushState('', '', location.pathname);
   renderTree();

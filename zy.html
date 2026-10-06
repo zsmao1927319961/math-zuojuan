@@ -75,7 +75,7 @@ const DMACROS = { '\frac': '\dfrac' };
 
 (function(){
   'use strict';
-  var ZT_MAX = 16;              /* 题池：专题一~专题十六（学到新专题后改这里扩池） */
+  var ZT_MAX = 27;              /* 题池：全部 26 专题（强化已学完全开；想收窄改这里） */
   var DAILY = 5;                /* 每日题数 */
   var LS_KEY = 'shuxue_progress_v1';
   var MODE = null;              /* 'server' | 'static' */
@@ -420,7 +420,7 @@ const DMACROS = { '\frac': '\dfrac' };
     PICKS.forEach(function(q){ lv = liveOf(q); if (lv.status === 'done' || lv.wrong_date === TODAY) todayDone++; });
     var st = document.getElementById('pstats');
     if (st) st.innerHTML =
-      '<div class="stat">题池 <b>' + pool.length + '</b> 题（专题一~十六）</div>' +
+      '<div class="stat">题池 <b>' + pool.length + '</b> 题（全部 26 专题）</div>' +
       (cooldown > 0 ? '<div class="stat">冷却回池 <b>' + cooldown + '</b>（做对第 7 天自动回池）</div>' : '') +
       '<div class="stat ok">已掌握 <b>' + done + '</b></div>' +
       '<div class="stat bad">待重做 <b>' + due + '</b></div>' +
