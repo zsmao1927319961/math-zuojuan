@@ -48,6 +48,10 @@
   .segbar .s-rev{background:#e8a33d}
   .segbar .s-bad{background:#c0504d}
   .segbar.mini{height:4px;border-radius:2px;max-width:180px}
+  .sec-title{font-size:12.5px;font-weight:700;color:#7a828f;margin:10px 4px 4px;letter-spacing:.02em}
+  .sec-title:first-child{margin-top:2px}
+  .dirsearch{width:100%;box-sizing:border-box;padding:9px 13px;border:1px solid #d8dce4;border-radius:10px;font-size:13.5px;margin-bottom:10px;background:#fff;transition:border-color .15s ease;font-family:inherit}
+  .dirsearch:focus{outline:none;border-color:#2f6bff}
   .chiprow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
   .chip{border:1px solid #d6dbe3;background:#fff;border-radius:9px;padding:4px 11px;font-size:12px;cursor:pointer}
   .chip.on{background:#2f6bff;color:#fff;border-color:#2f6bff}
@@ -132,6 +136,7 @@
       <button class="qbtn hot" id="btn-retest">🔁 错题复测</button>
       <button class="qbtn star" id="btn-favs">⭐ 我的收藏</button>
     </div>
+    <input id="dirkw" class="dirsearch" placeholder="🔍 搜分组 / 考点 / 题号，如“MSK”“第6章”“卷积”" autocomplete="off">
     <div class="paper-card tree" id="tree"></div>
   </div>
 
@@ -324,7 +329,7 @@ function tagOf(q){
   return '<span class="tag">未做</span>';
 }
 
-/* ---------- 知识树：通信 26 专题（题目按章节归组） ---------- */
+/* ---------- 知识树：强化专题 26 组 + 《299题》12 章 48 考点 ---------- */
 function zhNum(n){ var d = '零一二三四五六七八九'; if (n <= 10) return n === 10 ? '十' : d[n]; if (n < 20) return '十' + d[n % 10]; return d[Math.floor(n / 10)] + '十' + (n % 10 ? d[n % 10] : ''); }
 function topicName(q){
   var n = parseInt(String(q.chapter).replace('专题', ''), 10);
@@ -332,22 +337,27 @@ function topicName(q){
   if (q.chapter_name) return q.chapter_name;
   return q.kp ? base + ' · ' + q.kp : base;
 }
+function t299Order(cid){ var m = cid.match(/第(\d+)章考点(\d+)/); return m ? (+m[1]) * 100 + (+m[2]) : 9999; }
 function buildKnowledge(){
   var map = {};
-  var root = { id: 'tx', name: '通信原理 · 强化专题', children: [], parent: null, depth: 0, qs: [], total: 0 };
+  var root = { id: 'tx', name: '通信原理题库', children: [], parent: null, depth: 0, qs: [], total: 0 };
   map['tx'] = root;
   var byCh = {};
   QS.forEach(function(q){
-    var cid = 'qhzt-' + String(q.chapter).replace('专题', '');
+    var isT = q.source === 'tk299';
+    var cid = isT ? ('t299-' + q.chapter) : ('qhzt-' + String(q.chapter).replace('专题', ''));
     var rec = byCh[cid];
     if (!rec) {
-      rec = byCh[cid] = { id: cid, name: topicName(q), children: [], parent: root, depth: 1, qs: [], total: 0 };
+      rec = byCh[cid] = { id: cid, name: (q.chapter_name || (isT ? q.chapter : topicName(q))), children: [], parent: root, depth: 1, qs: [], total: 0, sec: isT ? 2 : 1 };
       root.children.push(rec);
       map[cid] = rec;
     }
     rec.qs.push(q);
   });
-  root.children.sort(function(a, b){ return parseInt(a.id.slice(5), 10) - parseInt(b.id.slice(5), 10); });
+  root.children.sort(function(a, b){
+    if (a.sec !== b.sec) return a.sec - b.sec;
+    return a.sec === 1 ? (parseInt(a.id.slice(5), 10) - parseInt(b.id.slice(5), 10)) : (t299Order(a.id) - t299Order(b.id));
+  });
   function roll(rec){ var t = rec.qs.length; rec.children.forEach(function(c){ t += roll(c); }); rec.total = t; return t; }
   roll(root);
   return { roots: [root], map: map };
@@ -370,10 +380,25 @@ function chapterRow(rec){
     (wrong ? '<span class="tag bad">问题 ' + wrong + '</span>' : '') +
     '<span class="tag">' + total + ' 题</span></div></div>';
 }
+var DIR_KW = '';
 function renderTree(){
   var el = document.getElementById('tree');
   var root = KB.roots[0];
-  el.innerHTML = root.children.map(chapterRow).join('');
+  var sec1 = root.children.filter(function(r){ return r.sec === 1; });
+  var sec2 = root.children.filter(function(r){ return r.sec === 2; });
+  var kw = DIR_KW.trim().toLowerCase();
+  function match(rec){
+    if (!kw) return true;
+    if (rec.name.toLowerCase().indexOf(kw) >= 0) return true;
+    return rec.qs.some(function(q){ return (q.kp || '').toLowerCase().indexOf(kw) >= 0 || (q.kp_sub || '').toLowerCase().indexOf(kw) >= 0 || q.id.toLowerCase().indexOf(kw) >= 0; });
+  }
+  function rows(list){ return list.filter(match).map(chapterRow).join(''); }
+  var n1 = sec1.reduce(function(t, r){ return t + r.total; }, 0);
+  var n2 = sec2.reduce(function(t, r){ return t + r.total; }, 0);
+  el.innerHTML =
+    '<div class="sec-title">强化专题 · ' + sec1.length + ' 组 ' + n1 + ' 题</div>' + rows(sec1) +
+    (sec2.length ? '<div class="sec-title">《通信原理299题》 · ' + sec2.length + ' 个考点 ' + n2 + ' 题</div>' + rows(sec2) : '');
+  if (!el.querySelector('.chrow')) el.innerHTML = '<div class="empty">没有匹配「' + escHtml(DIR_KW) + '」的分组，换个关键词试试</div>';
   el.onclick = function(e){
     var row = e.target.closest('.chrow');
     if (!row) return;
@@ -433,7 +458,7 @@ function card(q, idx){
   else if (b0 === 'shaky') el.classList.add('shaky');
   var lv = liveOf(q);
   var head = '<div class="qhead"><span class="qno">' + (idx + 1) + '</span>' +
-    '<span class="tag">' + escHtml(q.chapter_name || q.chapter) + '</span>' +
+    '<span class="tag">' + escHtml(q.source === 'tk299' ? (q.chapter || '') : (q.chapter_name || q.chapter)) + '</span>' +
     (q.type ? '<span class="tag">' + escHtml(q.type) + '</span>' : '') +
     (q.kp_sub && q.source !== 'qhzt' ? '<span class="tag">' + escHtml(q.kp_sub) + '</span>' : '') +
     '<span data-role="st">' + tagOf(q) + '</span>' +
@@ -635,6 +660,12 @@ function globalStats(){
 /* ---------- 启动 ---------- */
 function start(){
   KB = buildKnowledge();
+  (function(){
+    var nT = QS.filter(function(q){ return q.source === 'tk299'; }).length;
+    document.getElementById('dirmeta').textContent = '强化专题 113 题 + 《299题》' + nT + ' 题 · 共 ' + QS.length + ' 题 · 点分组开刷，掌握状态实时更新';
+  })();
+  var dk = document.getElementById('dirkw');
+  if (dk) dk.addEventListener('input', function(){ DIR_KW = this.value; renderTree(); });
   document.getElementById('dirstats').innerHTML = (function(){
     var g = globalStats();
     var n = QS.length || 1;
@@ -692,7 +723,7 @@ function countdown(){
 var KB = null;
 
 fetch('data/questions.json').then(function(r){ return r.json(); }).then(function(all){
-  QS = all.filter(function(q){ return q.source === 'qhzt'; });   /* 专业课专属：只留通信题 */
+  QS = all.filter(function(q){ return q.source === 'qhzt' || q.source === 'tk299'; });   /* 专业课题库：强化专题 + 299题 */
   QS.forEach(function(q){ QMAP[q.id] = q; });
   STATE = loadState();
   if (!STATE) {

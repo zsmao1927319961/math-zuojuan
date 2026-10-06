@@ -79,8 +79,8 @@
       </a>
       <a class="fcard" href="lianxi.html">
         <div class="fico" style="background:#eaf1ff">✏️</div>
-        <div><div class="ft">在线刷题<span class="badge info">26 专题</span></div>
-        <div class="fd">按专题连续刷，三键标掌握，错题自动进复测计划</div></div>
+        <div><div class="ft">在线刷题<span class="badge info">430 题</span></div>
+        <div class="fd">强化专题 + 《299题》连续刷，三键标掌握，错题自动进复测计划</div></div>
       </a>
       <a class="fcard" href="dxy.html">
         <div class="fico" style="background:#e7f6ef">📚</div>
@@ -125,7 +125,7 @@
     </div>
   </div>
 
-  <footer>通信原理 · 强化专题题库（26 专题 113 题） · 数据存本机</footer>
+  <footer>通信原理题库（强化专题 113 题 + 《299题》317 题） · 数据存本机</footer>
 </div>
 <div id="toast" hidden></div>
 <script>
@@ -146,10 +146,9 @@ var STATE = null;
 try { STATE = JSON.parse(localStorage.getItem(LS_KEY)); } catch(e){}
 if (!STATE) STATE = { papers: [], notes: {}, question_state: {} };
 var qsState = STATE.question_state || {};
-var total = 113, done = 0, wrong = 0, due = 0;
-for (var i = 1; i <= 27; i++) {} /* 计数基于 qhzt-<n>-<k> 的 id 形态 */
+var total = 430, done = 0, wrong = 0, due = 0;
 Object.keys(qsState).forEach(function(qid){
-  if (qid.indexOf('qhzt-') !== 0) return;
+  if (qid.indexOf('qhzt-') !== 0 && qid.indexOf('tk299-') !== 0) return;
   var s = qsState[qid];
   if (s.status === 'done') done++;
   else if (s.wrong_date || s.due) { wrong++; if (s.due && s.due <= TODAY) due++; }
