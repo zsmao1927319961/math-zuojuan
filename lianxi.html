@@ -109,6 +109,35 @@
   #view-dir,#view-practice,#view-retest{animation:fadeUp .3s ease}
   @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+  /* 打印视图：题目卷留白 + 解析册书式版式 */
+  .pb-cover{margin:0 0 18px}
+  .pb-title{font-size:22px;font-weight:800}
+  .pb-sub{font-size:12.5px;color:#555;margin-top:6px}
+  .pb-note{font-size:11.5px;color:#888;margin-top:4px}
+  .pb-part{font-size:16px;font-weight:800;border-left:5px solid #2f6bff;padding-left:10px;margin:18px 0 12px}
+  .pb-pagebreak{page-break-before:always}
+  .pb-item{margin-bottom:20px}
+  .pb-avoid{break-inside:avoid;page-break-inside:avoid}
+  .pb-no{font-weight:700;font-size:14.5px;margin-bottom:6px}
+  .pb-tag{display:inline-block;background:#eef1f6;border-radius:5px;padding:1px 7px;font-size:11px;color:#5a6472;margin-right:4px}
+  .pb-ans{background:#e8f7f0;color:#1d9e6f;font-weight:700}
+  .pb-sol{background:#eaf1ff;color:#2f6bff;font-weight:700}
+  .pb-block{margin:8px 0 4px}
+  .pb-q{font-size:14.5px;line-height:1.9}
+  .pb-sec{font-size:13.5px;line-height:1.9}
+  .pb-img{max-width:88%;display:block;margin:6px 0;border:1px solid #eee;border-radius:6px}
+  .pb-lock{width:100%;border-collapse:collapse;margin:8px 0 2px}
+  .pb-lock td{border:1.5px solid #9fb6e8;padding:6px 9px;font-size:12.5px;vertical-align:top}
+  .pb-lock .pb-k{width:76px;background:#eef3ff;color:#2b3a67;font-weight:700;white-space:nowrap}
+  .pb-space{border:1.5px dashed #c9cfda;border-radius:8px;margin-top:8px;background:repeating-linear-gradient(180deg,transparent,transparent 27px,#e3e8f0 27px,#e3e8f0 28px)}
+  @media print {
+    body > *:not(#print-area){display:none!important}
+    #print-area{display:block!important}
+    body{background:#fff!important}
+    .pb-space{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .pb-lock td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    @page{size:A4;margin:14mm 13mm}
+  }
   /* 复测计划 */
   .due-item{display:flex;align-items:center;gap:8px;padding:10px 4px;border-bottom:1px dashed #e3e7ee;font-size:13.5px;cursor:pointer}
   .due-item .btn{white-space:nowrap}
@@ -153,6 +182,7 @@
         <button class="chip on" data-f="">全部</button>
         <button class="chip" data-f="todo">只看未做</button>
         <button class="chip" data-f="wrong">只看有问题</button>
+        <button class="chip" id="btn-paper-pdf">🖨 存为PDF</button>
       </div>
       <div class="stats" id="pstats"></div>
     </div>
@@ -171,7 +201,9 @@
         <button class="chip on" data-k="full">整卷 · 约37题</button>
         <button class="chip" data-k="half">半卷 · 约20题</button>
         <button class="chip" data-k="quick">快练 · 10题</button>
+        <button class="chip" data-k="cover">全覆盖轮转 · 防遗忘</button>
       </div>
+      <div class="paper-meta" id="pj-cover-hint" hidden>全覆盖轮转：48 个考点排成固定队列，每卷按顺序取下一批 12 个考点（跨章交错、题型齐全），3~4 卷正好完整一轮，一张不漏；配合顶部进度游标自动续接。</div>
       <div class="btnrow"><button class="btn" id="btn-make" style="background:#2f6bff;color:#fff;border-color:#2f6bff;font-weight:700">✨ 生成试卷</button></div>
     </div>
     <div class="paper-card">
@@ -199,6 +231,7 @@
   </div>
 </div>
 <div id="toast" hidden style="position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:rgba(20,24,32,.92);color:#fff;border-radius:10px;padding:9px 18px;font-size:13.5px;z-index:99"></div>
+<div id="print-area" hidden></div>
 
 <script>
 const DMACROS = { '\frac': '\dfrac' };
@@ -745,7 +778,11 @@ function makePaper(kind){
     if (need > 0) jsq = jsq.concat(pjPick(pjByType(tk, ['计算', '简答']).filter(function(q){ return jsq.indexOf(q) < 0; }), need, used, 1));
     picked = picked.concat(jsq);
   }
-  return picked;
+  if (kind === 'cover') {
+    var cv = makeCover();
+    return { qs: cv.qs, meta: cv.meta };
+  }
+  return { qs: picked, meta: '' };
 }
 function openPaper(p){
   var qs = (p.qids || []).map(function(id){ return QMAP[id]; }).filter(Boolean);
@@ -753,6 +790,117 @@ function openPaper(p){
   CUR_LIST = qs; CUR_TITLE = p.title;
   showPractice();
 }
+/* ---------- 全覆盖轮转：48考点队列防遗忘 ---------- */
+function pjCursor(){
+  var c = 0;
+  try { c = parseInt(localStorage.getItem('lianxi_pj_cursor') || '0', 10) || 0; } catch (e) { c = 0; }
+  return c;
+}
+function pjSetCursor(v){ try { localStorage.setItem('lianxi_pj_cursor', String(v)); } catch (e) {} }
+function pjChapKey(c){ var m = String(c).match(/第(\d+)章考点(\d+)/); return m ? (+m[1]) * 100 + (+m[2]) : 9999; }
+function pjInterleave(list){
+  /* 跨章交错：按章分桶轮转取，相邻尽量不同章 */
+  var buckets = {};
+  list.forEach(function(q){ var ch = String(q.chapter || ''); (buckets[ch] = buckets[ch] || []).push(q); });
+  var keys = Object.keys(buckets);
+  var out = [], more = true;
+  while (more) {
+    more = false;
+    keys.forEach(function(k){ if (buckets[k].length) { out.push(buckets[k].shift()); more = true; } });
+  }
+  return out;
+}
+function makeCover(){
+  var tk = QS.filter(function(q){ return q.source === 'tk299'; });
+  var groups = {};
+  tk.forEach(function(q){ var ch = String(q.chapter || ''); if (ch) (groups[ch] = groups[ch] || []).push(q); });
+  var keys = Object.keys(groups).sort(function(a, b){ return pjChapKey(a) - pjChapKey(b); });
+  var N = keys.length, per = 12;
+  var cur = pjCursor();
+  var idxs = [];
+  for (var i = 0; i < Math.min(per, N); i++) idxs.push((cur + i) % N);
+  pjSetCursor((cur + per) % N);
+  var used = pjUsed();
+  var picked = [];
+  idxs.forEach(function(gi){
+    var got = pjPick(groups[keys[gi]], 1, used, 0);
+    if (got.length) picked.push(got[0]);
+  });
+  /* 题型缺口补齐（目标 选择4/判断1/填空2/计算5） */
+  var target = { '选择': 4, '判断': 1, '填空': 2, '计算': 5 };
+  ['计算', '选择', '填空', '判断'].forEach(function(tp){
+    var have = picked.filter(function(q){ return q.type === tp; }).length;
+    var need = Math.max(0, target[tp] - have);
+    if (need > 0) {
+      var inIds = {};
+      picked.forEach(function(q){ inIds[q.id] = 1; });
+      var cand = pjByType(tk, [tp]).filter(function(q){ return !inIds[q.id]; });
+      picked = picked.concat(pjPick(cand, need, used, 1));
+    }
+  });
+  picked = pjInterleave(picked);
+  var round = Math.floor(cur / N) + 1, pos = (cur % N) + 1;
+  var meta = '全覆盖轮转 第' + round + '轮 · 考点 ' + pos + '–' + ((cur + per - 1) % N + 1) + '/' + N;
+  return { qs: picked, meta: meta };
+}
+/* ---------- 打印视图：题目卷（留白）+ 解析册（书式版式） ---------- */
+function pjPrintOne(q, no){
+  var lock = '<table class="pb-lock"><tr><td class="pb-k">锁定考点</td><td>' +
+    escHtml(q.chapter_name || q.chapter || '') + (q.kp ? '<br>' + escHtml(q.kp) : '') + '</td></tr></table>';
+  var img = q.question_img ? '<img class="pb-img" src="data/' + q.question_img + '">' : '';
+  var qtext = document.createElement('div'); qtext.className = 'pb-q';
+  renderLatexMixed(qtext, (q.question_text || '').replace(/\n【图】/g, ''));
+  var space = q.type === '计算' || q.type === '简答' ? 200 : (q.type === '填空' ? 70 : 44);
+  var html = '<div class="pb-item pb-avoid"><div class="pb-no">' + no + '．' +
+    '<span class="pb-tag">' + escHtml(q.chapter || '') + '</span> <span class="pb-tag">' + escHtml(q.type || '') + '</span></div>';
+  html += '<div class="pb-qwrap"></div>' + (q.question_img ? img : '') + lock;
+  html += '<div class="pb-space" style="height:' + space + 'px"></div></div>';
+  var div = document.createElement('div');
+  div.innerHTML = html;
+  var wrap = div.querySelector('.pb-qwrap');
+  wrap.appendChild(qtext);
+  return div.firstElementChild;
+}
+function pjPrintSol(q, no){
+  var lock = '<table class="pb-lock"><tr><td class="pb-k">锁定考点</td><td>' +
+    escHtml(q.chapter_name || q.chapter || '') + (q.kp ? '<br>' + escHtml(q.kp) : '') + '</td></tr></table>';
+  var ans = document.createElement('div'); ans.className = 'pb-sec';
+  renderLatexMixed(ans, q.answer_text || '（见解析）');
+  var sol = document.createElement('div'); sol.className = 'pb-sec';
+  var solText = (q.solution || '').replace(/【图】/g, '');
+  renderLatexMixed(sol, solText);
+  var img = q.answer_img ? '<img class="pb-img" src="data/' + q.answer_img + '">' : '';
+  var div = document.createElement('div');
+  div.className = 'pb-item pb-avoid';
+  div.innerHTML = '<div class="pb-no">' + no + '．答案与解析（' + escHtml(q.chapter || '') + '）</div>' + lock +
+    '<div class="pb-block"><span class="pb-tag pb-ans">答案</span></div><div class="pb-secwrap a"></div>' +
+    '<div class="pb-block"><span class="pb-tag pb-sol">解析</span></div><div class="pb-secwrap s"></div>' + img;
+  div.querySelector('.pb-secwrap.a').appendChild(ans);
+  if (solText) div.querySelector('.pb-secwrap.s').appendChild(sol);
+  else div.querySelector('.pb-secwrap.s').remove();
+  return div;
+}
+function buildPrintArea(){
+  var el = document.getElementById('print-area');
+  el.innerHTML = '';
+  var cover = document.createElement('div');
+  cover.className = 'pb-cover';
+  cover.innerHTML = '<div class="pb-title">' + escHtml(CUR_TITLE) + '</div>' +
+    '<div class="pb-sub">通信原理 · 《299题》 · 共 ' + CUR_LIST.length + ' 题 · ' + TODAY + '</div>' +
+    '<div class="pb-note">第一部分：题目（留白作答） · 第二部分：答案与解析 · GoodNotes/打印均可</div>';
+  el.appendChild(cover);
+  var h1 = document.createElement('div');
+  h1.className = 'pb-part';
+  h1.textContent = '第一部分 · 题目';
+  el.appendChild(h1);
+  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintOne(q, i + 1)); });
+  var h2 = document.createElement('div');
+  h2.className = 'pb-part pb-pagebreak';
+  h2.textContent = '第二部分 · 答案与解析';
+  el.appendChild(h2);
+  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintSol(q, i + 1)); });
+}
+
 function renderZujuan(){
   var el = document.getElementById('pjlist');
   var ps = pjPapers();
@@ -807,18 +955,26 @@ function start(){
     c.onclick = function(){
       PJ_KIND = c.dataset.k;
       document.querySelectorAll('#pj-kind .chip').forEach(function(x){ x.classList.toggle('on', x === c); });
+      document.getElementById('pj-cover-hint').hidden = PJ_KIND !== 'cover';
     };
   });
   document.getElementById('btn-make').onclick = function(){
-    var qs = makePaper(PJ_KIND);
+    var out = makePaper(PJ_KIND);
+    var qs = out.qs;
     if (!qs.length) { toast('题库为空，刷不到题'); return; }
-    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : '快练';
-    var p = { id: Date.now(), title: '299题' + kindName + ' · ' + TODAY + ' #' + (pjPapers().length + 1), date: TODAY, kind: PJ_KIND, qids: qs.map(function(q){ return q.id; }) };
+    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : PJ_KIND === 'cover' ? '全覆盖' : '快练';
+    var p = { id: Date.now(), title: '299题' + kindName + (out.meta ? ' · ' + out.meta : '') + ' · ' + TODAY + ' #' + (pjPapers().length + 1), date: TODAY, kind: PJ_KIND, qids: qs.map(function(q){ return q.id; }) };
     PJ_PAPERS = pjPapers();
     PJ_PAPERS.unshift(p);
     if (PJ_PAPERS.length > 20) PJ_PAPERS = PJ_PAPERS.slice(0, 20);
     pjSave();
     openPaper(p);
+  };
+  document.getElementById('btn-paper-pdf').onclick = function(){
+    if (!CUR_LIST.length) { toast('当前卷子没有题'); return; }
+    buildPrintArea();
+    toast('打印视图已就绪：目标选「另存为PDF」，iPad 在打印预览里捏合后存文件/GoodNotes');
+    setTimeout(function(){ window.print(); }, 350);
   };
   document.getElementById('pjlist').onclick = function(e){
     var del = e.target.closest('[data-pj-del]');
@@ -837,7 +993,7 @@ function start(){
   };
   document.getElementById('btn-back').onclick = goDir;
   document.getElementById('btn-back2').onclick = goDir;
-  document.querySelectorAll('#pfilter .chip').forEach(function(c){
+  document.querySelectorAll('#pfilter .chip:not(#btn-paper-pdf)').forEach(function(c){
     c.onclick = function(){
       P_FILTER = c.dataset.f;
       document.querySelectorAll('#pfilter .chip').forEach(function(x){ x.classList.toggle('on', x === c); });
