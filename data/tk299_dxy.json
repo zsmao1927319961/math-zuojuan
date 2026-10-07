@@ -553,7 +553,7 @@
      "opt-d"
     ]
    },
-   "explanation_md": "6-8 证明：汉明码的最小码距等于 3。",
+   "explanation_md": "汉明码的最小码距 $d_{\\min}=3$，纠错能力 $t=\\left\\lfloor\\frac{d_{\\min}-1}{2}\\right\\rfloor=1$，即只能纠 1 位错，选 D。(15,11) 满足 $n=2^m-1=15$、$k=n-m=11$，是标准汉明码。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "选择",
@@ -671,7 +671,7 @@
      "opt-d"
     ]
    },
-   "explanation_md": "1、D。解析：每一行的码字模二加等于0。",
+   "explanation_md": "全 1 码字合法意味着 $H\\cdot\\mathbf{1}^T=\\mathbf{0}$，即校验矩阵每一行与全 1 向量的内积为 0——每行中 1 的个数（行重量）必须是偶数，选 D。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "选择",
@@ -1729,7 +1729,7 @@
    "serial_number": 2,
    "source": "",
    "question_type": "single_choice",
-   "stem_md": "2、下图是产生 DS-BPSK 信号的原理框图。图中 $d(t)$ 是速率为 $R_b$ 的信息信息信号，$c(t)$ 是速率为 $R_c$ 的扩频信号，$R_c = 16R_b$。图中 $s(t)$ 的主瓣带宽是 $d(t)$ 主瓣带宽的____倍。（北京邮电大学 2016 年一、22）\n【图】\nA. 4　　　　B. 8　　　　C. 16　　　　D. 32",
+   "stem_md": "2、下图是产生 DS-BPSK 信号的原理框图。图中 $d(t)$ 是速率为 $R_b$ 的信息信号，$c(t)$ 是速率为 $R_c$ 的扩频信号，$R_c = 16R_b$。图中 $s(t)$ 的主瓣带宽是 $d(t)$ 主瓣带宽的____倍。（北京邮电大学 2016 年一、22）\n【图】\nA. 4　　　　B. 8　　　　C. 16　　　　D. 32",
    "options": [
     {
      "id": "opt-a",
@@ -1757,7 +1757,7 @@
      "opt-d"
     ]
    },
-   "explanation_md": "2、D\n第十二章 同步原理",
+   "explanation_md": "扩频码速率 $R_c=16R_b$：$s(t)=d(t)\\,c(t)$ 的主瓣带宽由 chip 速率决定，$B_s\\approx 2R_c=2\\times16R_b=32R_b$；而 $d(t)$ 的主瓣带宽为 $R_b$ 量级，故 $s(t)$ 主瓣带宽是 $d(t)$ 的 32 倍，选 D。本质：扩频用 16 倍带宽换取处理增益。",
    "asset_refs": [
     {
      "type": "image",
@@ -3700,7 +3700,7 @@
      "opt-a"
     ]
    },
-   "explanation_md": "，对信号的延迟随时间而变，多径传输。\n3、A",
+   "explanation_md": "卫星中继信道：视距传播、信道参数基本不随时间变化，属恒参信道；短波电离层反射信道：多径传播、衰减和时延随时间随机变化，是典型随参信道。选 A。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "选择",
@@ -4180,7 +4180,7 @@
      "opt-b"
     ]
    },
-   "explanation_md": "1、B\n2、高斯白噪声　带（",
+   "explanation_md": "频带利用率 $=$ 信息速率 $/$ 带宽 $= C/B$。香农容量 $C=B\\log_2\\left(1+\\frac{S}{N_0 B}\\right)$（噪声功率 $N=N_0B$），两边除以 $B$ 得 $\\eta=\\log_2\\left(1+\\frac{S}{N_0B}\\right)$ bit/(s·Hz)，选 B。注意 A 是容量不是利用率，多除了一个 $B$。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "选择",
@@ -4690,7 +4690,7 @@
    "serial_number": 1,
    "source": "",
    "question_type": "single_choice",
-   "stem_md": "调频（上一行残缺文字）\n1、将模拟基带信号先微分再调频，得到的是____信号。\n（北京邮电大学 2020 年一、3）\nA. AM　　B. SSB　　C. FM　　D. PM",
+   "stem_md": "1、将模拟基带信号先微分再调频，得到的是____信号。\n（北京邮电大学 2020 年一、3）\nA. AM　　B. SSB　　C. FM　　D. PM",
    "options": [
     {
      "id": "opt-a",
@@ -4718,7 +4718,7 @@
      "opt-d"
     ]
    },
-   "explanation_md": "…调频指数、带宽、最大频偏等\n1、D",
+   "explanation_md": "先微分再调频：FM 的瞬时频偏 $\\propto$ 输入，即 $\\Delta f \\propto \\frac{dm(t)}{dt}$，积分回瞬时相位偏移 $\\Delta\\varphi \\propto \\int\\frac{dm(t)}{dt}\\,dt = m(t)$——相位偏移直接正比于 $m(t)$，这正是调相 PM 的定义，选 D。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "选择",
@@ -5879,12 +5879,12 @@
    "serial_number": 5,
    "source": "",
    "question_type": "fill",
-   "stem_md": "通信原理（页眉，部分被裁切）\n5、若以下传输特性是可实现的，并设数字信号的码元速率为 $f_b$，则最适合于该数字信号传输的传输特性为________。（河北工业大学 2022 年一、10）\nA、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\frac{\\omega_b}{2}$、$0$、$\\frac{\\omega_b}{2}$）\nB、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\frac{3\\omega_b}{4}$、$0$、$\\frac{3\\omega_b}{4}$）\nC、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\omega_b$、$0$、$\\omega_b$）\nD、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-2\\omega_b$、$0$、$2\\omega_b$）\n右侧页（被裁切，仅可见残句）：\n要的信道……\n采用滚降……\n（北京邮……\nA. 6\n10、欲……\n输特性……",
+   "stem_md": "5、若以下传输特性是可实现的，并设数字信号的码元速率为 $f_b$，则最适合于该数字信号传输的传输特性为________。（河北工业大学 2022 年一、10）\nA、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\frac{\\omega_b}{2}$、$0$、$\\frac{\\omega_b}{2}$）\nB、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\frac{3\\omega_b}{4}$、$0$、$\\frac{3\\omega_b}{4}$）\nC、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-\\omega_b$、$0$、$\\omega_b$）\nD、【图】（$H(\\omega)$ 为矩形特性，横轴 $\\omega$ 上标注 $-2\\omega_b$、$0$、$2\\omega_b$）\n右侧页（被裁切，仅可见残句）：\n要的信道……\n采用滚降……\n（北京邮……\nA. 6\n10、欲……\n输特性……",
    "options": [],
    "answer": {
     "reference_answer_md": "A"
    },
-   "explanation_md": "5、A。解析：A 可以实现无码间干扰，频带利用率最高。",
+   "explanation_md": "码元速率 $f_b$ 的无 ISI 传输，奈奎斯特最小带宽是 $\\frac{f_b}{2}$（对应角频率 $\\frac{\\omega_b}{2}$）。选项 A 的理想矩形低通恰好截止在 $\\frac{\\omega_b}{2}$：既能实现无码间干扰，又达到频带利用率上限 $2$ Baud/Hz，是可实现的传输特性中最节省带宽的，选 A。",
    "asset_refs": [
     {
      "type": "image",
