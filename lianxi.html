@@ -56,6 +56,18 @@
   .chiprow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
   .chip{border:1px solid #d6dbe3;background:#fff;border-radius:9px;padding:4px 11px;font-size:12px;cursor:pointer}
   .chip.on{background:#2f6bff;color:#fff;border-color:#2f6bff}
+  /* 护眼模式：豆沙绿主题（中性面换绿，语义色保留） */
+  body.eyecare{background:#cfe5d0}
+  body.eyecare .hero{background:linear-gradient(135deg,#2f4a3c 0%,#3c6350 55%,#4d7d63 100%)}
+  body.eyecare .paper-card,body.eyecare .qcard{background:#e4f0e2;box-shadow:0 2px 10px rgba(35,70,45,.08)}
+  body.eyecare .qtext{background:#e4f0e2}
+  body.eyecare .stat,body.eyecare .bar,body.eyecare .segbar{background:#d5e7d4}
+  body.eyecare .tag{background:#d8ead6}
+  body.eyecare .dirsearch,body.eyecare .chip,body.eyecare .qbtn,body.eyecare .radio-opt,body.eyecare .noteta{background:#eef6ec}
+  body.eyecare .btn{background:#e2eede}
+  body.eyecare .chip.on{background:#2e7d4f;border-color:#2e7d4f}
+  body.eyecare .qbtn.leaf{background:#d8ead6;border-color:#b5d4b3;color:#2e7d4f}
+  @media(hover:hover){body.eyecare .chrow:hover{background:#dcecdc}}
   /* 题卡 */
   .qcard{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(30,40,60,.06);margin-bottom:14px;padding:12px 16px;scroll-margin-top:70px}
   .qcard.done{border-left:4px solid #1d9e6f}
@@ -166,6 +178,7 @@
       <button class="qbtn hot" id="btn-retest">🔁 错题复测</button>
       <button class="qbtn star" id="btn-favs">⭐ 我的收藏</button>
       <button class="qbtn paper" id="btn-zujuan">📝 组卷</button>
+      <button class="qbtn leaf" id="btn-eyecare">🌿 护眼</button>
     </div>
     <input id="dirkw" class="dirsearch" placeholder="🔍 搜分组 / 考点 / 题号，如“MSK”“第6章”“卷积”" autocomplete="off">
     <div class="paper-card tree" id="tree"></div>
@@ -965,6 +978,14 @@ function start(){
   renderTree();
   document.getElementById('btn-retest').onclick = showRetest;
   document.getElementById('btn-favs').onclick = openFavs;
+  var eyecareBtn = document.getElementById('btn-eyecare');
+  function applyEyecare(on){
+    document.body.classList.toggle('eyecare', on);
+    eyecareBtn.textContent = on ? '🌿 护眼中' : '🌿 护眼';
+    try { localStorage.setItem('lianxi_eyecare', on ? '1' : '0'); } catch (e) {}
+  }
+  applyEyecare((function(){ try { return localStorage.getItem('lianxi_eyecare') === '1'; } catch (e) { return false; } })());
+  eyecareBtn.onclick = function(){ applyEyecare(!document.body.classList.contains('eyecare')); };
   document.getElementById('btn-zujuan').onclick = showZujuan;
   document.getElementById('btn-back3').onclick = goDir;
   document.querySelectorAll('#pj-kind .chip').forEach(function(c){
