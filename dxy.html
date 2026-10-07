@@ -80,6 +80,7 @@ body{font-family:"Microsoft YaHei",system-ui,sans-serif;background:#eef1f7;color
 .pq-stem b{color:#4f74d8}
 .pq-body{flex:1}
 .pq-body .stem{font-size:15px}
+.pq-img{max-width:92%;display:block;margin:8px 0;border:1px solid #dfe6f2;border-radius:8px}
 #qsearch{width:100%;padding:10px 12px;border:1.5px solid #e3e8f4;border-radius:10px;font-size:14px;outline:none;background:#fbfcff;margin-bottom:4px}
 #qsearch:focus{border-color:#4f74d8}
 .bkrow{display:flex;gap:8px;margin-top:8px}
@@ -397,11 +398,13 @@ function loadPaper(){ try{ return JSON.parse(localStorage.getItem(PKEY)); }catch
 function savePaper(p){ if(p) localStorage.setItem(PKEY, JSON.stringify(p)); else localStorage.removeItem(PKEY); }
 function chapOfId(q){ return Math.floor((q.category_id - 10000) / 100); }
 function genPaper(){
+  warnings_paper=[];
   const used_kp={}, used_id={};
   const groups=[];
   for(const t of PTEMPLATE){
     let cand = DB.questions.filter(q => q.legacy && t.cn.includes(q.legacy.type_cn) && !used_id[q.question_id]
-      && (!t.chap || chapOfId(q) === t.chap));
+      && (!t.chap || chapOfId(q) === t.chap)
+      && (t.cn[0] !== '选择' || (q.question_type === 'single_choice' && q.options && q.options.length)));
     if(t.prefer){
       const pref = cand.filter(q => (q.legacy.kp||'').indexOf(t.prefer) >= 0);
       if(pref.length) cand = pref;
@@ -432,14 +435,17 @@ function viewPaper(){
     let answered=0, right=0, total=0;
     h+='<div class="paper-meta">拼卷时间 '+p.created+' · 共 '+p.groups.reduce((n,g)=>n+g.ids.length,0)+' 题'
       + ' · <span class="lnk" onclick="genPaper()">重新拼卷</span></div>';
+    if(warnings_paper.length) h+='<div class="paper-meta" style="color:#e8a33d">⚠ 题量不足的槽位：'+esc(warnings_paper.join('、'))+'</div>';
     for(const g of p.groups){
       h+='<div class="paper-part">'+esc(g.label)+'</div>';
       g.ids.forEach((id,qi)=>{
         const q=DB.questions.find(x=>x.question_id===id); if(!q) return;
         const s=st(id);
         const isC=q.question_type==='single_choice'&&q.options.length;
+        const stemImgs=(q.asset_refs||[]).filter(r=>r.type==='image'&&r.position==='stem').map(r=>'<img class="pq-img" loading="lazy" src="data/'+r.ref+'">').join('');
+        const ansImgs=(q.asset_refs||[]).filter(r=>r.type==='image'&&r.position==='explanation').map(r=>'<img class="pq-img" loading="lazy" src="data/'+r.ref+'">').join('');
         h+='<div class="pq"><div class="pq-stem"><b>'+(qi+1)+'.</b> </div><div class="pq-body">';
-        h+='<div class="stem" id="pp-'+id+'"></div>';
+        h+='<div class="stem" id="pp-'+id+'"></div>'+stemImgs;
         if(isC){
           h+='<div class="opts">';
           for(const o of q.options){
@@ -451,8 +457,9 @@ function viewPaper(){
           h+='</div>';
           total++;
           if(s.sel){ answered++; if(s.sel===q.answer.option_ids[0]) right++; }
+          if(s.sel) h+='<div class="ansbox" id="pe-'+id+'"><div class="h">解析</div><div id="pe-ex-'+id+'"></div>'+ansImgs+'</div>';
         } else {
-          if(s.ansShown) h+='<div class="ansbox" id="pa-'+id+'"><div class="h">参考答案</div></div>';
+          if(s.ansShown) h+='<div class="ansbox" id="pa-'+id+'"><div class="h">参考答案</div><div id="pa-ans-'+id+'"></div><div id="pa-ex-h-'+id+'" class="h" style="margin-top:10px">解析</div><div id="pa-ex-'+id+'"></div>'+ansImgs+'</div>';
           else h+='<button class="btn blue" onclick="showPaperAns(\''+id+'\')">看参考答案</button>';
         }
         h+='</div></div>';
@@ -470,7 +477,13 @@ function viewPaper(){
     const el=document.getElementById('pp-'+id);
     if(q&&el) renderMixed(el, q.stem_md);
     const ab=document.getElementById('pa-'+id);
-    if(ab) renderMixed(ab, (q.answer.reference_answer_md||'（见解析）'));
+    if(ab){
+      renderMixed(document.getElementById('pa-ans-'+id), (q.answer.reference_answer_md||'（见解析）'));
+      const ex=document.getElementById('pa-ex-'+id);
+      if(ex){ if((q.explanation_md||'').trim()) renderMixed(ex, q.explanation_md); else document.getElementById('pa-ex-h-'+id).remove(); }
+    }
+    const pe=document.getElementById('pe-ex-'+id);
+    if(pe){ if((q.explanation_md||'').trim()) renderMixed(pe, q.explanation_md); else document.getElementById('pe-'+id).remove(); }
   }
   refreshStats();
 }
