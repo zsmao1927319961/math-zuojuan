@@ -78,13 +78,21 @@ for q in qs:
     ms = re.search(r'（([^\s（]{2,10}?)\s*(\d{4})\s*年', qt)
     if ms:
         full, yr = ms.group(1), ms.group(2)
-        for uni, ab in SCHOOL_ABBR:
-            if uni.startswith(full) or full.startswith(uni[:2]):
-                hit = [p for p in plist if ab in PARTS[p] and yr in PARTS[p]]
-                if hit:
-                    pick = hit[0]
-                    n_exact += 1
-                break
+        # 全称精确/前缀包含优先, 防"北京X大学"两字前缀互相劫持(北邮≠北科技≠北交)
+        ab = None
+        for uni, a in SCHOOL_ABBR:
+            if uni == full or uni.startswith(full) or full.startswith(uni):
+                ab = a; break
+        if ab is None:
+            for uni, a in sorted(SCHOOL_ABBR, key=lambda x: -len(x[0])):
+                if full.startswith(uni[:3]) and len(full) >= 3:
+                    ab = a; break
+        if ab:
+            # 学校+年份须连续出现(如"北邮2020"), 防"南邮2020…北邮2018"跨词假阳性
+            for p in plist:
+                t2 = PARTS[p].replace(' ', '').replace('—', '-').replace('：', ':')
+                if (ab + yr) in t2 or (yr + ab) in t2:
+                    pick = p; n_exact += 1; break
     q['video_p'] = pick
     n += 1
 

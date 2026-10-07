@@ -543,10 +543,11 @@ function card(q, idx){
   el.innerHTML = head + body + replay + radios + verdict + btns + ans + reasons + note;
 
   renderLatexMixed(el.querySelector('.katex-auto'), q.question_text || '');
-  if (q.question_img) {
+  if (q.question_img || q.q_img_hd) {
     var qi = document.createElement('img');
     qi.className = 'qimg'; qi.loading = 'lazy';
-    qi.src = 'data/' + q.question_img; qi.alt = '题目配图';
+    qi.src = 'data/' + (q.q_img_hd || q.question_img); qi.alt = '题目配图';
+    qi.title = q.q_img_hd ? '高清图（截自讲解视频）' : '题目配图';
     qi.onerror = function(){ qi.style.display = 'none'; };
     el.querySelector('.qtext').after(qi);
   }
@@ -861,14 +862,14 @@ function makeCover(){
 function pjPrintOne(q, no){
   var lock = '<table class="pb-lock"><tr><td class="pb-k">锁定考点</td><td>' +
     escHtml(q.chapter_name || q.chapter || '') + (q.kp ? '<br>' + escHtml(q.kp) : '') + '</td></tr></table>';
-  var img = q.question_img ? '<img class="pb-img" src="data/' + q.question_img + '">' : '';
+  var img = (q.q_img_hd || q.question_img) ? '<img class="pb-img" src="data/' + (q.q_img_hd || q.question_img) + '">' : '';
   var qtext = document.createElement('div'); qtext.className = 'pb-q';
   renderLatexMixed(qtext, (q.question_text || '').replace(/\n【图】/g, ''));
   var space = q.type === '计算' || q.type === '简答' ? 200 : (q.type === '填空' ? 70 : 44);
   var html = '<div class="pb-item pb-avoid"><div class="pb-no">' + no + '．' +
     (q.book_page ? '<span class="pb-tag">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span> ' : '') +
     '<span class="pb-tag">' + escHtml(q.chapter || '') + '</span> <span class="pb-tag">' + escHtml(q.type || '') + '</span></div>';
-  html += '<div class="pb-qwrap"></div>' + (q.question_img ? img : '') + lock;
+  html += '<div class="pb-qwrap"></div>' + ((q.q_img_hd || q.question_img) ? img : '') + lock;
   html += '<div class="pb-space" style="height:' + space + 'px"></div></div>';
   var div = document.createElement('div');
   div.innerHTML = html;

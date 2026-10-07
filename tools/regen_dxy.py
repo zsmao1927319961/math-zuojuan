@@ -27,6 +27,18 @@ for q in dxy['questions']:
     leg['answer_img'] = src.get('answer_img') or ''
     leg['kp'] = src.get('kp') or ''
     q['legacy'] = leg
+    # 高清题面图: 替换 asset_refs 中第一张 stem 图的 ref (前端零改动)
+    hd = src.get('q_img_hd')
+    if hd:
+        refs = q.get('asset_refs') or []
+        for a in refs:
+            if a.get('type') == 'image' and a.get('position') == 'stem':
+                a['ref'] = hd
+                a['hd'] = True
+                break
+        else:
+            refs.insert(0, {'type': 'image', 'position': 'stem', 'ref': hd, 'hd': True})
+            q['asset_refs'] = refs
     if src.get('book_page'):
         q['book_page'] = src['book_page']
     if src.get('video_p'):
