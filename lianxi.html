@@ -514,6 +514,7 @@ function card(q, idx){
   else if (b0 === 'shaky') el.classList.add('shaky');
   var lv = liveOf(q);
   var head = '<div class="qhead"><span class="qno">' + (idx + 1) + '</span>' +
+    (q.book_page ? '<span class="tag" style="background:#eef3ff;color:#4a6cf7">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span>' : '') +
     '<span class="tag">' + escHtml(q.source === 'tk299' ? (q.chapter || '') : (q.chapter_name || q.chapter)) + '</span>' +
     (q.type ? '<span class="tag">' + escHtml(q.type) + '</span>' : '') +
     (q.kp_sub && q.source !== 'qhzt' ? '<span class="tag">' + escHtml(q.kp_sub) + '</span>' : '') +
@@ -852,6 +853,7 @@ function pjPrintOne(q, no){
   renderLatexMixed(qtext, (q.question_text || '').replace(/\n【图】/g, ''));
   var space = q.type === '计算' || q.type === '简答' ? 200 : (q.type === '填空' ? 70 : 44);
   var html = '<div class="pb-item pb-avoid"><div class="pb-no">' + no + '．' +
+    (q.book_page ? '<span class="pb-tag">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span> ' : '') +
     '<span class="pb-tag">' + escHtml(q.chapter || '') + '</span> <span class="pb-tag">' + escHtml(q.type || '') + '</span></div>';
   html += '<div class="pb-qwrap"></div>' + (q.question_img ? img : '') + lock;
   html += '<div class="pb-space" style="height:' + space + 'px"></div></div>';

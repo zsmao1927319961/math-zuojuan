@@ -27,6 +27,8 @@ for q in dxy['questions']:
     leg['answer_img'] = src.get('answer_img') or ''
     leg['kp'] = src.get('kp') or ''
     q['legacy'] = leg
+    if src.get('book_page'):
+        q['book_page'] = src['book_page']
     n_sync += 1
 
 # 单选题的 reference_answer_md 情况检查（option_ids 型不动）

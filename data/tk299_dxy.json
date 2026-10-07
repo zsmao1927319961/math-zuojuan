@@ -418,7 +418,8 @@
     "answer_text": "考点 1：常见纠错码（海星、集\n1、纠正2位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -441,7 +442,8 @@
     "answer_text": "2、2,3；1,4\n3、6。解析：根据公式 $d_{\\min} \\geq e+t+1$，可得最小汉明距离为 6。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -464,7 +466,8 @@
     "answer_text": "（图片高度被严重压缩，全部内容不可辨认，无法转录出任何文字。）",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -487,7 +490,8 @@
     "answer_text": "CBAB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -510,7 +514,8 @@
     "answer_text": "AD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -556,7 +561,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -602,7 +608,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -625,7 +632,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 266
   },
   {
    "format_version": 1,
@@ -671,7 +679,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 267
   },
   {
    "format_version": 1,
@@ -694,7 +703,8 @@
     "answer_text": "BA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 267
   },
   {
    "format_version": 1,
@@ -740,7 +750,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 267
   },
   {
    "format_version": 1,
@@ -786,7 +797,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 267
   },
   {
    "format_version": 1,
@@ -809,7 +821,8 @@
     "answer_text": "的最高次项均低于4。\n5、$x+1$；$2$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 267
   },
   {
    "format_version": 1,
@@ -832,7 +845,8 @@
     "answer_text": "6、 $x^2+1$　　$x^6+x^4+x+1$\n解析：\n$$v(x)=x^{n-k}m(x)+x^{n-k}m(x)\\bmod g(x)=x^4(x^2+1)+(x^6+x^4)$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 267
   },
   {
    "format_version": 1,
@@ -855,7 +869,8 @@
     "answer_text": "$(x^7+x^3)\\bmod(x^5+x^3+x^2+1)$\n7、解：\n(1) $x^7+1=(x^3+x+1)(x^3+x^2+1)(x+1)$，因此存在。\n(2) $$G(x)=\\begin{bmatrix} x^3g(x) \\\\ x^2g(x) \\\\ xg(x) \\\\ g(x) \\end{bmatrix}=\\begin{bmatrix} x^6+x^4+x^3 \\\\ x^5+x^3+x^2 \\\\ x^4+x^2+x \\\\ x^3+x+1 \\end{bmatrix}$$ 可得 $$G=\\begin{bmatrix} 1&0&1&1&0&0&0 \\\\ 0&1&0&1&1&0&0 \\\\ 0&0&1&0&1&1&0 \\\\ 0&0&0&1&0&1&1 \\end{bmatrix}$$\n经过初等行变换，化成典型生成矩阵 $$G=\\begin{bmatrix} 1&0&0&0&1&0&1 \\\\ 0&1&0&0&1&1&1 \\\\ 0&0&1&0&1&1&0 \\\\ 0&0&0&1&0&1&1 \\end{bmatrix}$$\n(3) 最小码距等于多项式的项数，因此 $d_{\\min}=3$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 268
   },
   {
    "format_version": 1,
@@ -884,7 +899,8 @@
     "answer_text": "8、解：\n（1）能生成 6 种长度为 7 的循环码，分别是 (7,1)、(7,6) 各一种；(7,3)、(7,4) 各两种。\n（2）（7,3）循环码生成多项式有两种：\n$$g_1(x)=(x+1)(x^3+x^2+1)=x^4+x^2+x+1，\\quad g_2(x)=(x+1)(x^3+x+1)=x^4+x^3+x^2+1$$\n（3）若编码器输入 011100，则输入序列为两组信息码 011；100，对应多项式 $m_1(x)=x+1$，$m_2(x)=x^2$\n当生成多项式为 $g_1(x)=x^4+x^2+x+1$：$c_1(x)=x^5+x^4+x^3+1$，编码码字 0111001；$c_2(x)=x^6+x^3+x+1$，编码码字 1001011；输出码字 01110011001011\n当生成多项式为 $g_2(x)=x^4+x^3+x^2+1$：$c_1(x)=x^5+x^4+x^3+x$，编码码字 0111010；$c_2(x)=x^6+x^3+x^2+x$，编码码字 1001110；输出码字 01110101001110\n（4）$g_1(x)=x^4+x^2+x+1$ 对应生成矩阵 $G=\\begin{bmatrix}1011100\\\\0101110\\\\0010111\\end{bmatrix}$，典型生成矩阵 $G=\\begin{bmatrix}1001011\\\\0101110\\\\0010111\\end{bmatrix}$，典型监督矩阵 $H=\\begin{bmatrix}1101000\\\\0110100\\\\1110010\\\\1010001\\end{bmatrix}$\n校正子 $s=yH^T=[0010]$，0100 是监督矩阵的第 6 列，因此译码码字为 $c=[1110000]+[0000010]=1110010$\n$g_2$ 对应典型生成矩阵 $G=\\begin{bmatrix}1001110\\\\0100111\\\\0011101\\end{bmatrix}$，典型监督矩阵 $H=\\begin{bmatrix}1011000\\\\1110100\\\\1100010\\\\0110001\\end{bmatrix}$，校正子 $s=yH^T=[0100]$ 为第 5 列，译码码字 $c=[1110000]+[0000100]=1110100$。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 268
   },
   {
    "format_version": 1,
@@ -907,7 +923,8 @@
     "answer_text": "9、解：\n(1) $d_{\\min}=3$　$d_{\\min}\\geq 2t+1 \\Rightarrow t=1$　$d_{\\min}\\geq e+1 \\Rightarrow e=2$\n因此，能够检错 2 位或纠正 1 位。\n(2) 信息码组为 0101 的多项式为 $m(x)=x^2+1$\n编码后循环码：$C(x)=x^3m(x)+x^3m(x) \\bmod g(x)$\n$$C(x)=x^3(x^2+1)+x^3(x^2+1) \\bmod (x^3+x^2+1)$$\n$$=x^5+x^3+x^2$$\n从而码组为 $c=[0101100]$\n(3) 依题意，则生成矩阵\n$$G(x)=\\begin{bmatrix} x^3g(x) \\\\ x^2g(x) \\\\ xg(x) \\\\ g(x) \\end{bmatrix}=\\begin{bmatrix} x^6+x^4+x^3 \\\\ x^5+x^3+x^2 \\\\ x^4+x^2+x \\\\ x^3+x+1 \\end{bmatrix}$$ 则有：\n$$G=\\begin{bmatrix} 1 & 0 & 1 & 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 1 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 1 & 1 \\end{bmatrix} \\to \\begin{bmatrix} 1 & 0 & 0 & 0 & 1 & 0 & 1 \\\\ 0 & 1 & 0 & 0 & 1 & 1 & 1 \\\\ 0 & 0 & 1 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 1 & 1 \\end{bmatrix}$$\n可得到典型监督矩阵 $$H=\\begin{bmatrix} 1 & 1 & 1 & 0 & 1 & 0 & 0 \\\\ 0 & 1 & 1 & 1 & 0 & 1 & 0 \\\\ 1 & 1 & 0 & 1 & 0 & 0 & 1 \\end{bmatrix}$$\n$s=eH^T=[010]$，校正子不为零，接收码字不正确。\n从上式校正子可以看出，校正子刚好为监督矩阵第六列，从而 $e=[0000010]$\n正确码字为：$c=r+e=[0001011]$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 268
   },
   {
    "format_version": 1,
@@ -930,7 +947,8 @@
     "answer_text": "10、解：\n方法一：\n(1) 信息码组为 1001 的多项式为 $m(x)=x^3+1$\n编码后循环码：$C(x)=x^3 m(x)+x^3 m(x) \\bmod g(x)$\n$$C(x)=x^3(x^3+1)+x^3(x^3+1) \\bmod (x^3+x^2+1)$$\n$$=x^6+x^3+x+1$$\n从而码组为 $c=[1001011]$\n(2)\n由于生成多项式 $g(x)=x^3+x^2+1$，因此 $d_{\\min}=3$\n纠错能力为：纠正 1 位或者检测 2 位错误。\n方法二：\n（1）依题意，则生成矩阵\n$$G(x)=\\begin{bmatrix} x^3 g(x) \\\\ x^2 g(x) \\\\ x g(x) \\\\ g(x) \\end{bmatrix}=\\begin{bmatrix} x^6+x^5+x^3 \\\\ x^5+x^4+x^2 \\\\ x^4+x^3+x \\\\ x^3+x^2+1 \\end{bmatrix} \\text{ 或 } G=\\begin{bmatrix} 1101000 \\\\ 0110100 \\\\ 0011010 \\\\ 0001101 \\end{bmatrix}$$\n通过初等行变换为典型生成矩阵：$G=\\begin{bmatrix} 1000110 \\\\ 0100011 \\\\ 0010111 \\\\ 0001101 \\end{bmatrix}$\n$C=[1001]G=[1001011]$\n（2）可得到典型监督矩阵 $H=\\begin{bmatrix} 1011100 \\\\ 1110010 \\\\ 0111001 \\end{bmatrix}$\n从上面监督矩阵可以看出至少有 3 列线性相关，因此 $d_{\\min}=3$\n纠错能力为：纠正 1 位或者检测 2 位错误。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 269
   },
   {
    "format_version": 1,
@@ -953,7 +971,8 @@
     "answer_text": "11、解：\n(1) 将 $G_0$ 进行初等行变换，可得系统码形式的生成矩阵：\n$$G=\\begin{pmatrix}1&0&0&0&1&1&0&0&0&1\\\\0&1&0&0&1&0&1&0&0&1\\\\0&0&1&0&1&0&0&1&0&1\\\\0&0&0&1&1&0&0&0&1&1\\end{pmatrix}$$\n根据生成矩阵和校验矩阵的关系，则有校验矩阵为：\n$$H=\\begin{pmatrix}1&1&1&1&1&0&0&0&0&0\\\\1&0&0&0&0&1&0&0&0&0\\\\0&1&0&0&0&0&1&0&0&0\\\\0&0&1&0&0&0&0&1&0&0\\\\0&0&0&1&0&0&0&0&1&0\\\\1&1&1&1&0&0&0&0&0&1\\end{pmatrix}$$\n(2) 由 $cH^T=0$ 可知：\n$$\\begin{cases}c_9\\oplus c_8\\oplus c_7\\oplus c_6\\oplus",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 269
   },
   {
    "format_version": 1,
@@ -976,7 +995,8 @@
     "answer_text": "单界出错，必是精确\n12、解：\n(1) 根据生成矩阵可知为 $(7,4)$ 线性分组码，因此 $n=7,k=4,d_0=3$\n(2) 将生成矩阵初等行变换得到典型生成矩阵：\n$$G=\\begin{bmatrix}1&0&0&0&1&1&1\\\\0&1&0&0&1&0&1\\\\0&0&1&0&0",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 270
   },
   {
    "format_version": 1,
@@ -1005,7 +1025,8 @@
     "answer_text": "13、解：\n（1）$x^7+1=(x+1)(x^3+x+1)(x^3+x^2+1)$，由于其中一个码字为 $c=0010110$，则生成多项式 $g(x)=x^3+x+1$\n（2）$c(x)=u(x)x^{n-k}+u(x)x^{n-k}\\bmod g(x)=(x+1)x^3+(x^4+x^3)\\bmod(x^3+x+1)$，求得 $c(x)=x^4+x^3+x^2+1$，即 $c=0011101$\n（3）根据 $g(x)=x^3+x+1$，则有 $G=\\begin{bmatrix}1011000\\\\0101100\\\\0010110\\\\0001011\\end{bmatrix}$，初等行变换得典型生成矩阵 $G=\\begin{bmatrix}1000101\\\\0100111\\\\0010110\\\\0001011\\end{bmatrix}$，监督矩阵 $H=\\begin{bmatrix}1110100\\\\0111010\\\\1101001\\end{bmatrix}$\n可得 $yH^T=[100]$，可见收到码字有错，[100] 为监督矩阵的第五列，则有 $\\hat{c}=[1101101]+[0000100]=[1101001]$\n（4）依题意，输出码组为 $c=[c_6c_5c_40001]$ 时，有 $c_6+c_5+c_4=0$，$c_5+c_4=0$，$c_6+c_5=1$，解得 $c_6=0,c_5=1,c_4=1$。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 270
   },
   {
    "format_version": 1,
@@ -1028,7 +1049,8 @@
     "answer_text": "14、解：\n（1）系统码形式的生成矩阵为：\n$$G=\\begin{pmatrix}1&0&0&0&1&1&1&0\\\\0&1&0&0&1&1&0&1\\\\0&0&1&0&1&0&1&1\\\\0&0&0&1&0&1&1&1\\end{pmatrix}$$\n（2）校验矩阵为：\n$$H=\\begin{pmatrix}1&1&1&0&1&0&0&0\\\\1&1&0&0&0&1&0&0\\\\1&0&1&1&0&0&1&0\\\\0&1&1&1&0&0&0&1\\end{pmatrix}$$\n最小码距 $d_{\\min}$ 等于校验矩阵最少有多少列线性相关。上式校验矩阵任意三列不线性相关，存在四列线性相关，故 $d_{\\min}=4$。\n（3）伴随式的转置为校验矩阵的对应列的线性组合。\n则错误图样有：10000010，01000001，00110000，00001100。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 271
   },
   {
    "format_version": 1,
@@ -1051,7 +1073,8 @@
     "answer_text": "1、状态转移图；树形图；网格图",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 271
   },
   {
    "format_version": 1,
@@ -1085,7 +1108,8 @@
     "answer_text": "2、解：\n（1）$C_{1_n}=b_n,\\ C_{2_n}=b_n\\oplus b_{n-1}$\n（2）状态转移图如下所示：\n【图】\n（3）00 11 10 01",
     "question_img": "images/t299/q_tk299-103-02.jpg",
     "answer_img": "images/t299/a_tk299-103-02.jpg"
-   }
+   },
+   "book_page": 271
   },
   {
    "format_version": 1,
@@ -1114,7 +1138,8 @@
     "answer_text": "3、解：\n（1）编码电路图如下：\n【图】\n状态转移图如下：\n【图】\n（2）输出序列为：00 11 10 10 11 。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-103-03.jpg"
-   }
+   },
+   "book_page": 272
   },
   {
    "format_version": 1,
@@ -1137,7 +1162,8 @@
     "answer_text": "1、误码率；频带利用率",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 183
   },
   {
    "format_version": 1,
@@ -1160,7 +1186,8 @@
     "answer_text": "2、带宽；输出信噪比",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 183
   },
   {
    "format_version": 1,
@@ -1183,7 +1210,8 @@
     "answer_text": "3、提高；可靠",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 183
   },
   {
    "format_version": 1,
@@ -1206,7 +1234,8 @@
     "answer_text": "4、降低；有效",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 183
   },
   {
    "format_version": 1,
@@ -1229,7 +1258,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 183
   },
   {
    "format_version": 1,
@@ -1252,7 +1282,8 @@
     "answer_text": "1、 $+1+1-1-1$ 、 $+1-1-1+1$ 、 $+1-1+1-1$\n$\\left[\\begin{array}{cccc}1 & 1 & 1 & 1\\end{array}\\right]$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 273
   },
   {
    "format_version": 1,
@@ -1275,7 +1306,8 @@
     "answer_text": "2、每一行（或列）都是正交码组，且是方阵： $H_2=\\begin{bmatrix}1 & 1 \\\\ 1 & -1\\end{bmatrix}$ $H_4=\\begin{bmatrix}1 & -1 & 1 & -1 \\\\ 1 & 1 & -1 & -1 \\\\ 1 & -1 & -1 & 1\\end{bmatrix}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 273
   },
   {
    "format_version": 1,
@@ -1298,7 +1330,8 @@
     "answer_text": "BDA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 273
   },
   {
    "format_version": 1,
@@ -1344,7 +1377,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 273
   },
   {
    "format_version": 1,
@@ -1390,7 +1424,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 273
   },
   {
    "format_version": 1,
@@ -1413,7 +1448,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1436,7 +1472,8 @@
     "answer_text": "2、线性反馈移存器",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1459,7 +1496,8 @@
     "answer_text": "3、本原多项式",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1482,7 +1520,8 @@
     "answer_text": "4、1",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1505,7 +1544,8 @@
     "answer_text": "5、10。解析：$2^n-1>1000$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1528,7 +1568,8 @@
     "answer_text": "6、$2^n-1$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1551,7 +1592,8 @@
     "answer_text": "7、511。解析：周期等于 $2^n-1$。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1574,7 +1616,8 @@
     "answer_text": "BC",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1597,7 +1640,8 @@
     "answer_text": "9、$-\\frac{1}{31}$；$1$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1620,7 +1664,8 @@
     "answer_text": "10、解：",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 274
   },
   {
    "format_version": 1,
@@ -1649,7 +1694,8 @@
     "answer_text": "11、解：\n(1)\n【图】\n(2) 假设初始状态 100\n生成序列为：00111010011101\n(3) 该序列是 $m$ 序列。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-112-11.jpg"
-   }
+   },
+   "book_page": 275
   },
   {
    "format_version": 1,
@@ -1672,7 +1718,8 @@
     "answer_text": "1、8；$5\\times10^{-6}\\,s$；$400\\,kHz$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 275
   },
   {
    "format_version": 1,
@@ -1724,7 +1771,8 @@
     "answer_text": "D",
     "question_img": "images/t299/q_tk299-113-02.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 275
   },
   {
    "format_version": 1,
@@ -1770,7 +1818,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 183
   },
   {
    "format_version": 1,
@@ -1793,7 +1842,8 @@
     "answer_text": "2、2400bit/s；2400Baud",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 183
   },
   {
    "format_version": 1,
@@ -1816,7 +1866,8 @@
     "answer_text": "CAD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 184
   },
   {
    "format_version": 1,
@@ -1839,7 +1890,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 184
   },
   {
    "format_version": 1,
@@ -1862,7 +1914,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 276
   },
   {
    "format_version": 1,
@@ -1908,7 +1961,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 276
   },
   {
    "format_version": 1,
@@ -1954,7 +2008,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 276
   },
   {
    "format_version": 1,
@@ -2000,7 +2055,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 276
   },
   {
    "format_version": 1,
@@ -2046,7 +2102,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 276
   },
   {
    "format_version": 1,
@@ -2092,7 +2149,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 276
   },
   {
    "format_version": 1,
@@ -2138,7 +2196,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 276
   },
   {
    "format_version": 1,
@@ -2161,7 +2220,8 @@
     "answer_text": "正确",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 184
   },
   {
    "format_version": 1,
@@ -2184,7 +2244,8 @@
     "answer_text": "2、$0.5$，$0.5$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 184
   },
   {
    "format_version": 1,
@@ -2207,7 +2268,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 184
   },
   {
    "format_version": 1,
@@ -2230,7 +2292,8 @@
     "answer_text": "4、 $\\log_2^M$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 184
   },
   {
    "format_version": 1,
@@ -2253,7 +2316,8 @@
     "answer_text": "5、解：\n（1）$H = \\log_2^8 = 3bit$ /符号\n（2）$R_B = \\frac{1}{T_B} = \\frac{1}{0.1 \\times 10^{-3}} = 10kBaud$　　$R_b = R_B \\log_2^8 = 30kbit/s$\n（3）$I = 2 \\times 60 \\times 60 \\times 30k = 2.16 \\times 10^8 bit$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 184
   },
   {
    "format_version": 1,
@@ -2276,7 +2340,8 @@
     "answer_text": "6、解：\n信息熵为：\n$$H(x)=32\\times\\frac{1}{64}\\log_2 64+224\\times\\frac{1}{448}\\log_2 448=7.40$$ 比特/符号\n传输速率为：$R_b=R_B\\times H(x)=4800\\times 7.40=35520\\,bit/s$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 185
   },
   {
    "format_version": 1,
@@ -2305,7 +2370,8 @@
     "answer_text": "7、解：\n（1）$H(X)=H(P_1)=-P_1\\log_2^{P_1}-(1-P_1)\\log_2^{1-P_1}$，函数曲线图如下：\n【图】\n（2）$H'(P_1)=-\\log_2 P_1+\\log_2(1-P_1)$，$P_1=\\dfrac{1}{2}$ 为唯一零点。\n因此 $P_1=\\dfrac{1}{2}$ 时 $H(P_1)$ 取得最大值 $H_{\\max}(P_1)=1$。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-13-07.jpg"
-   }
+   },
+   "book_page": 185
   },
   {
    "format_version": 1,
@@ -2328,7 +2394,8 @@
     "answer_text": "1、16；$4\\times10^{-4}$；$10^{-4}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 185
   },
   {
    "format_version": 1,
@@ -2351,7 +2418,8 @@
     "answer_text": "2、$10^{-6}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 185
   },
   {
    "format_version": 1,
@@ -2374,7 +2442,8 @@
     "answer_text": "3、4",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 186
   },
   {
    "format_version": 1,
@@ -2420,7 +2489,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 186
   },
   {
    "format_version": 1,
@@ -2466,7 +2536,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 186
   },
   {
    "format_version": 1,
@@ -2489,7 +2560,8 @@
     "answer_text": "6、$4\\times10^{-8}$。解析：设总共传输了 $t$ 秒，根据误码率的定义，则有：\n$$P_e=\\frac{\\frac{t}{2.5}}{\\frac{t}{0.1}\\times10^{-6}}=4\\times10^{-8}$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 186
   },
   {
    "format_version": 1,
@@ -2535,7 +2607,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 187
   },
   {
    "format_version": 1,
@@ -2558,7 +2631,8 @@
     "answer_text": "AB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 187
   },
   {
    "format_version": 1,
@@ -2581,7 +2655,8 @@
     "answer_text": "CB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 187
   },
   {
    "format_version": 1,
@@ -2604,7 +2679,8 @@
     "answer_text": "BBCA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 187
   },
   {
    "format_version": 1,
@@ -2627,7 +2703,8 @@
     "answer_text": "CCAB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 187
   },
   {
    "format_version": 1,
@@ -2650,7 +2727,8 @@
     "answer_text": "…相关函数求解\n1、2. $0,\\ \\frac{1}{2}$\n解析：$\\mu = E[\\cos\\theta] = \\int_0^{\\pi} \\cos\\theta \\times \\dfrac{1}{\\pi}\\, d\\theta = 0$，\n$$\\sigma^2 = E[\\cos^2(\\theta)] - \\mu^2 = \\int_0^{\\pi} \\cos^2(\\theta) \\cdot \\frac{1}{\\pi}\\, d\\theta = \\frac{1}{2}$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 188
   },
   {
    "format_version": 1,
@@ -2673,7 +2751,8 @@
     "answer_text": "2、1:2\n$$\\int_0^{2\\pi} \\cos(\\theta) \\times \\frac{1}{\\pi} \\, d\\theta = \\frac{1}{2}$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 188
   },
   {
    "format_version": 1,
@@ -2719,7 +2798,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 188
   },
   {
    "format_version": 1,
@@ -2742,7 +2822,8 @@
     "answer_text": "4、解：\n（1）$E(Y)=E[3X(t)-2]=3E[X(t)]-2=-2$\n$$\\sigma^{2}=D(Y)=D[3X(t)-2]=9D[X(t)]=9\\int_{-\\infty}^{\\infty}S_x(f)\\,df$$\n（2）显然 $Y$ 服从高斯分布，则有 $f(y)=\\frac{1}{\\sqrt{2\\pi}\\sigma}\\,e^{-\\frac{(y+2)^{2}}{2\\sigma^{2}}}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 188
   },
   {
    "format_version": 1,
@@ -2765,7 +2846,8 @@
     "answer_text": "$\\sqrt{2n}\\,\\delta$\n5、证明：\n$$R_X(\\tau)=E[X(t)X(t+\\tau)]=E[X(t-T)X(t+\\tau)]=R_X(\\tau+T)$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 188
   },
   {
    "format_version": 1,
@@ -2788,7 +2870,8 @@
     "answer_text": "$[\\cdots(t+T)]=R_X(t+T)$\n6、解：\n(1)\n$$R(\\tau)=E[\\xi(t)\\xi(t+\\tau)]=\\int_0^{2\\pi}K\\cos(\\omega_c t+\\theta)K\\cos(\\omega_c t+\\omega_c\\tau+\\theta)\\frac{1}{2\\pi}d\\theta$$\n$$=\\frac{K^2}{4\\pi}\\left[\\int_0^{2\\pi}\\cos(\\omega_c\\tau)d\\theta+\\int_0^{2\\pi}\\cos(\\omega_c t+\\omega_c\\tau+2\\theta)d\\theta\\right]$$\n$$=\\frac{K^2}{2}\\cos(\\omega_c\\tau)$$\n功率谱密度是自相关函数的傅里叶变换，则有：\n$$P(\\omega)=\\frac{\\pi K^2}{2}[\\delta(\\omega+\\omega_c)+\\delta(\\omega-\\omega_c)]$$\n(2) 总平均功率 $P=R(0)=\\dfrac{K^2}{2}$\n(3) 均值：$a=E[\\xi(t)]=\\int_0^{2\\pi}K\\cos(\\omega_c t+\\theta)\\dfrac{1}{2\\pi}d\\theta=0$\n方差：$\\sigma^2=\\dfrac{K^2}{2}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 189
   },
   {
    "format_version": 1,
@@ -2811,7 +2894,8 @@
     "answer_text": "7、解：\n（1）\n$$R(\\tau)=E[z(t)z(t+\\tau)]=E\\{\\{a_0+a_1\\cos(\\omega_0 t+\\theta)\\}\\{a_0+a_1\\cos(\\omega_0 t+\\omega_0\\tau+\\theta)\\}\\}$$\n$$=E[a_0^2+a_0a_1\\cos(\\omega_0 t+\\omega_0\\tau+\\theta)+a_0a_1\\cos(\\omega_0 t+\\theta)+a_1^2\\cos(\\omega_0 t+\\theta)\\cos(\\omega_0 t+\\omega_0\\tau+\\theta)]$$\n$$=a_0^2+\\frac{a_1^2}{2}\\cos(\\omega_0\\tau)$$\n功率谱密度是自相关函数的傅里叶变换，则有：\n$$P(\\omega)=2\\pi a_0^2\\delta(\\omega)+\\frac{\\pi a_1^2}{2}[\\delta(\\omega+\\omega_0)+\\delta(\\omega-\\omega_0)]$$\n（2）平均功率：$P=R(0)=a_0^2+\\dfrac{a_1^2}{2}$\n均值 $E[z(t)]=a_0$，直流功率：$R(\\infty)=E^2[z(t)]=a_0^2$\n交流功率：$R(0)-R(\\infty)=\\dfrac{a_1^2}{2}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 189
   },
   {
    "format_version": 1,
@@ -2834,7 +2918,8 @@
     "answer_text": "8、解：\n(1) $E[Z(t)] = E[X(t)] + E[Y(t)] = a_X + a_Y$\n(2)\n$$R_z(t, t+\\tau) = E[Z(t)Z(t+\\tau)] = E\\{[x(t)+y(t)][x(t+\\tau)+y(t+\\tau)]\\}$$\n$$= E[x(t)x(t+\\tau) + x(t)y(t+\\tau) + y(t)x(t+\\tau) + y(t)y(t+\\tau)]$$\n$$= R_X(\\tau) + R_Y(\\tau) + 2a_X a_Y$$\n(3) $Z(t)$ 的期望等于常数，自相关函数与时间 $t$ 无关，因此是平稳随机过程。\n(4) $R_z(\\tau) = R_X(\\tau) + R_Y(\\tau) + 2a_X a_Y = \\sigma_1^2\\cos(w_0\\tau) + \\sigma_2^2\\cos(2w_0\\tau) + 2a^2$\n则： $P_z(w) = \\pi\\sigma_1^2[\\delta(w+w_0) + \\delta(w-w_0)] + \\pi\\sigma_2^2[\\delta(w+2w_0) + \\delta(w-2w_0)] + 4a^2\\pi\\delta(w)$\n平均功率： $P = R(0) = \\sigma_1^2 + \\sigma_2^2 + 2a^2$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 189
   },
   {
    "format_version": 1,
@@ -2857,7 +2942,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 190
   },
   {
    "format_version": 1,
@@ -2903,7 +2989,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 190
   },
   {
    "format_version": 1,
@@ -2926,7 +3013,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 190
   },
   {
    "format_version": 1,
@@ -2949,7 +3037,8 @@
     "answer_text": "$\\omega_0\\tau+\\theta)$\n4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 190
   },
   {
    "format_version": 1,
@@ -2972,7 +3061,8 @@
     "answer_text": "5、解：\n（1）当 $t=\\frac{0.25}{f_c}$，对应的变量 $X_1=\\int_0^{0.25/f_c} A\\cos 2\\pi f_c m\\,dm=\\frac{A}{2\\pi f_c}$\n$$E[X_1]=0,\\ D[X_1]=\\sigma_1^2=\\frac{1}{4\\pi^2 f_c^2}D[A]=\\frac{n_0}{8\\pi^2 f_c^2}$$\n概率密度函数为：$f_1(x)=\\frac{1}{\\sqrt{2\\pi}\\sigma_1}e^{\\frac{x^2}{2\\sigma_1^2}}$\n当 $t=\\frac{0.125}{f_c}$，对应的变量 $X_2=\\int_0^{0.125/f_c} A\\cos 2\\pi f_c m\\,dm=\\frac{\\sqrt{2}A}{4\\pi f_c}$\n$$E[X_2]=0,\\ D[X_2]=\\sigma_2^2=\\frac{1}{8\\pi^2 f_c^2}D[A]=\\frac{n_0}{16\\pi^2 f_c^2}$$\n概率密度函数为：$f_2(x)=\\frac{1}{\\sqrt{2\\pi}\\sigma_2}e^{\\frac{x^2}{2\\sigma_2^2}}$\n（2）$E[x(t)]=\\int_0^t E[A]\\cos 2\\pi f_c m\\,dm=0$\n$$R_x(t,\\tau)=E[x(t)x(t+\\tau)]=E\\left(\\int_0^t A\\cos 2\\pi f_c m\\,dm\\int_0^{t+\\tau} A\\cos 2\\pi f_c m\\,dm\\right)$$\n$$=E\\left[\\frac{A}{2\\pi f_c}\\sin 2\\pi f_c t\\times\\frac{A}{2\\pi f_c}\\sin 2\\pi f_c(t+\\tau)\\right]$$\n$$=\\frac{E[A^2]}{8\\pi^2 f_c^2}\\left[\\cos(2\\pi f_c\\tau)-\\cos(4\\pi f_c t+2\\pi f_c\\tau)\\right]$$\n从上可以看出自相关函数与时间 t 有关，从而不是平稳过程。\n（3）不是各态历经过程，因为不是平稳随机过程。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 191
   },
   {
    "format_version": 1,
@@ -2995,7 +3085,8 @@
     "answer_text": "6、解：\n（1）$E[Z(t)] = E[X\\cos wt - Y\\sin wt] = E[X\\cos wt] - E[Y\\sin wt] = 0$\n$$E[Z^2(t)] = E[X^2\\cos^2 wt] + E[Y^2\\sin^2 wt] - 2E[XY\\cos wt\\sin wt]$$\n$$= \\sigma^2\\cos^2 wt + \\sigma^2\\sin^2 wt$$\n$$= \\sigma^2$$\n（2）$D[z] = E[Z^2(t)] - E^2[Z(t)] = \\sigma^2$\n则有：$f(z) = \\dfrac{1}{\\sqrt{2\\pi}\\sigma}e^{\\frac{-z^2}{2\\sigma^2}}$\n（3）\n$$R_z(t, t+\\tau) = E[Z(t)Z(t+\\tau)] = E\\{[X\\cos wt - Y\\sin wt][X\\cos w(t+\\tau) - Y\\sin w(t+\\tau)]\\}$$\n$$= \\sigma^2\\cos w\\tau$$\n因此是平稳随机过程。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 191
   },
   {
    "format_version": 1,
@@ -3018,7 +3109,8 @@
     "answer_text": "18696\n7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 192
   },
   {
    "format_version": 1,
@@ -3041,7 +3133,8 @@
     "answer_text": "8、解：\n（1）$E[X(t)] = E[\\xi\\cos(w_0t+\\phi)] = E[\\xi]E[\\cos(w_0t+\\phi)] = 0$\n$$R_X(t,t+\\tau) = E[X(t)X(t+\\tau)] = E[\\xi\\cos(w_0t+\\phi)\\times\\xi\\cos(w_0(t+\\tau)+\\phi)]$$\n$$= \\frac{1}{2}E[\\xi^2]\\cos w_0\\tau + \\frac{1}{2}E[\\xi^2]E[\\cos(2w_0t+w_0\\tau+2\\phi)] = \\frac{1}{2}\\sigma^2\\cos w_0\\tau$$\n从而 $X(t)$ 是一个平稳随机过程。\n（2）$\\overline{x(t)} = \\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-\\frac{T}{2}}^{\\frac{T}{2}}X(t)dt = \\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-\\frac{T}{2}}^{\\frac{T}{2}}\\xi\\cos(w_0t+\\phi)dt = 0$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 192
   },
   {
    "format_version": 1,
@@ -3064,7 +3157,8 @@
     "answer_text": "1、功率谱密度：$\\frac{n_0}{2}\\delta(t)$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 193
   },
   {
    "format_version": 1,
@@ -3087,7 +3181,8 @@
     "answer_text": "2、$\\frac{n_0}{2}\\delta(\\tau)$，$\\infty$，$n_0 f_m Sa(2\\pi f_m t)$，$n_0 f_m$\n1 $\\qquad$ $e^{-t^2}$ (2)$e^{j2\\pi f_c t}$ B. $\\cos(2\\pi f_c t)$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 193
   },
   {
    "format_version": 1,
@@ -3110,7 +3205,8 @@
     "answer_text": "$$n_0 B\\,Sa(\\pi B t)\\cos(2\\pi f_c\\cdot)$$\n3、 $f(x)=\\dfrac{1}{\\sqrt{2\\pi n_0 B}}\\ \\mathrm{e}^{-2n_0 B}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 193
   },
   {
    "format_version": 1,
@@ -3139,7 +3235,8 @@
     "answer_text": "4、解：\n（1）依据 $n_c(t)$ 和 $n_s(t)$ 与 $n(t)$ 之间的关系：三者的均值、方差均相等，并且均服从高斯分布。均值 $a=0$；由于均值为 0，方差等于平均功率。\n方差 $\\sigma^2 = \\frac{n_0}{2} \\times B \\times 2 = n_0 B$\n$n_c(t)$ 和 $n_s(t)$ 均服从高斯分布概率密度函数为\n$$f(x) = \\frac{1}{\\sqrt{2\\pi n_0 B}} e^{-\\frac{x^2}{2 n_0 B}}$$\n（2）$n_c(t)$ 和 $n_s(t)$ 均为低通型，且相同，如下\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-33-04.jpg"
-   }
+   },
+   "book_page": 193
   },
   {
    "format_version": 1,
@@ -3162,7 +3259,8 @@
     "answer_text": "5、瑞利",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 193
   },
   {
    "format_version": 1,
@@ -3185,7 +3283,8 @@
     "answer_text": "6、瑞利；莱斯",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 194
   },
   {
    "format_version": 1,
@@ -3208,7 +3307,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 194
   },
   {
    "format_version": 1,
@@ -3231,7 +3331,8 @@
     "answer_text": "CBD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 194
   },
   {
    "format_version": 1,
@@ -3254,7 +3355,8 @@
     "answer_text": "1、 $\\frac{n_0}{2}k^2 \\qquad |\\omega| \\leq \\omega_H$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 194
   },
   {
    "format_version": 1,
@@ -3277,7 +3379,8 @@
     "answer_text": "2、平稳随机；非平稳随机\n18696\nB. D. A. 解析 由于（文字被截断，无法完整辨认）",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 194
   },
   {
    "format_version": 1,
@@ -3300,7 +3403,8 @@
     "answer_text": "BBDA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 195
   },
   {
    "format_version": 1,
@@ -3323,7 +3427,8 @@
     "answer_text": "4、解：\n$\\xi_o(t)$ 的功率谱密度为：\n$$P_{\\xi_o}(\\omega) = P_{\\xi_i}(\\omega)|H(\\omega)|^2 = \\frac{n_0}{2}\\left|1 + e^{-j\\omega T}\\right|^2 = n_0\\left[1 + \\cos(\\omega T)\\right]$$\n$\\xi_o(t)$ 的自相关函数为：\n$$R_{\\xi_o}(\\tau) = n_0\\delta(\\tau) + \\frac{n_0}{2}\\left[\\delta(\\tau - T) + \\delta(\\tau + T)\\right]$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 195
   },
   {
    "format_version": 1,
@@ -3352,7 +3457,8 @@
     "answer_text": "5、解：设系统的输入冲击函数为 $\\delta(t)$，则冲击响应 $h(t)=\\delta(t)+\\dfrac{d\\delta(t)}{dt}$\n冲击响应函数为 $H(\\omega)=(1+j\\omega)$\n则输出 $Y(t)$ 的功率谱密度：$P_y(\\omega)=P_x(\\omega)|H(\\omega)|^2$\n$$P_y(\\omega)=P_x(\\omega)(1+\\omega^2)$$\n则输出 $Y(t)$ 的自相关函数与功率谱密度 $P_y(\\omega)$ 互为一对傅里叶变换\n$$R_y(\\tau)=R_x(\\tau)-\\dfrac{d^2R_x(\\tau)}{d\\tau^2}$$",
     "question_img": "images/t299/q_tk299-34-05.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 195
   },
   {
    "format_version": 1,
@@ -3381,7 +3487,8 @@
     "answer_text": "6、解：\n对自相关函数进行傅里叶反变换，可得：$P_x(w)=G_{\\frac{\\pi}{T}}(w)$\n$$h(t)=\\delta'(t)+\\delta'(t-T)$$\n$$H(w)=(1+e^{-jwT})jw$$\n$$P_y(w)=P_x(w)\\left|H(w)\\right|^2=G_{\\frac{\\pi}{T}}(w)\\left|jw(1+e^{-jwT})\\right|^2=4G_{\\frac{\\pi}{T}}(w)\\cos^2\\left(\\frac{wT}{2}\\right)w^2$$",
     "question_img": "images/t299/q_tk299-34-06.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 196
   },
   {
    "format_version": 1,
@@ -3404,7 +3511,8 @@
     "answer_text": "7、解：\n(1) 将 $x(t)=\\delta(t)$ 代入，得到冲激响应为：\n$$h(t)=\\frac{1}{T}\\int_{t-T}^{t}\\delta(\\alpha)\\,d\\alpha=\\begin{cases}\\dfrac{1}{T}, & 0\\le t<T\\\\[4pt] 0, & \\text{其他 } t\\end{cases}$$\n对 $h(t)$ 做傅氏变换，得到传递函数为 $H(f)=\\mathrm{sinc}(fT)e^{-j\\pi fT}$。\n(2) 输出噪声的功率谱密度为：\n$$P(f)=\\frac{N_0}{2}\\left|H(f)\\right|^2=\\frac{N_0}{2}\\,\\mathrm{sinc}^2(fT)$$\n对 $P(f)$ 做傅氏反变换，得到自相关函数为：\n$$R(\\tau)=\\begin{cases}\\dfrac{N_0}{2T}\\left(1-\\dfrac{|\\tau|}{T}\\right), & |\\tau|\\le T\\\\[4pt] 0, & |\\tau|>T\\end{cases}$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 196
   },
   {
    "format_version": 1,
@@ -3427,7 +3535,8 @@
     "answer_text": "8、解：\n(1) $P(f)=\\frac{N_0}{2}\\left|H(f)\\right|^2=\\frac{N_0}{2}\\left|2\\cos\\left(\\frac{\\pi f}{2B}\\right)\\right|^2=2N_0\\cos^2\\left(\\frac{\\pi f}{2B}\\right)\\quad |f|\\le B$\n(2) $E[n(t)]=0\\quad D[n(t)]=\\sigma^2=R(0)=\\int_{-B}^{B}P(f)\\,df=\\int_{-B}^{B}2N_0\\cos^2\\left(\\frac{\\pi f}{2B}\\right)df=2N_0B$\n(3) 绝对带宽 $B_1=B$\n设 3dB 带宽为 $B_2$，则有：$P(B_2)=\\frac{1}{2}P(0)$\n即：$2N_0\\cos^2\\left(\\frac{\\pi B_2}{2B}\\right)=N_0$，解得 $B_2=\\frac{1}{2}B$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 197
   },
   {
    "format_version": 1,
@@ -3450,7 +3559,8 @@
     "answer_text": "$2B$\n$$\\frac{2}{2}B$$\n9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 197
   },
   {
    "format_version": 1,
@@ -3479,7 +3589,8 @@
     "answer_text": "10、解：\n（1）对自相关函数 $R_x(\\tau)=\\mathrm{sinc}(200\\tau)$ 进行傅里叶变换可得：\n$$P_x(f)=\\frac{1}{200}G_{200}(f)$$\n（2）$\\hat{X}(t)$ 与 $X(t)$ 具有相同的功率谱密度，即 $P_{\\hat{x}}(f)=\\frac{1}{200}G_{200}(f)$，$R_{\\hat{x}}(\\tau)=\\mathrm{sinc}(200\\tau)$\n（3）法一：\n$$R_y(\\tau)=E\\{[\\hat{x}(t)+x(t)][\\hat{x}(t+\\tau)+x(t+\\tau)]\\}=R_{\\hat{x}}(\\tau)+R_{\\hat{x}x}(\\tau)+R_{x\\hat{x}}(\\tau)+R_x(\\tau)=2R_x(\\tau)$$\n$$P_y(f)=2P_x(f)=\\frac{1}{100}G_{200}(f)$$\n法二：$y(t)$ 可以看成 $x(t)$ 通过某线性系统的输出，此系统的冲激响应为：\n$$h(t)=\\delta(t)+\\frac{1}{\\pi t}，则 H(f)=1-\\mathrm{j}\\,\\mathrm{sgn}(f)$$\n则有：$P_y(f)=P_x(f)|H(f)|^2=P_x(f)|1-\\mathrm{j}\\,\\mathrm{sgn}(f)|^2=2P_x(f)$，$R_y(\\tau)=2R_x(\\tau)$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 198
   },
   {
    "format_version": 1,
@@ -3502,7 +3613,8 @@
     "answer_text": "11、解：\n（1）$h(t)=e^{-bt}u(t) \\leftrightarrow H(w)=\\dfrac{1}{b+jw}$\n$$\\sigma_x^2 e^{-a|t|} \\leftrightarrow \\sigma_x^2 \\dfrac{2a}{a^2+w^2}$$\n$$P_y(w)=P_x(w)\\left|H(w)\\right|^2=\\dfrac{2a\\sigma_x^2}{(a^2+w^2)(b^2+w^2)}$$\n$$\\dfrac{1}{(a^2+w^2)(b^2+w^2)}=\\dfrac{x}{a^2+w^2}+\\dfrac{y}{b^2+w^2}=\\dfrac{xb^2+ya^2+(x+y)w^2}{(a^2+w^2)(b^2+w^2)}$$\n则有：$\\begin{cases} x+y=0 \\\\ xb^2+ya^2=1 \\end{cases} \\Rightarrow \\begin{cases} x=\\dfrac{1}{b^2-a^2} \\\\ y=-\\dfrac{1}{b^2-a^2} \\end{cases}$\n则有：$P_y(w)=\\dfrac{2a\\sigma_x^2}{b^2-a^2}\\left[\\dfrac{1}{a^2+w^2}-\\dfrac{1}{b^2+w^2}\\right]$\n$$R_y(\\tau)=\\dfrac{a\\sigma_x^2}{b^2-a^2}\\left[\\dfrac{1}{a}e^{-a|\\tau|}-\\dfrac{1}{b}e^{-b|\\tau|}\\right]$$\n（2）$P=R_y(0)=\\dfrac{a\\sigma_x^2}{b^2-a^2}\\left[\\dfrac{1}{a}-\\dfrac{1}{b}\\right]=\\dfrac{\\sigma_x^2}{b(b+a)}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 198
   },
   {
    "format_version": 1,
@@ -3525,7 +3637,8 @@
     "answer_text": "1、恒参；随参；幅度；相位；损耗；时延；多径效应",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 199
   },
   {
    "format_version": 1,
@@ -3548,7 +3661,8 @@
     "answer_text": "位：时延：衰减；多径传播\n2、幅频特性；相频特性；\n信号幅度的影响随时间而变，对信号",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 199
   },
   {
    "format_version": 1,
@@ -3594,7 +3708,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 199
   },
   {
    "format_version": 1,
@@ -3617,7 +3732,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 199
   },
   {
    "format_version": 1,
@@ -3663,7 +3779,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 199
   },
   {
    "format_version": 1,
@@ -3692,7 +3809,8 @@
     "answer_text": "6、解：\n（1）\n【图】\n（2）则系统响应为 $h(t) = A[\\delta(t-\\tau_0) + \\delta(t-\\tau_0-\\tau)]$，系统函数：\n$$H(w) = A[e^{-jw\\tau_0} + e^{-jw(\\tau+\\tau_0)}]$$\n$$H(w) = A[e^{-jw\\tau_0} + e^{-jw(\\tau+\\tau_0)}] = Ae^{-jw\\tau_0}[1+e^{-jw\\tau}]$$\n$$|H(w)| = \\left|Ae^{-jw\\tau_0}(1+e^{-jw\\tau})\\right| = \\left|A(1+e^{-jw\\tau})\\right| = \\left|A(1+\\cos w\\tau - \\sin w\\tau)\\right|$$\n$$= \\left|A\\sqrt{(1+\\cos w\\tau)^2 + \\sin^2 w\\tau}\\right| = 2\\left|A\\cos\\frac{w\\tau}{2}\\right|$$\n从上面表达式可以看出：\n$w = \\dfrac{2n\\pi}{\\tau} = 2000n\\pi$ 时，频率分量最强，最有利。\n$w = \\dfrac{(2n+1)\\pi}{\\tau} = 1000(2n+1)\\pi$ 时，频率分量为零，损耗最大。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-41-06.jpg"
-   }
+   },
+   "book_page": 199
   },
   {
    "format_version": 1,
@@ -3715,7 +3833,8 @@
     "answer_text": "7、$kx(t-t_0)$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 200
   },
   {
    "format_version": 1,
@@ -3738,7 +3857,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 200
   },
   {
    "format_version": 1,
@@ -3761,7 +3881,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 200
   },
   {
    "format_version": 1,
@@ -3784,7 +3905,8 @@
     "answer_text": "10、\n解：$H(\\omega)=(1+j\\omega RC)^{-1}=\\frac{1}{1+j\\omega RC}=\\frac{1-j\\omega RC}{1+(\\omega RC)^{2}}$\n从上面表达式，可以得到幅频特性 $|H(\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^{2}}}$\n相频特性：$\\varphi(\\omega)=-\\arctan\\omega RC$\n幅频特性不为常数，相频特性为不过原点的直线，会产生幅频失真和相频失真。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 200
   },
   {
    "format_version": 1,
@@ -3830,7 +3952,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 200
   },
   {
    "format_version": 1,
@@ -3853,7 +3976,8 @@
     "answer_text": "1、频率选择性",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 200
   },
   {
    "format_version": 1,
@@ -3899,7 +4023,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 200
   },
   {
    "format_version": 1,
@@ -3945,7 +4070,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 201
   },
   {
    "format_version": 1,
@@ -3991,7 +4117,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 201
   },
   {
    "format_version": 1,
@@ -4014,7 +4141,8 @@
     "answer_text": "BA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 201
   },
   {
    "format_version": 1,
@@ -4060,7 +4188,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 201
   },
   {
    "format_version": 1,
@@ -4083,7 +4212,8 @@
     "answer_text": "2. 高斯白噪声；带宽；信噪比；$\\infty$；$1.44\\frac{S}{n_0}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 201
   },
   {
    "format_version": 1,
@@ -4129,7 +4259,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 201
   },
   {
    "format_version": 1,
@@ -4152,7 +4283,8 @@
     "answer_text": "4、由香农公式 $C = B\\log_2\\left(1+\\frac{S}{N_0 B}\\right)$：\n给定 $\\frac{S}{N_0}$，$B\\to\\infty$ 时 $\\frac{S}{N_0 B}\\to 0$，利用等价无穷小 $\\ln(1+x)\\sim x$：\n$$C=\\lim_{B\\to\\infty}B\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\lim_{B\\to\\infty}\\frac{N_0B}{S}\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\log_2 e=\\frac{S}{N_0\\ln 2}$$\n故 (1) 选 C；\n给定 $\\frac{S}{N_0 B}$（信噪比恒定），$B\\to\\infty$ 时括号内为常数，$C=B\\log_2\\left(1+\\frac{S}{N_0B}\\right)\\to\\infty$，故 (2) 选 D。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 202
   },
   {
    "format_version": 1,
@@ -4175,7 +4307,8 @@
     "answer_text": "CA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 202
   },
   {
    "format_version": 1,
@@ -4198,7 +4331,8 @@
     "answer_text": "6、答案：15，153.6，15.41\n解析：每个像素信息量：$I=\\log_2^{32\\times32\\times32}=15bit$\n$$R_b=15\\times1024\\times500\\times20=153.6Mbit/s$$\n$$C=B\\log_2^{(1+\\frac{S}{N})}\\Rightarrow B=\\frac{C}{\\log_2^{(1+S/N)}}=\\frac{153.6\\times10^6}{\\log_2^{(1+1000)}}=15.41MHz$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 202
   },
   {
    "format_version": 1,
@@ -4221,7 +4355,8 @@
     "answer_text": "7、解：由题可知 $\\frac{S}{N}=30(dB)=1000$；\n每个像素含有的信息量为：$I=\\log_2 16=4bit$\n每幅图含有的信息量为：$I=2.5\\times 10^6\\times 4=10^7bit$\n信息速率为：$R_b=\\frac{10^7}{3\\times 60}=5.56\\times 10^4bit/s$\n因为信道容量必须大于信息速率：$C=B\\log_2\\left(1+\\frac{S}{N}\\right)\\geq R_b$\n$B\\log_2(1+1000)\\geq 5.56\\times 10^4$\n求得 $B\\geq 5.57\\times 10^3\\ Hz$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 202
   },
   {
    "format_version": 1,
@@ -4244,7 +4379,8 @@
     "answer_text": "8、\n解：$C = B\\log_2\\left(1+\\dfrac{S}{N}\\right) = 3\\times10^3\\log_2\\left(1+\\dfrac{9}{10^{-3}\\times3000}\\right) = 3.47\\times10^4\\ bit/s$\n$3.47\\times10^4 = 30\\times10^3\\log_2\\left(1+\\dfrac{S}{10^{-3}\\times30000}\\right)$ ，可求得 $S = 3.68\\times10^{-2}\\ W$\n平均功率降低：$10\\lg\\left(\\dfrac{9}{3.68\\times10^{-2}}\\right) = 23.9\\ dB$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 203
   },
   {
    "format_version": 1,
@@ -4267,7 +4403,8 @@
     "answer_text": "9、解：\n（1）每个像素含有信息量：$3\\times\\log_2^{64}$\n每帧含有信息量：$1024\\times768\\times18$\n每秒传输的信息量：$25\\times1024\\times768\\times18/8=44236.8\\,\\mathrm{kbit}$\n总的信息速率：$R_{\\text{总}}=44236.8+256=44492.8\\,\\mathrm{kbit/s}$\n（2）根据香农公式 $C=B\\log_2(1+\\frac{S}{N})$\n$C=B\\log_2(1+\\frac{S}{N})\\geq R_b$，即 $B\\geq\\dfrac{R_b}{\\log_2(1+S/N)}=\\dfrac{44492.8\\times10^3}{\\log_2^{1001}}=4462.67\\,\\mathrm{kbit/s}$\n（3）信号带宽为 $8\\,\\mathrm{MHz}$ 时，则有 $44492.8\\times10^3=8\\times10^6\\log_2(1+\\frac{S}{N})$\n可得 $\\dfrac{S}{N}=2^{5.56}-1=46.23$\n$10\\lg\\dfrac{S}{N}=16.6\\,\\mathrm{dB}$\n（4）$\\eta=\\dfrac{\\log_2 M}{1+a}=\\dfrac{R_{\\text{总}}}{B}=\\dfrac{44492.8\\times10^3}{8\\times10^6}=5.56$\n由 $a=\\dfrac{\\log_2 M}{5.56}-1$，$0<a\\le 1$，解得 $M=64$。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 203
   },
   {
    "format_version": 1,
@@ -4290,7 +4427,8 @@
     "answer_text": "10、解：\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 203
   },
   {
    "format_version": 1,
@@ -4313,7 +4451,8 @@
     "answer_text": "考点 4：条件熵、联合熵、互信息\n$H(X|Y)$：$H(X|Y)$；$\\max I(X:Y)$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 204
   },
   {
    "format_version": 1,
@@ -4336,7 +4475,8 @@
     "answer_text": "ACD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 204
   },
   {
    "format_version": 1,
@@ -4359,7 +4499,8 @@
     "answer_text": "3、解：\n（1）$H(X) = -\\sum_{j=1}^{m} P(x_j)\\log P(x_j)$\n$$= -\\frac{3}{8}\\log_2\\frac{3}{8} - \\frac{5}{8}\\log_2\\frac{5}{8}$$\n$$= 0.95bit$$\n（2）$P(Y=0) = P(x=0)P(0|0) + P(x=1)P(0|1) = 0.385$\n$P(Y=1) = 1 - P(Y=0) = 0.615$\n$H(Y) = 0.96bit$\n因为是对称信道\n$H(Y|X) = -\\mu\\log\\mu - (1-\\mu)\\log(1-\\mu)$\n$$= -0.04\\log 0.04 - 0.96\\log 0.96$$\n$$= 0.24$$\n$I(X,Y) = H(Y) - H(Y|X) = 0.72bit$\n（3）信道容量：$C = \\max_{P(x_j)} I(X,Y) = \\max_{P(x_j)}(H(Y) - H(Y|X))$\n由于 $H(Y|X)$ 为定值 0.24，只需 $H(Y)$ 取最大之即可，即 $H(Y)_{\\max} = 1$\n$C = H(Y)_{\\max} - H(Y|X)$\n$$= 0.76bit$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 204
   },
   {
    "format_version": 1,
@@ -4382,7 +4523,8 @@
     "answer_text": "4、解：\n（1）\n8696\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 205
   },
   {
    "format_version": 1,
@@ -4405,7 +4547,8 @@
     "answer_text": "5、解：\n$$H(X,Y)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_i,y_j)\\log P(x_i,y_j)=-[\\frac{3}{8}\\log_2^{\\frac{3}{8}}+\\frac{1}{8}\\log_2^{\\frac{1}{8}}+\\frac{1}{2}\\log_2^{\\frac{1}{2}}]=1.4bit/symol$$\n根据联合分布，可得到：\n$$P(X=0)=\\frac{1}{2},P(X=1)=\\frac{1}{2}$$\n$$P(Y=0)=\\frac{3}{8},P(Y=1)=\\frac{5}{8}$$\n$$H(Y)=-\\sum_{j=1}^{2}P(y_j)\\log P(y_j)=-[\\frac{5}{8}\\log_2^{\\frac{5}{8}}+\\frac{3}{8}\\log_2^{\\frac{3}{8}}]=0.95bit/symol$$\n$$H(X)=-\\sum_{i=1}^{2}P(x_i)\\log P(x_i)=-[\\frac{1}{2}\\log_2^{\\frac{1}{2}}+\\frac{1}{2}\\log_2^{\\frac{1}{2}}]=1bit/symol$$　　$H(\\ldots$\n$$H(X|Y)=H(X,Y)-H(Y)=0.45bit/symbol$$　　$H(\\ldots$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 205
   },
   {
    "format_version": 1,
@@ -4434,7 +4577,8 @@
     "answer_text": "6、解：\n(1) $P(Y=0)=P(Y=0\\mid X=0)P(X=0)+P(Y=0\\mid X=1)P(X=1)=0.8p$\n同理：$P(Y=1)=0.8(1-p)$\n$$P(Y=2)=1-0.8p-0.8(1-p)=0.2$$\n(2) $H(Y)=-0.8p\\log_2^{0.8p}-0.8(1-p)\\log_2^{0.8(1-p)}-0.2\\log_2^{0.2}$\n$$H(Y\\mid X)=H(Y\\mid 0)P(X=0)+H(Y\\mid 1)P(X=1)$$\n$$=H(0.8,0.2)P+H(0.8,0.2)(1-P)$$\n$$=H(0.8,0.2)=-1.6+\\log_2 5$$\n(3)\n$$H(Y)=-0.8p\\log_2^{0.8p}-0.8(1-p)\\log_2^{0.8(1-p)}-0.2\\log_2^{0.2}$$\n$$=-\\big[0.8p\\log_2^{0.8}+0.8p\\log_2^{p}+0.8(1-p)\\log_2^{0.8}+0.8(1-p)\\log_2^{1-p}+0.2\\log_2^{0.2}\\big]$$\n$$=-\\big[0.8p\\log_2^{p}+0.8(1-p)\\log_2^{1-p}+0.8\\log_2^{0.8}+0.2\\log_2^{0.2}\\big]$$\n显然，当 $p=0.5$ 时，$H(Y)$ 取的最大值\n此时 $H(Y)$ 最大值为\n$$H_{\\max}(Y)=-\\big[0.8(0.5\\log_2^{0.5}+0.5\\log_2^{0.5})+0.8\\log_2^{0.8}+0.2\\log_2^{0.2}\\big]$$\n$$=0.8+H(0.8,0.2)$$\n$$=-0.8+\\log_2 5$$\n(4) $C=\\max I(X;Y)=\\max H(Y)-H(Y\\mid X)=0.8$ 比特/符号",
     "question_img": "images/t299/q_tk299-44-06.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 206
   },
   {
    "format_version": 1,
@@ -4463,7 +4607,8 @@
     "answer_text": "7、解：\n$$P(Y=0)=P(X=0)P(Y=0 \\mid X=0)=a(1-p)$$\n$$P(Y=1)=P(X=1)P(Y=1 \\mid X=1)=(1-a)(1-p)$$\n$$P(Y=e)=1-P(Y=0)-P(Y=1)=p$$\n2919418696\n$$H(Y \\mid X)=P(X=0)H(Y \\mid 0)+P(X=1)H(Y \\mid 1)=H(p,1-p)$$\n$$H(Y)=-a(1-p)\\log_2^{a(1-p)}-(1-a)(1-p)\\log_2^{(1-a)(1-p)}-p\\log_2^p$$\n$$=-p\\log_2^p-(1-p)\\log_2^{(1-p)}-a(1-p)\\log_2^a-(1-a)(1-p)\\log_2^{1-a}$$\n显然，当 $a=0.5$ 时，$H(Y)$ 取的最大值\n$$H_{\\max}(Y)=-p\\log_2^p-(1-p)\\log_2^{1-p}+(1-p)$$\n$$C=\\max I(X;Y)=\\max H(Y)-H(Y \\mid X)=1-p$$",
     "question_img": "images/t299/q_tk299-44-07.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 206
   },
   {
    "format_version": 1,
@@ -4486,7 +4631,8 @@
     "answer_text": "1、$\\frac{1}{2} \\div \\frac{1}{9}$ （4\n解析：$s(t)=(A_0+m(t))\\cos(w_c t)$，当 $m(t)=A_m\\cos w_m t$ 时\n调幅系数：$\\beta_A=\\dfrac{A_m}{A_0}$，调制效率 $\\eta_{AM}=\\dfrac{A_m^2}{2A_0^2+A_m^2}=\\dfrac{\\beta_A^2}{2+\\beta_A^2}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 208
   },
   {
    "format_version": 1,
@@ -4509,7 +4655,8 @@
     "answer_text": "DA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 208
   },
   {
    "format_version": 1,
@@ -4532,7 +4679,8 @@
     "answer_text": "3、解：\n(1) $S(t)=\\mathrm{Re}[A+m(t)]e^{j(2\\pi f_0 t+\\frac{\\pi}{6})}=[A+m(t)]\\cos(2\\pi f_0 t+\\frac{\\pi}{6})$\n功率 $P=\\frac{1}{T}\\lim_{T\\to\\infty}\\int_{-T/2}^{T/2}S^2(t)\\,dt=\\frac{A^2}{2}+\\frac{\\overline{m^2(t)}}{2}=\\frac{5}{8}A^2$\n调制指数 $\\beta=\\frac{|m(t)|_{\\max}}{A}=\\frac{\\frac{A}{2}}{A}=0.5$\n调制效率 $\\eta_{AM}=\\frac{\\overline{m^2(t)}}{A^2+\\overline{m^2(t)}}=\\frac{1}{5}$\n(2) 若载波为 $2\\cos(2\\pi f_0 t)$\n$$2[A+m(t)]\\cos(2\\pi f_0 t+\\frac{\\pi}{6})\\cos(2\\pi f_0 t)\\xRightarrow{\\text{LPF}}[A+m(t)]\\cos\\frac{\\pi}{6}$$\n经过隔直流后变为：$s_o(t)=\\frac{\\sqrt{3}}{2}m(t)$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 208
   },
   {
    "format_version": 1,
@@ -4578,7 +4726,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 209
   },
   {
    "format_version": 1,
@@ -4601,7 +4750,8 @@
     "answer_text": "BD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 209
   },
   {
    "format_version": 1,
@@ -4624,7 +4774,8 @@
     "answer_text": "ACD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 209
   },
   {
    "format_version": 1,
@@ -4647,7 +4798,8 @@
     "answer_text": "4、解：\n(1) $P=\\dfrac{50^2}{2}=1250$\n(2) 最大频偏：$\\Delta f_{\\max}=\\dfrac{1}{2\\pi}\\left|\\dfrac{d\\varphi(t)}{dt}\\right|_{\\max}=\\dfrac{1}{2\\pi}\\left|\\dfrac{d[4\\cos 200\\pi t]}{dt}\\right|_{\\max}=400\\,\\text{Hz}$\n(3) 调制指数：$\\beta_f=\\dfrac{\\Delta f_{\\max}}{f_m}=\\dfrac{400}{100}=4$\n(4) 带宽：$B=2(m_f+1)f_m=2(4+1)\\times 100=1\\,\\text{KHz}$\n或 $B=2(\\Delta f_{\\max}+f_m)=2(400+100)=1\\,\\text{KHz}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 209
   },
   {
    "format_version": 1,
@@ -4670,7 +4822,8 @@
     "answer_text": "5、解：\n(1) $$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\theta(t)}{dt}\\right|_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d5\\sin(200\\pi t)}{dt}\\right|_{\\max} = 500Hz$$\n调频指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{500}{100} = 5$\n带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(500+100) = 1200Hz$\n(2) 依题意：$K_f\\int_{-\\infty}^{t} m_1(\\tau)d\\tau = 5\\sin(200\\pi t) \\Rightarrow K_f m_1(t) = 1000\\pi \\cos(200\\pi t)$\n$$K_f = 500\\pi\\, (rad/s \\cdot V)$$\n(3) $$\\theta_2(t) = K_f\\int_{-\\infty}^{t} m_2(\\tau)d\\tau = 500\\pi\\int_{-\\infty}^{t} 3\\cos(300\\pi\\tau)d\\tau = 5\\sin(300\\pi t)$$\n$$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\theta_2(t)}{dt}\\right|_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d5\\sin(300\\pi t)}{dt}\\right|_{\\max} = 750Hz$$\n调频指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{750}{150} = 5$\n带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(750+150) = 1800Hz$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 210
   },
   {
    "format_version": 1,
@@ -4693,7 +4846,8 @@
     "answer_text": "6、解：\n(1) 最大频偏：$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\varphi(t)}{dt}\\right|_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d(6\\cos 300\\pi t)}{dt}\\right|_{\\max} = 900\\text{Hz}$\n调制指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{900}{150} = 6$\n信号带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(900+150) = 2100\\text{Hz}$\n(2) $S_{FM}(t) = A\\cos\\left(\\omega_c t + 2\\pi K_f \\int_{-\\infty}^{t} m(\\tau)\\,d\\tau\\right)$\n$$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\varphi(t)}{dt}\\right|_{\\max} = K_f|m(t)|_{\\max}$$\n从上式可以看出，当调制信号的幅度增大一倍时，最大频偏加倍，调制指数加倍。\n从而最大频偏：$\\Delta f_{\\max} = 1800\\text{Hz}$，调制指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{1800}{150} = 12$\n信号带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(1800+150) = 3900\\text{Hz}$\n(3) $S_{FM}(t) = A\\cos\\left(\\omega_c t + 2\\pi K_f \\int_{-\\infty}^{t} m(\\tau)\\,d\\tau\\right)$\n$$\\Delta f_{\\max} = \\frac{1}{2\\pi}\\left|\\frac{d\\varphi(t)}{dt}\\right|_{\\max} = K_f|m|_{\\max}$$\n从上式可以看出，最大频偏只与 $m(t)$ 的幅值有关，与频率无关。\n从而最大频偏：$\\Delta f_{\\max} = 900\\text{Hz}$，调制指数：$m_f = \\frac{\\Delta f_{\\max}}{f_m} = \\frac{900}{300} = 3$\n信号带宽：$B = 2(\\Delta f_{\\max} + f_m) = 2(900+300) = 2400\\text{Hz}$\n(4) 当信号 $m(t)$ 的幅度加倍时，FM 信号带宽增幅较大；当信号 $m(t)$ 的频率加倍时，FM 信号带宽略微变大，FM 调制对调制信号的幅度较敏感。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 210
   },
   {
    "format_version": 1,
@@ -4716,7 +4870,8 @@
     "answer_text": "3696\n7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 211
   },
   {
    "format_version": 1,
@@ -4739,7 +4894,8 @@
     "answer_text": "CDCA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 211
   },
   {
    "format_version": 1,
@@ -4762,7 +4918,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 211
   },
   {
    "format_version": 1,
@@ -4785,7 +4942,8 @@
     "answer_text": "3、解：\n（1）设信号 $S_{AM}(t)=[A_m+m(t)]\\cos 2\\pi f_c t=[A_m+A_m\\cos 2\\pi f_m t]\\cos 2\\pi f_c t$\n边带功率为：$\\dfrac{P_m}{2}=\\dfrac{1}{2}\\times\\dfrac{A_m^2}{2}$　　总的功率为：$\\dfrac{P_m}{2}+\\dfrac{A_m^2}{2}=\\dfrac{1}{2}\\times\\dfrac{A_m^2}{2}+\\dfrac{A_m^2}{2}$\n功率利用率：$\\dfrac{\\frac{A_m^2}{4}}{\\dfrac{A_m^2}{4}+\\dfrac{A_m^2}{2}}=\\dfrac{1}{3}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 211
   },
   {
    "format_version": 1,
@@ -4814,7 +4972,8 @@
     "answer_text": "4、解：\n(1) 调制及解调框图如下：\n【图】\n(2) 解调输入输出信号为：\n解调输入信噪比为：\n$$\\frac{S_i}{N_i}=\\frac{P_c+P_s}{n_0 B}=\\frac{(100+20+20)\\times 10^{-3}}{10^{-4}\\times 10^{-3}\\times 4\\times 10^{3}}=350$$\n解调输出信噪比为：\n$$\\frac{S_o}{N_o}=\\frac{P_m}{N_i}=\\frac{80\\times 10^{-3}}{10^{-4}\\times 10^{-3}\\times 4\\times 10^{3}}=200$$\n(3) 对于包络检波，当解调输入信噪比低于门限时，可能会出现门限效应。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-53-04.jpg"
-   }
+   },
+   "book_page": 212
   },
   {
    "format_version": 1,
@@ -4843,7 +5002,8 @@
     "answer_text": "5、解：\n(1) $s(t)=[A+m(t)]\\cos(2\\pi f_c t)$，调制指数 $a=\\dfrac{|m(t)|_{\\max}}{A}=\\dfrac{1}{2}$\n带宽 $B=2f_m=10\\,\\text{kHz}$\n调制效率 $\\eta=\\dfrac{\\frac{P_m}{2}}{\\dfrac{A^2}{2}+\\dfrac{P_m}{2}}=\\dfrac{0.25}{4+0.25}=\\dfrac{1}{17}$\n(2) $s(t)$ 及 $n(t)$ 的功率分别为：\n$$P_s=\\frac{A^2+P_m}{2}=2.125\\,\\text{W}\\,,\\quad P_n=N_0 B=2.5\\times 10^{-4}\\,\\text{W}$$\n(3) 带通滤波器输出信号为：\n$$r(t)=[A+m(t)]\\cos 2\\pi f_c t+n_c(t)\\cos 2\\pi f_c t-n_s(t)\\sin 2\\pi f_c t$$\n故 $y(t)=m(t)+n_c(t)$，所以：\n$$\\frac{S_o}{N_o}=\\frac{P_m}{P_{nc}}=\\frac{0.25}{2.5\\times 10^{-4}}=1000$$",
     "question_img": "images/t299/q_tk299-53-05.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 213
   },
   {
    "format_version": 1,
@@ -4877,7 +5037,8 @@
     "answer_text": "6、解：\n(1)\n$$P_m = \\int_{-\\infty}^{\\infty} P_m(f)\\,df = \\int_{-1000}^{1000} \\frac{1}{1000}\\sin^2\\left(\\frac{\\pi f}{1000}\\right)\\,df = \\int_{-1000}^{1000} \\frac{1}{1000} \\times \\frac{1-\\cos(\\pi \\frac{f}{1000})}{2}\\,df = 1\\,\\mathrm{w}$$\n(2)\n(3) $s(t) = Am(t)\\cos 2\\pi f_c t - A\\hat{m}(t)\\sin 2\\pi f_c t$\n$P_s = A^2 P_m = 10 \\Rightarrow A = \\sqrt{10}$\n【图】（功率谱密度 $P(f)$ 曲线，纵轴标注 $\\frac{1}{100}$，横轴 $f/\\mathrm{Hz}$，标注 $-f_c+1000$、$-f_c$、$0$、$f_c$、$f_c+1000$）\nBPF 输出端信号为：$s(t) = Am(t)\\cos 2\\pi f_c t - A\\hat{m}(t)\\sin 2\\pi f_c t$\nBPF 输出端噪声为：$n_i(t) = n_c(t)\\cos 2\\pi f_c t - n_s(t)\\sin 2\\pi f_c t$\n信噪比为：$\\frac{S_i}{N_i} = \\frac{S_i}{N_0 B} = \\frac{10}{10^{-4} \\times 1000} = 100 = 20(\\mathrm{dB})$\n由于 SSB 调制制度增益 G = 1，则 LPF 输出信噪比：$\\frac{S_o}{N_o} = 20(\\mathrm{dB})$",
     "question_img": "images/t299/q_tk299-53-06.jpg",
     "answer_img": "images/t299/a_tk299-53-06.jpg"
-   }
+   },
+   "book_page": 213
   },
   {
    "format_version": 1,
@@ -4906,7 +5067,8 @@
     "answer_text": "7、解：\n（1）调制框图如下(下图中 $A_c=\\frac{1}{2}$)：\n【图】\n相干接收框图：\n【图】\n$$P_c=\\frac{1}{4}P_m \\qquad P_m=\\int_{-f_m}^{f_m}a\\frac{f^2}{f_m^2}\\,df=2\\int_0^{f_m}a\\frac{f^2}{f_m^2}\\,df=\\frac{2af_m^2}{3}$$\n（2）解调器输入信号功率 $S_i=\\frac{af_m^2}{6}$\n解调器输出信号为：$s_o(t)=\\left[\\frac{1}{2}m(t)\\cos w_ct\\pm\\frac{1}{2}\\hat{m}(t)\\sin w_ct\\right]\\cos w_ct\\xrightarrow{LPF}\\frac{1}{4}m(t)$\n输出信号功率为：$S_0=\\frac{af_m^2}{24}$\n（3）输入信号功率：$N_i=2n_0f_m$\n解调器输入信噪比 $\\frac{S_i}{N_i}=\\frac{P_c}{2n_0f_m}=\\frac{af_m}{12n_0}$\n由于 SSB 调制制度增益等于 1，因此输出信噪比 $\\frac{S_o}{N_o}=\\frac{af_m}{12n_0}$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-53-07.jpg"
-   }
+   },
+   "book_page": 214
   },
   {
    "format_version": 1,
@@ -4929,7 +5091,8 @@
     "answer_text": "8、解：\n(1)\n设 AM 信号表达式为 $S_{AM}(t)=[A+m(t)]\\cos w_c t$\n$$G=\\frac{S_o}{N_o}/\\frac{S_i}{N_i}=\\frac{2\\overline{m^2(t)}}{\\overline{m^2(t)}+A^2}=\\frac{2}{1+\\frac{A^2}{\\overline{m^2(t)}}}$$\n依据题意峰均比 $\\frac{\\overline{m^2(t)}}{|m(t)|_{max}^2}=\\frac{1}{3}$，调幅系数 $\\frac{|m(t)|_{max}}{A}=0.8$，则有：$\\frac{\\overline{m^2(t)}}{A^2}=\\frac{16}{75}$\n从而 $G=\\frac{2}{1+\\frac{A^2}{\\overline{m^2(t)}}}=\\frac{32}{91}$\n解调器输入信噪比为 $\\frac{S_i}{N_i}=\\frac{P_T\\times 10^{-4.6}}{10^{-12}\\times 2\\times 8\\times 10^3}=\\frac{91}{32}\\frac{S_o}{N_o}=\\frac{91}{32}\\times 1000$\n从而解得 $P_T=1.82W$\n(2) 解调器输入信噪比为 $\\frac{S_i}{N_i}=\\frac{P_T\\times 10^{-4.6}}{10^{-12}\\times 2\\times 8\\times 10^3}=\\frac{1}{2}\\frac{S_o}{N_o}=\\frac{1}{2}\\times 1000$\n从而解得 $P_T=10^{4.6}\\times 8\\times 10^{-6}=0.32W$\n(3) 在相同的基带信号带宽，相同的噪声功率谱前提下，要保证相同的输出信噪比，DSB 需要更小的发送信号功率，DSB 抗噪声性能比 AM 更好。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 215
   },
   {
    "format_version": 1,
@@ -4952,7 +5115,8 @@
     "answer_text": "9、解：\n（1）$B_{DSB}=2f_m=30k$，$B_{SSB}=f_m=15k$\n$$s_{FM}(t)=A\\cos[\\omega_c t+K_f\\int_{-\\infty}^{t}m(\\tau)d\\tau]$$\n$$B_{FM}=2(\\Delta f_{\\max}+f_m)=2(f_m+\\frac{1}{2\\pi}\\left|k_f m(t)\\right|_{\\max})=2(15+75)=180k$$\n（2）接收机输出信噪比40dB，即 $10^4$ w\n$$m_f=\\frac{\\Delta f_{\\max}}{f_m}=5$$\n$G_{SSB}=1$，$G_{DSB}=2$，$G_{FM}=3m_f^2(m_f+1)=450$\n则 $\\left(\\frac{S_i}{N_i}\\right)_{DSB}=0.5\\times10^4$，$\\left(\\frac{S_i}{N_i}\\right)_{SSB}=10^4$，$\\left(\\frac{S_i}{N_i}\\right)_{FM}=22.2$\n（3）对于 DSB：\n输入噪声功率 $N_q=2\\times10^{-12}\\times2\\times15\\times10^3=0.6\\times10^{-7}$\n输入信号功率为 $S_q=3\\times10^{-4}$，发射机发送功率\n$$P_{DSB}=3\\times10^{-4}\\times10^5=30w$$\n对于 SSB：\n输入噪声功率 $N_q=2\\times10^{-12}\\times15\\times10^3=3\\times10^{-8}$\n输入信号功率为 $S_q=3\\times10^{-4}$，发射机发送信号功率\n$$P_{SSB}=3\\times10^{-4}\\times10^5=30w$$\n对于 FM：\n输入噪声功率 $N_q=2\\times10^{-12}\\times180\\times10^3=0.36\\times10^{-6}$\n输入信号功率为 $S_q\\approx0.8\\times10^{-5}$，发射机发送信号功率\n$$P_{FM}=0.8\\times10^{-5}\\times10^5=0.8w$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 215
   },
   {
    "format_version": 1,
@@ -4975,7 +5139,8 @@
     "answer_text": "1、解：\n$$B = 20 \\times 4k + 19 \\times 0.5 = 89.5 \\text{ kHz}$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 216
   },
   {
    "format_version": 1,
@@ -4998,7 +5163,8 @@
     "answer_text": "2、解：\n50 路信号经过复用后的带宽：$B_1 = 50 \\times 3.3 \\times 2 + 49 \\times 0.7 = 364.3\\,\\mathrm{kHz}$\n经过 FM 调频后的带宽：$B = 2(B_1 + \\Delta f_{\\max}) = 2728.6\\,\\mathrm{kHz}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 216
   },
   {
    "format_version": 1,
@@ -5027,7 +5193,8 @@
     "answer_text": "3、解：\n(1) 频分复用的原理框图：\n【图】\n因此频谱搬移框图如下：\n【图】\n【图】\n(2) 5 个信号所用的载波频率分别为：\n$252\\,\\text{kHz}$、$300\\,\\text{kHz}$、$348\\,\\text{kHz}$、$396\\,\\text{kHz}$、$444\\,\\text{kHz}$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-54-03.jpg"
-   }
+   },
+   "book_page": 216
   },
   {
    "format_version": 1,
@@ -5050,7 +5217,8 @@
     "answer_text": "4、解：\n（1）经过 30 路信号复用后，频率 $f_m = 29\\times(3400+600)+3400 = 119.4\\,kHz$\n带宽 $B = 2(\\Delta f_{\\max} + f_m) = 2(600k + 119.4k) = 1438.8\\,kHz$\n（2）FM 解调输出的噪声功率谱是 $kf^2$。第 1 路 SSB 的频带范围是 $[0-4\\,kHz]$\n第 30 路 SSB 的频带范围是 $[116k-119.4\\,kHz]$\n每路信号幅度相同，因此信噪比比值为\n$$\\frac{\\int_0^{4000} kf^2\\,df}{\\int_{116000}^{119400} kf^2\\,df} = \\frac{(4\\times 10^3)^3}{(119.4\\times 10^3)^3 - (116\\times 10^3)^3} = \\frac{64}{141313.4} = 4.53\\times 10^{-4}$$\n$10\\lg(4.53\\times 10^{-4}) = -33.44\\,(dB)$\n信噪比下降 33.44dB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 217
   },
   {
    "format_version": 1,
@@ -5096,7 +5264,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 217
   },
   {
    "format_version": 1,
@@ -5119,7 +5288,8 @@
     "answer_text": "2、非相干；相干",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 217
   },
   {
    "format_version": 1,
@@ -5142,7 +5312,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 217
   },
   {
    "format_version": 1,
@@ -5165,7 +5336,8 @@
     "answer_text": "4、包络解调",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 217
   },
   {
    "format_version": 1,
@@ -5188,7 +5360,8 @@
     "answer_text": "正确",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 217
   },
   {
    "format_version": 1,
@@ -5211,7 +5384,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 220
   },
   {
    "format_version": 1,
@@ -5234,7 +5408,8 @@
     "answer_text": "2、$\\frac{1}{2}$，$\\frac{1}{2}$，$13.5\\,\\text{dB}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 220
   },
   {
    "format_version": 1,
@@ -5263,7 +5438,8 @@
     "answer_text": "CC",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-61-03.jpg"
-   }
+   },
+   "book_page": 220
   },
   {
    "format_version": 1,
@@ -5315,7 +5491,8 @@
     "answer_text": "A",
     "question_img": "images/t299/q_tk299-61-04.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 220
   },
   {
    "format_version": 1,
@@ -5338,7 +5515,8 @@
     "answer_text": "CB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 220
   },
   {
    "format_version": 1,
@@ -5361,7 +5539,8 @@
     "answer_text": "6、解：\n(1) 设 $\\tau=\\frac{T_B}{3},a=10^{-3}V$\n$$P_x(f)=f_B P(1-P)\\left|G_1(f)-G_2(f)\\right|^2+f_B^2\\sum_{m=-\\infty}^{+\\infty}\\left|PG_1(mf_B)+(1-P)G_2(mf_B)\\right|^2\\delta(f-mf_B)$$\n$$=f_B p(1-p)\\left|2a\\tau\\frac{\\sin \\pi f\\tau}{\\pi f\\tau}\\right|^2+f_B^2\\sum_{m=-\\infty}^{+\\infty}\\left|(2p-1)a\\tau\\frac{\\sin \\pi m f_B\\tau}{\\pi m f_B\\tau}\\right|^2\\delta(f-mf_B)$$\n$$=4a^2\\tau^2 f_B p(1-p)Sa^2(\\pi f\\tau)+f_B^2 a^2\\tau^2\\sum_{m=-\\infty}^{+\\infty}\\left|(2p-1)\\frac{\\sin \\pi \\frac{m}{3}}{\\pi \\frac{m}{3}}\\right|^2\\delta(f-mf_B)$$\n$$=\\frac{4\\times 10^{-6}}{9}T_B p(1-p)Sa^2\\left(\\frac{\\pi f T_B}{3}\\right)+\\frac{10^{-6}}{9}\\sum_{m=-\\infty}^{+\\infty}\\left|(2p-1)\\frac{\\sin \\pi \\frac{m}{3}}{\\pi \\frac{m}{3}}\\right|^2\\delta(f-mf_B)$$\n(2) 要存在离散时钟分量，既存在离散谱 $\\delta(f-f_B)$，必须满足：\n$(2p-1)\\frac{\\sin \\pi/3}{\\pi/3}\\neq 0$　即 $p\\neq \\frac{1}{2}$。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 221
   },
   {
    "format_version": 1,
@@ -5384,7 +5563,8 @@
     "answer_text": "CA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 221
   },
   {
    "format_version": 1,
@@ -5407,7 +5587,8 @@
     "answer_text": "2、解：\n第一步，将0000用取代节0000V或者B00V替换，得到：\n11000V01000VB00V101\n第二步，加符号，得到：+1-1000-V0+1000+V-B00-V+10-1\n特点：连0个数",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 221
   },
   {
    "format_version": 1,
@@ -5453,7 +5634,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 221
   },
   {
    "format_version": 1,
@@ -5476,7 +5658,8 @@
     "answer_text": "$+1000+1-100-1+1$; $10010101$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 222
   },
   {
    "format_version": 1,
@@ -5499,7 +5682,8 @@
     "answer_text": "5、1001101001；0001110001",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 222
   },
   {
    "format_version": 1,
@@ -5522,7 +5706,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 222
   },
   {
    "format_version": 1,
@@ -5545,7 +5730,8 @@
     "answer_text": "DCA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 222
   },
   {
    "format_version": 1,
@@ -5574,7 +5760,8 @@
     "answer_text": "8、解：\nAMI 码：+10000-1+1-10000+1\n【图】\nHDB3 码：+1000+1-1+1-1000-1+1\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-62-08.jpg"
-   }
+   },
+   "book_page": 222
   },
   {
    "format_version": 1,
@@ -5597,7 +5784,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 222
   },
   {
    "format_version": 1,
@@ -5620,7 +5808,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 223
   },
   {
    "format_version": 1,
@@ -5649,7 +5838,8 @@
     "answer_text": "CA",
     "question_img": "images/t299/q_tk299-63-03.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 223
   },
   {
    "format_version": 1,
@@ -5678,7 +5868,8 @@
     "answer_text": "BCC",
     "question_img": "images/t299/q_tk299-63-04.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 223
   },
   {
    "format_version": 1,
@@ -5707,7 +5898,8 @@
     "answer_text": "A",
     "question_img": "images/t299/q_tk299-63-05.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 224
   },
   {
    "format_version": 1,
@@ -5753,7 +5945,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 224
   },
   {
    "format_version": 1,
@@ -5776,7 +5969,8 @@
     "answer_text": "7、$\\frac{1}{2\\tau_0}$  $2\\tau_0$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 224
   },
   {
    "format_version": 1,
@@ -5799,7 +5993,8 @@
     "answer_text": "8、4,4",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 224
   },
   {
    "format_version": 1,
@@ -5822,7 +6017,8 @@
     "answer_text": "BCAB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 224
   },
   {
    "format_version": 1,
@@ -5851,7 +6047,8 @@
     "answer_text": "10、解：\n（1）从频带利用率比较：\n对于系统(a)，等效奈奎斯特带宽 $f_N = \\frac{2000\\pi}{2\\pi} = 1000$，最大传码率\n$R_{B\\max} = 2f_N = 2000Baud$，当以 $R_B = 10^3 Baud$ 传输时，可以满足无码间干扰，此\n时频带利用率 $\\eta = \\frac{1000}{2000} = \\frac{1}{2} Baud/Hz$。\n对于系统(b)，奈奎斯特带宽 $f_N = \\frac{2000\\pi}{2\\pi} = 1000$，最大传码率\n$R_{B\\max} = 2f_N = 2000Baud$，当以 $R_B = 10^3 Baud$ 传输时，可以满足无码间干扰，此\n时频带利用率 $\\eta = \\frac{1000}{1000} = 1Baud/Hz$。\n对于系统(c)，等效奈奎斯特带宽 $f_N = \\frac{1000\\pi}{2\\pi} = 500$，最大传码率\n$R_{B\\max} = 2f_N = 1000Baud$，当以 $R_B = 10^3 Baud$ 传输时，可以满足无码间干扰，此\n时频带利用率 $\\eta = \\frac{1000}{1000} = 1Baud/Hz$。\n（2）从冲激响应尾部收敛程度比较：\n系统(b)冲激响应为 $Sa(x)$ 型，于时间 $t$ 成反比，拖尾衰减慢且难以实现。\n系统(a)和(c)冲激响应为 $Sa^2(x)$ 型，于时间 $t^2$ 成反比，拖尾衰减快且容易实现。\n综上，(c) 是最合适的。",
     "question_img": "images/t299/q_tk299-63-10.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 225
   },
   {
    "format_version": 1,
@@ -5880,7 +6077,8 @@
     "answer_text": "（1）$f_N=14.4\\mathrm{MHz}$，$R_{B\\max}=2f_N=28.8\\mathrm{MHz}$；（2）$\\alpha=0.25$，频带利用率 $\\eta=1.6$；（3）满足 $R_{B\\max}/R_B=k$。",
     "question_img": "images/t299/q_tk299-63-11.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 225
   },
   {
    "format_version": 1,
@@ -5932,7 +6130,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-64-01.jpg"
-   }
+   },
+   "book_page": 226
   },
   {
    "format_version": 1,
@@ -5955,7 +6154,8 @@
     "answer_text": "2、2；防止误码扩散",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 226
   },
   {
    "format_version": 1,
@@ -5978,7 +6178,8 @@
     "answer_text": "3、 $2\\,\\text{Baud/Hz}$，预， 7\n解析：若输入信号 $L$ 电平，输出信号电平数为： $2L-1$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 226
   },
   {
    "format_version": 1,
@@ -6001,7 +6202,8 @@
     "answer_text": "正确",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 226
   },
   {
    "format_version": 1,
@@ -6030,7 +6232,8 @@
     "answer_text": "BAB",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-64-05.jpg"
-   }
+   },
+   "book_page": 227
   },
   {
    "format_version": 1,
@@ -6053,7 +6256,8 @@
     "answer_text": "1、$\\frac{1}{2}erfc\\left(\\sqrt{\\frac{P}{4n_0R}}\\right)$，$\\frac{P}{2}$\n解：噪声功率为：$\\sigma^2 = n_0 \\times R$\n单极性误码率为 $P_e = \\frac{1}{2}erfc\\left(\\sqrt{\\frac{\\frac{A^2}{2}}{4\\sigma^2}}\\right) = \\frac{1}{2}erfc\\left(\\sqrt{\\frac{P}{4n_0R}}\\right)$\n双极性误码率为：$P_e = \\frac{1}{2}erfc\\left(\\sqrt{\\frac{A^2}{2\\sigma^2}}\\right) = \\frac{1}{2}erfc\\left(\\sqrt{\\frac{P_1}{2n_0R}}\\right)$\n从上式可以看出，要使两者误码率一样，必须 $\\frac{P}{4n_0R} = \\frac{P_1}{2n_0R}$，则 $P_1 = \\frac{P}{2}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 227
   },
   {
    "format_version": 1,
@@ -6082,7 +6286,8 @@
     "answer_text": "2、解：\n解：依题意：\n噪声功率为 $\\sigma^2 = n_0 \\times B = 10^{-13} \\times 2 \\times 4 \\times 10^6 = 8 \\times 10^{-7}$ W\n解调器输入信噪比为 $r = \\dfrac{S_i}{N_i} = \\dfrac{a^2}{2}/\\sigma^2 = 10$\n（1）2DPSK 差分相干检测的误码率误码率为 $P_e = \\dfrac{1}{2}e^{-r} = \\dfrac{1}{2}e^{-10}$\n（2）2DPSK 相干检测加码反变换误码率为 $P_e = \\mathrm{erfc}(\\sqrt{r}) = \\mathrm{erfc}(\\sqrt{10})$\n【图】\n9418696\n（3）$E_b = \\displaystyle\\int_0^T S^2(t)\\,dt = 2 \\times 10^{-12}$\n2DPSK 最佳接收误码率 $P_e = \\mathrm{erfc}\\left(\\sqrt{\\dfrac{E_b}{n_0}}\\right) = \\mathrm{erfc}(20)$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-65-02.jpg"
-   }
+   },
+   "book_page": 227
   },
   {
    "format_version": 1,
@@ -6105,7 +6310,8 @@
     "answer_text": "3、解：\n(1) $P(y\\mid 1)=\\dfrac{1}{\\sqrt{\\pi}}e^{-(y-A)^2}$  $P(y\\mid 0)=\\dfrac{1}{\\sqrt{\\pi}}e^{-y^2}$\n(2) 最佳判决门限为 $P(1)P(y\\mid 1)=P(0)P(y\\mid 0)$ 的解，\n即 $e^{-(y-A)^2}=e^{-y^2}$  可得 $V_T^*=\\dfrac{A}{2}$\n(3) 此时最佳判决门限为 $\\dfrac{A}{2}$，$P(e)=P(1)P(e\\mid 1)+P(0)P(e\\mid 0)$\n$$P(e)=\\frac{1}{2}\\operatorname{erfc}\\!\\left(\\frac{A}{2}\\right)$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 228
   },
   {
    "format_version": 1,
@@ -6128,7 +6334,8 @@
     "answer_text": "4、解：\n发送1时，接收端抽样信号 $y(kT) = A + V$，\n发送0时，接收端抽样信号 $y(kT) = -A + V$，\n判决门限 $V_d = 0$，系统总的误码率：\n$$P_e = P(e|1)P(1) + P(e|0)P(0) = \\frac{1}{2}\\{P[(A+V) < 0] + P[(-A+V) > 0]\\}$$\n$$= \\frac{1}{2}[0 + P(V > A)] = \\frac{1}{2}\\left[0 + \\int_A^{3A/2} \\frac{6}{13A}\\, dv\\right]$$\n$$= \\frac{3}{26}$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 228
   },
   {
    "format_version": 1,
@@ -6151,7 +6358,8 @@
     "answer_text": "5、解：\n（1）发送 0 时 y 的条件概率密度为 $p_1(y)=\\frac{1}{2}e^{-|y|}$\n发送 A 时 y 的条件概率密度为 $p_2(y)=\\frac{1}{2}e^{-|y-A|}$\n最佳判决门限是两似然函数相等的分界点，即有 $p_1(V_T)=p_2(V_T)$\n从而得 $V_T=\\frac{A}{2}$\n半并输出码，定义为\n发送 0 而判错的概率是 $P(e\\mid 0)=P(n>\\frac{A}{2})=\\int_{A/2}^{\\infty}\\frac{1}{2}e^{-n}\\,dn=\\frac{1}{2}e^{-\\frac{A}{2}}$\n发送 A 而判错的概率是 $P(e\\mid A)=P(n<-\\frac{A}{2})=\\int_{-\\infty}^{-\\frac{A}{2}}\\frac{1}{2}e^{n}\\,dn=\\frac{1}{2}e^{-\\frac{A}{2}}$\n平均误比特率 $P_b=\\frac{1}{2}P(e\\mid 0)+\\frac{1}{2}P(e\\mid A)=\\frac{1}{2}e^{-\\frac{A}{2}}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 228
   },
   {
    "format_version": 1,
@@ -6197,7 +6405,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 229
   },
   {
    "format_version": 1,
@@ -6220,7 +6429,8 @@
     "answer_text": "2、横向：码间干扰",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 229
   },
   {
    "format_version": 1,
@@ -6243,7 +6453,8 @@
     "answer_text": "3、横向",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 229
   },
   {
    "format_version": 1,
@@ -6266,7 +6477,8 @@
     "answer_text": "4、抽头系数",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 229
   },
   {
    "format_version": 1,
@@ -6289,7 +6501,8 @@
     "answer_text": "5、解：(1) 依据迫零的定义，均衡器输出信号 $y_{-1}=y_1=0$，$y_0=1$\n由公式 $y_k=\\sum_{i=-1}^{1}c_i x_{k-i}$ 得\n$$y_{-1}=c_{-1}x_0+c_0x_{-1}+c_1x_{-2}=0$$\n$$y_0=c_{-1}x_1+c_0x_0+c_1x_{-1}=1$$\n$$y_1=c_{-1}x_2+c_0x_1+c_1x_0=0$$\n解方程组得\n$$c_{-1}+0.1c_0=0$$\n$$0.2c_{-1}+c_0+0.1c_1=1$$\n$$0.1c_{-1}+0.2c_0+c_1=0$$\n可得 $c_{-1}=-0.10406$　　$c_0=1.0406$　　$c_1=-0.2084$\n(2) $y_0=1$\n(3) 依据 $y_k=\\sum_{i=-1}^{1}c_i x_{k-i}$\n可得 $y_{-1}=0$，$y_0=1$，$y_1=0$\n$y_2=0.0645$　　$y_{-2}=-0.010406$　　$y_{-3}=0$　　$y_{-3}=-0.01977$\n峰值均变：$D_x=\\frac{1}{x_0}\\sum_{k=-\\infty}^{\\infty}|x_k|=0.4$\n$$D_y=\\frac{1}{y_0}\\sum_{k=-\\infty}^{\\infty}|y_k|=0.09469$$\n改善 4.22 倍。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 229
   },
   {
    "format_version": 1,
@@ -6318,7 +6531,8 @@
     "answer_text": "6、解：\n（1）存在码间干扰，因为不满足无码间干扰时域条件，即 $h(nT_s)=0$ 当 $n\\neq 0$ 时\n（2）$y_k=h_k\\otimes C_k=\\sum_{n=-N}^{N}C_nh_{k-n}$，显然 $2N+1=3\\Rightarrow N=1$\n则有：$y_k=\\sum_{n=-1}^{1}C_nh_{k-n}=C_{-1}h_{k+1}+C_0h_k+C_1h_{k-1}$\n由于是迫零准则，则有：$y_k=C_{-1}h_{k+1}+C_0h_k+C_1h_{k-1}=\\begin{cases}0 & k=\\pm1\\\\ 1 & k=0\\end{cases}$\n则有：$y_{-1}=C_{-1}h_0+C_0h_{-1}+C_1h_{-2}=0$，$y_0=C_{-1}h_1+C_0h_0+C_1h_{-1}=1$，$y_1=C_{-1}h_2+C_0h_1+C_1h_0=0$\n将 $\\{h_{-2},h_{-1},h_0,h_1,h_2\\}=\\{-0.2,0.3,1,0.3,-0.2\\}$ 带入上面方程，则有：\n$y_{-1}=C_{-1}+0.3C_0-0.2C_1=0$，$y_0=0.3C_{-1}+C_0+0.3C_1=1$，$y_1=-0.2C_{-1}+0.3C_0+C_1=0$\n解得：$C_{-1}=-\\frac{15}{31}$，$C_0=\\frac{40}{31}$，$C_1=-\\frac{15}{31}$\n（3）输入峰值失真：$D_h=\\frac{1}{h_0}\\sum_{k\\neq0}|h_k|=1$\n根据公式 $y_k=C_{-1}h_{k+1}+C_0h_k+C_1h_{k-1}$ 可求得：\n$y_{-3}=C_{-1}h_{-2}=\\frac{3}{31}$，$y_{-2}=C_{-1}h_{-1}+C_0h_{-2}=-\\frac{25}{62}$，$y_3=C_1h_2=\\frac{3}{31}$，$y_2=C_0h_2+C_1h_1=-\\frac{25}{62}$\n输出峰值失真：$D_h=\\frac{1}{y_0}\\sum_{k\\neq0}|y_k|=1$\n（4）均衡无效，因为均衡前后峰值畸变相同。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 229
   },
   {
    "format_version": 1,
@@ -6341,7 +6555,8 @@
     "answer_text": "1、4",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 230
   },
   {
    "format_version": 1,
@@ -6387,7 +6602,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 230
   },
   {
    "format_version": 1,
@@ -6410,7 +6626,8 @@
     "answer_text": "3、最佳取样",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 230
   },
   {
    "format_version": 1,
@@ -6456,7 +6673,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 230
   },
   {
    "format_version": 1,
@@ -6508,7 +6726,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-67-05.jpg"
-   }
+   },
+   "book_page": 230
   },
   {
    "format_version": 1,
@@ -6531,7 +6750,8 @@
     "answer_text": "考点\n1、4000；2000",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 231
   },
   {
    "format_version": 1,
@@ -6554,7 +6774,8 @@
     "answer_text": "1、\n2、 $1.7\\times10^{-7}$、$1.11\\times10^{-6}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 231
   },
   {
    "format_version": 1,
@@ -6583,7 +6804,8 @@
     "answer_text": "3、解：\n(1)\n【图】\n(2)\n【图】\n(3) $B = 2R_B = 4800\\,\\mathrm{Hz}$\n(4) 解调器输入端信噪比 $r = \\frac{P_r\\,10^{-3}}{N_i} = \\frac{(\\frac{A^2}{2})\\times 10^{-3}}{10^{-5}} = 50$\n$$P_e = \\frac{1}{2}e^{-\\frac{r}{4}} = \\frac{1}{2}e^{-12.5}$$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-71-03.jpg"
-   }
+   },
+   "book_page": 231
   },
   {
    "format_version": 1,
@@ -6606,7 +6828,8 @@
     "answer_text": "4、解：\n(1) $B = |f_1 - f_2| + 2R_B = 1300 + 1200 = 2500Hz$\n(2) 由于误码率取决于带通滤波器的输出信噪比，2FSK 信号上下支路带通滤波器带宽 $B = 2R_B = 1200Hz$，它是信号带宽的 1/3。由于接收端输入信噪比 6dB，即 4 倍，故带通滤波器输出端信噪比为：$r = 3 \\times 4 = 12$。\n从而包络检波解调误码率：$P_e = \\frac{1}{2}e^{-\\frac{r}{2}} = \\frac{1}{2}e^{-6}$\n(3) 相干解调误码率：$P_e = \\frac{1}{2}erfc\\left(\\sqrt{\\frac{r}{2}}\\right) = \\frac{1}{2}erfc(\\sqrt{6})$\n(4) 2FSK 抗干扰能力强，不受信道参数变化影响，特别适合衰落信道，移动通信信道为衰落信道。2ASK 抗噪声能力差，对信道特性变化敏感。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 232
   },
   {
    "format_version": 1,
@@ -6629,7 +6852,8 @@
     "answer_text": "5、解：\n(1) $B = 2R_B + |f_1 - f_0| = 2000\\,\\mathrm{Hz}$\n(2) 上下支路的带通滤波器带宽等于 $1\\,\\mathrm{KHz}$，中心频率分别为 $5\\,\\mathrm{kHz}$，$4\\,\\mathrm{kHz}$。\n【图】\n(3) 依题意信道带宽等于 $2\\,\\mathrm{kHz}$，而带通滤波器带宽为 $1\\,\\mathrm{kHz}$，因而带通滤波器输出端信",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 232
   },
   {
    "format_version": 1,
@@ -6658,7 +6882,8 @@
     "answer_text": "6、解：\n(1) $B_{BPSK} = B_{DPSK} = 2R_b = 2000Hz$\n依题意 2FSK 为载频间隔最小，并且连续，\n则有：$2\\Delta f = \\dfrac{1}{2T_b} = 500Hz$　　$B_{2FSK} = 2\\Delta f + 2R_B = 2.5kHz$\n当采用 2FSK 传输时：\n发送 1，对应的频率为 $f_1 = f_c + \\dfrac{R_b}{4} = 1250Hz$\n发送 0，对应的频率为 $f_0 = f_c - \\dfrac{R_b}{4} = 750Hz$\n【图】\n【图】\n【图】\n(2) DPSK 信号的解调方式有：同步相干解调；差分相干解调。\n同步相干解调方式如下图所示，主要思路是先经过 2PSK 解调，然后对解调出来的序列进行差分译码。\n【图】\n差分相干解调框图如下图所示，\n【图】\n当发送的码元为 0 时，前后码元波形传输信号相同，经过相乘后输出信号表达式为 $\\cos^2(w_c t)$，经过低通滤波器采样后为正电平。\n当发送的码元为 1 时，前后码元波形传输信号相反，经过相乘后输出信号表达式 $-\\cos^2(w_c t)$，经过低通滤波器采样后为负电平。\n综上，当采样信号 $y(nT_b) > 0$，判0, $y(nT_b) < 0$，判1。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-71-06.jpg"
-   }
+   },
+   "book_page": 232
   },
   {
    "format_version": 1,
@@ -6681,7 +6906,8 @@
     "answer_text": "1、4：2：1 降低： $\\log_2^M$\n解析：2ASK、2FSK、2PSK 相干解调误码率公式为\n$$P_{eASK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{eFSK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{ePSK}=\\frac{1}{2}erfc(\\sqrt{r})；$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 233
   },
   {
    "format_version": 1,
@@ -6704,7 +6930,8 @@
     "answer_text": "2、$4:1:2$，$P_{e2PSK}<P_{e2FSK}<P_{e2ASK}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 233
   },
   {
    "format_version": 1,
@@ -6727,7 +6954,8 @@
     "answer_text": "3、2FSK；BPSK",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 233
   },
   {
    "format_version": 1,
@@ -6750,7 +6978,8 @@
     "answer_text": "BA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 233
   },
   {
    "format_version": 1,
@@ -6779,7 +7008,8 @@
     "answer_text": "5、解：\n（1）曲线 1-5 依次为：非相干 $FSK$，相干 $FSK$，差分相干 $DPSK$，相干 $DPSK$，相干 $PSK$。\n（2）各种调制方式的误比特率计算公式如下：\n相干 $PSK$：$\\frac{1}{2}\\mathrm{erfc}\\sqrt{r}$　相干 $DPSK$：$\\mathrm{erfc}\\sqrt{r}$　差分相干 $DPSK$：$\\frac{1}{2}e^{-r}$\n相干 $FSK$：$\\frac{1}{2}\\mathrm{erfc}\\sqrt{\\frac{r}{2}}$　非相干 $FSK$：$\\frac{1}{2}e^{-\\frac{r}{2}}$\n其中信噪比 $r=\\dfrac{S}{N}=\\dfrac{S}{n_0B}=\\dfrac{S}{n_0\\cdot\\frac{2}{T}}=\\dfrac{ST}{2n_0}=\\dfrac{E_b}{2n_0}$，可以看出 $r$ 与 $\\dfrac{E_b}{n_0}$ 成正比。",
     "question_img": "images/t299/q_tk299-72-05.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 233
   },
   {
    "format_version": 1,
@@ -6802,7 +7032,8 @@
     "answer_text": "AD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 234
   },
   {
    "format_version": 1,
@@ -6825,7 +7056,8 @@
     "answer_text": "DC",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 234
   },
   {
    "format_version": 1,
@@ -6848,7 +7080,8 @@
     "answer_text": "CD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 235
   },
   {
    "format_version": 1,
@@ -6871,7 +7104,8 @@
     "answer_text": "BC",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 235
   },
   {
    "format_version": 1,
@@ -6917,7 +7151,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 235
   },
   {
    "format_version": 1,
@@ -6940,7 +7175,8 @@
     "answer_text": "DB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 235
   },
   {
    "format_version": 1,
@@ -6963,7 +7199,8 @@
     "answer_text": "4、96；24；3.2",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 235
   },
   {
    "format_version": 1,
@@ -6992,7 +7229,8 @@
     "answer_text": "5、解：\n（1）$B = 2R_B = 4800\\,\\text{Hz}$　　$\\eta = \\dfrac{R_b}{B} = 0.5\\,\\text{bit/s.Hz}$\n（2）基带信号带宽：$B_1 = \\dfrac{1+\\alpha}{2}R_B = \\dfrac{1+0.2}{2} \\times 2400 = 1.44\\,\\text{kHz}$\n已调信号带宽：$B_2 = 2B_1 = 2.88\\,\\text{kHz}$\n（3）\n【图】\n该解调方式会带来相位模糊现象。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-74-05.jpg"
-   }
+   },
+   "book_page": 235
   },
   {
    "format_version": 1,
@@ -7021,7 +7259,8 @@
     "answer_text": "6、解：\n（1）依题意为带通信道，则频带利用率为 $\\eta=\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}$，$0\\le a\\le 1$\n（a）当带宽为 10kHz 信道时，$\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}=\\dfrac{20k}{10k}=2$，则有 $a=\\dfrac{1}{2}\\log_2^M-1$\n当 $M=2$，$a=-\\dfrac{1}{2}<0$ 不满足题目要求；\n当 $M=4$，$a=0$，即基带成型滤波器为低通滤波器\n当 $M=8$，$a=0.5$，则可以采用滚降系数为 a=0.5 的 8QAM 或 8PSK 传输\n（b）当带宽为 20kHz 信道时，$\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}=\\dfrac{20k}{20k}=1$，则有 $a=\\log_2^M-1$\n当 $M=2$，$a=0$，即基带成型滤波器为低通滤波器\n当 $M=4$，$a=1$，则可以采用滚降系数为 a=1 的 4QAM 或 QPSK 传输\n（c）当带宽为 40kHz 信道时，$\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}=\\dfrac{20k}{40k}=0.5$，则有 $a=2\\log_2^M-1$\n当 $M=2$，$a=1$，则可以采用滚降系数为 a=1 的 2PSK 或 2ASK 传输\n由于 $a=0$ 的理想低通滤波器物理上难以实现，进制数 M 越大，可靠性越差，并且尽量选择带宽较低的信 道。\n综上，选择带宽等于 20kHz，滚降系数为 a=1 的 QPSK 传输。\n（2）发送框图如下：\n【图】\n【图】\n接收框图如下：\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-74-06.jpg"
-   }
+   },
+   "book_page": 235
   },
   {
    "format_version": 1,
@@ -7055,7 +7294,8 @@
     "answer_text": "7、解：\n$$\\eta=\\frac{\\log_2^M}{1+a}=\\frac{R_b}{B}\\Rightarrow a=\\frac{5}{16}\\log_2^M-1\\quad 0<a\\leq 1$$\n当 $M=2,a=-\\frac{11}{16}<0$ （不满足要求）\n当 $M=4,a=-\\frac{3}{8}<0$ （不满足要求）\n当 $M=8,a=-\\frac{1}{16}$ （不满足要求）\n当 $M=16,a=\\frac{1}{4}$ （满足要求），\n此时符号速率：$R_s=\\frac{R_b}{\\log_2^M}=\\frac{32M}{\\log_2^{16}}=8Mbps$\n可以设计成滚降系数 $a=0.25$ 的16QAM 系统。\n调制框图如下：\n【图】",
     "question_img": "images/t299/q_tk299-74-07.jpg",
     "answer_img": "images/t299/a_tk299-74-07.jpg"
-   }
+   },
+   "book_page": 236
   },
   {
    "format_version": 1,
@@ -7078,7 +7318,8 @@
     "answer_text": "BD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 236
   },
   {
    "format_version": 1,
@@ -7112,7 +7353,8 @@
     "answer_text": "2、解：\n【图】\n从上面，星座图可看出最小欧式距离 $d_{\\min} = 2a$，\n平均符号是平均符号能量 $Es = \\frac{1}{16}(2a^2 \\times 4 + 10a^2 \\times 8 + 18a^3 \\times 4) = 10a^2$\n$$d_{\\min}^2 / Es = \\frac{2}{5}$$",
     "question_img": "images/t299/q_tk299-75-02.jpg",
     "answer_img": "images/t299/a_tk299-75-02.jpg"
-   }
+   },
+   "book_page": 237
   },
   {
    "format_version": 1,
@@ -7146,7 +7388,8 @@
     "answer_text": "【图】\n3、解：\n(1) $E_{g1}=\\dfrac{U^{2}(5\\times4+17\\times4+13\\times4+25\\times2+1+9)}{16}=12.5U^{2}$\n$E_{g2}=\\dfrac{V^{2}(5\\times4+25\\times4+13\\times2+41\\times2+1\\times2+17\\times2)}{16}=16.5V^{2}$\n(2) $E_{g1}=12.5U^{2}=E_{g2}=16.5V^{2}$\n$\\dfrac{U^{2}}{V^{2}}=\\dfrac{16.5}{12.5}\\Rightarrow\\dfrac{U}{V}=1.15$\n上面两图的最小欧式距离分别是 $d_{\\min1}=2U$、$d_{\\min2}=2V$\n则：$\\dfrac{d_{\\min1}}{d_{\\min2}}=\\dfrac{2U}{2V}=1.15$",
     "question_img": "images/t299/q_tk299-75-03.jpg",
     "answer_img": "images/t299/a_tk299-75-03.jpg"
-   }
+   },
+   "book_page": 237
   },
   {
    "format_version": 1,
@@ -7180,7 +7423,8 @@
     "answer_text": "4、解：\n【图】\n从上面，星座图可看出最小欧式距离 $d_{\\min}=2a$，\n平均符号是平均符号能量\n$$Es=\\frac{1}{16}\\left(2a^2\\times 4+10a^2\\times 8+18a^2\\times 4\\right)=10a^2$$\n$$d_{\\min}^\\frac{2}{E} s=\\frac{2}{5}$$\n峰值功率：$P_{\\max}=\\dfrac{E_{\\max}}{T}=\\dfrac{18a^2}{T}$\n平均功率：$P_{av}=\\dfrac{E_{av}}{T}=\\dfrac{10a^2}{T}$\n峰均比：$\\dfrac{9}{5}$\n由16QAM扩展为64QAM再去除最外 32 点，即可得到 32QAM，如下图所示：\n【图】\n（右侧页边可见残缺文字：6-、（1）",
     "question_img": "images/t299/q_tk299-75-04.jpg",
     "answer_img": "images/t299/a_tk299-75-04.jpg"
-   }
+   },
+   "book_page": 237
   },
   {
    "format_version": 1,
@@ -7209,7 +7453,8 @@
     "answer_text": "5、解：\n(1)\n【图】\n(2) $x(t)=x_k\\cos(2\\pi f_c t)-y_k\\sin(2\\pi f_c t)$ 平均功率\n$$P_{av}=E[x^2(t)]=E[x_k^2\\cos^2(2\\pi f_c t)+y_k^2\\sin^2(2\\pi f_c t)-2x_k y_k\\sin 2\\pi f_c t\\cos 2\\pi f_c t]$$\n$$=E[x_k^2]\\cos^2(2\\pi f_c t)+E[y_k^2]\\sin^2(2\\pi f_c t)$$\n$$E[x_k^2]=E[y_k^2]=\\frac{1}{4}[1+1+9+9]=5$$\n从而 $P_{av}=5$\n峰值功率：当 $(x_k,y_k)=(\\pm 3,\\pm 3)$ 时，$E[x_k^2]=E[y_k^2]=\\frac{1}{2}[9+9]=9$，从而 $P_{\\max}=9$\n峰均比：$\\dfrac{P_{\\max}}{P_{av}}=\\dfrac{9}{5}=1.8$\n(3) $B=2R_B=\\dfrac{2}{T}$\n所示：\n$$\\eta=\\frac{R_b}{B}=\\frac{\\frac{1}{T}\\log_2^{16}}{\\frac{2}{T}}=2\\,\\mathrm{bit/s.Hz}$$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-75-05.jpg"
-   }
+   },
+   "book_page": 238
   },
   {
    "format_version": 1,
@@ -7238,7 +7483,8 @@
     "answer_text": "6、解：\n(1)\n【图】\n(2)\n【图】\n(3) 对于 8 PSK：\n$$d_{\\min}=2a\\sin\\frac{\\pi}{8}$$\n$$E_s=a^2$$\n$$\\frac{d_{\\min}^2}{E_s}=4\\sin^2\\frac{\\pi}{8}\\approx 0.584$$\n对于 8QAM：\n$$d_{\\min}=\\frac{a}{2}$$\n$$E_s=\\frac{\\left(\\frac{a}{2}\\right)^2\\times 2\\times 4+\\left(\\frac{a}{2}\\right)^2\\times 4}{8}=\\frac{3a^2}{8}$$\n$$\\frac{d_{\\min}^2}{E_s}=\\frac{\\frac{a^2}{4}}{\\frac{3}{8}a^2}\\approx 0.667$$\n综上：8QAM 抗噪声性能更好。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-75-06.jpg"
-   }
+   },
+   "book_page": 238
   },
   {
    "format_version": 1,
@@ -7272,7 +7518,8 @@
     "answer_text": "7、解：\n（1）设另外四个点也在同一个圆上，此圆的半径为 $B$（$B<A$），则有：\n$\\dfrac{4}{3}=\\dfrac{\\frac{A^2}{T}}{(A^2+B^2)/2T}\\Rightarrow\\dfrac{4}{3}=\\dfrac{2A^2}{A^2+B^2}$，则有 $B=\\dfrac{\\sqrt{2}}{2}A$，对应的星座图如下所示：\n【图】\n（2）设另外四个点也在同一个圆上，此圆的半径为 $B$（$B>A$），则有：\n$\\dfrac{4}{3}=\\dfrac{\\frac{B^2}{T}}{(A^2+B^2)/2T}\\Rightarrow\\dfrac{4}{3}=\\dfrac{2B^2}{A^2+B^2}$，则有 $B=\\sqrt{2}A$，对应的星座图如下所示：\n【图】",
     "question_img": "images/t299/q_tk299-75-07.jpg",
     "answer_img": "images/t299/a_tk299-75-07.jpg"
-   }
+   },
+   "book_page": 238
   },
   {
    "format_version": 1,
@@ -7301,7 +7548,8 @@
     "answer_text": "8、解：\n（1）\n【图】\n从上图可以看出，最小欧式距离 $d_{\\min}=1$\n（2）$s_5(t)=f_1(t)+f_2(t)$\n【图】\n（3）$$E_s=\\frac{0+1+2+1+2+1+2+2}{8}=\\frac{11}{8}$$\n判决域为相邻点垂直平分线所围成的区域，$s_1$ 最佳判决域为下列虚线围成的区域，如下图所示：\n【图】\n(4) $s_8=(-1,0)$ 不再出现，$s_1=(0,0)$ 的判决域向 $s_8$ 方向扩展：该方向上与 $s_8$ 的垂直平分线不再起作用，改由更远的存活点（如 $s_6=(-1,-1)$、$s_2=(-1,1)$）的垂直平分线共同围成，判决域比等概时向左（$-x$ 方向）扩大。（书未给(4)解答，此为补充）",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-75-08.jpg"
-   }
+   },
+   "book_page": 239
   },
   {
    "format_version": 1,
@@ -7330,7 +7578,8 @@
     "answer_text": "9、解：\n（1）$E_3=\\int_{-\\infty}^{\\infty}s_3^2(t)\\,dt=\\int_{-\\infty}^{\\infty}[s_1^2(t)+s_2^2(t)+2s_1(t)s_2(t)]\\,dt=2+1=3$\n$$E_4=\\int_{-\\infty}^{\\infty}s_4^2(t)\\,dt=\\int_{-\\infty}^{\\infty}[s_1^2(t)+s_2^2(t)-2s_1(t)s_2(t)]\\,dt=1$$\n$$E_s=\\frac{1+1+3+1}{4}=1.5$$\n（2）$d_{\\min}=1$\n（3）令 $f_1(t)=\\dfrac{s_3(t)}{\\sqrt{E_3}}=\\dfrac{1}{\\sqrt{3}}[s_1(t)+s_2(t)]$，$f_2(t)=\\dfrac{s_4(t)}{\\sqrt{E_4}}=s_1(t)-s_2(t)$\n则有：$s_1(t)=\\dfrac{\\sqrt{3}f_1(t)+f_2(t)}{2}$，$s_2(t)=\\dfrac{\\sqrt{3}f_1(t)-f_2(t)}{2}$\n系统星座图及 $s_3(t)$ 的最佳判决域（虚线围成区域）如下图所示：\n【图】\n3696",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-75-09.jpg"
-   }
+   },
+   "book_page": 239
   },
   {
    "format_version": 1,
@@ -7359,7 +7608,8 @@
     "answer_text": "10、解：\n(1)星座图如下：\n【图】\n(2)平均符号能量为：$E_s=\\frac{1}{16}\\left[4\\times(2+18+10+10)\\right]=10$，最小距离 $d_{\\min}=2$。\n(3)判决域为相邻点垂直平分线所围成的区域，如下图所示：\n【图】\n(4)相邻点编码结果如下\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-75-10.jpg"
-   }
+   },
+   "book_page": 240
   },
   {
    "format_version": 1,
@@ -7393,7 +7643,8 @@
     "answer_text": "11、解：\n(1) $E_1=b^2$，$E_2=4b^2$。由 $E_s=\\dfrac{4\\times b^2+4\\times 4b^2}{8}=10$\n则有 $b=2$，$E_1=4$，$E_2=16$。\n(2) $s_1$ 到 $s_2$ 为最小距离，$d_{\\min}=\\sqrt{2}b=2\\sqrt{2}$。\n(3) 最佳判决区域是 $s_2$ 与 $s_1$，$s_2$ 与 $s_3$ 的垂直平分线及横轴和纵轴正半轴围成的区域。$s_2$ 的最佳判决域如下所示：\n【图】\n(4) 发送 $s_1$ 时，$r=2+n_c+jn_s$，其中 $n_c\\sim N(0,0.5)$，$n_s\\sim N(0,0.5)$，且 $n_c$ 和 $n_s$ 相互独立，故：\n$$f(r=0|s_1)=f(2+n_c=0|s_1)f(n_s=0|s_1)=\\frac{1}{\\sqrt{\\pi}}e^{-4}\\times\\frac{1}{\\sqrt{\\pi}}=\\frac{1}{\\pi}e^{-4}$$",
     "question_img": "images/t299/q_tk299-75-11.jpg",
     "answer_img": "images/t299/a_tk299-75-11.jpg"
-   }
+   },
+   "book_page": 240
   },
   {
    "format_version": 1,
@@ -7422,7 +7673,8 @@
     "answer_text": "12、解：\n(1) $E_b=\\dfrac{(-2)^2+(-1)^2+1^2+2^2+2^2+(1^2+1^2)+(1^2+1^2)}{8}=2.25$\n$d_{\\min}=1$\n(2)\n【图】\n(3) 设 $z=n_1+jn_2$，则发送 $s_3$ 条件下，$y=s_3+z=n_1+jn_2$\n$P_E \\approx P(|n_1|<0.5)P(|n_2|<1)$\n$$P(|n_1|<0.5)=1-P(|n_1|>0.5)=1-P(n_1>0.5)-P(n_1<-0.5)=1-\\mathrm{erfc}\\Big(\\frac{1}{2\\sqrt{2}\\sigma}\\Big)$$\n$$P(|n_2|<1)=1-P(|n_2|>1)=1-P(n_2>1)-P(n_2<-1)=1-\\mathrm{erfc}\\Big(\\frac{1}{\\sqrt{2}\\sigma}\\Big)$$\n$$P_e=1-\\Big[1-\\mathrm{erfc}\\Big(\\frac{1}{2\\sqrt{2}\\sigma}\\Big)\\Big]\\Big[1-\\mathrm{erfc}\\Big(\\frac{1}{\\sqrt{2}\\sigma}\\Big)\\Big]=1-[1-\\mathrm{erfc}(5)][1-\\mathrm{erfc}(10)]$$\n$$=\\mathrm{erfc}(5)+\\mathrm{erfc}(10)-\\mathrm{erfc}(5)\\mathrm{erfc}(10)$$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-75-12.jpg"
-   }
+   },
+   "book_page": 241
   },
   {
    "format_version": 1,
@@ -7445,7 +7697,8 @@
     "answer_text": "1、频率间隔；相位；0.5；1500",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 242
   },
   {
    "format_version": 1,
@@ -7474,7 +7727,8 @@
     "answer_text": "2、\n解：\n（1）$\\{a_k\\}=\\{1001110110\\}$\n（2）相位路径图如下：",
     "question_img": "images/t299/q_tk299-76-02.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 242
   },
   {
    "format_version": 1,
@@ -7503,7 +7757,8 @@
     "answer_text": "3、解：\nMSK 信号波形图如下：\n【图】\n相位路径变化图如下：\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-76-03.jpg"
-   }
+   },
+   "book_page": 242
   },
   {
    "format_version": 1,
@@ -7532,7 +7787,8 @@
     "answer_text": "4、解：\n（1）$f_1 = f_c + \\dfrac{R_B}{4} = 4250\\,\\text{Hz}$\n$f_0 = f_c - \\dfrac{R_B}{4} = 3750\\,\\text{Hz}$\n从上式可看出传 1 码时，一个码元内有 $4\\dfrac{1}{4}$ 个周期，\n传 0 码时，一个码元内有 $3\\dfrac{3}{4}$ 个周期\n（2）\n【图】\n【图】\n（3）\n$$\\varphi_k = \\varphi_{k-1} + \\frac{k\\pi}{2}\\left(a_k - a_{k-1}\\right) = \\begin{cases} \\varphi_{k-1} & a_k = a_{k-1} \\\\ \\varphi_{k-1} \\pm k\\pi & a_k \\neq a_{k-1} \\end{cases} \\bmod(2\\pi)$$\n【图】\n初相为：0，0，0，$\\pi$，$\\pi$\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-76-04.jpg"
-   }
+   },
+   "book_page": 243
   },
   {
    "format_version": 1,
@@ -7555,7 +7811,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 243
   },
   {
    "format_version": 1,
@@ -7578,7 +7835,8 @@
     "answer_text": "2、并行传输；多径效应；正交；多进制；串行传输；2；自适应",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 243
   },
   {
    "format_version": 1,
@@ -7601,7 +7859,8 @@
     "answer_text": "DCA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 243
   },
   {
    "format_version": 1,
@@ -7624,7 +7883,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 243
   },
   {
    "format_version": 1,
@@ -7658,7 +7918,8 @@
     "answer_text": "1、解：\n（1）因为 $s(t)$ 结束时刻为 $T$，最佳抽样时刻 $t_0 = T$。\n（2）$$h(t) = S(T-t) = \\begin{cases} -A, & 0 < t \\le \\frac{T}{2} \\\\ A, & \\frac{T}{2} < t \\le T \\\\ 0, & \\text{else} \\end{cases}$$\n【图】\n$$y(t) = h(t) * s(t) = \\begin{cases} -A^2 t, & 0 \\le t \\le \\frac{T}{2} \\\\ A^2 (3t - 2T), & \\frac{T}{2} < t \\le T \\\\ A^2 (4T - 3t), & T < t \\le 3T/2 \\\\ A^2 (t - 2T), & 3T/2 < t \\le 2T \\\\ 0, & \\text{其他} \\end{cases}$$\n【图】\n（3）$E = \\int_0^T s^2(t)\\,dt = A^2 T$，$r_{\\max} = \\dfrac{2E}{n_0} = \\dfrac{2A^2 T}{n_0}$",
     "question_img": "images/t299/q_tk299-81-01.jpg",
     "answer_img": "images/t299/a_tk299-81-01.jpg"
-   }
+   },
+   "book_page": 244
   },
   {
    "format_version": 1,
@@ -7687,7 +7948,8 @@
     "answer_text": "2、解：\n8696\n(1) $h(t) = s_0(T-t)$\n【图】\n(2)\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-81-02.jpg"
-   }
+   },
+   "book_page": 245
   },
   {
    "format_version": 1,
@@ -7721,7 +7983,8 @@
     "answer_text": "3、解：\n（1）$h(t)=S(T-t)=\\begin{cases}A-\\dfrac{A}{T}t & 0\\leq t\\leq T\\\\ 0 & else\\end{cases}$\n【图】\n（2）\n法一：\n$t=T$ 抽样获得样值 $y=\\int_0^T s(t)n(t)\\,dt+\\int_0^T s^2(t)\\,dt=Z+\\dfrac{A^2}{3}T$\n瞬时功率：$P=E_s^2=\\dfrac{A^4}{9}T^2$\n噪声平均功率：$P=\\sigma^2=\\dfrac{n_0}{2}E_s=\\dfrac{A^2T}{6}n_0$\n法二：\n输出信号：$S_o(t)=\\int_{-\\infty}^{\\infty}s(t-a)h(a)\\,da$\n$S_o(T)=\\int_{-\\infty}^{\\infty}S(T-a)S(T-a)\\,da=\\int_0^T S^2(T-a)\\,da=\\int_0^T S^2(a)\\,da=\\int_0^T\\left(\\dfrac{A}{T}t\\right)^2 dt=\\dfrac{A^2}{3}T$\n相关\n输出信号瞬时功率：$P=[S_o(T)]^2=\\dfrac{A^4}{9}T^2$\n输出噪声平均功率：\n$P=\\sigma^2=\\int_{-\\infty}^{\\infty}\\dfrac{n_0}{2}|H(f)|^2\\,df=\\int_{-\\infty}^{\\infty}\\dfrac{n_0}{2}|h(t)|^2\\,dt=\\dfrac{n_0}{2}E_h=\\dfrac{n_0}{2}\\times\\dfrac{A^2T}{3}=\\dfrac{A^2T}{6}n_0$\n（2）$f(x)=\\dfrac{1}{\\sqrt{2\\pi}\\sigma}e^{\\frac{-(x-\\frac{AT}{3})^2}{2\\sigma^2}}$",
     "question_img": "images/t299/q_tk299-81-03.jpg",
     "answer_img": "images/t299/a_tk299-81-03.jpg"
-   }
+   },
+   "book_page": 245
   },
   {
    "format_version": 1,
@@ -7750,7 +8013,8 @@
     "answer_text": "4、解：\n（1）$h(t) = s_1(T_b - t)$\n（2）当发 $s_1(t)$ 时，$y = \\int_0^{T_b} s_1^2(t)dt + \\int_0^{T_b} s_1(t)n_w(t)dt = E + \\int_0^{T_b} s_1(t)n_w(t)dt$\n信号分量幅度为：$\\int_0^{T_b} s_1^2(t)dt = A^2T_b$\n信号分量功率为：$P = (A^2T_b)^2 = A^4T_b^2$\n噪声平均功率：$\\sigma^2 = \\frac{N_0}{2}E = \\frac{N_0}{2}A^2T_b$\n（3）当发 $s_2(t)$ 时，$y = \\int_0^{T_b} s_1(t)s_2(t)dt + \\int_0^{T_b} s_1(t)n_w(t)dt = -E + \\int_0^{T_b} s_1(t)n_w(t)dt$\n均值：$E[y] = -E = -A^2T_b$，$D[y] = \\frac{N_0}{2}A^2T_b$\n$$f(y) = \\frac{1}{\\sqrt{\\pi N_0 A^2 T_b}} e^{\\frac{(y+A^2T_b)}{N_0 A^2 T_b}}$$\n（4）$P = \\frac{1}{2}erfc(\\sqrt{\\frac{E}{N_0}}) = \\frac{1}{2}erfc(\\sqrt{\\frac{A^2T_b}{N_0}})$",
     "question_img": "images/t299/q_tk299-81-04.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 246
   },
   {
    "format_version": 1,
@@ -7784,7 +8048,8 @@
     "answer_text": "5、解；\n(1)\n当采用相关器时，接收框图如下所示；\n【图】\n相关器中相乘输出波形和相关器中积分输出波形分别为：\n【图】\n(2) $h(t)=S(T-t)=A\\cos w_0(T-t)=A\\cos w_0 t \\quad 0<t<T$\n输出信号等于输入信号与冲激响应的卷积：\n$$S_o(t)=s(t)*h(t)=\\int_{-\\infty}^{\\infty}s(\\tau)h(t-\\tau)\\,d\\tau$$\n讨论：\n当 $t<0$；$S_o(t)=0$\n当 $0<t\\le T$；$S_o(t)=\\int_{-\\infty}^{\\infty}s(\\tau)h(t-\\tau)\\,d\\tau=A^2\\left[\\frac{t}{2}\\cos w_0 t+\\frac{1}{2w_0}\\sin w_0 t\\right]$\n当 $T<t\\le 2T$；$S_o(t)=\\int_{-\\infty}^{\\infty}s(\\tau)h(t-\\tau)\\,d\\tau=A^2\\left[\\frac{2T-t}{2}\\cos w_0 t+\\frac{1}{2w_0}\\sin w_0 t\\right]$\n当 $t\\ge 2T$；$S_o(t)=0$\n由于频率 $w_0$ 较大，$\\frac{1}{2w_0}\\sin w_0 t$ 近视为 0，则有：\n$$S_o(t)=\\begin{cases}\\dfrac{A^2 t}{2}\\cos w_0 t & 0<t\\le T\\\\[6pt] \\dfrac{A^2(2T-t)}{2}\\cos w_0 t & T<t\\le 2T\\\\[6pt] 0 & else\\end{cases}$$\n波形如下图所示：\n【图】\n(3) $P_e=\\dfrac{1}{2}\\,\\mathrm{erfc}\\sqrt{\\dfrac{E(1-\\rho)}{2n_0}} \\qquad E=\\dfrac{A^2 T}{2} \\qquad \\rho=-1$\n$$P_e=\\dfrac{1}{2}\\,\\mathrm{erfc}\\sqrt{\\dfrac{A^2 T}{2n_0}}$$",
     "question_img": "images/t299/q_tk299-81-05.jpg",
     "answer_img": "images/t299/a_tk299-81-05.jpg"
-   }
+   },
+   "book_page": 247
   },
   {
    "format_version": 1,
@@ -7813,7 +8078,8 @@
     "answer_text": "6、解：\n(1)\n【图】\n冲激响应 $h(t)=r(T_s-t)$\n输出信号 $y(t)=h(t)*r(t)$\n(2)\n【图】\n输出信号 $$y(t)=\\int_0^{T_s}r^2(t)\\,dt$$\n(3) 证明：\n因 $r(t)$ 的持续时间为 $0\\sim T_s$，则 $r(t)$ 的匹配滤波器的单位冲激响应 $h(t)=r(T_s-t)$ 的持续时间也为 $0\\sim T_s$。\n那么当匹配滤波器输入为 $r(t)$，则其输出：\n$$y(t)=r(t)*h(t)=h(t)*r(t)$$\n$$=\\int_{-\\infty}^{\\infty}r(a)h(t-a)\\,da=\\int_0^{T_s}r(a)h(t-a)\\,da$$\n$$=\\int_0^{T_s}r(a)r(T_s-t+a)\\,da$$\n$$=R_r(T_s-t)$$\n当 $t=T_s$ 时，$$y(T_s)=R_r(0)=\\int_0^{T_s}r^2(a)\\,da$$\n即证两者等价。",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-81-06.jpg"
-   }
+   },
+   "book_page": 247
   },
   {
    "format_version": 1,
@@ -7842,7 +8108,8 @@
     "answer_text": "7、解：\n(1) $E_s = E_g = \\int_{-\\infty}^{\\infty} g^2(t)\\,dt = \\int_0^1 \\left(\\frac{2}{\\sqrt{5}}\\right)^2 dt + \\int_1^2 \\left(\\frac{1}{\\sqrt{5}}\\right)^2 dt = 1$\n(2) 最佳抽样时刻 $t_0 = 2$，$h(t) = g(2-t)$：$h(t)=\\frac{1}{\\sqrt{5}}$（$0\\le t\\le 1$），$h(t)=\\frac{2}{\\sqrt{5}}$（$1\\le t\\le 2$）\n(3) 取样输出 $y = \\int_0^{T_b} \\left[ -g(t) + n_w(t) \\right] g(t)\\,dt = -E_g + Z$，其中 $Z = \\int_{-\\infty}^{+\\infty} n_w(t)g(t)\\,dt$ 为零均值高斯随机变量，$Z \\sim N(0, \\frac{N_0}{2})$，从而 $y \\sim N(-1, \\frac{N_0}{2})$，概率密度函数为：$p_y(x) = \\frac{1}{\\sqrt{\\pi N_0}} \\exp\\left[ -\\frac{(x+1)^2}{N_0} \\right]$\n(4) 由于等概，最佳判决门限为：$V_T = 0$\n(5) $P_e = P(1)P(e \\mid 1) + P(0)P(e \\mid 0) = \\frac{1}{2}\\,\\mathrm{erfc}\\sqrt{\\frac{1}{N_0}}$",
     "question_img": "images/t299/q_tk299-81-07.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 248
   },
   {
    "format_version": 1,
@@ -7876,7 +8143,8 @@
     "answer_text": "8、解：\n(1)\n【图】\n(2)\n【图】\n(3) 由于发送两信号正交等概，可知 $\\rho = 0$\n$$P_e=\\frac{1}{2}\\mathrm{erfc}\\left(\\sqrt{\\frac{E_h(1-\\rho)}{2n_0}}\\right)=\\frac{1}{2}\\mathrm{erfc}\\left(\\sqrt{\\frac{A^2T}{4n_0}}\\right)$$",
     "question_img": "images/t299/q_tk299-81-08.jpg",
     "answer_img": "images/t299/a_tk299-81-08.jpg"
-   }
+   },
+   "book_page": 249
   },
   {
    "format_version": 1,
@@ -7899,7 +8167,8 @@
     "answer_text": "9、解：\n(1) $t_0 = T$，$h(t) = s_1(T - t)$，冲激响应为 $h(t) = s_1(T-t) = -\\sin\\dfrac{2\\pi t}{T}$（$0\\le t\\le T$），与 $s_1(t)$ 反相。\n(2) 发送 $s_1(t)$ 时：\n$$y = \\int_0^{T} \\left[ s_1(t) + n_w(t) \\right] s_1(t) \\, dt = \\int_0^{T} s_1^2(t) \\, dt + \\int_0^{T} n_w(t) \\, s_1(t) \\, dt = E_1 + Z$$\n其中 $E_1 = \\int_0^{T} s_1^2(t) \\, dt = \\frac{T}{2}$，$Z \\sim N(0, \\frac{N_0}{2} E_1)$\n条件概率密度为：$p(y \\mid s_1) = \\frac{1}{\\sqrt{\\pi N_0 E_1}} \\exp \\left[ -\\frac{(y - E_1)^2}{N_0 E_1} \\right]$\n发送 $s_2(t)$ 时：$y = 0 + Z$，其中 $Z \\sim N(0, \\frac{N_0}{2} E_1)$\n条件概率密度为：$p(y \\mid s_2) = \\frac{1}{\\sqrt{\\pi N_0 E_1}} \\exp \\left[ -\\frac{y^2}{N_0 E_1} \\right]$\n(3) 由于等概，最佳判决门限为两概率密度函数的交点：$V_T = \\frac{E_1}{2}$\n平均判错概率：$P_e = \\frac{1}{2}P(e \\mid s_1) + \\frac{1}{2}P(e \\mid s_2) = \\frac{1}{2}\\,\\mathrm{erfc}\\sqrt{\\frac{E_1}{4N_0}} = \\frac{1}{2}\\,\\mathrm{erfc}\\sqrt{\\frac{T}{8N_0}}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 249
   },
   {
    "format_version": 1,
@@ -7928,7 +8197,8 @@
     "answer_text": "10、解：\n（1）由已知条件可知：$E_1 = E_2 = \\int_0^{T_b} s_1^2(t)\\,dt = 2T_b$，$E_{12} = \\int_0^{T_b} s_1(t)s_2(t)\\,dt = 0$\n匹配滤波器的冲激响应为：\n$$h_1(t) = s_1(T_b - t) = \\sqrt{\\frac{2}{T_b}}\\cos\\left(\\frac{22\\pi t}{T_b}\\right), \\quad 0 \\le t \\le T_b$$\n$$h_2(t) = s_2(T_b - t) = \\sqrt{\\frac{2}{T_b}}\\cos\\left(\\frac{20\\pi t}{T_b}\\right), \\quad 0 \\le t \\le T_b$$\n（2）发送 $s_1(t)$ 时；\n$$y = y_1 - y_2 = \\int_0^T [s_1(t) + n_w(t)]h_1(t)\\,dt - \\int_0^T [s_1(t) + n_w(t)]h_2(t)\\,dt$$\n$$= \\int_0^T s_1(t)h_1(t)\\,dt + \\int_0^T n_w(t)h_1(t)\\,dt - \\int_0^T n_w(t)h_2(t)\\,dt$$\n令：$Z = \\int_0^T n_w(t)h_1(t)\\,dt - \\int_0^T n_w(t)h_2(t)\\,dt$\n$$y = \\sqrt{2T_b} + Z \\qquad Z \\sim N(0, N_0)$$\n$$E[y] = \\sqrt{2T_b}$$\n发送 $s_2(t)$ 时；\n$$y = y_1 - y_2 = \\int_0^T [s_2(t) + n_w(t)]h_1(t)\\,dt - \\int_0^T [s_2(t) + n_w(t)]h_2(t)\\,dt$$\n$$= -\\int_0^T s_2(t)h_2(t)\\,dt + \\int_0^T n_w(t)h_1(t)\\,dt - \\int",
     "question_img": "images/t299/q_tk299-81-10.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 250
   },
   {
    "format_version": 1,
@@ -7957,7 +8227,8 @@
     "answer_text": "11、解：\n（1）匹配滤波器冲激响应：$h(t)=s_1(T-t)$\n【图】\n（2）$s_1(t)$ 和 $s_2(t)$ 的能量分别为 $E_1=\\int_0^{T_b}[A\\cos(2\\pi f_c t)]^2\\,dt=\\frac{A^2T_b}{2}$\n$$E_2=\\int_0^{T_b}[-A\\cos(2\\pi f_c t)]^2\\,dt=\\frac{A^2T_b}{2}$$\n从而平均比特能量：$E_b=\\frac{A^2T_b}{2}$　　相关系数 $\\rho_{12}=\\frac{1}{\\sqrt{E_1E_2}}\\int_0^{T_b}s_1(t)s_2(t)\\,dt=-1$\n（3）由于是等概率发送，最佳判决门限：$V_T=0$\n$$P_e=\\frac{1}{2}\\operatorname{erfc}\\Big(\\sqrt{\\frac{E_b(1-\\rho)}{2n_0}}\\Big)=\\frac{1}{2}\\operatorname{erfc}\\Big(\\sqrt{\\frac{A^2T_b}{2n_0}}\\Big)$$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-81-11.jpg"
-   }
+   },
+   "book_page": 251
   },
   {
    "format_version": 1,
@@ -7986,7 +8257,8 @@
     "answer_text": "12、解：\n$n_w(t)$ 经过带通滤波器后，输出 $n_o(t)=n_c(t)\\cos 2\\pi f_c t-n_s(t)\\sin 2\\pi f_c t$\n（1）依题意：$h(t)=g(T_b-t)$，在 $t=T_b$ 时刻可以等价成一个相关器。则发送 $s_1(t)$ 时：\n$$y=\\int_0^{T_b}2g^2(t)\\cos^2(2\\pi f_c t)\\,dt+Z$$\n$$E[y]=2\\int_0^{T_b}2g^2(t)\\cos^2(2\\pi f_c t)\\,dt=\\int_0^{T_b}g^2(t)\\,dt=\\frac{1}{3}T_b$$\n$$D(y)=D[Z]=\\int_{-\\infty}^{\\infty}N_0\\left|H(f)\\right|^2\\,df=N_0\\int_{-\\infty}^{\\infty}\\left|h(t)\\right|^2\\,dt=\\frac{N_0T_b}{3}$$\n发送 $s_1(t)$ 时，$y=\\frac{1}{3}T_b+Z$　发送 $s_2(t)$ 时，$y=-\\frac{1}{3}T_b+Z$\n因为等概率发送，则最佳判决门限 $V_{th}=0$\n$$P(e)=P(e\\mid s_1)P(s_1)+P(e\\mid s_2)P(s_2)$$\n$$=\\frac{1}{2}\\left[P\\left(\\frac{T_b}{3}+Z<0\\right)+P\\left(-\\frac{T_b}{3}+Z>0\\right)\\right]$$\n$$=\\frac{1}{2}erfc\\left(\\sqrt{\\frac{T_b}{6N_0}}\\right)$$\n（2）发送 $s_1(t)$ 时：\n输出信号 $s_o(t)=g(t)*h(t)=\\int_{-\\infty}^{\\infty}g(a)g(t-a)\\,da$\n则有 $s_o(T_b)=\\int_{-\\infty}^{\\infty}g(a)g(T_b-a)\\,da=\\int_0^{T_b}\\frac{a}{T_b}\\cdot\\frac{T_b-a}{T_b}\\,da=\\frac{T_b}{6}$\n则：$y=\\frac{T_b}{6}+Z$\n$$D(y)=D[Z]=\\int_{-\\infty}^{\\infty}N_0\\left|H(f)\\right|^2\\,df=N_0\\int_{-\\infty}^{\\infty}\\left|h(t)\\right|^2\\,dt=\\frac{N_0T_b}{3}$$\n$$y=\\frac{T_b}{6}+Z$$\n因为等概率发送，则最佳判决门限 $V_{th}=0$\n$$P(e)=P(e\\mid s_1)P(s_1)+P(e\\mid s_2)P(s_2)$$\n$$=\\frac{1}{2}\\left[P\\left(\\frac{T_b}{6}+Z<0\\right)+P\\left(-\\frac{T_b}{6}+Z>0\\right)\\right]$$\n$$=\\frac{1}{2}erfc\\left(\\sqrt{\\frac{T_b}{24N_0}}\\right)$$",
     "question_img": "images/t299/q_tk299-81-12.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 251
   },
   {
    "format_version": 1,
@@ -8009,7 +8281,8 @@
     "answer_text": "1、 $G_r(\\omega)=G_R(\\omega)=\\sqrt{H(\\omega)}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 251
   },
   {
    "format_version": 1,
@@ -8032,7 +8305,8 @@
     "answer_text": "2、解：\n(1) $C_R(f)=\\begin{cases}\\sqrt{1+\\cos\\left(\\dfrac{\\pi f T}{8}\\right)} & |f|\\leq \\dfrac{8}{T} \\\\ 0 & else\\end{cases}$\n(2) $N_o=\\int_{-\\infty}^{\\infty}\\dfrac{n_0}{2}\\left|G_R(f)\\right|^2\\,df=\\dfrac{n_0}{2}\\int_{-8/T}^{8/T}\\left(1+\\cos\\left(\\dfrac{\\pi f T}{8}\\right)\\right)df=\\dfrac{8n_0}{T}$\n(3) 等效奈奎斯特带宽 $B=f_N=\\dfrac{4}{T}$\n无码间干扰传输的最高波特率 $R_B=2f_N=\\dfrac{8}{T}$\n最小码元间隔 $T_B=\\dfrac{1}{R_B}=\\dfrac{T}{8}$\n最高频带利用率 $\\eta=1\\,Baud/Hz$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 252
   },
   {
    "format_version": 1,
@@ -8061,7 +8335,8 @@
     "answer_text": "3、解：\n(1)输出噪声功率为：\n$$N_o = \\frac{1}{2\\pi}\\int_{-\\infty}^{+\\infty}\\frac{n_0}{2}\\left|G_R(\\omega)\\right|^2 d\\omega = \\frac{1}{2\\pi}\\int_{-\\frac{\\pi}{\\tau_0}}^{+\\frac{\\pi}{\\tau_0}}\\frac{n_0\\tau_0}{2}\\left[1+\\cos(\\omega\\tau_0)\\right]d\\omega = \\frac{n_0}{2}$$\n(2)信号取 $A$ 和 $0$ 时，抽样输出信号的概率密度分别为：\n$$p(y|A) = \\frac{1}{2\\lambda}e^{-\\frac{|y-A|}{\\lambda}}, \\quad p(y|0) = \\frac{1}{2\\lambda}e^{-\\frac{|y|}{\\lambda}}$$\n取两个概率密度函数的交点为最佳判决门限，可知 $V_T = \\frac{A}{2}$，\n所以误码率为：\n$$P_e = P(1)P(e|1) + P(0)P(e|0) = \\frac{1}{2}\\int_{-\\infty}^{\\frac{A}{2}}\\frac{1}{2\\lambda}e^{-\\frac{A-y}{\\lambda}}dy + \\frac{1}{2}\\int_{\\frac{A}{2}}^{+\\infty}\\frac{1}{2\\lambda}e^{-\\frac{y}{\\lambda}}dy = \\frac{1}{2}e^{-\\frac{A}{2\\lambda}}$$",
     "question_img": "images/t299/q_tk299-82-03.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 252
   },
   {
    "format_version": 1,
@@ -8084,7 +8359,8 @@
     "answer_text": "4、解：\n(1) 根据 $H(w)$ 表达式可得，此系统为 a=1 的升余弦滚降系统，\n等效奈奎斯特带宽 $B_N=\\dfrac{\\pi/2T}{2\\pi}=\\dfrac{1}{4T}$，最大传码率\n$$R_{\\max}=2\\times\\frac{1}{4T}=\\frac{1}{2T}\\ \\text{Baud}$$\n最高频带利用率 $\\eta=1\\,\\text{Baud}/\\text{Hz}$\n(2) $G_R(w)=1$，$|w|\\leq\\dfrac{\\pi}{T}$，不是最佳接收\n(3) $$h(t)=\\frac{\\sin \\pi/2T}{\\sin \\pi/2T}\\cdot\\frac{\\cos\\dfrac{\\pi}{2T}}{1-\\dfrac{t^{2}}{T^{2}}}$$\n$$h(k2T)=\\frac{\\sin k\\pi}{k\\pi}\\cdot\\frac{\\cos k\\pi}{1-4k^{2}},\\quad h(k2T)=\\begin{cases}1 & k=0\\\\ 0 & k\\neq 0\\end{cases}$$\n从而当发送 1 时，接收机输出为：$y(k2T)=1+n_{o}(t)$\n当发送 -1 时，接收机输出为：$y(k2T)=-1+n_{o}(t)$\n输出噪声 $n_{o}(t)$ 的平均功率为 $$N_{o}=\\frac{n_{0}}{2}\\cdot\\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}\\left|G_{R}(w)\\right|^{2}dw=\\frac{n_{0}}{2T}$$\n显然，当发送 $\\pm1$ 等概率时，最佳判决门限 $V_{T}=0$\n$$P=P(1)P(e|1)+P(-1)P(e|-1)$$\n$$=\\frac{1}{2}P\\left(1+n_{o}(t)<0\\right)+\\frac{1}{2}P\\left(-1+n_{o}(t)>0\\right)$$\n$$=\\frac{1}{2}\\operatorname{erfc}\\left(\\sqrt{\\frac{T}{n_{0}}}\\right)$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 253
   },
   {
    "format_version": 1,
@@ -8107,7 +8383,8 @@
     "answer_text": "CB",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 254
   },
   {
    "format_version": 1,
@@ -8130,7 +8407,8 @@
     "answer_text": "2、$16$，$20$，$16$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 254
   },
   {
    "format_version": 1,
@@ -8153,7 +8431,8 @@
     "answer_text": "3、108kHz",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 254
   },
   {
    "format_version": 1,
@@ -8176,7 +8455,8 @@
     "answer_text": "4、108kHz，120KHz",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 254
   },
   {
    "format_version": 1,
@@ -8199,7 +8479,8 @@
     "answer_text": "CA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 254
   },
   {
    "format_version": 1,
@@ -8228,7 +8509,8 @@
     "answer_text": "5、解：\n（1）$F(\\omega)=\\pi[\\delta(\\omega-2\\pi)+\\delta(\\omega+2\\pi)]+2\\pi[\\delta(\\omega+4\\pi)+\\delta(\\omega-4\\pi)]$\n【图】\n（2）抽样频率：$f_s \\geq 2\\times\\dfrac{4\\pi}{2\\pi}=4 \\Rightarrow T_s \\leq \\dfrac{1}{4}$\n（3）已抽样信号 $f_s(t)=f(t)\\times\\displaystyle\\sum_{n=-\\infty}^{\\infty}\\delta(t-nT_s)$\n则已抽样信号频谱 $F_s(\\omega)=\\dfrac{1}{T_s}\\displaystyle\\sum_{n=-\\infty}^{\\infty}F(\\omega-n\\omega_s)=5\\sum_{n=-\\infty}^{\\infty}F(\\omega-10\\pi n)$\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-91-06.jpg"
-   }
+   },
+   "book_page": 255
   },
   {
    "format_version": 1,
@@ -8274,7 +8556,8 @@
     "answer_text": "C",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 255
   },
   {
    "format_version": 1,
@@ -8320,7 +8603,8 @@
     "answer_text": "A",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 255
   },
   {
    "format_version": 1,
@@ -8343,7 +8627,8 @@
     "answer_text": "错误",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 255
   },
   {
    "format_version": 1,
@@ -8366,7 +8651,8 @@
     "answer_text": "正确",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 255
   },
   {
    "format_version": 1,
@@ -8389,7 +8675,8 @@
     "answer_text": "5、中点，概率质心",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 255
   },
   {
    "format_version": 1,
@@ -8418,7 +8705,8 @@
     "answer_text": "6、解：\n（1）$$S = E[X^2] = 2[\\int_0^1 x^2 \\frac{2}{3}dx + \\int_{0.5}^1 x^2 \\frac{1}{3}dx] = \\frac{1}{4}$$\n（2）$$N_q = 2[\\int_0^{0.5} (x-0.25)^2 \\frac{2}{3}dx + \\int_{0.5}^1 (x-0.75)^2 \\frac{1}{3}dx = \\frac{1}{48}$$\n（3）量化信噪比：$\\dfrac{S}{N_q} = 12$",
     "question_img": "images/t299/q_tk299-92-06.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 256
   },
   {
    "format_version": 1,
@@ -8447,7 +8735,8 @@
     "answer_text": "7、解：\n(1) $Y$ 各可能取值的出现概率如下：\n$$P(Y=1)=\\int_0^2 p(x)dx=\\frac{1}{8}\\times 2=\\frac{1}{4}，\\quad P(Y=3)=\\int_2^4 p(x)dx=\\frac{1}{12}\\times 2=\\frac{1}{6}$$\n$$P(Y=5)=\\int_4^6 p(x)dx=\\frac{1}{24}\\times 2=\\frac{1}{12}$$\n根据对称性，可知：$P(Y=-1)=\\dfrac{1}{4}$，$P(Y=-3)=\\dfrac{1}{6}$，$P(Y=-5)=\\dfrac{1}{12}$\n(2) 信号功率：\n$$E[X^2]=\\int_{-6}^{+6} x^2 p(x)dx=2\\int_0^6 x^2 p(x)dx$$\n$$=2\\times\\left[\\frac{1}{8}\\int_0^2 x^2 dx+\\frac{1}{12}\\int_2^4 x^2 dx+\\frac{1}{24}\\int_4^6 x^2 dx\\right]=8$$\n量化噪声功率：\n$$E[(Y-X)^2]=\\int_{-6}^{+6}(x-y_i)^2 p(x)dx$$\n$$=2[\\int_0^2 (x-1)^2\\frac{1}{8}dx+\\int_2^4 (x-3)^2\\frac{1}{12}dx+\\int_4^6 (x-5)^2\\frac{1}{24}dx]$$\n$$=\\frac{1}{3}$$",
     "question_img": "images/t299/q_tk299-92-07.jpg",
     "answer_img": ""
-   }
+   },
+   "book_page": 256
   },
   {
    "format_version": 1,
@@ -8470,7 +8759,8 @@
     "answer_text": "8、解：\n（1）信号功率：$S = E[X^2] = \\int_0^6 x^2\\left(\\frac{1}{3} - \\frac{x}{18}\\right)dx = 6$\n噪声功率：\n$$N_q = E[(x - y_k)^2] = \\int_0^2 (x-1)^2\\left(\\frac{1}{3} - \\frac{x}{18}\\right)dx + \\int_2^4 (x-3)^2\\left(\\frac{1}{3} - \\frac{x}{18}\\right)dx + \\int_4^6 (x-5)^2\\left(\\frac{1}{3} - \\frac{x}{18}\\right)dx$$\n$$= \\int_{-1}^1 y^2\\left(\\frac{1}{3} - \\frac{y+1}{18}\\right)dy + \\int_{-1}^1 y^2\\left(\\frac{1}{3} - \\frac{y+3}{18}\\right)dy + \\int_{-1}^1 y^2\\left(\\frac{1}{3} - \\frac{y+5}{18}\\right)dy$$\n$$= \\int_{-1}^1 x^2\\left(\\frac{1}{2} - \\frac{x}{6}\\right)dx$$\n$$= \\frac{1}{3}$$\n从而信噪比：$\\frac{S}{N_q} = 18$\n（2）因为采用的是均匀量化，当输入信号为均匀分布时，为最佳输入分布。\n（3）分层电平为相邻量化电平的中点，最佳量化电平等于量化间隔的概率质心。",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 257
   },
   {
    "format_version": 1,
@@ -8493,7 +8783,8 @@
     "answer_text": "9、解：\n（1）量化噪声功率为：\n$$N_q = E[Z^2] = \\int_{-1}^{1} \\frac{1}{2}z^2 dz = \\frac{1}{3}$$\n（2）$X = 1 - Z \\in [0,2)$，条件概率密度函数为：\n$$p(x \\mid Y = 1) = \\begin{cases} \\frac{1}{2} & 0 \\le x < 2 \\\\ 0 & else \\end{cases}$$\n（3）$X = 3 - Z \\in [2,4]$，条件概率密度函数：\n$$p(x \\mid Y = 3) = \\begin{cases} \\frac{1}{2} & 2 \\le x \\le 4 \\\\ 0 & else \\end{cases}$$\n（4）X 的概率密度函数为：\n$$p(x) = p(Y=1)p(x \\mid Y=1) + p(Y=3)p(x \\mid Y=3) = \\begin{cases} \\frac{1}{3} & 0 \\le x < 2 \\\\ \\frac{1}{6} & 2 \\le x \\le 4 \\\\ 0 & else \\end{cases}$$\n均值和功率分别为：\n$$E[X] = \\int_0^2 \\frac{1}{3}x dx + \\int_2^4 \\frac{1}{6}x dx = \\frac{5}{3}, \\quad E[X^2] = \\int_0^2 \\frac{1}{3}x^2 dx + \\int_2^4 \\frac{1}{6}x^2 dx = 4$$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 257
   },
   {
    "format_version": 1,
@@ -8516,7 +8807,8 @@
     "answer_text": "$-\\frac{x}{18}\\,\\mathrm{d}x$\n1、100、0011、00010011000、156、1",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 258
   },
   {
    "format_version": 1,
@@ -8539,7 +8831,8 @@
     "answer_text": "2、1001001",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 258
   },
   {
    "format_version": 1,
@@ -8562,7 +8855,8 @@
     "answer_text": "3、16",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 258
   },
   {
    "format_version": 1,
@@ -8585,7 +8879,8 @@
     "answer_text": "AD",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 258
   },
   {
    "format_version": 1,
@@ -8608,7 +8903,8 @@
     "answer_text": "5、解：\n（1）抽样信号电压为 $x=0.31V$，由于 $x=0.31V>0$，极性码为 1\n则量化电平值为：$y_{\\alpha}=\\dfrac{0.31}{4.096}\\times 2048=155$ 个量化单位，155 在 $[128,256]$ 内，因此\n段落码为：100\n此段落的量化间隔 $\\dfrac{128}{16}=8$ 量化单位。因此段内码 $\\left\\lfloor\\dfrac{155-128}{8}\\right\\rfloor=3$，对应的段内码\n为：0011。综上，输出码组为：11000011\n（2）11000011 对应的编码电平为：$I_c=128+3\\times 8=152$\n$\\quad 152=128+116+8$，则 11 位线性码为：00010011000\n（3）译码电平 $I_D=I_c+\\dfrac{8}{2}=156$\n（4）00010011100 0\n（5）7/12 变换末位为 1 时，也就是编码电平处于 $0\\sim 32\\Delta$ 之间。\n根据题意服从均匀分布，则概率 $p=32\\times\\dfrac{1}{2048}=\\dfrac{1}{64}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 258
   },
   {
    "format_version": 1,
@@ -8631,7 +8927,8 @@
     "answer_text": "6、解：\n（1）抽样信号电平幅度为 $x = 3.3V$，由于 $x = 3.3V > 0$，极性码为 1\n则量化电平值为：$y_n = \\dfrac{3.3}{5} \\times 2048 = 1351.68$ 个量化单位，1351.68 在第五段\n[1024, 2048]内，因此段落码为：111\n此段落的量化间隔 $\\dfrac{1024}{16} = 64$ 量化单位。因此段内码 $\\left\\lfloor \\dfrac{1351.68 - 1024}{64} \\right\\rfloor = 5$，对应的\n段内码为：0101。综上，编码码组为：11110101\n量化噪声：$[1351.68 - (1024 + 64 \\times 5)] \\times \\dfrac{5}{2048} = 1.875 \\times 10^{-2}$\n（2）将段落码的最低位移做段内码最高位\n量化噪声：$|1351.68 - (1024 + 64 \\times 13)| \\times \\dfrac{5}{2048} = 1.2312$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 259
   },
   {
    "format_version": 1,
@@ -8654,7 +8951,8 @@
     "answer_text": "1、量化、过载",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 259
   },
   {
    "format_version": 1,
@@ -8677,7 +8975,8 @@
     "answer_text": "2、1",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 259
   },
   {
    "format_version": 1,
@@ -8700,7 +8999,8 @@
     "answer_text": "3、过载噪声",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 259
   },
   {
    "format_version": 1,
@@ -8723,7 +9023,8 @@
     "answer_text": "4、解：\n根据不过载条件：$\\left|\\dfrac{dm(t)}{dt}\\right|_{\\max}=\\left|\\dfrac{dA_m\\sin 2\\pi f_m t}{dt}\\right|_{\\max}\\leq\\dfrac{\\sigma}{T_s}$\n$$A_m 2\\pi f_m\\leq\\dfrac{\\Delta}{T_s}\\Rightarrow A_m\\leq\\dfrac{\\Delta_s}{2\\pi f_m T_s}$$\n最大功率：$P=\\dfrac{A_m^2}{2}=\\dfrac{\\Delta^2}{8\\pi^2 f_m^2 T_s^2}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 259
   },
   {
    "format_version": 1,
@@ -8746,7 +9047,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 260
   },
   {
    "format_version": 1,
@@ -8792,7 +9094,8 @@
     "answer_text": "B",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 260
   },
   {
    "format_version": 1,
@@ -8815,7 +9118,8 @@
     "answer_text": "DBC",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 260
   },
   {
    "format_version": 1,
@@ -8838,7 +9142,8 @@
     "answer_text": "4、解：\n（1）系统传输速率 $R_b = 16 \\times 8 \\times 8000 + 8 \\times 8000 = 1088(kbit/s)$\n最小传输带宽 $B = \\frac{R_b}{2} = 544kHz$\n（2）50min 共传输的信息量为：$I = 1088 \\times 10^3 \\times 50 \\times 60 = 3.264 \\times 10^9(bit)$\n平均误码比特为：$P_e = 3.264 \\times 10^9 \\times 10^{-6} = 3264(bit)$\n418696",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 260
   },
   {
    "format_version": 1,
@@ -8861,7 +9166,8 @@
     "answer_text": "1、解：\n（1）设最高信息速率为 $R_b$，则有 $\\eta = \\dfrac{2}{1+a} = \\dfrac{R_b}{B}$\n则有：$\\eta = \\dfrac{2}{1+0.5} = \\dfrac{R_b}{6k} \\Rightarrow R_b = 8\\,\\mathrm{kbit/s}$\n（2）量化电平数 $L=16$，则编码位数为 $n = \\log_2^{L'} = 4$\n则有：$2f_H \\times 4 = 8k \\Rightarrow f_H = 1\\,\\mathrm{KHz}$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 261
   },
   {
    "format_version": 1,
@@ -8884,7 +9190,8 @@
     "answer_text": "2、解：\n（1）输出信噪比 $\\frac{S_o}{N_o}=6n(dB)=24dB$\n（2）$R_B=\\frac{2B}{1+\\alpha}=5kBaud$，则有：$R_b=R_B\\log_2^8=15kbit/s$\n（3）$2\\times f_h\\times 4=15k$，则：$f_h=\\frac{15}{8}kHz$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 261
   },
   {
    "format_version": 1,
@@ -8913,7 +9220,8 @@
     "answer_text": "3、解：\n（1）$R_b = 2\\times10k \\times 5 \\times 8 = 800\\,kbit/s$\n（2）$B = 2R_b = 1600\\,kHz$\n（3）\n【图】",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-96-03.jpg"
-   }
+   },
+   "book_page": 262
   },
   {
    "format_version": 1,
@@ -8936,7 +9244,8 @@
     "answer_text": "4、解：\n（1）采用 PCM 编码的速率为 $R_{b_1}=10\\times 8k\\times 8=640\\,kbit/s$\n采用增量调制后的速率为 $R_{b_2}=\\frac{1}{T}\\times 10\\,bit/s$\n两者相等即得：$\\frac{10}{T}=640k$\n可得 $T=\\frac{1}{64}\\times 10^{-3}=1.56\\times 10^{-5}\\,s$\n（2）复用后的信号速率 $R_b=R_{b_1}+R_{b_2}=1280\\,kbit/s$\n（3）采用采用 7 电平第一类部分响应系统，则说明是 4 进制信号\n$$\\eta=\\frac{R_B}{B}=\\frac{\\frac{R_b}{\\log_2^4}}{B}=2\\,Baud/Hz$$\n可得 $B=320\\,kHz$\n（4）经过 4B5B 块编码后，速率变为 $R_b=1280\\times\\frac{5}{4}=1600\\,kbit/s$\n由于采用的是矩形脉冲，带宽 $B=R_b=1600\\,kHz$",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 262
   },
   {
    "format_version": 1,
@@ -8965,7 +9274,8 @@
     "answer_text": "5、解：\n（1）最低速率 $f_s = 2 \\times 1k = 2k$\n（2）\n帧长 $T_s = \\frac{1}{2000}$\n时隙数 $N = 10$\n时隙宽度 $T_c = \\frac{T_s}{10}$\n码元宽度 $T_B = \\frac{T_c}{8} = \\frac{T_s}{80}$\n假设最高频率为 1kHz、2kHz、3kHz、4kHz 的信号代表第 1 路、2 路、3 路以及\n4 路信号，帧结构如下图所示：\n【图】\n（3）总传码率 $R_B = \\frac{1}{T_B} = 160KBaud$\n（4）\n$$\\eta = \\frac{2}{1+0.25} = \\frac{R_B}{B} \\Rightarrow \\frac{2}{1.25} = \\frac{160k}{B}$$\n$$B = 100kHz$$",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-96-05.jpg"
-   }
+   },
+   "book_page": 263
   },
   {
    "format_version": 1,
@@ -8999,7 +9309,8 @@
     "answer_text": "6、解：\n(1) $R_A = 2 \\times 4k \\times 8 = 64kbit/s$\n$m_3(t)$ 和 $m_4(t)$ 是带通信号，最低抽样频率：\n$$f_s = 2B\\left(1+\\frac{k}{n}\\right) = 2 \\times 1.5k\\left(1+\\frac{\\frac{2}{3}}{2}\\right) = 4kHz$$\n$R_B = 4k \\times 8 = 32kbit/s$\n$R_C = 2 \\times 64k + 2 \\times 32 = 192kbit/s$\n(2) 传码率 $R_B = \\dfrac{R_C}{4} = 48kBaud$，$B = 2R_B = 96kHz$\n单边功率谱密度如下所示：\n【图】\n(3) 调制框图如下所示：\n【图】\n解调框图如下所示：\n【图】",
     "question_img": "images/t299/q_tk299-96-06.jpg",
     "answer_img": "images/t299/a_tk299-96-06.jpg"
-   }
+   },
+   "book_page": 263
   },
   {
    "format_version": 1,
@@ -9022,7 +9333,8 @@
     "answer_text": "7、解：\n（1）均匀量化输出信噪比为：$6n \\geq 40(dB)$，则 $n=7$\n对于信号 $m_1(t)$，最低采样速率为：$f_{s1} = 2B\\left(1+\\dfrac{k}{n}\\right)$\n$$\\frac{f_H}{f_H-f_L}=\\frac{3}{3-2}=3$$，则 $k=0$，从而 $f_{s1}=2kHz$\n则量化后输出速率为：$R_1=f_{s1}\\times n=2k\\times 7=14kbps$\n同理对于信号 $m_2(t)$，$f_{s2}=2kHz$，$R_2=f_{s2}\\times n=2k\\times 7=14kbps$\n对于信号 $m_3(t)$，最低采样速率为：$f_{s3}=4kHz$\n则量化后输出速率为：$R_3=f_{s3}\\times n=4k\\times 7=28kbps$\n同理对于信号 $m_4(t)$：$R_4=f_{s4}\\times n=4k\\times 7=28kbps$\n复用后的总数据速率：$R_b=R_1+R_2+R_3+R_4=(14+14+28+28)kbps=84kbps$\n（2）$\\eta=\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}\\ \\Rightarrow\\ \\dfrac{\\log_2^M}{1+a}=\\dfrac{84}{24}=\\dfrac{7}{2}$ bit/s.Hz，其中 $0<a\\leq 1$\n解得：$a=\\dfrac{2\\log_2^M}{7}-1$\n必须满足 $0<a\\leq 1$，解得 $M=16$，此时 $a=\\dfrac{1}{7}$\n$R_B=\\dfrac{R_b}{\\log_2^{16}}=21kBaud$\n可设计成滚降系数 $a=\\dfrac{1}{7}$ 的",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 264
   },
   {
    "format_version": 1,
@@ -9056,7 +9368,8 @@
     "answer_text": "8、解：\n(1) $R_1 = 2f_{m1} \\times 8 = 3.2\\,\\mathrm{Mbps}$\n对于 $m_2(t)$，抽样速率 $f_s = 2B\\left(1+\\frac{k}{n}\\right) = 2 \\times 2M \\times \\left(1+\\frac{\\frac{1}{2}}{2}\\right) = 5\\,\\mathrm{Mbps}$\n$R_2 = f_s \\times 10 = 50\\,\\mathrm{Mbps}$\n$R_b = R_1 + R_2 + R_3 = 77.2\\,\\mathrm{Mbps}$\n(2) $\\eta_b = \\frac{R_b}{B} = \\frac{77.2 \\times 10^6}{0.02 \\times 10^9} = 3.86\\,\\mathrm{bit/s}$\n(3) $\\eta = \\frac{\\log_2^M}{1+a} = \\frac{R_b}{B} \\Rightarrow a = \\frac{1}{3.86}\\log_2^M - 1 \\quad 0 < a \\le 1$\n当 $M = 2,4,8$ 时，$a < 0$，不满足要求\n当 $M = 16$，$a = 0.036$，满足要求，一般取满足要求的 M 最小值，提高可靠性。\n(4) 滤波器 1 是带宽等于 0.2MHz 的理想低通滤波器。\n滤波器 2 是带宽等于 3MHz ~ 5MHz 的理想带通滤波器。\n【图】",
     "question_img": "images/t299/q_tk299-96-08.jpg",
     "answer_img": "images/t299/a_tk299-96-08.jpg"
-   }
+   },
+   "book_page": 264
   },
   {
    "format_version": 1,
@@ -9079,7 +9392,8 @@
     "answer_text": "1、TS16",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 265
   },
   {
    "format_version": 1,
@@ -9102,7 +9416,8 @@
     "answer_text": "2、信令",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 265
   },
   {
    "format_version": 1,
@@ -9125,7 +9440,8 @@
     "answer_text": "CBCA",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 265
   },
   {
    "format_version": 1,
@@ -9171,7 +9487,8 @@
     "answer_text": "D",
     "question_img": "",
     "answer_img": ""
-   }
+   },
+   "book_page": 265
   }
  ]
 }

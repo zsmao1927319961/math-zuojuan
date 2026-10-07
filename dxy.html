@@ -295,6 +295,7 @@ function viewQuestion(){
   const typCn=(q.legacy&&q.legacy.type_cn)||TYP_CN[q.question_type]||q.question_type;
   h+='<div class="qtop"><span class="badge">'+esc(names.chap)+'</span><span class="badge">'+esc(names.kp)+'</span>'
     + '<span class="badge src">'+esc(typCn)+'</span>'
+    + (q.book_page ? '<span class="badge src">📖 书p'+q.book_page+'</span>' : '')
     + (q.source? '<span class="badge src">'+esc(q.source)+'</span>':'') + '</div>';
   h+='<div class="stem" id="stem"></div>';
   const isChoice = q.question_type==='single_choice' && q.options.length;
@@ -444,7 +445,7 @@ function viewPaper(){
         const isC=q.question_type==='single_choice'&&q.options.length;
         const stemImgs=(q.asset_refs||[]).filter(r=>r.type==='image'&&r.position==='stem').map(r=>'<img class="pq-img" loading="lazy" src="data/'+r.ref+'">').join('');
         const ansImgs=(q.asset_refs||[]).filter(r=>r.type==='image'&&r.position==='explanation').map(r=>'<img class="pq-img" loading="lazy" src="data/'+r.ref+'">').join('');
-        h+='<div class="pq"><div class="pq-stem"><b>'+(qi+1)+'.</b> </div><div class="pq-body">';
+        h+='<div class="pq"><div class="pq-stem"><b>'+(qi+1)+'.</b> '+(q.book_page?'<span style="font-size:.8em;color:#4a6cf7;font-weight:600">📖 书p'+q.book_page+'</span> ':'')+'</div><div class="pq-body">';
         h+='<div class="stem" id="pp-'+id+'"></div>'+stemImgs;
         if(isC){
           h+='<div class="opts">';
