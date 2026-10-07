@@ -451,7 +451,7 @@
    "serial_number": 3,
    "source": "北京交通大学 2019 年一、3",
    "question_type": "subjective",
-   "stem_md": "___。($t$ 为纠错个数，$e$ 为检错个数)。（\n3、一个分组码在检 3 位错的同时，纠 2 位错，则最小汉明距离为____。\n（北京交通大学 2019 年一、3）",
+   "stem_md": "3、一个分组码在检 3 位错的同时，纠 2 位错，则最小汉明距离为____。\n（北京交通大学 2019 年一、3）",
    "options": [],
    "answer": {
     "reference_answer_md": "（图片高度被严重压缩，全部内容不可辨认，无法转录出任何文字。）"
@@ -1400,7 +1400,7 @@
    "serial_number": 1,
    "source": "",
    "question_type": "fill",
-   "stem_md": "1、一个三级反馈移位寄存器的特征方程为 $f(x)=1+x^{2}+x^{3}$，由它所产生的 m 序列周期为_______。（河北工业大学 2017 年一、8）\nC. 15        D. 31",
+   "stem_md": "1、一个三级反馈移位寄存器的特征方程为 $f(x)=1+x^{2}+x^{3}$，由它所产生的 m 序列周期为_______。（河北工业大学 2017 年一、8）\nA. 3　　　　B. 7　　　　C. 15　　　　D. 31",
    "options": [],
    "answer": {
     "reference_answer_md": "B"
@@ -1423,7 +1423,7 @@
    "serial_number": 2,
    "source": "河北工业大学 2018 年二、5",
    "question_type": "essay",
-   "stem_md": "A. 3　　　　B. 7　　　　C. 15\n……产生的一种序列。（河北工业大学 2018 年二、5）",
+   "stem_md": "2、m 序列是由______产生的一种序列。（河北工业大学 2018 年二、5）",
    "options": [],
    "answer": {
     "reference_answer_md": "2、线性反馈移存器"
@@ -1446,7 +1446,7 @@
    "serial_number": 3,
    "source": "河北工业大学 2019 年 二、6",
    "question_type": "subjective",
-   "stem_md": "2、m序列是由____产生的，周期最长的\n3、反馈移位寄存器能产生m序列的充要条件是其特征多项式为______。\n（河北工业大学 2019 年 二、6）",
+   "stem_md": "3、反馈移位寄存器能产生m序列的充要条件是其特征多项式为______。\n（河北工业大学 2019 年 二、6）",
    "options": [],
    "answer": {
     "reference_answer_md": "3、本原多项式"
@@ -2263,7 +2263,7 @@
    "serial_number": 6,
    "source": "河北工业大学 2021 年三、4",
    "question_type": "subjective",
-   "stem_md": "平择出品，必是精品\n6、设一信息源的输出由 256 个不同的符号组成，其中 32 个符号出现的概率为 $\\frac{1}{64}$，余下 224 个符号出现的概率为 $\\frac{1}{448}$，信息源每秒发 4800 个符号，且每个符号相互独立，计算算出信息源的传输速率？\n（河北工业大学 2021 年三、4）",
+   "stem_md": "平择出品，必是精品\n6、设一信息源的输出由 256 个不同的符号组成，其中 32 个符号出现的概率为 $\\frac{1}{64}$，余下 224 个符号出现的概率为 $\\frac{1}{448}$，信息源每秒发 4800 个符号，且每个符号相互独立，计算出信息源的传输速率？\n（河北工业大学 2021 年三、4）",
    "options": [],
    "answer": {
     "reference_answer_md": "6、解：\n信息熵为：\n$$H(x)=32\\times\\frac{1}{64}\\log_2 64+224\\times\\frac{1}{448}\\log_2 448=7.40$$ 比特/符号\n传输速率为：$R_b=R_B\\times H(x)=4800\\times 7.40=35520\\,bit/s$"
@@ -3005,7 +3005,7 @@
    "serial_number": 7,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "通信原理……（页眉被裁切，仅见此部分）\n7、已知随机过程 $Z(t)=X(t)\\cos(\\omega_c t+\\theta)$。其中，$X(t)$ 是广义平稳随机过程，其自相关函数为\n$$R_X(\\tau)=\\begin{cases}1-|\\tau|/T_B, & |\\tau|\\le T_B \\\\ 0, & \\text{其他}\\end{cases}$$\n$\\theta$ 是在 $[0,2\\pi]$ 上均匀分布的随机变量，$\\theta$ 与 $X(t)$ 相互独立。（南京邮电大学 2017 年第四题）\n（1）$Z(t)$ 是否为广义平稳？\n（2）求 $Z(t)$ 的自相关函数 $R_Z(t,t+\\tau)$；\n（3）求 $Z(t)$ 的功率谱密度及平均功率；\n（4）若 $X(t)$ 各态历经，且 $\\int_{-\\infty}^{\\infty}X(t+t_0)\\cos(\\omega_c t+\\theta_0)\\,dt=0$，$\\int_{-\\infty}^{\\infty}X(t)X(t+t_0)\\cos(2\\omega_c t+\\theta_0)\\,dt=0$。其中，$X(t)$ 为 $X(t)$ 的任一样本函数，",
+   "stem_md": "7、已知随机过程 $Z(t)=X(t)\\cos(\\omega_c t+\\theta)$。其中，$X(t)$ 是广义平稳随机过程，其自相关函数为\n$$R_X(\\tau)=\\begin{cases}1-|\\tau|/T_B, & |\\tau|\\le T_B \\\\ 0, & \\text{其他}\\end{cases}$$\n$\\theta$ 是在 $[0,2\\pi]$ 上均匀分布的随机变量，$\\theta$ 与 $X(t)$ 相互独立。（南京邮电大学 2017 年第四题）\n（1）$Z(t)$ 是否为广义平稳？\n（2）求 $Z(t)$ 的自相关函数 $R_Z(t,t+\\tau)$；\n（3）求 $Z(t)$ 的功率谱密度及平均功率；\n（4）若 $X(t)$ 各态历经，且 $\\int_{-\\infty}^{\\infty}X(t+t_0)\\cos(\\omega_c t+\\theta_0)\\,dt=0$，$\\int_{-\\infty}^{\\infty}X(t)X(t+t_0)\\cos(2\\omega_c t+\\theta_0)\\,dt=0$。其中，$X(t)$ 为 $X(t)$ 的任一样本函数，$Z(t)$ 是否各态历经？",
    "options": [],
    "answer": {
     "reference_answer_md": "18696\n7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。"
@@ -3515,14 +3515,14 @@
    "stem_md": "1、信道特性不随时间变化的称为____信道，信道特性随时间变化的称为____信道。前者存在____频率失真和____失真。后者____随时间变化，____随时间变化，以及存在____。（南京邮电大学 2019 年一、2）",
    "options": [],
    "answer": {
-    "reference_answer_md": "1、恒参；随参；幅度；相位"
+    "reference_answer_md": "1、恒参；随参；幅度；相位；损耗；时延；多径效应"
    },
    "explanation_md": "信道特性不随时间变化的称为**恒参**信道（如光纤、电缆），特性随时间随机变化的称为**随参**信道（如短波电离层、移动信道）。恒参信道主要存在**幅度**频率失真和**相位**频率失真（群时延失真），二者均属于线性失真，可用均衡器补偿。随参信道有三个特点：信号衰减随时间变化、传输时延随时间变化、存在多径效应。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "恒参信道和随参信道",
-    "answer_text": "1、恒参；随参；幅度；相位",
+    "answer_text": "1、恒参；随参；幅度；相位；损耗；时延；多径效应",
     "question_img": "",
     "answer_img": ""
    }
@@ -3725,7 +3725,7 @@
    "serial_number": 8,
    "source": "",
    "question_type": "fill",
-   "stem_md": "8、信道传递函数为 $H(f)=|H(f)|e^{j\\varphi(f)}$，称 $-\\dfrac{1}{2\\pi}\\cdot\\dfrac{d}{df}\\varphi(f)$ 为_______特性。\n（北京邮电大学 2016 年一、24）\nC. 微分　　　D. 群时延",
+   "stem_md": "8、信道传递函数为 $H(f)=|H(f)|e^{j\\varphi(f)}$，称 $-\\dfrac{1}{2\\pi}\\cdot\\dfrac{d}{df}\\varphi(f)$ 为_______特性。\n（北京邮电大学 2016 年一、24）\nA. 幅频　　　B. 相频　　　C. 微分　　　D. 群时延",
    "options": [],
    "answer": {
     "reference_answer_md": "D"
@@ -4070,7 +4070,7 @@
    "serial_number": 2,
    "source": "南京邮电大学 2020 年一、2",
    "question_type": "fill",
-   "stem_md": "2、香农公式给出了____信道容量的一般公式。该式标明其信道容量C只与____和____有关，当噪声功率 $N \\rightarrow 0$ 时，$C \\rightarrow$ ____，当 $B \\rightarrow \\infty$，$C \\rightarrow$ ____。\n（南京邮电大学 2020 年一、2）",
+   "stem_md": "2、香农公式给出了____信道容量的一般公式。该式表明其信道容量C只与____和____有关，当噪声功率 $N \\rightarrow 0$ 时，$C \\rightarrow$ ____，当 $B \\rightarrow \\infty$，$C \\rightarrow$ ____。\n（南京邮电大学 2020 年一、2）",
    "options": [],
    "answer": {
     "reference_answer_md": "2. 高斯白噪声；带宽；信噪比；$\\infty$；$1.44\\frac{S}{n_0}$"
@@ -4142,14 +4142,14 @@
    "stem_md": "4、设理想限带 AWGN 信道的带宽为 $B$，有用信号功率为 $S$，噪声单边功率谱密度为 $N_0$。给定 $\\frac{S}{N_0}$，当 B 趋于无穷时，信道容量趋于 ____(1)____；给定 $S/(N_0B)$，当 B 趋于无穷时，信道容量趋于 ____(2)____。\n(1)(2) A. $0$　　　　B. $\\dfrac{S\\ln 2}{N_0}$　　　　C. $\\dfrac{S}{N_0\\ln 2}$　　　　D. $\\infty$\n（北京邮电大学 2024 年一、14）",
    "options": [],
    "answer": {
-    "reference_answer_md": "$$C=\\lim_{B\\to\\infty}B\\log_2^{(1+\\frac{S}{N_0B})}=\\lim_{B\\to\\infty}\\frac{S}{N_0}\\frac{N_0B}{S}\\log_2^{(1+\\frac{S}{N_0B})}=\\frac{S}{N_0}\\lim_{B\\to\\infty}\\frac{N_0B}{S}\\log_2^{(1+\\frac{S}{N_0B})}=\\frac{S}{N_0\\ln 2}$$\n当给定 $S/(N_0B)$，$B$ 趋于无穷时：$C=\\lim B\\log_2^{(1+\\frac{S}{N_0B})}$"
+    "reference_answer_md": "4、由香农公式 $C = B\\log_2\\left(1+\\frac{S}{N_0 B}\\right)$：\n给定 $\\frac{S}{N_0}$，$B\\to\\infty$ 时 $\\frac{S}{N_0 B}\\to 0$，利用等价无穷小 $\\ln(1+x)\\sim x$：\n$$C=\\lim_{B\\to\\infty}B\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\lim_{B\\to\\infty}\\frac{N_0B}{S}\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\log_2 e=\\frac{S}{N_0\\ln 2}$$\n故 (1) 选 C；\n给定 $\\frac{S}{N_0 B}$（信噪比恒定），$B\\to\\infty$ 时括号内为常数，$C=B\\log_2\\left(1+\\frac{S}{N_0B}\\right)\\to\\infty$，故 (2) 选 D。"
    },
-   "explanation_md": "$$C=\\lim_{B\\to\\infty}B\\log_2^{(1+\\frac{S}{N_0B})}=\\lim_{B\\to\\infty}\\frac{S}{N_0}\\frac{N_0B}{S}\\log_2^{(1+\\frac{S}{N_0B})}=\\frac{S}{N_0}\\lim_{B\\to\\infty}\\frac{N_0B}{S}\\log_2^{(1+\\frac{S}{N_0B})}=\\frac{S}{N_0\\ln 2}$$\n当给定 $S/(N_0B)$，$B$ 趋于无穷时：$C=\\lim B\\log_2^{(1+\\frac{S}{N_0B})}$",
+   "explanation_md": "4、由香农公式 $C = B\\log_2\\left(1+\\frac{S}{N_0 B}\\right)$：\n给定 $\\frac{S}{N_0}$，$B\\to\\infty$ 时 $\\frac{S}{N_0 B}\\to 0$，利用等价无穷小 $\\ln(1+x)\\sim x$：\n$$C=\\lim_{B\\to\\infty}B\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\lim_{B\\to\\infty}\\frac{N_0B}{S}\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\log_2 e=\\frac{S}{N_0\\ln 2}$$\n故 (1) 选 C；\n给定 $\\frac{S}{N_0 B}$（信噪比恒定），$B\\to\\infty$ 时括号内为常数，$C=B\\log_2\\left(1+\\frac{S}{N_0B}\\right)\\to\\infty$，故 (2) 选 D。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "香农公式和连续信道容量求解",
-    "answer_text": "$$C=\\lim_{B\\to\\infty}B\\log_2^{(1+\\frac{S}{N_0B})}=\\lim_{B\\to\\infty}\\frac{S}{N_0}\\frac{N_0B}{S}\\log_2^{(1+\\frac{S}{N_0B})}=\\frac{S}{N_0}\\lim_{B\\to\\infty}\\frac{N_0B}{S}\\log_2^{(1+\\frac{S}{N_0B})}=\\frac{S}{N_0\\ln 2}$$\n当给定 $S/(N_0B)$，$B$ 趋于无穷时：$C=\\lim B\\log_2^{(1+\\frac{S}{N_0B})}$",
+    "answer_text": "4、由香农公式 $C = B\\log_2\\left(1+\\frac{S}{N_0 B}\\right)$：\n给定 $\\frac{S}{N_0}$，$B\\to\\infty$ 时 $\\frac{S}{N_0 B}\\to 0$，利用等价无穷小 $\\ln(1+x)\\sim x$：\n$$C=\\lim_{B\\to\\infty}B\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\lim_{B\\to\\infty}\\frac{N_0B}{S}\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0}\\log_2 e=\\frac{S}{N_0\\ln 2}$$\n故 (1) 选 C；\n给定 $\\frac{S}{N_0 B}$（信噪比恒定），$B\\to\\infty$ 时括号内为常数，$C=B\\log_2\\left(1+\\frac{S}{N_0B}\\right)\\to\\infty$，故 (2) 选 D。",
     "question_img": "",
     "answer_img": ""
    }
@@ -4772,7 +4772,7 @@
    "serial_number": 3,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "3、对单音信号 $m(t)=A_m\\cos(2\\pi f_m t)$ 进行 100% AM 调制传输，假设信道高斯白噪声单边功率谱为 $n_0$，接收到的已调信号功率为 $S_i$，接收端采用包络检波解调，输出信号功率 $S_o$，噪声功率 $N_o$。求：",
+   "stem_md": "3、对单音信号 $m(t)=A_m\\cos(2\\pi f_m t)$ 进行 100% AM 调制传输，假设信道高斯白噪声单边功率谱为 $n_0$，接收到的已调信号功率为 $S_i$，接收端采用包络检波解调，输出信号功率 $S_o$，噪声功率 $N_o$。求：\n(1) 调制制度增益（增益系数）$G_{AM}$；\n(2) 推导包络检波器的输出信噪比 $\\frac{S_o}{N_o}$ 的表达式。",
    "options": [],
    "answer": {
     "reference_answer_md": "3、解：\n（1）设信号 $S_{AM}(t)=[A_m+m(t)]\\cos 2\\pi f_c t=[A_m+A_m\\cos 2\\pi f_m t]\\cos 2\\pi f_c t$\n边带功率为：$\\dfrac{P_m}{2}=\\dfrac{1}{2}\\times\\dfrac{A_m^2}{2}$　　总的功率为：$\\dfrac{P_m}{2}+\\dfrac{A_m^2}{2}=\\dfrac{1}{2}\\times\\dfrac{A_m^2}{2}+\\dfrac{A_m^2}{2}$\n功率利用率：$\\dfrac{\\frac{A_m^2}{4}}{\\dfrac{A_m^2}{4}+\\dfrac{A_m^2}{2}}=\\dfrac{1}{3}$"
@@ -4916,7 +4916,7 @@
    "serial_number": 8,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "8、设模拟基带信号的带宽为 15kHz，经过截止频率为 4kHz 的理想低通后，峰值功率与平均功率比为 3，发送端到接收端的路径损耗为 46dB，接收端热噪声的双边功率密度为 $10^{-12}\\,\\mathrm{W/Hz}$，若要求解调输出的信噪比为 30dB。\n(1) 采用调幅指数为 0.8 的常规 AM，求所需的",
+   "stem_md": "8、设模拟基带信号的带宽为 15kHz，经过截止频率为 4kHz 的理想低通后，峰值功率与平均功率比为 3，发送端到接收端的路径损耗为 46dB，接收端热噪声的双边功率密度为 $10^{-12}\\,\\mathrm{W/Hz}$，若要求解调输出的信噪比为 30dB。\n(1) 采用调幅指数为 0.8 的常规 AM，求所需的发射功率；\n(2) 采用 SSB 调制方式，求所需的发射功率；\n(3) 比较两种调制方式的发射功率，说明哪种更节省。",
    "options": [],
    "answer": {
     "reference_answer_md": "8、解：\n(1)\n设 AM 信号表达式为 $S_{AM}(t)=[A+m(t)]\\cos w_c t$\n$$G=\\frac{S_o}{N_o}/\\frac{S_i}{N_i}=\\frac{2\\overline{m^2(t)}}{\\overline{m^2(t)}+A^2}=\\frac{2}{1+\\frac{A^2}{\\overline{m^2(t)}}}$$\n依据题意峰均比 $\\frac{\\overline{m^2(t)}}{|m(t)|_{max}^2}=\\frac{1}{3}$，调幅系数 $\\frac{|m(t)|_{max}}{A}=0.8$，则有：$\\frac{\\overline{m^2(t)}}{A^2}=\\frac{16}{75}$\n从而 $G=\\frac{2}{1+\\frac{A^2}{\\overline{m^2(t)}}}=\\frac{32}{91}$\n解调器输入信噪比为 $\\frac{S_i}{N_i}=\\frac{P_T\\times 10^{-4.6}}{10^{-12}\\times 2\\times 8\\times 10^3}=\\frac{91}{32}\\frac{S_o}{N_o}=\\frac{91}{32}\\times 1000$\n从而解得 $P_T=1.82W$\n(2) 解调器输入信噪比为 $\\frac{S_i}{N_i}=\\frac{P_T\\times 10^{-4.6}}{10^{-12}\\times 2\\times 8\\times 10^3}=\\frac{1}{2}\\frac{S_o}{N_o}=\\frac{1}{2}\\times 1000$\n从而解得 $P_T=10^{4.6}\\times 8\\times 10^{-6}=0.32W$\n(3) 在相同的基带信号带宽，相同的噪声功率谱前提下，要保证相同的输出信噪比，DSB 需要更小的发送信号功率，DSB 抗噪声性能比 AM 更好。"
@@ -5463,7 +5463,7 @@
    "serial_number": 4,
    "source": "",
    "question_type": "fill",
-   "stem_md": "4、若信息源为 1000000001，则 HDB3 码为 $(-v)$ ______。（南京邮电大学 2021 年二、1）\n码为 10 110010 -10，则信息码为______。图（11）为______。",
+   "stem_md": "4、若信息源为 1000000001，则 HDB3 码为 $(-v)$ ______。（南京邮电大学 2021 年二、1）",
    "options": [],
    "answer": {
     "reference_answer_md": "$+1000+1-100-1+1$; $10010101$"
@@ -5486,7 +5486,7 @@
    "serial_number": 5,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "码为 10-1100 1010\n5、信息码 10110 对应的双向码为_______，CMI 码（11）为_______\n（从……2010 年二 2.）\nC. $X(nR_s)$\n2、若数字",
+   "stem_md": "5、信息码 10110 对应的双相码为______，CMI 码为______。（西安科技大学 2010 年二、2）",
    "options": [],
    "answer": {
     "reference_answer_md": "5、1001101001；0001110001"
@@ -5809,7 +5809,7 @@
    "serial_number": 9,
    "source": "",
    "question_type": "fill",
-   "stem_md": "9、设基带传输系统的数据速率是 $72\\,\\mathrm{kbit/s}$。若采用 $8\\,\\mathrm{PAM}$，无符号间干扰传输最少需要的信道带宽是______kHz，采用滚降因子为 $\\alpha = 0.5$ 的升余弦滚降后，需\n要的信道带宽是______kHz；若采用 $64\\,\\mathrm{PAM}$，最少需要的信道带宽是______kHz，",
+   "stem_md": "9、设基带传输系统的数据速率是 $72\\,\\mathrm{kbit/s}$。若采用 $8\\,\\mathrm{PAM}$，无符号间干扰传输最少需要的信道带宽是______kHz；采用滚降因子为 $\\alpha = 0.5$ 的升余弦滚降后，需要的信道带宽是______kHz；若采用 $64\\,\\mathrm{PAM}$，最少需要的信道带宽是______kHz，则频带利用率等于______bit/(s·Hz)。（北京邮电大学 2018 年一、7）\nA. 6　　　　B. 12　　　　C. 18　　　　D. 24",
    "options": [],
    "answer": {
     "reference_answer_md": "BCAB"
@@ -6138,7 +6138,7 @@
    "serial_number": 5,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "5、若二进制通信系统中接收端抽样判决量为 $y=a+n$，其中数字信息 $a$ 等概取值于 $0$ 或 $A$，噪声 $n$ 服从指数分布，其概率密度函数是 $f(n)=\\frac{1}{2}e^{-|n|}$。计算：\n(1) 最佳判决门限 $V_T$；\n(2) 平均误比特率 $P_b$（河北工业大学 2022 年四、1）\n0)、",
+   "stem_md": "5、若二进制通信系统中接收端抽样判决量为 $y=a+n$，其中数字信息 $a$ 等概取值于 $0$ 或 $A$，噪声 $n$ 服从指数分布，其概率密度函数是 $f(n)=\\frac{1}{2}e^{-|n|}$。计算：\n(1) 最佳判决门限 $V_T$；\n(2) 平均误比特率 $P_b$（河北工业大学 2022 年四、1）",
    "options": [],
    "answer": {
     "reference_answer_md": "5、解：\n（1）发送 0 时 y 的条件概率密度为 $p_1(y)=\\frac{1}{2}e^{-|y|}$\n发送 A 时 y 的条件概率密度为 $p_2(y)=\\frac{1}{2}e^{-|y-A|}$\n最佳判决门限是两似然函数相等的分界点，即有 $p_1(V_T)=p_2(V_T)$\n从而得 $V_T=\\frac{A}{2}$\n半并输出码，定义为\n发送 0 而判错的概率是 $P(e\\mid 0)=P(n>\\frac{A}{2})=\\int_{A/2}^{\\infty}\\frac{1}{2}e^{-n}\\,dn=\\frac{1}{2}e^{-\\frac{A}{2}}$\n发送 A 而判错的概率是 $P(e\\mid A)=P(n<-\\frac{A}{2})=\\int_{-\\infty}^{-\\frac{A}{2}}\\frac{1}{2}e^{n}\\,dn=\\frac{1}{2}e^{-\\frac{A}{2}}$\n平均误比特率 $P_b=\\frac{1}{2}P(e\\mid 0)+\\frac{1}{2}P(e\\mid A)=\\frac{1}{2}e^{-\\frac{A}{2}}$"
@@ -7282,12 +7282,12 @@
    "serial_number": 8,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "8、某二维 8 进制数字调制系统的归一化正交基函数为：\n$$f_1(t)=\\begin{cases}1 & 0\\le t\\le 1\\\\ 0 & else\\end{cases},\\qquad f_2(t)=\\begin{cases}1 & 0\\le t\\le \\frac{1}{2}\\\\ -1 & \\frac{1}{2}<t\\le 1\\\\ 0 & else\\end{cases}$$\n星座图上 8 个星座点的坐标分别是：$s_1=(0,0)$、$s_2=(-1,1)$、$s_3=(1,-1)$、\n$s_4=(1,0)$、$s_5=(1,1)$、$s_6=(-1,-1)$、$s_7=(0,1)$、$s_8=(-1,0)$。假设信道噪声是加\n性高斯白噪声。试：\n(1) 画出星座图，写出星座点之间的最小距离；\n(2) 画出星座点 $s_5$ 对应的发送信号波形 $s_5(t)$；\n(3) 若各星座点等概出现，求平均符号能量 $E_s$，画出 $s_1$ 的最佳判决域；",
+   "stem_md": "8、某二维 8 进制数字调制系统的归一化正交基函数为：\n$$f_1(t)=\\begin{cases}1 & 0\\le t\\le 1\\\\ 0 & else\\end{cases},\\qquad f_2(t)=\\begin{cases}1 & 0\\le t\\le \\frac{1}{2}\\\\ -1 & \\frac{1}{2}<t\\le 1\\\\ 0 & else\\end{cases}$$\n星座图上 8 个星座点的坐标分别是：$s_1=(0,0)$、$s_2=(-1,1)$、$s_3=(1,-1)$、\n$s_4=(1,0)$、$s_5=(1,1)$、$s_6=(-1,-1)$、$s_7=(0,1)$、$s_8=(-1,0)$。假设信道噪声是加\n性高斯白噪声。试：\n(1) 画出星座图，写出星座点之间的最小距离；\n(2) 画出星座点 $s_5$ 对应的发送信号波形 $s_5(t)$；\n(3) 若各星座点等概出现，求平均符号能量 $E_s$，画出 $s_1$ 的最佳判决域；\n(4) 若星座点 $s_8$ 的出现概率为零，其他星座点等概出现，画出此时 $s_1$ 的最佳判决域。",
    "options": [],
    "answer": {
-    "reference_answer_md": "8、解：\n（1）\n【图】\n从上图可以看出，最小欧式距离 $d_{\\min}=1$\n（2）$s_5(t)=f_1(t)+f_2(t)$\n【图】\n（3）$$E_s=\\frac{0+1+2+1+2+1+2+2}{8}=\\frac{11}{8}$$\n判决域为相邻点垂直平分线所围成的区域，$s_1$ 最佳判决域为下列虚线围成的区域，如下图所示：\n【图】\n下列虚线围成的区域，如下图所示：\n【图】"
+    "reference_answer_md": "8、解：\n（1）\n【图】\n从上图可以看出，最小欧式距离 $d_{\\min}=1$\n（2）$s_5(t)=f_1(t)+f_2(t)$\n【图】\n（3）$$E_s=\\frac{0+1+2+1+2+1+2+2}{8}=\\frac{11}{8}$$\n判决域为相邻点垂直平分线所围成的区域，$s_1$ 最佳判决域为下列虚线围成的区域，如下图所示：\n【图】\n(4) $s_8=(-1,0)$ 不再出现，$s_1=(0,0)$ 的判决域向 $s_8$ 方向扩展：该方向上与 $s_8$ 的垂直平分线不再起作用，改由更远的存活点（如 $s_6=(-1,-1)$、$s_2=(-1,1)$）的垂直平分线共同围成，判决域比等概时向左（$-x$ 方向）扩大。（书未给(4)解答，此为补充）"
    },
-   "explanation_md": "8、解：\n（1）\n【图】\n从上图可以看出，最小欧式距离 $d_{\\min}=1$\n（2）$s_5(t)=f_1(t)+f_2(t)$\n【图】\n（3）$$E_s=\\frac{0+1+2+1+2+1+2+2}{8}=\\frac{11}{8}$$\n判决域为相邻点垂直平分线所围成的区域，$s_1$ 最佳判决域为下列虚线围成的区域，如下图所示：\n【图】\n下列虚线围成的区域，如下图所示：\n【图】",
+   "explanation_md": "8、解：\n（1）\n【图】\n从上图可以看出，最小欧式距离 $d_{\\min}=1$\n（2）$s_5(t)=f_1(t)+f_2(t)$\n【图】\n（3）$$E_s=\\frac{0+1+2+1+2+1+2+2}{8}=\\frac{11}{8}$$\n判决域为相邻点垂直平分线所围成的区域，$s_1$ 最佳判决域为下列虚线围成的区域，如下图所示：\n【图】\n(4) $s_8=(-1,0)$ 不再出现，$s_1=(0,0)$ 的判决域向 $s_8$ 方向扩展：该方向上与 $s_8$ 的垂直平分线不再起作用，改由更远的存活点（如 $s_6=(-1,-1)$、$s_2=(-1,1)$）的垂直平分线共同围成，判决域比等概时向左（$-x$ 方向）扩大。（书未给(4)解答，此为补充）",
    "asset_refs": [
     {
      "type": "image",
@@ -7298,7 +7298,7 @@
    "legacy": {
     "type_cn": "计算",
     "kp": "星座图",
-    "answer_text": "8、解：\n（1）\n【图】\n从上图可以看出，最小欧式距离 $d_{\\min}=1$\n（2）$s_5(t)=f_1(t)+f_2(t)$\n【图】\n（3）$$E_s=\\frac{0+1+2+1+2+1+2+2}{8}=\\frac{11}{8}$$\n判决域为相邻点垂直平分线所围成的区域，$s_1$ 最佳判决域为下列虚线围成的区域，如下图所示：\n【图】\n下列虚线围成的区域，如下图所示：\n【图】",
+    "answer_text": "8、解：\n（1）\n【图】\n从上图可以看出，最小欧式距离 $d_{\\min}=1$\n（2）$s_5(t)=f_1(t)+f_2(t)$\n【图】\n（3）$$E_s=\\frac{0+1+2+1+2+1+2+2}{8}=\\frac{11}{8}$$\n判决域为相邻点垂直平分线所围成的区域，$s_1$ 最佳判决域为下列虚线围成的区域，如下图所示：\n【图】\n(4) $s_8=(-1,0)$ 不再出现，$s_1=(0,0)$ 的判决域向 $s_8$ 方向扩展：该方向上与 $s_8$ 的垂直平分线不再起作用，改由更远的存活点（如 $s_6=(-1,-1)$、$s_2=(-1,1)$）的垂直平分线共同围成，判决域比等概时向左（$-x$ 方向）扩大。（书未给(4)解答，此为补充）",
     "question_img": "",
     "answer_img": "images/t299/a_tk299-75-08.jpg"
    }
@@ -7340,7 +7340,7 @@
    "serial_number": 10,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "",
+   "stem_md": "10、某 16 进制数字调制系统的 16 个星座点分别位于 $4\\times4$ 方格上（相邻格点的距离为 2），各星座点等概出现。\n(1) 画出该 16 进制调制的星座图；\n(2) 求平均符号能量 $E_s$ 及星座点之间的最小距离；\n(3) 在星座图中标出星座点 $s=-3-3\\mathrm{j}$ 的 ML（最大似然）判决域；\n(4) 若星座点 $s=-3-3\\mathrm{j}$ 的信息比特是 0001，按格雷码规则标出与其相邻的各星座点的信息比特。（西安电子科技大学 2020 年三、2）",
    "options": [],
    "answer": {
     "reference_answer_md": "10、解：\n(1)星座图如下：\n【图】\n(2)平均符号能量为：$E_s=\\frac{1}{16}\\left[4\\times(2+18+10+10)\\right]=10$，最小距离 $d_{\\min}=2$。\n(3)判决域为相邻点垂直平分线所围成的区域，如下图所示：\n【图】\n(4)相邻点编码结果如下\n【图】"
@@ -7634,7 +7634,7 @@
    "serial_number": 1,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "1、已知 $s(t)$ 的波形如下图所示，经过信道传输时叠加了双边功率谱密度为 $\\frac{n_0}{2}$ 的高斯白噪声 $n(t)$，接收端采用匹配滤波器接收。\n【图】\n(1) 接收端在何时抽样判决为宜，解释原因；\n(2) 试求此匹配滤波器的冲激响应和输出信号表达式，并画出波形；\n(3) 试求出最大输出信噪比 $r_{\\max}$。（南京邮电大学 2024 年第九题）\n2、已知某\n(1) 若采\n(2) 设 $s_1$ ……图。（",
+   "stem_md": "1、已知 $s(t)$ 的波形如下图所示，经过信道传输时叠加了双边功率谱密度为 $\\frac{n_0}{2}$ 的高斯白噪声 $n(t)$，接收端采用匹配滤波器接收。\n【图】\n(1) 接收端在何时抽样判决为宜，解释原因；\n(2) 试求此匹配滤波器的冲激响应和输出信号表达式，并画出波形；\n(3) 试求出最大输出信噪比 $r_{\\max}$。（南京邮电大学 2024 年第九题）",
    "options": [],
    "answer": {
     "reference_answer_md": "1、解：\n（1）因为 $s(t)$ 结束时刻为 $T$，最佳抽样时刻 $t_0 = T$。\n（2）$$h(t) = S(T-t) = \\begin{cases} -A, & 0 < t \\le \\frac{T}{2} \\\\ A, & \\frac{T}{2} < t \\le T \\\\ 0, & \\text{else} \\end{cases}$$\n【图】\n$$y(t) = h(t) * s(t) = \\begin{cases} -A^2 t, & 0 \\le t \\le \\frac{T}{2} \\\\ A^2 (3t - 2T), & \\frac{T}{2} < t \\le T \\\\ A^2 (4T - 3t), & T < t \\le 3T/2 \\\\ A^2 (t - 2T), & 3T/2 < t \\le 2T \\\\ 0, & \\text{其他} \\end{cases}$$\n【图】\n（3）$E = \\int_0^T s^2(t)\\,dt = A^2 T$，$r_{\\max} = \\dfrac{2E}{n_0} = \\dfrac{2A^2 T}{n_0}$"
@@ -7909,7 +7909,7 @@
    "serial_number": 10,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "10、某二进制调制系统在 $[0, T_b]$ 内等概发送 $s_1(t) = 2\\cos\\left(\\frac{22\\pi}{T_b}t\\right)$、\n$s_2(t) = 2\\cos\\left(\\frac{20\\pi}{T_b}t\\right)$ 之一。接收框图如下所示，其中两个匹配滤波器分别对 $s_1(t)$ 和\n$s_2(t)$ 匹配，且其冲激响应 $h_1(t)$ 和 $h_2(t)$ 的能量均为 1，最佳采样时刻均为 $t_0 = T_b$。\n白高斯噪声 $n_w(t)$ 的双边功率谱密度是 $\\frac{N_0}{2}$。（北京邮电大学 2020 年第四题）\n【图】\n试求：\n(1) 两个匹配滤波器的冲激响应；\n(2) 发送 $s_1(t)$、$s_2(t)$ 条件下 $y$ 的均值；\n(3) 判决 $y$ 中的噪声功率；\n(4) 最佳判决门限 $V_T$；\n(5) 该系统的平均误比特率。\n——右侧页（部分被裁切）——\n11、BPSK\n$s_1(t)$ 和 $s_2(t)$\n加性高斯\n1. 画出\n2. 求\n3. 写\n12、下\n$s_1(t) = $\n$n_w(t)$\n滤波器\n能使\n(1) 若\n的概\n(2) 若",
+   "stem_md": "10、某二进制调制系统在 $[0, T_b]$ 内等概发送 $s_1(t) = 2\\cos\\left(\\frac{22\\pi}{T_b}t\\right)$、\n$s_2(t) = 2\\cos\\left(\\frac{20\\pi}{T_b}t\\right)$ 之一。接收框图如下所示，其中两个匹配滤波器分别对 $s_1(t)$ 和\n$s_2(t)$ 匹配，且其冲激响应 $h_1(t)$ 和 $h_2(t)$ 的能量均为 1，最佳采样时刻均为 $t_0 = T_b$。\n白高斯噪声 $n_w(t)$ 的双边功率谱密度是 $\\frac{N_0}{2}$。（北京邮电大学 2020 年第四题）\n【图】\n试求：\n(1) 两个匹配滤波器的冲激响应；\n(2) 发送 $s_1(t)$、$s_2(t)$ 条件下 $y$ 的均值；\n(3) 判决 $y$ 中的噪声功率；\n(4) 最佳判决门限 $V_T$；\n(5) 该系统的平均误比特率。\n",
    "options": [],
    "answer": {
     "reference_answer_md": "10、解：\n（1）由已知条件可知：$E_1 = E_2 = \\int_0^{T_b} s_1^2(t)\\,dt = 2T_b$，$E_{12} = \\int_0^{T_b} s_1(t)s_2(t)\\,dt = 0$\n匹配滤波器的冲激响应为：\n$$h_1(t) = s_1(T_b - t) = \\sqrt{\\frac{2}{T_b}}\\cos\\left(\\frac{22\\pi t}{T_b}\\right), \\quad 0 \\le t \\le T_b$$\n$$h_2(t) = s_2(T_b - t) = \\sqrt{\\frac{2}{T_b}}\\cos\\left(\\frac{20\\pi t}{T_b}\\right), \\quad 0 \\le t \\le T_b$$\n（2）发送 $s_1(t)$ 时；\n$$y = y_1 - y_2 = \\int_0^T [s_1(t) + n_w(t)]h_1(t)\\,dt - \\int_0^T [s_1(t) + n_w(t)]h_2(t)\\,dt$$\n$$= \\int_0^T s_1(t)h_1(t)\\,dt + \\int_0^T n_w(t)h_1(t)\\,dt - \\int_0^T n_w(t)h_2(t)\\,dt$$\n令：$Z = \\int_0^T n_w(t)h_1(t)\\,dt - \\int_0^T n_w(t)h_2(t)\\,dt$\n$$y = \\sqrt{2T_b} + Z \\qquad Z \\sim N(0, N_0)$$\n$$E[y] = \\sqrt{2T_b}$$\n发送 $s_2(t)$ 时；\n$$y = y_1 - y_2 = \\int_0^T [s_2(t) + n_w(t)]h_1(t)\\,dt - \\int_0^T [s_2(t) + n_w(t)]h_2(t)\\,dt$$\n$$= -\\int_0^T s_2(t)h_2(t)\\,dt + \\int_0^T n_w(t)h_1(t)\\,dt - \\int"
@@ -8399,7 +8399,7 @@
    "serial_number": 6,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "6、已知模拟信号概率 $P(x)$ 如下图所示，现对其进行 4 电平均匀量化。试求\n（1）信号的平均功率；\n（2）量化噪声功率；\n（3）量化信噪比。（南京邮电大学 2018 年第十一题）\n【图】\n右缘残字：平、8、量、（",
+   "stem_md": "6、已知模拟信号概率 $P(x)$ 如下图所示，现对其进行 4 电平均匀量化。试求\n（1）信号的平均功率；\n（2）量化噪声功率；\n（3）量化信噪比。（南京邮电大学 2018 年第十一题）\n【图】",
    "options": [],
    "answer": {
     "reference_answer_md": "6、解：\n（1）$$S = E[X^2] = 2[\\int_0^1 x^2 \\frac{2}{3}dx + \\int_{0.5}^1 x^2 \\frac{1}{3}dx] = \\frac{1}{4}$$\n（2）$$N_q = 2[\\int_0^{0.5} (x-0.25)^2 \\frac{2}{3}dx + \\int_{0.5}^1 (x-0.75)^2 \\frac{1}{3}dx = \\frac{1}{48}$$\n（3）量化信噪比：$\\dfrac{S}{N_q} = 12$"
@@ -8526,7 +8526,7 @@
    "serial_number": 2,
    "source": "北京交通大学 2023 年一、8",
    "question_type": "subjective",
-   "stem_md": "（南京邮电大学 2020 年二、2）\n2、不含极性位的 12 位 PCM 码 000110011100，对应的不含极性位的 7 位 $A$ 律对\n（北京交通大学 2023 年一、8）",
+   "stem_md": "2、不含极性位的 12 位 PCM 码 000110011100，对应的不含极性位的 7 位 $A$ 律对数 PCM 码为________。（北京交通大学 2023 年一、8）",
    "options": [],
    "answer": {
     "reference_answer_md": "2、1001001"
@@ -8549,7 +8549,7 @@
    "serial_number": 3,
    "source": "北京交通大学 2018 年一、10",
    "question_type": "subjective",
-   "stem_md": "数 PCM 码为________。(北京交通大学 2023\n3、A 律 13 折线第 1 段的段内量化间隔为 $\\Delta$，第 6 段的段内量化间隔为____$\\Delta$。\n（北京交通大学 2018 年一、10）",
+   "stem_md": "3、A 律 13 折线第 1 段的段内量化间隔为 $\\Delta$，第 6 段的段内量化间隔为____$\\Delta$。\n（北京交通大学 2018 年一、10）",
    "options": [],
    "answer": {
     "reference_answer_md": "3、16"
