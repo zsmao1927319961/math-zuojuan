@@ -878,7 +878,13 @@ function pjPrintOne(q, no){
   var img = (q.q_img_hd || q.question_img) ? '<img class="pb-img" src="data/' + (q.q_img_hd || q.question_img) + '">' : '';
   var qtext = document.createElement('div'); qtext.className = 'pb-q';
   renderLatexMixed(qtext, (q.question_text || '').replace(/\n【图】/g, ''));
-  var space = q.type === '计算' || q.type === '简答' ? 200 : (q.type === '填空' ? 70 : 44);
+  /* 书写留白: 大题按小问数自适应(每小问3行), 其余题型固定加量 */
+  var space;
+  if (q.type === '计算' || q.type === '简答') {
+    var subs = ((q.question_text || '').match(/\n\s*[（(]?[1-9１-９][)）]/g) || []).length;
+    space = Math.min(560, Math.max(320, 180 + subs * 80));
+  } else if (q.type === '填空') space = 120;
+  else space = 72;
   var html = '<div class="pb-item pb-avoid"><div class="pb-no">' + no + '．' +
     (q.book_page ? '<span class="pb-tag">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span> ' : '') +
     '<span class="pb-tag">' + escHtml(q.chapter || '') + '</span> <span class="pb-tag">' + escHtml(q.type || '') + '</span></div>';
