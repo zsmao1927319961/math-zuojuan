@@ -516,6 +516,7 @@ function card(q, idx){
   var lv = liveOf(q);
   var head = '<div class="qhead"><span class="qno">' + (idx + 1) + '</span>' +
     (q.book_page ? '<span class="tag" style="background:#eef3ff;color:#4a6cf7">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span>' : '') +
+    (q.video_p ? '<button class="tag" style="background:#fff0f0;color:#e0556a;cursor:pointer;border:1px solid #ffd6d6" data-role="video" title="B站视频讲解">📺 视频解析</button>' : '') +
     '<span class="tag">' + escHtml(q.source === 'tk299' ? (q.chapter || '') : (q.chapter_name || q.chapter)) + '</span>' +
     (q.type ? '<span class="tag">' + escHtml(q.type) + '</span>' : '') +
     (q.kp_sub && q.source !== 'qhzt' ? '<span class="tag">' + escHtml(q.kp_sub) + '</span>' : '') +
@@ -571,6 +572,10 @@ function card(q, idx){
     toggleFav(q.id);
     this.classList.toggle('on', isFav(q.id));
     this.textContent = isFav(q.id) ? '★' : '☆';
+  };
+  var vbtn = el.querySelector('[data-role="video"]');
+  if (vbtn) vbtn.onclick = function(){
+    window.open('https://www.bilibili.com/video/BV1PZ421W7EP/?p=' + q.video_p, '_blank');
   };
   var noteTimer = null, ta = el.querySelector('.noteta');
   ta.addEventListener('input', function(){ clearTimeout(noteTimer); noteTimer = setTimeout(function(){ notesObj()[q.id] = ta.value; saveState(); }, 600); });

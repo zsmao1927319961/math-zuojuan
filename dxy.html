@@ -296,6 +296,7 @@ function viewQuestion(){
   h+='<div class="qtop"><span class="badge">'+esc(names.chap)+'</span><span class="badge">'+esc(names.kp)+'</span>'
     + '<span class="badge src">'+esc(typCn)+'</span>'
     + (q.book_page ? '<span class="badge src">📖 书p'+q.book_page+'</span>' : '')
+    + (q.video_p ? '<span class="badge" style="background:#fff0f0;color:#e0556a;cursor:pointer" onclick="window.open(\'https://www.bilibili.com/video/BV1PZ421W7EP/?p='+q.video_p+'\',\'_blank\')">📺 视频解析</span>' : '')
     + (q.source? '<span class="badge src">'+esc(q.source)+'</span>':'') + '</div>';
   h+='<div class="stem" id="stem"></div>';
   const isChoice = q.question_type==='single_choice' && q.options.length;

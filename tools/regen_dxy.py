@@ -29,6 +29,10 @@ for q in dxy['questions']:
     q['legacy'] = leg
     if src.get('book_page'):
         q['book_page'] = src['book_page']
+    if src.get('video_p'):
+        q['video_p'] = src['video_p']
+    else:
+        q.pop('video_p', None)
     n_sync += 1
 
 # 单选题的 reference_answer_md 情况检查（option_ids 型不动）
