@@ -201,6 +201,7 @@
         <button class="chip on" data-k="full">整卷 · 约37题</button>
         <button class="chip" data-k="half">半卷 · 约20题</button>
         <button class="chip" data-k="quick">快练 · 10题</button>
+        <button class="chip" data-k="mini">小题专项 · 20题</button>
         <button class="chip" data-k="cover">全覆盖轮转 · 防遗忘</button>
       </div>
       <div class="paper-meta" id="pj-cover-hint" hidden>全覆盖轮转：48 个考点排成固定队列，每卷按顺序取下一批 12 个考点（跨章交错、题型齐全），3~4 卷正好完整一轮，一张不漏；配合顶部进度游标自动续接。</div>
@@ -751,6 +752,13 @@ function makePaper(kind){
   var tk = QS.filter(function(q){ return q.source === 'tk299'; });
   var used = pjUsed();
   var picked = [];
+  if (kind === 'mini') {
+    /* 小题专项：纯客观题（选择+判断+填空，不含计算/简答），池=选择98/判断12/填空12 */
+    picked = pjPick(pjByType(tk, ['选择']), 14, used, 3)
+      .concat(pjPick(pjByType(tk, ['判断']), 3, used, 0))
+      .concat(pjPick(pjByType(tk, ['填空']), 3, used, 0));
+    return { qs: picked, meta: '纯客观题' };
+  }
   if (kind === 'quick') {
     picked = pjPick(pjByType(tk, ['选择']), 4, used, 2)
       .concat(pjPick(pjByType(tk, ['填空']), 2, used, 0))
@@ -964,7 +972,7 @@ function start(){
     var out = makePaper(PJ_KIND);
     var qs = out.qs;
     if (!qs.length) { toast('题库为空，刷不到题'); return; }
-    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : PJ_KIND === 'cover' ? '全覆盖' : '快练';
+    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : PJ_KIND === 'cover' ? '全覆盖' : PJ_KIND === 'mini' ? '小题专项' : '快练';
     var p = { id: Date.now(), title: '299题' + kindName + (out.meta ? ' · ' + out.meta : '') + ' · ' + TODAY + ' #' + (pjPapers().length + 1), date: TODAY, kind: PJ_KIND, qids: qs.map(function(q){ return q.id; }) };
     PJ_PAPERS = pjPapers();
     PJ_PAPERS.unshift(p);
