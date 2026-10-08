@@ -14,7 +14,7 @@ let cuotiSrc = '';
 let cuotiReason = '';
 let morePane = 'bank';
 
-const SOURCE_NAMES = { gaoshu880: '高数880', xian_dai: '线代讲义', xian_dai880: '线代880', qhzt: '强化专题' };
+const SOURCE_NAMES = { gaoshu880: '高数880', xian_dai: '线代讲义', xian_dai880: '线代880' };
 
 /* 混排公式渲染：含 $...$ 时按分符切分渲染，其余整段按 LaTeX（兼容旧答案）；KaTeX 缺失时先露文本并走迟到恢复 */
 /* KaTeX 迟到恢复：脚本未就绪时登记任务，动态补拉脚本，就绪后自动重渲染（修"字体变了"竞态） */
@@ -106,7 +106,8 @@ async function init() {
   // 加载题库 + 初始化进度（优先 localStorage，否则导入 data/progress.json）
   try {
     const qr = await fetch('data/questions.json');
-    QUESTIONS = await qr.json();
+    // 数学页只留数学题源（高数880/线代讲义/线代880），强化专题与299题归通信站
+    QUESTIONS = (await qr.json()).filter(q => q.source === 'gaoshu880' || q.source === 'xian_dai' || q.source === 'xian_dai880');
   } catch (e) { console.error('题库加载失败', e); }
 
   STATE = loadState();
@@ -517,8 +518,6 @@ function fillFilters() {
         .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai').chapter_name || c })) },
     { label: '线代880', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'xian_dai880'))
         .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'xian_dai880').chapter_name || c })) },
-    { label: '强化专题', items: chapters.filter(c => QUESTIONS.some(q => q.chapter === c && q.source === 'qhzt'))
-        .map(c => ({ value: c, text: QUESTIONS.find(q => q.chapter === c && q.source === 'qhzt').chapter_name || c })) },
   ]);
   fillSelect('#f-type', types.map(t => ({ value: t, text: t })));
   refillKp();
@@ -576,7 +575,7 @@ function renderBank() {
     groupBy(lg, q => q.chapter_name || q.chapter).forEach(g => {
       const head = document.createElement('div'); head.className = 'group-head';
       const s0 = g.items[0] ? g.items[0].source : '';
-      const srcTag = s0 === 'xian_dai' ? '线代' : (s0 === 'qhzt' ? '强化专题' : '高数');
+      const srcTag = s0 === 'xian_dai' ? '线代' : (s0 === 'xian_dai880' ? '线代880' : '高数');
       head.innerHTML = `<span>${escHtml(g.name)}</span><span class="tag">${srcTag} · ${g.items.length}</span>`;
       list.appendChild(head);
       const byType = {};

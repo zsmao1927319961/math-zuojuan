@@ -289,6 +289,9 @@ textarea, input, select { font: inherit; }
   #tab-zuojuan { display: block !important; padding: 0 !important; }
   #tab-more { display: none !important; }
   .today-row, .qrow { break-inside: avoid; page-break-inside: avoid; }
+  /* 一题一页：每道今日题独占一张纸（末题不强制分页，避免尾页空白） */
+  .today-row { break-after: page; page-break-after: always; }
+  .today-row:last-child { break-after: auto; page-break-after: auto; }
   img { max-width: 100% !important; }
 }
 .print-only { display: none; }
