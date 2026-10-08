@@ -295,6 +295,8 @@ textarea, input, select { font: inherit; }
   img { max-width: 100% !important; }
 }
 .print-only { display: none; }
+/* 打印/存PDF 顶部日期页眉 */
+.print-date { font-size: 15px; font-weight: 700; color: #333; border-bottom: 2px solid #333; padding-bottom: 6px; margin-bottom: 10px; }
 /* 带答案出卷：附加在今日卷每题下方的答案块 */
 .print-ans { border-top: 1px dashed #c9cfda; margin-top: 8px; padding-top: 6px; font-size: 14px; line-height: 1.9; }
 .print-ans img { max-width: 100%; }

@@ -167,6 +167,9 @@ function setTodayDate() {
     if (n >= 0) txt += ` · 距初试 ${n} 天`;
   } catch (e) { /* ignore */ }
   $('#today-date').textContent = txt;
+  // 打印/存PDF 页眉日期（print-only，只在打印时显示）
+  const pd = $('#print-date');
+  if (pd) pd.textContent = `考研数学 · 今日拼卷 · ${txt}`;
 }
 
 function registerSW() {
