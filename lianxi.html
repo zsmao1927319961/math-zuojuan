@@ -179,6 +179,7 @@
       <button class="qbtn star" id="btn-favs">⭐ 我的收藏</button>
       <button class="qbtn paper" id="btn-zujuan">📝 组卷</button>
       <button class="qbtn leaf" id="btn-eyecare">🌿 护眼</button>
+      <button class="qbtn" id="btn-recite">📖 背题</button>
     </div>
     <input id="dirkw" class="dirsearch" placeholder="🔍 搜分组 / 考点 / 题号，如“MSK”“第6章”“卷积”" autocomplete="off">
     <div class="paper-card tree" id="tree"></div>
@@ -200,6 +201,22 @@
       <div class="stats" id="pstats"></div>
     </div>
     <div id="plist"></div>
+  </div>
+
+  <!-- ====== 背题视图（小题：连展题目+答案+解析） ====== -->
+  <div id="view-recite" hidden>
+    <div class="paper-card">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="btn-recite-back">← 目录</button>
+        <div class="paper-name" style="font-size:15px">📖 背题 · 小题专项（选择/填空/判断）</div>
+        <span class="tag" id="recite-pos" style="margin-left:auto"></span>
+      </div>
+    </div>
+    <div id="recite-card"></div>
+    <div class="paper-card" style="display:flex;gap:10px;align-items:center">
+      <button class="btn" id="recite-prev">‹ 上一题</button>
+      <button class="btn" id="recite-next" style="margin-left:auto">下一题 ›</button>
+    </div>
   </div>
 
   <!-- ====== 组卷视图 ====== -->
@@ -236,7 +253,7 @@
           <button class="chip" data-sort="recent" style="padding:2px 9px">最近错题优先</button>
         </span>
       </div>
-      <div class="paper-meta">首次评「不熟练 / 不会」后明天起进复测计划；复测后再评「不会」按 1/3/7 天排，再评「不熟练」按 2/5/10 天排；未到期再评不重置进度；评「掌握」出池。</div>
+          <div class="paper-meta">首次评「不熟练 / 不会」后明天起进复测计划；之后按自适应间隔排期——评「不会」明天再来（稳定度骤降），评「不熟练」间隔逐轮拉长（约 2→4→8→15→30 天）；错的越多回来越勤。未到期再评不重置进度；评「掌握」出池。</div>
       <div class="stats" id="restats"></div>
     </div>
     <div id="relist"></div>
@@ -332,11 +349,17 @@ function toggleFav(id){
 
 /* ---------- 掌握状态（照大观园三键） + 错题复测计划 ----------
    done(掌握) / shaky(不熟练→review) / unknown(不会→错题本)
-   首次评不熟练/不会：明天起进复测计划
-   复测后再评：不会 1/3/7 天，不熟练 2/5/10 天（按复测轮次）
-   未到期再评：不重置进度；到期或逾期在任意页面评价都计为当次复测 */
-function illGap(r){ return r <= 1 ? 1 : (r === 2 ? 3 : 7); }
-function shakyGap(r){ return r <= 1 ? 2 : (r === 2 ? 5 : 10); }
+   自适应间隔（FSRS-lite 稳定度模型，按题记忆）：
+     首次评不熟练/不会：明天进计划（稳定度 s=1 天）
+     复测到期再评「不会」：稳定度 s←s*0.35，明天再来
+     复测到期再评「不熟练」：稳定度 s←s*1.9（1→2→4→8→15→30 天封顶），间隔越来越长
+     错得多的题 s 被压得越低，回来得越勤——间隔随个人表现自适应
+     未到期再评不重置；评「掌握」或手动移出出池 */
+function nextGap(kind, sPrev){
+  if (kind === 'unknown') return 1;                                   // 明天再来
+  var s = Math.max(1, Number(sPrev) || 1) * 1.9;
+  return Math.min(30, Math.max(2, Math.round(s)));
+}
 function liveOf(q){ return MARKED[q.id] || (qstate()[q.id] || {}); }
 function applyMark(q, kind){
   var s = qstate()[q.id] || {};
@@ -351,13 +374,15 @@ function applyMark(q, kind){
               wrong_date: s.wrong_date || TODAY,
               wrong_count: (s.wrong_count || 0) + (kind === 'unknown' ? 1 : 0),
               shaky_count: (s.shaky_count || 0) + (kind === 'shaky' ? 1 : 0),
-              round: s.round || 0 };
+              round: s.round || 0,
+              s: s.s || 1 };
     if (s.reason) b.reason = s.reason;
-    if (firstTime) { b.due = addDays(TODAY, 1); b.round = 0; }               // 明天起进计划
-    else if (dueReached || !s.due) {                                          // 当次复测完成，排下次
+    if (firstTime) { b.due = addDays(TODAY, 1); b.round = 0; b.s = 1; }       // 明天起进计划
+    else if (dueReached || !s.due) {                                          // 当次复测完成，自适应排下次
       b.round = (s.round || 0) + 1;
-      b.due = addDays(TODAY, kind === 'unknown' ? illGap(b.round) : shakyGap(b.round));
-    } else { b.due = s.due; }                                                 // 未到期再评：不重置
+      if (kind === 'unknown') b.s = Math.max(0.5, (s.s || 1) * 0.35);         // 不会：稳定度骤降
+      b.due = addDays(TODAY, nextGap(kind, b.s));
+    } else { b.due = s.due; b.s = s.s || 1; }                                 // 未到期再评：不重置
     qstate()[q.id] = b;
   }
   STATE.papers = STATE.papers || [];
@@ -492,11 +517,73 @@ function pathName(rec){
 }
 function showPractice(){
   document.getElementById('view-dir').hidden = true;
+  document.getElementById('view-recite').hidden = true;
   document.getElementById('view-retest').hidden = true;
   document.getElementById('view-zujuan').hidden = true;
   document.getElementById('view-practice').hidden = false;
   document.getElementById('ptitle').textContent = CUR_TITLE + '（' + CUR_LIST.length + ' 题）';
   renderPractice();
+}
+
+/* ---------- 背题模式：小题连展（题目+答案+解析同屏，顺序记忆） ---------- */
+var RE_LIST = null, RE_IDX = 0;
+function reList(){
+  if (!RE_LIST) {
+    function key(q){
+      var m = (q.chapter || '').match(/第(\d+)章考点(\d+)/);
+      return [m ? +m[1] : 99, m ? +m[2] : 99, q.no || 0];
+    }
+    RE_LIST = QS.filter(function(q){ return q.source === 'tk299' && ['选择','填空','判断'].indexOf(q.type) >= 0; })
+      .sort(function(a, b){ var ka = key(a), kb = key(b); return ka[0] - kb[0] || ka[1] - kb[1] || ka[2] - kb[2]; });
+  }
+  return RE_LIST;
+}
+function showRecite(){
+  try { RE_IDX = Math.min(parseInt(localStorage.getItem('lianxi_recite_pos') || '0', 10) || 0, reList().length - 1); } catch (e) { RE_IDX = 0; }
+  document.getElementById('view-dir').hidden = true;
+  document.getElementById('view-practice').hidden = true;
+  document.getElementById('view-retest').hidden = true;
+  document.getElementById('view-zujuan').hidden = true;
+  document.getElementById('view-recite').hidden = false;
+  renderRecite();
+}
+function renderRecite(){
+  var list = reList();
+  if (!list.length) { document.getElementById('recite-card').innerHTML = '<div class="empty">没有可背的小题</div>'; return; }
+  if (RE_IDX < 0) RE_IDX = list.length - 1;
+  if (RE_IDX >= list.length) RE_IDX = 0;
+  try { localStorage.setItem('lianxi_recite_pos', String(RE_IDX)); } catch (e) {}
+  var q = list[RE_IDX];
+  document.getElementById('recite-pos').textContent = (RE_IDX + 1) + ' / ' + list.length;
+  var el = document.getElementById('recite-card');
+  var card = document.createElement('div');
+  card.className = 'qcard';
+  var head = '<div class="qhead"><span class="qno">' + (RE_IDX + 1) + '</span>' +
+    (q.book_page ? '<span class="tag" style="background:#eef3ff;color:#4a6cf7">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span>' : '') +
+    (q.video_p ? '<button class="tag" style="background:#fff0f0;color:#e0556a;cursor:pointer" data-role="rvideo">📺 视频解析</button>' : '') +
+    '<span class="tag">' + escHtml(q.chapter || '') + '</span><span class="tag">' + escHtml(q.type || '') + '</span></div>';
+  card.innerHTML = head + '<div class="qtext katex-auto"></div>';
+  el.innerHTML = '';
+  el.appendChild(card);
+  renderLatexMixed(card.querySelector('.katex-auto'), (q.question_text || '').replace(/\n【图】/g, ''));
+  if (q.question_img) {
+    var qi = document.createElement('img');
+    qi.className = 'qimg'; qi.loading = 'lazy';
+    qi.src = 'data/' + q.question_img;
+    qi.onerror = function(){ qi.style.display = 'none'; };
+    card.appendChild(qi);
+  }
+  var ans = document.createElement('div');
+  ans.className = 'ansbox show';
+  ans.innerHTML = '<div class="at">答案</div><div class="ansbody katex-ans"></div><div class="katex-sol"></div>';
+  card.appendChild(ans);
+  var ab = ans.querySelector('.katex-ans');
+  if (q.answer_text) renderLatexMixed(ab, q.answer_text); else ab.style.display = 'none';
+  var sol = ans.querySelector('.katex-sol');
+  if (q.solution) formatSolution(sol, q.solution); else sol.style.display = 'none';
+  var vb = card.querySelector('[data-role="rvideo"]');
+  if (vb) vb.onclick = function(){ window.open('https://www.bilibili.com/video/BV1PZ421W7EP/?p=' + q.video_p, '_blank'); };
+  window.scrollTo({ top: 0 });
 }
 function refreshPstats(){
   var done = 0, wrong = 0;
@@ -984,6 +1071,10 @@ function start(){
   renderTree();
   document.getElementById('btn-retest').onclick = showRetest;
   document.getElementById('btn-favs').onclick = openFavs;
+  document.getElementById('btn-recite').onclick = showRecite;
+  document.getElementById('btn-recite-back').onclick = goDir;
+  document.getElementById('recite-prev').onclick = function(){ RE_IDX--; renderRecite(); };
+  document.getElementById('recite-next').onclick = function(){ RE_IDX++; renderRecite(); };
   var eyecareBtn = document.getElementById('btn-eyecare');
   function applyEyecare(on){
     document.body.classList.toggle('eyecare', on);

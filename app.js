@@ -457,7 +457,10 @@ function markResult(id, val, reason) {
     st[id] = { status: 'done', right_date: today, right_count: cnt };
   } else {
     // 做错：始终覆盖为待重做（todo），无论之前是 review 还是别的
-    const s = { status: 'todo', wrong_date: today, due: addDays(today, 7) };
+    // 自适应回池间隔：错得越多的题回来得越勤（7→4→3→2→1 天，按历史错误次数压缩）
+    const f = (prev.wrong_count || 0) + 1;
+    const gap = Math.max(1, Math.round(7 * Math.pow(0.6, f - 1)));
+    const s = { status: 'todo', wrong_date: today, due: addDays(today, gap), wrong_count: f };
     if (reason) s.reason = reason;
     st[id] = s;
   }

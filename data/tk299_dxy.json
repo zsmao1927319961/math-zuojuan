@@ -823,14 +823,14 @@
    "stem_md": "5、$(3, 1)$ 循环码的校验多项式为______，共有______个码字。\n（北京交通大学 2018 年一、6）",
    "options": [],
    "answer": {
-    "reference_answer_md": "的最高次项均低于4。\n5、$x+1$；$2$"
+    "reference_answer_md": "5、$x+1$；$2$"
    },
    "explanation_md": "$(3,1)$ 循环码：$n=3$、$k=1$，生成多项式 $g(x)$ 的次数为 $n-k=2$，由 $x^3+1=(x+1)(x^2+x+1)$ 取二次因式得 $g(x)=x^2+x+1$。校验多项式（监督多项式）$h(x)=\\dfrac{x^3+1}{g(x)}=x+1$。信息位只有 1 位，故码字共有 $2^k=2$ 个（全零码字与 111）。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "线性分组码、循环码",
-    "answer_text": "的最高次项均低于4。\n5、$x+1$；$2$",
+    "answer_text": "5、$x+1$；$2$",
     "question_img": "",
     "answer_img": ""
    },
@@ -976,7 +976,7 @@
    "serial_number": 11,
    "source": "北京邮电大学2022年第八题",
    "question_type": "subjective",
-   "stem_md": "11、通过将 (10，4) 循环码的生成多项式移位，得到其生成矩阵为：\n$$G_0 = \\begin{pmatrix} 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\\\ 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\end{pmatrix}$$\n(1) 通过初等行变换将 $G_0$ 化为系统码形式的生成矩阵 G（约定系统位在左），并写出对应的校验矩阵 H；\n(2) 设 $c = (c_9 c_8 c_7 c_6 c_5 c_4 c_3 c_2 c_1 c_0)$ 是该码的系统码码字，证明 $c_4 c_3 c_2 c_1 c_0 = c_9 c_8 c_7 c_6 c_5$\n(3) 若接收端收到 y = 1100011001，写出对应的伴随式 $s = Hy^T$、最可能的错误图样以及对应的译码结果。（北京邮电大学2022年第八题）",
+   "stem_md": "11、通过将 (10，4) 循环码的生成多项式移位，得到其生成矩阵为：\n$$G_0 = \\begin{pmatrix} 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\\\ 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\end{pmatrix}$$\n(1) 通过初等行变换将 $G_0$ 化为系统码形式的生成矩阵 $G$（约定系统位在左），并写出对应的校验矩阵 $H$；\n(2) 设 $c=(c_9c_8c_7c_6c_5c_4c_3c_2c_1c_0)$ 是该码的系统码码字，证明 $c_4c_3c_2c_1c_0 = c_9c_8c_7c_6c_5$；\n(3) 若接收端收到 $y=1100011001$，写出对应的伴随式 $s=Hy^T$、最可能的错误图样以及对应的译码结果。（北京邮电大学 2022 年第八题）码形式的生成矩阵 G（约定系统位在左），并写出对应的校验矩阵 H；\n(2) 设 $c = (c_9 c_8 c_7 c_6 c_5 c_4 c_3 c_2 c_1 c_0)$ 是该码的系统码码字，证明 $c_4 c_3 c_2 c_1 c_0 = c_9 c_8 c_7 c_6 c_5$\n(3) 若接收端收到 y = 1100011001，写出对应的伴随式 $s = Hy^T$、最可能的错误图样以及对应的译码结果。（北京邮电大学2022年第八题）",
    "options": [],
    "answer": {
     "reference_answer_md": "11、解：\n(1) 将 $G_0$ 进行初等行变换，可得系统码形式的生成矩阵：\n$$G=\\begin{pmatrix}1&0&0&0&1&1&0&0&0&1\\\\0&1&0&0&1&0&1&0&0&1\\\\0&0&1&0&1&0&0&1&0&1\\\\0&0&0&1&1&0&0&0&1&1\\end{pmatrix}$$\n根据生成矩阵和校验矩阵的关系，则有校验矩阵为：\n$$H=\\begin{pmatrix}1&1&1&1&1&0&0&0&0&0\\\\1&0&0&0&0&1&0&0&0&0\\\\0&1&0&0&0&0&1&0&0&0\\\\0&0&1&0&0&0&0&1&0&0\\\\0&0&0&1&0&0&0&0&1&0\\\\1&1&1&1&0&0&0&0&0&1\\end{pmatrix}$$\n(2) 由 $cH^T=0$ 可知：\n$$\\begin{cases}c_9\\oplus c_8\\oplus c_7\\oplus c_6\\oplus"
@@ -1004,14 +1004,14 @@
    "stem_md": "12、已知某线性分组码的生成矩阵如下：\n$$G=\\begin{bmatrix}1\\ 0\\ 0\\ 0\\ 1\\ 1\\ 1\\\\0\\ 1\\ 0\\ 0\\ 1\\ 0\\ 1\\\\1\\ 0\\ 1\\ 0\\ 1\\ 0\\ 0\\\\0\\ 0\\ 0\\ 1\\ 1\\ 1\\ 0\\end{bmatrix}$$\n(1) 求 $n$、$k$、$d_0$；\n(2) 写出监督矩阵；\n(3) 若接收码字 $r=1010001$，求校正子，判断是否为正确码？若是错码请纠正；\n(4) 若另一接收码组 $b\\neq r$，且 $b$ 和 $r$ 有一样的校正子，则 $b$ 和 $r$ 汉明距离的最小值为多少？说明理由。（南京邮电大学2023年第九题）",
    "options": [],
    "answer": {
-    "reference_answer_md": "单界出错，必是精确\n12、解：\n(1) 根据生成矩阵可知为 $(7,4)$ 线性分组码，因此 $n=7,k=4,d_0=3$\n(2) 将生成矩阵初等行变换得到典型生成矩阵：\n$$G=\\begin{bmatrix}1&0&0&0&1&1&1\\\\0&1&0&0&1&0&1\\\\0&0&1&0&0"
+    "reference_answer_md": "12、解：\n(1) 根据生成矩阵可知为 $(7,4)$ 线性分组码，因此 $n=7,k=4,d_0=3$\n(2) 将生成矩阵初等行变换得到典型生成矩阵：\n$$G=\\begin{bmatrix}1&0&0&0&1&1&1\\\\0&1&0&0&1&0&1\\\\0&0&1&0&0"
    },
-   "explanation_md": "单界出错，必是精确\n12、解：\n(1) 根据生成矩阵可知为 $(7,4)$ 线性分组码，因此 $n=7,k=4,d_0=3$\n(2) 将生成矩阵初等行变换得到典型生成矩阵：\n$$G=\\begin{bmatrix}1&0&0&0&1&1&1\\\\0&1&0&0&1&0&1\\\\0&0&1&0&0",
+   "explanation_md": "12、解：\n(1) 根据生成矩阵可知为 $(7,4)$ 线性分组码，因此 $n=7,k=4,d_0=3$\n(2) 将生成矩阵初等行变换得到典型生成矩阵：\n$$G=\\begin{bmatrix}1&0&0&0&1&1&1\\\\0&1&0&0&1&0&1\\\\0&0&1&0&0",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "线性分组码、循环码",
-    "answer_text": "单界出错，必是精确\n12、解：\n(1) 根据生成矩阵可知为 $(7,4)$ 线性分组码，因此 $n=7,k=4,d_0=3$\n(2) 将生成矩阵初等行变换得到典型生成矩阵：\n$$G=\\begin{bmatrix}1&0&0&0&1&1&1\\\\0&1&0&0&1&0&1\\\\0&0&1&0&0",
+    "answer_text": "12、解：\n(1) 根据生成矩阵可知为 $(7,4)$ 线性分组码，因此 $n=7,k=4,d_0=3$\n(2) 将生成矩阵初等行变换得到典型生成矩阵：\n$$G=\\begin{bmatrix}1&0&0&0&1&1&1\\\\0&1&0&0&1&0&1\\\\0&0&1&0&0",
     "question_img": "",
     "answer_img": ""
    },
@@ -2391,7 +2391,7 @@
    "serial_number": 6,
    "source": "河北工业大学 2021 年三、4",
    "question_type": "subjective",
-   "stem_md": "平择出品，必是精品\n6、设一信息源的输出由 256 个不同的符号组成，其中 32 个符号出现的概率为 $\\frac{1}{64}$，余下 224 个符号出现的概率为 $\\frac{1}{448}$，信息源每秒发 4800 个符号，且每个符号相互独立，计算出信息源的传输速率？\n（河北工业大学 2021 年三、4）",
+   "stem_md": "6、设一信息源的输出由 256 个不同的符号组成，其中 32 个符号出现的概率为 $\\frac{1}{64}$，余下 224 个符号出现的概率为 $\\frac{1}{448}$，信息源每秒发 4800 个符号，且每个符号相互独立，计算出信息源的传输速率？\n（河北工业大学 2021 年三、4）",
    "options": [],
    "answer": {
     "reference_answer_md": "6、解：\n信息熵为：\n$$H(x)=32\\times\\frac{1}{64}\\log_2 64+224\\times\\frac{1}{448}\\log_2 448=7.40$$ 比特/符号\n传输速率为：$R_b=R_B\\times H(x)=4800\\times 7.40=35520\\,bit/s$"
@@ -2794,14 +2794,14 @@
    "stem_md": "1、设随机变量 $\\theta$ 在 $(0,\\pi)$ 内均匀分布，则 $\\cos\\theta$ 的均值为____，方差为____。\n（北京交通大学 2018 年一、2）",
    "options": [],
    "answer": {
-    "reference_answer_md": "…相关函数求解\n1、2. $0,\\ \\frac{1}{2}$\n解析：$\\mu = E[\\cos\\theta] = \\int_0^{\\pi} \\cos\\theta \\times \\dfrac{1}{\\pi}\\, d\\theta = 0$，\n$$\\sigma^2 = E[\\cos^2(\\theta)] - \\mu^2 = \\int_0^{\\pi} \\cos^2(\\theta) \\cdot \\frac{1}{\\pi}\\, d\\theta = \\frac{1}{2}$$"
+    "reference_answer_md": "1、2. $0,\\ \\frac{1}{2}$\n解析：$\\mu = E[\\cos\\theta] = \\int_0^{\\pi} \\cos\\theta \\times \\dfrac{1}{\\pi}\\, d\\theta = 0$，\n$$\\sigma^2 = E[\\cos^2(\\theta)] - \\mu^2 = \\int_0^{\\pi} \\cos^2(\\theta) \\cdot \\frac{1}{\\pi}\\, d\\theta = \\frac{1}{2}$$"
    },
-   "explanation_md": "…相关函数求解\n1、2. $0,\\ \\frac{1}{2}$\n解析：$\\mu = E[\\cos\\theta] = \\int_0^{\\pi} \\cos\\theta \\times \\dfrac{1}{\\pi}\\, d\\theta = 0$，\n$$\\sigma^2 = E[\\cos^2(\\theta)] - \\mu^2 = \\int_0^{\\pi} \\cos^2(\\theta) \\cdot \\frac{1}{\\pi}\\, d\\theta = \\frac{1}{2}$$",
+   "explanation_md": "1、2. $0,\\ \\frac{1}{2}$\n解析：$\\mu = E[\\cos\\theta] = \\int_0^{\\pi} \\cos\\theta \\times \\dfrac{1}{\\pi}\\, d\\theta = 0$，\n$$\\sigma^2 = E[\\cos^2(\\theta)] - \\mu^2 = \\int_0^{\\pi} \\cos^2(\\theta) \\cdot \\frac{1}{\\pi}\\, d\\theta = \\frac{1}{2}$$",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "期望、方差、自相关函数求解",
-    "answer_text": "…相关函数求解\n1、2. $0,\\ \\frac{1}{2}$\n解析：$\\mu = E[\\cos\\theta] = \\int_0^{\\pi} \\cos\\theta \\times \\dfrac{1}{\\pi}\\, d\\theta = 0$，\n$$\\sigma^2 = E[\\cos^2(\\theta)] - \\mu^2 = \\int_0^{\\pi} \\cos^2(\\theta) \\cdot \\frac{1}{\\pi}\\, d\\theta = \\frac{1}{2}$$",
+    "answer_text": "1、2. $0,\\ \\frac{1}{2}$\n解析：$\\mu = E[\\cos\\theta] = \\int_0^{\\pi} \\cos\\theta \\times \\dfrac{1}{\\pi}\\, d\\theta = 0$，\n$$\\sigma^2 = E[\\cos^2(\\theta)] - \\mu^2 = \\int_0^{\\pi} \\cos^2(\\theta) \\cdot \\frac{1}{\\pi}\\, d\\theta = \\frac{1}{2}$$",
     "question_img": "",
     "answer_img": ""
    },
@@ -3115,14 +3115,14 @@
    "stem_md": "4、$X(t)=A\\cos(2\\pi f_0 t)$ 时，A 为高斯随机变量，均值为 0，方差为 $\\sigma_A^2$，将 $X(t)$ 输入积分器得 $Y(t)=\\int_0^t X(\\tau)d\\tau$\n（1）求 $t_1$ 时 $Y(t)$ 概率密度函数；\n（2）证明 $Y(t)$ 是否为平稳随机过程；\n（3）证明 $Y(t)$ 是否为遍历随机过程。（北京交通大学 2020 年六、2）",
    "options": [],
    "answer": {
-    "reference_answer_md": "$\\omega_0\\tau+\\theta)$\n4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。"
+    "reference_answer_md": "4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。"
    },
-   "explanation_md": "$\\omega_0\\tau+\\theta)$\n4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。",
+   "explanation_md": "4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "平稳随机过程、各态历经性的判断",
-    "answer_text": "$\\omega_0\\tau+\\theta)$\n4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。",
+    "answer_text": "4、解：\n(1) 依题意：$Y(t)=\\int_0^t X(\\tau)d\\tau=A\\int_0^t \\cos(w_0\\tau)d\\tau=\\frac{A}{w_0}\\sin(w_0 t)$\n$$E[Y(t)]=E\\left[A\\int_0^t \\cos(w_0\\tau)d\\tau\\right]=E(A)\\int_0^t \\cos(w_0\\tau)d\\tau=0$$\n$$D(y(t))=D\\left[\\frac{A}{w_0}\\sin(w_0 t)\\right]=D(A)\\frac{\\sin^2(w_0 t)}{w_0^2}=\\sigma_A^2\\frac{\\sin^2(w_0 t)}{w_0^2}$$\n$$f_Y(y)=\\frac{w_0}{\\sqrt{2\\pi}\\sigma_A\\sin(w_0 t_1)}\\exp\\left(-\\frac{w_0^2}{2\\sigma_A^2\\sin^2(w_0 t_1)}y^2\\right)$$\n(2)\n$$R_y(t,t+\\tau)=E\\left[\\frac{A}{w_0}\\sin(w_0 t)\\cdot\\frac{A}{w_0}\\sin(w_0 t+w_0\\tau)\\right]$$\n$$=E(A^2)\\frac{1}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n$$=\\frac{\\sigma_A^2}{2w_0^2}\\left[(\\cos w_0\\tau)-\\cos(2w_0 t+w_0\\tau)\\right]$$\n可见自相关函数与时间 $t$ 有关，不是平稳随机过程。\n(3) 由于不是平稳随机过程，必定不是各态历经过程。",
     "question_img": "",
     "answer_img": ""
    },
@@ -3190,14 +3190,14 @@
    "stem_md": "7、已知随机过程 $Z(t)=X(t)\\cos(\\omega_c t+\\theta)$。其中，$X(t)$ 是广义平稳随机过程，其自相关函数为\n$$R_X(\\tau)=\\begin{cases}1-|\\tau|/T_B, & |\\tau|\\le T_B \\\\ 0, & \\text{其他}\\end{cases}$$\n$\\theta$ 是在 $[0,2\\pi]$ 上均匀分布的随机变量，$\\theta$ 与 $X(t)$ 相互独立。（南京邮电大学 2017 年第四题）\n（1）$Z(t)$ 是否为广义平稳？\n（2）求 $Z(t)$ 的自相关函数 $R_Z(t,t+\\tau)$；\n（3）求 $Z(t)$ 的功率谱密度及平均功率；\n（4）若 $X(t)$ 各态历经，且 $\\int_{-\\infty}^{\\infty}X(t+t_0)\\cos(\\omega_c t+\\theta_0)\\,dt=0$，$\\int_{-\\infty}^{\\infty}X(t)X(t+t_0)\\cos(2\\omega_c t+\\theta_0)\\,dt=0$。其中，$X(t)$ 为 $X(t)$ 的任一样本函数，$Z(t)$ 是否各态历经？",
    "options": [],
    "answer": {
-    "reference_answer_md": "18696\n7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。"
+    "reference_answer_md": "7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。"
    },
-   "explanation_md": "18696\n7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。",
+   "explanation_md": "7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "平稳随机过程、各态历经性的判断",
-    "answer_text": "18696\n7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。",
+    "answer_text": "7、解：(1) $E[Z(t)]=E[X(t)\\cos(w_c t+\\theta)]=E[X(t)]E[\\cos(w_c t+\\theta)]=0$\n$$R_z(\\tau)=E[X(t)\\cos(w_c t+\\theta)X(t+\\tau)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=E[X(t)X(t+\\tau)]E[\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)]$$\n$$=R_X(\\tau)\\frac{1}{2}\\cos w_c\\tau$$\n可见 $Z(t)$ 为广义平稳。\n(2) 由第一问可得，$Z(t)$ 的自相关函数 $R_z(t,t+\\tau)=R_x(\\tau)\\frac{1}{2}\\cos w_c\\tau$\n(3) $P_x(f)$ 与 $R_x(\\tau)$ 互为一对傅里叶变换\n可得 $P_x(f)=T_b\\left[\\frac{\\sin \\pi f T_b}{\\pi f T_b}\\right]^2$\n$$P_z(f)=\\frac{1}{4}[P_x(f+f_c)+P_x(f-f_c)$$\n平均功率：$S=R_z(0)=\\frac{1}{2}R_X(0)=\\frac{1}{2}$\n(4) $\\bar{a}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)\\cos(w_c t+\\theta)\\,dt=0$\n$$\\overline{R_z(\\tau)}=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}z(t)z(t+\\tau)\\,dt=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\cos(w_c t+\\theta)\\cos(w_c t+w_c\\tau+\\theta)\\,dt$$\n$$=\\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-T/2}^{T/2}x(t)x(t+\\tau)\\frac{1}{2}\\cos w_c\\tau\\,dt=\\overline{R_x(\\tau)}\\frac{1}{2}\\cos w_c\\tau$$\n又由于 $X(t)$ 各态历经，$R_z(\\tau)=\\frac{1}{2}R_x(\\tau)\\cos w_c\\tau$\n从而，$Z(t)$ 具备各态历经性。",
     "question_img": "",
     "answer_img": ""
    },
@@ -3212,7 +3212,7 @@
    "serial_number": 8,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "8、设随机过程 $X(t)=\\xi\\cos(w_0t+\\phi)$，其中 $\\xi$ 是均值为 0，方差为 $\\sigma^2$ 的高斯变量，\n$\\phi$ 是均匀分布于 $(-\\pi,\\pi)$ 的随机变量，$\\phi$ 于 $\\theta$ 统计独立。试求：\n（1）$X(t)$ 是否是广义平稳随机过程？\n（2）$X(t)$ 是否是遍历平稳随机过程？（河北大学 2016 年第四题）\n$t_0$、$\\theta_0$ 为任意实数，$Z(t)$ 是否各态历经？",
+   "stem_md": "8、设随机过程 $X(t)=\\xi\\cos(w_0t+\\phi)$，其中 $\\xi$ 是均值为 0，方差为 $\\sigma^2$ 的高斯变量，\n$\\phi$ 是均匀分布于 $(-\\pi,\\pi)$ 的随机变量，$\\phi$ 于 $\\theta$ 统计独立。试求：\n（1）$X(t)$ 是否是广义平稳随机过程？\n（2）$X(t)$ 是否是遍历平稳随机过程？（河北大学 2016 年第四题）",
    "options": [],
    "answer": {
     "reference_answer_md": "8、解：\n（1）$E[X(t)] = E[\\xi\\cos(w_0t+\\phi)] = E[\\xi]E[\\cos(w_0t+\\phi)] = 0$\n$$R_X(t,t+\\tau) = E[X(t)X(t+\\tau)] = E[\\xi\\cos(w_0t+\\phi)\\times\\xi\\cos(w_0(t+\\tau)+\\phi)]$$\n$$= \\frac{1}{2}E[\\xi^2]\\cos w_0\\tau + \\frac{1}{2}E[\\xi^2]E[\\cos(2w_0t+w_0\\tau+2\\phi)] = \\frac{1}{2}\\sigma^2\\cos w_0\\tau$$\n从而 $X(t)$ 是一个平稳随机过程。\n（2）$\\overline{x(t)} = \\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-\\frac{T}{2}}^{\\frac{T}{2}}X(t)dt = \\lim_{T\\to\\infty}\\frac{1}{T}\\int_{-\\frac{T}{2}}^{\\frac{T}{2}}\\xi\\cos(w_0t+\\phi)dt = 0$"
@@ -3658,14 +3658,14 @@
    "stem_md": "9、设随机过程 $Y(t) = X_1 \\cos w_0 t + X_2 \\sin w_0 t$，其中 $X_1$ 和 $X_2$ 是相互独立且均值为 0、方差为 $\\sigma^2$ 的高斯随机过程，通过传输函数为 $H(\\omega) = j\\omega$ 的线性系统，输出随机过程表示为 $Y'(t)$。试求：\n(1) $Y'(t)$ 的功率谱密度；\n(2) $Y'(t)$ 的自相关函数。（河北大学 2020 年三、1）",
    "options": [],
    "answer": {
-    "reference_answer_md": "$2B$\n$$\\frac{2}{2}B$$\n9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$"
+    "reference_answer_md": "9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$"
    },
-   "explanation_md": "$2B$\n$$\\frac{2}{2}B$$\n9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$",
+   "explanation_md": "9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "平稳随机过程通过线性系统",
-    "answer_text": "$2B$\n$$\\frac{2}{2}B$$\n9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$",
+    "answer_text": "9、解：\n(1)\n$$R_Y(\\tau)=E[Y(t)Y(t+\\tau)]=E\\{[X_1\\cos w_0 t+X_2\\sin w_0 t][X_1\\cos w_0(t+\\tau)+X_2\\sin w_0(t+\\tau)]\\}$$\n$$=E[X_1^2\\cos w_0 tX_1\\cos w_0(t+\\tau)+X_2^2\\sin w_0 tX_2\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2[\\cos w_0 t\\cos w_0(t+\\tau)+\\sin w_0 t\\sin w_0(t+\\tau)]$$\n$$=\\sigma^2\\cos w_0\\tau$$\n则 $P_Y(w)=\\pi\\sigma^2[\\delta(w+w_0)+\\delta(w-w_0)]$\n$$P_Y(w)=P_Y(w)|H(w)|^2=\\pi\\sigma^2 w^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n$$=\\pi\\sigma^2 w_0^2[\\delta(w+w_0)+\\delta(w-w_0)]$$\n(2) $R_Y(\\tau)=\\sigma^2 w_0^2\\cos w_0\\tau$",
     "question_img": "",
     "answer_img": ""
    },
@@ -3764,14 +3764,14 @@
    "stem_md": "2、恒参信道对信号传输的影响主要表现在：（　　）；（　　），随参信道对信号传输的影响主要表现在有：（　　），（　　），（　　）。（南京邮电大学2003年一、2）",
    "options": [],
    "answer": {
-    "reference_answer_md": "位：时延：衰减；多径传播\n2、幅频特性；相频特性；\n信号幅度的影响随时间而变，对信号"
+    "reference_answer_md": "2、恒参信道：幅频特性；相频特性。随参信道：信号幅度的影响随时间而变（衰减），时延随时间变化，多径传播。（原书答案首行被扫描裁切，按可见内容整理）"
    },
-   "explanation_md": "位：时延：衰减；多径传播\n2、幅频特性；相频特性；\n信号幅度的影响随时间而变，对信号",
+   "explanation_md": "2、恒参信道：幅频特性；相频特性。随参信道：信号幅度的影响随时间而变（衰减），时延随时间变化，多径传播。（原书答案首行被扫描裁切，按可见内容整理）",
    "asset_refs": [],
    "legacy": {
     "type_cn": "填空",
     "kp": "恒参信道和随参信道",
-    "answer_text": "位：时延：衰减；多径传播\n2、幅频特性；相频特性；\n信号幅度的影响随时间而变，对信号",
+    "answer_text": "2、恒参信道：幅频特性；相频特性。随参信道：信号幅度的影响随时间而变（衰减），时延随时间变化，多径传播。（原书答案首行被扫描裁切，按可见内容整理）",
     "question_img": "",
     "answer_img": ""
    },
@@ -4654,14 +4654,14 @@
    "stem_md": "4、某四元对称信道，每个符号正确传输的概率为 $\\frac{125}{128}$。错成其他符号的概率均为 $\\frac{1}{128}$。已知信源分布为 $\\frac{1}{4}$，$\\frac{1}{4}$，$\\frac{3}{8}$，$\\frac{1}{8}$。\n（1）信源信息熵。\n（2）当前信源下信道的传输速率\n（3）信道容量。（南京邮电大学 2019 年第五题）",
    "options": [],
    "answer": {
-    "reference_answer_md": "4、解：\n（1）\n8696\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_"
+    "reference_answer_md": "4、解：\n（1）\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_"
    },
-   "explanation_md": "4、解：\n（1）\n8696\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_",
+   "explanation_md": "4、解：\n（1）\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "条件熵、联合熵、互信息和离散信道容量求解",
-    "answer_text": "4、解：\n（1）\n8696\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_",
+    "answer_text": "4、解：\n（1）\n$$H(X)=-\\sum_{i=1}^{4}p(x_i)\\log_2^{p(x_i)}=-\\left[2\\times\\frac{1}{4}\\log_2\\frac{1}{4}+\\frac{3}{8}\\log_2\\frac{3}{8}+\\frac{1}{8}\\log_2\\frac{1}{8}\\right]=1.91\\text{bit/符号}\\quad(2)$$\n$$I(X,Y)=H(Y)-H(Y|X)\\qquad H(Y|X)=-\\sum_{i=1}^{n}\\sum_{j=1}^{m}P(x_iy_j)\\log P(y_j|x_i)$$\n令 $\\mu_1=\\frac{125}{128},\\mu_2=\\frac{1}{128}$\n$H(Y|X)=$\n$$-\\left[P(x=x_1)\\mu_1\\log\\mu_1+P(x=x_2)\\mu_2\\log\\mu_2+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+\\right.$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_1\\log\\mu_1+P(x=x_3)\\mu_2\\log\\mu_2+P(x=x_4)\\mu_2\\log\\mu_2+$$\n$$P(x=x_1)\\mu_2\\log\\mu_2+P(x=x_2)\\mu_",
     "question_img": "",
     "answer_img": ""
    },
@@ -5014,14 +5014,14 @@
    "stem_md": "7、已知某单一正弦调制信号的频率 $f_m = 1000Hz$，对其进行角度调制，已调信号的表达式为：$s(t) = 10\\cos(2\\pi f_c t + 25\\cos 2\\pi f_m t)$\n(1) 若已调信号为调频波，频率偏移常数为 $5Hz/V$，试求调制信号的表达式？\n(2) 若已调信号为调相波，相位偏移常数为 $10rad/V$，试求调制信号的表达式？\n(3) 当 $f_m$ 增加 5 倍，其他条件不变时，试求调频波的调制指数及已调信号的带宽？\n(北京邮电大学 2014 年第十题)",
    "options": [],
    "answer": {
-    "reference_answer_md": "3696\n7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。"
+    "reference_answer_md": "7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。"
    },
-   "explanation_md": "3696\n7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。",
+   "explanation_md": "7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "求FM、PM信号的调制指数、带宽、最大频偏等",
-    "answer_text": "3696\n7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。",
+    "answer_text": "7、解：\n（1）若为调频波，设调频信号为 $s_{FM}(t)=A\\cos\\left[\\omega_c t+2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau\\right]$\n则有 $2\\pi K_f\\int_{-\\infty}^{t}m(\\tau)\\mathrm{d}\\tau=25\\cos 2\\pi f_m t$，两边取导数从而得到：\n$$2\\pi K_f\\, m(t)=-50\\pi f_m\\sin 2\\pi f_m t$$\n从而 $m(t)=\\dfrac{-25\\times 10^{3}}{K_f}\\sin 2\\pi f_m t=-5000\\sin 2\\pi\\times 10^{3}t$\n（2）若为调相波，设 $S_{PM}(t)=A\\cos[\\omega_c t+k_p\\, m(t)]$\n则有 $k_p\\, m(t)=25\\cos 2\\pi f_m t$　　$m(t)=2.5\\cos(2\\pi\\times 10^{3}t)$\n（3）调制指数 $m_f=\\dfrac{\\Delta f_{max}}{f_m}$\n而当 $f_m$ 增加5倍时，最大频偏 $\\Delta f_{max}=\\left|K_f\\, m(t)\\right|_{max}$ 不变\n从而调制指数减小五倍，$m_f{}'=\\dfrac{1}{5}m_f=5$\n已调信号带宽 $B_{FM}=2(\\Delta f_{max}+5f_m)=2(m_f+1)5f$\n倍。",
     "question_img": "",
     "answer_img": ""
    },
@@ -6078,7 +6078,7 @@
     "answer_img": ""
    },
    "book_page": 224,
-   "video_p": 46
+   "video_p": 44
   },
   {
    "format_version": 1,
@@ -6489,7 +6489,7 @@
    "serial_number": 3,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "3、某二进制单极性信号中出现\"1\"码的概率为 $P(1)$，出现\"0\"码的概率为 $P(0)$，且 $P(1)=P(0)$。接收端抽样点上对应\"1\"码的电平为 $A$，抽样点的噪声是均值为 $0$，方差为 $\\sigma^2=\\frac{1}{2}$ 的高斯随机变量。\n(1) 分别求出发送\"1\"码和\"0\"码的一维概率密度函数 $f_1(y)$ 和 $f_0(y)$；\n(2) 求平均错误概率最小时的最佳判决门限；\n(3) 计算系统总误码率 $P_e$。（河北大学 2020 年三、3）\n（右侧页面边缘可见的部分文字：）\n考点 6：\n平界小\n本考\n真计算\n1、在\n消除或\nA. 时",
+   "stem_md": "3、某二进制单极性信号中出现\"1\"码的概率为 $P(1)$，出现\"0\"码的概率为 $P(0)$，且 $P(1)=P(0)$。接收端抽样点上对应\"1\"码的电平为 $A$，抽样点的噪声是均值为 $0$，方差为 $\\sigma^2=\\frac{1}{2}$ 的高斯随机变量。\n(1) 分别求出发送\"1\"码和\"0\"码的一维概率密度函数 $f_1(y)$ 和 $f_0(y)$；\n(2) 求平均错误概率最小时的最佳判决门限；\n(3) 计算系统总误码率 $P_e$。（河北大学 2020 年三、3）",
    "options": [],
    "answer": {
     "reference_answer_md": "3、解：\n(1) $P(y\\mid 1)=\\dfrac{1}{\\sqrt{\\pi}}e^{-(y-A)^2}$  $P(y\\mid 0)=\\dfrac{1}{\\sqrt{\\pi}}e^{-y^2}$\n(2) 最佳判决门限为 $P(1)P(y\\mid 1)=P(0)P(y\\mid 0)$ 的解，\n即 $e^{-(y-A)^2}=e^{-y^2}$  可得 $V_T^*=\\dfrac{A}{2}$\n(3) 此时最佳判决门限为 $\\dfrac{A}{2}$，$P(e)=P(1)P(e\\mid 1)+P(0)P(e\\mid 0)$\n$$P(e)=\\frac{1}{2}\\operatorname{erfc}\\!\\left(\\frac{A}{2}\\right)$$"
@@ -6946,14 +6946,14 @@
    "stem_md": "1、设某 2FSK 传输系统，码元传输速率为 $1000\\mathrm{Baud}$，已调信号的载频分别为 $1000\\mathrm{Hz}$ 和 $3000\\mathrm{Hz}$，则该 2FSK 信号的第一零点带宽为____$\\mathrm{Hz}$，接收端采用相干解调时，带通滤波器带宽为____$\\mathrm{Hz}$。（南京邮电大学 2020 年二、3）",
    "options": [],
    "answer": {
-    "reference_answer_md": "考点\n1、4000；2000"
+    "reference_answer_md": "1、4000；2000"
    },
    "explanation_md": "2FSK 第一零点带宽按卡森式近似 $B=|f_2-f_1|+2R_B$，代入 $f_1=1000$ Hz、$f_2=3000$ Hz、$R_B=1000$ Baud：$B=2000+2000=4000$ Hz。相干解调时每个支路的带通滤波器只让一个载波的 2ASK 分量通过，其带宽取 $B_\\text{带通}\\approx2R_B=2000$ Hz。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "二进制频带调制解调及误码率求解",
-    "answer_text": "考点\n1、4000；2000",
+    "answer_text": "1、4000；2000",
     "question_img": "",
     "answer_img": ""
    },
@@ -7665,7 +7665,7 @@
    "serial_number": 5,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "半并出晶，必是精晶\n5、某数字调制信号的 $k$ 码元的表达式为\n$$x_k\\cos(2\\pi f_c t)-y_k\\sin(2\\pi f_c t),\\quad (k-1)T\\leqslant t\\leqslant kT$$\n若 $x_k$ 和 $y_k$ 独立在集合 $\\{+3,+1,-1,-3\\}$ 内等概率取值，求：\n(1)画出该信号的星座示意图；\n(2)该信号的平均功率、峰值功率、峰均比(峰值功率与平均功率之比)；\n(3)该信号的第一零点带宽，并以此估算其频谱效率( bps / Hz)。\n（南京邮电大学 2022 年第八题）\n平界\n8、其\n星座\n$s_4$",
+   "stem_md": "5、某数字调制信号的 $k$ 码元的表达式为\n$$x_k\\cos(2\\pi f_c t)-y_k\\sin(2\\pi f_c t),\\quad (k-1)T\\leqslant t\\leqslant kT$$\n若 $x_k$ 和 $y_k$ 独立在集合 $\\{+3,+1,-1,-3\\}$ 内等概率取值，求：\n(1)画出该信号的星座示意图；\n(2)该信号的平均功率、峰值功率、峰均比(峰值功率与平均功率之比)；\n(3)该信号的第一零点带宽，并以此估算其频谱效率( bps / Hz)。\n（南京邮电大学 2022 年第八题）",
    "options": [],
    "answer": {
     "reference_answer_md": "5、解：\n(1)\n【图】\n(2) $x(t)=x_k\\cos(2\\pi f_c t)-y_k\\sin(2\\pi f_c t)$ 平均功率\n$$P_{av}=E[x^2(t)]=E[x_k^2\\cos^2(2\\pi f_c t)+y_k^2\\sin^2(2\\pi f_c t)-2x_k y_k\\sin 2\\pi f_c t\\cos 2\\pi f_c t]$$\n$$=E[x_k^2]\\cos^2(2\\pi f_c t)+E[y_k^2]\\sin^2(2\\pi f_c t)$$\n$$E[x_k^2]=E[y_k^2]=\\frac{1}{4}[1+1+9+9]=5$$\n从而 $P_{av}=5$\n峰值功率：当 $(x_k,y_k)=(\\pm 3,\\pm 3)$ 时，$E[x_k^2]=E[y_k^2]=\\frac{1}{2}[9+9]=9$，从而 $P_{\\max}=9$\n峰均比：$\\dfrac{P_{\\max}}{P_{av}}=\\dfrac{9}{5}=1.8$\n(3) $B=2R_B=\\dfrac{2}{T}$\n所示：\n$$\\eta=\\frac{R_b}{B}=\\frac{\\frac{1}{T}\\log_2^{16}}{\\frac{2}{T}}=2\\,\\mathrm{bit/s.Hz}$$"
@@ -7856,7 +7856,7 @@
    "serial_number": 11,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "11、下图是某八进制调制系统在归一化正交基函数下的星座图，各星座点等概出\n现在两个正方形的 8 个顶点上。按复数表示，图中 $s_1 = b$，$s_2 = \\sqrt{2}b(1+j)$。已\n知发送信号的平均符号能量是 $E_s = 10$。发送 $s_i$，i=1, 2, …8 时，接收信号为\n$r = s_i + n$，其中噪声 $n = n_c + j \\cdot n_s$ 的实部 $n_c$、虚部 $n_s$ 是两个独立的零均值高斯随\n机变量，方差均为 0.5。定义似然函数为发送 $s_i$ 条件下 r 的条件概率密度函数\n$f(r|s_i)$。试求：\n【图】\n（右页边缘残缺文字）\n12、\n$s_2 = $ …\n概出\n其中\n试\n(1)\n(2)\n(3)\n其中\n(1)星座点 $s_1$、$s_2$ 的信号能量；\n(2)星座点之间的最小距离；\n(3)星座点 $s_i$ 的最佳判决域…",
+   "stem_md": "11、下图是某八进制调制系统在归一化正交基函数下的星座图，各星座点等概出\n现在两个正方形的 8 个顶点上。按复数表示，图中 $s_1 = b$，$s_2 = \\sqrt{2}b(1+j)$。已\n知发送信号的平均符号能量是 $E_s = 10$。发送 $s_i$，i=1, 2, …8 时，接收信号为\n$r = s_i + n$，其中噪声 $n = n_c + j \\cdot n_s$ 的实部 $n_c$、虚部 $n_s$ 是两个独立的零均值高斯随\n机变量，方差均为 0.5。定义似然函数为发送 $s_i$ 条件下 r 的条件概率密度函数\n$f(r|s_i)$。试求：\n【图】\n(1)星座点 $s_1$、$s_2$ 的信号能量；\n(2)星座点之间的最小距离；\n(3)星座点 $s_i$ 的最佳判决域…",
    "options": [],
    "answer": {
     "reference_answer_md": "11、解：\n(1) $E_1=b^2$，$E_2=4b^2$。由 $E_s=\\dfrac{4\\times b^2+4\\times 4b^2}{8}=10$\n则有 $b=2$，$E_1=4$，$E_2=16$。\n(2) $s_1$ 到 $s_2$ 为最小距离，$d_{\\min}=\\sqrt{2}b=2\\sqrt{2}$。\n(3) 最佳判决区域是 $s_2$ 与 $s_1$，$s_2$ 与 $s_3$ 的垂直平分线及横轴和纵轴正半轴围成的区域。$s_2$ 的最佳判决域如下所示：\n【图】\n(4) 发送 $s_1$ 时，$r=2+n_c+jn_s$，其中 $n_c\\sim N(0,0.5)$，$n_s\\sim N(0,0.5)$，且 $n_c$ 和 $n_s$ 相互独立，故：\n$$f(r=0|s_1)=f(2+n_c=0|s_1)f(n_s=0|s_1)=\\frac{1}{\\sqrt{\\pi}}e^{-4}\\times\\frac{1}{\\sqrt{\\pi}}=\\frac{1}{\\pi}e^{-4}$$"
@@ -9168,7 +9168,7 @@
    "serial_number": 5,
    "source": "南京邮电大学 2023 年第十题",
    "question_type": "subjective",
-   "stem_md": "5、对电压在 $-4.096 \\sim 4.096$ 内均匀分布的 $m(t)$ 进行数字化，若采用临界过载电压为 $4.096\\,\\mathrm{V}$ 的 A 律 13 折线码，某一个时刻的样值电压为 $0.31\\,\\mathrm{V}$。\n(1) 求编码器输出码组；\n(2) 求编码器本地编码器 $\\frac{7}{11}$ 变换输出码组；\n(3) 求接收端译码器输出样值；\n(4) 求译码器 $\\frac{7}{12}$ 变换输出码组；\n(5) 对于该模拟信号，$\\frac{7}{12}$ 变换末位为 1 的概率为多大，说明原因。\n（南京邮电大学 2023 年第十题）",
+   "stem_md": "5、对电压在 $-4.096 \\sim 4.096$ 内均匀分布的 $m(t)$ 进行数字化，若采用临界过载电压为 $4.096\\,\\mathrm{V}$ 的 A 律 13 折线码，某一个时刻的样值电压为 $0.31\\,\\mathrm{V}$。\n(1) 求编码器输出码组；\n(2) 求编码器本地译码器 $\\frac{7}{11}$ 变换输出码组；\n(3) 求接收端译码器输出样值；\n(4) 求译码器 $\\frac{7}{12}$ 变换输出码组；\n(5) 对于该模拟信号，$\\frac{7}{12}$ 变换末位为 1 的概率为多大，说明原因。\n（南京邮电大学 2023 年第十题）",
    "options": [],
    "answer": {
     "reference_answer_md": "5、解：\n（1）抽样信号电压为 $x=0.31V$，由于 $x=0.31V>0$，极性码为 1\n则量化电平值为：$y_{\\alpha}=\\dfrac{0.31}{4.096}\\times 2048=155$ 个量化单位，155 在 $[128,256]$ 内，因此\n段落码为：100\n此段落的量化间隔 $\\dfrac{128}{16}=8$ 量化单位。因此段内码 $\\left\\lfloor\\dfrac{155-128}{8}\\right\\rfloor=3$，对应的段内码\n为：0011。综上，输出码组为：11000011\n（2）11000011 对应的编码电平为：$I_c=128+3\\times 8=152$\n$\\quad 152=128+116+8$，则 11 位线性码为：00010011000\n（3）译码电平 $I_D=I_c+\\dfrac{8}{2}=156$\n（4）00010011100 0\n（5）7/12 变换末位为 1 时，也就是编码电平处于 $0\\sim 32\\Delta$ 之间。\n根据题意服从均匀分布，则概率 $p=32\\times\\dfrac{1}{2048}=\\dfrac{1}{64}$"
@@ -9522,7 +9522,7 @@
    "serial_number": 4,
    "source": "南京邮电大学 2020 年第十题",
    "question_type": "subjective",
-   "stem_md": "4、对 20 路话音信号 $0 \\sim 4kHz$ 进行 TDM 传输，其中 10 路信号采用 A 律 13 折线 PCM 编码，余下 10 路信号采用增量调制，若增量调制的码元速率与采用 PCM 编码信号速率相同。\n（1）增量调制的抽样间隔？\n（2）复用信号的 $R_b$？\n（3）将此 TDM 信号采用 7 电平第一类部分响应基带系统进行传输，则需要的最小理论带宽等于多少？\n（4）若将 TDM 信号与 4B5B 块编码，并采用不归零矩形脉冲进行传输，求所需的传输带宽（第一零点带宽）？（南京邮电大学 2020 年第十题）",
+   "stem_md": "4、对 20 路话音信号 $0 \\sim 4kHz$ 进行 TDM 传输，其中 10 路信号采用 A 律 13 折线 PCM 编码，余下 10 路信号采用增量调制，若增量调制的码元速率与采用 PCM 编码信号速率相同。\n（1）增量调制的抽样间隔？\n（2）复用信号的 $R_b$？\n（3）将此 TDM 信号采用 7 电平第一类部分响应基带系统进行传输，则需要的最小理论带宽等于多少？\n（4）若将 TDM 信号与 4B5B 块编码，并采用不归零矩形脉冲进行传输，求所需的传输带宽（第一零点带宽）？（南京邮电大学 2020 年第十题）第十题）",
    "options": [],
    "answer": {
     "reference_answer_md": "4、解：\n（1）采用 PCM 编码的速率为 $R_{b_1}=10\\times 8k\\times 8=640\\,kbit/s$\n采用增量调制后的速率为 $R_{b_2}=\\frac{1}{T}\\times 10\\,bit/s$\n两者相等即得：$\\frac{10}{T}=640k$\n可得 $T=\\frac{1}{64}\\times 10^{-3}=1.56\\times 10^{-5}\\,s$\n（2）复用后的信号速率 $R_b=R_{b_1}+R_{b_2}=1280\\,kbit/s$\n（3）采用采用 7 电平第一类部分响应系统，则说明是 4 进制信号\n$$\\eta=\\frac{R_B}{B}=\\frac{\\frac{R_b}{\\log_2^4}}{B}=2\\,Baud/Hz$$\n可得 $B=320\\,kHz$\n（4）经过 4B5B 块编码后，速率变为 $R_b=1280\\times\\frac{5}{4}=1600\\,kbit/s$\n由于采用的是矩形脉冲，带宽 $B=R_b=1600\\,kHz$"
@@ -9614,7 +9614,7 @@
    "serial_number": 7,
    "source": "北京邮电大学 2024 年第三题",
    "question_type": "subjective",
-   "stem_md": "7、设 $m_1(t)$、$m_2(t)$、$m_3(t)$、$m_4(t)$ 是 4 路平稳随机信号，其一维概率分布为均匀分布。$m_1(t)$、$m_2(t)$ 是通带为 $2\\,\\mathrm{kHz}\\sim 3\\,\\mathrm{kHz}$ 的带通信号，$m_3(t)$、$m_4(t)$ 是带宽为 $2\\,\\mathrm{kHz}$ 的基带信号。对每路信号分别按不发生频谱混叠的最低速率采样，对每个采样值按 $k$ 比特均匀量化（要求 $k$ 尽量小且量化信噪比不低于 $40\\,\\mathrm{dB}$），然后将 4 路比特流时分复用为一路，再通过一个带宽为 $24\\,\\mathrm{kHz}$ 的带通信道传输。试：\n(1)求出各路的数据速率、复用后的总数据速率。\n(2)设计调制方式（调制阶数尽量低），给出符号速率、滚降因子。\n(3)画出从发端到收端的完整系统框图。（北京邮电大学 2024 年第三题）",
+   "stem_md": "7、设 $m_1(t)$、$m_2(t)$、$m_3(t)$、$m_4(t)$ 是 4 路平稳随机信号，其一维概率分布为均匀分布。$m_1(t)$、$m_2(t)$ 是通带为 $2\\,\\mathrm{kHz}\\sim 3\\,\\mathrm{kHz}$ 的带通信号，$m_3(t)$、$m_4(t)$ 是带宽为 $2\\,\\mathrm{kHz}$ 的基带信号。对每路信号分别按不发生频谱混叠的最低速率采样，对每个采样值按 $k$ 比特均匀量化（要求 $k$ 尽量小且量化信噪比不低于 $40\\,\\mathrm{dB}$），然后将 4 路比特时分复用为一路，再通过一个带宽为 $24\\,\\mathrm{kHz}$ 的带通信道传输。试：\n(1) 求出此系统的数码率；\n(2) 设计调制方式（调制阶数及滚降系数 $\\alpha$），给出码元速率，说明理由；\n(3) 画出从发射到接收的完整系统框图。（北京邮电大学 2024 年第三题）然后将 4 路比特流时分复用为一路，再通过一个带宽为 $24\\,\\mathrm{kHz}$ 的带通信道传输。试：\n(1)求出各路的数据速率、复用后的总数据速率。\n(2)设计调制方式（调制阶数尽量低），给出符号速率、滚降因子。\n(3)画出从发端到收端的完整系统框图。（北京邮电大学 2024 年第三题）",
    "options": [],
    "answer": {
     "reference_answer_md": "7、解：\n（1）均匀量化输出信噪比为：$6n \\geq 40(dB)$，则 $n=7$\n对于信号 $m_1(t)$，最低采样速率为：$f_{s1} = 2B\\left(1+\\dfrac{k}{n}\\right)$\n$$\\frac{f_H}{f_H-f_L}=\\frac{3}{3-2}=3$$，则 $k=0$，从而 $f_{s1}=2kHz$\n则量化后输出速率为：$R_1=f_{s1}\\times n=2k\\times 7=14kbps$\n同理对于信号 $m_2(t)$，$f_{s2}=2kHz$，$R_2=f_{s2}\\times n=2k\\times 7=14kbps$\n对于信号 $m_3(t)$，最低采样速率为：$f_{s3}=4kHz$\n则量化后输出速率为：$R_3=f_{s3}\\times n=4k\\times 7=28kbps$\n同理对于信号 $m_4(t)$：$R_4=f_{s4}\\times n=4k\\times 7=28kbps$\n复用后的总数据速率：$R_b=R_1+R_2+R_3+R_4=(14+14+28+28)kbps=84kbps$\n（2）$\\eta=\\dfrac{\\log_2^M}{1+a}=\\dfrac{R_b}{B}\\ \\Rightarrow\\ \\dfrac{\\log_2^M}{1+a}=\\dfrac{84}{24}=\\dfrac{7}{2}$ bit/s.Hz，其中 $0<a\\leq 1$\n解得：$a=\\dfrac{2\\log_2^M}{7}-1$\n必须满足 $0<a\\leq 1$，解得 $M=16$，此时 $a=\\dfrac{1}{7}$\n$R_B=\\dfrac{R_b}{\\log_2^{16}}=21kBaud$\n可设计成滚降系数 $a=\\dfrac{1}{7}$ 的"
