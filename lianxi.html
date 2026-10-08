@@ -630,7 +630,7 @@ function card(q, idx){
   var radios = instant ? '<div class="radio-row" data-role="radios">' +
     ['A','B','C','D'].map(function(x){ return '<button class="radio-opt" data-v="' + x + '">' + x + '</button>'; }).join('') + '</div>' : '';
   var btns = '<div class="btnrow">' +
-    (instant ? '' : '<button class="btn" data-act="ans">看答案</button>') +
+    '<button class="btn" data-act="ans">看答案</button>' +
     '<button class="btn done" data-act="done">✓ 掌握</button>' +
     '<button class="btn shaky" data-act="shaky">〜 不熟练</button>' +
     '<button class="btn unknown" data-act="unknown">✗ 不会</button></div>';
@@ -680,9 +680,8 @@ function card(q, idx){
   };
   var noteTimer = null, ta = el.querySelector('.noteta');
   ta.addEventListener('input', function(){ clearTimeout(noteTimer); noteTimer = setTimeout(function(){ notesObj()[q.id] = ta.value; saveState(); }, 600); });
-  if (!instant) {
-    el.querySelector('[data-act="ans"]').onclick = function(){ ansBox.classList.toggle('show'); };
-  } else {
+  el.querySelector('[data-act="ans"]').onclick = function(){ ansBox.classList.toggle('show'); };
+  if (instant) {
     /* 选择题点选即判（仅提示，不自动写状态；掌握状态由下方三键决定） */
     var ansLetter = (q.answer_text || '').trim();
     var picked = false;

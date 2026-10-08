@@ -405,17 +405,17 @@
    "serial_number": 1,
    "source": "北京交通大学2022年一、10",
    "question_type": "subjective",
-   "stem_md": "（北京交通大学2022年一、10）",
+   "stem_md": "1、最小距离为 5 的线性分组码，纠错能力为______。（北京交通大学 2022 年一、10）",
    "options": [],
    "answer": {
-    "reference_answer_md": "考点 1：常见纠错码（海星、集\n1、纠正2位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$。"
+    "reference_answer_md": "1、纠正 2 位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$，$5 \\geq 2t+1 \\Rightarrow t \\leq 2$，故最多能纠正 2 位错。"
    },
-   "explanation_md": "考点 1：常见纠错码（海星、集\n1、纠正2位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$。",
+   "explanation_md": "1、纠正 2 位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$，$5 \\geq 2t+1 \\Rightarrow t \\leq 2$，故最多能纠正 2 位错。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "常见纠错码（码重、最小码距）",
-    "answer_text": "考点 1：常见纠错码（海星、集\n1、纠正2位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$。",
+    "answer_text": "1、纠正 2 位错码。解析：根据公式 $d_{\\min} \\geq 2t + 1$，$5 \\geq 2t+1 \\Rightarrow t \\leq 2$，故最多能纠正 2 位错。",
     "question_img": "",
     "answer_img": ""
    },
@@ -1645,7 +1645,7 @@
    "serial_number": 8,
    "source": "",
    "question_type": "fill",
-   "stem_md": "8、一个三级反馈移存器的特征方程为 $f(x)=1+x^{2}+x^{3}$，由它所产生的 m 序列周期为____(1)____，一个周期的输出序列为____(2)____。（北京邮电大学 2012 年一、3）\n(1) A、3　　　B、7　　　C、15　　　D、31\n(2) A、101　　　B、1011001　　　C、1011100　　　D、1",
+   "stem_md": "8、一个三级反馈移存器的特征方程为 $f(x)=1+x^{2}+x^{3}$，由它所产生的 m 序列周期为____(1)____，一个周期的输出序列为____(2)____。（北京邮电大学 2012 年一、3）\n(1) A、3　　　B、7　　　C、15　　　D、31\n(2) A、101　　　B、1011001　　　C、1011100　　　D、101100111100010",
    "options": [],
    "answer": {
     "reference_answer_md": "BC"
@@ -1670,7 +1670,7 @@
    "serial_number": 9,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "D、101100111100010\n9、产生 m 序列的本原多项式为 $f(x)=1+x^2+x^5$，其归一化周期性自相关函数的\n最小值为______，最大值为______。（北京邮电大学2011年",
+   "stem_md": "9、产生 m 序列的本原多项式为 $f(x)=1+x^2+x^5$，其归一化周期性自相关函数的\n最小值为______，最大值为______。（北京邮电大学 2011 年一、8）",
    "options": [],
    "answer": {
     "reference_answer_md": "9、$-\\frac{1}{31}$；$1$"
@@ -1695,19 +1695,19 @@
    "serial_number": 10,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "…京邮电大学 2011 年一、8)\n10、二元域多项式 $f(x)=x^3+x+1$，\n(1) 它是否为本原多项式？并证明之；\n(2) 把它作为线性反馈移位寄存器（LFSR）的特征多项式，画出 LFSR 的结构图；\n(3) 写出它所产生的序列（一个周期以上，用下划线表示一个周期）；\n…8696\n(4) 写出 LFSR 级数，序列周期，是否 m 序列？（南京邮电大学 2021 年第十一题）",
+   "stem_md": "10、二元域多项式 $f(x)=x^3+x+1$，\n(1) 它是否为本原多项式？并证明之；\n(2) 把它作为线性反馈移位寄存器（LFSR）的特征多项式，画出 LFSR 的结构图；\n(3) 写出它所产生的序列（一个周期以上，用下划线表示一个周期）；\n(4) 写出 LFSR 级数，序列周期，是否 m 序列？（南京邮电大学 2021 年第十一题）",
    "options": [],
    "answer": {
-    "reference_answer_md": "10、解："
+    "reference_answer_md": "10、解：\n（1）$f(x)$ 为既约的；$f(x)$ 可整除 $x^m+1$（$m=2^n-1=2^3-1=7$）；$f(x)$ 除不尽 $x^q+1$（$q<m$）。\n（2）LFSR 结构图：\n【图】\n（3）$\\underline{0011101}00111$（下划线为一个周期）。\n（4）$n=3$，周期 $T=2^3-1=7$，是 m 序列。"
    },
    "explanation_md": "（1）$f(x)=x^3+x+1$：三次多项式在二元域无一次因式（$f(0)=1$、$f(1)=1+1+1=1\\neq0$），故既约；且 $x^7+1=(x^3+x+1)(x^3+x^2+1)(x+1)$，$f(x)$ 整除 $x^7+1$ 而不整除 $x^m+1$（$m<7$），故为本原多项式。（2）由 $f(x)$ 得反馈逻辑 $a_k=a_{k-2}\\oplus a_{k-3}$，三级移存器第 1、3 级输出模 2 加反馈回输入端即成 LFSR 结构。（3）设初态 100，逐拍移位得序列的一个周期：1001011（7 位，可用下划线标出）。（4）级数 $n=3$，序列周期 $N=2^3-1=7$，周期达到最长，是 $m$ 序列。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "m序列",
-    "answer_text": "10、解：",
+    "answer_text": "10、解：\n（1）$f(x)$ 为既约的；$f(x)$ 可整除 $x^m+1$（$m=2^n-1=2^3-1=7$）；$f(x)$ 除不尽 $x^q+1$（$q<m$）。\n（2）LFSR 结构图：\n【图】\n（3）$\\underline{0011101}00111$（下划线为一个周期）。\n（4）$n=3$，周期 $T=2^3-1=7$，是 m 序列。",
     "question_img": "",
-    "answer_img": ""
+    "answer_img": "images/t299/a_tk299-112-10.jpg"
    },
    "book_page": 274,
    "video_p": 112
@@ -1978,7 +1978,7 @@
    "serial_number": 2,
    "source": "南京邮电大学 2023 年一、5",
    "question_type": "single_choice",
-   "stem_md": "（判断题，南京邮电大学 2022\n2、2PSK 不可用____进行载波同步，2ASK 可用____进行载波同步。\nA. 平方环　　B. 科斯塔斯环　　C. 插入导频法　　D. 窄带滤波法\n（南京邮电大学 2023 年一、5）",
+   "stem_md": "2、2PSK 不可用____进行载波同步，2ASK 可用____进行载波同步。\nA. 平方环　　B. 科斯塔斯环　　C. 插入导频法　　D. 窄带滤波法\n（南京邮电大学 2023 年一、5）",
    "options": [
     {
      "id": "opt-a",
@@ -2170,7 +2170,7 @@
    "serial_number": 6,
    "source": "",
    "question_type": "single_choice",
-   "stem_md": "……信息　　D. 群同步信息\n6、带通系统中，以下哪种同步方式会在模拟通信系统和数字通信系统都会被用到：______。（河北工业大学 2018 年一、5）\nA. 帧同步　　　B. 载波同步　　　C. 位同步　　　D. 网同步",
+   "stem_md": "6、带通系统中，以下哪种同步方式会在模拟通信系统和数字通信系统都会被用到：______。（河北工业大学 2018 年一、5）\nA. 帧同步　　　B. 载波同步　　　C. 位同步　　　D. 网同步",
    "options": [
     {
      "id": "opt-a",
@@ -2218,7 +2218,7 @@
    "serial_number": 7,
    "source": "",
    "question_type": "single_choice",
-   "stem_md": "D. 网同步\n7、采用科斯塔斯环提取载波存在____问题。（北京邮电大学 2021 年一、26）\nA. 差错传播　　B. 符号间干扰　　C. 频谱混叠　　D. 相位模糊",
+   "stem_md": "7、采用科斯塔斯环提取载波存在____问题。（北京邮电大学 2021 年一、26）\nA. 差错传播　　B. 符号间干扰　　C. 频谱混叠　　D. 相位模糊",
    "options": [
     {
      "id": "opt-a",
@@ -2816,7 +2816,7 @@
    "serial_number": 2,
    "source": "南京邮电大学 2018 年一、3",
    "question_type": "subjective",
-   "stem_md": "（北京…\n2、若 $n_1$、$n_2$ 是独立同分布的零均值高斯噪声，方差是 1，则 $n_1 \\times n_2$ 的方差是____，\n$n_1 + n_2$ 的方差是____。（南京邮电大学 2018 年一、3）",
+   "stem_md": "2、若 $n_1$、$n_2$ 是独立同分布的零均值高斯噪声，方差是 1，则 $n_1 \\times n_2$ 的方差是____，\n$n_1 + n_2$ 的方差是____。（南京邮电大学 2018 年一、3）",
    "options": [],
    "answer": {
     "reference_answer_md": "2、1:2\n$$\\int_0^{2\\pi} \\cos(\\theta) \\times \\frac{1}{\\pi} \\, d\\theta = \\frac{1}{2}$$"
@@ -3014,7 +3014,7 @@
    "serial_number": 1,
    "source": "",
    "question_type": "fill",
-   "stem_md": "径程；以及平稳性与\n1、设 $X(t)$ 是零均值平稳高斯过程，则 $Y(t)=X(t)\\sin(200\\pi t)$ 是______。\n（北京邮电大学 2020 年选择题一、11）\nA. 非高斯的零均值平稳过程\nB. 非平稳的零均值高斯过程\nC. 均值非零的平稳高斯过程\nD. 零均值平稳高斯过程",
+   "stem_md": "1、设 $X(t)$ 是零均值平稳高斯过程，则 $Y(t)=X(t)\\sin(200\\pi t)$ 是______。\n（北京邮电大学 2020 年选择题一、11）\nA. 非高斯的零均值平稳过程\nB. 非平稳的零均值高斯过程\nC. 均值非零的平稳高斯过程\nD. 零均值平稳高斯过程",
    "options": [],
    "answer": {
     "reference_answer_md": "B"
@@ -3368,7 +3368,7 @@
    "serial_number": 6,
    "source": "",
    "question_type": "fill",
-   "stem_md": "通信原理精\n6. 窄带高斯噪声的包络服从____分布，与载波信号叠加后，合成信号的包络服",
+   "stem_md": "6. 窄带高斯噪声的包络服从____分布，与载波信号叠加后，合成信号的包络服从____分布。（北京交通大学 2022 年一、4）",
    "options": [],
    "answer": {
     "reference_answer_md": "6、瑞利；莱斯"
@@ -3393,7 +3393,7 @@
    "serial_number": 7,
    "source": "",
    "question_type": "fill",
-   "stem_md": "从____分布。（北京交通大学 2022 年一、4）\n7、设 $n(t)=n_{\\mathrm{c}}(t)\\cos(2\\pi f_{\\mathrm{c}}t)-n_{\\mathrm{s}}(t)\\sin(2\\pi f_{\\mathrm{c}}t)$ 是零均值窄带平稳高斯过程，其同相分量 $n_{\\mathrm{c}}(t)$ 与正交分量 $n_{\\mathrm{s}}(t)$ 满足____。（北京邮电大学 2022 年一、2）\nA. $E\\left[n_{\\mathrm{c}}(t)n_{\\mathrm{s}}(t)\\right]=0 \\quad \\forall t\\in\\{-\\infty,\\infty\\}$\nB. $n_{\\mathrm{c}}(t)=n_{\\mathrm{s}}(t) \\quad \\forall t\\in\\{-\\infty,\\infty\\}$\nC. $E\\left[n_{\\mathrm{c}}(t_1)n_{\\mathrm{s}}(t_2)\\right]=0,\\ \\forall t_1,t_2\\in\\{-\\infty,\\infty\\}$\nD. $n_{\\mathrm{s}}(t)$ 是 $n_{\\mathrm{c}}(t)$ 的希尔伯特变换",
+   "stem_md": "7、设 $n(t)=n_{\\mathrm{c}}(t)\\cos(2\\pi f_{\\mathrm{c}}t)-n_{\\mathrm{s}}(t)\\sin(2\\pi f_{\\mathrm{c}}t)$ 是零均值窄带平稳高斯过程，其同相分量 $n_{\\mathrm{c}}(t)$ 与正交分量 $n_{\\mathrm{s}}(t)$ 满足____。（北京邮电大学 2022 年一、2）\nA. $E\\left[n_{\\mathrm{c}}(t)n_{\\mathrm{s}}(t)\\right]=0 \\quad \\forall t\\in\\{-\\infty,\\infty\\}$\nB. $n_{\\mathrm{c}}(t)=n_{\\mathrm{s}}(t) \\quad \\forall t\\in\\{-\\infty,\\infty\\}$\nC. $E\\left[n_{\\mathrm{c}}(t_1)n_{\\mathrm{s}}(t_2)\\right]=0,\\ \\forall t_1,t_2\\in\\{-\\infty,\\infty\\}$\nD. $n_{\\mathrm{s}}(t)$ 是 $n_{\\mathrm{c}}(t)$ 的希尔伯特变换",
    "options": [],
    "answer": {
     "reference_answer_md": "A"
@@ -3468,7 +3468,7 @@
    "serial_number": 2,
    "source": "河北工业大学 2019 年 二、1",
    "question_type": "subjective",
-   "stem_md": "工业大学 2023 年 二、7）\n2、一个平稳随机过程通过线性系统后，其输出为________过程，若通过乘法器，其输出为________过程。（河北工业大学 2019 年 二、1）",
+   "stem_md": "2、一个平稳随机过程通过线性系统后，其输出为________过程，若通过乘法器，其输出为________过程。（河北工业大学 2019 年 二、1）工业大学 2023 年 二、7）",
    "options": [],
    "answer": {
     "reference_answer_md": "2、平稳随机；非平稳随机\n18696\nB. D. A. 解析 由于（文字被截断，无法完整辨认）"
@@ -3493,7 +3493,7 @@
    "serial_number": 3,
    "source": "",
    "question_type": "fill",
-   "stem_md": "中求出，或是……\n3、单边功率谱密度为 $N_0 = 2\\,\\mathrm{W/Hz}$ 的高斯噪声通过一个冲激响应为 $h(t)$ 的带通滤波器后成为 $n(t)$，已知 $h(t)$ 的能量为 $1\\,\\mathrm{J}$。$n(t)$ 服从方差为__(1)__的__(2)__分布，其相位服从__(3)__分布，包络服从__(4)__分布。（北京邮电大学 2025 年一、7）\n(1) A. 0.5　　B. 1　　C. 2　　D. 4\n(2) A. 瑞利　　B. 高斯　　C. 指数　　D. 均匀",
+   "stem_md": "3、单边功率谱密度为 $N_0 = 2\\,\\mathrm{W/Hz}$ 的高斯噪声通过一个冲激响应为 $h(t)$ 的带通滤波器后成为 $n(t)$，已知 $h(t)$ 的能量为 $1\\,\\mathrm{J}$。$n(t)$ 服从方差为__(1)__的__(2)__分布，其相位服从__(3)__分布，包络服从__(4)__分布。（北京邮电大学 2025 年一、7）\n(1) A. 0.5　　B. 1　　C. 2　　D. 4\n(2) A. 瑞利　　B. 高斯　　C. 指数　　D. 均匀",
    "options": [],
    "answer": {
     "reference_answer_md": "BBDA"
@@ -3518,7 +3518,7 @@
    "serial_number": 4,
    "source": "河北工业大学 2018 年 三、6",
    "question_type": "subjective",
-   "stem_md": "(2)(3)(4) A. 瑞利\n4、若 $\\xi_i(t)$ 是平稳随机过程，其功率谱密度 $P_{\\xi_i}(\\omega)=\\frac{n_0}{2}$，将它加于下图所示系统，试确定该系统输出随机过程 $\\xi_o(t)$ 的功率谱密度和自相关函数。\n（河北工业大学 2018 年 三、6）",
+   "stem_md": "4、若 $\\xi_i(t)$ 是平稳随机过程，其功率谱密度 $P_{\\xi_i}(\\omega)=\\frac{n_0}{2}$，将它加于下图所示系统，试确定该系统输出随机过程 $\\xi_o(t)$ 的功率谱密度和自相关函数。\n（河北工业大学 2018 年 三、6）",
    "options": [],
    "answer": {
     "reference_answer_md": "4、解：\n$\\xi_o(t)$ 的功率谱密度为：\n$$P_{\\xi_o}(\\omega) = P_{\\xi_i}(\\omega)|H(\\omega)|^2 = \\frac{n_0}{2}\\left|1 + e^{-j\\omega T}\\right|^2 = n_0\\left[1 + \\cos(\\omega T)\\right]$$\n$\\xi_o(t)$ 的自相关函数为：\n$$R_{\\xi_o}(\\tau) = n_0\\delta(\\tau) + \\frac{n_0}{2}\\left[\\delta(\\tau - T) + \\delta(\\tau + T)\\right]$$"
@@ -3529,7 +3529,7 @@
     "type_cn": "计算",
     "kp": "平稳随机过程通过线性系统",
     "answer_text": "4、解：\n$\\xi_o(t)$ 的功率谱密度为：\n$$P_{\\xi_o}(\\omega) = P_{\\xi_i}(\\omega)|H(\\omega)|^2 = \\frac{n_0}{2}\\left|1 + e^{-j\\omega T}\\right|^2 = n_0\\left[1 + \\cos(\\omega T)\\right]$$\n$\\xi_o(t)$ 的自相关函数为：\n$$R_{\\xi_o}(\\tau) = n_0\\delta(\\tau) + \\frac{n_0}{2}\\left[\\delta(\\tau - T) + \\delta(\\tau + T)\\right]$$",
-    "question_img": "",
+    "question_img": "images/t299/q_tk299-34-04.jpg",
     "answer_img": ""
    },
    "book_page": 195,
@@ -3988,7 +3988,7 @@
    "serial_number": 9,
    "source": "判断题，南京邮电大学 2018 年三、1",
    "question_type": "fill",
-   "stem_md": "A、时延　　B、相频\n9、当信号通过一个幅频特性和群时延特性均为常数的信道传输时，其波形不会\n引起失真。（　）（判断题，南京邮电大学 2018 年三、1）",
+   "stem_md": "9、当信号通过一个幅频特性和群时延特性均为常数的信道传输时，其波形不会\n引起失真。（　）（判断题，南京邮电大学 2018 年三、1）",
    "options": [],
    "answer": {
     "reference_answer_md": "错误"
@@ -4381,7 +4381,7 @@
      "opt-c"
     ]
    },
-   "explanation_md": "3、C\n4、C，D。解析：根据香农定理：\n$$C = B\\log_2^{(1+\\frac{S}{N})} = B\\log_2^{(1+\\frac{S}{N_0 B})}$$\n当给定 $\\frac{S}{N_0}$，B 趋于无穷时：",
+   "explanation_md": "3、C\n4、C，D。解析：根据香农定理：\n$$C = B\\log_2^{(1+\\frac{S}{N})} = B\\log_2^{(1+\\frac{S}{N_0 B})}$$\n当给定 $\\frac{S}{N_0}$，B 趋于无穷时：\n$C=\\lim_{B\\to\\infty}B\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\frac{S}{N_0\\ln 2}=1.44\\frac{S}{N_0}$\n当给定 $\\frac{S}{N_0 B}$（信噪比恒定），B 趋于无穷时：$C=\\lim_{B\\to\\infty}B\\log_2\\left(1+\\frac{S}{N_0B}\\right)=\\infty$。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "选择",
@@ -4554,14 +4554,14 @@
    "stem_md": "10、某 $FDM$ 系统有 3 个频谱互不交叠的子信道，子信道带宽均为 $1\\,\\mathrm{kHz}$。发端通过 3 个子信道发送信号，子信道 1、2、3 上的发送功率 $P_1$、$P_2$、$P_3$ 满足\n$$P_1 + P_2 + P_3 = 3W$$\n。三个子信道的功率增益分别为 $g_1 = 1$、$g_2 = 2$ 和 $g_3 = 3$，子信道输出端的噪声功率均为 $1\\,\\mathrm{W}$。\n(1) 若子信道 1、2、3 的调制方式分别为 QPSK、16QAM、64QAM，且符号速率能达到奈奎斯特无符号间干扰传输的极限，试分别求出各个子信道的传输速率 (bit/s)，并给出该系统的总传输速率及频带利用率 (bit/s/Hz)；\n(2) 利用香农公式，分别按如下条件求系统的总传输速率：\n(a) $P_1 = 3W$，$P_2 = P_3 = 0W$；\n(b) $P_1 = P_2 = P_3 = 1W$；\n(c) $P_i = \\beta g_i$，其中 $\\beta$ 是能满足 $P_1 + P_2 + P_3 = 3W$ 的系数。\n（北京邮电大学 2021 年第八题、内蒙古大学 2023 年第七题）",
    "options": [],
    "answer": {
-    "reference_answer_md": "10、解：\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\"
+    "reference_answer_md": "10、解：\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = \\log_2 3\\ kbit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1.5\\times3}{1}\\right) = \\log_2 5.5\\ kbit/s$$\n$$C = C_1 + C_2 + C_3 = \\log_2\\frac{99}{4}\\ kbit/s$$"
    },
-   "explanation_md": "10、解：\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\",
+   "explanation_md": "10、解：\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = \\log_2 3\\ kbit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1.5\\times3}{1}\\right) = \\log_2 5.5\\ kbit/s$$\n$$C = C_1 + C_2 + C_3 = \\log_2\\frac{99}{4}\\ kbit/s$$",
    "asset_refs": [],
    "legacy": {
     "type_cn": "计算",
     "kp": "香农公式和连续信道容量求解",
-    "answer_text": "10、解：\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\",
+    "answer_text": "10、解：\n（1）根据题意，则有：\n$$\\eta = \\frac{R_B}{B} = 1Baud/Hz \\Rightarrow \\frac{R_b}{\\log_2 M} = B \\Rightarrow R_b = \\log_2 M \\ kbit/s$$\n对于QPSK信号，传输速率 $R_b = 2kbit/s$，频带利用率 $\\eta = 2bit/s.Hz$\n对于16QAM信号，传输速率 $R_b = 4kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n对于64QAM信号，传输速率 $R_b = 6kbit/s$，频带利用率 $\\eta = 6bit/s.Hz$\n总的传输速率：$R_{总} = 12kbit/s$，频带利用率 $\\eta = 4bit/s.Hz$\n（2）（a）\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{3}{1}\\right) = 2000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2(1+0) = 0$$\n$$C = C_1 + C_2 + C_3 = 2kbit/s$$\n（b）$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1}{1}\\right) = 1000bit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = 1580bit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times3}{1}\\right) = 2000bit/s$$\n$$C = C_1 + C_2 + C_3 = 4.58kbit/s$$\n（c）依题意：$\\beta g_1 + \\beta g_2 + \\beta g_3 = \\beta + 2\\beta + 3\\beta = 1 \\Rightarrow \\beta = 0.5$\n则：$P_1 = 0.5, P_2 = 1, P_3 = 1.5$\n$$C_1 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{0.5}{1}\\right) = \\log_2\\frac{3}{2}\\ kbit/s$$\n$$C_2 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1\\times2}{1}\\right) = \\log_2 3\\ kbit/s$$\n$$C_3 = B\\log_2\\left(1+\\frac{S}{N}\\right) = 1000\\log_2\\left(1+\\frac{1.5\\times3}{1}\\right) = \\log_2 5.5\\ kbit/s$$\n$$C = C_1 + C_2 + C_3 = \\log_2\\frac{99}{4}\\ kbit/s$$",
     "question_img": "",
     "answer_img": ""
    },
@@ -4735,9 +4735,9 @@
    "stem_md": "7、下图所示为一个二进制删除信道，其转移概率为 $P(0|0)=P(1|1)=1-p$ 及 $P(e|0)=P(e|1)=p$，输入符号的概率为 $P(X=0)=a$，$P(X=1)=1-a$。计算该信道的容量及此时的 $a$ 值。（北京邮电大学 2012 年第六题）\n【图】",
    "options": [],
    "answer": {
-    "reference_answer_md": "7、解：\n$$P(Y=0)=P(X=0)P(Y=0 \\mid X=0)=a(1-p)$$\n$$P(Y=1)=P(X=1)P(Y=1 \\mid X=1)=(1-a)(1-p)$$\n$$P(Y=e)=1-P(Y=0)-P(Y=1)=p$$\n2919418696\n$$H(Y \\mid X)=P(X=0)H(Y \\mid 0)+P(X=1)H(Y \\mid 1)=H(p,1-p)$$\n$$H(Y)=-a(1-p)\\log_2^{a(1-p)}-(1-a)(1-p)\\log_2^{(1-a)(1-p)}-p\\log_2^p$$\n$$=-p\\log_2^p-(1-p)\\log_2^{(1-p)}-a(1-p)\\log_2^a-(1-a)(1-p)\\log_2^{1-a}$$\n显然，当 $a=0.5$ 时，$H(Y)$ 取的最大值\n$$H_{\\max}(Y)=-p\\log_2^p-(1-p)\\log_2^{1-p}+(1-p)$$\n$$C=\\max I(X;Y)=\\max H(Y)-H(Y \\mid X)=1-p$$"
+    "reference_answer_md": "7、解：\n$$P(Y=0)=P(X=0)P(Y=0 \\mid X=0)=a(1-p)$$\n$$P(Y=1)=P(X=1)P(Y=1 \\mid X=1)=(1-a)(1-p)$$\n$$P(Y=e)=1-P(Y=0)-P(Y=1)=p$$\n$$H(Y \\mid X)=P(X=0)H(Y \\mid 0)+P(X=1)H(Y \\mid 1)=H(p,1-p)$$\n$$H(Y)=-a(1-p)\\log_2^{a(1-p)}-(1-a)(1-p)\\log_2^{(1-a)(1-p)}-p\\log_2^p$$\n$$=-p\\log_2^p-(1-p)\\log_2^{(1-p)}-a(1-p)\\log_2^a-(1-a)(1-p)\\log_2^{1-a}$$\n显然，当 $a=0.5$ 时，$H(Y)$ 取的最大值\n$$H_{\\max}(Y)=-p\\log_2^p-(1-p)\\log_2^{1-p}+(1-p)$$\n$$C=\\max I(X;Y)=\\max H(Y)-H(Y \\mid X)=1-p$$"
    },
-   "explanation_md": "7、解：\n$$P(Y=0)=P(X=0)P(Y=0 \\mid X=0)=a(1-p)$$\n$$P(Y=1)=P(X=1)P(Y=1 \\mid X=1)=(1-a)(1-p)$$\n$$P(Y=e)=1-P(Y=0)-P(Y=1)=p$$\n2919418696\n$$H(Y \\mid X)=P(X=0)H(Y \\mid 0)+P(X=1)H(Y \\mid 1)=H(p,1-p)$$\n$$H(Y)=-a(1-p)\\log_2^{a(1-p)}-(1-a)(1-p)\\log_2^{(1-a)(1-p)}-p\\log_2^p$$\n$$=-p\\log_2^p-(1-p)\\log_2^{(1-p)}-a(1-p)\\log_2^a-(1-a)(1-p)\\log_2^{1-a}$$\n显然，当 $a=0.5$ 时，$H(Y)$ 取的最大值\n$$H_{\\max}(Y)=-p\\log_2^p-(1-p)\\log_2^{1-p}+(1-p)$$\n$$C=\\max I(X;Y)=\\max H(Y)-H(Y \\mid X)=1-p$$",
+   "explanation_md": "7、解：\n$$P(Y=0)=P(X=0)P(Y=0 \\mid X=0)=a(1-p)$$\n$$P(Y=1)=P(X=1)P(Y=1 \\mid X=1)=(1-a)(1-p)$$\n$$P(Y=e)=1-P(Y=0)-P(Y=1)=p$$\n$$H(Y \\mid X)=P(X=0)H(Y \\mid 0)+P(X=1)H(Y \\mid 1)=H(p,1-p)$$\n$$H(Y)=-a(1-p)\\log_2^{a(1-p)}-(1-a)(1-p)\\log_2^{(1-a)(1-p)}-p\\log_2^p$$\n$$=-p\\log_2^p-(1-p)\\log_2^{(1-p)}-a(1-p)\\log_2^a-(1-a)(1-p)\\log_2^{1-a}$$\n显然，当 $a=0.5$ 时，$H(Y)$ 取的最大值\n$$H_{\\max}(Y)=-p\\log_2^p-(1-p)\\log_2^{1-p}+(1-p)$$\n$$C=\\max I(X;Y)=\\max H(Y)-H(Y \\mid X)=1-p$$",
    "asset_refs": [
     {
      "type": "image",
@@ -4748,7 +4748,7 @@
    "legacy": {
     "type_cn": "计算",
     "kp": "条件熵、联合熵、互信息和离散信道容量求解",
-    "answer_text": "7、解：\n$$P(Y=0)=P(X=0)P(Y=0 \\mid X=0)=a(1-p)$$\n$$P(Y=1)=P(X=1)P(Y=1 \\mid X=1)=(1-a)(1-p)$$\n$$P(Y=e)=1-P(Y=0)-P(Y=1)=p$$\n2919418696\n$$H(Y \\mid X)=P(X=0)H(Y \\mid 0)+P(X=1)H(Y \\mid 1)=H(p,1-p)$$\n$$H(Y)=-a(1-p)\\log_2^{a(1-p)}-(1-a)(1-p)\\log_2^{(1-a)(1-p)}-p\\log_2^p$$\n$$=-p\\log_2^p-(1-p)\\log_2^{(1-p)}-a(1-p)\\log_2^a-(1-a)(1-p)\\log_2^{1-a}$$\n显然，当 $a=0.5$ 时，$H(Y)$ 取的最大值\n$$H_{\\max}(Y)=-p\\log_2^p-(1-p)\\log_2^{1-p}+(1-p)$$\n$$C=\\max I(X;Y)=\\max H(Y)-H(Y \\mid X)=1-p$$",
+    "answer_text": "7、解：\n$$P(Y=0)=P(X=0)P(Y=0 \\mid X=0)=a(1-p)$$\n$$P(Y=1)=P(X=1)P(Y=1 \\mid X=1)=(1-a)(1-p)$$\n$$P(Y=e)=1-P(Y=0)-P(Y=1)=p$$\n$$H(Y \\mid X)=P(X=0)H(Y \\mid 0)+P(X=1)H(Y \\mid 1)=H(p,1-p)$$\n$$H(Y)=-a(1-p)\\log_2^{a(1-p)}-(1-a)(1-p)\\log_2^{(1-a)(1-p)}-p\\log_2^p$$\n$$=-p\\log_2^p-(1-p)\\log_2^{(1-p)}-a(1-p)\\log_2^a-(1-a)(1-p)\\log_2^{1-a}$$\n显然，当 $a=0.5$ 时，$H(Y)$ 取的最大值\n$$H_{\\max}(Y)=-p\\log_2^p-(1-p)\\log_2^{1-p}+(1-p)$$\n$$C=\\max I(X;Y)=\\max H(Y)-H(Y \\mid X)=1-p$$",
     "question_img": "images/t299/q_tk299-44-07.jpg",
     "answer_img": ""
    },
@@ -4886,7 +4886,7 @@
    "serial_number": 2,
    "source": "",
    "question_type": "fill",
-   "stem_md": "A. AM    B. DS\n2、设 $m(t)$ 是模拟基带调制信号，载频 $f_c$ 充分大。下列中______是 $m(t)$ 的调相信号，\n______是 $m(t)$ 的调频信号。（北京邮电大学 2021 年一、2）\nA. $\\cos\\left[2\\pi f_c t + \\dfrac{d}{dt}m(t)\\right]$　　　　　　　　B. $\\cos\\left[2\\pi f_c t + m(t)\\right]$\nC. $\\cos\\left[2\\pi f_c t + \\overline{m(t)}\\right]$　　　　　　　　D. $\\cos\\left[2\\pi f_c t + \\int_{-\\infty}^{t} m(\\tau)d\\tau\\right]$",
+   "stem_md": "2、设 $m(t)$ 是模拟基带调制信号，载频 $f_c$ 充分大。下列中______是 $m(t)$ 的调相信号，\n______是 $m(t)$ 的调频信号。（北京邮电大学 2021 年一、2）\nA. $\\cos\\left[2\\pi f_c t + \\dfrac{d}{dt}m(t)\\right]$　　　　　　　　B. $\\cos\\left[2\\pi f_c t + m(t)\\right]$\nC. $\\cos\\left[2\\pi f_c t + \\overline{m(t)}\\right]$　　　　　　　　D. $\\cos\\left[2\\pi f_c t + \\int_{-\\infty}^{t} m(\\tau)d\\tau\\right]$",
    "options": [],
    "answer": {
     "reference_answer_md": "BD"
@@ -5290,7 +5290,7 @@
    "serial_number": 1,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "合调制后信号带宽。\n1、20 路话音信号采用 SSB 调制进行频分复用传输，话音信号的最高频率为 4kHz，\n防护频带为 0.5kHz，求最小的传输带宽。（河北工业大学 2021 年三、8）",
+   "stem_md": "1、20 路话音信号采用 SSB 调制进行频分复用传输，话音信号的最高频率为 4kHz，\n防护频带为 0.5kHz，求最小的传输带宽。（河北工业大学 2021 年三、8）",
    "options": [],
    "answer": {
     "reference_answer_md": "1、解：\n$$B = 20 \\times 4k + 19 \\times 0.5 = 89.5 \\text{ kHz}$$"
@@ -5867,7 +5867,7 @@
    "serial_number": 6,
    "source": "",
    "question_type": "fill",
-   "stem_md": "（南京邮电大学 2019 年一、\n6、设信息码序列为 110011，则相应的 CMI 码是________。\n（河北工业大学 2023 年一、7）\nA. 110001010011        B. 110001101100\nC. 110001011100        D. 110010011100\n2、若数\n（北京邮\nA. 采样\nC. 判决",
+   "stem_md": "6、设信息码序列为 110011，则相应的 CMI 码是________。\n（河北工业大学 2023 年一、7）\nA. 110001010011        B. 110001101100\nC. 110001011100        D. 110010011100\n2、若数\n（北京邮\nA. 采样\nC. 判决",
    "options": [],
    "answer": {
     "reference_answer_md": "C"
@@ -6327,7 +6327,7 @@
    "serial_number": 2,
    "source": "北京交通大学 2019 年一、2",
    "question_type": "subjective",
-   "stem_md": "B. 频谱较窄\n2、部分响应系统带宽利用率为________Baud/Hz，预编码作用为________。\n（北京交通大学 2019 年一、2）",
+   "stem_md": "2、部分响应系统带宽利用率为________Baud/Hz，预编码作用为________。\n（北京交通大学 2019 年一、2）",
    "options": [],
    "answer": {
     "reference_answer_md": "2、2；防止误码扩散"
@@ -6768,7 +6768,7 @@
    "serial_number": 2,
    "source": "",
    "question_type": "single_choice",
-   "stem_md": "（北京交通大学 202\n2、在高信噪比下，接收端观察到眼图的闭合程度的大小反应______的大小。\n（河北工业大学 2016 年一、4）\nA. 信噪比　　B. 信号幅度　　C. 码间干扰　　D. 信号功率",
+   "stem_md": "2、在高信噪比下，接收端观察到眼图的闭合程度的大小反应______的大小。\n（河北工业大学 2016 年一、4）\nA. 信噪比　　B. 信号幅度　　C. 码间干扰　　D. 信号功率",
    "options": [
     {
      "id": "opt-a",
@@ -7923,7 +7923,7 @@
    "serial_number": 1,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "的时间波形图以及附加相位路径图：\n1、MSK调制是______最小、且______连续的FSK调制，其调制指数为______。若数字序列发送速率为1000bit/s，则MSK信号的主瓣带宽为______Hz。\n此发送速率……（该行下方文字被裁切，仅可见部分字迹）",
+   "stem_md": "的时间波形图以及附加相位路径图：\n1、MSK调制是______最小、且______连续的FSK调制，其调制指数为______。若数字序列发送速率为1000bit/s，则MSK信号的主瓣带宽为______Hz。\n此发送速率……（该行下方文字被裁切，仅可见部分字迹）\n（北京交通大学 2017 年一、3）",
    "options": [],
    "answer": {
     "reference_answer_md": "1、频率间隔；相位；0.5；1500"
@@ -7948,7 +7948,7 @@
    "serial_number": 2,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "（北京交通大学2017年一、3）\n2、MSK 波形如图所示，设 $f_1 < f_2$ 分别对应 \"1\" 码和 \"0\" 码。\n（1）写出相应的数据序列 $\\{a_k\\}$；\n（2）画出相位路径网格图。（北京交通大学2015年二、1）\n【图】",
+   "stem_md": "2、MSK 波形如图所示，设 $f_1 < f_2$ 分别对应 \"1\" 码和 \"0\" 码。\n（1）写出相应的数据序列 $\\{a_k\\}$；\n（2）画出相位路径网格图。（北京交通大学2015年二、1）\n【图】",
    "options": [],
    "answer": {
     "reference_answer_md": "2、\n解：\n（1）$\\{a_k\\}=\\{1001110110\\}$\n（2）相位路径图如下："
@@ -7966,7 +7966,7 @@
     "kp": "MSK信号",
     "answer_text": "2、\n解：\n（1）$\\{a_k\\}=\\{1001110110\\}$\n（2）相位路径图如下：",
     "question_img": "images/t299/q_tk299-76-02.jpg",
-    "answer_img": ""
+    "answer_img": "images/t299/a_tk299-76-02.jpg"
    },
    "book_page": 242,
    "video_p": 73
@@ -8461,7 +8461,7 @@
    "serial_number": 11,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "和\n11、BPSK 信号为 $\\begin{cases} s_1(t)=-A\\cos 2\\pi f_c t \\\\ s_2(t)=A\\cos 2\\pi f_c t \\end{cases}$，$0 \\leq t \\leq T_b$，其中 $T_b$ 为比特间隔，\n$s_1(t)$ 和 $s_2(t)$ 出现的概率各为 1/2。信号在信道传输中受到单边功率谱密度为 $n_0$ 的加性高斯白噪声 $n(t)$ 的干扰。（河北大学 2018 年第十题）\n1、画出匹配滤波器实现 BPSK 最佳接收的框图；\n2、求 BPSK 两信号之间的平均比特能量 $E_b$ 及互相关系数 $\\rho$；\n3、写出最佳接收的平均误比特率的计算公式。",
+   "stem_md": "11、BPSK 信号为 $\\begin{cases} s_1(t)=-A\\cos 2\\pi f_c t \\\\ s_2(t)=A\\cos 2\\pi f_c t \\end{cases}$，$0 \\leq t \\leq T_b$，其中 $T_b$ 为比特间隔，\n$s_1(t)$ 和 $s_2(t)$ 出现的概率各为 1/2。信号在信道传输中受到单边功率谱密度为 $n_0$ 的加性高斯白噪声 $n(t)$ 的干扰。（河北大学 2018 年第十题）\n1、画出匹配滤波器实现 BPSK 最佳接收的框图；\n2、求 BPSK 两信号之间的平均比特能量 $E_b$ 及互相关系数 $\\rho$；\n3、写出最佳接收的平均误比特率的计算公式。",
    "options": [],
    "answer": {
     "reference_answer_md": "11、解：\n（1）匹配滤波器冲激响应：$h(t)=s_1(T-t)$\n【图】\n（2）$s_1(t)$ 和 $s_2(t)$ 的能量分别为 $E_1=\\int_0^{T_b}[A\\cos(2\\pi f_c t)]^2\\,dt=\\frac{A^2T_b}{2}$\n$$E_2=\\int_0^{T_b}[-A\\cos(2\\pi f_c t)]^2\\,dt=\\frac{A^2T_b}{2}$$\n从而平均比特能量：$E_b=\\frac{A^2T_b}{2}$　　相关系数 $\\rho_{12}=\\frac{1}{\\sqrt{E_1E_2}}\\int_0^{T_b}s_1(t)s_2(t)\\,dt=-1$\n（3）由于是等概率发送，最佳判决门限：$V_T=0$\n$$P_e=\\frac{1}{2}\\operatorname{erfc}\\Big(\\sqrt{\\frac{E_b(1-\\rho)}{2n_0}}\\Big)=\\frac{1}{2}\\operatorname{erfc}\\Big(\\sqrt{\\frac{A^2T_b}{2n_0}}\\Big)$$"
@@ -8523,7 +8523,7 @@
    "serial_number": 1,
    "source": "",
    "question_type": "subjective",
-   "stem_md": "简单。\nA 电\n1、在理想信道下的最佳基带系统中，发送滤波器 $G_T(\\omega)$、接收滤波器 $G_R(\\omega)$ 和\n连\n……2023 年",
+   "stem_md": "1、在理想信道下的最佳基带系统中，发送滤波器 $G_T(\\omega)$、接收滤波器 $G_R(\\omega)$ 和连接网络的系统总的传输函数 $H(\\omega)$ 三者之间满足_______。（河北工业大学 2022 年二、12）",
    "options": [],
    "answer": {
     "reference_answer_md": "1、 $G_r(\\omega)=G_R(\\omega)=\\sqrt{H(\\omega)}$"
@@ -8548,7 +8548,7 @@
    "serial_number": 2,
    "source": "河北工业大学 2023 年四、2",
    "question_type": "subjective",
-   "stem_md": "系统总的传输函数 $H(\\omega)$ 三者之间满足_______。（河北工业大学 2022 年二、12）\n2、已知二进制最佳数字基带传输系统的信道特性 $C(f)=1$，其发送滤波器的传输特性为：\n$$C_T(f)=\\begin{cases}\\sqrt{1+\\cos\\left(\\dfrac{\\pi f T}{8}\\right)} & |f|\\le \\dfrac{8}{T}\\\\[2mm] 0 & else\\end{cases}$$\n(1) 试求其接收滤波器的传输函数 $G_R(f)$；\n(2) 若 $n(t)$ 的双边功率谱密度为 $\\dfrac{n_0}{2}(\\text{W/Hz})$，试计算 $G_R(f)$ 输出端的噪声功率；\n(3) 求无码间干扰传输的最小码元间隔和最高频带利用率。\n（河北工业大学 2023 年四、2）",
+   "stem_md": "2、已知二进制最佳数字基带传输系统的信道特性 $C(f)=1$，其发送滤波器的传输特性为：\n$$C_T(f)=\\begin{cases}\\sqrt{1+\\cos\\left(\\dfrac{\\pi f T}{8}\\right)} & |f|\\le \\dfrac{8}{T}\\\\[2mm] 0 & else\\end{cases}$$\n(1) 试求其接收滤波器的传输函数 $G_R(f)$；\n(2) 若 $n(t)$ 的双边功率谱密度为 $\\dfrac{n_0}{2}(\\text{W/Hz})$，试计算 $G_R(f)$ 输出端的噪声功率；\n(3) 求无码间干扰传输的最小码元间隔和最高频带利用率。\n（河北工业大学 2023 年四、2）",
    "options": [],
    "answer": {
     "reference_answer_md": "2、解：\n(1) $C_R(f)=\\begin{cases}\\sqrt{1+\\cos\\left(\\dfrac{\\pi f T}{8}\\right)} & |f|\\leq \\dfrac{8}{T} \\\\ 0 & else\\end{cases}$\n(2) $N_o=\\int_{-\\infty}^{\\infty}\\dfrac{n_0}{2}\\left|G_R(f)\\right|^2\\,df=\\dfrac{n_0}{2}\\int_{-8/T}^{8/T}\\left(1+\\cos\\left(\\dfrac{\\pi f T}{8}\\right)\\right)df=\\dfrac{8n_0}{T}$\n(3) 等效奈奎斯特带宽 $B=f_N=\\dfrac{4}{T}$\n无码间干扰传输的最高波特率 $R_B=2f_N=\\dfrac{8}{T}$\n最小码元间隔 $T_B=\\dfrac{1}{R_B}=\\dfrac{T}{8}$\n最高频带利用率 $\\eta=1\\,Baud/Hz$"
@@ -8629,7 +8629,7 @@
    "serial_number": 1,
    "source": "北京邮电大学 2021 年一、18 题",
    "question_type": "fill",
-   "stem_md": "包括最低抽样速率、抽样后信号频谱的变\n1、对实信号 $x(t)$ 进行理想采样。若 $x(t)$ 是基带信号，其最高频率是 $4\\text{kHz}$，采样\n后频谱不发生混叠的最小采样率是____kHz。若 $x(t)$ 是带通信号，其频带范围是\n$[15\\text{kHz} \\sim 18\\text{kHz}]$，采样后频谱不发生混叠的最小采样率是____kHz。\nA、4                B、6                C、8                D、12\n（北京邮电大学 2021 年一、18 题）",
+   "stem_md": "1、对实信号 $x(t)$ 进行理想采样。若 $x(t)$ 是基带信号，其最高频率是 $4\\text{kHz}$，采样\n后频谱不发生混叠的最小采样率是____kHz。若 $x(t)$ 是带通信号，其频带范围是\n$[15\\text{kHz} \\sim 18\\text{kHz}]$，采样后频谱不发生混叠的最小采样率是____kHz。\nA、4                B、6                C、8                D、12\n（北京邮电大学 2021 年一、18 题）",
    "options": [],
    "answer": {
     "reference_answer_md": "CB"
