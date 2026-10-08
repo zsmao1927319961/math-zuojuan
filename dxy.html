@@ -334,9 +334,12 @@ function viewQuestion(){
     + '<div class="starrow"><span class="star '+(s.fav?'on':'')+'" onclick="toggleFav(\''+q.question_id+'\')">⭐ '+(s.fav?'已收藏':'收藏本题')+'</span>'
     + '<span class="duemsg">进度只存本机，记得在目录页导出备份</span></div>';
   if(s.due && s.mastery!=='ok') h+='<div class="duemsg">🔁 复测计划：'+s.due+'（第 '+s.round+' 轮）</div>';
+  const nxKp=dxyNextKp();
   h+='<div class="nav"><button class="btn grey" onclick="prevQ()" '+(VIEW.qidx<=0?'disabled':'')+'>‹ 上一题</button>'
     + '<button class="btn grey" onclick="redoQ()">🔄 重做</button>'
-    + '<button class="btn grey" onclick="nextQ()" '+(VIEW.qidx>=qs.length-1?'disabled':'')+'>下一题 ›</button></div>';
+    + '<button class="btn grey" onclick="nextQ()">'+(VIEW.qidx>=qs.length-1?'下一考点 ›':'下一题 ›')+'</button>'
+    + (nxKp?'<button class="btn grey" onclick="dxyNextKpGo()" style="border-color:#c9d8ff;color:#2f6bff">⏭ '+esc(nxKp.kp.name)+' ›</button>':'')
+    + '</div>';
   h+='</div>';
   v.innerHTML=h;
   renderMixed(document.getElementById('stem'), q.stem_md);
@@ -380,7 +383,36 @@ function redoQ(){
   saveState(); viewQuestion();
 }
 function prevQ(){ if(VIEW.qidx>0){ VIEW.qidx--; viewQuestion(); } }
-function nextQ(){ const n=kpQuestions(VIEW.kp).length; if(VIEW.qidx<n-1){ VIEW.qidx++; viewQuestion(); } }
+function nextQ(){ const n=kpQuestions(VIEW.kp).length; if(VIEW.qidx<n-1){ VIEW.qidx++; viewQuestion(); } else { dxyNextKpGo(); } }
+function dxyNextKp(){
+  const chaps=DB.categories[0].children;
+  for(let ci=0;ci<chaps.length;ci++){
+    const kps=chaps[ci].children;
+    for(let i=0;i<kps.length;i++){
+      if(kps[i].id===VIEW.kp){
+        if(kps[i+1]) return {chap:chaps[ci],kp:kps[i+1]};
+        const nc=chaps[ci+1];
+        if(nc&&nc.children.length) return {chap:nc,kp:nc.children[0]};
+        return null;
+      }
+    }
+  }
+  return null;
+}
+function dxyToast(msg){
+  let t=document.getElementById('dxy-toast');
+  if(!t){ t=document.createElement('div'); t.id='dxy-toast';
+    t.style.cssText='position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:rgba(30,40,60,.88);color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;z-index:99;transition:opacity .3s;opacity:0';
+    document.body.appendChild(t); }
+  t.textContent=msg; t.style.opacity='1';
+  clearTimeout(t._h); t._h=setTimeout(()=>{ t.style.opacity='0'; }, 2000);
+}
+function dxyNextKpGo(){
+  const nx=dxyNextKp();
+  if(!nx){ dxyToast('已是最后一个考点 🎉'); return; }
+  openKp(nx.chap.id, nx.kp.id, nx.kp.name);
+  window.scrollTo({top:0});
+}
 /* ---------- 拼卷(仿南邮真题结构, 随机抽题广覆盖考点) ---------- */
 const PKEY='dxy_paper_v1';
 const PTEMPLATE=[

@@ -197,6 +197,7 @@
         <button class="chip" data-f="todo">只看未做</button>
         <button class="chip" data-f="wrong">只看有问题</button>
         <button class="chip" id="btn-paper-pdf">🖨 存为PDF</button>
+        <button class="chip" id="kf-next-top" hidden style="background:#eaf1ff;border-color:#c9d8ff;color:#2f6bff"></button>
       </div>
       <div class="stats" id="pstats"></div>
     </div>
@@ -275,6 +276,7 @@ var EXAM = '2026-12-19';
 var STATE = null, QS = [], QMAP = {};
 var MARKED = {};          // 本次会话打标覆盖（即时刷新 UI）
 var CUR_LIST = [];        // 当前刷题列表（题目对象数组）
+var CUR_REC = null;       // 当前考点节点（用于考点衔接导航）
 var CUR_TITLE = '';
 var P_FILTER = '';
 
@@ -504,10 +506,41 @@ function renderTree(){
 
 /* ---------- 刷题视图 ---------- */
 function openNode(rec){
+  CUR_REC = rec;
   CUR_TITLE = pathName(rec);
   CUR_LIST = rec.qs.slice();
   showPractice();
   location.hash = 'n=' + rec.id;
+}
+/* 考点衔接: 同级章节序列里的上/下一个考点 */
+function kfSiblings(){
+  return KB.roots[0].children;
+}
+function kfNeighbor(dir){
+  if (!CUR_REC) return null;
+  var sibs = kfSiblings();
+  for (var i = 0; i < sibs.length; i++) {
+    if (sibs[i].id === CUR_REC.id) return sibs[i + dir] || null;
+  }
+  return null;
+}
+function kfFooter(listEl){
+  if (!CUR_REC) return;
+  var prevR = kfNeighbor(-1), nextR = kfNeighbor(1);
+  var foot = document.createElement('div');
+  foot.className = 'paper-card';
+  foot.style.textAlign = 'center';
+  var inner = '<div class="paper-meta" style="margin-bottom:8px">✅ 本考点刷完 · 顺链去下一考点</div>' +
+    '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center">' +
+    (prevR ? '<button class="btn" data-kf="p">‹ 上一考点</button>' : '') +
+    (nextR
+      ? '<button class="btn" data-kf="n" style="background:#eaf1ff;border-color:#c9d8ff;color:#2f6bff">下一考点：' + escHtml(nextR.name) + ' ›</button>'
+      : '<span class="tag ok">🎉 已是最后一个考点</span>');
+  foot.innerHTML = inner + '</div>';
+  listEl.appendChild(foot);
+  var pb = foot.querySelector('[data-kf="p"]'), nb = foot.querySelector('[data-kf="n"]');
+  if (pb) pb.onclick = function(){ openNode(prevR); };
+  if (nb) nb.onclick = function(){ openNode(nextR); };
 }
 function pathName(rec){
   var names = [];
@@ -522,6 +555,12 @@ function showPractice(){
   document.getElementById('view-zujuan').hidden = true;
   document.getElementById('view-practice').hidden = false;
   document.getElementById('ptitle').textContent = CUR_TITLE + '（' + CUR_LIST.length + ' 题）';
+  var kt = document.getElementById('kf-next-top');
+  var nx = kfNeighbor(1);
+  if (kt) {
+    if (nx) { kt.hidden = false; kt.textContent = '下一考点：' + nx.name + ' ›'; }
+    else kt.hidden = true;
+  }
   renderPractice();
 }
 
@@ -596,15 +635,20 @@ function refreshPstats(){
     '<div class="bar" style="width:100%"><i style="width:' + (CUR_LIST.length ? Math.round(done / CUR_LIST.length * 100) : 0) + '%"></i></div>';
 }
 function renderPractice(){
+  var listEl = document.getElementById('plist');
   var list = CUR_LIST.filter(function(q){
     if (P_FILTER === 'todo') return bucket(q) === 'none';
     if (P_FILTER === 'wrong') { var b = bucket(q); return b === 'shaky' || b === 'unknown'; }
     return true;
   });
-  document.getElementById('plist').innerHTML = '';
+  listEl.innerHTML = '';
   refreshPstats();
-  if (!list.length) { document.getElementById('plist').innerHTML = '<div class="empty">这个筛选下没有题</div>'; return; }
-  list.forEach(function(q, i){ document.getElementById('plist').appendChild(card(q, i)); });
+  if (list.length) {
+    list.forEach(function(q, i){ listEl.appendChild(card(q, i)); });
+  } else {
+    listEl.innerHTML = '<div class="empty">这个筛选下没有题</div>';
+  }
+  kfFooter(listEl);
 }
 function card(q, idx){
   var el = document.createElement('div');
@@ -800,6 +844,7 @@ function showRetest(){
 
 /* ---------- 特殊列表 ---------- */
 function openFavs(){
+  CUR_REC = null;
   var list = favs().map(function(id){ return QMAP[id]; }).filter(Boolean);
   CUR_TITLE = '⭐ 我的收藏'; CUR_LIST = list;
   showPractice();
@@ -899,6 +944,7 @@ function makePaper(kind){
   return { qs: picked, meta: '' };
 }
 function openPaper(p){
+  CUR_REC = null;
   var qs = (p.qids || []).map(function(id){ return QMAP[id]; }).filter(Boolean);
   if (!qs.length) { toast('卷子题目缺失，删掉重组吧'); return; }
   CUR_LIST = qs; CUR_TITLE = p.title;
@@ -1071,6 +1117,10 @@ function start(){
   document.getElementById('btn-retest').onclick = showRetest;
   document.getElementById('btn-favs').onclick = openFavs;
   document.getElementById('btn-recite').onclick = showRecite;
+  document.getElementById('kf-next-top').onclick = function(){
+    var nx = kfNeighbor(1);
+    if (nx) openNode(nx); else toast('已是最后一个考点');
+  };
   document.getElementById('btn-recite-back').onclick = goDir;
   document.getElementById('recite-prev').onclick = function(){ RE_IDX--; renderRecite(); };
   document.getElementById('recite-next').onclick = function(){ RE_IDX++; renderRecite(); };
