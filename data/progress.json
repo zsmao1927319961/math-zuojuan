@@ -5714,32 +5714,50 @@
   "qhzt-2-1": {
    "status": "done",
    "right_date": "2026-09-21",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-2-2": {
    "status": "done",
    "right_date": "2026-09-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-2-3": {
    "status": "done",
    "right_date": "2026-09-10",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-2-4": {
    "status": "done",
    "right_date": "2026-10-05",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-2-5": {
    "status": "done",
    "right_date": "2026-09-13",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-2-6": {
    "status": "done",
    "right_date": "2026-10-03",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "ld880-十一-xz-1-jc": {
    "status": "done",
@@ -6117,7 +6135,10 @@
   "qhzt-3-1": {
    "status": "done",
    "right_date": "2026-09-13",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "ld880-七-xz-1": {
    "status": "todo",
@@ -6278,7 +6299,10 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-09-26",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-7-4": {
    "status": "todo",
@@ -6407,19 +6431,28 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-09-26",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-1-2": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-09-26",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-1-4": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-09-26",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "qhzt-1-5": {
    "status": "review",
@@ -6435,7 +6468,10 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-09-26",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "ld880-九-xz-1": {
    "status": "done",
@@ -6646,13 +6682,19 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-13-01": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-14-01": {
    "status": "todo",
@@ -6680,7 +6722,10 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-32-05": {
    "status": "todo",
@@ -6708,13 +6753,19 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-41-07": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-42-02": {
    "status": "review",
@@ -6787,7 +6838,10 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-121-05": {
    "status": "todo",
@@ -6833,7 +6887,10 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-102-02": {
    "status": "review",
@@ -6889,49 +6946,73 @@
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-12-01": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-12-02": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-12-03": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-13-02": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-13-03": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-13-04": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-09",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-13-05": {
    "status": "done",
    "mastery": "done",
    "right_date": "2026-10-08",
-   "right_count": 1
+   "right_count": 1,
+   "mastered_date": "2026-10-09",
+   "check": 1,
+   "due": "2026-10-16"
   },
   "tk299-31-03": {
    "status": "todo",
