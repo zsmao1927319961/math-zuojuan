@@ -356,7 +356,11 @@ function toggleFav(id){
      复测到期再评「不会」：稳定度 s←s*0.35，明天再来
      复测到期再评「不熟练」：稳定度 s←s*1.9（1→2→4→8→15→30 天封顶），间隔越来越长
      错得多的题 s 被压得越低，回来得越勤——间隔随个人表现自适应
-     未到期再评不重置；评「掌握」或手动移出出池 */
+     未到期再评不重置；评「掌握」或手动移出出池
+     掌握后抽查：错过的题点「掌握」不直接出池——自掌握日起第 7/14/30 天各抽查一次（🔍 标记，到期待复测列表出现）
+     抽查时再点「掌握」= 通过并按锚点排下一查，三次通过彻底出池；评「不熟练/不会」= 回正常复测节奏
+     从没做错的题直接点「掌握」= 立即出池不抽查；未来排期里可「移出」取消剩余抽查 */
+var CHECK_GAPS = [7, 14, 30];                                          // 掌握后抽查锚点（天）
 function nextGap(kind, sPrev){
   if (kind === 'unknown') return 1;                                   // 明天再来
   var s = Math.max(1, Number(sPrev) || 1) * 1.9;
@@ -366,8 +370,22 @@ function liveOf(q){ return MARKED[q.id] || (qstate()[q.id] || {}); }
 function applyMark(q, kind){
   var s = qstate()[q.id] || {};
   if (kind === 'done') {
-    if (s.status === 'done') return;
-    qstate()[q.id] = { status:'done', mastery:'done', right_date: TODAY, right_count:(s.right_count||0)+1 };
+    if (s.status === 'done') {
+      /* 抽查期再点掌握 = 本次抽查通过；按掌握日锚点排下一次（7/14/30 各一次） */
+      if (s.check && s.check <= CHECK_GAPS.length) {
+        var nc = { status:'done', mastery:'done', right_date: TODAY, right_count:(s.right_count||0)+1,
+                   mastered_date: s.mastered_date };
+        if (s.check < CHECK_GAPS.length) { nc.check = s.check + 1; nc.due = addDays(s.mastered_date, CHECK_GAPS[s.check]); }
+        else nc.check = CHECK_GAPS.length + 1;                          /* 第 3 查通过，彻底出池 */
+        qstate()[q.id] = nc; MARKED[q.id] = nc; saveState();
+      }
+      return;
+    }
+    var nb = { status:'done', mastery:'done', right_date: TODAY, right_count:(s.right_count||0)+1 };
+    if (s.wrong_date || s.due) {                                      /* 错过的题：掌握后 7/14/30 天各抽查一次 */
+      nb.mastered_date = TODAY; nb.check = 1; nb.due = addDays(TODAY, CHECK_GAPS[0]);
+    }
+    qstate()[q.id] = nb;
   } else {
     var dueReached = s.due && s.due <= TODAY;
     var firstTime = !s.wrong_date;
@@ -415,7 +433,10 @@ function bucket(q){
 }
 function tagOf(q){
   var b = bucket(q), s = liveOf(q);
-  if (b === 'done') return '<span class="tag ok">已掌握</span>';
+  if (b === 'done') {
+    if (s.check && s.due) return '<span class="tag ok">已掌握 · 🔍' + (s.due <= TODAY ? '今日抽查' : '抽查 ' + s.due) + '</span>';
+    return '<span class="tag ok">已掌握</span>';
+  }
   if (b === 'unknown') return '<span class="tag bad">完全不会</span>';
   if (b === 'shaky') {
     if (s.due && s.due <= TODAY) return '<span class="tag bad">待复测 · ' + s.due + '</span>';
@@ -760,8 +781,14 @@ function card(q, idx){
       this.classList.add('on');
       var rs = el.querySelector('[data-role="reasons"]');
       rs.classList.toggle('show', b !== 'done' && b !== 'none');
-      var msgs = { done: '已标记掌握' + (liveOf(q).due ? '' : '，出池'), shaky: '已标记不熟练', unknown: '已加入错题复测' };
-      toast(msgs[kind]);
+      var lvNow = liveOf(q), msg;
+      if (kind === 'done') {
+        msg = (lvNow.check === 1) ? '已标记掌握 · 7/14/30 天后各抽查一次'
+            : (lvNow.check && lvNow.check <= CHECK_GAPS.length) ? '🔍 抽查通过 · 下次 ' + lvNow.due
+            : (lvNow.check) ? '🔍 第 3 次抽查通过 · 彻底出池'
+            : '已标记掌握，出池';
+      } else msg = { shaky: '已标记不熟练', unknown: '已加入错题复测' }[kind];
+      toast(msg);
       if (P_FILTER) renderPractice();   /* 筛选视图需剔除已不符的题；默认视图原地更新不跳屏 */
       else refreshPstats();
     };
@@ -783,16 +810,20 @@ function retestLists(){
   var dueList = [], future = [];
   QS.forEach(function(q){
     var s = liveOf(q);
-    if (s.status === 'done' || !s.wrong_date) return;
-    if (!s.due || s.out) return;
-    if (s.due <= TODAY) dueList.push(q); else future.push(q);
+    if (s.status === 'done') {
+      if (s.check && s.due && !s.out) (s.due <= TODAY ? dueList : future).push(q);   /* 掌握后抽查 */
+      return;
+    }
+    if (!s.wrong_date || !s.due || s.out) return;
+    (s.due <= TODAY ? dueList : future).push(q);
   });
+  var nCheckDue = dueList.filter(function(q){ var s = liveOf(q); return s.status === 'done' && s.check; }).length;
   dueList.sort(function(a, b){
     var sa = liveOf(a), sb = liveOf(b);
     return RETEST_SORT === 'due' ? sa.due.localeCompare(sb.due) : (sb.wrong_date || '').localeCompare(sa.wrong_date || '');
   });
   future.sort(function(a, b){ return liveOf(a).due.localeCompare(liveOf(b).due); });
-  return { dueList: dueList, future: future };
+  return { dueList: dueList, future: future, nCheckDue: nCheckDue };
 }
 function showRetest(){
   document.getElementById('view-dir').hidden = true;
@@ -802,7 +833,8 @@ function showRetest(){
   var r = retestLists();
   document.getElementById('restats').innerHTML =
     '<div class="stat bad">待复测 <b>' + r.dueList.length + '</b></div>' +
-    '<div class="stat">未来排期 <b>' + r.future.length + '</b></div>';
+    '<div class="stat">未来排期 <b>' + r.future.length + '</b></div>' +
+    (r.nCheckDue ? '<div class="stat">其中抽查 <b>' + r.nCheckDue + '</b></div>' : '');
   var rel = document.getElementById('relist'); rel.innerHTML = '';
   if (!r.dueList.length) rel.innerHTML = '<div class="empty">当前没有待复测题，到期的题会自动出现在这里</div>';
   r.dueList.forEach(function(q){
@@ -810,6 +842,7 @@ function showRetest(){
     d.className = 'due-item';
     var s = liveOf(q);
     d.innerHTML = '<span class="d">' + (s.due < TODAY ? '逾期 ' : '今日到期 ') + '</span>' +
+      (s.check ? '<span class="tag" style="background:#fff3df;color:#b8860b">🔍 抽查 ' + s.check + '/3</span> ' : '') +
       '<span>' + escHtml(q.label || q.id) + '</span>' +
       '<span class="tag">' + escHtml((q.chapter_name || '').slice(0, 14)) + '</span>' +
       '<button class="btn" style="margin-left:auto;padding:3px 10px;font-size:12px">去复测</button>';
@@ -829,15 +862,23 @@ function showRetest(){
     var d = document.createElement('div');
     d.className = 'due-item';
     var s = liveOf(q);
-    d.innerHTML = '<span class="d future">第 ' + ((s.round || 0) + 1) + ' 次 · ' + s.due + '</span>' +
+    d.innerHTML = '<span class="d future">' + (s.check ? '🔍 第 ' + s.check + ' 查 · ' + s.due : '第 ' + ((s.round || 0) + 1) + ' 次 · ' + s.due) + '</span>' +
       '<span>' + escHtml(q.label || q.id) + '</span>' +
       '<button class="btn" style="margin-left:auto;padding:3px 10px;font-size:12px">提前刷</button>' +
-      '<button class="btn" style="padding:3px 10px;font-size:12px">移出</button>';
+      '<button class="btn" style="padding:3px 10px;font-size:12px">' + (s.check ? '取消抽查' : '移出') + '</button>';
     d.querySelectorAll('button')[0].onclick = function(){
       CUR_TITLE = '提前刷 · ' + q.label; CUR_LIST = [q];
       showPractice();
     };
-    d.querySelectorAll('button')[1].onclick = function(){ exitRetest(q); showRetest(); };
+    d.querySelectorAll('button')[1].onclick = function(){
+      var st = liveOf(q);
+      if (st.status === 'done' && st.check) {                    /* 取消剩余抽查，彻底出池 */
+        st.check = CHECK_GAPS.length + 1; st.due = null;
+        qstate()[q.id] = st; MARKED[q.id] = st; saveState();
+        toast('已取消抽查 · 彻底出池');
+      } else exitRetest(q);
+      showRetest();
+    };
     pl.appendChild(d);
   });
 }
