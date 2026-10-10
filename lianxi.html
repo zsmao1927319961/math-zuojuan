@@ -227,13 +227,14 @@
         <button class="btn" id="btn-back3">← 目录</button>
         <div class="paper-name" style="font-size:15px">📝 智能组卷 · 299题</div>
       </div>
-      <div class="paper-meta">从《299题》317 题中按真卷命题结构抽题：单选 / 判断 / 填空 + 计算综合大题按章定点（模拟调制・基带・频带・最佳接收・信源编码・信道编码・综合），兼顾各校命题风格。</div>
+      <div class="paper-meta">从《299题》317 题中按真卷命题结构抽题：单选 / 判断 / 填空 + 计算综合大题按章定点（模拟调制・基带・频带・最佳接收・信源编码・信道编码・综合），兼顾各校命题风格。<b>做过的题不再进入新卷</b>；错题（不熟练/不会）专用「错题卷」收敛。</div>
       <div class="chiprow" id="pj-kind">
         <button class="chip on" data-k="full">整卷 · 约37题</button>
         <button class="chip" data-k="half">半卷 · 约20题</button>
         <button class="chip" data-k="quick">快练 · 10题</button>
         <button class="chip" data-k="mini">小题专项 · 20题</button>
         <button class="chip" data-k="cover">全覆盖轮转 · 防遗忘</button>
+        <button class="chip" data-k="wrong">❌ 错题卷 · 只抽错题</button>
       </div>
       <div class="paper-meta" id="pj-cover-hint" hidden>全覆盖轮转：48 个考点排成固定队列，每卷按顺序取下一批 12 个考点（跨章交错、题型齐全），3~4 卷正好完整一轮，一张不漏；配合顶部进度游标自动续接。</div>
       <div class="btnrow"><button class="btn" id="btn-make" style="background:#2f6bff;color:#fff;border-color:#2f6bff;font-weight:700">✨ 生成试卷</button></div>
@@ -940,7 +941,19 @@ function pjPick(cand, n, used, chapLimit){
 }
 function pjByType(tk, types){ return tk.filter(function(q){ return types.indexOf(q.type) >= 0; }); }
 function makePaper(kind){
-  var tk = QS.filter(function(q){ return q.source === 'tk299'; });
+  if (kind === 'wrong') {
+    /* 错题卷：只抽有问题（不熟练/不会/复测中）的题，跨章覆盖，题型归组排序 */
+    var wq = QS.filter(function(q){ return q.source === 'tk299' && (bucket(q) === 'shaky' || bucket(q) === 'unknown'); });
+    var wpick = pjPick(wq, 25, pjUsed(), 0);
+    var order = { '选择': 0, '判断': 1, '填空': 2, '计算': 3, '简答': 3 };
+    wpick.sort(function(a, b){
+      var oa = order[a.type] != null ? order[a.type] : 9, ob = order[b.type] != null ? order[b.type] : 9;
+      return oa - ob || pjChapKey(a.chapter) - pjChapKey(b.chapter) || (parseInt(a.no) || 0) - (parseInt(b.no) || 0);
+    });
+    return { qs: wpick, meta: wpick.length ? '错题 ' + wpick.length + ' 题' : '当前没有错题' };
+  }
+  /* 常规卷型：只从没做过的题里抽（做过的题不允许再出现） */
+  var tk = QS.filter(function(q){ return q.source === 'tk299' && bucket(q) === 'none'; });
   var used = pjUsed();
   var picked = [];
   if (kind === 'mini') {
@@ -1012,7 +1025,7 @@ function pjInterleave(list){
   return out;
 }
 function makeCover(){
-  var tk = QS.filter(function(q){ return q.source === 'tk299'; });
+  var tk = QS.filter(function(q){ return q.source === 'tk299' && bucket(q) === 'none'; });
   var groups = {};
   tk.forEach(function(q){ var ch = String(q.chapter || ''); if (ch) (groups[ch] = groups[ch] || []).push(q); });
   var keys = Object.keys(groups).sort(function(a, b){ return pjChapKey(a) - pjChapKey(b); });
@@ -1185,8 +1198,8 @@ function start(){
   document.getElementById('btn-make').onclick = function(){
     var out = makePaper(PJ_KIND);
     var qs = out.qs;
-    if (!qs.length) { toast('题库为空，刷不到题'); return; }
-    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : PJ_KIND === 'cover' ? '全覆盖' : PJ_KIND === 'mini' ? '小题专项' : '快练';
+    if (!qs.length) { toast(PJ_KIND === 'wrong' ? '当前没有错题，先去刷题吧' : '没做过的题不够组卷了，正确刷题或等错题回流'); return; }
+    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : PJ_KIND === 'cover' ? '全覆盖' : PJ_KIND === 'mini' ? '小题专项' : PJ_KIND === 'wrong' ? '错题卷' : '快练';
     var p = { id: Date.now(), title: '299题' + kindName + (out.meta ? ' · ' + out.meta : '') + ' · ' + TODAY + ' #' + (pjPapers().length + 1), date: TODAY, kind: PJ_KIND, qids: qs.map(function(q){ return q.id; }) };
     PJ_PAPERS = pjPapers();
     PJ_PAPERS.unshift(p);
