@@ -25449,12 +25449,13 @@
   "kp": "数字基带信号功率谱以及带宽",
   "kp_sub": "",
   "chapter_name": "第6章 数字基带传输系统 · 考点1 数字基带信号功率谱以及带宽",
-  "answer_text": "2、$\\frac{1}{2}$，$\\frac{1}{2}$，$13.5\\,\\text{dB}$",
+  "answer_text": "2、$\\frac{1}{\\tau}$，$\\frac{1}{\\tau}$，$13.5\\,\\text{dB}$",
   "question_text": "2、宽度为 $\\tau$ 毫秒的方波脉冲，其频域函数的主瓣宽度为____kHz，第一旁瓣宽度为____kHz，第一旁瓣峰值比主瓣峰值降低了____dB。\n（北京交通大学 2018 年 一、1）",
   "school": "北京交通大学",
   "year": "2018",
   "book_page": 220,
-  "video_p": 43
+  "video_p": 43,
+  "solution": "方波脉冲（宽度 $\\tau$ ms）频谱为 $G(f)=\\tau\\,\\mathrm{Sa}(\\pi f\\tau)$：第一零点在 $f=1/\\tau$（kHz），故主瓣宽度为 $1/\\tau$ kHz；第一旁瓣占据 $1/\\tau\\sim2/\\tau$，宽度也是 $1/\\tau$ kHz；第一旁瓣峰值 $|\\mathrm{Sa}|\\approx0.217$，$20\\lg 0.217\\approx-13.5$ dB，即比主瓣峰值降低约 13.5 dB。"
  },
  {
   "subject": "txyl",
