@@ -8709,7 +8709,7 @@
    "answer": {
     "reference_answer_md": "4、108kHz，120KHz"
    },
-   "explanation_md": "同上题参数（60~108 kHz，$B=48$ kHz，$m=2$）：带通采样不混叠区间为 $2f_H/m\\le f_s\\le2f_L/(m-1)$，代入得下限 $108$ kHz、上限 $2\\times60/(2-1)=120$ kHz。即 $108\\,\\mathrm{kHz}\\le f_s\\le120\\,\\mathrm{kHz}$。",
+   "explanation_md": "带通信号采样：$m$ 须为整数且 $2\\le m\\le\\lfloor f_H/B\\rfloor$，此时不混叠区间为 $2f_H/m\\le f_s\\le 2f_L/(m-1)$。本题 $f_L=60$ kHz、$f_H=108$ kHz、$B=f_H-f_L=48$ kHz，$\\lfloor f_H/B\\rfloor=\\lfloor 108/48\\rfloor=2$，取 $m=2$，代入得 $2f_H/m=108$ kHz $\\le f_s\\le 2f_L/(m-1)=120$ kHz，即 $108\\,\\mathrm{kHz}\\le f_s\\le 120\\,\\mathrm{kHz}$（与最小采样率 $f_{s,\\min}=2B(1+k/n)=2\\times48\\times(1+0.25/2)=108$ kHz 一致）。",
    "asset_refs": [],
    "legacy": {
     "type_cn": "填空",
@@ -9675,7 +9675,7 @@
    "serial_number": 1,
    "source": "河北工业大学 2014 二、6",
    "question_type": "subjective",
-   "stem_md": "1、PCM30/32 路基群复用系统，传信码的时隙是________。\n（河北工业大学 2014 二、6）",
+   "stem_md": "1、PCM30/32 路基群复用系统，传信令码的时隙是________。\n（河北工业大学 2014 二、6）",
    "options": [],
    "answer": {
     "reference_answer_md": "1、TS16"
