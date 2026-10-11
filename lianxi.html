@@ -127,17 +127,18 @@
   .pb-sub{font-size:12.5px;color:#555;margin-top:6px}
   .pb-note{font-size:11.5px;color:#888;margin-top:4px}
   .pb-part{font-size:16px;font-weight:800;border-left:5px solid #2f6bff;padding-left:10px;margin:18px 0 12px}
-  .pb-pagebreak{page-break-before:always}
-  .pb-newpage{break-before:page;page-break-before:always}
+  .pb-page{margin-bottom:24px}
   .pb-item{margin-bottom:20px}
   .pb-avoid{break-inside:avoid;page-break-inside:avoid}
-  .pb-no{font-weight:700;font-size:14.5px;margin-bottom:6px}
+  .pb-no{font-weight:700;font-size:15px;margin-bottom:6px}
   .pb-tag{display:inline-block;background:#eef1f6;border-radius:5px;padding:1px 7px;font-size:11px;color:#5a6472;margin-right:4px}
   .pb-ans{background:#e8f7f0;color:#1d9e6f;font-weight:700}
   .pb-sol{background:#eaf1ff;color:#2f6bff;font-weight:700}
   .pb-block{margin:8px 0 4px}
-  .pb-q{font-size:14.5px;line-height:1.9}
-  .pb-sec{font-size:13.5px;line-height:1.9}
+  .pb-q{font-size:16px;line-height:2}
+  .pb-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin:8px 0 2px}
+  .pb-opt{text-align:center;font-size:15.5px;line-height:1.9}
+  .pb-sec{font-size:14.5px;line-height:1.95}
   .pb-img{max-width:88%;display:block;margin:6px 0;border:1px solid #eee;border-radius:6px}
   .pb-lock{width:100%;border-collapse:collapse;margin:8px 0 2px}
   .pb-lock td{border:1.5px solid #9fb6e8;padding:6px 9px;font-size:12.5px;vertical-align:top}
@@ -147,6 +148,8 @@
     body > *:not(#print-area){display:none!important}
     #print-area{display:block!important}
     body{background:#fff!important}
+    .pb-page{break-after:page;page-break-after:always}
+    .pb-page:last-child{break-after:auto;page-break-after:auto}
     .pb-space{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .pb-lock td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     @page{size:A4;margin:14mm 13mm}
@@ -1059,12 +1062,31 @@ function makeCover(){
   return { qs: picked, meta: meta };
 }
 /* ---------- 打印视图：题目卷（留白）+ 解析册（书式版式） ---------- */
-function pjPrintOne(q, no, addBreak){
+/* 选择题选项从题干尾部拆出（A．x B．y C．z D．w → 网格两列居中） */
+function pbSplitOpts(t){
+  if (!t) return null;
+  var re = /[ＡA][.、．]/g, m, cand = -1;
+  while ((m = re.exec(t)) !== null) cand = m.index;
+  if (cand < 0) return null;
+  var tail = t.slice(cand);
+  if (!/[ＢB][.、．]/.test(tail) || cand < 8) return null;
+  var segs = tail.split(/[Ｂ-ＤB-D][.、．]/).map(function(s){ return s.trim(); });
+  if (segs.length < 2 || segs.length > 6) return null;
+  segs[0] = segs[0].replace(/^[ＡA][.、．]\s*/, '');
+  var letters = ['A','B','C','D','E','F'];
+  var opts = [];
+  for (var i = 0; i < segs.length; i++) opts.push({ letter: letters[i], text: segs[i] });
+  return { stem: t.slice(0, cand).replace(/\s+$/, ''), opts: opts };
+}
+function pjPrintOne(q, no){
   var lock = '<table class="pb-lock"><tr><td class="pb-k">锁定考点</td><td>' +
     escHtml(q.chapter_name || q.chapter || '') + (q.kp ? '<br>' + escHtml(q.kp) : '') + '</td></tr></table>';
   var img = (q.q_img_hd || q.question_img) ? '<img class="pb-img" src="data/' + (q.q_img_hd || q.question_img) + '">' : '';
+  var raw = (q.question_text || '').replace(/\n【图】/g, '');
+  var sp = (q.type === '选择') ? pbSplitOpts(raw) : null;
+  if (sp) raw = sp.stem;
   var qtext = document.createElement('div'); qtext.className = 'pb-q';
-  renderLatexMixed(qtext, (q.question_text || '').replace(/\n【图】/g, ''));
+  renderLatexMixed(qtext, raw);
   /* 书写留白: 大题按小问数自适应(每小问3行), 其余题型固定加量 */
   var space;
   if (q.type === '计算' || q.type === '简答') {
@@ -1072,35 +1094,39 @@ function pjPrintOne(q, no, addBreak){
     space = Math.min(560, Math.max(320, 180 + subs * 80));
   } else if (q.type === '填空') space = 120;
   else space = 72;
-  var html = '<div class="pb-item pb-avoid' + (addBreak ? ' pb-newpage' : '') + '"><div class="pb-no">' + no + '．' +
+  var html = '<div class="pb-item pb-avoid"><div class="pb-no">' + no + '．' +
     (q.book_page ? '<span class="pb-tag">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span> ' : '') +
     '<span class="pb-tag">' + escHtml(q.chapter || '') + '</span> <span class="pb-tag">' + escHtml(q.type || '') + '</span></div>';
-  html += '<div class="pb-qwrap"></div>' + ((q.q_img_hd || q.question_img) ? img : '') + lock;
+  html += '<div class="pb-qwrap"></div>' + (sp ? '<div class="pb-opts"></div>' : '') + ((q.q_img_hd || q.question_img) ? img : '') + lock;
   html += '<div class="pb-space" style="height:' + space + 'px"></div></div>';
   var div = document.createElement('div');
   div.innerHTML = html;
   var wrap = div.querySelector('.pb-qwrap');
   wrap.appendChild(qtext);
+  if (sp) {
+    var og = div.querySelector('.pb-opts');
+    sp.opts.forEach(function(o){
+      var cell = document.createElement('div'); cell.className = 'pb-opt';
+      var b = document.createElement('b'); b.textContent = o.letter + '．';
+      var s = document.createElement('span');
+      renderLatexMixed(s, o.text);
+      cell.appendChild(b); cell.appendChild(s);
+      og.appendChild(cell);
+    });
+  }
   return div.firstElementChild;
 }
-function pjPrintSol(q, no, addBreak){
-  var lock = '<table class="pb-lock"><tr><td class="pb-k">锁定考点</td><td>' +
-    escHtml(q.chapter_name || q.chapter || '') + (q.kp ? '<br>' + escHtml(q.kp) : '') + '</td></tr></table>';
-  var ans = document.createElement('div'); ans.className = 'pb-sec';
-  renderLatexMixed(ans, q.answer_text || '（见解析）');
-  var sol = document.createElement('div'); sol.className = 'pb-sec';
-  var solText = (q.solution || '').replace(/【图】/g, '');
-  renderLatexMixed(sol, solText);
-  var img = q.answer_img ? '<img class="pb-img" src="data/' + q.answer_img + '">' : '';
-  var div = document.createElement('div');
-  div.className = 'pb-item pb-avoid' + (addBreak ? ' pb-newpage' : '');
-  div.innerHTML = '<div class="pb-no">' + no + '．答案与解析（' + escHtml(q.chapter || '') + '）</div>' + lock +
-    '<div class="pb-block"><span class="pb-tag pb-ans">答案</span></div><div class="pb-secwrap a"></div>' +
-    '<div class="pb-block"><span class="pb-tag pb-sol">解析</span></div><div class="pb-secwrap s"></div>' + img;
-  div.querySelector('.pb-secwrap.a').appendChild(ans);
-  if (solText) div.querySelector('.pb-secwrap.s').appendChild(sol);
-  else div.querySelector('.pb-secwrap.s').remove();
-  return div;
+/* 一题一页：显式分页容器 .pb-page（浏览器打印按容器断页） */
+function pbPageWrap(){
+  var p = document.createElement('div');
+  p.className = 'pb-page';
+  return p;
+}
+function pbPartHead(name){
+  var h = document.createElement('div');
+  h.className = 'pb-part';
+  h.textContent = name;
+  return h;
 }
 function buildPrintArea(){
   var el = document.getElementById('print-area');
@@ -1109,19 +1135,32 @@ function buildPrintArea(){
   cover.className = 'pb-cover';
   cover.innerHTML = '<div class="pb-title">' + escHtml(CUR_TITLE) + '</div>' +
     '<div class="pb-sub">通信原理 · 《299题》 · 共 ' + CUR_LIST.length + ' 题 · ' + TODAY + '</div>' +
-    '<div class="pb-note">第一部分：题目（留白作答） · 第二部分：答案与解析 · GoodNotes/打印均可</div>';
-  el.appendChild(cover);
-  var h1 = document.createElement('div');
-  h1.className = 'pb-part';
-  h1.textContent = '第一部分 · 题目';
-  el.appendChild(h1);
-  /* 一题一页（判断题除外：判断题连排省纸） */
-  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintOne(q, i + 1, i > 0 && q.type !== '判断')); });
-  var h2 = document.createElement('div');
-  h2.className = 'pb-part pb-pagebreak';
-  h2.textContent = '第二部分 · 答案与解析';
-  el.appendChild(h2);
-  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintSol(q, i + 1, i > 0 && q.type !== '判断')); });
+    '<div class="pb-note">题目卷（留白作答）· 打印时目标选「另存为PDF」即为矢量清晰版</div>';
+  var cp = pbPageWrap();
+  cp.appendChild(cover);
+  el.appendChild(cp);
+  var i = 0;
+  while (i < CUR_LIST.length) {
+    if (CUR_LIST[i].type === '判断') {
+      var j = i;
+      while (j < CUR_LIST.length && j - i < 5 && CUR_LIST[j].type === '判断') j++;
+      (function(i, j){
+        var p = pbPageWrap();
+        if (i === 0) p.appendChild(pbPartHead('题目（留白作答）'));
+        for (var k = i; k < j; k++) p.appendChild(pjPrintOne(CUR_LIST[k], k + 1));
+        el.appendChild(p);
+      })(i, j);
+      i = j;
+    } else {
+      (function(i){
+        var p = pbPageWrap();
+        if (i === 0) p.appendChild(pbPartHead('题目（留白作答）'));
+        p.appendChild(pjPrintOne(CUR_LIST[i], i + 1));
+        el.appendChild(p);
+      })(i);
+      i++;
+    }
+  }
 }
 
 function renderZujuan(){
@@ -1212,7 +1251,7 @@ function start(){
   document.getElementById('btn-paper-pdf').onclick = function(){
     if (!CUR_LIST.length) { toast('当前卷子没有题'); return; }
     buildPrintArea();
-    toast('打印视图已就绪：目标选「另存为PDF」，iPad 在打印预览里捏合后存文件/GoodNotes');
+    toast('打印视图已就绪：目标选「另存为PDF」即为矢量清晰版');
     setTimeout(function(){ window.print(); }, 350);
   };
   document.getElementById('pjlist').onclick = function(e){
