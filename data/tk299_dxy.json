@@ -7108,14 +7108,14 @@
    "stem_md": "1、二进制数字调制 2ASK、2FSK、2PSK 系统，若采用相干解调接收，为保证具有相同的误码率，三系统信噪比之间的关系应满足（ ）。与二进制数字调制相比，多进制（$M$ 进制）数字调制系统的可靠性（ ），有效性提高（ ）倍。\n（北京交通大学 2016 一、1）",
    "options": [],
    "answer": {
-    "reference_answer_md": "1、4：2：1 降低： $\\log_2^M$\n解析：2ASK、2FSK、2PSK 相干解调误码率公式为\n$$P_{eASK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{eFSK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{ePSK}=\\frac{1}{2}erfc(\\sqrt{r})；$$"
+    "reference_answer_md": "1、4：2：1 降低： $\\log_2^M$\n解析：2ASK、2FSK、2PSK 相干解调误码率公式为\n$$P_{eASK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{\\frac{r}{4}},\\quad P_{eFSK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{\\frac{r}{2}},\\quad P_{ePSK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{r}；$$"
    },
-   "explanation_md": "1、4：2：1 降低： $\\log_2^M$\n解析：2ASK、2FSK、2PSK 相干解调误码率公式为\n$$P_{eASK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{eFSK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{ePSK}=\\frac{1}{2}erfc(\\sqrt{r})；$$",
+   "explanation_md": "1、4：2：1 降低： $\\log_2^M$\n解析：2ASK、2FSK、2PSK 相干解调误码率公式为\n$$P_{eASK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{\\frac{r}{4}},\\quad P_{eFSK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{\\frac{r}{2}},\\quad P_{ePSK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{r}；$$",
    "asset_refs": [],
    "legacy": {
     "type_cn": "填空",
     "kp": "二进制频带信号的可靠性和有效性比较",
-    "answer_text": "1、4：2：1 降低： $\\log_2^M$\n解析：2ASK、2FSK、2PSK 相干解调误码率公式为\n$$P_{eASK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{eFSK}=\\frac{1}{2}erfc(\\frac{\\sqrt{r}}{2}),P_{ePSK}=\\frac{1}{2}erfc(\\sqrt{r})；$$",
+    "answer_text": "1、4：2：1 降低： $\\log_2^M$\n解析：2ASK、2FSK、2PSK 相干解调误码率公式为\n$$P_{eASK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{\\frac{r}{4}},\\quad P_{eFSK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{\\frac{r}{2}},\\quad P_{ePSK}=\\frac{1}{2}\\mathrm{erfc}\\sqrt{r}；$$",
     "question_img": "",
     "answer_img": ""
    },
