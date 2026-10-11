@@ -3,7 +3,7 @@ const DMACROS = { '\frac': '\dfrac' };
    纯静态版：无 Python 后端，全部逻辑在浏览器运行
    - questions.json / progress.json 通过 fetch 加载
    - 做题进度、笔记存 localStorage（首次自动导入现有 progress.json）
-   - 出卷：高数5 + 线代5，排除已掌握，7天/15天到期优先
+   - 出卷：高数5 + 线代5，排除已掌握；旧卷跨天复用时剔除已掌握并自动补新
    ============================================================ */
 let QUESTIONS = [];
 let CUOTI = [];
@@ -322,11 +322,26 @@ function pickAuto() {
 }
 
 function ensureToday() {
-  // 不因跨天自动换卷：只要已有今日卷就固定复用（除非用户点「一键拼卷」手动换）。
-  // 这样打开网站始终显示用户上次/固定那套，避免"每天自动换题"。
+  // 不因跨天自动换卷：已有今日卷固定复用（除非点「一键拼卷」手动换）。
+  // 但已掌握(done)的题不再出现在拼卷里：复用非当天的旧卷时，先剔除已掌握的题，
+  // 再按出卷规则补足新题（pickAuto 本身排除已掌握/最近做过），旧卷不会攒一堆做过的题。
   if (STATE.today_paper && STATE.today_paper.ids && STATE.today_paper.ids.length) {
-    const cur = new Set(STATE.today_paper.ids);
-    return STATE.today_paper.ids.filter(id => QUESTIONS.some(q => q.id === id));
+    const all = STATE.today_paper.ids.filter(id => QUESTIONS.some(q => q.id === id));
+    const today = todayISO();
+    if (STATE.today_paper.date === today) return all; // 当天卷原样保留（今天刚做对的带"已掌握"标记属当天记录）
+    const kept = all.filter(id => !isDone(id));
+    const dropped = all.length - kept.length;
+    if (!dropped) { STATE.today_paper.date = today; saveState(); return all; }
+    const have = new Set(kept);
+    const fresh = pickAuto().map(q => q.id).filter(id => !have.has(id));
+    const ids = kept.concat(fresh.slice(0, dropped));
+    STATE.today_paper = { date: today, ids };
+    STATE.paper_history = STATE.paper_history || [];
+    STATE.paper_history.push({ date: today, ids, topup: true, dropped_done: dropped });
+    STATE.paper_history = STATE.paper_history.slice(-60);
+    saveState();
+    toast(`已移除 ${dropped} 道已掌握的题，补入新题`);
+    return ids;
   }
   const today = todayISO();
   const qs = pickAuto();
@@ -661,6 +676,33 @@ async function refreshStats() {
 }
 
 /* ---------- 导出 / 导入进度备份 ---------- */
+/* 导入 = 合并（不再整体覆盖）：题目状态/笔记逐题"来件优先"，卷子流水并集去重——
+   平板↔电脑互导都不丢本机新进度；同名题以来件（导入文件）为准。 */
+function mergeState(base, inc) {
+  const out = Object.assign({}, base);
+  out.question_state = Object.assign({}, base.question_state || {}, inc.question_state || {});
+  out.notes = Object.assign({}, base.notes || {}, inc.notes || {});
+  const uniqById = arr => {
+    const seen = new Set(), r = [];
+    for (const p of arr) { const id = p && p.id; if (id) { if (seen.has(id)) continue; seen.add(id); } r.push(p); }
+    return r;
+  };
+  out.papers = uniqById([...(inc.papers || []), ...(base.papers || [])]);
+  const seenH = new Set(), hist = [];
+  for (const h of [...(inc.paper_history || []), ...(base.paper_history || [])]) {
+    const sig = ((h && h.date) || '') + '|' + JSON.stringify((h && h.ids) || []);
+    if (seenH.has(sig)) continue;
+    seenH.add(sig); hist.push(h);
+  }
+  out.paper_history = hist.slice(-60);
+  out.cuoti_manual = [...new Set([...(inc.cuoti_manual || []), ...(base.cuoti_manual || [])])];
+  out.favs = [...new Set([...(inc.favs || []), ...(base.favs || [])])];
+  out.today_paper = (inc.today_paper && Array.isArray(inc.today_paper.ids) && inc.today_paper.ids.length)
+    ? inc.today_paper : base.today_paper;
+  if (inc.weekly_summary_monday) out.weekly_summary_monday = inc.weekly_summary_monday;
+  out.version = Math.max(base.version || 0, inc.version || 0);
+  return out;
+}
 function bindBackup() {
   const btnExp = $('#btn-export'), btnImp = $('#btn-import'), file = $('#import-file');
   if (!btnExp) return;
@@ -681,11 +723,23 @@ function bindBackup() {
     rd.onload = () => {
       try {
         const obj = JSON.parse(rd.result);
-        if (!obj || typeof obj !== 'object') throw new Error('格式不对');
-        STATE = obj;
+        if (!obj || typeof obj !== 'object' || typeof obj.question_state !== 'object')
+          throw new Error('格式不对（缺少 question_state）');
+        // 合并前把本机当前进度自动存一份，合并错了可再导回
+        try {
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(new Blob([JSON.stringify(STATE, null, 1)], { type: 'application/json' }));
+          a.download = `数学组卷备份_导入前_${todayISO()}.json`;
+          a.click();
+          URL.revokeObjectURL(a.href);
+        } catch (e) { /* 备份失败不阻塞导入 */ }
+        const incN = Object.keys(obj.question_state || {}).length;
+        const baseN = Object.keys((STATE && STATE.question_state) || {}).length;
+        STATE = mergeState(STATE || {}, obj);
+        prunePapers();
         saveState();
         refreshCuoti(); refreshStats(); refreshToday(); renderBank();
-        toast('导入成功');
+        toast(`已合并导入：来件 ${incN} 题 / 本机 ${baseN} 题，同名题以来件为准，本机新进度保留`);
       } catch (e) { toast('导入失败：' + e.message); }
     };
     rd.readAsText(f);
