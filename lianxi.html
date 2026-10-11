@@ -128,6 +128,7 @@
   .pb-note{font-size:11.5px;color:#888;margin-top:4px}
   .pb-part{font-size:16px;font-weight:800;border-left:5px solid #2f6bff;padding-left:10px;margin:18px 0 12px}
   .pb-pagebreak{page-break-before:always}
+  .pb-newpage{break-before:page;page-break-before:always}
   .pb-item{margin-bottom:20px}
   .pb-avoid{break-inside:avoid;page-break-inside:avoid}
   .pb-no{font-weight:700;font-size:14.5px;margin-bottom:6px}
@@ -1058,7 +1059,7 @@ function makeCover(){
   return { qs: picked, meta: meta };
 }
 /* ---------- 打印视图：题目卷（留白）+ 解析册（书式版式） ---------- */
-function pjPrintOne(q, no){
+function pjPrintOne(q, no, addBreak){
   var lock = '<table class="pb-lock"><tr><td class="pb-k">锁定考点</td><td>' +
     escHtml(q.chapter_name || q.chapter || '') + (q.kp ? '<br>' + escHtml(q.kp) : '') + '</td></tr></table>';
   var img = (q.q_img_hd || q.question_img) ? '<img class="pb-img" src="data/' + (q.q_img_hd || q.question_img) + '">' : '';
@@ -1071,7 +1072,7 @@ function pjPrintOne(q, no){
     space = Math.min(560, Math.max(320, 180 + subs * 80));
   } else if (q.type === '填空') space = 120;
   else space = 72;
-  var html = '<div class="pb-item pb-avoid"><div class="pb-no">' + no + '．' +
+  var html = '<div class="pb-item pb-avoid' + (addBreak ? ' pb-newpage' : '') + '"><div class="pb-no">' + no + '．' +
     (q.book_page ? '<span class="pb-tag">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span> ' : '') +
     '<span class="pb-tag">' + escHtml(q.chapter || '') + '</span> <span class="pb-tag">' + escHtml(q.type || '') + '</span></div>';
   html += '<div class="pb-qwrap"></div>' + ((q.q_img_hd || q.question_img) ? img : '') + lock;
@@ -1082,7 +1083,7 @@ function pjPrintOne(q, no){
   wrap.appendChild(qtext);
   return div.firstElementChild;
 }
-function pjPrintSol(q, no){
+function pjPrintSol(q, no, addBreak){
   var lock = '<table class="pb-lock"><tr><td class="pb-k">锁定考点</td><td>' +
     escHtml(q.chapter_name || q.chapter || '') + (q.kp ? '<br>' + escHtml(q.kp) : '') + '</td></tr></table>';
   var ans = document.createElement('div'); ans.className = 'pb-sec';
@@ -1092,7 +1093,7 @@ function pjPrintSol(q, no){
   renderLatexMixed(sol, solText);
   var img = q.answer_img ? '<img class="pb-img" src="data/' + q.answer_img + '">' : '';
   var div = document.createElement('div');
-  div.className = 'pb-item pb-avoid';
+  div.className = 'pb-item pb-avoid' + (addBreak ? ' pb-newpage' : '');
   div.innerHTML = '<div class="pb-no">' + no + '．答案与解析（' + escHtml(q.chapter || '') + '）</div>' + lock +
     '<div class="pb-block"><span class="pb-tag pb-ans">答案</span></div><div class="pb-secwrap a"></div>' +
     '<div class="pb-block"><span class="pb-tag pb-sol">解析</span></div><div class="pb-secwrap s"></div>' + img;
@@ -1114,12 +1115,13 @@ function buildPrintArea(){
   h1.className = 'pb-part';
   h1.textContent = '第一部分 · 题目';
   el.appendChild(h1);
-  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintOne(q, i + 1)); });
+  /* 一题一页（判断题除外：判断题连排省纸） */
+  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintOne(q, i + 1, i > 0 && q.type !== '判断')); });
   var h2 = document.createElement('div');
   h2.className = 'pb-part pb-pagebreak';
   h2.textContent = '第二部分 · 答案与解析';
   el.appendChild(h2);
-  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintSol(q, i + 1)); });
+  CUR_LIST.forEach(function(q, i){ el.appendChild(pjPrintSol(q, i + 1, i > 0 && q.type !== '判断')); });
 }
 
 function renderZujuan(){

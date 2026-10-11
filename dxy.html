@@ -109,6 +109,7 @@ body.dark .expbox{background:#2a2718;color:#dfe4ee}
 .pb-part{font-size:16px;font-weight:800;border-left:5px solid #4f74d8;padding-left:10px;margin:18px 0 12px}
 .pb-group{font-size:14px;font-weight:800;color:#2b3a67;margin:14px 0 10px;border-bottom:1.5px solid #dfe6f2;padding-bottom:4px}
 .pb-pagebreak{page-break-before:always}
+.pb-newpage{break-before:page;page-break-before:always}
 .pb-item{margin-bottom:20px}
 .pb-avoid{break-inside:avoid;page-break-inside:avoid}
 .pb-no{font-weight:700;font-size:14.5px;margin-bottom:6px}
@@ -576,13 +577,13 @@ function pbImgs(q, pos){
   return (q.asset_refs||[]).filter(r=>r.type==='image'&&r.position===pos)
     .map(r=>'<img class="pb-img" src="data/'+r.ref+'">').join('');
 }
-function pbPrintOne(q, no){
+function pbPrintOne(q, no, addBreak){
   const chap=chapterOf(q);
   const kp=(q.legacy&&q.legacy.kp)||'';
   const cn=(q.legacy&&q.legacy.type_cn)||'';
   const isC=q.question_type==='single_choice'&&q.options&&q.options.length;
   const el=document.createElement('div');
-  el.className='pb-item pb-avoid';
+  el.className='pb-item pb-avoid'+(addBreak?' pb-newpage':'');
   el.innerHTML='<div class="pb-no">'+no+'．'
     +(q.book_page?'<span class="pb-tag">📖 书p'+esc(q.book_page)+'</span> ':'')
     +'<span class="pb-tag">'+esc(chap)+'</span>'
@@ -607,11 +608,11 @@ function pbPrintOne(q, no){
   if(sp) el.insertAdjacentHTML('beforeend','<div class="pb-space" style="height:'+sp+'px"></div>');
   return el;
 }
-function pbPrintSol(q, no){
+function pbPrintSol(q, no, addBreak){
   const chap=chapterOf(q);
   const isC=q.question_type==='single_choice'&&q.options&&q.options.length;
   const el=document.createElement('div');
-  el.className='pb-item pb-avoid';
+  el.className='pb-item pb-avoid'+(addBreak?' pb-newpage':'');
   el.innerHTML='<div class="pb-no">'+no+'．答案与解析 <span class="pb-tag">'+esc(chap)+'</span></div>'
     +'<div class="pb-block"><span class="pb-tag pb-ans">'+(isC?'答案':'参考答案')+'</span></div>';
   const ans=document.createElement('div'); ans.className='pb-sec';
@@ -652,26 +653,30 @@ function printPaper(){
   h1.textContent='第一部分 · 题目（留白作答）';
   el.appendChild(h1);
   let no=0;
-  for(const g of p.groups){
-    const gh=document.createElement('div'); gh.className='pb-group'; gh.textContent=g.label;
+  p.groups.forEach((g,gi)=>{
+    const gh=document.createElement('div'); gh.className='pb-group'+(gi?' pb-newpage':''); gh.textContent=g.label;
     el.appendChild(gh);
+    let qi=0;
     for(const id of g.ids){
       const q=DB.questions.find(x=>x.question_id===id); if(!q) continue;
-      no++; el.appendChild(pbPrintOne(q,no));
+      const cn=(q.legacy&&q.legacy.type_cn)||'';
+      no++; el.appendChild(pbPrintOne(q,no, qi>0 && cn!=='判断')); qi++;
     }
-  }
+  });
   const h2=document.createElement('div'); h2.className='pb-part pb-pagebreak';
   h2.textContent='第二部分 · 答案与解析';
   el.appendChild(h2);
   no=0;
-  for(const g of p.groups){
-    const gh=document.createElement('div'); gh.className='pb-group'; gh.textContent=g.label;
+  p.groups.forEach((g,gi)=>{
+    const gh=document.createElement('div'); gh.className='pb-group'+(gi?' pb-newpage':''); gh.textContent=g.label;
     el.appendChild(gh);
+    let qi=0;
     for(const id of g.ids){
       const q=DB.questions.find(x=>x.question_id===id); if(!q) continue;
-      no++; el.appendChild(pbPrintSol(q,no));
+      const cn=(q.legacy&&q.legacy.type_cn)||'';
+      no++; el.appendChild(pbPrintSol(q,no, qi>0 && cn!=='判断')); qi++;
     }
-  }
+  });
   dxyToast('打印视图已就绪：目标选「另存为PDF」，iPad 在打印预览里捏合后存文件/GoodNotes');
   setTimeout(()=>window.print(), 350);
 }
