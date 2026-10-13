@@ -688,6 +688,7 @@ function card(q, idx){
     (q.book_page ? '<span class="tag" style="background:#eef3ff;color:#4a6cf7">📖 ' + (q.source === 'qhzt' ? '讲义p' : '书p') + q.book_page + '</span>' : '') +
     (q.video_p ? '<button class="tag" style="background:#fff0f0;color:#e0556a;cursor:pointer;border:1px solid #ffd6d6" data-role="video" title="B站视频讲解">📺 视频解析</button>' : '') +
     '<span class="tag">' + escHtml(q.source === 'tk299' ? (q.chapter || '') : (q.chapter_name || q.chapter)) + '</span>' +
+    (q.source === 'tk299' && q.kp ? '<span class="tag" style="background:#eef3ff;color:#4a6cf7">' + escHtml(q.kp) + '</span>' : '') +
     (q.type ? '<span class="tag">' + escHtml(q.type) + '</span>' : '') +
     (q.kp_sub && q.source !== 'qhzt' ? '<span class="tag">' + escHtml(q.kp_sub) + '</span>' : '') +
     '<span data-role="st">' + tagOf(q) + '</span>' +
@@ -962,20 +963,20 @@ function makePaper(kind){
   var picked = [];
   if (kind === 'mini') {
     /* 小题专项：纯客观题（选择+判断+填空，不含计算/简答），池=选择98/判断12/填空12 */
-    picked = pjPick(pjByType(tk, ['选择']), 14, used, 3)
-      .concat(pjPick(pjByType(tk, ['判断']), 3, used, 0))
-      .concat(pjPick(pjByType(tk, ['填空']), 3, used, 0));
+    picked = pjPick(pjByType(tk, ['选择']), 14, used, 3).sort(pjPaperOrder)
+      .concat(pjPick(pjByType(tk, ['判断']), 3, used, 0).sort(pjPaperOrder))
+      .concat(pjPick(pjByType(tk, ['填空']), 3, used, 0).sort(pjPaperOrder));
     return { qs: picked, meta: '纯客观题' };
   }
   if (kind === 'quick') {
-    picked = pjPick(pjByType(tk, ['选择']), 4, used, 2)
-      .concat(pjPick(pjByType(tk, ['填空']), 2, used, 0))
-      .concat(pjPick(pjByType(tk, ['计算', '简答']), 4, used, 1));
+    picked = pjPick(pjByType(tk, ['选择']), 4, used, 2).sort(pjPaperOrder)
+      .concat(pjPick(pjByType(tk, ['填空']), 2, used, 0).sort(pjPaperOrder))
+      .concat(pjPick(pjByType(tk, ['计算', '简答']), 4, used, 1).sort(pjPaperOrder));
   } else {
     var cap = kind === 'half' ? { xz: 8, pd: 3, tk: 5, js: 4 } : { xz: 15, pd: 5, tk: 10, js: 7 };
-    picked = pjPick(pjByType(tk, ['选择']), cap.xz, used, 3)
-      .concat(pjPick(pjByType(tk, ['判断']), cap.pd, used, 0))
-      .concat(pjPick(pjByType(tk, ['填空']), cap.tk, used, 0));
+    picked = pjPick(pjByType(tk, ['选择']), cap.xz, used, 3).sort(pjPaperOrder)
+      .concat(pjPick(pjByType(tk, ['判断']), cap.pd, used, 0).sort(pjPaperOrder))
+      .concat(pjPick(pjByType(tk, ['填空']), cap.tk, used, 0).sort(pjPaperOrder));
     /* 计算大题按章定点：模拟调制/基带/频带/最佳接收/信源编码/信道编码 */
     var slots = kind === 'half'
       ? [/^第5章/, /^第6章/, /^第7章/, /^第8章/]
@@ -993,10 +994,12 @@ function makePaper(kind){
     jsq = jsq.filter(Boolean);
     var need = cap.js - jsq.length;
     if (need > 0) jsq = jsq.concat(pjPick(pjByType(tk, ['计算', '简答']).filter(function(q){ return jsq.indexOf(q) < 0; }), need, used, 1));
+    jsq.sort(pjPaperOrder);
     picked = picked.concat(jsq);
   }
   if (kind === 'cover') {
     var cv = makeCover();
+    cv.qs.sort(pjPaperOrder);   /* 全覆盖轮转也按考点从前往后（原为跨章交错） */
     return { qs: cv.qs, meta: cv.meta };
   }
   return { qs: picked, meta: '' };
@@ -1016,6 +1019,12 @@ function pjCursor(){
 }
 function pjSetCursor(v){ try { localStorage.setItem('lianxi_pj_cursor', String(v)); } catch (e) {} }
 function pjChapKey(c){ var m = String(c).match(/第(\d+)章考点(\d+)/); return m ? (+m[1]) * 100 + (+m[2]) : 9999; }
+function pjPaperOrder(a, b){
+  /* 卷面顺序：章+考点 从前往后，同考点按题号 */
+  var d = pjChapKey(a.chapter) - pjChapKey(b.chapter);
+  if (d) return d;
+  return (parseInt(a.no) || 0) - (parseInt(b.no) || 0);
+}
 function pjInterleave(list){
   /* 跨章交错：按章分桶轮转取，相邻尽量不同章 */
   var buckets = {};
