@@ -121,8 +121,9 @@ button{font-family:inherit}
 
 #toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%);background:#333;color:#fff;
   font-size:13px;border-radius:10px;padding:9px 16px;z-index:99}
-#mk-modal{position:fixed;inset:0;background:rgba(20,16,12,.55);z-index:50;display:flex;
+#mk-modal{position:fixed;inset:0;background:rgba(20,16,12,.55);z-index:50;display:none;
   align-items:center;justify-content:center;padding:18px}
+#mk-modal.show{display:flex}
 #mk-modal img{max-width:100%;max-height:92vh;border-radius:12px;background:#fff}
 
 @media (max-width:860px){
@@ -373,7 +374,7 @@ function bindErrs(p){
       if(act==='tog'){ this.closest('.err').classList.toggle('open'); return; }
       if(act==='page'){
         var m=$('mk-modal'); m.innerHTML='<img src="data/'+this.getAttribute('data-img')+'">';
-        m.hidden=false; return;
+        m.classList.add('show'); return;
       }
       var box=this.closest('.err');
       var no=box.id.replace('err-'+p.key+'-','');
@@ -403,7 +404,7 @@ function bindErrs(p){
   }
 }
 
-$('mk-modal').onclick=function(){ this.hidden=true; };
+$('mk-modal').onclick=function(){ this.classList.remove('show'); };
 $('burger').onclick=function(){ $('mk-side').classList.toggle('open'); };
 
 /* ---------- 启动 ---------- */
