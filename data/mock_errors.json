@@ -1,5 +1,5 @@
 {
- "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。",
+ "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。 | 2026-10-15 加选填专项31套目录（余炳森5/李林4/张宇4/超越10/张宇25年8），每套=选择1~10+填空11~16，只录错题；卷一已做待录。",
  "exams": [
   {
    "paper": {
@@ -484,6 +484,260 @@
      "subject": "线代",
      "chapter": "第八章 矩阵",
      "kp": "矩阵方程与求逆"
+    }
+   ]
+  }
+ ],
+ "series": [
+  {
+   "id": "yb24",
+   "name": "24 余炳森五套卷",
+   "kind": "选填专项",
+   "vols": [
+    {
+     "vol": 1,
+     "name": "卷一",
+     "pdf_page": 2,
+     "done": true,
+     "errors": []
+    },
+    {
+     "vol": 2,
+     "name": "卷二",
+     "pdf_page": 5,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 3,
+     "name": "卷三",
+     "pdf_page": 8,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 4,
+     "name": "卷四",
+     "pdf_page": 11,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 5,
+     "name": "卷五",
+     "pdf_page": 14,
+     "done": false,
+     "errors": []
+    }
+   ]
+  },
+  {
+   "id": "ll24",
+   "name": "24 李林四套卷",
+   "kind": "选填专项",
+   "vols": [
+    {
+     "vol": 1,
+     "name": "卷一",
+     "pdf_page": 17,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 2,
+     "name": "卷二",
+     "pdf_page": 20,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 3,
+     "name": "卷三",
+     "pdf_page": 23,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 4,
+     "name": "卷四",
+     "pdf_page": 26,
+     "done": false,
+     "errors": []
+    }
+   ]
+  },
+  {
+   "id": "zy24",
+   "name": "24 张宇四套卷",
+   "kind": "选填专项",
+   "vols": [
+    {
+     "vol": 1,
+     "name": "卷一",
+     "pdf_page": 29,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 2,
+     "name": "卷二",
+     "pdf_page": 32,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 3,
+     "name": "卷三",
+     "pdf_page": 35,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 4,
+     "name": "卷四",
+     "pdf_page": 38,
+     "done": false,
+     "errors": []
+    }
+   ]
+  },
+  {
+   "id": "cy24",
+   "name": "24 超越十套卷",
+   "kind": "选填专项",
+   "vols": [
+    {
+     "vol": 1,
+     "name": "卷一",
+     "pdf_page": 41,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 2,
+     "name": "卷二",
+     "pdf_page": 44,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 3,
+     "name": "卷三",
+     "pdf_page": 47,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 4,
+     "name": "卷四",
+     "pdf_page": 50,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 5,
+     "name": "卷五",
+     "pdf_page": 53,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 6,
+     "name": "卷六",
+     "pdf_page": 56,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 7,
+     "name": "卷七",
+     "pdf_page": 59,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 8,
+     "name": "卷八",
+     "pdf_page": 62,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 9,
+     "name": "卷九",
+     "pdf_page": 65,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 10,
+     "name": "卷十",
+     "pdf_page": 68,
+     "done": false,
+     "errors": []
+    }
+   ]
+  },
+  {
+   "id": "zy25",
+   "name": "25 张宇八套卷",
+   "kind": "选填专项",
+   "vols": [
+    {
+     "vol": 1,
+     "name": "卷一",
+     "pdf_page": 71,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 2,
+     "name": "卷二",
+     "pdf_page": 74,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 3,
+     "name": "卷三",
+     "pdf_page": 77,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 4,
+     "name": "卷四",
+     "pdf_page": 80,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 5,
+     "name": "卷五",
+     "pdf_page": 83,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 6,
+     "name": "卷六",
+     "pdf_page": 86,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 7,
+     "name": "卷七",
+     "pdf_page": 89,
+     "done": false,
+     "errors": []
+    },
+    {
+     "vol": 8,
+     "name": "卷八",
+     "pdf_page": 92,
+     "done": false,
+     "errors": []
     }
    ]
   }

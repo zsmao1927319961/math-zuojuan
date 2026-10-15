@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>模拟卷错题本 · 选填专项</title>
+<meta name="theme-color" content="#ff6a00">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
+<style>
+:root{
+  --org:#ff6a00; --org2:#ff8f3c; --orgbg:#fff3e8; --orgline:#ffd9b8;
+  --bg:#faf7f3; --card:#ffffff; --ink:#2c2c2e; --sub:#8a8f98; --line:#f0e9e2;
+  --ok:#1d9e6f; --okbg:#e8f7f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;}
+a{color:inherit}
+button{font-family:inherit}
+
+/* ---------- 顶栏 ---------- */
+.mk-top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:12px;padding:12px 18px}
+.mk-logo{width:38px;height:38px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,var(--org),#ff9a4d);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:19px}
+.mk-tt{font-size:17px;font-weight:800}
+.mk-sub{font-size:12px;color:var(--sub);margin-top:2px}
+.mk-stat{margin-left:auto;font-size:12px;color:var(--sub);text-align:right;line-height:1.5}
+.mk-stat b{color:var(--org);font-size:15px}
+.mk-back{flex:none;text-decoration:none;font-size:13px;color:#9a6a3f;background:var(--orgbg);
+  border:1px solid var(--orgline);padding:6px 10px;border-radius:9px}
+.mk-burger{display:none;flex:none;border:1px solid var(--line);background:#fff;border-radius:9px;
+  padding:7px 10px;font-size:15px;cursor:pointer}
+
+/* ---------- 布局 ---------- */
+.mk-body{display:flex;gap:16px;max-width:1080px;margin:16px auto;padding:0 14px;align-items:flex-start}
+.mk-side{width:236px;flex:none;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:12px;position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto}
+.mk-main{flex:1;min-width:0}
+
+/* ---------- 侧栏 ---------- */
+.side-cap{display:flex;align-items:center;gap:8px;margin:4px 4px 10px}
+.side-cap .pill{font-size:12px;font-weight:700;color:var(--org);background:var(--orgbg);
+  border:1px solid var(--orgline);border-radius:999px;padding:3px 10px}
+.side-cap .n{margin-left:auto;font-size:11px;color:#c2b8ac}
+.grp{margin-bottom:6px}
+.grp-h{display:flex;align-items:center;gap:6px;padding:8px 6px 4px;cursor:pointer;
+  font-size:13px;font-weight:700;color:#5c554d;user-select:none}
+.grp-h .caret{font-size:10px;color:#c2b8ac;transition:transform .15s}
+.grp.open .caret{transform:rotate(90deg)}
+.vol{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;cursor:pointer;
+  font-size:13px;color:#4b463f}
+.vol:hover{background:#fdf1e6}
+.vol.on{background:var(--orgbg);color:var(--org);font-weight:700}
+.vol .vn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vol .vb{flex:none;font-size:11px;border-radius:999px;padding:2px 8px;background:#f4efe9;color:#a09281}
+.vol .vb.has{background:var(--org);color:#fff;font-weight:700}
+.vol .vb.done{background:var(--okbg);color:var(--ok)}
+
+/* ---------- 卷头 ---------- */
+.paper-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:14px}
+.ph-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ph-title{font-size:17px;font-weight:800}
+.ph-badge{font-size:12px;font-weight:700;color:#fff;background:var(--org);border-radius:999px;padding:3px 11px}
+.ph-badge.zero{background:#e9e2d9;color:#9a8f80}
+.ph-badge.done{background:var(--okbg);color:var(--ok)}
+.ph-meta{font-size:12px;color:var(--sub);margin-top:7px;line-height:1.7}
+.ph-actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.ph-actions details{font-size:12.5px;background:#fbf7f2;border:1px solid var(--line);border-radius:10px;padding:7px 11px;color:#7a6f63}
+.ph-actions summary{cursor:pointer;font-weight:600}
+.ph-actions details pre{white-space:pre-wrap;margin-top:8px;font-family:inherit;line-height:1.9;color:#4b463f}
+
+/* ---------- 题型分组与错题行 ---------- */
+.sec-bar{display:flex;align-items:center;gap:9px;margin:16px 2px 9px}
+.sec-bar .bar{width:4px;height:16px;border-radius:3px;background:var(--org)}
+.sec-bar .t{font-size:14px;font-weight:800}
+.sec-bar .c{font-size:12px;color:var(--sub)}
+.errlist{display:flex;flex-direction:column;gap:9px}
+.err{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.err-h{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;user-select:none}
+.no-badge{flex:none;min-width:34px;text-align:center;font-size:13px;font-weight:800;color:var(--org);
+  background:var(--orgbg);border-radius:9px;padding:4px 0}
+.type-chip{flex:none;font-size:11px;color:var(--org);border:1px solid var(--orgline);
+  border-radius:999px;padding:2px 8px;background:#fff}
+.err-kp{flex:1;min-width:0;font-size:13.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.err-kp .kk{color:var(--sub);font-weight:400;font-size:12px;margin-left:8px}
+.chev{flex:none;color:#c9bfb2;font-size:14px;transition:transform .15s}
+.err.open .chev{transform:rotate(90deg)}
+.err-b{display:none;border-top:1px dashed var(--line);padding:13px 15px 15px}
+.err.open .err-b{display:block;animation:fadeUp .18s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.qtext{font-size:15px;line-height:1.9;background:#fbf8f4;border:1px solid #f3ece3;border-radius:11px;padding:12px 14px;margin-bottom:11px}
+.qimg{max-width:100%;border-radius:10px;border:1px solid var(--line);margin-bottom:11px;display:block}
+.note-box{font-size:13.5px;line-height:1.9;color:#5c554d;background:#fffaf3;border:1px solid #f5e7d2;
+  border-radius:11px;padding:11px 13px;margin-bottom:11px}
+.note-box .nb-t{font-weight:800;color:#b47a2e;font-size:12.5px;margin-bottom:5px}
+.pgl{font-size:12.5px;margin-bottom:11px;display:flex;gap:8px;flex-wrap:wrap}
+.pgl a{text-decoration:none;color:#9a6a3f;background:#fdf1e6;border:1px solid var(--orgline);border-radius:9px;padding:5px 10px}
+.rs-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.rs-lab{font-size:12.5px;color:var(--sub);font-weight:700}
+.chip{font-size:12px;border:1px solid var(--line);background:#fff;color:#7a7268;border-radius:999px;padding:4px 11px;cursor:pointer}
+.chip.on{background:var(--org);border-color:var(--org);color:#fff;font-weight:700}
+.rs-ta{width:100%;min-height:58px;border:1px solid var(--line);border-radius:10px;padding:9px 11px;
+  font-size:13px;font-family:inherit;resize:vertical;background:#fcfbf9;color:var(--ink)}
+.rs-ta:focus{outline:2px solid var(--orgline)}
+.done-btn{border:1px solid var(--line);background:#fff;color:#9a8f80;border-radius:9px;
+  padding:7px 14px;font-size:12.5px;cursor:pointer;font-weight:700}
+.done-btn.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.done-hint{font-size:11.5px;color:var(--sub);margin-top:6px}
+
+/* ---------- 空态 ---------- */
+.empty-card{background:var(--card);border:1px dashed #e4d5c2;border-radius:16px;padding:34px 22px;text-align:center}
+.empty-card .ei{font-size:34px}
+.empty-card .et{font-weight:800;font-size:15px;margin:10px 0 7px}
+.empty-card .ed{font-size:13px;color:var(--sub);line-height:1.9;max-width:420px;margin:0 auto}
+
+#toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%);background:#333;color:#fff;
+  font-size:13px;border-radius:10px;padding:9px 16px;z-index:99}
+#mk-modal{position:fixed;inset:0;background:rgba(20,16,12,.55);z-index:50;display:flex;
+  align-items:center;justify-content:center;padding:18px}
+#mk-modal img{max-width:100%;max-height:92vh;border-radius:12px;background:#fff}
+
+@media (max-width:860px){
+  .mk-burger{display:block}
+  .mk-body{padding:0 10px}
+  .mk-side{position:fixed;left:0;top:0;bottom:0;z-index:40;border-radius:0;max-height:none;
+    transform:translateX(-105%);transition:transform .2s;width:264px}
+  .mk-side.open{transform:none}
+  .ph-title{font-size:15.5px}
+}
+</style>
+</head>
+<body>
+
+<header class="mk-top">
+  <button class="mk-burger" id="burger">☰</button>
+  <div class="mk-logo">✏️</div>
+  <div>
+    <div class="mk-tt">模拟卷错题本</div>
+    <div class="mk-sub">选填专项 · 只录错题 · 研可岸式归档</div>
+  </div>
+  <div class="mk-stat" id="mk-stat"></div>
+  <a class="mk-back" href="./index.html">← 主页</a>
+</header>
+
+<div class="mk-body">
+  <aside class="mk-side" id="mk-side"></aside>
+  <main class="mk-main" id="mk-main"><div class="empty-card"><div class="ei">⏳</div><div class="ed">加载中…</div></div></main>
+</div>
+
+<div id="mk-modal" hidden></div>
+<div id="toast" hidden></div>
+
+<script>
+(function(){
+'use strict';
+
+var DATA = null, CUR = null, CURNAME = '';
+var REASONS = ['概念不清','计算失误','方法不会','审题踩坑','粗心大意'];
+var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
+
+/* ---------- 工具 ---------- */
+function escHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function $(id){ return document.getElementById(id); }
+function toast(msg){ var t=$('toast'); t.textContent=msg; t.hidden=false; clearTimeout(t._t); t._t=setTimeout(function(){ t.hidden=true; },2200); }
+
+/* KaTeX 混排渲染 + 迟到恢复（站点统一方案） */
+var KXQ=[], KXST={t:0};
+function kxLate(str, el){ KXQ.push([el,str]); if(KXST.t) return;
+  KXST.t=setInterval(function(){
+    if(window.katex){ clearInterval(KXST.t); KXST.t=0; var q=KXQ.splice(0);
+      for(var i=0;i<q.length;i++) renderMixed(q[i][0],q[i][1]); return; }
+    if(++KXST.t2>75){ clearInterval(KXST.t); KXST.t=0; return; }
+    if(!KXST.tr || KXST.tr<8){ KXST.tr=(KXST.tr||0)+1; var s=document.createElement('script'); s.src='katex/katex.min.js'; s.async=true; document.head.appendChild(s); }
+  },400);
+}
+function renderMixed(el, str){
+  if(!el) return;
+  if(!window.katex){ el.textContent=str; kxLate(str,el); return; }
+  el.textContent='';
+  if(str.indexOf('$')<0){
+    if(/[\u4e00-\u9fa5]/.test(str)){ el.textContent=str; return; }
+    try{ katex.render(str, el, {throwOnError:false, macros:{'\frac':'\dfrac'}}); }catch(e){ el.textContent=str; }
+    return;
+  }
+  var parts=str.split('$');
+  for(var i=0;i<parts.length;i++){
+    if(!parts[i]) continue;
+    if(i%2===1){ var sp=document.createElement('span');
+      try{ katex.render(parts[i], sp, {throwOnError:false, macros:{'\frac':'\dfrac'}}); }catch(e){ sp.textContent=parts[i]; }
+      el.appendChild(sp);
+    } else { el.appendChild(document.createTextNode(parts[i])); }
+  }
+}
+
+/* ---------- 进度存取（按设备） ---------- */
+function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function reasonKey(pk,no){ return 'mock_reason_'+pk+'_'+no; }
+function doneKey(pk,no){ return 'mock_done_'+pk+'_'+no; }
+
+/* ---------- 数据归一 ---------- */
+/* 统一成 [{key, title, sub, meta, answers, group, name, errors, spages, done}] */
+function buildPapers(d){
+  var out=[];
+  (d.exams||[]).forEach(function(ex,i){
+    out.push({ key:'exam'+i, group:'模考卷', name:ex.paper.name,
+      sub:'整卷模考 · '+ex.paper.date+(ex.paper.score_note?' · '+ex.paper.score_note.split('。')[0]:''),
+      meta:'全卷 '+ex.paper.total+' 题 · 错 '+ex.errors.length+' 题'+(ex.paper.reviewed?' · 订正于 '+ex.paper.reviewed:''),
+      answers:ex.paper.answers||'', spages:ex.paper.spages||[], jpagesAll:!!ex.paper.jpages_all,
+      errors:ex.errors||[], series:'模考卷' });
+  });
+  (d.series||[]).forEach(function(sr){
+    (sr.vols||[]).forEach(function(v){
+      out.push({ key:sr.id+'-'+v.vol, group:sr.name, name:sr.name+' · '+v.name,
+        sub:'选填专项 · 选择 1~10 · 填空 11~16'+(v.pdf_page?' · 做题本 PDF 第 '+v.pdf_page+' 页起':''),
+        meta:(v.done?'已做':'未做')+(v.errors.length?' · 错 '+v.errors.length+' 题':'')+(v.date?' · '+v.date:''),
+        answers:'', spages:[], errors:v.errors||[], series:sr.name, vol:v });
+    });
+  });
+  return out;
+}
+
+/* ---------- 侧栏 ---------- */
+function renderSide(){
+  var groups={}, order=[];
+  DATA.forEach(function(p){ if(!groups[p.group]){ groups[p.group]=[]; order.push(p.group); } groups[p.group].push(p); });
+  var html='<div class="side-cap"><span class="pill">📚 卷册</span><span class="n">'+DATA.length+' 套</span></div>';
+  order.forEach(function(g){
+    var list=groups[g];
+    var nerr=list.reduce(function(s,p){ return s+p.errors.length; },0);
+    html+='<div class="grp open" data-g="'+escHtml(g)+'">'
+        +'<div class="grp-h"><span class="caret">▶</span>'+escHtml(g)
+        +'<span style="margin-left:auto;font-size:11px;color:#c2b8ac">'+(nerr?nerr+' 错':'')+'</span></div>';
+    list.forEach(function(p){
+      var vb = p.errors.length ? '<span class="vb has">'+p.errors.length+' 错</span>'
+             : (p.vol&&p.vol.done ? '<span class="vb done">待录</span>' : '<span class="vb">未做</span>');
+      html+='<div class="vol" data-k="'+p.key+'"><span class="vn">'+escHtml(p.name.replace(p.group+' · ',''))+'</span>'+vb+'</div>';
+    });
+    html+='</div>';
+  });
+  $('mk-side').innerHTML=html;
+  var vols=$('mk-side').querySelectorAll('.vol');
+  for(var i=0;i<vols.length;i++){
+    vols[i].onclick=function(){
+      var k=this.getAttribute('data-k');
+      var p=DATA.filter(function(x){return x.key===k;})[0];
+      if(p){ selectPaper(p); $('mk-side').classList.remove('open'); }
+    };
+  }
+  var hs=$('mk-side').querySelectorAll('.grp-h');
+  for(var j=0;j<hs.length;j++){
+    hs[j].onclick=function(){ this.parentNode.classList.toggle('open'); };
+  }
+  if(CUR){
+    var els=$('mk-side').querySelectorAll('.vol');
+    for(var m=0;m<els.length;m++){ if(els[m].getAttribute('data-k')===CUR.key){ els[m].classList.add('on'); } }
+  }
+}
+
+function selectPaper(p){
+  CUR=p;
+  renderSide();
+  renderMain(p);
+}
+
+/* ---------- 主区 ---------- */
+function typeOrder(t){
+  if(t.indexOf('选择')>=0) return 0;
+  if(t.indexOf('填空')>=0) return 1;
+  if(t.indexOf('判断')>=0) return 2;
+  return 3;
+}
+function typeName(t){
+  if(t.indexOf('选择')>=0) return '选择题';
+  if(t.indexOf('填空')>=0) return '填空题';
+  if(t.indexOf('判断')>=0) return '判断题';
+  return '解答题';
+}
+
+function renderMain(p){
+  var total=p.errors.length;
+  var html='<div class="paper-card"><div class="ph-row">'
+    +'<span class="ph-title">'+escHtml(p.name)+'</span>'
+    +(total?'<span class="ph-badge">错题 '+total+'</span>'
+           :(p.vol&&p.vol.done?'<span class="ph-badge done">已做 · 待录错题</span>':'<span class="ph-badge zero">未做</span>'))
+    +'</div><div class="ph-meta">'+escHtml(p.sub)+'<br>'+escHtml(p.meta)+'</div>';
+  if(p.answers){
+    html+='<div class="ph-actions"><details><summary>📋 答案速查</summary><pre>'+escHtml(p.answers)+'</pre></details></div>';
+  }
+  html+='</div>';
+
+  if(!total){
+    html+='<div class="empty-card"><div class="ei">🗒️</div>'
+      +'<div class="et">'+(p.vol&&p.vol.done?'这套做完了，错题还没录':'这套还没做或还没报错题号')+'</div>'
+      +'<div class="ed">把错题号发我即可（例：选择 3、5、7；填空 12、14）。<br>我会逐题录入题面、考点与解析，错因和重做状态在这里标。</div></div>';
+    $('mk-main').innerHTML=html;
+    return;
+  }
+
+  var errs=p.errors.slice().sort(function(a,b){ return a.no-b.no; });
+  var byType={};
+  errs.forEach(function(e){ var t=typeName(e.type||''); (byType[t]=byType[t]||[]).push(e); });
+  var types=Object.keys(byType).sort(function(a,b){ return typeOrder(a)-typeOrder(b); });
+
+  types.forEach(function(t){
+    var list=byType[t];
+    html+='<div class="sec-bar"><span class="bar"></span><span class="t">'+t+'</span><span class="c">错 '+list.length+'</span></div>';
+    html+='<div class="errlist">';
+    list.forEach(function(e){ html+=errHtml(p,e); });
+    html+='</div>';
+  });
+  $('mk-main').innerHTML=html;
+  bindErrs(p);
+
+  errs.forEach(function(e){
+    renderMixed($('kp-'+p.key+'-'+e.no), e.kp||'');
+    if(e.q){ renderMixed($('q-'+p.key+'-'+e.no), e.q); }
+    if(e.sol){ renderMixed($('sol-'+p.key+'-'+e.no), e.sol); }
+    else if(e.note){ renderMixed($('sol-'+p.key+'-'+e.no), e.note); }
+    var ta=$('ta-'+p.key+'-'+e.no);
+    if(ta){ ta.value=ls(reasonKey(p.key,e.no)); }
+  });
+}
+
+function errHtml(p,e){
+  var open=ls(doneKey(p.key,e.no))==='1';
+  var reason=ls(reasonKey(p.key,e.no));
+  var h='<div class="err" id="err-'+p.key+'-'+e.no+'">'
+    +'<div class="err-h" data-act="tog"><span class="no-badge">'+String(e.no).padStart(2,'0')+'</span>'
+    +'<span class="type-chip">'+escHtml(e.type||'')+(e.score?' · '+e.score+'分':'')+'</span>'
+    +'<span class="err-kp"><span id="kp-'+p.key+'-'+e.no+'"></span>'
+    +(e.subject?'<span class="kk">'+escHtml(e.subject)+(e.chapter?' · '+escHtml(e.chapter):'')+'</span>':'')
+    +'</span><span class="chev">›</span></div>'
+    +'<div class="err-b">';
+  if(e.q) h+='<div class="qtext" id="q-'+p.key+'-'+e.no+'"></div>';
+  if(e.qimg) h+='<img class="qimg" loading="lazy" src="data/'+escHtml(e.qimg)+'" alt="第'+e.no+'题题面">';
+  if(e.ans) h+='<div class="note-box"><div class="nb-t">✅ 答案</div><div id="ans-'+p.key+'-'+e.no+'"></div></div>';
+  if(e.sol) h+='<div class="note-box"><div class="nb-t">💡 解析</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
+  if(e.note && !e.sol) h+='<div class="note-box"><div class="nb-t">✍️ 批改 / 参考</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
+  if(p.spages.length && (e.page!=null)){
+    h+='<div class="pgl">📄 <a href="javascript:void(0)" data-act="page" data-img="'+escHtml(p.spages[(e.page||1)-1])+'">试卷原页 · 第 '+(e.page||1)+' 页</a></div>';
+  }
+  if(p.spages.length && e.jpages){
+    var jp=Array.isArray(e.jpages)?e.jpages:[e.jpages];
+    h+='<div class="pgl">💡 '+jp.map(function(j){
+      return '<a href="javascript:void(0)" data-act="page" data-img="'+escHtml(p.spages[j-1])+'">解析页 '+(Array.isArray(e.jpages)?('p'+j):'')+'</a>';
+    }).join(' ')+'</div>';
+  }
+  h+='<div class="rs-row"><span class="rs-lab">错因</span>';
+  REASONS.forEach(function(r){
+    h+='<button class="chip'+(reason===r?' on':'')+'" data-act="reason" data-v="'+r+'">'+r+'</button>';
+  });
+  h+='</div>'
+    +'<textarea class="rs-ta" id="ta-'+p.key+'-'+e.no+'" placeholder="错因笔记（自动保存，只存本机）…"></textarea>'
+    +'<div style="margin-top:10px"><button class="done-btn'+(open?' on':'')+'" data-act="done">'+(open?'✓ 已重做（点此取消）':'○ 标记已重做')+'</button>'
+    +(open?'<span class="done-hint">　重做于 '+escHtml(ls(doneKey(p.key,e.no)+'_at')||'')+'</span>':'')
+    +'</div></div></div>';
+  return h;
+}
+
+function bindErrs(p){
+  var root=$('mk-main');
+  var btns=root.querySelectorAll('[data-act]');
+  for(var j=0;j<btns.length;j++){
+    btns[j].onclick=function(ev){
+      var act=this.getAttribute('data-act');
+      if(act==='tog'){ this.closest('.err').classList.toggle('open'); return; }
+      if(act==='page'){
+        var m=$('mk-modal'); m.innerHTML='<img src="data/'+this.getAttribute('data-img')+'">';
+        m.hidden=false; return;
+      }
+      var box=this.closest('.err');
+      var no=box.id.replace('err-'+p.key+'-','');
+      if(act==='reason'){
+        var kids=box.querySelectorAll('.chip');
+        for(var k=0;k<kids.length;k++) kids[k].classList.remove('on');
+        this.classList.add('on');
+        lsSet(reasonKey(p.key,no), this.getAttribute('data-v'));
+        toast('错因已记：'+this.getAttribute('data-v'));
+      } else if(act==='done'){
+        var on=!this.classList.contains('on');
+        this.classList.toggle('on',on);
+        this.textContent=on?'✓ 已重做（点此取消）':'○ 标记已重做';
+        lsSet(doneKey(p.key,no), on?'1':'');
+        if(on){ lsSet(doneKey(p.key,no)+'_at', TODAY); }
+        toast(on?'已标记重做':'已取消重做标');
+      }
+    };
+  }
+  var ta=root.querySelectorAll('.rs-ta');
+  for(var x=0;x<ta.length;x++){
+    ta[x].oninput=(function(ta){ return function(){
+      var box=ta.closest('.err');
+      var no=box.id.replace('err-'+p.key+'-','');
+      lsSet(reasonKey(p.key,no), ta.value);
+    };})(ta[x]);
+  }
+}
+
+$('mk-modal').onclick=function(){ this.hidden=true; };
+$('burger').onclick=function(){ $('mk-side').classList.toggle('open'); };
+
+/* ---------- 启动 ---------- */
+fetch('data/mock_errors.json').then(function(r){ return r.json(); }).then(function(d){
+  DATA=buildPapers(d);
+  var nerr=DATA.reduce(function(s,p){ return s+p.errors.length; },0);
+  $('mk-stat').innerHTML='共 <b>'+DATA.length+'</b> 套<br>已录错题 <b>'+nerr+'</b>';
+  renderSide();
+  var first=DATA.filter(function(p){return p.errors.length;})[0] || DATA[0];
+  if(first) selectPaper(first);
+}).catch(function(e){
+  $('mk-main').innerHTML='<div class="empty-card"><div class="et">数据加载失败</div><div class="ed">'+escHtml(e.message)+'</div></div>';
+});
+})();
+</script>
+</body>
+</html>
