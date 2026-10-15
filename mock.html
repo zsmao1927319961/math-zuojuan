@@ -325,6 +325,7 @@ function renderMain(p){
   errs.forEach(function(e){
     renderMixed($('kp-'+p.key+'-'+e.no), e.kp||'');
     if(e.q){ renderMixed($('q-'+p.key+'-'+e.no), e.q); }
+    if(e.ans){ renderMixed($('ans-'+p.key+'-'+e.no), e.ans); }
     if(e.sol){ renderMixed($('sol-'+p.key+'-'+e.no), e.sol); }
     else if(e.note){ renderMixed($('sol-'+p.key+'-'+e.no), e.note); }
     var ta=$('ta-'+p.key+'-'+e.no);
