@@ -99,6 +99,9 @@ button{font-family:inherit}
 .note-box{font-size:13.5px;line-height:1.9;color:#5c554d;background:#fffaf3;border:1px solid #f5e7d2;
   border-radius:11px;padding:11px 13px;margin-bottom:11px}
 .note-box .nb-t{font-weight:800;color:#b47a2e;font-size:12.5px;margin-bottom:5px}
+.reveal-btn{width:100%;border:1px dashed var(--orgline);background:var(--orgbg);color:#b35b00;border-radius:10px;padding:10px;font-size:13.5px;font-weight:700;cursor:pointer}
+.reveal-btn:hover{background:#ffe9d2}
+.reveal-wrap{margin-top:11px}
 .pgl{font-size:12.5px;margin-bottom:11px;display:flex;gap:8px;flex-wrap:wrap}
 .pgl a{text-decoration:none;color:#9a6a3f;background:#fdf1e6;border:1px solid var(--orgline);border-radius:9px;padding:5px 10px}
 .rs-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
@@ -341,9 +344,13 @@ function errHtml(p,e){
     +'<div class="err-b">';
   if(e.q) h+='<div class="qtext" id="q-'+p.key+'-'+e.no+'"></div>';
   if(e.qimg) h+='<img class="qimg" loading="lazy" src="data/'+escHtml(e.qimg)+'" alt="第'+e.no+'题题面">';
-  if(e.ans) h+='<div class="note-box"><div class="nb-t">✅ 答案</div><div id="ans-'+p.key+'-'+e.no+'"></div></div>';
-  if(e.sol) h+='<div class="note-box"><div class="nb-t">💡 解析</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
-  if(e.note && !e.sol) h+='<div class="note-box"><div class="nb-t">✍️ 批改 / 参考</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
+  if(e.ans || e.sol || e.note){
+    h+='<button class="reveal-btn" data-act="reveal">💡 做完点此出答案 / 解析</button><div class="reveal-wrap" style="display:none">';
+    if(e.ans) h+='<div class="note-box"><div class="nb-t">✅ 答案</div><div id="ans-'+p.key+'-'+e.no+'"></div></div>';
+    if(e.sol) h+='<div class="note-box"><div class="nb-t">💡 解析</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
+    if(e.note && !e.sol) h+='<div class="note-box"><div class="nb-t">✍️ 批改 / 参考</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
+    h+='</div>';
+  }
   if(p.spages.length && (e.page!=null)){
     h+='<div class="pgl">📄 <a href="javascript:void(0)" data-act="page" data-img="'+escHtml(p.spages[(e.page||1)-1])+'">试卷原页 · 第 '+(e.page||1)+' 页</a></div>';
   }
@@ -372,6 +379,13 @@ function bindErrs(p){
     btns[j].onclick=function(ev){
       var act=this.getAttribute('data-act');
       if(act==='tog'){ this.closest('.err').classList.toggle('open'); return; }
+      if(act==='reveal'){
+        var w=this.closest('.err').querySelector('.reveal-wrap');
+        var on=w.style.display==='none';
+        w.style.display=on?'block':'none';
+        this.textContent=on?'🙈 收起答案 / 解析':'💡 做完点此出答案 / 解析';
+        return;
+      }
       if(act==='page'){
         var m=$('mk-modal'); m.innerHTML='<img src="data/'+this.getAttribute('data-img')+'">';
         m.classList.add('show'); return;
