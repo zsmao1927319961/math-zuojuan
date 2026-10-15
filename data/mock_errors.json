@@ -529,7 +529,12 @@
      "done": false,
      "errors": []
     }
-   ]
+   ],
+   "sol": {
+    "pdf": "D:\\BaiduNetdiskDownload\\数二答案\\森哥五套卷数二.pdf",
+    "pages": 68,
+    "note": "余炳森(森哥)5套卷, 每卷=试题+答案解析; p35=模拟三解析"
+   }
   },
   {
    "id": "ll24",
@@ -564,7 +569,12 @@
      "done": false,
      "errors": []
     }
-   ]
+   ],
+   "sol": {
+    "pdf": "D:\\BaiduNetdiskDownload\\数二答案\\24李林四套卷 数二 试题+答案.pdf",
+    "pages": 65,
+    "note": "李林终极预测4套卷, 试题+答案"
+   }
   },
   {
    "id": "zy24",
@@ -599,7 +609,12 @@
      "done": false,
      "errors": []
     }
-   ]
+   ],
+   "sol": {
+    "pdf": "D:\\BaiduNetdiskDownload\\数二答案\\24张宇四套卷答案-数二.pdf",
+    "pages": 45,
+    "note": "张宇最后4套卷答案本; ~p22起=模拟试卷一参考答案"
+   }
   },
   {
    "id": "cy24",
@@ -676,7 +691,12 @@
      "done": false,
      "errors": []
     }
-   ]
+   ],
+   "sol": {
+    "pdf": "D:\\BaiduNetdiskDownload\\数二答案\\24合工大超越卷解析篇-数二.pdf",
+    "pages": 59,
+    "note": "合工大超越解析篇59p/10套; ⚠️与做题本\"超越十套卷\"套号对应未验证, 录题按内容匹配"
+   }
   },
   {
    "id": "zy25",
@@ -739,7 +759,12 @@
      "done": false,
      "errors": []
     }
-   ]
+   ],
+   "sol": {
+    "pdf": "D:\\BaiduNetdiskDownload\\数二答案\\25考研张宇八套卷（数二）.pdf",
+    "pages": 88,
+    "note": "张宇25预测8套卷, 每卷后附参考答案与分析(~11页/卷, p45=卷四答案)"
+   }
   }
  ]
 }
