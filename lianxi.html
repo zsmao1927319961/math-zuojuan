@@ -259,7 +259,7 @@
           <button class="chip" data-sort="recent" style="padding:2px 9px">最近错题优先</button>
         </span>
       </div>
-          <div class="paper-meta">首次评「不熟练 / 不会」后明天起进复测计划；之后按自适应间隔排期——评「不会」明天再来（稳定度骤降），评「不熟练」间隔逐轮拉长（约 2→4→8→15→30 天）；错的越多回来越勤。未到期再评不重置进度；评「掌握」出池。</div>
+          <div class="paper-meta">首次评「不熟练 / 不会」后明天起进复测计划；之后按自适应间隔排期——评「不会」明天再来（稳定度骤降），评「不熟练」间隔逐轮拉长（约 2→4→8→15→30 天）；错的越多回来越勤。未到期再评不重置进度；评「掌握」出池。<b>讲义错题与 299 题错题分区排期，去复测也只带本区错题。</b></div>
       <div class="stats" id="restats"></div>
     </div>
     <div id="relist"></div>
@@ -829,7 +829,10 @@ function retestLists(){
     return RETEST_SORT === 'due' ? sa.due.localeCompare(sb.due) : (sb.wrong_date || '').localeCompare(sa.wrong_date || '');
   });
   future.sort(function(a, b){ return liveOf(a).due.localeCompare(liveOf(b).due); });
-  return { dueList: dueList, future: future, nCheckDue: nCheckDue };
+  var bySrc = function(list, tk){ return list.filter(function(q){ return (q.source === 'tk299') === tk; }); };
+  return { dueList: dueList, future: future, nCheckDue: nCheckDue,
+           dueJy: bySrc(dueList, false), dueTk: bySrc(dueList, true),
+           futJy: bySrc(future, false), futTk: bySrc(future, true) };
 }
 function showRetest(){
   document.getElementById('view-dir').hidden = true;
@@ -839,11 +842,12 @@ function showRetest(){
   var r = retestLists();
   document.getElementById('restats').innerHTML =
     '<div class="stat bad">待复测 <b>' + r.dueList.length + '</b></div>' +
+    '<div class="stat rev">📘 讲义 <b>' + r.dueJy.length + '</b></div>' +
+    '<div class="stat rev">📕 299题 <b>' + r.dueTk.length + '</b></div>' +
     '<div class="stat">未来排期 <b>' + r.future.length + '</b></div>' +
     (r.nCheckDue ? '<div class="stat">其中抽查 <b>' + r.nCheckDue + '</b></div>' : '');
   var rel = document.getElementById('relist'); rel.innerHTML = '';
-  if (!r.dueList.length) rel.innerHTML = '<div class="empty">当前没有待复测题，到期的题会自动出现在这里</div>';
-  r.dueList.forEach(function(q){
+  function dueRow(q, runList, runTitle){
     var d = document.createElement('div');
     d.className = 'due-item';
     var s = liveOf(q);
@@ -853,7 +857,7 @@ function showRetest(){
       '<span class="tag">' + escHtml((q.chapter_name || '').slice(0, 14)) + '</span>' +
       '<button class="btn" style="margin-left:auto;padding:3px 10px;font-size:12px">去复测</button>';
     d.querySelector('button').onclick = function(){
-      CUR_TITLE = '错题复测 · ' + q.label; CUR_LIST = r.dueList.slice();
+      CUR_TITLE = runTitle; CUR_LIST = runList.slice();
       showPractice();
       setTimeout(function(){
         var el = document.querySelector('.qcard[data-qid="' + CSS.escape(q.id) + '"]');
@@ -861,10 +865,24 @@ function showRetest(){
       }, 60);
     };
     rel.appendChild(d);
+  }
+  var SECTS = [
+    { list: r.dueJy, head: '📘 讲义错题 · 强化专题', title: '错题复测 · 讲义' },
+    { list: r.dueTk, head: '📕 299题错题', title: '错题复测 · 299题' }
+  ];
+  var anyDue = false;
+  SECTS.forEach(function(sec){
+    if (!sec.list.length) return;
+    anyDue = true;
+    var h = document.createElement('div'); h.className = 'plan-head';
+    h.textContent = sec.head + '（' + sec.list.length + '）';
+    rel.appendChild(h);
+    sec.list.forEach(function(q){ dueRow(q, sec.list, sec.title); });
   });
+  if (!anyDue) rel.innerHTML = '<div class="empty">当前没有待复测题，到期的题会自动出现在这里</div>';
   var ph = document.getElementById('plan-head'), pl = document.getElementById('planlist');
   ph.hidden = !r.future.length; pl.innerHTML = '';
-  r.future.forEach(function(q){
+  function futRow(q){
     var d = document.createElement('div');
     d.className = 'due-item';
     var s = liveOf(q);
@@ -886,6 +904,14 @@ function showRetest(){
       showRetest();
     };
     pl.appendChild(d);
+  }
+  [ { list: r.futJy, head: '📘 讲义 · 未来排期' },
+    { list: r.futTk, head: '📕 299题 · 未来排期' } ].forEach(function(sec){
+    if (!sec.list.length) return;
+    var h = document.createElement('div'); h.className = 'plan-head';
+    h.textContent = sec.head + '（' + sec.list.length + '）';
+    pl.appendChild(h);
+    sec.list.forEach(futRow);
   });
 }
 
