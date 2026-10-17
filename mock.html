@@ -33,14 +33,19 @@ button{font-family:inherit}
 .mk-stat b{color:var(--org);font-size:15px}
 .mk-back{flex:none;text-decoration:none;font-size:13px;color:#9a6a3f;background:var(--orgbg);
   border:1px solid var(--orgline);padding:6px 10px;border-radius:9px}
-.mk-burger{display:none;flex:none;border:1px solid var(--line);background:#fff;border-radius:9px;
+.mk-burger{display:flex;flex:none;align-items:center;border:1px solid var(--line);background:#fff;border-radius:9px;
   padding:7px 10px;font-size:15px;cursor:pointer}
+body.side-off .mk-side{display:none}
 
 /* ---------- 布局 ---------- */
 .mk-body{display:flex;gap:16px;max-width:1080px;margin:16px auto;padding:0 14px;align-items:flex-start}
 .mk-side{width:236px;flex:none;background:var(--card);border:1px solid var(--line);
   border-radius:16px;padding:12px;position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto}
 .mk-main{flex:1;min-width:0}
+.viewbar{display:flex;gap:8px;margin-bottom:12px}
+.vchip{flex:none;font-size:12.5px;font-weight:700;color:#7a7268;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.vchip.on{background:var(--org);border-color:var(--org);color:#fff}
+.src-chip{flex:none;font-size:11px;color:#8a7f72;background:#f4efe9;border-radius:999px;padding:2px 8px}
 
 /* ---------- 侧栏 ---------- */
 .side-cap{display:flex;align-items:center;gap:8px;margin:4px 4px 10px}
@@ -154,7 +159,10 @@ button{font-family:inherit}
 
 <div class="mk-body">
   <aside class="mk-side" id="mk-side"></aside>
-  <main class="mk-main" id="mk-main"><div class="empty-card"><div class="ei">⏳</div><div class="ed">加载中…</div></div></main>
+  <main class="mk-main">
+    <div class="viewbar"><button class="vchip" id="v-paper">📚 按卷册</button><button class="vchip" id="v-kp">🎯 按考点</button></div>
+    <div id="mk-content"><div class="empty-card"><div class="ei">⏳</div><div class="ed">加载中…</div></div></div>
+  </main>
 </div>
 
 <div id="mk-modal" hidden></div>
@@ -167,6 +175,7 @@ button{font-family:inherit}
 var DATA = null, CUR = null, CURNAME = '';
 var REASONS = ['概念不清','计算失误','方法不会','审题踩坑','粗心大意'];
 var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
+var VIEW = ls('mock_view')==='kp' ? 'kp' : 'paper';
 
 /* ---------- 工具 ---------- */
 function escHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -270,8 +279,9 @@ function renderSide(){
 
 function selectPaper(p){
   CUR=p;
+  if(VIEW!=='paper'){ VIEW='paper'; lsSet('mock_view',''); syncViewbar(); }
   renderSide();
-  renderMain(p);
+  renderContent();
 }
 
 /* ---------- 主区 ---------- */
@@ -304,7 +314,7 @@ function renderMain(p){
     html+='<div class="empty-card"><div class="ei">🗒️</div>'
       +'<div class="et">'+(p.vol&&p.vol.done?'这套做完了，错题还没录':'这套还没做或还没报错题号')+'</div>'
       +'<div class="ed">把错题号发我即可（例：选择 3、5、7；填空 12、14）。<br>我会逐题录入题面、考点与解析，错因和重做状态在这里标。</div></div>';
-    $('mk-main').innerHTML=html;
+    $('mk-content').innerHTML=html;
     return;
   }
 
@@ -320,7 +330,7 @@ function renderMain(p){
     list.forEach(function(e){ html+=errHtml(p,e); });
     html+='</div>';
   });
-  $('mk-main').innerHTML=html;
+  $('mk-content').innerHTML=html;
   bindErrs(p);
 
   errs.forEach(function(e){
@@ -334,12 +344,13 @@ function renderMain(p){
   });
 }
 
-function errHtml(p,e){
+function errHtml(p,e,src){
   var open=ls(doneKey(p.key,e.no))==='1';
   var reason=ls(reasonKey(p.key,e.no));
   var h='<div class="err" id="err-'+p.key+'-'+e.no+'">'
     +'<div class="err-h" data-act="tog"><span class="no-badge">'+String(e.no).padStart(2,'0')+'</span>'
     +'<span class="type-chip">'+escHtml(e.type||'')+(e.score?' · '+e.score+'分':'')+'</span>'
+    +(src?'<span class="src-chip">'+escHtml(src)+'</span>':'')
     +'<span class="err-kp"><span id="kp-'+p.key+'-'+e.no+'"></span>'
     +(e.subject?'<span class="kk">'+escHtml(e.subject)+(e.chapter?' · '+escHtml(e.chapter):'')+'</span>':'')
     +'</span><span class="chev">›</span></div>'
@@ -374,9 +385,8 @@ function errHtml(p,e){
   return h;
 }
 
-function bindErrs(p){
-  var root=$('mk-main');
-  var btns=root.querySelectorAll('[data-act]');
+function bindCard(p, box){
+  var btns=box.querySelectorAll('[data-act]');
   for(var j=0;j<btns.length;j++){
     btns[j].onclick=function(ev){
       var act=this.getAttribute('data-act');
@@ -410,7 +420,7 @@ function bindErrs(p){
       }
     };
   }
-  var ta=root.querySelectorAll('.rs-ta');
+  var ta=box.querySelectorAll('.rs-ta');
   for(var x=0;x<ta.length;x++){
     ta[x].oninput=(function(ta){ return function(){
       var box=ta.closest('.err');
@@ -419,9 +429,74 @@ function bindErrs(p){
     };})(ta[x]);
   }
 }
+function bindErrs(p){
+  var errs=$('mk-content').querySelectorAll('.err');
+  for(var i=0;i<errs.length;i++) bindCard(p, errs[i]);
+}
 
 $('mk-modal').onclick=function(){ this.classList.remove('show'); };
-$('burger').onclick=function(){ $('mk-side').classList.toggle('open'); };
+$('burger').onclick=function(){
+  if(window.matchMedia && matchMedia('(max-width:860px)').matches){ $('mk-side').classList.toggle('open'); return; }
+  var off=document.body.classList.toggle('side-off');
+  lsSet('mock_side_off', off?'1':'');
+  toast(off?'卷册已收起 · 点左上角 ☰ 展开':'卷册已展开');
+};
+[['v-paper','paper'],['v-kp','kp']].forEach(function(v){
+  $(v[0]).onclick=function(){
+    if(VIEW===v[1]) return;
+    VIEW=v[1]; lsSet('mock_view', VIEW==='kp'?'kp':'');
+    syncViewbar(); renderContent();
+  };
+});
+function syncViewbar(){
+  $('v-paper').classList.toggle('on', VIEW==='paper');
+  $('v-kp').classList.toggle('on', VIEW==='kp');
+}
+function srcShort(p){ return p.name.replace('（数学二）','').replace('2027考研数学','').replace(/^24\s/,''); }
+
+/* ---------- 按考点视图：跨卷聚合同 kp 错题 ---------- */
+function renderKp(){
+  var groups={};
+  DATA.forEach(function(p){
+    p.errors.forEach(function(e){
+      var k=e.kp||'未分类';
+      (groups[k]=groups[k]||[]).push({p:p,e:e});
+    });
+  });
+  var keys=Object.keys(groups).sort(function(a,b){
+    var dd=groups[b].length-groups[a].length;
+    return dd || a.localeCompare(b,'zh');
+  });
+  if(!keys.length){
+    $('mk-content').innerHTML='<div class="empty-card"><div class="ei">🗒️</div><div class="et">还没有错题</div></div>';
+    return;
+  }
+  var html='';
+  keys.forEach(function(k){
+    var g=groups[k];
+    html+='<div class="sec-bar"><span class="bar"></span><span class="t">'+escHtml(k)+'</span><span class="c">错 '+g.length+'</span></div><div class="errlist">';
+    g.forEach(function(it){ html+=errHtml(it.p, it.e, srcShort(it.p)); });
+    html+='</div>';
+  });
+  $('mk-content').innerHTML=html;
+  keys.forEach(function(k){
+    groups[k].forEach(function(it){
+      var el=document.getElementById('err-'+it.p.key+'-'+it.e.no);
+      if(el) bindCard(it.p, el);
+      renderMixed($('kp-'+it.p.key+'-'+it.e.no), it.e.kp||'');
+      if(it.e.q){ renderMixed($('q-'+it.p.key+'-'+it.e.no), it.e.q); }
+      if(it.e.ans){ renderMixed($('ans-'+it.p.key+'-'+it.e.no), it.e.ans); }
+      if(it.e.sol){ renderMixed($('sol-'+it.p.key+'-'+it.e.no), it.e.sol); }
+      else if(it.e.note){ renderMixed($('sol-'+it.p.key+'-'+it.e.no), it.e.note); }
+      var ta=$('ta-'+it.p.key+'-'+it.e.no);
+      if(ta){ ta.value=ls(reasonKey(it.p.key,it.e.no)); }
+    });
+  });
+}
+function renderContent(){
+  if(VIEW==='kp'){ renderKp(); return; }
+  if(CUR) renderMain(CUR);
+}
 
 /* ---------- 启动 ---------- */
 fetch('data/mock_errors.json').then(function(r){ return r.json(); }).then(function(d){
@@ -430,9 +505,11 @@ fetch('data/mock_errors.json').then(function(r){ return r.json(); }).then(functi
   $('mk-stat').innerHTML='共 <b>'+DATA.length+'</b> 套<br>已录错题 <b>'+nerr+'</b>';
   renderSide();
   var first=DATA.filter(function(p){return p.errors.length;})[0] || DATA[0];
-  if(first) selectPaper(first);
+  if(first){ CUR=first; }
+  if(ls('mock_side_off')==='1') document.body.classList.add('side-off');
+  syncViewbar(); renderContent();
 }).catch(function(e){
-  $('mk-main').innerHTML='<div class="empty-card"><div class="et">数据加载失败</div><div class="ed">'+escHtml(e.message)+'</div></div>';
+  $('mk-content').innerHTML='<div class="empty-card"><div class="et">数据加载失败</div><div class="ed">'+escHtml(e.message)+'</div></div>';
 });
 })();
 </script>
