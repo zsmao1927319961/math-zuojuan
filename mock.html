@@ -217,6 +217,7 @@ function buildPapers(d){
       sub:'整卷模考 · '+ex.paper.date+(ex.paper.score_note?' · '+ex.paper.score_note.split('。')[0]:''),
       meta:'全卷 '+ex.paper.total+' 题 · 错 '+ex.errors.length+' 题'+(ex.paper.reviewed?' · 订正于 '+ex.paper.reviewed:''),
       answers:ex.paper.answers||'', spages:ex.paper.spages||[], jpagesAll:!!ex.paper.jpages_all,
+      vol:ex.paper.taken?{done:true}:null,
       errors:ex.errors||[], series:'模考卷' });
   });
   (d.series||[]).forEach(function(sr){
