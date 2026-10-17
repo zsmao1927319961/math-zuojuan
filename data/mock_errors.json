@@ -1,5 +1,5 @@
 {
- "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。 | 2026-10-15 加选填专项31套目录（余炳森5/李林4/张宇4/超越10/张宇25年8），每套=选择1~10+填空11~16，只录错题；卷一已做待录。 | 2026-10-17 加欧几里得10月模考(已考,错题待用户报号录入)。 | 2026-10-18 10月卷错题11道已录(选1/3/4/5/6/7/9, 填12/15, 解19/22), right已回填, 解答题得分待用户报。 | 2026-10-18 考点字段改简版: chapter/kp 一律按 cxyonly.fans(math)大观园分类节点名(缓存 tools/cxy_categories_cache.json)。",
+ "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。 | 2026-10-15 加选填专项31套目录（余炳森5/李林4/张宇4/超越10/张宇25年8），每套=选择1~10+填空11~16，只录错题；卷一已做待录。 | 2026-10-17 加欧几里得10月模考(已考,错题待用户报号录入)。 | 2026-10-18 10月卷错题11道已录(选1/3/4/5/6/7/9, 填12/15, 解19/22), right已回填, 解答题得分待用户报。 | 2026-10-18 考点字段改简版: chapter/kp 一律按 cxyonly.fans(math)大观园分类节点名(缓存 tools/cxy_categories_cache.json)。 | 2026-10-18 老卷(9月/开学/余炳森卷一)kp/chapter批量迁移大观园分类节点名。",
  "exams": [
   {
    "paper": {
@@ -32,7 +32,7 @@
      "no": 3,
      "type": "选择",
      "score": 5,
-     "kp": "常系数齐次线性微分方程（由特解反求阶数）",
+     "kp": "已知解反求微分方程（逆问题）",
      "chapter": "微分方程",
      "subject": "高数",
      "page": 2
@@ -41,8 +41,8 @@
      "no": 4,
      "type": "选择",
      "score": 5,
-     "kp": "二元函数可微的充要条件",
-     "chapter": "多元函数微分学",
+     "kp": "概念题",
+     "chapter": "多元微分",
      "subject": "高数",
      "page": 2
     },
@@ -50,8 +50,8 @@
      "no": 5,
      "type": "选择",
      "score": 5,
-     "kp": "定积分定义（黎曼和与分割）",
-     "chapter": "定积分",
+     "kp": "定积分定义求 $n$ 项和极限",
+     "chapter": "极限",
      "subject": "高数",
      "page": 2
     },
@@ -59,8 +59,8 @@
      "no": 7,
      "type": "选择",
      "score": 5,
-     "kp": "极值判定与差商极限（导数定义）",
-     "chapter": "一元函数微分学",
+     "kp": "已知极限推极值拐点",
+     "chapter": "导数概念",
      "subject": "高数",
      "page": 2
     },
@@ -68,8 +68,8 @@
      "no": 10,
      "type": "选择",
      "score": 5,
-     "kp": "分块矩阵的伴随与秩",
-     "chapter": "矩阵与秩",
+     "kp": "伴随矩阵",
+     "chapter": "矩阵",
      "subject": "线代",
      "page": 3
     },
@@ -77,8 +77,8 @@
      "no": 13,
      "type": "填空",
      "score": 5,
-     "kp": "累次变限积分求导",
-     "chapter": "变限积分",
+     "kp": "变限积分相关",
+     "chapter": "一元积分",
      "subject": "高数",
      "page": 3
     },
@@ -86,8 +86,8 @@
      "no": 15,
      "type": "填空",
      "score": 5,
-     "kp": "物理应用：水压力（微元法）",
-     "chapter": "积分应用",
+     "kp": "物理应用（数一二）",
+     "chapter": "一元积分",
      "subject": "高数",
      "page": 3
     },
@@ -95,7 +95,7 @@
      "no": 16,
      "type": "填空",
      "score": 5,
-     "kp": "解的结构与正交",
+     "kp": "解的关系",
      "chapter": "线性方程组",
      "subject": "线代",
      "page": 3
@@ -104,8 +104,8 @@
      "no": 17,
      "type": "解答",
      "score": 10,
-     "kp": "分段函数求导与极值（变限积分+拼接点定义）",
-     "chapter": "一元函数微分学",
+     "kp": "某点的可导问题",
+     "chapter": "导数概念",
      "subject": "高数",
      "page": 3
     },
@@ -113,8 +113,8 @@
      "no": 18,
      "type": "解答",
      "score": 12,
-     "kp": "二次曲线上的距离最值（条件极值）",
-     "chapter": "多元函数微分学",
+     "kp": "条件极值",
+     "chapter": "多元微分",
      "subject": "高数",
      "page": 3
     },
@@ -122,7 +122,7 @@
      "no": 19,
      "type": "解答",
      "score": 12,
-     "kp": "二重积分计算（对称性）",
+     "kp": "二重积分",
      "chapter": "二重积分",
      "subject": "高数",
      "page": 3
@@ -131,8 +131,8 @@
      "no": 20,
      "type": "解答",
      "score": 12,
-     "kp": "切线条件建微分方程 + 旋转体表面积",
-     "chapter": "微分方程与积分应用",
+     "kp": "导数应用（切法线、曲率）",
+     "chapter": "微分方程",
      "subject": "高数",
      "page": 3
     },
@@ -140,7 +140,7 @@
      "no": 22,
      "type": "解答",
      "score": 12,
-     "kp": "二次型合同变换与惯性定理",
+     "kp": "合同",
      "chapter": "二次型",
      "subject": "线代",
      "page": 4
@@ -200,8 +200,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第一章 函数、极限、连续",
-     "kp": "数列极限的存在性"
+     "chapter": "极限",
+     "kp": "数列极限"
     },
     {
      "no": 2,
@@ -216,8 +216,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第二章 一元函数微分学及其应用",
-     "kp": "变限积分与极值拐点"
+     "chapter": "导数应用",
+     "kp": "极值、最值与拐点"
     },
     {
      "no": 3,
@@ -230,8 +230,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第二章 一元函数微分学及其应用",
-     "kp": "微分的线性主部"
+     "chapter": "导数概念",
+     "kp": "微分概念"
     },
     {
      "no": 4,
@@ -245,8 +245,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第三章 一元函数积分学及其应用",
-     "kp": "反常积分的敛散性"
+     "chapter": "一元积分",
+     "kp": "反常积分"
     },
     {
      "no": 5,
@@ -259,8 +259,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第六章 微分方程及其应用",
-     "kp": "二阶常系数微分方程(逆问题)"
+     "chapter": "微分方程",
+     "kp": "已知解反求微分方程（逆问题）"
     },
     {
      "no": 8,
@@ -274,8 +274,8 @@
      "status": "todo",
      "reason": "",
      "subject": "线代",
-     "chapter": "第八章 矩阵",
-     "kp": "矩阵运算与可逆"
+     "chapter": "矩阵",
+     "kp": "逆"
     },
     {
      "no": 9,
@@ -289,8 +289,8 @@
      "status": "todo",
      "reason": "",
      "subject": "线代",
-     "chapter": "第八章 矩阵",
-     "kp": "分块矩阵的伴随"
+     "chapter": "矩阵",
+     "kp": "伴随矩阵"
     },
     {
      "no": 10,
@@ -304,8 +304,8 @@
      "status": "todo",
      "reason": "",
      "subject": "线代",
-     "chapter": "第十二章 二次型",
-     "kp": "惯性指数与合同标准形"
+     "chapter": "二次型",
+     "kp": "正负惯性指数"
     },
     {
      "no": 11,
@@ -318,8 +318,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第一章 函数、极限、连续",
-     "kp": "等价无穷小"
+     "chapter": "极限",
+     "kp": "无穷小"
     },
     {
      "no": 12,
@@ -333,8 +333,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第二章 一元函数微分学及其应用",
-     "kp": "高阶导数(泰勒/莱布尼茨)"
+     "chapter": "一元微分",
+     "kp": "高阶导数"
     },
     {
      "no": 13,
@@ -347,8 +347,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第二章 一元函数微分学及其应用",
-     "kp": "对称性与分部积分"
+     "chapter": "一元积分",
+     "kp": "对称性"
     },
     {
      "no": 14,
@@ -362,8 +362,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第一章 函数、极限、连续",
-     "kp": "飘带函数与数列积"
+     "chapter": "极限",
+     "kp": "数列极限"
     },
     {
      "no": 15,
@@ -377,8 +377,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第五章 二重积分及其应用",
-     "kp": "二重积分的定义"
+     "chapter": "极限",
+     "kp": "二重积分定义求 $n$ 项和极限"
     },
     {
      "no": 16,
@@ -392,8 +392,8 @@
      "status": "todo",
      "reason": "",
      "subject": "线代",
-     "chapter": "第十一章 相似矩阵",
-     "kp": "相似对角化的判定"
+     "chapter": "特征值与特征向量",
+     "kp": "相似对角化"
     },
     {
      "no": 17,
@@ -406,8 +406,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第一章 函数、极限、连续",
-     "kp": "变限积分求极限"
+     "chapter": "一元积分",
+     "kp": "变限积分相关"
     },
     {
      "no": 18,
@@ -421,8 +421,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第三章 一元函数积分学及其应用",
-     "kp": "旋转体体积与最值"
+     "chapter": "一元积分",
+     "kp": "旋转体体积"
     },
     {
      "no": 19,
@@ -436,8 +436,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第五章 二重积分及其应用",
-     "kp": "二重积分(极坐标分段)"
+     "chapter": "二重积分",
+     "kp": "二重积分"
     },
     {
      "no": 20,
@@ -451,8 +451,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第六章 微分方程及其应用",
-     "kp": "微分方程与卷积"
+     "chapter": "微分方程",
+     "kp": "解微分方程"
     },
     {
      "no": 21,
@@ -466,8 +466,8 @@
      "status": "todo",
      "reason": "",
      "subject": "高数",
-     "chapter": "第二章 一元函数微分学及其应用",
-     "kp": "中值定理证明"
+     "chapter": "一元微分",
+     "kp": "微分中值定理"
     },
     {
      "no": 22,
@@ -482,8 +482,8 @@
      "status": "todo",
      "reason": "",
      "subject": "线代",
-     "chapter": "第八章 矩阵",
-     "kp": "矩阵方程与求逆"
+     "chapter": "线性方程组",
+     "kp": "矩阵方程"
     }
    ]
   },
@@ -668,8 +668,8 @@
        "no": 4,
        "type": "选择",
        "subject": "高数",
-       "chapter": "一元函数积分学",
-       "kp": "对称区间积分与奇偶性、原函数奇偶性判断",
+       "chapter": "一元积分",
+       "kp": "奇偶性",
        "q": "设非常值函数 $f(x)$ 在 $[-1,1]$ 上连续，若对 $[-1,1]$ 上的任意偶函数 $g(x)$，积分 $\\int_{-1}^{1} f(x)g(x)\\,\\mathrm{d}x=0$，则下列不正确的是（　）。\nA. $\\int_{-1}^{1}[f(x)+f(-x)]g(x)\\,\\mathrm{d}x=0$\nB. $\\int_{-1}^{1}[f(x)-f(-x)]g(x)\\,\\mathrm{d}x=0$\nC. $f(x)$ 为奇函数\nD. $f(x)$ 未必一定是奇函数",
        "ans": "D",
        "sol": "由 $g(-x)=g(x)$，作 $x\\to -x$ 代换得 $\\int_{-1}^{1}f(-x)g(x)\\,\\mathrm{d}x=\\int_{-1}^{1}f(u)g(-u)\\,\\mathrm{d}u=\\int_{-1}^{1}f(x)g(x)\\,\\mathrm{d}x=0$，故 A、B 均正确。又 $f(x)+f(-x)$ 是偶函数，在 A 中取 $g(x)=f(x)+f(-x)$，得 $\\int_{-1}^{1}[f(x)+f(-x)]^2\\,\\mathrm{d}x=0$，由连续性得 $f(x)+f(-x)\\equiv 0$，即 $f(x)$ 必为奇函数，C 正确。故不正确的是 D。"
@@ -678,8 +678,8 @@
        "no": 6,
        "type": "选择",
        "subject": "高数",
-       "chapter": "多元函数微分学",
-       "kp": "二元函数在 $(0,0)$ 处连续·偏导·可微的判定",
+       "chapter": "多元微分",
+       "kp": "概念题",
        "q": "关于函数 $f(x,y)=\\begin{cases} y\\sin\\dfrac{1}{x^2+y^2}, & x^2+y^2\\neq 0,\\\\[2pt] 0, & x^2+y^2=0\\end{cases}$，给出下列结论：① $f(x,y)$ 在点 $(0,0)$ 处连续；② $\\left.\\dfrac{\\partial f}{\\partial x}\\right|_{(0,0)}=0$；③ $\\left.\\dfrac{\\partial f}{\\partial y}\\right|_{(0,0)}=0$；④ $f(x,y)$ 在点 $(0,0)$ 处可微。其中正确的个数为（　）。\nA. 1　　B. 2　　C. 3　　D. 4",
        "ans": "B（①②正确）",
        "sol": "$\\lim_{(x,y)\\to(0,0)}|f|\\le|y|=0=f(0,0)$，①正确；$f(\\Delta x,0)=0$，故 $\\left.\\dfrac{\\partial f}{\\partial x}\\right|_{(0,0)}=0$，②正确；$\\dfrac{f(0,\\Delta y)-f(0,0)}{\\Delta y}=\\sin\\dfrac{1}{\\Delta y^2}$ 当 $\\Delta y\\to 0$ 极限不存在，③错误；偏导不全存在必不可微，④错误。共 2 个正确，选 B。"
@@ -688,8 +688,8 @@
        "no": 8,
        "type": "选择",
        "subject": "线代",
-       "chapter": "矩阵·伴随·正交",
-       "kp": "代数余子式与 $A^T=A^*$、正交矩阵、可逆性判定",
+       "chapter": "矩阵",
+       "kp": "伴随矩阵",
        "q": "设 $E$ 为三阶单位矩阵，$A=(a_{ij})$ 为三阶非零实矩阵，$A_{ij}$ 是 $|A|$ 中元素 $a_{ij}$ 的代数余子式。若 $A_{ij}=a_{ij}$（$i,j=1,2,3$），则（　）。\nA. 矩阵 $A-E$ 不可逆\nB. 矩阵 $A-E$ 可逆\nC. 矩阵 $A+E$ 可逆\nD. 矩阵 $A+E$ 可逆",
        "ans": "A",
        "note": "⚠️ 做题本此题 C、D 选项印重（均为「A+E 可逆」），森哥原卷 C/D 应为一对可逆/不可逆；以官方解析答案 A 为准。",
@@ -699,8 +699,8 @@
        "no": 9,
        "type": "选择",
        "subject": "线代",
-       "chapter": "线性方程组·同解",
-       "kp": "分块方程组同解、秩的等式 $r(A^T)=r(AA^T)$",
+       "chapter": "线性方程组",
+       "kp": "解的关系",
        "q": "设 $A$ 为 $n$ 阶实矩阵，$E$ 为 $n$ 阶单位矩阵，则（　）。\nA. 线性方程组 $\\begin{pmatrix}E&O\\\\O&A^{T}\\end{pmatrix}x=0$ 与 $\\begin{pmatrix}E&A^{T}\\\\A&O\\end{pmatrix}x=0$ 同解\nB. 线性方程组 $\\begin{pmatrix}E&O\\\\O&A\\end{pmatrix}x=0$ 与 $\\begin{pmatrix}E&A^{T}\\\\A&O\\end{pmatrix}x=0$ 同解\nC. 线性方程组 $\\begin{pmatrix}E&O\\\\O&A^{T}\\end{pmatrix}x=0$ 与 $\\begin{pmatrix}E&A^{T}\\\\A&A^{T}\\end{pmatrix}x=0$ 同解\nD. 线性方程组 $\\begin{pmatrix}E&O\\\\O&A\\end{pmatrix}x=0$ 与 $\\begin{pmatrix}E&A^{T}\\\\A&A^{T}\\end{pmatrix}x=0$ 同解",
        "ans": "A",
        "sol": "把 $\\begin{pmatrix}E&A^{T}\\\\A&O\\end{pmatrix}$ 用分块初等行变换化为 $\\begin{pmatrix}E&A^{T}\\\\O&-AA^{T}\\end{pmatrix}$，与 $\\begin{pmatrix}E&A^{T}\\\\O&AA^{T}\\end{pmatrix}$ 行等价；而 $r(A^{T})=r(AA^{T})$ 保证 $A^{T}y=0$ 与 $AA^{T}y=0$ 同解。展开写：$\\begin{pmatrix}E&O\\\\O&A^{T}\\end{pmatrix}x=0$ 即 $x_1=0,\\ A^{T}x_2=0$；$\\begin{pmatrix}E&A^{T}\\\\A&O\\end{pmatrix}x=0$ 即 $x_1+A^{T}x_2=0,\\ Ax_1=0$，由 $x_1\\in N(A)$ 且 $A^{T}x_2=-x_1$ 有解知两解集一致，A 成立。B、C、D 可用特例否定（如二阶取 $E=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix},A=\\begin{pmatrix}1&1\\\\0&0\\end{pmatrix}$，及 $A=E$）。"
@@ -709,8 +709,8 @@
        "no": 12,
        "type": "填空",
        "subject": "高数",
-       "chapter": "一元函数微分学",
-       "kp": "导数定义求 $f'(1)$（含隐零因子）",
+       "chapter": "导数概念",
+       "kp": "导数定义",
        "q": "设 $f(x)=(x^{2024}-1)\\arctan\\dfrac{2(x^2+1)}{1+2x^2+x^3}$，则 $f'(1)=$ ______。",
        "ans": "$506\\pi$",
        "sol": "含 $\\arctan$ 复合因子的乘积在 $x=1$ 处求导，用导数定义最稳：$f'(1)=\\lim_{x\\to 1}\\dfrac{f(x)-f(1)}{x-1}=\\lim_{x\\to 1}\\dfrac{x^{2024}-1}{x-1}\\cdot\\arctan\\dfrac{2(x^2+1)}{1+2x^2+x^3}=2024\\times\\arctan 1=2024\\times\\dfrac{\\pi}{4}=506\\pi$。其中 $x=1$ 时 arctan 项恰为 $\\arctan 1=\\dfrac{\\pi}{4}$。"
@@ -719,8 +719,8 @@
        "no": 14,
        "type": "填空",
        "subject": "高数",
-       "chapter": "定积分·几何应用",
-       "kp": "参数曲线绕 $y$ 轴旋转的旋转曲面侧面积",
+       "chapter": "一元积分",
+       "kp": "表（侧）面积（数一二）",
        "q": "设 $C$ 为曲线 $\\begin{cases}x=\\ln(1+t^2),\\\\ y=2\\arctan t-t\\end{cases}$ 上从 $t=0$ 到 $t=1$ 之间的一段弧，则曲线 $C$ 绕 $y$ 轴旋转一周所得到的旋转曲面的侧面积 $S=$ ______。",
        "ans": "$\\pi(\\pi+2\\ln 2-4)$",
        "sol": "绕 $y$ 轴：$S_y=2\\pi\\int_a^b x(t)\\sqrt{x'^2(t)+y'^2(t)}\\,\\mathrm{d}t$。$x'=\\dfrac{2t}{1+t^2}$，$y'=\\dfrac{2}{1+t^2}-1=\\dfrac{1-t^2}{1+t^2}$，$\\sqrt{x'^2+y'^2}=\\dfrac{\\sqrt{4t^2+(1-t^2)^2}}{1+t^2}=\\dfrac{1+t^2}{1+t^2}=1$，故 $S=2\\pi\\int_0^1\\ln(1+t^2)\\,\\mathrm{d}t=2\\pi\\left[t\\ln(1+t^2)-2t+2\\arctan t\\right]_0^1=2\\pi\\left(\\ln 2-2+\\dfrac{\\pi}{2}\\right)=\\pi(\\pi+2\\ln 2-4)$。"
@@ -729,8 +729,8 @@
        "no": 16,
        "type": "填空",
        "subject": "线代",
-       "chapter": "二次型·规范形",
-       "kp": "规范形定惯性指数、由特征值定参数",
+       "chapter": "二次型",
+       "kp": "规范形",
        "q": "若三元实二次型 $f(x_1,x_2,x_3)=ax_1^2+ax_2^2+(a-1)x_3^2+2x_1x_3-2x_2x_3$ 的规范形为 $y_1^2+y_2^2$，则 $a=$ ______。",
        "ans": "$2$",
        "sol": "二次型矩阵 $A=\\begin{pmatrix}a&0&1\\\\0&a&-1\\\\1&-1&a-1\\end{pmatrix}$，$\\det(A-\\lambda E)$ 按第一行展开因式分解得 $\\lambda$ 的三次式 $-(\\lambda-a)(\\lambda-a+2)(\\lambda-a-1)$，即特征值为 $a,\\ a-2,\\ a+1$。规范形 $y_1^2+y_2^2$ 表示正惯性指数为 2、负惯性指数为 0，即特征值两正一零，故 $a-2=0$，得 $a=2$（此时特征值为 $0,2,3$）。"
