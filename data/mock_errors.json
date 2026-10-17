@@ -1,5 +1,5 @@
 {
- "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。 | 2026-10-15 加选填专项31套目录（余炳森5/李林4/张宇4/超越10/张宇25年8），每套=选择1~10+填空11~16，只录错题；卷一已做待录。 | 2026-10-17 加欧几里得10月模考(已考,错题待用户报号录入)。 | 2026-10-18 10月卷错题11道已录(选1/3/4/5/6/7/9, 填12/15, 解19/22), right已回填, 解答题得分待用户报。 | 2026-10-18 考点字段改简版: chapter/kp 一律按 cxyonly.fans(math)大观园分类节点名(缓存 tools/cxy_categories_cache.json)。 | 2026-10-18 老卷(9月/开学/余炳森卷一)kp/chapter批量迁移大观园分类节点名。",
+ "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。 | 2026-10-15 加选填专项31套目录（余炳森5/李林4/张宇4/超越10/张宇25年8），每套=选择1~10+填空11~16，只录错题；卷一已做待录。 | 2026-10-17 加欧几里得10月模考(已考,错题待用户报号录入)。 | 2026-10-18 10月卷错题11道已录(选1/3/4/5/6/7/9, 填12/15, 解19/22), right已回填, 解答题得分待用户报。 | 2026-10-18 考点字段改简版: chapter/kp 一律按 cxyonly.fans(math)大观园分类节点名(缓存 tools/cxy_categories_cache.json)。 | 2026-10-18 老卷(9月/开学/余炳森卷一)kp/chapter批量迁移大观园分类节点名。 | 2026-10-18 研可岸错题本87题导入(07/08/09年份卷38+历年49, 含耐刷王3), kp照大观园分类, 题面/解析图热链研可岸oss, 1条空记录(id 3000001868)未导入。 | 2026-10-18 研可岸错题本87题导入(07/08/09年份卷38+历年49, 含耐刷王3), kp照大观园分类, 题面/解析图热链研可岸oss, 1条空记录(id 3000001868)未导入。",
  "exams": [
   {
    "paper": {
@@ -648,6 +648,1446 @@
      "ans": "（1）$\\lambda=4$，$Q=\\bigl(\\tfrac{\\alpha}{\\sqrt2},\\tfrac{(-1,1,2)^{\\mathrm T}}{\\sqrt6},\\tfrac{(1,-1,1)^{\\mathrm T}}{\\sqrt3}\\bigr)$，$Q^{\\mathrm T}AQ=\\mathrm{diag}(4,4,1)$；（2）$\\boldsymbol x=t(1,-1,1)^{\\mathrm T}\\ (t\\in\\mathbb{R})$",
      "sol": "（1）先算内积：$\\alpha^{\\mathrm T}\\beta=1\\ne0$——实对称矩阵不同特征值的特征向量必正交，$\\alpha,\\beta$ 不正交只能说明它们同属特征值 4。规范写法：$(A\\alpha)^{\\mathrm T}\\beta=\\alpha^{\\mathrm T}(A\\beta)\\Rightarrow\\lambda\\,\\alpha^{\\mathrm T}\\beta=4\\,\\alpha^{\\mathrm T}\\beta$，除以 $\\alpha^{\\mathrm T}\\beta\\ne0$ 得 $\\lambda=4$。由迹：$\\lambda_3=9-4-4=1$，其特征向量与 $\\alpha,\\beta$ 都正交：$\\gamma=\\alpha\\times\\beta=(1,-1,1)^{\\mathrm T}$。特征值 4 的子空间内施密特：$q_1=\\frac{1}{\\sqrt2}(1,1,0)^{\\mathrm T}$，$w=\\beta-(\\beta^{\\mathrm T}q_1)q_1\\propto(-1,1,2)^{\\mathrm T}$，$q_2=\\frac{1}{\\sqrt6}(-1,1,2)^{\\mathrm T}$，$q_3=\\frac{1}{\\sqrt3}(1,-1,1)^{\\mathrm T}$；$Q^{\\mathrm T}AQ=\\mathrm{diag}(4,4,1)$。\n\n（2）由 $2AB=A+B$：$2AB-A=B\\Rightarrow A(2B-E)=B$。两侧夹 $Q^{\\mathrm T},\\ Q$，并插入 $QQ^{\\mathrm T}=E$：$\\bigl(Q^{\\mathrm T}AQ\\bigr)\\bigl(Q^{\\mathrm T}(2B-E)Q\\bigr)=Q^{\\mathrm T}BQ$，即 $\\mathrm{diag}(4,4,1)\\bigl[2Q^{\\mathrm T}BQ-E\\bigr]=Q^{\\mathrm T}BQ$。令 $C=Q^{\\mathrm T}BQ$：$\\mathrm{diag}(7,7,1)C=\\mathrm{diag}(4,4,1)\\Rightarrow C=\\mathrm{diag}\\bigl(\\frac47,\\frac47,1\\bigr)$。\n\n代回：令 $x=Qy$，方程化为 $\\frac{24}{7}(y_1^2+y_2^2)=0\\Rightarrow y_1=y_2=0,\\ y_3=t$ 任意，故 $x=t\\,q_3=t(1,-1,1)^{\\mathrm T}$。\n\n评注：①见到两个特征向量先算内积——不正交即同特征值；②求 Q 必须在特征子空间内施密特，$\\alpha,\\beta$ 不能直接拼；③插 $QQ^{\\mathrm T}=E$ 是正交矩阵专属的桥梁技巧。",
      "page": 4
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2007数二真题错题",
+    "date": "2007",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2007数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 1,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "无穷小比阶",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T1/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T1/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T1/2.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：误以为 $1-e^{\\sqrt x}\\sim-\\sqrt x$ 也算「等价」——系数是 $-1$ 说明只是同阶，等价要求比值极限为 $1$。\n参考：等价 = 比值极限为 1。$\\ln(1+\\sqrt x)\\sim\\sqrt x$；$\\sqrt{1+\\sqrt x}-1\\sim\\frac{\\sqrt x}{2}$ 只同阶；$1-e^{\\sqrt x}$ 是负的；$1-\\cos\\sqrt x\\sim\\frac x2$。答案 B。"
+    },
+    {
+     "no": 4,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数概念",
+     "kp": "微分概念",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T4/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T4/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：C、D 两个命题都不会判断。\n参考：D 的极限只在 $x\\to0^-$ 一侧，只保证左导数存在；C 的极限双侧存在会强制 $f(0)=0$、恰是导数定义。答案 D。\\n⚠️ 同型补刷又错（补④-5、补④-6，9-15）——补④的两道题也已入本。"
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数应用",
+     "kp": "渐近线",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T5/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T5/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：忘记渐近线有哪几种、也不会求。\n参考：三条渐近线——$x=0$（垂直）、$y=0$（$x\\to-\\infty$ 水平）、$y=x$（$x\\to+\\infty$ 斜，$y-x=\\frac1x+\\ln(1+e^{-x})\\to0$）。答案 D。"
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "数列极限",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T6/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T6/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T6/2.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：完全没思路。\n参考：$u_1<u_2$ ⟹ 拉格朗日给出 $f'(\\xi)>0$，$f''>0$ 使 $f'$ 递增 ⟹ 之后恒正 ⟹ $u_n\\to+\\infty$ 发散。答案 D。"
+    },
+    {
+     "no": 7,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "偏导数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T7/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T7/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：这次做对了（+4分），但自我感觉概念不清晰，按回炉处理。核心：可微的充分条件是选项 C——$\\lim\\limits_{(x,y)\\to(0,0)}\\frac{f(x,y)-f(0,0)}{\\sqrt{x^2+y^2}}=0$（增量比 $\\rho$ 是高阶无穷小）；A、B、D 都只是必要条件或单点信息，推不出可微。\\n⚠️ 同型补刷又错（补④-8，9-15）——补④-8 已入本。"
+    },
+    {
+     "no": 10,
+     "type": "选择",
+     "score": 4,
+     "subject": "线代",
+     "chapter": "二次型",
+     "kp": "合同",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T10/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T10/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：合同的概念不清晰。\n参考：实对称合同 ⟺ 正负惯性指数相同；相似 ⟺ 特征值相同。$A$ 特征值 $0,3,3$、$B$ 为 $1,1,0$，惯性相同故合同、特征值不同故不相似。答案 B。"
+    },
+    {
+     "no": 12,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数概念",
+     "kp": "导数定义",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T12/题目.png",
+     "ztYear": 2007,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T12/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：没读清题目——求的是法线斜率，不是切线斜率（切线 $1-\\sqrt2$、法线 $1+\\sqrt2$）。\n参考：$\\frac{dy}{dx}=\\frac{\\cos t}{-\\sin t-2\\sin t\\cos t}$，代 $t=\\frac{\\pi}{4}$ 得切线斜率 $1-\\sqrt2$，法线斜率 $1+\\sqrt2$。"
+    },
+    {
+     "no": 13,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数计算",
+     "kp": "导数计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T13/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T13/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T13/2.png"
+     ],
+     "sol": "✍️ 批改（录入时）：我的错因：粗心算错。\n参考：$y=\\frac{1}{2x+3}$，$y^{(n)}=(-1)^n 2^n n!\\,(2x+3)^{-n-1}$，代 $x=0$ 得 $\\frac{(-1)^n 2^n n!}{3^{n+1}}$。"
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "变限积分相关",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T17/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T17/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：反函数性质忘记（当时把 $f^{-1}(x)\\cdot f(x)$ 当成 1）。\n怎么错的：对积分方程两边求导、识别出 $f'(x)=\\dfrac{\\cos x-\\sin x}{\\sin x+\\cos x}$ 这步你走通了，也正确积出 $\\ln(\\sin x+\\cos x)+C$。丢 3 分全在收尾——没有令 $x=0$ 代回原方程定出 $C=0$，答案留着 $+C$ 不完整。正确答案 $f(x)=\\ln(\\sin x+\\cos x)$，$x\\in[0,\\frac{\\pi}{4}]$。这是「最后一公里」丢分，不是不会。"
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "几何应用",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T18/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T18/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：积分不会求（$\\int_0^{+\\infty}a^{-x/a}dx$ 原函数系数写错丢了因子 $a$），第(II)问也漏做。\n怎么错的：体积式和分部积分框架都对，但 $\\int_0^{+\\infty}a^{-x/a}dx$ 的原函数系数写成了 $-\\frac{1}{\\ln a}$（应为 $-\\frac{a}{\\ln a}$），丢了一个因子 $a$，于是 $V(a)=\\dfrac{\\pi a^2}{\\ln^2 a}$ 被算成 $\\dfrac{\\pi}{\\ln^2 a}$。另外第(II)问整问没做（值 4 分）：$V'(a)=0$ 得 $a=e$，最小体积 $\\pi e^2$。"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T19/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/db41533b-5ae9-4c69-9485-4b9165150359.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：没想到把自变量和因变量调换——而这正是本题唯一的钥匙。\n怎么错的：只抄了方程就空了，0 分。这是「缺 $y$」型可降阶方程：令 $p=y'$，把 $x$ 看成 $p$ 的函数得 $\\frac{dx}{dp}-\\frac{x}{p}=p$，解出 $x=p^2+Cp$；由 $y(1)=y'(1)=1$ 定 $C=0$，得 $p=\\sqrt{x}$，再积分 $y=\\frac{2}{3}x^{3/2}+\\frac{1}{3}$。考场上哪怕只写出换元也有步骤分。"
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "偏导数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T20/题目.png",
+     "ztYear": 2007,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T20/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：算错（$y''(0)$ 算成 1，应为 2）。\n怎么错的：一阶部分全对（$y'(0)=1$，$\\left.\\frac{dz}{dx}\\right|_{x=0}=0$）。二阶错在 $y''(0)$：对 $y'-e^{y-1}-xe^{y-1}y'=0$ 再求导、代 $x=0$ 应得 $y''(0)=2$，你算成 1（还误写成 $f''(0)$——那是 $y$ 的二阶导，不是 $f$ 的）。正确结论 $\\left.\\frac{d^2z}{dx^2}\\right|_{x=0}=f'(0)\\cdot(-1+2+0)=1$（题目给了 $f'(0)=1$）。"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/analysis-v2/0d713b52-65ef-4e7b-96e0-56fe27342c79.png",
+     "ztYear": 2007,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/26926a47-1b98-4799-8a60-7c9ad09fac12.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/de069517-8034-4146-bc27-48c03aa288d6.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：中值定理证明还没学到，先放弃。\n怎么错的：空白，0 分。证明模板：令 $\\varphi(x)=f(x)-g(x)$；由 $f$、$g$ 存在相等的最大值，内部一点 $\\varphi\\ge0$、另一点 $\\varphi\\le0$，介值定理给出 $\\varphi(\\eta)=0$；又 $\\varphi(a)=\\varphi(b)=0$，在 $[a,\\eta]$、$[\\eta,b]$ 各用一次罗尔得 $\\varphi'(\\xi_1)=\\varphi'(\\xi_2)=0$，再罗尔一次得 $\\varphi''(\\xi)=0$，即 $f''(\\xi)=g''(\\xi)$。"
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "分段函数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/07-22.png",
+     "ztYear": 2007,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T22/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：第二部分的积分不会求，卡在 $4\\int_0^{\\pi/2}\\frac{d\\theta}{\\sin\\theta+\\cos\\theta}$。\n怎么错的：第一部分（$|x|+|y|\\le1$）用对称性算出 $\\frac13$ 全对，第二部分极坐标 setup 也全对——就差最后一步没算：$4\\int_0^{\\pi/2}\\frac{d\\theta}{\\sin\\theta+\\cos\\theta}=4\\sqrt2\\ln(1+\\sqrt2)$（配成 $\\sqrt2\\sin(\\theta+\\frac{\\pi}{4})$ 或万能代换）。全套卷完成度最高的一题，9/11。最终答案 $\\frac13+4\\sqrt2\\ln(1+\\sqrt2)$。\\n⚠️ 同型补刷又错（补④-14，9-15）——补④-14 已入本。"
+    },
+    {
+     "no": 23,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "线性方程组",
+     "kp": "解的关系",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T23/题目.png",
+     "ztYear": 2007,
+     "ztCol": "二刷还错",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/a1c8f94c-6525-489e-890d-e716eded0f01.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：公共解题型忘记怎么处理。\n怎么错的：消元解出 $x=(2-a,\\ a-1,\\ -1)^T$ 完全正确。丢 4 分在没回代：把解代回第三个方程 $x_1+4x_2+a^2x_3=0$ 得 $(a-1)(a-2)=0$，即 $a=1$ 或 $a=2$；再分情况写公共解——$a=1$ 时为 $k(1,0,-1)^T$（$k$ 任意），$a=2$ 时为 $(0,1,-1)^T$。又是「最后一公里」。"
+    },
+    {
+     "no": 24,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "特征值与特征向量",
+     "kp": "实对称矩阵",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2007/T24/题目.png",
+     "ztYear": 2007,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2007/T24/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：自我诊断：$P^{-1}$ 求错。\n怎么错的：第(I)问满分——$B$ 的特征值 $f(1)=-2$、$f(2)=1$ 即 $-2,1,1$ 全对，属于 1 的特征向量 $(1,1,0)^T$、$(1,-1,-2)^T$ 也对。第(II)问扣在 $P^{-1}$ 算错导致 $B$ 错。免费自检：$A$ 实对称 ⟹ $B$ 必实对称，你的 $B$ 不对称就该停下重算。快解：$B=I-\\alpha_1\\alpha_1^T=\\begin{pmatrix}0&1&-1\\\\1&0&1\\\\-1&1&0\\end{pmatrix}$。"
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2008数二真题错题",
+    "date": "2008",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2008数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "数列极限",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T5/题目.png",
+     "ztYear": 2008,
+     "ztCol": "难",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T5/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T5/2.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2008-5。考点：单调有界准则——$f(x)$ 单调有界、$\\{x_n\\}$ 单调，则 $\\{f(x_n)\\}$ 单调且有界，必收敛。答案 B。"
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "二重积分",
+     "kp": "二重积分",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T6/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T6/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2008-6。考点：圆域用极坐标化成变限积分 $F(u,v)=\\int_0^{2\\pi}dv\\int_0^{\\sqrt{u^2+v^2}}f(r)r\\,dr$，再对上限求导（内含 $v$）：$\\frac{\\partial F}{\\partial u}=v\\,f(\\sqrt{u^2+v^2})$。答案 A。"
+    },
+    {
+     "no": 15,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "泰勒多项式",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T15/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T15/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T15/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T15/3.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T15/4.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 2/9。怎么错的：把 $\\sin(\\sin x)$ 直接换成 $x$（加减中乱等价替换，2007-15 同款错误二次发作），得 $-1/6$。正确：$\\sin(\\sin x)=\\sin x-\\frac{(\\sin x)^3}{6}+o=x-\\frac{x^3}{3}+o$，分子 $=\\frac{x^3}{6}$，答案 $\\frac16$；或拉格朗日 $\\sin x-\\sin(\\sin x)=\\cos\\xi\\cdot(x-\\sin x)$，$\\cos\\xi\\to1$、$x-\\sin x\\sim\\frac{x^3}{6}$。"
+    },
+    {
+     "no": 16,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "导数计算",
+     "kp": "导数计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T16/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T16/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 3/10。怎么错的：① $y=\\int_0^t\\ln(1+u^2)du$ 的 $\\frac{dy}{dt}=\\ln(1+t^2)$，你多乘了 $2t$；② $\\frac{dx}{dt}=te^{-x}$（你写成 $2te^{-x}$）→ $e^x=1+\\frac{t^2}{2}$，$x=\\ln(1+\\frac{t^2}{2})$ 没解出来。正确：$\\frac{dy}{dx}=\\frac{(t^2+2)\\ln(1+t^2)}{2t}$，$\\frac{d^2y}{dx^2}=\\frac{t^2+2}{2t}\\left[\\ln(1+t^2)+\\frac{t^2+2}{1+t^2}\\right]-\\frac{(t^2+2)^2\\ln(1+t^2)}{4t^3}$。参数二阶导公式框架你用对了。"
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T17/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T17/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T17/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T17/3.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 5/9。怎么错的：换元 $x=\\sin t$ 与官方解法完全一致（化为 $\\int_0^{\\pi/2}t\\sin^2t\\,dt$，这一步 5 分拿满）；但 $\\sin^2t$ 在 $[0,\\frac{\\pi}{2}]$ 上**不关于 $\\frac{\\pi}{4}$ 对称**（$\\sin^2(\\frac{\\pi}{2}-t)=\\cos^2t$），「$\\int_0^a tf\\,dt=\\frac{a}{2}\\int_0^a f\\,dt$」不能用。正确：$t\\sin^2t=\\frac{t-t\\cos2t}{2}$，$\\int_0^{\\pi/2}t\\cos2t\\,dt=-\\frac12$，答案 $\\frac{\\pi^2}{16}+\\frac14$（你算的 $\\frac{\\pi^2}{8}$ 恰好是它的两倍左右）。"
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "分段函数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T18/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T18/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T18/2.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 4/11。怎么错的：$xy\\ge1$ 的区域不止 $[1,2]\\times[1,2]$，还有两条曲边带（如 $\\frac12<x<1,\\ y>\\frac1x$），你把它们整条归给了 $\\max=1$，得 $\\frac{19}{4}$。正确：用 $xy=1$ 双曲线划分（或 $\\int_0^{1/2}dx\\int_0^2+\\int_{1/2}^{2}dx[\\int_0^{1/x}+\\int_{1/x}^{2}]$），答案 $\\frac{19}{4}+\\ln 2$。你算出的两块（$1$ 和 $\\frac{15}{4}$）本身没错。"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T19/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T19/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 4/11。怎么错的：$V=2\\pi\\iint y\\,d\\sigma=\\pi\\int_0^t f^2dx$（柱壳法）推导对，侧面积公式也对；但列条件时把 $f(x)$ 从积分号里提了出来（$f$ 随 $x$ 变不能提），且没解方程。正确：$S=2V\\Rightarrow\\int_0^t f\\sqrt{1+f'^2}dx=\\int_0^t f^2dx$，两边对 $t$ 求导：$f^2=f\\sqrt{1+f'^2}\\Rightarrow f'^2=f^2-1$，分离变量（$f(0)=1$）得 $f(x)=\\frac{e^x+e^{-x}}{2}$。"
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分三大定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/18-2-20.png",
+     "ztYear": 2008,
+     "ztCol": "二刷还错",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/14de6400-54fd-4ca1-adef-3beeec797b80.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 0/11：空白（中值定理还没学到）。(I) 模板：$m(b-a)\\le\\int_a^bf\\le M(b-a)$ + 介值定理；(II) 用 (I) 于 $[2,3]$ 得 $\\varphi(\\eta)=\\varphi(2)$，罗尔得 $\\varphi'(\\xi_1)=0$，再结合条件罗尔/拉格朗日得 $\\varphi''(\\xi)<0$。学完中值定理后与 2007-21 一起补，补刷卷⑤素材已备好。"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "多元微分应用",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T21/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T21/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T21/2.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 10/11。$\\max=72$、$\\min=6$ 全对，拉格朗日方程组正确。小瑕疵：极值点写成 $(2,-2,8)$，正确 $(-2,-2,8)$——写点前代回约束 $x+y+z=4$ 自检即可发现。"
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "线性方程组",
+     "kp": "方程组求解",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T22/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T22/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 6/12。(I) 递推 $D_n-aD_{n-1}=a^n$（$D_2-aD_1=a^2$，$D_1=2a$）+ 迭代得 $|A|=(n+1)a^n$，✓ 拿满。(II) 唯一解写成了 $r(A)=1$（错，唯一解 $\\Leftrightarrow r(A)=n\\Leftrightarrow a\\ne0$），且没求 $x_1$：克莱姆 $x_1=\\frac{|A_1|}{|A|}=\\frac{D_{n-1}}{(n+1)a^n}=\\frac{n}{(n+1)a}$——设计就等你用 (I) 的结论。(III) $a=0$ 时通解 $k(1,0,\\dots,0)^T+(0,1,0,\\dots,0)^T$ 未做。又见「第二问没走完」。"
+    },
+    {
+     "no": 23,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "特征值与特征向量",
+     "kp": "相似对角化",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2008/T23/题目.png",
+     "ztYear": 2008,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2008/T23/1.png"
+     ],
+     "sol": "✍️ 批改（录入时）：得 3/10。(I) 左乘 A 的思路对，但最后直接令系数为零是循环论证（无关正是要证的）。正确收尾：A 版与原式相减得 $2k_1\\alpha_1-k_3\\alpha_2=0$，$\\alpha_1,\\alpha_2$ 属于不同特征值故线性无关 $\\Rightarrow k_1=k_3=0\\Rightarrow k_2=0$。(II) 空白：$AP=(-\\alpha_1,\\alpha_2,\\alpha_2+\\alpha_3)=PM$，$P^{-1}AP=\\begin{pmatrix}-1&0&0\\\\0&1&1\\\\0&0&1\\end{pmatrix}$。"
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2009数二真题错题",
+    "date": "2009",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2009数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 1,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "函数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T1/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T1/150cd378c7b2454f84e0db55451df212.png"
+     ],
+     "sol": "✍️ 批改（录入时）：参考：可去间断点 = 极限存在的间断点。$f(x)=\\frac{x-x^3}{\\sin\\pi x}$ 在所有整数点无定义；$x=0,\\pm1$ 处分子为零，洛必达得 $x\\to0$ 极限 $\\frac1\\pi$、$x\\to\\pm1$ 极限 $\\frac2\\pi$ 都存在 ⟹ 这3个是可去间断点；其余整数点极限为无穷。共3个，答案 C。错因自己填→",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=1",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数应用",
+     "kp": "曲率",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T5/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T5/cf3b44160dd24b5b998940fb88fa99e7.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T5/0031e8ad948b4c6a8452c225974a8f8a.png"
+     ],
+     "sol": "✍️ 批改（录入时）：参考：曲率圆与曲线在切点共用 $y,\\ y',\\ y''$。$x^2+y^2=2$ 在 $(1,1)$：$y'(1)=-1$，半径 $\\sqrt2$ ⟹ 曲率 $\\frac1{\\sqrt2}=\\frac{|y''|}{(1+y'^2)^{3/2}}$ ⟹ $y''(1)=-2$。$f''\\lt0$ 不变号 ⟹ $[1,2]$ 上 $f'\\le f'(1)=-1\\lt0$ 单调减、无极值点；拉格朗日 $f(2)=f(1)+f'(\\xi)\\lt 1-1=0$ 而 $f(1)=1\\gt0$ ⟹ 有零点。选 B（无极值点，有零点）。错因自己填→",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=1",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 8,
+     "type": "选择",
+     "score": 4,
+     "subject": "线代",
+     "chapter": "二次型",
+     "kp": "标准型",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T8/题目.png",
+     "ztYear": 2009,
+     "ztCol": "线代",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T8/5ba13f11f3104a88b1c14a7149e8abb6.png"
+     ],
+     "sol": "✍️ 批改（录入时）：参考：$Q$ 的列是 $P$ 的列的线性组合，$Q=PC$，其中 $C=\\begin{pmatrix}1&0&0\\\\1&1&0\\\\0&0&1\\end{pmatrix}$（第2列加到第1列，$C$ 对称）。$Q^TAQ=C^T(P^TAP)C=C^T\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&2\\end{pmatrix}C=\\begin{pmatrix}2&1&0\\\\1&1&0\\\\0&0&2\\end{pmatrix}$。选 A。错因自己填→",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=1",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 11,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T11/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T11/23716303490b49858bbd727d0d93fe11.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T11/5d1300d76ba0486491fe82bac50e380f.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T11/2d7c246e196e4b3694bf2fa184c20634.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=1",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 15,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "泰勒多项式",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T15/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T15/fd93fb161de04978ae80c60cf5c4fd35.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T15/361dde4906de471eae8bc3b84220466c.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2009-15（9分档，得8）。答案 $\\frac{1}{4}$ 对，三步等价（$1-\\cos x\\sim\\frac{x^2}{2}$、$\\sin^4 x\\sim x^4$、括号 $\\sim\\frac{\\tan^2 x}{2}$）方向也对。扣1分在：括号 $x-\\ln(1+\\tan x)$ 是减法，直接换成 $\\frac{\\tan^2 x}{2}$ 没给理由——它成立只因为 $x-\\tan x=O(x^3)$ 比 $\\tan^2 x$ 高阶。\n补一行就稳：$\\ln(1+\\tan x)=\\tan x-\\frac{\\tan^2x}{2}+o(x^2)$，所以 $x-\\ln(1+\\tan x)=\\frac{\\tan^2x}{2}+o(x^2)$。\n这正是 2008 年 15 题「加减乱等价替换」的同一个坑——这次结论对了，理由仍欠一道。考场规矩：减法里的替换必须先写泰勒展开；乘积因式里才能放心等价。",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=2",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "偏导数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T17/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T17/61c8a299676b4b88bdfbdac53bf7a81e.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2009-17（10分，得7）。dz 全对 ✓：$\\mathrm{d}z=(f_1'+f_2'+yf_3')\\mathrm{d}x+(f_1'-f_2'+xf_3')\\mathrm{d}y$。\n丢 3 分在 $\\frac{\\partial^2 z}{\\partial x\\partial y}$：对 $y$ 求导时每条链都要走全——你只展开了 $f_1'$ 那条链（$f_{13}''$ 的系数写成 $xy$，对 $y$ 求导应为 $x$），$f_2'$ 整条链漏了，外层 $y\\cdot f_3'$ 的乘积法则也只写了 $f_3'$ 没乘 $y\\times$(f_3 的三条链)。\n正确答案：$\\frac{\\partial^2 z}{\\partial x\\partial y}=f_3'+f_{11}''-f_{22}''+xyf_{33}''+(x+y)f_{13}''+(x-y)f_{23}''$。通法：中间变量 $u_1=x+y,\\ u_2=x-y,\\ u_3=xy$，对 $y$ 的偏导是 $1,\\ -1,\\ x$——逐项过三条链，写完自问「几条链？外层有没有乘积法则？」",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=2",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "二重积分",
+     "kp": "二重积分",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T19/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/47178c31-63b2-4806-9a3a-80c041ce1bf4.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/66203142-a6b3-4f20-8ea0-c21c068e7f90.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/213790d6-5ea4-4696-b383-2833a914d030.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2009-19（10分，得6；草稿纸完成，答案−2错）。你的流程几乎全对：极坐标代入 ✓、r² 雅可比 ✓、三角展开 ✓、凑积分 ✓、算数 ✓——唯一的错是极角范围：上限取了 π/2，应为 3π/4。圆过原点、y≥x 的半圆极角 θ∈[π/4, 3π/4]，取 π/2 就把 x<0 那块月牙（θ∈[π/2, 3π/4]）丢了——开头写的 D1+D2 说明看到了它，拆完没并回去。\n验证：你的式子 θ∈[π/4, π/2] 恰好 = −2；改成 3π/4 重新代：sin2θ 项给 −8/3，后两项恰好归零（cos 的四次方与 sin 的四次方在 π/4 与 3π/4 处取值相等），一行修正。\n省力技巧：见到 (cosθ−sinθ)dθ 就想 d(sinθ+cosθ)——令 u=sinθ+cosθ，从 √2 递减到 0，∫u³ 一行出 −8/3，不用硬拆四次方。",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=2",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T20/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T20/51f14f5b048c4abbb79539da4dfcbf4b.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2009-20（12分，得1）。开场正确：法线斜率 $-\\frac{1}{y'(x_0)}$，过原点 ⟹ $yy'=-x$，即 $y^2=-x^2+C$（给1分），之后整块划掉放弃。\n正确路线：$-\\pi\\lt x\\lt0$ 时由过点 $(-\\frac{\\pi}{\\sqrt2},\\frac{\\pi}{\\sqrt2})$ 定 $C=\\pi^2$，得 $y=\\sqrt{\\pi^2-x^2}$；$0\\le x\\lt\\pi$ 时解 $y''+y+x=0$：齐次通解 $C_1\\cos x+C_2\\sin x$，特解 $y^*=-x$，再由 $y$ 在 $x=0$ 处光滑（连续且左右导数相等）定 $C_1=\\pi,\\ C_2=1$。\n答案：$y=\\sqrt{\\pi^2-x^2}\\ (-\\pi\\lt x\\lt0)$；$y=\\pi\\cos x+\\sin x-x\\ (0\\le x\\lt\\pi)$。\n丢分模式老面孔：07年19/21、08年20、今年20——一见「可降阶/二阶常系数非齐次+分段衔接」就空，Day2 优先补。",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=2",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T21/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T21/4d8c79a78c2e4183a9e3094d71d13734.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2009-21（11分，得0，空白；本题=当年数一第18题）。(Ⅰ) 证拉格朗日中值定理：构造 $F(x)=f(x)-\\frac{f(b)-f(a)}{b-a}(x-a)$，则 $F(a)=F(b)=f(a)$，罗尔定理立得 $f(b)-f(a)=f'(\\xi)(b-a)$。\n(Ⅱ) 右导数极限定理：对 $[0,t]$ 用拉格朗日，$\\frac{f(t)-f(0)}{t}=f'(\\xi_t)$，$\\xi_t\\in(0,t)$；$t\\to0^+$ 时 $\\xi_t\\to0^+$，故 $f'_+(0)=\\lim_{t\\to0^+}f'(\\xi_t)=A$。\n第三次在中值定理证明题上空白（07年19/21、08年20、本次21）——「辅助函数构造+罗尔定理」是必须背下来的模板，Day2 专项布置。",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=2",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "特征值与特征向量",
+     "kp": "特征值与特征向量",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T22/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2009/T22/3da792a1aa5840da84dc261565559dec.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2009-22（11分，得6；本题=当年数一第20题）。(Ⅰ) 增广矩阵行变换全对，秩判断对：$r(A)=2$（1个自由变量）、$r(A^2)=1$（2个自由变量）；$\\xi_3=k_2(-1,1,0)^T+k_3(0,0,1)^T+(-\\frac12,0,0)^T$ 完整正确。\n丢分①：$\\xi_2$ 特解符号——由 $x_1-\\frac12x_3=-\\frac12,\\ x_2+\\frac12x_3=\\frac12$，令 $x_3=k_1$ 得 $\\xi_2=k_1(\\frac12,-\\frac12,1)^T+(-\\frac12,\\frac12,0)^T$，你把特解第二分量写成 $-\\frac12$。10秒验算可抓：代回第三行 $-4y-2z=2\\ne-2$。\n丢分②：(Ⅱ) 只列出三个向量就停了——证线性无关要真把行列式算出来：$|\\xi_1,\\xi_2,\\xi_3|=-\\frac12\\ne0$（常数，与 $k_1,k_2,k_3$ 无关），这才是完整证明。\n处方：解完方程组把解代回原方程验算；证明题最后一步算出行列式，别停在「思路对」。",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=2",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 23,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "二次型",
+     "kp": "标准型",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2009/T23/题目.png",
+     "ztYear": 2009,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/912d568b-6b80-4914-8f45-6af6dfd41c60.png"
+     ],
+     "sol": "✍️ 批改（录入时）：2009-23（11分，得8）。(Ⅰ) 特征值 $a,\\ a-2,\\ a+1$ 全对（6/6）。\n(Ⅱ) 结论 $a=2$ 对，但缺关键论证：规范形 $y_1^2+y_2^2$ ⟹ 正惯性指数 $p=2$、秩 $r=2$ ⟹ 三个特征值恰有一个为 0，须逐个验证：$a=0$ 得 $(0,-2,1)$ 含负 ✗；$a-2=0$ 即 $a=2$ 得 $(2,0,3)$ 两正一零 ✓；$a+1=0$ 即 $a=-1$ 全负 ✗。你从列条件直接跳到 $a=2$，严格阅卷会再扣（2/5）。\n通法：规范形反推 $p,q,r$ ⟹ 特征值符号分布+零根，三种 case 逐一检验，别跳步。",
+     "video": "https://www.bilibili.com/video/BV1BJ411w7d8?p=2",
+     "videoName": "李艳芳"
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "真题网错题本 · 历年错题",
+    "date": "",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 历年 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 1,
+     "type": "解答",
+     "score": null,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分计算",
+     "qimg": "https://oss.hzyankean.com/examNaishua/question/第4章_一元积分学/T1_57841_b89dfeb4.png",
+     "ztYear": 0,
+     "ztCol": "难",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examNaishua/analysis/第4章_一元积分学/T1_57841_62f1985a.png"
+     ]
+    },
+    {
+     "no": 1,
+     "type": "解答",
+     "score": null,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分计算",
+     "qimg": "https://oss.hzyankean.com/examNaishua/question/第4章_一元积分学/T1_84375_b726299a.png",
+     "ztYear": 0,
+     "ztCol": "难"
+    },
+    {
+     "no": 1,
+     "type": "解答",
+     "score": null,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分计算",
+     "qimg": "https://oss.hzyankean.com/examNaishua/question/第4章_一元积分学/T1_51090_dc329ba0.png",
+     "ztYear": 0,
+     "ztCol": "积分计算",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examNaishua/analysis/第4章_一元积分学/T1_51090_f4b05a8a.png"
+     ]
+    },
+    {
+     "no": 2,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/a270169e59a541b084237a559d234dd8.png",
+     "ztYear": 2010,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T2/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=1",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "偏导数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/026d0c241452410a9c22a3579dc547d6.png",
+     "ztYear": 2010,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T5/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T5/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T5/3.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=2",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 13,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数计算",
+     "kp": "导数计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/7ed88f048eef420d8bd5fd68d91a905b.png",
+     "ztYear": 2010,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T13/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T13/2.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=3",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "物理应用（数一二）",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/430078af8cc34e4a890a07429b032479.png",
+     "ztYear": 2010,
+     "ztCol": "二刷还错",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T18/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=5",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "偏导数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/6978a66cb31942ff82a4078106b2c541.png",
+     "ztYear": 2010,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T19/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=5",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/4ff1594f26a24d608fac85c60950d7be.png",
+     "ztYear": 2010,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T21/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=6",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 23,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "特征值与特征向量",
+     "kp": "实对称矩阵",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/0256c181221a46fd8160da5910f869ae.png",
+     "ztYear": 2010,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2010/T23/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=6",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 4,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/ba16784c8a954885b67ed25133e0a6f1.png",
+     "ztYear": 2011,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2011/T4/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=7",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "定积分几何意义",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/4a8ecfc4c04c4b04bb77e458cee22360.png",
+     "ztYear": 2011,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2011/T6/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=8",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/d25a8528777b4a22922f02fe5a7031b8.png",
+     "ztYear": 2011,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2011/T18/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=11",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "导数应用",
+     "kp": "不等式",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/d950c26308fc4c9ca6b38d69a9ecbb92.png",
+     "ztYear": 2011,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2011/T19/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=11",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "物理应用（数一二）",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/69e124293db54b89958de83f36de75af.png",
+     "ztYear": 2011,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2011/T20/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=11",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "二重积分",
+     "kp": "二重积分",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/b2524660e77e4e2dab4e0f8dc0301346.png",
+     "ztYear": 2011,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2011/T21/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=12",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 3,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "级数",
+     "kp": "数项级数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/46d851db168d47d3a300af84dad1ac8d.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T3/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=13",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "二重积分",
+     "kp": "二重积分",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/ff041c3132d24e41bc3fc4e1c616e95c.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T6/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=14",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 7,
+     "type": "选择",
+     "score": 4,
+     "subject": "线代",
+     "chapter": "向量",
+     "kp": "线性相关与无关",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/be46cd0be6994dfa8e86b314ce9e955d.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T7/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=14",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 16,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "多元微分应用",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/6f1d0161227b4bd484a02baa5e876ad3.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T16/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=16",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "几何应用",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/2c19f9ceef9a42ec925bb924dc3d06db.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T17/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=16",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/492acb1134ab43fca7fbf8ace7eb84b7.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T19/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=17",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "导数应用",
+     "kp": "不等式",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/023e15cc944a44349edb30a2987bbc9b.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T20/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=17",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "导数应用",
+     "kp": "方程根/曲线交点/函数零点",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/4d448fab494b4660aa430ab663adca02.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T21/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=18",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 23,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "二次型",
+     "kp": "标准型",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/fd31bac953794ef18a3a2856e2510731.png",
+     "ztYear": 2012,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2012/T23/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=18",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 7,
+     "type": "选择",
+     "score": 4,
+     "subject": "线代",
+     "chapter": "矩阵",
+     "kp": "初等变换与初等矩阵",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/ece7a0ea54dd4462b3e886dba03b90c5.png",
+     "ztYear": 2013,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T7/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=20",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 14,
+     "type": "填空",
+     "score": 4,
+     "subject": "线代",
+     "chapter": "行列式",
+     "kp": "抽象行列式计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/1ca16206a5604628aabdf184885cf1bc.png",
+     "ztYear": 2013,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T14/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T14/2.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=21",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 15,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "泰勒多项式",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/89698806fbdd48fb9611609d1eebb541.png",
+     "ztYear": 2013,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T15/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T15/2.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=22",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/162ecf41b5ae43cbae1954892319d950.png",
+     "ztYear": 2013,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T18/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=23",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "导数应用",
+     "kp": "极值、最值与拐点",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/a2caa8f8cab84a3584a77689468619a7.png",
+     "ztYear": 2013,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T20/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=23",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 23,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "二次型",
+     "kp": "标准型",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/caecda710c59411e844c28d7a0c6285d.png",
+     "ztYear": 2013,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2013/T23/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=24",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/b924275f9f2b49e6a5524def56b989d4.png",
+     "ztYear": 2014,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2014/T5/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2014/T5/2.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=26",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "多元微分应用",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/c7ebb04371684e80bd6d21d04c1bf1b1.png",
+     "ztYear": 2014,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2014/T6/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=26",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 12,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数概念",
+     "kp": "导数定义",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/aacb8e1c24a74768a306fb12c8232794.png",
+     "ztYear": 2014,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2014/T12/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=27",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 13,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "物理应用（数一二）",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/3c838b699377416c85512b4f88eba99f.png",
+     "ztYear": 2014,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2014/T13/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=27",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分三大定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/dcb23edc8db447eaa41fd8f3c0077fa9.png",
+     "ztYear": 2014,
+     "ztCol": "二刷还错",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2014/T19/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=29",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "几何应用",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/a1bcc7398cac4a7d872851d436ea77c9.png",
+     "ztYear": 2014,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2014/T21/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=30",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 2,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "函数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/85aa5bb2a9c0466291d93e0bbfd46766.png",
+     "ztYear": 2015,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2015/T2/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=31",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "偏导数",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/272c395e19d74c6b8747f6eeb0e293d4.png",
+     "ztYear": 2015,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2015/T5/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2015/T5/2.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=32",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/d300d2e205534263aea92047e12f3b37.png",
+     "ztYear": 2015,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2015/T20/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=35",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/e77eca90f3904d15859ecefa7804e5a9.png",
+     "ztYear": 2015,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2015/T21/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=36",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 3,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "反常积分",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2016/T3/题目.png",
+     "ztYear": 2016,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2016/T3/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=43",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 12,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "导数计算",
+     "kp": "导数计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2016/T12/题目.png",
+     "ztYear": 2016,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2016/T12/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2016/T12/2.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=45",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2016/T19/题目.png",
+     "ztYear": 2016,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2016/T19/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=47",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分三大定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2016/T21/题目.png",
+     "ztYear": 2016,
+     "ztCol": "二刷还错",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2016/T21/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=48",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 23,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "矩阵",
+     "kp": "初等变换与初等矩阵",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/math/math2/2016/T23/题目.png",
+     "ztYear": 2016,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2016/T23/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=48",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "物理应用（数一二）",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/881a5dfc14ff4e21bfaefc5c1a6065d2.png",
+     "ztYear": 2017,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2017/T6/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=50",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 19,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/c9f60226b14d4864a9bb075a772a4802.png",
+     "ztYear": 2017,
+     "ztCol": "默认错题集",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2017/T19/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=53",
+     "videoName": "李艳芳"
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "导数概念",
+     "kp": "导数定义",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/082244dd07094686b3abbfbc0c9dda22.png",
+     "ztYear": 2017,
+     "ztCol": "二刷对",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2017/T21/1.png"
+     ],
+     "video": "https://www.bilibili.com/video/BV164411o7Qo?p=54",
+     "videoName": "李艳芳"
     }
    ]
   }

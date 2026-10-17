@@ -46,6 +46,11 @@ body.side-off .mk-side{display:none}
 .vchip{flex:none;font-size:12.5px;font-weight:700;color:#7a7268;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
 .vchip.on{background:var(--org);border-color:var(--org);color:#fff}
 .src-chip{flex:none;font-size:11px;color:#8a7f72;background:#f4efe9;border-radius:999px;padding:2px 8px}
+.sec{margin-top:4px}
+.sec .sec-bar{cursor:pointer;user-select:none}
+.sec .caret{flex:none;font-size:10px;color:#c9bfb2;transition:transform .15s}
+.sec.open .caret{transform:rotate(90deg)}
+.sec:not(.open) .errlist{display:none}
 
 /* ---------- 侧栏 ---------- */
 .side-cap{display:flex;align-items:center;gap:8px;margin:4px 4px 10px}
@@ -57,6 +62,7 @@ body.side-off .mk-side{display:none}
   font-size:13px;font-weight:700;color:#5c554d;user-select:none}
 .grp-h .caret{font-size:10px;color:#c2b8ac;transition:transform .15s}
 .grp.open .caret{transform:rotate(90deg)}
+.grp:not(.open) .vol{display:none}
 .vol{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;cursor:pointer;
   font-size:13px;color:#4b463f}
 .vol:hover{background:#fdf1e6}
@@ -151,7 +157,7 @@ body.side-off .mk-side{display:none}
   <div class="mk-logo">✏️</div>
   <div>
     <div class="mk-tt">模拟卷错题本</div>
-    <div class="mk-sub">选填专项 · 只录错题 · 研可岸式归档</div>
+    <div class="mk-sub">选填专项 + 真题错题 · 只录错题 · 研可岸式归档</div>
   </div>
   <div class="mk-stat" id="mk-stat"></div>
   <a class="mk-back" href="./index.html">← 主页</a>
@@ -222,12 +228,12 @@ function doneKey(pk,no){ return 'mock_done_'+pk+'_'+no; }
 function buildPapers(d){
   var out=[];
   (d.exams||[]).forEach(function(ex,i){
-    out.push({ key:'exam'+i, group:'模考卷', name:ex.paper.name,
-      sub:'整卷模考 · '+ex.paper.date+(ex.paper.score_note?' · '+ex.paper.score_note.split('。')[0]:''),
-      meta:'全卷 '+ex.paper.total+' 题 · 错 '+ex.errors.length+' 题'+(ex.paper.reviewed?' · 订正于 '+ex.paper.reviewed:''),
+    out.push({ key:'exam'+i, group:ex.paper.group||'模考卷', name:ex.paper.name,
+      sub:ex.paper.sub||('整卷模考 · '+ex.paper.date+(ex.paper.score_note?' · '+ex.paper.score_note.split('。')[0]:'')),
+      meta:(ex.paper.total?'全卷 '+ex.paper.total+' 题 · ':'')+'错 '+ex.errors.length+' 题'+(ex.paper.reviewed?' · 订正于 '+ex.paper.reviewed:''),
       answers:ex.paper.answers||'', spages:ex.paper.spages||[], jpagesAll:!!ex.paper.jpages_all,
       vol:ex.paper.taken?{done:true}:null,
-      errors:ex.errors||[], series:'模考卷' });
+      errors:ex.errors||[], series:ex.paper.group||'模考卷' });
   });
   (d.series||[]).forEach(function(sr){
     (sr.vols||[]).forEach(function(v){
@@ -356,14 +362,20 @@ function errHtml(p,e,src){
     +'</span><span class="chev">›</span></div>'
     +'<div class="err-b">';
   if(e.q) h+='<div class="qtext" id="q-'+p.key+'-'+e.no+'"></div>';
-  if(e.qimg) h+='<img class="qimg" loading="lazy" src="data/'+escHtml(e.qimg)+'" alt="第'+e.no+'题题面">';
-  if(e.ans || e.sol || e.note){
+  if(e.qimg) h+='<img class="qimg" loading="lazy" src="'+(/^https?:/.test(e.qimg)?'':'data/')+escHtml(e.qimg)+'" alt="第'+e.no+'题题面">';
+  if(e.ans || e.sol || e.note || (e.anaimgs && e.anaimgs.length)){
     h+='<button class="reveal-btn" data-act="reveal">💡 做完点此出答案 / 解析</button><div class="reveal-wrap" style="display:none">';
+    if(e.anaimgs && e.anaimgs.length){
+      h+='<div class="note-box"><div class="nb-t">📖 解析'+(e.anaSrc?' · '+escHtml(e.anaSrc):'')+'</div>'
+        + e.anaimgs.map(function(u){ return '<img class="qimg" loading="lazy" src="'+(/^https?:/.test(u)?'':'data/')+escHtml(u)+'">'; }).join('')
+        + '</div>';
+    }
     if(e.ans) h+='<div class="note-box"><div class="nb-t">✅ 答案</div><div id="ans-'+p.key+'-'+e.no+'"></div></div>';
     if(e.sol) h+='<div class="note-box"><div class="nb-t">💡 解析</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
     if(e.note && !e.sol) h+='<div class="note-box"><div class="nb-t">✍️ 批改 / 参考</div><div id="sol-'+p.key+'-'+e.no+'"></div></div>';
     h+='</div>';
   }
+  if(e.video){ h+='<div class="pgl">📺 <a href="'+escHtml(e.video)+'" target="_blank" rel="noopener">视频讲解'+(e.videoName?' · '+escHtml(e.videoName):'')+'</a></div>'; }
   if(p.spages.length && (e.page!=null)){
     h+='<div class="pgl">📄 <a href="javascript:void(0)" data-act="page" data-img="'+escHtml(p.spages[(e.page||1)-1])+'">试卷原页 · 第 '+(e.page||1)+' 页</a></div>';
   }
@@ -474,15 +486,19 @@ function renderKp(){
   var html='';
   keys.forEach(function(k){
     var g=groups[k];
-    html+='<div class="sec-bar"><span class="bar"></span><span class="t">'+escHtml(k)+'</span><span class="c">错 '+g.length+'</span></div><div class="errlist">';
+    html+='<div class="sec open"><div class="sec-bar"><span class="caret">▶</span><span class="bar"></span><span class="t">'+escHtml(k)+'</span><span class="c">错 '+g.length+'</span></div><div class="errlist">';
     g.forEach(function(it){ html+=errHtml(it.p, it.e, srcShort(it.p)); });
-    html+='</div>';
+    html+='</div></div>';
   });
   $('mk-content').innerHTML=html;
   keys.forEach(function(k){
+    var secEl=null;
     groups[k].forEach(function(it){
       var el=document.getElementById('err-'+it.p.key+'-'+it.e.no);
-      if(el) bindCard(it.p, el);
+      if(el){
+        if(!secEl) secEl=el.closest('.sec');
+        bindCard(it.p, el);
+      }
       renderMixed($('kp-'+it.p.key+'-'+it.e.no), it.e.kp||'');
       if(it.e.q){ renderMixed($('q-'+it.p.key+'-'+it.e.no), it.e.q); }
       if(it.e.ans){ renderMixed($('ans-'+it.p.key+'-'+it.e.no), it.e.ans); }
@@ -491,6 +507,7 @@ function renderKp(){
       var ta=$('ta-'+it.p.key+'-'+it.e.no);
       if(ta){ ta.value=ls(reasonKey(it.p.key,it.e.no)); }
     });
+    if(secEl) secEl.querySelector('.sec-bar').onclick=function(){ secEl.classList.toggle('open'); };
   });
 }
 function renderContent(){
