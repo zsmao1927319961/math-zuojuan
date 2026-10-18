@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "date": "2026-10-18",
+    "title": "2010英二真题·动态图模板套用(手机订阅量)",
+    "type": "大作文",
+    "words": 221,
+    "score": {
+      "total": 12,
+      "max": 15
+    },
+    "comment": "功能句动态三段模板首练。审题准(动态图/对象/时间/单位全对)、数据无编造、结构清晰、无语法硬伤; 扣分集中在评论泛化——归因未挂钩'发展中国家暴涨vs发达国家趋平'这一核心对比, 加尾段两句同义重复, 属'蓝字没换透'典型样本。按批改指令四节直批(会话内, 不走GLM)。",
+    "issues": [
+      "描述漏掉图上关键对比: 发展中国家约2004年反超发达国家未点出",
+      "P2归因万能套话, 加 especially in developing countries 才能焊在图上",
+      "P3第3句与第1句语义重复(today's society复现), 应换成具体行为建议"
+    ],
+    "essay": "This bar chart presented the temporal changes of mobile-phone subscriptions and revealed a clear pattern of development over time. From 2000 to 2008, the number in developing countries rose from about 0.25 billion to 4 billion. During the same period, the subscriptions in developed countries increased from 0.6 billion to 1 billion, with the growth leveling off in the later years. Taken together, these trends outlined the overall trajectory of global mobile communication and underscored its changing influence in modern society.\n\nPlaced in the context of everyday life, the mobile-phone boom is propelled by the combined influence of multiple factors. The continuous growth of national economic strength has undoubtedly laid a solid foundation for the emergence of this trend. In addition, with the increase in citizens' wealth and the expansion of available choices, mobile phones have become increasingly popular. Equally important, people today are more inclined to pursue a convenient and connected life, which has gradually enabled the mobile phone to become integrated into everyday life.\n\nWe need to think rationally about the impact of the mobile-phone boom on the present era, and provide deliberate guidance. Government should clarify relevant strategies, so that mobile communication can better adapt to the development of today's society. Notably, individuals should maintain a rational mindset when considering the impact of mobile phones on today's society."
+  }
+]
