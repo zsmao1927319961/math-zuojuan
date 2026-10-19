@@ -1,5 +1,5 @@
 {
- "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。 | 2026-10-15 加选填专项31套目录（余炳森5/李林4/张宇4/超越10/张宇25年8），每套=选择1~10+填空11~16，只录错题；卷一已做待录。 | 2026-10-17 加欧几里得10月模考(已考,错题待用户报号录入)。 | 2026-10-18 10月卷错题11道已录(选1/3/4/5/6/7/9, 填12/15, 解19/22), right已回填, 解答题得分待用户报。 | 2026-10-18 考点字段改简版: chapter/kp 一律按 cxyonly.fans(math)大观园分类节点名(缓存 tools/cxy_categories_cache.json)。 | 2026-10-18 老卷(9月/开学/余炳森卷一)kp/chapter批量迁移大观园分类节点名。 | 2026-10-18 研可岸错题本87题导入(07/08/09年份卷38+历年49, 含耐刷王3), kp照大观园分类, 题面/解析图热链研可岸oss, 1条空记录(id 3000001868)未导入。 | 2026-10-18 研可岸错题本87题导入(07/08/09年份卷38+历年49, 含耐刷王3), kp照大观园分类, 题面/解析图热链研可岸oss, 1条空记录(id 3000001868)未导入。",
+ "note": "两套模考卷分开记录：欧几里得9月模考 与 开学大模考。新卷往 exams[] 追加。 | 2026-10-15 加选填专项31套目录（余炳森5/李林4/张宇4/超越10/张宇25年8），每套=选择1~10+填空11~16，只录错题；卷一已做待录。 | 2026-10-17 加欧几里得10月模考(已考,错题待用户报号录入)。 | 2026-10-18 10月卷错题11道已录(选1/3/4/5/6/7/9, 填12/15, 解19/22), right已回填, 解答题得分待用户报。 | 2026-10-18 考点字段改简版: chapter/kp 一律按 cxyonly.fans(math)大观园分类节点名(缓存 tools/cxy_categories_cache.json)。 | 2026-10-18 老卷(9月/开学/余炳森卷一)kp/chapter批量迁移大观园分类节点名。 | 2026-10-18 研可岸错题本87题导入(07/08/09年份卷38+历年49, 含耐刷王3), kp照大观园分类, 题面/解析图热链研可岸oss, 1条空记录(id 3000001868)未导入。 | 2026-10-18 研可岸错题本87题导入(07/08/09年份卷38+历年49, 含耐刷王3), kp照大观园分类, 题面/解析图热链研可岸oss, 1条空记录(id 3000001868)未导入。 | 2026-10-19 历年错题49按年份拆卷(2010~2017各一卷共46题, 原卷改名耐刷王错题留3题), 新增2018数二真题错题7题(选4/填9/解17/18/20/21/22, 官方解析图+sympy双核验), exams只追加不插队。",
  "exams": [
   {
    "paper": {
@@ -1298,11 +1298,11 @@
   },
   {
    "paper": {
-    "name": "真题网错题本 · 历年错题",
+    "name": "真题网错题本 · 耐刷王错题",
     "date": "",
     "group": "真题错题",
     "taken": true,
-    "sub": "真题错题 · 历年 · 题面/解析源自研可岸真题网",
+    "sub": "真题错题 · 耐刷王 · 题面/解析源自研可岸真题网",
     "answers": ""
    },
    "errors": [
@@ -1344,7 +1344,19 @@
      "anaimgs": [
       "https://oss.hzyankean.com/examNaishua/analysis/第4章_一元积分学/T1_51090_f4b05a8a.png"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2010数二真题错题",
+    "date": "2010",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2010数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 2,
      "type": "选择",
@@ -1459,7 +1471,19 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=6",
      "videoName": "李艳芳"
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2011数二真题错题",
+    "date": "2011",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2011数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 4,
      "type": "选择",
@@ -1555,7 +1579,19 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=12",
      "videoName": "李艳芳"
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2012数二真题错题",
+    "date": "2012",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2012数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 3,
      "type": "选择",
@@ -1699,7 +1735,19 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=18",
      "videoName": "李艳芳"
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2013数二真题错题",
+    "date": "2013",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2013数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 7,
      "type": "选择",
@@ -1797,7 +1845,19 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=24",
      "videoName": "李艳芳"
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2014数二真题错题",
+    "date": "2014",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2014数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 5,
      "type": "选择",
@@ -1894,7 +1954,19 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=30",
      "videoName": "李艳芳"
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2015数二真题错题",
+    "date": "2015",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2015数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 2,
      "type": "选择",
@@ -1959,7 +2031,19 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=36",
      "videoName": "李艳芳"
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2016数二真题错题",
+    "date": "2016",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2016数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 3,
      "type": "选择",
@@ -2040,7 +2124,19 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=48",
      "videoName": "李艳芳"
-    },
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2017数二真题错题",
+    "date": "2017",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2017数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
     {
      "no": 6,
      "type": "选择",
@@ -2088,6 +2184,121 @@
      ],
      "video": "https://www.bilibili.com/video/BV164411o7Qo?p=54",
      "videoName": "李艳芳"
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2018数二真题错题",
+    "date": "2018",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2018数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 4,
+     "type": "选择",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "积分三大定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/801d9628ffb54bbbb9554c8f4947a73f.png",
+     "ztYear": 2018,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T4/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T4/3.png"
+     ]
+    },
+    {
+     "no": 9,
+     "type": "填空",
+     "score": 4,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "极限计算",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/5c3d12f7daf84a2490599a835f06dfb8.png",
+     "ztYear": 2018,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T9/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T9/3.png"
+     ]
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "二重积分",
+     "kp": "二重积分",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/17ee2d8883b646be8c8a9b444f82b68d.png",
+     "ztYear": 2018,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T17/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T17/3.png"
+     ]
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "导数应用",
+     "kp": "不等式",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/28ce2a07dc5740618c47c45798fa6242.png",
+     "ztYear": 2018,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T18/2.png"
+     ]
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "几何应用",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/2e1253ca5d424482afb8e0ec5b81ac70.png",
+     "ztYear": 2018,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T20/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T20/3.png"
+     ]
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 11,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "数列极限",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/296ebc9e75b34560a795b3429762c099.png",
+     "ztYear": 2018,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/e7f7698d-941d-4476-9841-4b5a5d4d1f6e.png"
+     ]
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 11,
+     "subject": "线代",
+     "chapter": "二次型",
+     "kp": "标准型",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/f1bdec7e040d49949f080f273c512f10.png",
+     "ztYear": 2018,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T22/2.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2018/T22/3.png"
+     ]
     }
    ]
   }
