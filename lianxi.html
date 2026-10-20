@@ -237,6 +237,7 @@
         <button class="chip" data-k="half">半卷 · 约20题</button>
         <button class="chip" data-k="quick">快练 · 10题</button>
         <button class="chip" data-k="mini">小题专项 · 20题</button>
+        <button class="chip" data-k="big">🧮 大题专项 · 10题</button>
         <button class="chip" data-k="cover">全覆盖轮转 · 防遗忘</button>
         <button class="chip" data-k="wrong">❌ 错题卷 · 只抽错题</button>
       </div>
@@ -983,6 +984,33 @@ function makePaper(kind){
     });
     return { qs: wpick, meta: wpick.length ? '错题 ' + wpick.length + ' 题' : '当前没有错题' };
   }
+  if (kind === 'big') {
+    /* 大题卷：10 道计算/综合大题。新题优先（每章至多 2 道），不够用做过最久的补齐（错题复测中的不进），按考点从前往后排 */
+    var tkNone = QS.filter(function(q){ return q.source === 'tk299' && bucket(q) === 'none'; });
+    var tkAll  = QS.filter(function(q){ return q.source === 'tk299'; });
+    var inIds = {};
+    function bqTake(cand, n){
+      var out = [], cc = {};
+      cand.forEach(function(q){
+        if (out.length >= n || inIds[q.id]) return;
+        var ch = String(q.chapter || '');
+        if ((cc[ch] || 0) >= 2) return;
+        cc[ch] = (cc[ch] || 0) + 1;
+        out.push(q); inIds[q.id] = 1;
+      });
+      return out;
+    }
+    var bq = bqTake(pjShuffle(pjByType(tkNone, ['计算', '简答'])), 10);
+    if (bq.length < 10) {
+      var stale = pjByType(tkAll, ['计算', '简答']).filter(function(q){
+        return !inIds[q.id] && bucket(q) !== 'shaky' && bucket(q) !== 'unknown';
+      });
+      stale.sort(function(a, b){ return pjStaleKey(a) < pjStaleKey(b) ? -1 : 1; });
+      bq = bq.concat(bqTake(stale, 10 - bq.length));
+    }
+    bq.sort(pjPaperOrder);
+    return { qs: bq, meta: '大题 ' + bq.length + ' 题' };
+  }
   /* 常规卷型：只从没做过的题里抽（做过的题不允许再出现） */
   var tk = QS.filter(function(q){ return q.source === 'tk299' && bucket(q) === 'none'; });
   var used = pjUsed();
@@ -1050,6 +1078,11 @@ function pjPaperOrder(a, b){
   var d = pjChapKey(a.chapter) - pjChapKey(b.chapter);
   if (d) return d;
   return (parseInt(a.no) || 0) - (parseInt(b.no) || 0);
+}
+function pjStaleKey(q){
+  /* 二刷排序：最久没碰过的优先（最后做对/做错日期早者在前） */
+  var st = liveOf(q);
+  return st.right_date || st.wrong_date || st.mastered_date || '0';
 }
 function pjInterleave(list){
   /* 跨章交错：按章分桶轮转取，相邻尽量不同章 */
@@ -1275,7 +1308,7 @@ function start(){
     var out = makePaper(PJ_KIND);
     var qs = out.qs;
     if (!qs.length) { toast(PJ_KIND === 'wrong' ? '当前没有错题，先去刷题吧' : '没做过的题不够组卷了，正确刷题或等错题回流'); return; }
-    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : PJ_KIND === 'cover' ? '全覆盖' : PJ_KIND === 'mini' ? '小题专项' : PJ_KIND === 'wrong' ? '错题卷' : '快练';
+    var kindName = PJ_KIND === 'full' ? '整卷' : PJ_KIND === 'half' ? '半卷' : PJ_KIND === 'cover' ? '全覆盖' : PJ_KIND === 'mini' ? '小题专项' : PJ_KIND === 'big' ? '大题卷' : PJ_KIND === 'wrong' ? '错题卷' : '快练';
     var p = { id: Date.now(), title: '299题' + kindName + (out.meta ? ' · ' + out.meta : '') + ' · ' + TODAY + ' #' + (pjPapers().length + 1), date: TODAY, kind: PJ_KIND, qids: qs.map(function(q){ return q.id; }) };
     PJ_PAPERS = pjPapers();
     PJ_PAPERS.unshift(p);
