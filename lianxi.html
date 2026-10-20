@@ -376,11 +376,11 @@ function applyMark(q, kind){
   var s = qstate()[q.id] || {};
   if (kind === 'done') {
     if (s.status === 'done') {
-      /* 抽查期再点掌握 = 本次抽查通过；按掌握日锚点排下一次（7/14/30 各一次） */
+      /* 抽查期再点掌握 = 本次抽查通过；从本次复查日起算下一次（间隔 7→14→30 递增） */
       if (s.check && s.check <= CHECK_GAPS.length) {
         var nc = { status:'done', mastery:'done', right_date: TODAY, right_count:(s.right_count||0)+1,
                    mastered_date: s.mastered_date };
-        if (s.check < CHECK_GAPS.length) { nc.check = s.check + 1; nc.due = addDays(s.mastered_date, CHECK_GAPS[s.check]); }
+        if (s.check < CHECK_GAPS.length) { nc.check = s.check + 1; nc.due = addDays(TODAY, CHECK_GAPS[s.check]); }
         else nc.check = CHECK_GAPS.length + 1;                          /* 第 3 查通过，彻底出池 */
         qstate()[q.id] = nc; MARKED[q.id] = nc; saveState();
       }
@@ -405,8 +405,8 @@ function applyMark(q, kind){
     if (firstTime) { b.due = addDays(TODAY, 1); b.round = 0; b.s = 1; }       // 明天起进计划
     else if (dueReached || !s.due) {                                          // 当次复测完成，自适应排下次
       b.round = (s.round || 0) + 1;
-      if (kind === 'unknown') b.s = Math.max(0.5, (s.s || 1) * 0.35);         // 不会：稳定度骤降
-      b.due = addDays(TODAY, nextGap(kind, b.s));
+      if (kind === 'unknown') { b.s = Math.max(0.5, (s.s || 1) * 0.35); b.due = addDays(TODAY, 1); }  // 不会：明天再来
+      else { b.s = Math.min(30, Math.max(2, Math.round((s.s || 1) * 1.9))); b.due = addDays(TODAY, b.s); }  // 不熟练：2→4→8→15→30
     } else { b.due = s.due; b.s = s.s || 1; }                                 // 未到期再评：不重置
     qstate()[q.id] = b;
   }
