@@ -48,9 +48,36 @@ for fp in sorted(glob.glob(SRC_DIR + r'\19*.md') + glob.glob(SRC_DIR + r'\20*.md
         if len(stem) < 15:  # 判断题等题干写在解析里的节:整块并入题面
             stem = body.strip()
             key = ''
+        # 逐小题/逐空拆分:精解里有 ≥2 个 **第N空/题/问** 标记时,拆成 subs(每小题独立标会/错)
+        # 标记可带括号标题:**第1空（二进制传码率）**
+        subs = []
+        parts = re.split(r'(\*\*第\d+(?:空|题|问)[^*\n]{0,40}\*\*)', key)
+        if len(parts) >= 5:  # 至少2个标记(标记+内容交替)
+            intro = parts[0].strip()
+            chunks = []
+            for j in range(1, len(parts) - 1, 2):
+                mk = parts[j].strip('*')
+                nm = re.search(r'\d+', mk).group(0)
+                km = re.search(r'第\d+(空|题|问)', mk)
+                kind = km.group(1) if km else '题'
+                body = parts[j + 1] if j + 1 < len(parts) else ''
+                chunks.append({'n': int(nm), 'k': kind, 't': mk, 'md': (parts[j] + body).strip()})
+            if chunks:
+                if intro and chunks[0]['n'] > 1:
+                    # 首块的标记(如**第1空（…）**)落在题面侧,首块精解留在了intro:回填为第1小题
+                    chunks.insert(0, {'n': chunks[0]['n'] - 1, 'k': chunks[0]['k'],
+                                      't': f"第{chunks[0]['n'] - 1}{chunks[0]['k']}", 'md': intro})
+                elif intro:
+                    chunks[0]['md'] = intro + '\n\n' + chunks[0]['md']
+            if len(chunks) >= 2:
+                subs = sorted(chunks, key=lambda c: c['n'])
+                key = ''
         if not key:
             no_split += 1
-        qs.append({'id': f'y{year}q{i}', 'no': head, 'stem': stem, 'key': key})
+        entry = {'id': f'y{year}q{i}', 'no': head, 'stem': stem, 'key': key}
+        if subs:
+            entry['subs'] = subs
+        qs.append(entry)
     tot_q += len(qs)
     years_out.append({'year': year, 'title': title, 'brief': brief, 'qs': qs})
 

@@ -33,7 +33,6 @@
   .ycard .todo { color:var(--orange); font-weight:700; }
   .pbar { height:6px; background:#e8ebf2; border-radius:99px; overflow:hidden; margin-top:8px; }
   .pbar i { display:block; height:100%; background:#3d5aa9; border-radius:99px; }
-  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; }
   .q { background:#fff; border:1px solid var(--line); border-radius:12px; margin:10px 0; overflow:hidden; }
   .qhead { display:flex; align-items:center; gap:9px; padding:10px 13px; cursor:pointer; }
   .qhead .no { flex:1; min-width:0; font-weight:600; font-size:15px;
@@ -46,31 +45,31 @@
   .stc.none { background:#f0f2f6; color:#98a0ad; }
   .stem { font-size:15.5px; }
   .stem p { margin:.5em 0; }
-  .keybox { margin-top:10px; border-top:1px dashed var(--line); padding-top:8px; }
-  .keybox .kd { position:relative; }
-  .keybox .kd.blurred .inner { filter:blur(7px); user-select:none; }
-  .keybox .inner { transition:filter .25s; font-size:15px; }
-  .keybox .hint { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-                  font-size:13.5px; color:#8a94a6; cursor:pointer; }
-  .keybox.showhint .hint { display:flex; }
-  .keybox .hint { display:none; }
-  .btns { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .item { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:9px 12px; margin:10px 0; }
+  .item .ilab { font-size:12.5px; color:var(--blue); font-weight:700; margin-bottom:4px; }
+  .item .kd { position:relative; }
+  .item .kd.blurred .inner { filter:blur(7px); user-select:none; }
+  .item .inner { transition:filter .25s; font-size:15px; }
+  .item .hint { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+                font-size:13.5px; color:#8a94a6; cursor:pointer; background:#f8faffbb; }
+  .btns { display:flex; gap:8px; flex-wrap:wrap; margin-top:9px; }
   .btns button { border:1.5px solid var(--line); background:#fff; border-radius:9px;
-                 padding:6px 14px; font-size:14px; cursor:pointer; color:var(--ink); }
+                 padding:4px 13px; font-size:13.5px; cursor:pointer; color:var(--ink); }
   .btns button.on-ok { background:var(--green); border-color:var(--green); color:#fff; }
   .btns button.on-half { background:#ff9800; border-color:#ff9800; color:#fff; }
   .btns button.on-bad { background:var(--red); border-color:var(--red); color:#fff; }
-  .btns button.small { padding:4px 11px; font-size:13px; }
-  .reasons { display:flex; gap:7px; flex-wrap:wrap; margin-top:9px; }
+  .btns button.small { padding:3px 11px; font-size:13px; }
+  .reasons { display:flex; gap:7px; flex-wrap:wrap; margin-top:8px; }
   .reasons button { border:1px solid var(--line); background:#fff; border-radius:999px;
-                    padding:3px 12px; font-size:13px; cursor:pointer; color:#5a6472; }
+                    padding:2px 11px; font-size:12.5px; cursor:pointer; color:#5a6472; }
   .reasons button.on { background:#fdeaea; border-color:#f2c4c0; color:var(--red); font-weight:700; }
-  .reasonbox textarea { width:100%; min-height:52px; border:1px solid var(--line); border-radius:9px;
-                        padding:8px 10px; font-size:14px; font-family:inherit; resize:vertical; }
-  .metabar { font-size:12.5px; color:#8a94a6; margin-top:8px; }
+  .reasonbox textarea { width:100%; min-height:46px; border:1px solid var(--line); border-radius:9px;
+                        padding:7px 10px; font-size:13.5px; font-family:inherit; resize:vertical; }
+  .metabar { font-size:12px; color:#8a94a6; margin-top:6px; }
   .notice { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px;
             font-size:14px; margin:10px 0; }
   .notice.red { background:#fdecec; border-color:#f2c4c0; }
+  .notice.blue { background:#eaf1ff; border-color:#c9d6f2; }
   .tip { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px; font-size:14px; margin-top:10px; }
   .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
   .empty { text-align:center; color:#8a94a6; padding:30px 0; }
@@ -81,7 +80,7 @@
 <div class="wrap">
   <div class="top">
     <h1>801 真题错题 · 1998—2025</h1>
-    <a class="back" id="backlink" href="index.html">← 返回主站</a>
+    <a class="back" href="index.html">← 返回主站</a>
   </div>
   <div class="chips" id="statchips"></div>
   <div class="fchips" id="filters" hidden>
@@ -92,9 +91,9 @@
   </div>
   <div id="app"><div class="empty">加载中…</div></div>
 
-  <div class="tip"><b>用法</b>:点年份进卷册 → 展开题目先看题面自己作答 → 标 <b>会 / 半会 / 错</b>;错题记错因(点选+可补一句),<b>看精解</b>默认打码防偷瞄;<br>
-  错题要<b>重做打卡</b>(记录次数和最近一次日期),重做过关后点「已掌握」归档。数据存本机浏览器,换设备前先去「全站备份」打包。</div>
-  <div class="foot">801 真题错题模块 ｜ 数据:data/zhenti801.json(28 年 251 题,精解由 ZCode 维护) ｜ 状态:z801_state_v1</div>
+  <div class="tip"><b>用法</b>:点年份进卷册 → 展开大题看题面自己作答 → 逐小题(第1空/第1题…)标 <b>会 / 半会 / 错</b>,标错的记错因、点重做打卡;<b>看精解</b>默认打码防偷瞄;整道大题重做过关后逐项点「已掌握」归档。<br>
+  状态存本机浏览器,换设备前先去「全站备份」打包。</div>
+  <div class="foot">801 真题错题模块 ｜ 数据:data/zhenti801.json(28 年 251 大题 · 707 追踪项,精解由 ZCode 维护) ｜ 状态:z801_state_v1</div>
 </div>
 
 <script src="katex/katex.min.js"></script>
@@ -103,19 +102,43 @@
 <script>
 'use strict';
 const LS_KEY = 'z801_state_v1';
-let DATA = null;                 // {years:[{year,title,brief,qs:[{id,no,stem,key}]}]}
-let YMAP = {};                   // year -> year obj
-let QMAP = {};                   // qid -> {y, q}
-let STATE = {};                  // qid -> {st, reason, rs:[]}
-let curYear = 0;                 // 0 = 卷册总览
-let filter = 'all';
+let DATA = null, YMAP = {}, QMAP = {}, STATE = {};
+let curYear = 0, filter = 'all';
 
 const $ = s => document.querySelector(s);
 function loadState(){ try { STATE = JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch(e){ STATE = {}; } }
 function saveState(){ try { localStorage.setItem(LS_KEY, JSON.stringify(STATE)); } catch(e){} }
-function stOf(qid){ return STATE[qid] || null; }
+const stOf = sid => STATE[sid] || null;
 const isBad = s => !!s && (s.st === 'bad' || s.st === 'half');
-const isMarked = s => !!s;
+function todayISO(){ const d = new Date(); const p = n => String(n).padStart(2, '0');
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); }
+
+/* 大题 → 追踪项列表(有小题拆小题,无小题整题一项) */
+function itemsOf(q){
+  if (q.subs && q.subs.length >= 2)
+    return q.subs.map(s => ({ sid: q.id + '#' + s.n, label: s.t || ('第' + s.n + s.k), md: s.md }));
+  return [{ sid: q.id, label: '精解', md: q.key }];
+}
+function secState(q){  // 大题聚合: {ok,half,bad,none,n,marked}
+  const items = itemsOf(q);
+  const r = { ok: 0, half: 0, bad: 0, none: 0, n: items.length, marked: 0 };
+  items.forEach(it => {
+    const s = stOf(it.sid);
+    if (!s){ r.none++; return; }
+    r.marked++;
+    if (s.st === 'ok') r.ok++;
+    else if (s.st === 'half') r.half++;
+    else r.bad++;
+  });
+  return r;
+}
+function secChip(q){
+  const r = secState(q);
+  if (r.none === r.n) return `<span class="stc none">未标 0/${r.n}</span>`;
+  if (r.bad > 0) return `<span class="stc bad">✗ 错 ${r.bad} 项 · 已标 ${r.marked}/${r.n}</span>`;
+  if (r.half > 0) return `<span class="stc half">△ 半会 ${r.half} · 已标 ${r.marked}/${r.n}</span>`;
+  return `<span class="stc ok">✓ 全部会 ${r.marked}/${r.n}</span>`;
+}
 
 function mdInto(el, mdText){
   el.innerHTML = marked.parse(mdText || '');
@@ -131,46 +154,45 @@ function mdInto(el, mdText){
     });
 }
 
+/* —— 统计 —— */
+function allYears(){ return DATA.years; }
 function stats(){
   let marked = 0, bad = 0, todo = 0, total = 0;
-  DATA.years.forEach(y => y.qs.forEach(q => {
+  allYears().forEach(y => y.qs.forEach(q => itemsOf(q).forEach(it => {
     total++;
-    const s = stOf(q.id);
+    const s = stOf(it.sid);
     if (s) marked++;
     if (isBad(s)){ bad++; if (!s.rs || !s.rs.length) todo++; }
-  }));
+  })));
   return { total, marked, bad, todo };
 }
 function yearStats(y){
-  let marked = 0, bad = 0, todo = 0;
-  y.qs.forEach(q => {
-    const s = stOf(q.id);
+  let marked = 0, bad = 0, todo = 0, n = 0;
+  y.qs.forEach(q => itemsOf(q).forEach(it => {
+    n++;
+    const s = stOf(it.sid);
     if (s) marked++;
     if (isBad(s)){ bad++; if (!s.rs || !s.rs.length) todo++; }
-  });
-  return { n: y.qs.length, marked, bad, todo };
+  }));
+  return { n, marked, bad, todo };
 }
-
-function stChip(s){
-  const cls = !s ? 'none' : s.st;
-  const txt = !s ? '未标' : (s.st === 'ok' ? '✓ 会' : (s.st === 'half' ? '△ 半会' : '✗ 错'));
-  return `<span class="stc ${cls}">${txt}</span>`;
+function statChipsHTML(){
+  const st = stats();
+  return `<span class="chip">追踪项 <b>${st.total}</b></span>` +
+    `<span class="chip">已标 ${st.marked}</span>` +
+    `<span class="chip">错题 <b>${st.bad}</b></span>` +
+    `<span class="chip">待重做 <b>${st.todo}</b></span>`;
 }
 
 /* —— 卷册总览 —— */
 function vHome(){
-  const st = stats();
-  $('#statchips').innerHTML =
-    `<span class="chip">总题 <b>${st.total}</b></span>` +
-    `<span class="chip">已标 ${st.marked}</span>` +
-    `<span class="chip">错题 <b>${st.bad}</b></span>` +
-    `<span class="chip">待重做 <b>${st.todo}</b></span>`;
+  $('#statchips').innerHTML = statChipsHTML();
   let h = '';
   DATA.years.forEach(y => {
     const s = yearStats(y);
     h += `<div class="ycard" data-year="${y.year}">
       <div class="y">${y.year}</div>
-      <div class="m">${s.n} 题 · 已标 ${s.marked} · <span class="bad">错 ${s.bad}</span>${s.todo ? ` · <span class="todo">待重做 ${s.todo}</span>` : ''}</div>
+      <div class="m">${s.n} 项 · 已标 ${s.marked} · <span class="bad">错 ${s.bad}</span>${s.todo ? ` · <span class="todo">待重做 ${s.todo}</span>` : ''}</div>
       <div class="pbar"><i style="width:${s.n ? Math.round(s.marked / s.n * 100) : 0}%"></i></div>
     </div>`;
   });
@@ -181,26 +203,27 @@ function vHome(){
 }
 
 /* —— 卷册详情 —— */
-function passFilter(q){
-  const s = stOf(q.id);
+function passFilter(sid){
+  const s = stOf(sid);
   if (filter === 'bad') return isBad(s);
   if (filter === 'none') return !s;
   if (filter === 'redo') return isBad(s) && (!s.rs || !s.rs.length);
   return true;
 }
+function secPass(q){ return itemsOf(q).some(it => passFilter(it.sid)); }
+
 function vYear(){
   const y = YMAP[curYear];
   if (!y){ vHome(); return; }
-  $('#statchips').innerHTML = '';
+  $('#statchips').innerHTML = statChipsHTML();
   $('#filters').hidden = false;
-  const qs = y.qs.filter(passFilter);
-  let h = `<div class="notice blue"><b>${y.year} 年</b> · ${y.qs.length} 题 ｜ ${y.brief.slice(0, 60)}${y.brief.length > 60 ? '…' : ''}
+  const qs = y.qs.filter(secPass);
+  let h = `<div class="notice blue"><b>${y.year} 年</b> · ${y.qs.length} 大题 ｜ ${y.brief.slice(0, 60)}${y.brief.length > 60 ? '…' : ''}
     　<a href="#" id="backhome" style="color:var(--blue)">← 全部年份</a></div>`;
   if (!qs.length) h += `<div class="empty">该筛选下没有题目</div>`;
   qs.forEach(q => {
-    const s = stOf(q.id);
     h += `<div class="q" data-q="${q.id}">
-      <div class="qhead" data-toggle="${q.id}"><span class="no">${q.no}</span>${stChip(s)}<span style="color:#98a0ad">▾</span></div>
+      <div class="qhead" data-toggle="${q.id}"><span class="no">${q.no}</span>${secChip(q)}<span style="color:#98a0ad">▾</span></div>
       <div class="qbody" hidden></div>
     </div>`;
   });
@@ -210,84 +233,89 @@ function vYear(){
   $('#app').querySelectorAll('[data-toggle]').forEach(el =>
     el.addEventListener('click', () => {
       const box = el.parentElement.querySelector('.qbody');
-      if (box.hidden){ box.hidden = false; fillQuestion(box, QMAP[el.dataset.toggle]); }
+      if (box.hidden){ box.hidden = false; fillQuestion(box, QMAP[el.dataset.toggle].q); }
       else { box.hidden = true; box.innerHTML = ''; }
     }));
 }
-function fillQuestion(box, item){
-  const s = stOf(item.id) || {};
-  const st = s.st || '';
-  const reason = s.reason || '';
-  const rs = s.rs || [];
-  let h = `<div class="stem" id="st-${item.id}"></div>`;
-  if (item.key) h += `<div class="keybox showhint" id="kb-${item.id}"><div class="kd blurred"><div class="inner" id="ky-${item.id}"></div></div><div class="hint">🔒 精解已打码 · 点这里显示(先自己作答)</div></div>`;
-  h += `<div class="btns">
-    <button data-st="ok" class="${st === 'ok' ? 'on-ok' : ''}">✓ 会</button>
-    <button data-st="half" class="${st === 'half' ? 'on-half' : ''}">△ 半会</button>
-    <button data-st="bad" class="${st === 'bad' ? 'on-bad' : ''}">✗ 错</button>
-    ${isBad(s) ? `<button data-act="redo" class="small blue">🔁 重做打卡${rs.length ? '(' + rs.length + '次·最近' + rs[rs.length - 1].slice(5) + ')' : ''}</button>
-    <button data-act="master" class="small blue">✓ 已掌握(归档)</button>` : ''}
-  </div>`;
+
+/* 单个追踪项块:label + 精解(打码) + 三态 + 错因 + 重做/归档 */
+function itemBlock(sid, label, md){
+  const s = stOf(sid) || {};
+  const st = s.st || '', reason = s.reason || '', rs = s.rs || [];
+  const REASONS = ['概念不清', '公式记错', '计算失误', '思路错误', '审题失误', '没时间'];
+  let h = `<div class="item" data-item="${sid}">
+    <div class="ilab">${label}${st ? '' : ' · 未标'}</div>
+    <div class="kd ${st ? '' : 'blurred'}"><div class="inner" data-md="${sid}"></div>
+      ${st ? '' : '<div class="hint">🔒 精解已打码 · 先自己作答,标完点这里核对</div>'}</div>
+    <div class="btns">
+      <button data-st="ok" class="${st === 'ok' ? 'on-ok' : ''}">✓ 会</button>
+      <button data-st="half" class="${st === 'half' ? 'on-half' : ''}">△ 半会</button>
+      <button data-st="bad" class="${st === 'bad' ? 'on-bad' : ''}">✗ 错</button>
+      ${isBad(s) ? `<button data-act="redo" class="small blue">🔁 重做打卡${rs.length ? '(' + rs.length + '次·最近' + rs[rs.length - 1].slice(5) + ')' : ''}</button>
+      <button data-act="master" class="small blue">✓ 已掌握(归档)</button>` : ''}
+    </div>`;
   if (isBad(s)){
-    const REASONS = ['概念不清', '公式记错', '计算失误', '思路错误', '审题失误', '没时间'];
     h += `<div class="reasons">${REASONS.map(r =>
       `<button data-rs="${r}" class="${reason === r ? 'on' : ''}">${r}</button>`).join('')}</div>
-      <div class="reasonbox" style="margin-top:8px"><textarea placeholder="补充错因/卡壳点(可选)…">${reason && !REASONS.includes(reason) ? reason : ''}</textarea></div>
-      <div class="metabar">错题档案:标记 ${isBad(s) ? '进行中' : ''} ｜ 重做 ${rs.length} 次${rs.length ? ' · 最近 ' + rs[rs.length - 1] : ''}</div>`;
+      <div class="reasonbox" style="margin-top:7px"><textarea placeholder="补充错因/卡壳点(可选)…">${reason && !REASONS.includes(reason) ? reason : ''}</textarea></div>
+      <div class="metabar">重做 ${rs.length} 次${rs.length ? ' · 最近 ' + rs[rs.length - 1] : ' · 还没重做过'}</div>`;
   }
-  box.innerHTML = h;
-
-  mdInto(box.querySelector('#st-' + item.id), item.stem);
-  if (item.key){
-    mdInto(box.querySelector('#ky-' + item.id), item.key);
-    const kb = box.querySelector('#kb-' + item.id);
-    kb.querySelector('.hint').addEventListener('click', () => {
-      kb.querySelector('.kd').classList.remove('blurred');
-      kb.classList.remove('showhint');
+  return h + `</div>`;
+}
+function bindItem(box, sid, md){
+  const el = box.querySelector(`[data-item="${CSS.escape(sid)}"]`);
+  if (!el) return;
+  mdInto(el.querySelector('.inner'), md);
+  const kd = el.querySelector('.kd');
+  if (kd.classList.contains('blurred'))
+    kd.parentElement.querySelector('.hint').addEventListener('click', () => {
+      kd.classList.remove('blurred');
+      kd.parentElement.querySelector('.hint').remove();
     });
-  }
-  box.querySelectorAll('[data-st]').forEach(btn =>
+  el.querySelectorAll('[data-st]').forEach(btn =>
     btn.addEventListener('click', () => {
-      const v = btn.dataset.st, cur = (STATE[item.id] || {}).st;
-      const rec = STATE[item.id] || { reason: '', rs: [] };
-      if (cur === v){ delete STATE[item.id]; }
-      else { rec.st = v; STATE[item.id] = rec; }
-      saveState(); fillQuestion(box, item); refreshChips();
+      const v = btn.dataset.st, rec = STATE[sid] || {};
+      if (rec.st === v) delete STATE[sid];
+      else { rec.st = v; STATE[sid] = rec; }
+      saveState(); fillQuestion(box, QMAP[box.dataset.q].q);
     }));
-  box.querySelectorAll('[data-rs]').forEach(btn =>
+  el.querySelectorAll('[data-rs]').forEach(btn =>
     btn.addEventListener('click', () => {
-      const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
+      const rec = STATE[sid] || (STATE[sid] = {});
       rec.reason = rec.reason === btn.dataset.rs ? '' : btn.dataset.rs;
-      saveState(); fillQuestion(box, item); refreshChips();
+      saveState(); fillQuestion(box, QMAP[box.dataset.q].q);
     }));
-  const ta = box.querySelector('.reasonbox textarea');
+  const ta = el.querySelector('textarea');
   if (ta) ta.addEventListener('change', () => {
-    const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
+    const rec = STATE[sid] || (STATE[sid] = {});
     rec.reason = ta.value.trim(); saveState();
   });
-  const redoBtn = box.querySelector('[data-act="redo"]');
-  if (redoBtn) redoBtn.addEventListener('click', () => {
-    const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
+  const redo = el.querySelector('[data-act="redo"]');
+  if (redo) redo.addEventListener('click', () => {
+    const rec = STATE[sid] || (STATE[sid] = {});
     rec.rs = rec.rs || []; rec.rs.push(todayISO());
-    saveState(); fillQuestion(box, item); refreshChips();
-    alert('重做打卡 ✓ 第 ' + rec.rs.length + ' 次');
+    saveState(); fillQuestion(box, QMAP[box.dataset.q].q);
   });
-  const masterBtn = box.querySelector('[data-act="master"]');
-  if (masterBtn) masterBtn.addEventListener('click', () => {
-    const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
-    rec.st = 'ok'; saveState(); fillQuestion(box, item); refreshChips();
+  const master = el.querySelector('[data-act="master"]');
+  if (master) master.addEventListener('click', () => {
+    const rec = STATE[sid] || (STATE[sid] = {});
+    rec.st = 'ok'; saveState(); fillQuestion(box, QMAP[box.dataset.q].q);
   });
+}
+
+function fillQuestion(box, q){
+  box.dataset.q = q.id;
+  let h = `<div class="stem" id="stem-${q.id}"></div>`;
+  itemsOf(q).forEach(it => { h += itemBlock(it.sid, it.label, it.md); });
+  box.innerHTML = h;
+  box.dataset.q = q.id;
+  mdInto(box.querySelector('#stem-' + q.id), q.stem);
+  itemsOf(q).forEach(it => bindItem(box, it.sid, it.md));
+  refreshChips();
 }
 function refreshChips(){
-  const st = stats();
-  $('#statchips').innerHTML =
-    `<span class="chip">总题 <b>${st.total}</b></span>` +
-    `<span class="chip">已标 ${st.marked}</span>` +
-    `<span class="chip">错题 <b>${st.bad}</b></span>` +
-    `<span class="chip">待重做 <b>${st.todo}</b></span>`;
+  $('#statchips').innerHTML = statChipsHTML();
 }
-function todayISO(){ const d = new Date(); const p = n => String(n).padStart(2, '0');
-  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); }
 
 /* —— 渲染入口 —— */
 function render(){
@@ -316,7 +344,6 @@ async function init(){
       $('#filters').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
       render();
     }));
-  $('#backlink').addEventListener('click', () => { localStorage.setItem('z801_back', curYear || 0); });
 }
 init();
 </script>
