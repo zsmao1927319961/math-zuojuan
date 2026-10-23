@@ -266,6 +266,8 @@ body {
 #modal-note:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
 .note-save-hint { font-size: 11px; color: var(--sub); margin-top: 5px; text-align: right; }
 .answer-text.katex-render, .katex-render { overflow-x: auto; padding: 4px 0; }
+.katex-display { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; max-width: 100%; }
+.katex-display > .katex { padding: 2px 0; }
 
 /* ========= 无障碍与浏览器表面 ========= */
 :focus-visible {
