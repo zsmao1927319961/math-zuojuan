@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>801 真题错题 · 1998—2025</title>
+<link rel="stylesheet" href="katex/katex.min.css">
+<style>
+  :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
+  * { box-sizing:border-box; }
+  html,body{overflow-x:hidden}
+  body { margin:0; background:#f6f7fb; color:var(--ink);
+         font-family:-apple-system,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+         font-size:16.5px; line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:14px 14px 60px; }
+  .top { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+  h1 { font-size:21px; color:var(--blue); margin:4px 0 0; }
+  .back { font-size:13.5px; color:#5a6472; text-decoration:none; flex:0 0 auto; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 4px; }
+  .chip { background:#fff; border:1px solid var(--line); border-radius:999px; padding:4px 12px; font-size:13px; color:#3c4657; }
+  .chip b { color:var(--red); }
+  .fchips { display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 2px; }
+  .fchips button { border:1px solid var(--line); background:#fff; border-radius:999px;
+                   padding:4px 14px; font-size:13.5px; cursor:pointer; color:#5a6472; }
+  .fchips button.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:700; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; margin-top:10px; }
+  .ycard { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 13px; cursor:pointer;
+           transition:transform .15s, box-shadow .15s; }
+  .ycard:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(35,50,90,.10); }
+  .ycard .y { font-size:18px; font-weight:800; color:var(--blue); }
+  .ycard .m { font-size:12.5px; color:#7a828f; margin-top:4px; }
+  .ycard .bad { color:var(--red); font-weight:700; }
+  .ycard .todo { color:var(--orange); font-weight:700; }
+  .pbar { height:6px; background:#e8ebf2; border-radius:99px; overflow:hidden; margin-top:8px; }
+  .pbar i { display:block; height:100%; background:#3d5aa9; border-radius:99px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; }
+  .q { background:#fff; border:1px solid var(--line); border-radius:12px; margin:10px 0; overflow:hidden; }
+  .qhead { display:flex; align-items:center; gap:9px; padding:10px 13px; cursor:pointer; }
+  .qhead .no { flex:1; min-width:0; font-weight:600; font-size:15px;
+               overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .qbody { border-top:1px solid var(--line); padding:6px 14px 12px; }
+  .stc { font-size:12px; border-radius:6px; padding:1.5px 8px; font-weight:700; white-space:nowrap; }
+  .stc.ok { background:#e8f7f0; color:#1d9e6f; }
+  .stc.half { background:#fff4e0; color:#b26a00; }
+  .stc.bad { background:#fdeaea; color:#c0504d; }
+  .stc.none { background:#f0f2f6; color:#98a0ad; }
+  .stem { font-size:15.5px; }
+  .stem p { margin:.5em 0; }
+  .keybox { margin-top:10px; border-top:1px dashed var(--line); padding-top:8px; }
+  .keybox .kd { position:relative; }
+  .keybox .kd.blurred .inner { filter:blur(7px); user-select:none; }
+  .keybox .inner { transition:filter .25s; font-size:15px; }
+  .keybox .hint { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+                  font-size:13.5px; color:#8a94a6; cursor:pointer; }
+  .keybox.showhint .hint { display:flex; }
+  .keybox .hint { display:none; }
+  .btns { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .btns button { border:1.5px solid var(--line); background:#fff; border-radius:9px;
+                 padding:6px 14px; font-size:14px; cursor:pointer; color:var(--ink); }
+  .btns button.on-ok { background:var(--green); border-color:var(--green); color:#fff; }
+  .btns button.on-half { background:#ff9800; border-color:#ff9800; color:#fff; }
+  .btns button.on-bad { background:var(--red); border-color:var(--red); color:#fff; }
+  .btns button.small { padding:4px 11px; font-size:13px; }
+  .reasons { display:flex; gap:7px; flex-wrap:wrap; margin-top:9px; }
+  .reasons button { border:1px solid var(--line); background:#fff; border-radius:999px;
+                    padding:3px 12px; font-size:13px; cursor:pointer; color:#5a6472; }
+  .reasons button.on { background:#fdeaea; border-color:#f2c4c0; color:var(--red); font-weight:700; }
+  .reasonbox textarea { width:100%; min-height:52px; border:1px solid var(--line); border-radius:9px;
+                        padding:8px 10px; font-size:14px; font-family:inherit; resize:vertical; }
+  .metabar { font-size:12.5px; color:#8a94a6; margin-top:8px; }
+  .notice { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px;
+            font-size:14px; margin:10px 0; }
+  .notice.red { background:#fdecec; border-color:#f2c4c0; }
+  .tip { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px; font-size:14px; margin-top:10px; }
+  .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
+  .empty { text-align:center; color:#8a94a6; padding:30px 0; }
+  @media (max-width:520px){ body{font-size:15.5px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>801 真题错题 · 1998—2025</h1>
+    <a class="back" id="backlink" href="index.html">← 返回主站</a>
+  </div>
+  <div class="chips" id="statchips"></div>
+  <div class="fchips" id="filters" hidden>
+    <button data-f="all" class="on">全部</button>
+    <button data-f="bad">只看错题</button>
+    <button data-f="none">只看未标</button>
+    <button data-f="redo">只看待重做</button>
+  </div>
+  <div id="app"><div class="empty">加载中…</div></div>
+
+  <div class="tip"><b>用法</b>:点年份进卷册 → 展开题目先看题面自己作答 → 标 <b>会 / 半会 / 错</b>;错题记错因(点选+可补一句),<b>看精解</b>默认打码防偷瞄;<br>
+  错题要<b>重做打卡</b>(记录次数和最近一次日期),重做过关后点「已掌握」归档。数据存本机浏览器,换设备前先去「全站备份」打包。</div>
+  <div class="foot">801 真题错题模块 ｜ 数据:data/zhenti801.json(28 年 251 题,精解由 ZCode 维护) ｜ 状态:z801_state_v1</div>
+</div>
+
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script src="marked/marked.min.js"></script>
+<script>
+'use strict';
+const LS_KEY = 'z801_state_v1';
+let DATA = null;                 // {years:[{year,title,brief,qs:[{id,no,stem,key}]}]}
+let YMAP = {};                   // year -> year obj
+let QMAP = {};                   // qid -> {y, q}
+let STATE = {};                  // qid -> {st, reason, rs:[]}
+let curYear = 0;                 // 0 = 卷册总览
+let filter = 'all';
+
+const $ = s => document.querySelector(s);
+function loadState(){ try { STATE = JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch(e){ STATE = {}; } }
+function saveState(){ try { localStorage.setItem(LS_KEY, JSON.stringify(STATE)); } catch(e){} }
+function stOf(qid){ return STATE[qid] || null; }
+const isBad = s => !!s && (s.st === 'bad' || s.st === 'half');
+const isMarked = s => !!s;
+
+function mdInto(el, mdText){
+  el.innerHTML = marked.parse(mdText || '');
+  if (window.renderMathInElement)
+    renderMathInElement(el, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '$', right: '$', display: false}
+      ],
+      throwOnError: false
+    });
+}
+
+function stats(){
+  let marked = 0, bad = 0, todo = 0, total = 0;
+  DATA.years.forEach(y => y.qs.forEach(q => {
+    total++;
+    const s = stOf(q.id);
+    if (s) marked++;
+    if (isBad(s)){ bad++; if (!s.rs || !s.rs.length) todo++; }
+  }));
+  return { total, marked, bad, todo };
+}
+function yearStats(y){
+  let marked = 0, bad = 0, todo = 0;
+  y.qs.forEach(q => {
+    const s = stOf(q.id);
+    if (s) marked++;
+    if (isBad(s)){ bad++; if (!s.rs || !s.rs.length) todo++; }
+  });
+  return { n: y.qs.length, marked, bad, todo };
+}
+
+function stChip(s){
+  const cls = !s ? 'none' : s.st;
+  const txt = !s ? '未标' : (s.st === 'ok' ? '✓ 会' : (s.st === 'half' ? '△ 半会' : '✗ 错'));
+  return `<span class="stc ${cls}">${txt}</span>`;
+}
+
+/* —— 卷册总览 —— */
+function vHome(){
+  const st = stats();
+  $('#statchips').innerHTML =
+    `<span class="chip">总题 <b>${st.total}</b></span>` +
+    `<span class="chip">已标 ${st.marked}</span>` +
+    `<span class="chip">错题 <b>${st.bad}</b></span>` +
+    `<span class="chip">待重做 <b>${st.todo}</b></span>`;
+  let h = '';
+  DATA.years.forEach(y => {
+    const s = yearStats(y);
+    h += `<div class="ycard" data-year="${y.year}">
+      <div class="y">${y.year}</div>
+      <div class="m">${s.n} 题 · 已标 ${s.marked} · <span class="bad">错 ${s.bad}</span>${s.todo ? ` · <span class="todo">待重做 ${s.todo}</span>` : ''}</div>
+      <div class="pbar"><i style="width:${s.n ? Math.round(s.marked / s.n * 100) : 0}%"></i></div>
+    </div>`;
+  });
+  $('#app').innerHTML = `<div class="grid">${h}</div>`;
+  $('#app').querySelectorAll('[data-year]').forEach(el =>
+    el.addEventListener('click', () => { curYear = +el.dataset.year; filter = 'all'; render(); window.scrollTo(0, 0); }));
+  $('#filters').hidden = true;
+}
+
+/* —— 卷册详情 —— */
+function passFilter(q){
+  const s = stOf(q.id);
+  if (filter === 'bad') return isBad(s);
+  if (filter === 'none') return !s;
+  if (filter === 'redo') return isBad(s) && (!s.rs || !s.rs.length);
+  return true;
+}
+function vYear(){
+  const y = YMAP[curYear];
+  if (!y){ vHome(); return; }
+  $('#statchips').innerHTML = '';
+  $('#filters').hidden = false;
+  const qs = y.qs.filter(passFilter);
+  let h = `<div class="notice blue"><b>${y.year} 年</b> · ${y.qs.length} 题 ｜ ${y.brief.slice(0, 60)}${y.brief.length > 60 ? '…' : ''}
+    　<a href="#" id="backhome" style="color:var(--blue)">← 全部年份</a></div>`;
+  if (!qs.length) h += `<div class="empty">该筛选下没有题目</div>`;
+  qs.forEach(q => {
+    const s = stOf(q.id);
+    h += `<div class="q" data-q="${q.id}">
+      <div class="qhead" data-toggle="${q.id}"><span class="no">${q.no}</span>${stChip(s)}<span style="color:#98a0ad">▾</span></div>
+      <div class="qbody" hidden></div>
+    </div>`;
+  });
+  $('#app').innerHTML = h;
+
+  $('#backhome').addEventListener('click', e => { e.preventDefault(); curYear = 0; filter = 'all'; render(); window.scrollTo(0, 0); });
+  $('#app').querySelectorAll('[data-toggle]').forEach(el =>
+    el.addEventListener('click', () => {
+      const box = el.parentElement.querySelector('.qbody');
+      if (box.hidden){ box.hidden = false; fillQuestion(box, QMAP[el.dataset.toggle]); }
+      else { box.hidden = true; box.innerHTML = ''; }
+    }));
+}
+function fillQuestion(box, item){
+  const s = stOf(item.id) || {};
+  const st = s.st || '';
+  const reason = s.reason || '';
+  const rs = s.rs || [];
+  let h = `<div class="stem" id="st-${item.id}"></div>`;
+  if (item.key) h += `<div class="keybox showhint" id="kb-${item.id}"><div class="kd blurred"><div class="inner" id="ky-${item.id}"></div></div><div class="hint">🔒 精解已打码 · 点这里显示(先自己作答)</div></div>`;
+  h += `<div class="btns">
+    <button data-st="ok" class="${st === 'ok' ? 'on-ok' : ''}">✓ 会</button>
+    <button data-st="half" class="${st === 'half' ? 'on-half' : ''}">△ 半会</button>
+    <button data-st="bad" class="${st === 'bad' ? 'on-bad' : ''}">✗ 错</button>
+    ${isBad(s) ? `<button data-act="redo" class="small blue">🔁 重做打卡${rs.length ? '(' + rs.length + '次·最近' + rs[rs.length - 1].slice(5) + ')' : ''}</button>
+    <button data-act="master" class="small blue">✓ 已掌握(归档)</button>` : ''}
+  </div>`;
+  if (isBad(s)){
+    const REASONS = ['概念不清', '公式记错', '计算失误', '思路错误', '审题失误', '没时间'];
+    h += `<div class="reasons">${REASONS.map(r =>
+      `<button data-rs="${r}" class="${reason === r ? 'on' : ''}">${r}</button>`).join('')}</div>
+      <div class="reasonbox" style="margin-top:8px"><textarea placeholder="补充错因/卡壳点(可选)…">${reason && !REASONS.includes(reason) ? reason : ''}</textarea></div>
+      <div class="metabar">错题档案:标记 ${isBad(s) ? '进行中' : ''} ｜ 重做 ${rs.length} 次${rs.length ? ' · 最近 ' + rs[rs.length - 1] : ''}</div>`;
+  }
+  box.innerHTML = h;
+
+  mdInto(box.querySelector('#st-' + item.id), item.stem);
+  if (item.key){
+    mdInto(box.querySelector('#ky-' + item.id), item.key);
+    const kb = box.querySelector('#kb-' + item.id);
+    kb.querySelector('.hint').addEventListener('click', () => {
+      kb.querySelector('.kd').classList.remove('blurred');
+      kb.classList.remove('showhint');
+    });
+  }
+  box.querySelectorAll('[data-st]').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.st, cur = (STATE[item.id] || {}).st;
+      const rec = STATE[item.id] || { reason: '', rs: [] };
+      if (cur === v){ delete STATE[item.id]; }
+      else { rec.st = v; STATE[item.id] = rec; }
+      saveState(); fillQuestion(box, item); refreshChips();
+    }));
+  box.querySelectorAll('[data-rs]').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
+      rec.reason = rec.reason === btn.dataset.rs ? '' : btn.dataset.rs;
+      saveState(); fillQuestion(box, item); refreshChips();
+    }));
+  const ta = box.querySelector('.reasonbox textarea');
+  if (ta) ta.addEventListener('change', () => {
+    const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
+    rec.reason = ta.value.trim(); saveState();
+  });
+  const redoBtn = box.querySelector('[data-act="redo"]');
+  if (redoBtn) redoBtn.addEventListener('click', () => {
+    const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
+    rec.rs = rec.rs || []; rec.rs.push(todayISO());
+    saveState(); fillQuestion(box, item); refreshChips();
+    alert('重做打卡 ✓ 第 ' + rec.rs.length + ' 次');
+  });
+  const masterBtn = box.querySelector('[data-act="master"]');
+  if (masterBtn) masterBtn.addEventListener('click', () => {
+    const rec = STATE[item.id] || (STATE[item.id] = { rs: [] });
+    rec.st = 'ok'; saveState(); fillQuestion(box, item); refreshChips();
+  });
+}
+function refreshChips(){
+  const st = stats();
+  $('#statchips').innerHTML =
+    `<span class="chip">总题 <b>${st.total}</b></span>` +
+    `<span class="chip">已标 ${st.marked}</span>` +
+    `<span class="chip">错题 <b>${st.bad}</b></span>` +
+    `<span class="chip">待重做 <b>${st.todo}</b></span>`;
+}
+function todayISO(){ const d = new Date(); const p = n => String(n).padStart(2, '0');
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); }
+
+/* —— 渲染入口 —— */
+function render(){
+  if (curYear) vYear(); else vHome();
+}
+
+async function init(){
+  loadState();
+  try {
+    const r = await fetch('data/zhenti801.json?' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    DATA = await r.json();
+  } catch(e){
+    $('#app').innerHTML = '<div class="notice red">数据加载失败,请联网后刷新重试。</div>';
+    return;
+  }
+  DATA.years.forEach(y => {
+    YMAP[y.year] = y;
+    y.qs.forEach(q => QMAP[q.id] = { y: y.year, q });
+  });
+  render();
+
+  $('#filters').querySelectorAll('button').forEach(b =>
+    b.addEventListener('click', () => {
+      filter = b.dataset.f;
+      $('#filters').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+      render();
+    }));
+  $('#backlink').addEventListener('click', () => { localStorage.setItem('z801_back', curYear || 0); });
+}
+init();
+</script>
+</body>
+</html>
