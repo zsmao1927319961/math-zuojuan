@@ -69,6 +69,20 @@ for fp in sorted(glob.glob(SRC_DIR + r'\19*.md') + glob.glob(SRC_DIR + r'\20*.md
                                       't': f"第{chunks[0]['n'] - 1}{chunks[0]['k']}", 'md': intro})
                 elif intro:
                     chunks[0]['md'] = intro + '\n\n' + chunks[0]['md']
+            # 每个小题块内部再拆 题干(可见)/精解(打码):题干答案交替写的年份靠这步把题干解放出来
+            for c in chunks:
+                cm = c['md']
+                cut2 = len(cm)
+                for mk in SPLIT:
+                    p2 = cm.find(mk)
+                    if p2 != -1 and p2 < cut2:
+                        cut2 = p2
+                st2 = cm[:cut2].strip()
+                c['key'] = cm[cut2:].strip() if cut2 < len(cm) else ''
+                st2 = re.sub(r'^\s*\*\*第\d+(?:空|题|问)[^*\n]{0,40}\*\*\s*', '', st2).strip()
+                st2 = st2.rstrip('-').rstrip('　 \n')
+                c['stem'] = st2
+                del c['md']
             if len(chunks) >= 2:
                 subs = sorted(chunks, key=lambda c: c['n'])
                 key = ''
