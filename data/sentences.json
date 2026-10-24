@@ -1,5 +1,5 @@
 {
- "note": "2026-10-24 v5(用户纠正:要成品模板,不背例子库):批1-5不动(打卡保留);v4批6-17坍缩——批6=★第二段成品四句(动/静通用:过渡+经济原因+意识原因+虚拟语气警醒),批7=★动态图第三段两句(趋势持续+Only倒装),批8=★静态图第三段三句(总结+措施+畅想),批9=备选升级句库(眼熟即可,不进检测)。两套成品:动态版=批3-4+6+7 / 静态版=批1-2+6+8 / 双图表=批5+6+7或8。plan recite_order=[5,6,7,8]。tpl蓝字=必背框架;blank红字=考场按题填(汉字占位不背英文)。",
+ "note": "2026-10-24 v5(用户纠正:要成品模板,不背例子库):批1-5不动(打卡保留);v4批6-17坍缩——批6=★第二段成品四句(动/静通用:过渡+经济原因+意识原因+虚拟语气警醒),批7=★动态图第三段两句(趋势持续+Only倒装),批8=★静态图第三段三句(总结+措施+畅想),批9=备选升级句库(眼熟即可,不进检测)。两套成品:动态版=批3-4+6+7 / 静态版=批1-2+6+8 / 双图表=批5+6+7或8。plan recite_order=[5,6,7,8]。tpl蓝字=必背框架;blank红字=考场按题填(汉字占位不背英文)。10-24二改:二段连接词换More importantly(等量),某方面=优先抄图表点名项(规则),结尾句维持万能版不换。",
  "days": [
   {
    "day": 1,
@@ -88,9 +88,9 @@
      "meta": "经济万能原因,适配消费/生活/行业类图表;科技类图表换:The rapid advancement of technology has made 题目相关词 increasingly accessible to the general public."
     },
     {
-     "en": "<span class=\"tpl\">What's more, an increasing number of people are beginning to realize that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">plays a crucial role in</span> <span class=\"blank\">某方面</span>.",
+     "en": "<span class=\"tpl\">More importantly, an increasing number of people are beginning to realize that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">plays a crucial role in</span> <span class=\"blank\">某方面</span>.",
      "zh": "更重要的是，越来越多的人开始意识到，题目相关词在某方面起着至关重要的作用。",
-     "meta": "某方面备选(六大方面高频):personal growth 个人成长 / quality of life 生活质量 / physical and mental health 身心健康 / social progress 社会进步 / effective communication 有效沟通 / family bonding 家庭纽带 / expand one's horizons 开拓眼界。注意谓语单复数:outdoor activities play / the popularity of X plays。"
+     "meta": "选法:优先抄图表自己点名的意义项(儿童户外活动→sharpening observational skills;劳动实践→practical skills;老人休闲→physical and mental health),纯数量趋势图才用下方通用方面。。注意谓语单复数:outdoor activities play / the popularity of X plays。"
     },
     {
      "en": "<span class=\"tpl\">Last but not least, if we ignored the importance of</span> <span class=\"blank\">题目相关词</span><span class=\"tpl\">, we would never become a better version of ourselves.</span>",
