@@ -43,6 +43,23 @@
   .stc.half { background:#fff4e0; color:#b26a00; }
   .stc.bad { background:#fdeaea; color:#c0504d; }
   .stc.none { background:#f0f2f6; color:#98a0ad; }
+  .ztc { font-size:11px; border-radius:6px; padding:1.5px 7px; font-weight:700; white-space:nowrap; flex:0 0 auto; }
+  .ztc.S { background:#fdeaea; color:#c0504d; }
+  .ztc.A { background:#fff4e0; color:#b26a00; }
+  .ztc.B { background:#fffbe5; color:#8a7a00; }
+  .ztc.C { background:#f0f2f6; color:#98a0ad; }
+  .tchips { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 0; }
+  .tchips button { border:1px solid var(--line); background:#fff; border-radius:9px; padding:5px 10px;
+                   font-size:13px; cursor:pointer; color:#3c4657; display:flex; align-items:center; gap:6px; }
+  .tchips button:hover { border-color:#b9c8ea; background:#f8faff; }
+  .tchips button .ztc { font-size:10px; padding:0 5px; }
+  .tchips button .cnt { color:#98a0ad; font-size:11.5px; }
+  .trow { display:flex; align-items:center; gap:8px; margin:12px 0 0; flex-wrap:wrap;
+          font-size:13px; color:#5a6472; }
+  .trow select { border:1px solid var(--line); border-radius:8px; padding:4px 8px; font-size:13px;
+                 background:#fff; color:var(--ink); max-width:260px; }
+  .legend { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:7px 12px;
+            font-size:12.5px; color:#5a6472; margin:10px 0 0; }
   .stem { font-size:15.5px; }
   .stem p { margin:.5em 0; }
   .item { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:9px 12px; margin:10px 0; }
@@ -86,17 +103,19 @@
     <a class="back" href="index.html">← 返回主站</a>
   </div>
   <div class="chips" id="statchips"></div>
+  <div class="legend" id="ztlegend">🏷️ 大题头标签 = 该题所属<b>真题题型</b>与考频分级（S 必考主力 · A 高频常客 · B 低频回访 · C 大题基本不考），依据平界冲刺直播课 2014–2026 大题分布总表并逐题核对精解标题；<b>按题型练</b>可跨年份集中练一类题。1998–2013 未参与该统计，无标注。</div>
   <div class="fchips" id="filters" hidden>
     <button data-f="all" class="on">全部</button>
     <button data-f="bad">只看错题</button>
     <button data-f="none">只看未标</button>
     <button data-f="redo">只看待重做</button>
   </div>
+  <div class="trow" id="ztselrow" hidden></div>
   <div id="app"><div class="empty">加载中…</div></div>
 
   <div class="tip"><b>用法</b>:点年份进卷册 → 展开大题看题面自己作答 → 逐小题(第1空/第1题…)标 <b>会 / 半会 / 错</b>,标错的记错因、点重做打卡;<b>看精解</b>默认打码防偷瞄;整道大题重做过关后逐项点「已掌握」归档。<br>
   状态存本机浏览器,换设备前先去「全站备份」打包。</div>
-  <div class="foot">801 真题错题模块 ｜ 数据:data/zhenti801.json(28 年 251 大题 · 707 追踪项,精解由 ZCode 维护) ｜ 状态:z801_state_v1</div>
+  <div class="foot">801 真题错题模块 ｜ 数据:data/zhenti801.json(28 年 251 大题 · 707 追踪项,精解由 ZCode 维护) ｜ 状态:z801_state_v1 ｜ 题型标注:平界冲刺直播课 2014–2026 大题分布(2014–2025 已逐题核对精解标题)</div>
 </div>
 
 <script src="katex/katex.min.js"></script>
@@ -106,7 +125,59 @@
 'use strict';
 const LS_KEY = 'z801_state_v1';
 let DATA = null, YMAP = {}, QMAP = {}, STATE = {};
-let curYear = 0, filter = 'all';
+let curYear = 0, filter = 'all', curType = '', ztFilter = '';
+
+/* —— 题型映射（源:平界2027冲刺直播课 2014-2026 大题分布总表,已逐题核对站内精解标题,以实际标题为准）—— */
+const ZT_TYPES = {
+  t1:  { n: '随机过程过线性系统', tier: 'S' },
+  t2:  { n: '模拟通信抗噪声',     tier: 'A' },
+  t3:  { n: '调频调相参数',       tier: 'B' },
+  t4:  { n: '频分复用复合调制',   tier: 'C' },
+  t5:  { n: '无码间干扰',         tier: 'A' },
+  t7:  { n: '信道容量',           tier: 'B' },
+  t8:  { n: '二进制频带误码率',   tier: 'A' },
+  t9:  { n: '多进制频带与星座图', tier: 'B' },
+  t10: { n: '最佳接收·匹配滤波',  tier: 'S' },
+  t11: { n: '多进制/MSK误码率',   tier: 'B' },
+  t12: { n: '时域均衡',           tier: 'B' },
+  t13: { n: 'PCM+TDM综合',        tier: 'A' },
+  t14: { n: 'A律13折线编码',      tier: 'A' },
+  t15: { n: '抽样量化',           tier: 'C' },
+  t16: { n: '纠错编码',           tier: 'S' }
+};
+const ZT_MAP = {
+  '2014': { 4:['t7'], 5:['t2'], 6:['t5'], 7:['t12'], 8:['t8'], 9:['t13'], 10:['t10'], 11:['t16'] },
+  '2015': { 4:['t1'], 5:['t7'], 6:['t2'], 7:['t5'], 8:['t11'], 9:['t8'], 10:['t10'], 11:['t16'] },
+  '2016': { 4:['t1'], 5:['t3'], 6:['t12'], 7:['t8'], 8:['t11'], 9:['t10'], 10:['t15'], 11:['t16'] },
+  '2017': { 4:['t1'], 5:['t4'], 6:['t5'], 7:['t8'], 8:['t9'], 9:['t10'], 10:['t15'], 11:['t16'] },
+  '2018': { 4:['t1'], 5:['t7'], 6:['t2'], 7:['t5'], 8:['t8'], 9:['t10'], 10:['t16'], 11:['t15'] },
+  '2019': { 4:['t1'], 5:['t7'], 7:['t9','t10'], 8:['t9'], 9:['t10'], 10:['t16'], 11:['t16'] },
+  '2020': { 4:['t1'], 5:['t7','t9'], 6:['t12'], 7:['t9'], 8:['t11'], 9:['t10'], 10:['t13'], 11:['t16'] },
+  '2021': { 4:['t7'], 5:['t5'], 6:['t8'], 7:['t9'], 8:['t10'], 9:['t16'], 10:['t13'], 11:['t16'] },
+  '2022': { 4:['t7'], 5:['t2'], 6:['t5'], 7:['t15'], 8:['t9'], 9:['t16'] },
+  '2023': { 4:['t3','t2'], 5:['t5'], 6:['t8'], 7:['t13'], 8:['t10'], 9:['t16'], 10:['t14'] },
+  '2024': { 4:['t1'], 5:['t2'], 6:['t12'], 7:['t8'], 8:['t16'], 9:['t10'], 10:['t13'] },
+  '2025': { 4:['t1'], 5:['t2'], 6:['t5'], 7:['t8'], 8:['t14'], 9:['t16'], 10:['t10'] }
+};
+const ZT_ORDER = { S: 0, A: 1, B: 2, C: 3 };
+function ztOf(q){
+  const m = /^y(\d{4})q(\d+)$/.exec(q.id || '');
+  if (!m) return null;
+  const row = ZT_MAP[m[1]];
+  return (row && row[+m[2]]) || null;
+}
+function ztChipsHTML(q){
+  const ts = ztOf(q);
+  if (!ts) return '';
+  return ts.map(t => { const d = ZT_TYPES[t];
+    return `<span class="ztc ${d.tier}">${d.tier}·${d.n}</span>`; }).join('');
+}
+function typeCounts(){
+  const m = {};
+  Object.keys(ZT_TYPES).forEach(t => m[t] = 0);
+  DATA.years.forEach(y => y.qs.forEach(q => (ztOf(q) || []).forEach(t => m[t]++)));
+  return m;
+}
 
 const $ = s => document.querySelector(s);
 function loadState(){ try { STATE = JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch(e){ STATE = {}; } }
@@ -189,6 +260,7 @@ function statChipsHTML(){
 
 /* —— 卷册总览 —— */
 function vHome(){
+  curType = ''; ztFilter = '';
   $('#statchips').innerHTML = statChipsHTML();
   let h = '';
   DATA.years.forEach(y => {
@@ -199,10 +271,52 @@ function vHome(){
       <div class="pbar"><i style="width:${s.n ? Math.round(s.marked / s.n * 100) : 0}%"></i></div>
     </div>`;
   });
-  $('#app').innerHTML = `<div class="grid">${h}</div>`;
+  const tc = typeCounts();
+  const order = { S: 0, A: 1, B: 2, C: 3 };
+  const types = Object.keys(ZT_TYPES).sort((a, b) =>
+    (order[ZT_TYPES[a].tier] - order[ZT_TYPES[b].tier]) || (tc[b] - tc[a]));
+  const tch = types.map(t => {
+    const d = ZT_TYPES[t];
+    return `<button data-type="${t}"><span class="ztc ${d.tier}">${d.tier}</span>${d.n}<span class="cnt">· ${tc[t]} 题</span></button>`;
+  }).join('');
+  $('#app').innerHTML = `<div class="tchips" id="typechips">${tch}</div><div class="grid">${h}</div>`;
   $('#app').querySelectorAll('[data-year]').forEach(el =>
     el.addEventListener('click', () => { curYear = +el.dataset.year; filter = 'all'; render(); window.scrollTo(0, 0); }));
+  $('#app').querySelectorAll('[data-type]').forEach(el =>
+    el.addEventListener('click', () => { curType = el.dataset.type; render(); window.scrollTo(0, 0); }));
   $('#filters').hidden = true;
+  $('#ztselrow').hidden = true;
+}
+
+/* —— 按题型练:跨年份集中列出一类大题 —— */
+function vType(t){
+  const d = ZT_TYPES[t];
+  if (!d){ curType = ''; render(); return; }
+  $('#statchips').innerHTML = statChipsHTML();
+  $('#filters').hidden = true;
+  $('#ztselrow').hidden = true;
+  let h = `<div class="notice blue"><b>按题型练 · ${d.n}</b>（<span class="ztc ${d.tier}">${d.tier}</span> 级）｜ 考频与模板卡见桌面《南邮801 重点复习章节》《16 题型解题模板》，点题进对应年份卷练习
+    　<a href="#" id="backhome2" style="color:var(--blue)">← 全部年份</a></div>`;
+  let any = false;
+  [...DATA.years].reverse().forEach(y => {
+    const qs = y.qs.filter(q => (ztOf(q) || []).includes(t));
+    if (!qs.length) return;
+    any = true;
+    h += `<div class="notice" style="padding:5px 13px"><b>${y.year} 年</b></div>`;
+    qs.forEach(q => {
+      h += `<div class="q" data-qy="${y.year}" data-qt="${t}">
+        <div class="qhead"><span class="no">${q.no}</span>${ztChipsHTML(q)}${secChip(q)}<span style="color:#98a0ad">▾</span></div>
+      </div>`;
+    });
+  });
+  if (!any) h += `<div class="empty">该题型暂无匹配大题（1998–2013 未参与题型统计）</div>`;
+  $('#app').innerHTML = h;
+  $('#backhome2').addEventListener('click', e => { e.preventDefault(); curType = ''; render(); window.scrollTo(0, 0); });
+  $('#app').querySelectorAll('[data-qy]').forEach(el =>
+    el.addEventListener('click', () => {
+      curYear = +el.dataset.qy; ztFilter = el.dataset.qt; filter = 'all'; curType = '';
+      render(); window.scrollTo(0, 0);
+    }));
 }
 
 /* —— 卷册详情 —— */
@@ -213,20 +327,33 @@ function passFilter(sid){
   if (filter === 'redo') return isBad(s) && (!s.rs || !s.rs.length);
   return true;
 }
-function secPass(q){ return itemsOf(q).some(it => passFilter(it.sid)); }
+function secPass(q){
+  if (ztFilter && !(ztOf(q) || []).includes(ztFilter)) return false;
+  return itemsOf(q).some(it => passFilter(it.sid));
+}
 
 function vYear(){
   const y = YMAP[curYear];
   if (!y){ vHome(); return; }
   $('#statchips').innerHTML = statChipsHTML();
   $('#filters').hidden = false;
+  $('#ztselrow').hidden = false;
+  const opts = Object.keys(ZT_TYPES).sort((a, b) =>
+    (ZT_ORDER[ZT_TYPES[a].tier] - ZT_ORDER[ZT_TYPES[b].tier])).map(t => {
+      const d = ZT_TYPES[t];
+      return `<option value="${t}" ${ztFilter === t ? 'selected' : ''}>${d.tier} · ${d.n}</option>`;
+    }).join('');
+  $('#ztselrow').innerHTML = `<span>题型筛选:</span><select id="ztsel">
+      <option value="">全部题型</option>${opts}</select>
+    <span class="small" style="font-size:12px;color:#98a0ad">标注=平界冲刺课 2014–2026 大题分布口径</span>`;
+  $('#ztsel').addEventListener('change', e => { ztFilter = e.target.value; render(); });
   const qs = y.qs.filter(secPass);
   let h = `<div class="notice blue"><b>${y.year} 年</b> · ${y.qs.length} 大题 ｜ ${y.brief.slice(0, 60)}${y.brief.length > 60 ? '…' : ''}
     　<a href="#" id="backhome" style="color:var(--blue)">← 全部年份</a></div>`;
   if (!qs.length) h += `<div class="empty">该筛选下没有题目</div>`;
   qs.forEach(q => {
     h += `<div class="q" data-q="${q.id}">
-      <div class="qhead" data-toggle="${q.id}"><span class="no">${q.no}</span>${secChip(q)}<span style="color:#98a0ad">▾</span></div>
+      <div class="qhead" data-toggle="${q.id}"><span class="no">${q.no}</span>${ztChipsHTML(q)}${secChip(q)}<span style="color:#98a0ad">▾</span></div>
       <div class="qbody" hidden></div>
     </div>`;
   });
@@ -330,7 +457,9 @@ function refreshChips(){
 
 /* —— 渲染入口 —— */
 function render(){
-  if (curYear) vYear(); else vHome();
+  if (curYear) vYear();
+  else if (curType) vType(curType);
+  else vHome();
 }
 
 async function init(){
