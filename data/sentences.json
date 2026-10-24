@@ -1,5 +1,5 @@
 {
- "note": "2026-10-24 v4(分段混搭,用户拍板):苦瓜只留静态+动态第一段(批1-4,打卡保留);苦瓜二段/尾段/备用段/功能句(原批5-15)按决定移除(git历史可找回);原AI归来批16-22重排为批5/7/8/9/13/15/16(内容未动,打卡保留);新增批6过渡句/10方案四六/11比喻/12六大方面词组/14否定倒装/17趋势预测(均出自AI归来27版大作文PDF)。共17批,批1-5已有底子,剩余按plan补背≤2批/天,10/31默写检测不变。tpl蓝字=必背框架;blank红字=考场按题填(汉字占位不背英文)。",
+ "note": "2026-10-24 v5(用户纠正:要成品模板,不背例子库):批1-5不动(打卡保留);v4批6-17坍缩——批6=★第二段成品四句(动/静通用:过渡+经济原因+意识原因+虚拟语气警醒),批7=★动态图第三段两句(趋势持续+Only倒装),批8=★静态图第三段三句(总结+措施+畅想),批9=备选升级句库(眼熟即可,不进检测)。两套成品:动态版=批3-4+6+7 / 静态版=批1-2+6+8 / 双图表=批5+6+7或8。plan recite_order=[5,6,7,8]。tpl蓝字=必背框架;blank红字=考场按题填(汉字占位不背英文)。",
  "days": [
   {
    "day": 1,
@@ -75,248 +75,105 @@
   },
   {
    "day": 6,
-   "tag": "第二段·过渡句+连接词(方案骨架起点)",
+   "tag": "★成品·第二段四句(动/静通用)",
    "sents": [
     {
-     "en": "<span class=\"tpl\">Three key reasons, from my perspective, account for</span> <span class=\"blank\">this phenomenon(按题换:tendency/issue)</span>.",
+     "en": "<span class=\"tpl\">Three key reasons, from my perspective, account for</span> <span class=\"blank\">this phenomenon(静态图可换 this situation)</span>.",
      "zh": "在我看来，三个关键原因可以解释这一现象。",
-     "meta": "备选过渡句:A variety of reasons can be cited to account for this phenomenon. / A combination of factors has contributed to the tendency reflected in this chart.(图表专用,点题加分) / Several factors contribute to this phenomenon.。英语二写2~3点原因。"
+     "meta": "本段=过渡+原因1(经济)+原因2(意识)+原因3(警醒),全篇只换【题目相关词】【某方面】两处空。"
     },
     {
-     "en": "<span class=\"tpl\">From my perspective, the causes of</span> <span class=\"blank\">主题词(按题换)</span> <span class=\"tpl\">can be summarized as three main aspects.</span>",
-     "zh": "在我看来，主题词的成因可以归结为三个主要方面。"
+     "en": "<span class=\"tpl\">First and foremost,</span> <span class=\"tpl\">the rapid economic growth and rising disposable incomes have laid a solid foundation for</span> <span class=\"blank\">题目相关词</span>.",
+     "zh": "首先，经济的快速发展和可支配收入的提高为题目相关词奠定了坚实基础。",
+     "meta": "经济万能原因,适配消费/生活/行业类图表;科技类图表换:The rapid advancement of technology has made 题目相关词 increasingly accessible to the general public."
     },
     {
-     "en": "<span class=\"tpl\">To begin with, ... What's more, ... Last but not least, ...</span>",
-     "zh": "首先……；更重要的是……；最后但同样重要的是……。",
-     "meta": "原因123连接词骨架,任记一组:For one thing, ... For another, ...(两点原因用) / Firstly, ... Secondly, ... Thirdly / First and foremost, ... Furthermore, ... Last but not least, ..."
+     "en": "<span class=\"tpl\">What's more, an increasing number of people are beginning to realize that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">plays a crucial role in</span> <span class=\"blank\">某方面</span>.",
+     "zh": "更重要的是，越来越多的人开始意识到，题目相关词在某方面起着至关重要的作用。",
+     "meta": "某方面备选(六大方面高频):personal growth 个人成长 / quality of life 生活质量 / physical and mental health 身心健康 / social progress 社会进步 / effective communication 有效沟通 / family bonding 家庭纽带 / expand one's horizons 开拓眼界。注意谓语单复数:outdoor activities play / the popularity of X plays。"
+    },
+    {
+     "en": "<span class=\"tpl\">Last but not least, if we ignored the importance of</span> <span class=\"blank\">题目相关词</span><span class=\"tpl\">, we would never become a better version of ourselves.</span>",
+     "zh": "最后，如果我们忽视题目相关词的重要性，我们将永远无法成为更好的自己。",
+     "meta": "段尾警醒(方案五);社会层面版:If everyone failed to do sth., our society would be confronted with an unpromising and fruitless future."
     }
    ]
   },
   {
    "day": 7,
-   "tag": "第二段·方案一 举例论证·个人路线",
+   "tag": "★成品·动态图第三段两句",
    "sents": [
     {
-     "zh": "例如，我的室友凯文热衷于参加劳动实践课，这帮助他培养了实践技能和合作精神。",
-     "en": "<span class=\"tpl\">For instance, my roommate, Kevin, is passionate about</span> <span class=\"blank\">主题相关行为</span>, <span class=\"tpl\">which helps him cultivate</span> <span class=\"blank\">带来的好处</span>.",
-     "meta": "主语可换 my grandfather / my hometown(一个宜居城市);好处从六大方面挑:cultivate practical skills / keep him well informed / improve his sleep quality。"
+     "en": "<span class=\"tpl\">In conclusion, the phenomenon reflected in the chart is bound to continue, and it will keep exerting a positive influence on</span> <span class=\"blank\">某方面</span>.",
+     "zh": "总之，图表所反映的现象必将持续下去，并将继续给某方面带来积极影响。",
+     "meta": "趋势持续句,任何动态图通用;负面趋势把 positive 换 negative。"
     },
     {
-     "zh": "在此期间，(主语)有了另一个积极结果。",
-     "en": "<span class=\"tpl\">During this period,</span> <span class=\"blank\">主语+换角度的积极结果(句)</span>。",
-     "meta": "结果示例:he earns the respect of our entire class / his parents have noticed his growing curiosity / citizen satisfaction has improved。"
+     "en": "<span class=\"tpl\">Only through the joint efforts of</span> <span class=\"blank\">主体三方(如 the government, enterprises and the public)</span> <span class=\"tpl\">can we effectively promote</span> <span class=\"blank\">主题词的健康发展(按题换)</span>.",
+     "zh": "只有通过(主体三方)的共同努力，我们才能有效促进主题词的健康发展。",
+     "meta": "Only倒装收尾;主体按题换:parents and schools / the whole society / the government and the public。"
     }
    ]
   },
   {
    "day": 8,
-   "tag": "第二段·方案三 从句+六大方面",
+   "tag": "★成品·静态图第三段三句",
    "sents": [
     {
-     "zh": "此外，越来越多的人开始认识到，题目相关词在某方面起着至关重要的作用。",
-     "en": "<span class=\"tpl\">Furthermore, a rising number of individuals are coming to the realization that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">plays a crucial role in</span> <span class=\"blank\">某方面</span>.",
-     "meta": "六大方面速查:personal growth 个人成长 / quality of life 生活质量 / physical and mental health 身心健康 / social progress 社会进步 / effective communication 有效沟通 / technological innovation 科技创新"
-    },
-    {
-     "zh": "毫无疑问，题目相关词与某方面有着密不可分的联系。",
-     "en": "<span class=\"tpl\">There is no doubt that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">is inextricably linked to</span> <span class=\"blank\">某方面</span>.",
-     "meta": "注意谓语单复数:outdoor activities play / the popularity of X plays。"
-    }
-   ]
-  },
-  {
-   "day": 9,
-   "tag": "第二段·方案五 虚拟语气恐吓法",
-   "sents": [
-    {
-     "zh": "最后，如果我们忽视题目相关词的重要性，我们将永远无法成为更好的自己。",
-     "en": "<span class=\"tpl\">In the end, if we ignored the importance of</span> <span class=\"blank\">题目相关词</span>, <span class=\"tpl\">we would never become a better version of ourselves.</span>",
-     "meta": "个人层面,建议放原因三作段尾警醒。"
-    },
-    {
-     "zh": "如果每个人都没能做某事，我们的社会将面临一个黯淡无望、一无所获的未来。",
-     "en": "<span class=\"tpl\">If everyone failed to</span> <span class=\"blank\">do sth.</span>, <span class=\"tpl\">our society would be confronted with an unpromising and fruitless future.</span>",
-     "meta": "社会层面;国家层面版:If we underestimated the importance of 题目相关词, our nation would permanently lag behind in the new era of rapid development."
-    }
-   ]
-  },
-  {
-   "day": 10,
-   "tag": "第二段·方案四倒装+方案六对比(备选·七选五任选)",
-   "sents": [
-    {
-     "en": "<span class=\"tpl\">Not only does</span> <span class=\"blank\">主题词(动名词/事物,按题换)</span> <span class=\"tpl\">improve</span> <span class=\"blank\">某方面</span><span class=\"tpl\">, but it also enables them to</span> <span class=\"blank\">另一方面</span>.",
-     "zh": "主题词不仅改善某方面，还使他们能够(另一方面)。",
-     "meta": "主语复数用do:Not only do outdoor activities improve..., but they also cultivate...。improve 可换 increase/promote/boost/cultivate;enable 可换 help/allow/encourage/relieve。"
-    },
-    {
-     "en": "<span class=\"tpl\">Compared with</span> <span class=\"blank\">对比对象(没有对比就创造对比)</span>, <span class=\"blank\">主题词</span> <span class=\"tpl\">can</span> <span class=\"blank\">小方面</span><span class=\"tpl\">, so as to</span> <span class=\"blank\">大方面</span>.",
-     "zh": "与对比对象相比，主题词能够(小方面)，从而(大方面)。",
-     "meta": "so as to 可换 thereby promoting... / which makes it easier for sb. to...;大方面从批12词组库挑。"
-    },
-    {
-     "en": "<span class=\"tpl\">In contrast to</span> <span class=\"blank\">对比对象</span>, <span class=\"tpl\">the advantage of</span> <span class=\"blank\">主题词</span> <span class=\"tpl\">lies in</span> <span class=\"blank\">某方面</span>.",
-     "zh": "与对比对象相比，主题词的优势在于(某方面)。",
-     "meta": "七选五:方案一/三/五(批7/8/9)必须,方案四/六/七任选二;主力没背熟先不碰本批。"
-    }
-   ]
-  },
-  {
-   "day": 11,
-   "tag": "第二段·方案七 比喻句(备选·画龙点睛)",
-   "sents": [
-    {
-     "en": "<span class=\"blank\">主题词(按题换)</span> <span class=\"tpl\">is the engine that propels personal growth and social progress.</span>",
-     "zh": "主题词是推动个人成长与社会进步的引擎。",
-     "meta": "适配:意志品质/行动实践类→engine;品德修养→foundation;思维认知→compass;心态→lighthouse;人际合作→bridge。可加插入语拉长:..., needless to say, ...。写不出来别硬套。"
-    },
-    {
-     "en": "<span class=\"blank\">主题词(按题换)</span> <span class=\"tpl\">is the bridge between</span> <span class=\"blank\">A</span> <span class=\"tpl\">and</span> <span class=\"blank\">B</span>.",
-     "zh": "主题词是连接A与B之间的桥梁。",
-     "meta": "例:Outdoor activities are the bridge between children and the natural world. / Parks and public spaces are the bridge between urban residents and a healthy lifestyle."
-    }
-   ]
-  },
-  {
-   "day": 12,
-   "tag": "六大方面·高频词组库(方案一/三填空用,眼熟即可)",
-   "sents": [
-    {
-     "en": "rapid economic growth",
-     "zh": "快速经济增长"
-    },
-    {
-     "en": "bring convenience to people's daily lives",
-     "zh": "给人们的日常生活带来便利"
-    },
-    {
-     "en": "social harmony",
-     "zh": "社会和谐"
-    },
-    {
-     "en": "social progress",
-     "zh": "社会进步"
-    },
-    {
-     "en": "personal growth",
-     "zh": "个人成长"
-    },
-    {
-     "en": "all-round development",
-     "zh": "全面发展"
-    },
-    {
-     "en": "physical and mental health",
-     "zh": "身心健康"
-    },
-    {
-     "en": "quality of life",
-     "zh": "生活质量"
-    },
-    {
-     "en": "expand one's horizons",
-     "zh": "开拓眼界"
-    },
-    {
-     "en": "relieve the burden on families",
-     "zh": "减轻家庭负担"
-    },
-    {
-     "en": "family bonding / parent-child interaction",
-     "zh": "家庭纽带/亲子互动"
-    },
-    {
-     "en": "effective communication",
-     "zh": "有效沟通"
-    },
-    {
-     "en": "technological innovation",
-     "zh": "科技创新"
-    },
-    {
-     "en": "harmony between humanity and nature",
-     "zh": "人与自然和谐共生"
-    }
-   ]
-  },
-  {
-   "day": 13,
-   "tag": "第三段·总结全文(方案一从句)",
-   "sents": [
-    {
-     "zh": "不难得出结论，我们个人和整个社会都必须对题目相关词给予足够的重视。",
      "en": "<span class=\"tpl\">It is not difficult to draw the conclusion that enough attention must be paid to</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">by ourselves and our community.</span>",
-     "meta": "句首可加 All in all / To sum up / In general / Generally speaking / On the whole。"
+     "zh": "不难得出结论，我们个人和整个社会都必须对题目相关词给予足够的重视。",
+     "meta": "静态总结句;想更具体可换:We should bear in mind that 题目相关词 is of great importance to 某方面。"
     },
     {
-     "zh": "我们应当牢记，题目相关词对我们的个人发展/社会进步至关重要。",
-     "en": "<span class=\"tpl\">We should bear in mind that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">is of great importance to</span> <span class=\"blank\">our personal development / social progress</span>.",
-     "meta": "第三段=总结(本批)+批15措施+批16畅想 三件拼装;字数不够就总结+畅想两句收尾。"
-    }
-   ]
-  },
-  {
-   "day": 14,
-   "tag": "第三段·否定倒装+万能应急",
-   "sents": [
-    {
-     "en": "<span class=\"tpl\">By no means should we give up our efforts to</span> <span class=\"blank\">某事(按题换)</span>.",
-     "zh": "我们决不能放弃在做某事上的努力。",
-     "meta": "组合公式:Never can we / On no account should we / Under no circumstances can we / By no means should we ✖ give up our efforts to... / underestimate the profound impact of... / cease our pursuit of... / doubt the importance of...。例:...protect the environment."
+     "en": "<span class=\"tpl\">For one thing, it is imperative for the authorities to</span> <span class=\"blank\">政府动作</span><span class=\"tpl\">. For another, we should spare no pains to</span> <span class=\"blank\">个人动作</span><span class=\"tpl\">, and new media platforms should appeal to the public to</span> <span class=\"blank\">呼吁动作</span>.",
+     "zh": "一方面，当局必须(政府动作)；另一方面，我们应该不遗余力地(个人动作)，新媒体平台也应呼吁公众(呼吁动作)。",
+     "meta": "动作库:make strict laws / formulate policies / allocate more funds / improve public facilities ｜ raise public awareness of... / develop a habit of... / create more opportunities for sb. to... ｜ care for the elderly / live a healthy life / participate in outdoor activities。两点原因版:For one thing,...For another,..."
     },
     {
-     "en": "<span class=\"tpl\">There is no denying that further attention must be paid to the scene/phenomenon/situation/tendency mentioned above.</span>",
-     "zh": "不可否认，对上述场景/现象/趋势必须给予进一步的关注。",
-     "meta": "万能且无需修改任何内容,应急使用;另一句:Given the above analysis, it is not difficult to understand why this phenomenon has aroused widespread concern."
-    }
-   ]
-  },
-  {
-   "day": 15,
-   "tag": "第三段·具体措施:政府+个人/媒体",
-   "sents": [
-    {
-     "zh": "一方面，当局必须制定严格法规来(确保主题动作)。",
-     "en": "<span class=\"tpl\">For one thing, it is imperative for the authorities to formulate strict regulations to</span> <span class=\"blank\">具体动作</span>.",
-     "meta": "政府动作库:make strict laws 制定法律 / allocate more funds 拨付资金 / improve public facilities 完善公共设施 / launch public initiatives 发起公共倡议"
-    },
-    {
-     "zh": "另一方面，我们应该不遗余力地做(具体动作1)，新媒体平台也应呼吁公众去(具体动作2)。",
-     "en": "<span class=\"tpl\">For another, we should spare no pains to</span> <span class=\"blank\">具体动作1</span>, <span class=\"tpl\">and new media platforms should appeal to the public to</span> <span class=\"blank\">具体动作2</span>.",
-     "meta": "个人/媒体动作:raise public awareness of... 增强公众意识 / develop a habit of... 养成习惯 / care for the elderly 关爱老人"
-    }
-   ]
-  },
-  {
-   "day": 16,
-   "tag": "第三段·畅想未来",
-   "sents": [
-    {
-     "zh": "只有通过政府、企业和公众的共同努力，我们才能有效促进主题词的健康发展。",
-     "en": "<span class=\"tpl\">Only through the joint efforts of the government, enterprises and the public can we effectively promote</span> <span class=\"blank\">主题词的健康发展</span>.",
-     "meta": "倒装句(Only开头主谓倒装);主体按题换:parents and schools / the whole society。"
-    },
-    {
-     "zh": "通过这种方式，希望我们能拥抱一个更光明、更有希望的未来。",
      "en": "<span class=\"tpl\">In this way, hopefully, we may embrace a brighter and more promising future.</span>",
+     "zh": "通过这种方式，希望我们能拥抱一个更光明、更有希望的未来。",
      "meta": "万能收尾,不用改任何词。"
     }
    ]
   },
   {
-   "day": 17,
-   "tag": "第三段·趋势预测(英二图表应急)",
+   "day": 9,
+   "tag": "备选升级句库(眼熟即可,不进检测)",
    "sents": [
     {
-     "en": "<span class=\"tpl\">Taking into account all the factors discussed above, we may reasonably conclude that, with the passage of time and the advancement of society, the number of people who</span> <span class=\"blank\">做某事(按题换)</span> <span class=\"tpl\">will continue to increase in the coming years.</span>",
-     "zh": "综合考虑上述所有因素，我们可以合理地得出结论：随着时代变迁和社会进步，未来几年做某事的人数将持续增加。",
-     "meta": "动态图用,减少换 decline;深度不及建议措施,仅应急(时间紧/字数不够)。"
+     "en": "<span class=\"tpl\">Not only does</span> <span class=\"blank\">主题词</span> <span class=\"tpl\">improve</span> <span class=\"blank\">某方面</span><span class=\"tpl\">, but it also enables them to</span> <span class=\"blank\">另一方面</span>.",
+     "zh": "主题词不仅改善某方面，还使他们能够(另一方面)。",
+     "meta": "倒装加分句;主语复数用 do...but they also..."
     },
     {
-     "en": "<span class=\"tpl\">In a word, as society keeps moving forward,</span> <span class=\"blank\">主题词(按题换)</span> <span class=\"tpl\">is likely to gain even greater significance in the days to come.</span>",
-     "zh": "总之，随着社会不断前进，主题词在未来很可能变得更加重要。",
-     "meta": "静态图用;静态另一版:In conclusion, the phenomenon reflected in the chart is bound to continue, and it will keep exerting a positive influence on 某方面。"
+     "en": "<span class=\"tpl\">For instance, my roommate, Kevin, is passionate about</span> <span class=\"blank\">主题相关行为</span><span class=\"tpl\">, which helps him cultivate</span> <span class=\"blank\">具体好处</span>. <span class=\"tpl\">During this period, he earns the respect of our entire class.</span>",
+     "zh": "例如，我的室友凯文热衷于(主题相关行为)，这帮助他培养了(具体好处)。在此期间，他赢得了全班的尊敬。",
+     "meta": "个人例证(活动/品质类图表加分,语言丰富);主语可换 my grandfather / my hometown。"
+    },
+    {
+     "en": "<span class=\"tpl\">Compared with</span> <span class=\"blank\">对比对象</span>, <span class=\"blank\">主题词</span> <span class=\"tpl\">can</span> <span class=\"blank\">小方面</span><span class=\"tpl\">, so as to</span> <span class=\"blank\">大方面</span>.",
+     "zh": "与对比对象相比，主题词能够(小方面)，从而(大方面)。",
+     "meta": "对比论证;没有对比就创造对比。"
+    },
+    {
+     "en": "<span class=\"blank\">主题词</span> <span class=\"tpl\">is the engine that propels personal growth and social progress.</span>",
+     "zh": "主题词是推动个人成长与社会进步的引擎。",
+     "meta": "比喻句;品德→foundation/思维→compass/心态→lighthouse/合作→bridge。写不出来别硬套。"
+    },
+    {
+     "en": "<span class=\"tpl\">Never can we give up our efforts to</span> <span class=\"blank\">某事(按题换)</span>.",
+     "zh": "我们决不能放弃在做某事上的努力。",
+     "meta": "否定倒装;开头可换 On no account should we / Under no circumstances can we / By no means should we。"
+    },
+    {
+     "en": "<span class=\"tpl\">Taking into account all the factors discussed above, we may reasonably conclude that, with the passage of time and the advancement of society, the number of</span> <span class=\"blank\">主体(按题换)</span> <span class=\"tpl\">will continue to increase in the coming years.</span>",
+     "zh": "综合考虑上述所有因素，我们可以合理地得出结论：未来几年(主体)的数量将持续增加。",
+     "meta": "趋势预测细分版(动态图,减少换 decline);主体按题:people who.../parcels/the ownership of..."
+    },
+    {
+     "en": "<span class=\"tpl\">We are faced with the undeniable fact that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">has become an integral part of our lives.</span>",
+     "zh": "我们面临着一个不可否认的事实：题目相关词已成为我们生活中不可或缺的一部分。",
+     "meta": "总结备选句。"
     }
    ]
   }
@@ -330,19 +187,10 @@
    5,
    6,
    7,
-   8,
-   9,
-   13,
-   14,
-   15,
-   16,
-   10,
-   11,
-   12,
-   17
+   8
   ],
   "recite_quota": 2,
-  "recite_days": 7,
+  "recite_days": 2,
   "detect_day": 8,
   "buffer_day": 9,
   "phase_bounds": {
@@ -366,16 +214,16 @@
   "light_day": 56,
   "assembly": [
    "默写检测:静态段+动态段+双图表总起(批1-5,不看任何资料),错词抄3遍",
-   "默写检测:过渡句+方案一举例+方案三从句(批6-8)",
-   "默写检测:方案五虚拟语气+总结全文+具体措施+畅想未来(批9+13+15+16)",
-   "组装作文#1:2026英二·儿童户外活动(静态图:批2+批6+批7+批8+批13-16),40分钟不查资料",
-   "批改昨天作文,错词进本;组装作文#2:2025英二·老人休闲(静态:同骨架,细节句换批1)",
-   "批改#2;组装作文#3:2023英二·居民健康素养(动态:批3-4细节句+全套二三段)",
-   "批改#3;组装作文#4:2019英二·毕业生去向(动态多方向,批7方案一换主语练对比)",
-   "批改#4;备选方案替换练:把昨天第二段用批10(倒装/对比)重写一遍,体会七选五",
-   "批改续;组装作文#5:2024英二·劳动实践课(静态,可试批11比喻句)",
+   "默写检测:第二段四句+动态三段+静态三段(批6-8),两版各默一遍",
+   "组装作文#1:2026英二·儿童户外活动(静态版:批2+批6+批8),40分钟不查资料",
+   "批改昨天作文,错词进本;组装作文#2:2025英二·老人休闲(静态版:同套)",
+   "批改#2;组装作文#3:2023英二·居民健康素养(动态版:批3-4+批6+批7)",
+   "批改#3;组装作文#4:2019英二·毕业生去向(动态多方向,细节句三数据三动词)",
+   "批改#4;升级练:把#3第二段用批9句1/句2换装重写,比较手感",
+   "批改续;组装作文#5:2024英二·劳动实践课(静态版)",
    "批改#5;限时彩排:任选一套未写真题,大小作文90分钟连写(对齐考场节奏)",
-   "组装期总检:随机抽3段默写+错词本过一遍;常用句型抄成一页纸独有模板,明天起进限时套用"
+   "组装期总检:抽2段默写+错词本过一遍",
+   "定稿:动态版/静态版各抄一页纸=独有模板,明天起进限时套用"
   ],
   "practice": [
    "限时#1:2026英二·儿童户外活动,25分钟写作+10分钟对照订正",
@@ -401,23 +249,23 @@
    "保温篇#1:2026英二再写一遍(目标:零错词)",
    "复习日:错词本+一页纸终版过一遍",
    "保温篇#2:2023英二(动态)25分钟",
-   "复习日:方案一/三/五各默写一段(抽新题套)",
+   "复习日:两套模板各默写一遍(批6-8)",
    "保温篇#3:2026英一(双图表)",
-   "复习日:六大方面词组库(批12)快速过一遍",
+   "复习日:批9备选库过一遍,挑1句升级进模板",
    "保温篇#4:盲题(静态,自选预测话题)",
    "复习日:错词本+静态/动态段默写",
    "保温篇#5:2025英二或2024英二(自选)",
-   "复习日:批14否定倒装+批17趋势预测各套一句",
+   "复习日:批9句5否定倒装+句6趋势预测各套一句",
    "保温篇#6:盲题(动态)",
-   "复习日:方案四/六/七备选批(10/11)抽背",
+   "复习日:第二段四句抽新题套写(只换主题词+某方面)",
    "保温篇#7:2023英一或2020英一(图画应急,低优先)",
    "复习日:错词本终过一遍",
    "保温篇#8:自选一篇,全套闭卷",
-   "复习日:只看一页纸+随机抽2批默写",
-   "最后全套大默写(静态/动态段+过渡+三方案+三段件),收工"
+   "复习日:只看一页纸+随机抽1批默写",
+   "最后两套模板全套大默写,收工"
   ],
-  "detect_note": "全套默写检测:①静态段②动态段③双图表④过渡句⑤方案一⑥方案三⑦方案五逐项默写,错词进错词本",
-  "buffer_note": "缓冲补漏:优先把没背完的批补完;都背完了就过一遍错词本和批12词组库。",
+  "detect_note": "全套默写检测:①静态段②动态段③双图表④第二段四句⑤动态三段⑥静态三段逐项默写,错词进错词本",
+  "buffer_note": "缓冲补漏:优先把没背完的批补完;都背完了就过一遍错词本和批9备选库。",
   "light_note": "轻复盘:只看错词本和一页纸终版,不写新东西,早睡。",
   "exam_note": "今天初试。早上只过一页纸终版;写作文先花3分钟定三段骨架再动笔。稳住,你背了58天。"
  }
