@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-10-26",
+    "title": "2026英二真题·儿童户外活动(静态柱状图·段落库首练)",
+    "type": "大作文",
+    "words": 203,
+    "score": {
+      "total": 11,
+      "max": 15
+    },
+    "comment": "段落库三件套(批2+批6+批8)首次成文, 打字提交。内容档13(数据4/4全对/排序正确/双高合并处理正确/三段完整), 语言档8(children's所有格×3错+漏冠词+33.2漏%+framework词背串prefer. alternatives+第三段宾语错位quality education), 结构档12-13, 综合11/15(10-12档)。第二段开头句重复出现两遍按粘贴手滑剔除。修所有格+框架词稳上12-13。",
+    "issues": [
+      "children's所有格反复丢(childens/children outdoor共4处)——题眼词当整体词组默写",
+      "框架词背串: provide deliberate guidance写成prefer. alternatives; holds a share丢冠词",
+      "槽位词张冠李戴: 槽B quality education塞进第三段Schools句宾语(全篇唯一离题句), 第二段S3意识加深句漏写",
+      "数据表达: 33.2漏%号(数据本身全对)"
+    ],
+    "essay": "This bar chart offers a clear visualization of how childens'outdoor activity is distributed across various everyday choices. As for satisfying the curiosity, it takes the largest share at 54.6%, followed by fostering the observation which holds share of 54.5%. In contrast, building the body up and improving parent-child interaction have a much smaller portion, at 37.2% and 33.2%. Together, these figures illustrate the growing influence of children outdoor activities in modern life.\n\nPlaced in the context of everyday life, the formation of children outdoor activities is propelled by the combined influence of multiple factors. As real life continues to develop, people's expectations for their children's all-round growth no longer remain at the level of superficial satisfaction, which has undoubtedly laid a more solid foundation for children's activity.\n\nWe need to think rationally about the impact of children's activity on the present era, and provide prefer. alternatives. Government should clarify relevant strategies, so that children's growth can better adapt to the development of today's society. Schools and media need to carry out targeted education and guidance, enabling the public to gain a deep understanding of quality education. Notably, parents should maintain a rational mindset when considering the impact of children's growth on today's society."
+  },
+  {
     "date": "2026-10-18",
     "title": "2010英二真题·动态图模板套用(手机订阅量)",
     "type": "大作文",
