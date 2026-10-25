@@ -133,6 +133,18 @@ function senHTML(d, i, s){
   </div>`;
 }
 
+/* —— 事件绑定 —— */
+function bindAll(root){
+  root.querySelectorAll('.sen .enwrap').forEach(el =>
+    el.addEventListener('click', () => el.closest('.sen').classList.toggle('open')));
+  root.querySelectorAll('[data-done]').forEach(btn =>
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      set(btn.dataset.done, !get(btn.dataset.done));
+      render();
+    }));
+}
+
 /* —— 段落库视图 —— */
 function vLib(){
   const st = stats();
