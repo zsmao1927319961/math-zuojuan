@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>背作文 · 58天上岸计划(冲刺版)</title>
+<title>背作文 · 段落库(第一段→第三段)</title>
 <style>
   :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
   * { box-sizing:border-box; }
@@ -18,22 +18,24 @@
   .chips { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 4px; }
   .chip { background:#fff; border:1px solid var(--line); border-radius:999px; padding:5px 13px; font-size:13.5px; color:#3c4657; }
   .chip b { color:var(--red); }
-  .chip.ph1 { background:#eaf1ff; border-color:#c9d6f2; color:var(--blue); font-weight:700; }
-  .chip.ph2 { background:#fff4e0; border-color:#f0dfb8; color:#b26a00; font-weight:700; }
-  .chip.ph3 { background:#fdeaea; border-color:#f2c4c0; color:var(--red); font-weight:700; }
-  .chip.ph4 { background:#e8f7f0; border-color:#bfe0cd; color:var(--green); font-weight:700; }
-  .chip.pxx { background:#e5f3ea; border-color:#bfe0cd; color:var(--green); font-weight:700; }
   .tabs { display:flex; gap:8px; margin:12px 0 2px; }
   .tabs button { flex:1; border:1px solid var(--line); background:#fff; border-radius:10px;
                  padding:8px 0; font-size:15px; cursor:pointer; color:#5a6472; }
   .tabs button.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:700; }
-  .pbar { height:8px; background:#e8ebf2; border-radius:99px; overflow:hidden; margin:10px 0 2px; }
-  .pbar i { display:block; height:100%; background:linear-gradient(90deg,#3d5aa9,#1d9e6f); border-radius:99px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; }
   .card h2 { font-size:16.5px; margin:0 0 8px; color:var(--blue); border-left:4px solid var(--blue); padding-left:9px; }
   .card h2.g { color:var(--green); border-color:var(--green); }
   .card h2.o { color:#b26a00; border-color:#f0c060; }
-  .card h2.r { color:var(--red); border-color:var(--red); }
+  .grp { margin:18px 2px 2px; font-size:14px; font-weight:800; color:#5a6472;
+         display:flex; align-items:center; gap:8px; }
+  .grp::after { content:""; flex:1; height:1px; background:var(--line); }
+  .bhead { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; cursor:pointer; }
+  .bhead .bno { font-size:12px; font-weight:800; color:#fff; background:var(--blue);
+                border-radius:6px; padding:1px 8px; white-space:nowrap; }
+  .bhead .btag { font-weight:700; color:var(--ink); font-size:15.5px; }
+  .bhead .bstat { margin-left:auto; font-size:12.5px; color:#8a94a6; white-space:nowrap; }
+  .bhead .bstat.ok { color:var(--green); font-weight:700; }
+  .card.closed .sbody { display:none; }
   .sen { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:10px 13px; margin:9px 0; }
   .sen .zh { font-size:16.5px; }
   .sen .zh .blank { color:var(--red); font-weight:700; }
@@ -49,355 +51,166 @@
              background:#fff; color:var(--green); border:1.5px solid #bfe0cd; margin-top:8px; }
   .donebtn.on { background:var(--green); color:#fff; border-color:var(--green); }
   .donebtn.blue { color:var(--blue); border-color:#c9d6f2; }
-  .rhead { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;
-           background:#f4f6fa; border-radius:8px; padding:6px 10px; margin:10px 0 4px; font-size:14.5px; }
-  .rhead b { color:var(--blue); }
-  .rhead .late { color:var(--red); font-weight:700; font-size:12.5px; }
+  .rbtn { border:1px solid var(--line); background:#fff; color:#8a94a6; border-radius:8px;
+          padding:4px 10px; font-size:12.5px; cursor:pointer; margin-top:8px; }
   .notice { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px;
             font-size:14px; margin:10px 0; }
   .notice.red { background:#fdecec; border-color:#f2c4c0; }
   .notice.green { background:#e5f3ea; border-color:#bfe0cd; }
   .notice.blue { background:#eaf1ff; border-color:#c9d6f2; }
-  .task { font-size:15.5px; line-height:1.8; }
   .tools { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:10px 0 2px; }
   .tools button { border:1px solid var(--line); background:#fff; border-radius:999px;
                   padding:5px 14px; font-size:13.5px; cursor:pointer; color:var(--blue); }
+  .trow { display:flex; align-items:flex-start; gap:10px; background:#fff; border:1px solid var(--line);
+          border-radius:10px; padding:9px 12px; margin:7px 0; font-size:14.5px; }
+  .trow .tk { flex:0 0 auto; font-weight:700; cursor:pointer; color:var(--green); user-select:none; }
+  .trow .tk.on { color:#fff; background:var(--green); border-radius:6px; padding:0 6px; }
   .tip { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px; font-size:14px; margin-top:10px; }
   .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
-  .srow { display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line);
-          border-radius:10px; padding:8px 12px; margin:7px 0; font-size:14px; }
-  .srow .d { flex:0 0 96px; color:#3c4657; font-weight:600; font-size:13px; }
-  .srow .t { flex:1; min-width:0; color:#3c4657; }
-  .srow .st { flex:0 0 auto; font-weight:700; }
-  .srow .st.ok { color:var(--green); }
-  .srow .st.no { color:#c0504d; }
-  .srow.today { border-color:var(--blue); box-shadow:0 0 0 1.5px var(--blue) inset; background:#f8faff; }
-  .srow .ph { font-size:11px; border-radius:6px; padding:1px 7px; margin-right:6px; white-space:nowrap; }
-  .ph.p1 { background:#eaf1ff; color:var(--blue); }
-  .ph.p2 { background:#fff4e0; color:#b26a00; }
-  .ph.p3 { background:#fdeaea; color:var(--red); }
-  .ph.p4 { background:#e8f7f0; color:var(--green); }
-  .ph.px { background:#e5f3ea; color:var(--green); }
-  .lib .sen .enwrap { filter:none; cursor:default; user-select:text; }
-  @media (max-width:520px){ body{font-size:15.5px} .sen .en{font-size:16px} .srow .d{flex-basis:86px} }
+  @media (max-width:520px){ body{font-size:15.5px} .sen .en{font-size:16px} }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top">
-    <h1>背作文 · 58天上岸计划(冲刺版)</h1>
+    <h1>背作文 · 段落库</h1>
     <a class="back" href="index.html">← 返回主站</a>
   </div>
   <div class="chips">
     <span class="chip" id="cd"></span>
-    <span class="chip" id="dc"></span>
     <span class="chip" id="pc"></span>
   </div>
   <div class="tabs">
-    <button data-v="today" class="on">今日</button>
-    <button data-v="sched">日程</button>
-    <button data-v="lib">段落库</button>
+    <button data-v="lib" class="on">段落库</button>
+    <button data-v="task">任务库</button>
   </div>
   <div id="app"><div class="empty">加载中…</div></div>
 
-  <div class="tip"><b>冲刺版四阶段(11/30 精通达标的节奏)</b>:<b>①补背冲刺</b>10/23-11/1,剩余16批按优先级每天≤2批,<b>已背过的自动跳过</b>,10/31全套默写检测,11/1缓冲;→<b>②组装成文</b>11/2-11/12,默写检测+5篇组装作文;→<b>③限时套用·精通期</b>11/13-11/30,每天25分钟一篇,第18篇=精通验收;→<b>④12月保温期</b>,写一天休一天,12/18轻复盘。<br>
-  每天三件事:<b>新背/任务</b>+<b>复习</b>(批次背完次日按 1/3/7/15 天到期,逾期顺延)+<b>打卡</b>。红字=考场按题填,蓝字=必背框架。旧打卡进度保留(按句子内容记)。数据只存本机浏览器。</div>
-  <div class="foot">背作文 v3 · 冲刺版 ｜ 数据:data/sentences.json(22批58句 · 由 ZCode 维护) ｜ 补背10天 → 组装11天 → 限时套用18天(11/30精通验收) → 保温18天 → 初试</div>
+  <div class="tip"><b>用法(不按日期,按段落顺序背)</b>:从上往下——第一段(静态→动态→双图表)→第二段(三句成品→方面配对七类)→第三段(正面版→负面版)→备选句库眼熟。<b>红字=考场按题填</b>:批6的汉字占位不用背英文,批7的词组要背英文;蓝字=必背框架。点句子区域显示英文,背完打勾;整批变 ✓ 后自动展开下一批。复习节奏自己把握:背完的批隔 1/3/7 天回头遮住英文重背。数据只存本机浏览器,旧打卡进度按句子内容保留。</div>
+  <div class="foot">背作文 v6 · 段落库 ｜ 数据:data/sentences.json(11批41句 · 由 ZCode 维护) ｜ 第一段定动静 → 第二段换槽 → 第三段定正负</div>
 </div>
 
 <script>
 'use strict';
 const LS = 'zuowen_';
-const SRS = [1, 3, 7, 15];          // 复习间隔(天),锚定批次完成日
-let DATA = null, P = null, BMAP = {};
-let view = 'today';
+let DATA = null, P = null;
+let view = 'lib';
 let libOpen = {};
 
 const $ = s => document.querySelector(s);
 const esc = s => s;                  // 数据源是受信 HTML
 
-/* —— 日期工具(本地时区) —— */
-const pad = n => String(n).padStart(2, '0');
-const isoOf = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
-const todayISO = () => isoOf(new Date());
-function parseISO(s){ const p = s.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); }
-function addDays(iso, n){ const d = parseISO(iso); d.setDate(d.getDate() + n); return isoOf(d); }
-function diffDays(a, b){ return Math.round((parseISO(a) - parseISO(b)) / 86400000); }
-function cnDate(iso){ const d = parseISO(iso); return (d.getMonth() + 1) + '月' + d.getDate() + '日'; }
-const wkCN = iso => '日一二三四五六'[parseISO(iso).getDay()];
+const todayISO = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+function diffDays(a, b){ const p = x => { const q = x.split('-').map(Number); return new Date(q[0], q[1] - 1, q[2]); }; return Math.round((p(a) - p(b)) / 86400000); }
 
-/* —— 存储 —— */
+/* —— 存储(与旧版同键,打卡进度保留) —— */
 const get = k => localStorage.getItem(LS + k) === '1';
 const set = (k, v) => v ? localStorage.setItem(LS + k, '1') : localStorage.removeItem(LS + k);
 function hsh(s){ let h = 5381; for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) >>> 0; return h.toString(16); }
 const skey = s => 's2_' + hsh(s.en);
-const bdKey = n => 'z3_bd_' + n;
-const rvKey = n => 'z3_rv_' + n;
-const taskKey = iso => 'z3_tk_' + iso;
-const getBD = n => localStorage.getItem(LS + bdKey(n));
-const setBD = (n, d) => localStorage.setItem(LS + bdKey(n), d);
-const rvStage = n => +(localStorage.getItem(LS + rvKey(n)) || 0);
-const setRv = (n, v) => localStorage.setItem(LS + rvKey(n), String(v));
+const tkey = t => 'z4_tk_' + hsh(t);
 
-/* —— 批次工具 —— */
-const B = n => BMAP[n];
-const batchDone = n => !!B(n) && B(n).sents.every(s => get(skey(s)));
-function sweep(){ for (let n = 1; n <= 22; n++) if (batchDone(n) && !getBD(n)) setBD(n, todayISO()); }
-
-/* —— 计划推导(v3 冲刺版) —— */
-function effStart(){ return addDays(P.start, +(localStorage.getItem(LS + 'z3_shift') || 0)); }
-function offsets(){
-  const start = effStart(), t = todayISO(), pb = P.phase_bounds;
-  const examOff = diffDays(P.exam, start);
-  return { start, t, off: diffDays(t, start),
-           recite0: pb.recite[0], recite1: pb.recite[1],
-           asm0: pb.asm[0], asm1: pb.asm[1],
-           pra0: pb.pra[0], pra1: pb.pra[1],
-           ret0: pb.ret[0], ret1: pb.ret[1],
-           light: P.light_day, examOff, max: P.total_days - 1 };
-}
-function reciteState(){
-  const pend = P.recite_order.filter(n => !batchDone(n));
-  return { pend, doneCount: P.recite_order.length - pend.length, total: P.recite_order.length };
-}
-function phaseOf(off){
-  const o = offsets();
-  if (off < 0 || off > o.max) return { name: '', cls: 'px' };
-  if (off === o.examOff) return { name: '考试日', cls: 'pxx' };
-  if (off === P.light_day) return { name: '轻复盘', cls: 'ph4' };
-  if (off >= o.recite0 && off <= o.recite1) return { name: '阶段一 · 补背冲刺', cls: 'ph1' };
-  if (off >= o.asm0 && off <= o.asm1) return { name: '阶段二 · 组装成文', cls: 'ph2' };
-  if (off >= o.pra0 && off <= o.pra1) return { name: '阶段三 · 限时套用', cls: 'ph3' };
-  return { name: '12月 · 保温期', cls: 'ph4' };
-}
-function dayInfo(off){
-  const o = offsets();
-  if (off < 0 || off > o.max) return null;
-  if (off === o.examOff) return { kind: 'exam', text: P.exam_note };
-  if (off === P.light_day) return { kind: 'light', text: P.light_note };
-  if (off >= o.recite0 && off <= o.recite1){
-    if (off === P.detect_day) return { kind: 'detect', text: P.detect_note };
-    if (off === P.buffer_day) return { kind: 'buffer', text: P.buffer_note };
-    return { kind: 'recite', quota: P.recite_quota };
-  }
-  if (off >= o.asm0 && off <= o.asm1) return { kind: 'assembly', idx: off - o.asm0 + 1, text: P.assembly[off - o.asm0] };
-  if (off >= o.pra0 && off <= o.pra1) return { kind: 'practice', idx: off - o.pra0 + 1, text: P.practice[off - o.pra0] };
-  return { kind: 'retention', idx: off - o.ret0 + 1, text: P.retention[off - o.ret0] };
-}
-function dueReviews(){
-  const t = todayISO(), out = [];
-  for (let n = 1; n <= 22; n++){
-    const bd = getBD(n); if (!bd) continue;
-    const st = rvStage(n); if (st >= SRS.length) continue;
-    const due = addDays(bd, SRS[st]);
-    if (due <= t) out.push({ n, stage: st, due, late: due < t });
-  }
-  return out.sort((a, b) => a.due < b.due ? -1 : 1);
+/* —— 进度 —— */
+function stats(){
+  let total = 0, done = 0, bTotal = 0, bDone = 0;
+  DATA.days.forEach(d => {
+    bTotal++;
+    const all = d.sents.every(s => get(skey(s)));
+    if (all) bDone++;
+    d.sents.forEach(s => { total++; if (get(skey(s))) done++; });
+  });
+  return { total, done, bTotal, bDone };
 }
 
 /* —— 句卡 —— */
-function senHTML(n, i, s, hint){
+function senHTML(d, i, s){
   const key = skey(s), done = get(key);
   return `<div class="sen" data-key="${key}">
     <div class="zh">${s.zh}</div>
-    <div class="cue">${hint} · 第 ${n} 批 第 ${i + 1} 句 · 点下方区域显示英文</div>
+    <div class="cue">第 ${d} 批 第 ${i + 1} 句 · 点下方区域显示英文</div>
     <div class="enwrap"><div class="en">${esc(s.en)}</div>${s.meta ? `<div class="meta">${esc(s.meta)}</div>` : ''}</div>
     <button class="donebtn ${done ? 'on' : ''}" data-done="${key}">${done ? '✓ 已背过' : '✓ 背过'}</button>
   </div>`;
 }
-function batchCard(n, hint, head){
-  const d = B(n), done = batchDone(n);
-  let h = `<div class="card"><h2>${head}(${d.sents.length} 句)${done ? '<span style="color:var(--green);font-size:13.5px">　✓ 已完成</span>' : ''}</h2>
-    <div style="font-size:12.5px;color:#8a94a6;margin-bottom:4px">${d.tag || ''}</div>`;
-  d.sents.forEach((s, i) => h += senHTML(n, i, s, hint));
-  return h + `</div>`;
-}
-function bindAll(root){
-  root.querySelectorAll('.sen .enwrap').forEach(el =>
-    el.addEventListener('click', () => el.closest('.sen').classList.toggle('open')));
-  root.querySelectorAll('[data-done]').forEach(btn =>
-    btn.addEventListener('click', e => { e.stopPropagation(); set(btn.dataset.done, !get(btn.dataset.done)); sweep(); render(); }));
-}
 
-/* —— 今日视图 —— */
-function vToday(){
-  const o = offsets(), t = o.t, info = dayInfo(o.off);
-  const rs = reciteState();
-  $('#cd').innerHTML = `距初试还有 <b>${Math.max(diffDays(P.exam, t), 0)}</b> 天`;
-  $('#dc').textContent = `${cnDate(t)} 周${wkCN(t)}` + (o.off >= 0 && o.off <= o.max ? ` · 第 ${o.off + 1}/${P.total_days} 天` : '');
-  const ph = phaseOf(o.off);
-  $('#pc').textContent = ph.name || '计划之外';
-  $('#pc').className = 'chip ' + ph.cls;
-
-  if (o.off < 0 || o.off > o.max){
-    $('#app').innerHTML = `<div class="card"><h2>${o.off < 0 ? '计划还没开始' : '58天计划已走完'}</h2>
-      <div class="task">计划起始日:${P.start},初试:${P.exam}。</div>
-      <button class="donebtn blue" id="reset">📅 把今天设为计划第 1 天(旧打卡进度保留)</button></div>`;
-    $('#reset').addEventListener('click', () => {
-      localStorage.setItem(LS + 'z3_shift', String(diffDays(t, P.start))); render(); });
-    return;
-  }
-
-  const due = dueReviews();
-  let h = `<div class="pbar"><i style="width:${Math.min(100, Math.max(0, (o.off + 1) / P.total_days * 100))}%"></i></div>
-    <div style="text-align:center;font-size:13px;color:#5a6472">计划进度 第 ${o.off + 1} / ${P.total_days} 天 ｜ 补背清单 ${rs.doneCount}/${rs.total} 批完成</div>`;
-
-  /* 1) 新背 / 补背(阶段一;逾期未背完则后续阶段继续顺带补) */
-  const reciteKinds = ['recite', 'detect', 'buffer'];
-  if (info.kind === 'recite'){
-    if (!rs.pend.length){
-      h += `<div class="notice green">🎉 补背清单 16 批已全部完成!背诵期提前收工,安心进入下一阶段。</div>`;
-    } else {
-      const todays = rs.pend.slice(0, P.recite_quota);
-      const allPlanned = todays.every(n => batchDone(n));
-      if (allPlanned){
-        h += `<div class="notice green">📍 今天这 ${todays.length} 批都已背过 ✓。`;
-        if (rs.pend.length > todays.length) h += `要不要顺手再拿下第 ${rs.pend[todays.length]} 批?下面已排上。</div>`;
-        else h += `</div>`;
-      } else {
-        h += `<div class="notice blue">今日新背(≤${P.recite_quota} 批,按优先级自动排,背完自动顺延下一批):还剩 ${rs.pend.length} 批未背。</div>`;
-      }
-      todays.forEach((n, i) => {
-        const done = batchDone(n);
-        h += batchCard(n, allPlanned ? '回看' : (i === 0 ? '新学' : '接着背'), allPlanned ? '顺带回看' : '今日新背');
-      });
+/* —— 段落库视图 —— */
+function vLib(){
+  const st = stats();
+  let h = `<div class="card"><h2>段落库(${st.bTotal} 批 ${st.total} 句 · 按序背)</h2>
+    <div style="font-size:13px;color:#5a6472">顺序:第一段(静态→动态→双图表)→第二段(三句成品→方面配对)→第三段(正面→负面)→备选眼熟。组装/套用去【任务库】。</div>
+    <div class="tools" style="justify-content:flex-start"><button id="toggleAll">显示全部英文</button><button id="openAll">全部展开/收起</button></div></div>`;
+  let lastGrp = '', autoOpened = false;
+  DATA.days.forEach(d => {
+    if (d.grp && d.grp !== lastGrp){
+      const sub = { '第一段': '图表怎么描述(静/动/双图)', '第二段': '为什么会流行(三句+方面)', '第三段': '评论与建议(正/负)', '备选': '升级句·眼熟' }[d.grp] || '';
+      h += `<div class="grp">${d.grp}${sub ? ' · ' + sub : ''}</div>`;
+      lastGrp = d.grp;
     }
-  } else if (info.kind === 'detect'){
-    h += `<div class="card"><h2 class="o">全套默写检测日</h2><div class="task">${esc(info.text)}</div>
-      <button class="donebtn ${get(taskKey(t)) ? 'on' : ''}" data-task="${t}">${get(taskKey(t)) ? '✓ 检测完成' : '✓ 完成打卡'}</button></div>`;
-    if (rs.pend.length) h += `<div class="notice red">⚠ 还有 ${rs.pend.length} 批没背完(第 ${rs.pend.slice(0, 3).join('、')} 批${rs.pend.length > 3 ? '…' : ''}),检测前先补:</div>` +
-      rs.pend.slice(0, P.recite_quota).map(n => batchCard(n, '补背', '逾期补背')).join('');
-  } else if (info.kind === 'buffer'){
-    h += `<div class="card"><h2 class="g">缓冲补漏日</h2><div class="task">${esc(info.text)}</div>
-      <button class="donebtn ${get(taskKey(t)) ? 'on' : ''}" data-task="${t}">${get(taskKey(t)) ? '✓ 完成打卡' : '✓ 完成打卡'}</button></div>`;
-    if (rs.pend.length) h += rs.pend.slice(0, P.recite_quota).map(n => batchCard(n, '补背', '逾期补背')).join('');
-  } else if (rs.pend.length && ['assembly', 'practice', 'retention', 'light'].includes(info.kind)){
-    h += `<div class="notice red">⚠ 背诵有欠账(还剩 ${rs.pend.length} 批),今天先补第 ${rs.pend[0]} 批,再做当日任务:</div>` +
-      batchCard(rs.pend[0], '补背', '逾期补背');
-  }
-
-  /* 2) 复习 */
-  if (due.length){
-    h += `<div class="card"><h2 class="g">今日复习(${due.length} 批 · 1/3/7/15天间隔)</h2>`;
-    due.forEach(r => {
-      const d = B(r.n), done = get('rv_' + r.n + '_' + r.stage);
-      h += `<div class="rhead"><span>第 ${r.n} 批 · ${(d.tag || '').slice(0, 18)} · 第 ${r.stage + 1} 轮
-            ${r.late ? `<span class="late">已逾期${-diffDays(r.due, t)}天</span>` : `到期 ${cnDate(r.due)}`}</span>
-            <button class="donebtn ${done ? 'on' : ''}" data-rv="${r.n}_${r.stage}" style="margin-top:0">${done ? '✓ 已复习' : '✓ 本轮复习完'}</button></div>`;
-      h += `<div${done ? ' style="opacity:.55"' : ''}>` + d.sents.map((s, i) => senHTML(r.n, i, s, `复习·第${r.stage + 1}轮`)).join('') + `</div>`;
-    });
-    h += `</div>`;
-  } else {
-    h += `<div class="card"><h2 class="g">今日复习</h2><div style="color:#8a94a6;font-size:14.5px">暂无到期批次。背完的批次日自动按 1/3/7/15 天排复习。</div></div>`;
-  }
-
-  /* 3) 当日任务 */
-  const tk = get(taskKey(t));
-  if (info.kind === 'recite'){
-    h += `<div class="card"><h2 class="o">当日作文任务</h2><div class="task">背完今天的批后:<b>每段连起来朗读 2 遍、合上资料默写 1 遍</b>,错词圈出来明天复习前先过。今天不写作文,写作从组装期(11/2)开始。</div></div>`;
-  } else if (['detect', 'buffer', 'exam', 'light'].includes(info.kind)){
-    if (info.kind !== 'detect' && info.kind !== 'buffer')
-      h += `<div class="card"><h2 class="${info.kind === 'exam' ? 'r' : 'o'}">${info.kind === 'exam' ? '🎯 ' : ''}${esc(info.text)}</h2></div>`;
-  } else {
-    const tag = info.kind === 'assembly' ? '组装' : (info.kind === 'practice' ? '套用' : '保温');
-    h += `<div class="card"><h2 class="o">当日作文任务(${tag} #${info.idx})</h2>
-      <div class="task">${esc(info.text)}</div>
-      ${info.kind === 'practice' ? '<div style="font-size:13px;color:#8a94a6;margin-top:6px">写完立刻对照原文档逐句订正:句式尽量用背过的框架,错词进错词本。</div>' : ''}
-      <button class="donebtn ${tk ? 'on' : ''}" data-task="${t}">${tk ? '✓ 今日任务完成' : '✓ 完成打卡'}</button></div>`;
-  }
-
-  /* 完成状态 */
-  const newOk = info.kind !== 'recite' || rs.pend.slice(0, P.recite_quota).every(n => batchDone(n));
-  const rvOk = due.length === 0;
-  const taskApplies = ['assembly', 'practice', 'retention', 'detect', 'buffer'].includes(info.kind);
-  const taskOk = !taskApplies || tk;
-  h += `<div class="notice ${newOk && rvOk && taskOk ? 'green' : ''}" style="text-align:center">
-    今日状态:新背 ${info.kind === 'recite' ? (newOk ? '✓' : '…') : '—'} ｜ 复习 ${rvOk ? '✓ 清零' : '剩 ' + due.length + ' 批'} ｜ 任务 ${taskApplies ? (taskOk ? '✓' : '未打卡') : '—'}
-    ${newOk && rvOk && taskOk ? '　🎉 今日完成!' : ''}</div>`;
-
-  h += `<div class="tools"><button id="toggleAll">显示全部英文</button><button id="resetDay">清除今日勾选</button></div>`;
+    const doneN = d.sents.filter(s => get(skey(s))).length, all = doneN === d.sents.length;
+    if (libOpen[d.day] === undefined) libOpen[d.day] = !autoOpened && !all ? (autoOpened = true) : false;
+    const open = libOpen[d.day];
+    h += `<div class="card${open ? '' : ' closed'}">
+      <div class="bhead" data-b="${d.day}">
+        <span class="bno">第 ${d.day} 批</span><span class="btag">${d.tag || ''}</span>
+        <span class="bstat ${all ? 'ok' : ''}">${all ? '✓ 完成' : doneN + '/' + d.sents.length + ' 句'}</span>
+      </div>
+      <div class="sbody">${d.sents.map((s, i) => senHTML(d.day, i, s)).join('')}
+        ${doneN ? `<div style="text-align:right"><button class="rbtn" data-reset="${d.day}">重置本批打卡</button></div>` : ''}
+      </div>
+    </div>`;
+  });
   $('#app').innerHTML = h;
-
   bindAll($('#app'));
-  $('#app').querySelectorAll('[data-rv]').forEach(btn =>
-    btn.addEventListener('click', () => {
-      const [n, st] = btn.dataset.rv.split('_').map(Number);
-      const cur = rvStage(n);
-      setRv(n, cur === st + 1 ? st : st + 1); render();
+  $('#app').querySelectorAll('.bhead').forEach(el =>
+    el.addEventListener('click', () => { const n = +el.dataset.b; libOpen[n] = !libOpen[n]; vLib(); }));
+  $('#app').querySelectorAll('[data-reset]').forEach(btn =>
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (!confirm('确定清除本批所有勾选?(不可恢复)')) return;
+      const d = DATA.days.find(x => x.day === +btn.dataset.reset);
+      d.sents.forEach(s => localStorage.removeItem(LS + skey(s)));
+      vLib();
     }));
-  $('#app').querySelectorAll('[data-task]').forEach(btn =>
-    btn.addEventListener('click', () => { set(taskKey(btn.dataset.task), !get(taskKey(btn.dataset.task))); render(); }));
   $('#toggleAll').addEventListener('click', () => {
     const sens = document.querySelectorAll('#app .sen');
     const anyClosed = [...sens].some(x => !x.classList.contains('open'));
     sens.forEach(x => x.classList.toggle('open', anyClosed));
     $('#toggleAll').textContent = anyClosed ? '隐藏全部英文' : '显示全部英文';
   });
-  $('#resetDay').addEventListener('click', () => {
-    if (info.kind === 'recite') rs.pend.slice(0, P.recite_quota).forEach(n => B(n).sents.forEach(s => localStorage.removeItem(LS + skey(s))));
-    due.forEach(r => { if (rvStage(r.n) === r.stage + 1) localStorage.setItem(LS + rvKey(r.n), String(r.stage)); });
-    localStorage.removeItem(LS + taskKey(t)); render();
-  });
-}
-
-/* —— 日程视图 —— */
-function vSched(){
-  const o = offsets(), rs = reciteState();
-  let h = `<div class="card"><h2>全部日程(${P.total_days} 天 · 冲刺版)</h2>
-    <div style="font-size:13px;color:#5a6472">补背冲刺(≤2批/天,已会自动跳过)→ 组装成文(检测+5篇)→ 限时套用·精通期(18篇,11/30验收)→ 12月保温(写一休一)→ 轻复盘 → 初试。</div></div>`;
-  for (let off = 0; off <= o.max; off++){
-    const date = addDays(o.start, off), info = dayInfo(off), ph = phaseOf(off);
-    let sum = '', done = false;
-    if (info.kind === 'recite'){ sum = `补背冲刺 ≤${info.quota} 批/天(共${rs.total}批,已会跳过)`; done = rs.doneCount >= P.recite_quota * (off + 1); }
-    else if (info.kind === 'detect'){ sum = info.text; done = get(taskKey(date)); }
-    else if (info.kind === 'buffer'){ sum = '缓冲补漏日'; done = get(taskKey(date)); }
-    else if (info.kind === 'assembly'){ sum = '组装 #' + info.idx + ' · ' + info.text; done = get(taskKey(date)); }
-    else if (info.kind === 'practice'){ sum = '套用 #' + info.idx + ' · ' + info.text; done = get(taskKey(date)); }
-    else if (info.kind === 'retention'){ sum = '保温 #' + info.idx + ' · ' + info.text; done = get(taskKey(date)); }
-    else if (info.kind === 'light'){ sum = info.text; done = get(taskKey(date)); }
-    else { sum = '🎯 ' + info.text; }
-    const cls = off === o.off ? ' today' : '';
-    h += `<div class="srow${cls}"><span class="d">${cnDate(date)} 周${wkCN(date)}</span>
-      <span class="t"><span class="ph ${ph.cls}">${ph.name}</span>${esc(sum)}</span>
-      <span class="st ${done ? 'ok' : (off < o.off ? 'no' : '')}">${off === o.off ? '今天' : (done ? '✓' : (off < o.off ? '未完' : ''))}</span></div>`;
-  }
-  $('#app').innerHTML = h;
-}
-
-/* —— 段落库视图 —— */
-function vLib(){
-  let h = `<div class="card"><h2>段落库(22 批 58 句)</h2>
-    <div style="font-size:13px;color:#5a6472">当字典用:组装/套用时来这里查句子。点批标题展开/收起;英文直接可见。</div>
-    <div class="tools" style="justify-content:flex-start"><button id="libAll">全部展开/收起</button></div></div>`;
-  for (let n = 1; n <= 22; n++){
-    const d = B(n), open = !!libOpen[n];
-    const inList = P.recite_order.includes(n);
-    h += `<div class="card lib"><h2 style="cursor:pointer" data-lib="${n}">第 ${n} 批 · ${d.tag || ''} (${d.sents.length} 句)${batchDone(n) ? '<span style="color:var(--green);font-size:13px">　✓</span>' : (inList ? '' : '<span style="color:#8a94a6;font-size:12px">　(已会)</span>')}</h2>`;
-    if (open){
-      h += `<div class="notice blue" style="margin:6px 0">完成日:${getBD(n) || '未完成'} ｜ 复习进度:第 ${Math.min(rvStage(n) + 1, 4)}轮/共4轮</div>`;
-      d.sents.forEach((s, i) => {
-        h += `<div class="sen open"><div class="zh">${s.zh}</div>
-          <div class="cue">第 ${n} 批 第 ${i + 1} 句</div>
-          <div class="enwrap"><div class="en">${esc(s.en)}</div>${s.meta ? `<div class="meta">${esc(s.meta)}</div>` : ''}</div></div>`;
-      });
-    }
-    h += `</div>`;
-  }
-  $('#app').innerHTML = h;
-  $('#app').querySelectorAll('[data-lib]').forEach(el =>
-    el.addEventListener('click', () => { const n = +el.dataset.lib; libOpen[n] = !libOpen[n]; vLib(); }));
-  $('#libAll').addEventListener('click', () => {
-    const anyClosed = [...Array(22)].some((_, i) => !libOpen[i + 1]);
-    libOpen = {}; if (anyClosed) for (let n = 1; n <= 22; n++) libOpen[n] = true;
+  $('#openAll').addEventListener('click', () => {
+    const anyClosed = DATA.days.some(d => !libOpen[d.day]);
+    DATA.days.forEach(d => libOpen[d.day] = anyClosed);
     vLib();
   });
 }
 
+/* —— 任务库视图(不按日期,按序领取) —— */
+function vTask(){
+  const groups = [
+    ['组装成文(默写检测 + 5 篇)', P.assembly, 'g'],
+    ['限时套用 · 精通期(18 篇)', P.practice, ''],
+    ['12 月保温(写一休一)', P.retention, 'o']
+  ];
+  let h = `<div class="card"><h2>任务库(不按日期,按序领取)</h2>
+    <div style="font-size:13px;color:#5a6472">段落库背得七八成后从【组装】开始:先闭卷默写,再逐篇组装/限时;写完对照原文订正,错词进本。</div></div>`;
+  groups.forEach(([title, arr, cls]) => {
+    h += `<div class="card"><h2 class="${cls}">${title}(${arr.length} 项)</h2>`;
+    arr.forEach(t => {
+      const k = tkey(t), done = get(k);
+      h += `<div class="trow"><span class="tk ${done ? 'on' : ''}" data-task="${k}">${done ? '✓' : '○'}</span><span${done ? ' style="opacity:.55"' : ''}>${esc(t)}</span></div>`;
+    });
+    h += `</div>`;
+  });
+  $('#app').innerHTML = h;
+  $('#app').querySelectorAll('[data-task]').forEach(el =>
+    el.addEventListener('click', () => { set(el.dataset.task, !get(el.dataset.task)); vTask(); }));
+}
+
 function render(){
+  const st = stats();
   $('#cd').innerHTML = `距初试还有 <b>${Math.max(diffDays(P.exam, todayISO()), 0)}</b> 天`;
-  if (view === 'today') vToday();
-  else if (view === 'sched') vSched();
-  else vLib();
+  $('#pc').innerHTML = `已背 <b>${st.done}/${st.total}</b> 句 · <b>${st.bDone}/${st.bTotal}</b> 批`;
+  if (view === 'lib') vLib(); else vTask();
 }
 
 async function init(){
@@ -409,15 +222,12 @@ async function init(){
     $('#app').innerHTML = '<div class="notice red">数据加载失败,请联网后刷新重试。</div>';
     return;
   }
-  if (!DATA || !Array.isArray(DATA.days) || !DATA.days.length || !DATA.plan || DATA.plan.version !== 3){
-    $('#app').innerHTML = '<div class="notice red">数据格式不对(plan v3 缺失),请联系 ZCode 检查 data/sentences.json。</div>';
+  if (!DATA || !Array.isArray(DATA.days) || !DATA.days.length || !DATA.plan || DATA.plan.version !== 4){
+    $('#app').innerHTML = '<div class="notice red">数据格式不对(plan v4 缺失),请联系 ZCode 检查 data/sentences.json。</div>';
     return;
   }
-  DATA.days.forEach(d => BMAP[d.day] = d);
   P = DATA.plan;
-  sweep();
   render();
-
   document.querySelectorAll('.tabs button').forEach(b =>
     b.addEventListener('click', () => {
       view = b.dataset.v;

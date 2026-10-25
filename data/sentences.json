@@ -1,8 +1,9 @@
 {
- "note": "2026-10-24 v5(用户纠正:要成品模板,不背例子库):批1-5不动(打卡保留);v4批6-17坍缩——批6=★第二段成品四句(动/静通用:过渡+经济原因+意识原因+虚拟语气警醒),批7=★动态图第三段两句(趋势持续+Only倒装),批8=★静态图第三段三句(总结+措施+畅想),批9=备选升级句库(眼熟即可,不进检测)。两套成品:动态版=批3-4+6+7 / 静态版=批1-2+6+8 / 双图表=批5+6+7或8。plan recite_order=[5,6,7,8]。tpl蓝字=必背框架;blank红字=考场按题填(汉字占位不背英文)。10-24二改:二段连接词换More importantly(等量),某方面=优先抄图表点名项(规则),结尾句维持万能版不换。10-25三改(v5.2,用户拍板接入第二本模板书):批6整批替换=书·经济类过渡句(Placed...factors,用户已背经济类全段故零成本)+环境生态骨架句2期望升级(槽A)+句3意识加深(槽B),三句约80词考场全写;原AI归来批6四句退役(git 3913ba2可回溯);批9新增句8=注意力转向加餐句;plan文字四句→三句,version保持3。",
+ "note": "2026-10-25 v6(用户拍板:不按天数,段落库顺序背诵):顺序=第一段(静态批1-2/动态批3-4/双图表批5)→第二段(成品三句批6+方面配对七类批7)→第三段(苦瓜正面版批8+负面版批9+AI归来备选收尾批10,眼熟)→备选升级句库批11。打卡键=zuowen_s2_{djb2(en)}按句子内容记,重排不丢勾选。批8/9=苦瓜第三段:书内经济/校园/体育/文化各类印的是同一段,只分正/负两版;批7=第二段槽A/槽B七类配对词组(需背英文)。tpl蓝字=必背框架;blank红字=考场按题填(批6的汉字占位不用背英文)。历史:v5.2(10-25早)批6换书经济类过渡+槽A/B骨架;v5(10-24)成品9批;v4苦瓜第一段+AI归来;15批→v3(10-23)。",
  "days": [
   {
    "day": 1,
+   "grp": "第一段",
    "tag": "静态第一段·上(书原文)",
    "sents": [
     {
@@ -17,6 +18,7 @@
   },
   {
    "day": 2,
+   "grp": "第一段",
    "tag": "静态第一段·下(书原文)｜末句可写可不写",
    "sents": [
     {
@@ -31,6 +33,7 @@
   },
   {
    "day": 3,
+   "grp": "第一段",
    "tag": "动态第一段·上(书原文)",
    "sents": [
     {
@@ -45,6 +48,7 @@
   },
   {
    "day": 4,
+   "grp": "第一段",
    "tag": "动态第一段·下(书原文)",
    "sents": [
     {
@@ -59,12 +63,13 @@
   },
   {
    "day": 5,
-   "tag": "双图表总起+万能应急(第一段延伸)",
+   "grp": "第一段",
+   "tag": "第一段·双图表总起+万能应急",
    "sents": [
     {
      "zh": "左侧的图展示了左图主题，而右侧的图列出了右图主题。",
      "en": "<span class=\"tpl\">The chart on the left shows</span> <span class=\"blank\">左图主题</span>, <span class=\"tpl\">while the chart on the right lists</span> <span class=\"blank\">右图主题</span>.",
-     "meta": "双图表第一段总起句:左右两图的内容分别套第①静态段或②动态段填数据。"
+     "meta": "双图表第一段总起句:左右两图的内容分别套静态段或动态段填数据。"
     },
     {
      "zh": "上方图表提供了年份1至年份2间关于题目相关词的信息。",
@@ -75,28 +80,126 @@
   },
   {
    "day": 6,
-   "tag": "★成品·第二段三句(动/静通用)",
+   "grp": "第二段",
+   "tag": "★成品·第二段三句(动/静通用,槽A/槽B)",
    "sents": [
     {
      "en": "<span class=\"tpl\">Placed in the context of everyday life, the formation of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">is propelled by the combined influence of multiple factors.</span>",
      "zh": "放在日常生活的语境中思考，题目相关词的形成受到多重因素的共同推动。",
-     "meta": "过渡句(书·经济类原句,已背零成本上岗);看法/流行/调查类图表把 the formation of 换 the popularity of。本段=过渡+原因1(现实升级)+原因2(意识加深),只换【题目相关词】【槽A】【槽B】三处空,三句约80词考场全写;字数富余再加批9句8。"
+     "meta": "过渡句(书·经济类原句,已背零成本上岗);看法/流行/调查类图表把 the formation of 换 the popularity of。本段=过渡+原因1(现实升级)+原因2(意识加深),只换【题目相关词】【槽A】【槽B】三处空,三句约80词考场全写;字数富余再加批11句8。"
     },
     {
      "en": "<span class=\"tpl\">As real life continues to develop, people's expectations for</span> <span class=\"blank\">槽A(期望对象)</span> <span class=\"tpl\">no longer remain at the level of superficial satisfaction, which has undoubtedly laid a more solid foundation for</span> <span class=\"blank\">题目相关词</span>.",
      "zh": "随着现实生活不断发展，人们对于槽A的要求已不再停留于表层满足，这无疑为题目相关词奠定了更坚实的现实基础。",
-     "meta": "槽A与槽B同类别配对填:their living environment(环境生态)/their physical condition(体育健康)/their children's all-round growth(教育家庭)/a better material life(经济消费)/spiritual and cultural life(文化自信)/a healthier state of mind(心理健康)/daily convenience and efficiency(科技)。"
+     "meta": "槽A与槽B同类别配对填,词组见批7。"
     },
     {
      "en": "<span class=\"tpl\">In addition, with public awareness of</span> <span class=\"blank\">槽B(意识对象)</span> <span class=\"tpl\">gradually deepening and related needs continuing to grow,</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">has been receiving increasing attention.</span>",
      "zh": "除此之外，伴随着公众对槽B意识的逐渐加深与相关需求的不断增长，题目相关词也越来越受到重视。",
-     "meta": "槽B配对填:environmental protection/health/quality education/traditional culture/rational consumption/mental health/digital literacy。谓语单复数:the popularity of X has been receiving / outdoor activities have been receiving。负面图表不用本段,字数留给第三段讲措施。"
+     "meta": "谓语单复数:the popularity of X has been receiving / outdoor activities have been receiving。负面图表不用本段,字数留给第三段讲措施。"
     }
    ]
   },
   {
    "day": 7,
-   "tag": "★成品·动态图第三段两句",
+   "grp": "第二段",
+   "tag": "第二段·方面配对七类(槽A/槽B词组,考场换词核心)",
+   "sents": [
+    {
+     "en": "<span class=\"blank\">their living environment</span> ｜ <span class=\"blank\">environmental protection</span>",
+     "zh": "环境生态:对生活环境的要求不再停留于表层满足；公众环保意识逐渐加深。",
+     "meta": "槽A进批6句2,槽B进批6句3。图表涉及污染/绿化/垃圾分类/生态→本组。"
+    },
+    {
+     "en": "<span class=\"blank\">their physical condition</span> ｜ <span class=\"blank\">health</span>",
+     "zh": "体育健康:对身体状态的要求不再停留于表层满足；公众健康意识逐渐加深。",
+     "meta": "书原版示范组。运动/健身/体质/体育课类图表。"
+    },
+    {
+     "en": "<span class=\"blank\">their children's all-round growth</span> ｜ <span class=\"blank\">quality education</span>",
+     "zh": "教育家庭:对孩子全面成长的要求不再停留于表层满足；公众素质教育意识逐渐加深。",
+     "meta": "儿童/家庭教育/课外活动类(2026英二儿童户外活动=本组)。"
+    },
+    {
+     "en": "<span class=\"blank\">a better material life</span> ｜ <span class=\"blank\">rational consumption</span>",
+     "zh": "经济消费:对物质生活的要求不再停留于表层满足；公众理性消费意识逐渐加深。",
+     "meta": "消费/收入/购物方式/旅游花销类。"
+    },
+    {
+     "en": "<span class=\"blank\">spiritual and cultural life</span> ｜ <span class=\"blank\">traditional culture</span>",
+     "zh": "文化自信:对精神文化生活的要求不再停留于表层满足；公众传统文化意识逐渐加深。",
+     "meta": "传统/民俗/国潮/博物馆/读书类。"
+    },
+    {
+     "en": "<span class=\"blank\">a healthier state of mind</span> ｜ <span class=\"blank\">mental health</span>",
+     "zh": "心理健康:对心理状态的要求不再停留于表层满足；公众心理健康意识逐渐加深。",
+     "meta": "压力/焦虑/休闲/社交/老人陪伴类。"
+    },
+    {
+     "en": "<span class=\"blank\">daily convenience and efficiency</span> ｜ <span class=\"blank\">digital literacy</span>",
+     "zh": "科技数字:对便捷高效生活的要求不再停留于表层满足；公众数字素养意识逐渐加深。",
+     "meta": "手机/网络/AI/快递/智能设备类。"
+    }
+   ]
+  },
+  {
+   "day": 8,
+   "grp": "第三段",
+   "tag": "★成品·第三段正面版(苦瓜·所有类别通用)",
+   "sents": [
+    {
+     "en": "<span class=\"tpl\">We need to think rationally about the impact of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">on the present era, and provide deliberate guidance.</span>",
+     "zh": "我们有必要理性思考题目相关词对当今时代的影响，并做出有意识的引导。",
+     "meta": "第三段总起,任何题目通用(书:经济/校园/体育/文化各类印的是同一段);负面图整段换批9版。考场保3-4个主体句。"
+    },
+    {
+     "en": "<span class=\"tpl\">Government should clarify relevant strategies, so that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">can better adapt to the development of today's society.</span>",
+     "zh": "政府应明确相关策略，让题目相关词更好地适应当今社会的发展。",
+     "meta": "主体1=政府;动作可换 formulate supportive policies / provide financial support。主体词按题换(书:政府→商家)。"
+    },
+    {
+     "en": "<span class=\"tpl\">Schools and media need to carry out targeted education and guidance, enabling the public to gain a deep understanding of</span> <span class=\"blank\">题目相关词</span>.",
+     "zh": "学校与媒体需要开展针对性教育和引导，让大众对题目相关词有深度的认知。",
+     "meta": "主体2=学校与媒体;可换 organize relevant activities / spread relevant knowledge。字数紧可删本句(三句版≈56词)。"
+    },
+    {
+     "en": "<span class=\"tpl\">Notably, individuals should maintain a rational mindset when considering the impact of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">on today's society.</span>",
+     "zh": "不可忽略的是，个人应保持理性的思维去看待题目相关词对当今社会的影响。",
+     "meta": "主体3=个人;individuals 按题换 parents/students/consumers。三句版=总起+政府+个人。"
+    }
+   ]
+  },
+  {
+   "day": 9,
+   "grp": "第三段",
+   "tag": "★成品·第三段负面版(苦瓜·负面图表用)",
+   "sents": [
+    {
+     "en": "<span class=\"tpl\">We need to examine the harms of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">with a rational mindset, and impose deliberate constraints.</span>",
+     "zh": "我们有必要以理性思维审视题目相关词的危害，并作出有意识的约束。",
+     "meta": "负面图第三段总起(书原文);与正面版区别=整段换'约束/纠偏'词系。"
+    },
+    {
+     "en": "<span class=\"tpl\">Government should clarify corrective strategies and implementation steps, so that</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">is contained and guided back on track.</span>",
+     "zh": "政府应明确纠偏策略与执行措施，使题目相关词得到遏制并被引导回正轨。",
+     "meta": "contained and guided back on track=遏制并引导回正轨。"
+    },
+    {
+     "en": "<span class=\"tpl\">Schools and media should carry out targeted literacy education and cautionary guidance, helping the public identify risks and resist herd behavior.</span>",
+     "zh": "学校与媒体需要开展针对性的素养教育与警示引导，帮助大众识别风险并抵制跟风。",
+     "meta": "identify risks and resist herd behavior=识别风险并抵制跟风(网瘾/熬夜/浪费/污染类图表)。"
+    },
+    {
+     "en": "<span class=\"tpl\">Notably, individuals should keep a rational view of the impact of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">on today's society.</span>",
+     "zh": "不可否认的是，个人应保持理性的思维去看待题目相关词对当今社会的影响。",
+     "meta": "负面版个人句仅换 keep a rational view;其余同正面版。"
+    }
+   ]
+  },
+  {
+   "day": 10,
+   "grp": "第三段",
+   "tag": "第三段·备选收尾(动态预测两句+静态措施三句·眼熟即可)",
    "sents": [
     {
      "en": "<span class=\"tpl\">In conclusion, the phenomenon reflected in the chart is bound to continue, and it will keep exerting a positive influence on</span> <span class=\"blank\">某方面</span>.",
@@ -107,13 +210,7 @@
      "en": "<span class=\"tpl\">Only through the joint efforts of</span> <span class=\"blank\">主体三方(如 the government, enterprises and the public)</span> <span class=\"tpl\">can we effectively promote</span> <span class=\"blank\">主题词的健康发展(按题换)</span>.",
      "zh": "只有通过(主体三方)的共同努力，我们才能有效促进主题词的健康发展。",
      "meta": "Only倒装收尾;主体按题换:parents and schools / the whole society / the government and the public。"
-    }
-   ]
-  },
-  {
-   "day": 8,
-   "tag": "★成品·静态图第三段三句",
-   "sents": [
+    },
     {
      "en": "<span class=\"tpl\">It is not difficult to draw the conclusion that enough attention must be paid to</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">by ourselves and our community.</span>",
      "zh": "不难得出结论，我们个人和整个社会都必须对题目相关词给予足够的重视。",
@@ -132,7 +229,8 @@
    ]
   },
   {
-   "day": 9,
+   "day": 11,
+   "grp": "备选",
    "tag": "备选升级句库(眼熟即可,不进检测)",
    "sents": [
     {
@@ -179,51 +277,22 @@
   }
  ],
  "plan": {
-  "version": 3,
-  "start": "2026-10-23",
+  "version": 4,
+  "mode": "library",
+  "updated": "2026-10-25",
   "exam": "2026-12-19",
-  "total_days": 58,
-  "recite_order": [
-   5,
-   6,
-   7,
-   8
-  ],
-  "recite_quota": 2,
-  "recite_days": 2,
-  "detect_day": 8,
-  "buffer_day": 9,
-  "phase_bounds": {
-   "recite": [
-    0,
-    9
-   ],
-   "asm": [
-    10,
-    20
-   ],
-   "pra": [
-    21,
-    38
-   ],
-   "ret": [
-    39,
-    55
-   ]
-  },
-  "light_day": 56,
   "assembly": [
    "默写检测:静态段+动态段+双图表总起(批1-5,不看任何资料),错词抄3遍",
-   "默写检测:第二段三句+动态三段+静态三段(批6-8),两版各默一遍",
+   "默写检测:第二段三句+第三段正/负两版(批6/8/9),各默一遍",
    "组装作文#1:2026英二·儿童户外活动(静态版:批2+批6+批8),40分钟不查资料",
    "批改昨天作文,错词进本;组装作文#2:2025英二·老人休闲(静态版:同套)",
-   "批改#2;组装作文#3:2023英二·居民健康素养(动态版:批3-4+批6+批7)",
+   "批改#2;组装作文#3:2023英二·居民健康素养(动态版:批3-4+批6+批8)",
    "批改#3;组装作文#4:2019英二·毕业生去向(动态多方向,细节句三数据三动词)",
-   "批改#4;升级练:把#3第二段用批9句1/句2换装重写,比较手感",
+   "批改#4;升级练:把#3第二段用批11句1/句2换装重写,比较手感",
    "批改续;组装作文#5:2024英二·劳动实践课(静态版)",
    "批改#5;限时彩排:任选一套未写真题,大小作文90分钟连写(对齐考场节奏)",
    "组装期总检:抽2段默写+错词本过一遍",
-   "定稿:动态版/静态版各抄一页纸=独有模板,明天起进限时套用"
+   "定稿:静态版/动态版各抄一页纸=独有模板(区别只在第一段,二三段同套)"
   ],
   "practice": [
    "限时#1:2026英二·儿童户外活动,25分钟写作+10分钟对照订正",
@@ -249,24 +318,20 @@
    "保温篇#1:2026英二再写一遍(目标:零错词)",
    "复习日:错词本+一页纸终版过一遍",
    "保温篇#2:2023英二(动态)25分钟",
-   "复习日:两套模板各默写一遍(批6-8)",
+   "复习日:三段模板各默一遍(重点批6/8/9)",
    "保温篇#3:2026英一(双图表)",
-   "复习日:批9备选库过一遍,挑1句升级进模板",
+   "复习日:批11备选库过一遍,挑1句升级进模板",
    "保温篇#4:盲题(静态,自选预测话题)",
-   "复习日:错词本+静态/动态段默写",
+   "复习日:错词本+第一段静态/动态默写",
    "保温篇#5:2025英二或2024英二(自选)",
-   "复习日:批9句5否定倒装+句6趋势预测各套一句",
+   "复习日:批11句5否定倒装+句6趋势预测各套一句",
    "保温篇#6:盲题(动态)",
    "复习日:第二段三句抽新题套写(只换题目相关词+槽A+槽B)",
    "保温篇#7:2023英一或2020英一(图画应急,低优先)",
    "复习日:错词本终过一遍",
    "保温篇#8:自选一篇,全套闭卷",
    "复习日:只看一页纸+随机抽1批默写",
-   "最后两套模板全套大默写,收工"
-  ],
-  "detect_note": "全套默写检测:①静态段②动态段③双图表④第二段三句⑤动态三段⑥静态三段逐项默写,错词进错词本",
-  "buffer_note": "缓冲补漏:优先把没背完的批补完;都背完了就过一遍错词本和批9备选库。",
-  "light_note": "轻复盘:只看错词本和一页纸终版,不写新东西,早睡。",
-  "exam_note": "今天初试。早上只过一页纸终版;写作文先花3分钟定三段骨架再动笔。稳住,你背了58天。"
+   "最后:三段模板全套大默写,收工"
+  ]
  }
 }
