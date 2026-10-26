@@ -5,83 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>英语生词本 · 滚动复习</title>
 <style>
-  :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --ink:#1c2330; --line:#dfe4ee; }
+  :root { --blue:#3b7ce0; --blue-dk:#2f6bd0; --blue-lt:#eef4fd; --blue-bd:#c5d9f5;
+          --red:#e02b2b; --green:#0c5c46; --ink:#1f2329; --sub:#8a8f99; --line:#dfe4ee; }
   * { box-sizing:border-box; }
   html,body{overflow-x:hidden}
-  body { margin:0; background:#f6f7fb; color:var(--ink);
+  body { margin:0; background:#eceef2; color:var(--ink);
          font-family:-apple-system,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
          font-size:16.5px; line-height:1.7; }
   .wrap { max-width:720px; margin:0 auto; padding:14px 14px 60px; }
   .top { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
-  h1 { font-size:21px; color:var(--blue); margin:4px 0 0; }
+  h1 { font-size:21px; color:var(--blue-dk); margin:4px 0 0; }
   .back { font-size:13.5px; color:#5a6472; text-decoration:none; flex:0 0 auto; }
   .chips { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 4px; }
   .chip { background:#fff; border:1px solid var(--line); border-radius:999px; padding:5px 13px; font-size:13.5px; color:#3c4657; }
   .chip b { color:var(--red); }
   .tabs { display:flex; gap:8px; margin:12px 0 2px; }
-  .tabs button { flex:1; border:1px solid var(--line); background:#fff; border-radius:10px;
-                 padding:8px 0; font-size:15px; cursor:pointer; color:#5a6472; }
+  .tabs button { flex:1; border:1px solid var(--blue-bd); background:var(--blue-lt); border-radius:10px;
+                 padding:8px 0; font-size:15px; cursor:pointer; color:var(--blue-dk); font-weight:600; }
   .tabs button.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:700; }
-  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; }
-  .card h2 { font-size:16.5px; margin:0 0 8px; color:var(--blue); border-left:4px solid var(--blue); padding-left:9px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:12px 0;
+          box-shadow:0 2px 10px rgba(35,50,90,.05); }
+  .card h2 { font-size:16.5px; margin:0 0 8px; color:var(--blue-dk); border-left:4px solid var(--blue); padding-left:9px; }
   .notice { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:10px 13px; font-size:14.5px; margin:10px 0; }
-  .notice.blue { background:#eaf1ff; border-color:#c9d6f2; }
+  .notice.blue { background:var(--blue-lt); border-color:var(--blue-bd); }
   .tip { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px; font-size:14px; margin-top:10px; }
-  .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
+  .foot { text-align:center; color:var(--sub); font-size:12.5px; margin-top:24px; }
   /* —— 录入表单 —— */
-  .frm label { font-size:13px; color:#5a6472; font-weight:700; display:block; margin-top:6px; }
-  .frm input { width:100%; border:1px solid var(--line); border-radius:9px; padding:8px 11px;
-               font-size:16px; font-family:inherit; background:#fbfcff; margin-top:2px; }
-  .frm input:focus { outline:2px solid #c9d6f2; border-color:var(--blue); }
+  .frm label { font-size:13px; color:#5a6472; font-weight:700; display:block; margin-top:7px; }
+  .frm label i { font-style:normal; color:var(--sub); font-weight:400; }
+  .frm input { width:100%; border:1px solid var(--blue-bd); border-radius:9px; padding:8px 11px;
+               font-size:16px; font-family:inherit; background:#fbfdff; margin-top:2px; }
+  .frm input:focus { outline:2px solid #c5d9f5; border-color:var(--blue); }
   .frow { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
   .btn { border:1.5px solid var(--blue); background:var(--blue); color:#fff; border-radius:9px;
          padding:7px 20px; font-size:15px; font-weight:700; cursor:pointer; font-family:inherit; }
-  .btn.ghost { background:#fff; color:var(--blue); }
-  .btn.gray { background:#fff; color:#8a94a6; border-color:var(--line); }
+  .btn.ghost { background:#fff; color:var(--blue-dk); }
+  .btn.gray { background:#fff; color:var(--sub); border-color:var(--line); }
   .btn.green { background:var(--green); border-color:var(--green); }
   /* —— 词表 —— */
-  .search { width:100%; border:1px solid var(--line); border-radius:9px; padding:8px 11px;
-            font-size:15px; background:#fbfcff; font-family:inherit; margin-bottom:6px; }
-  .cnt { font-size:12.5px; color:#8a94a6; margin:2px 0 6px; }
-  .wrow { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:10px 13px; margin:9px 0; }
+  .search { width:100%; border:1px solid var(--blue-bd); border-radius:9px; padding:8px 11px;
+            font-size:15px; background:#fbfdff; font-family:inherit; margin-bottom:6px; }
+  .cnt { font-size:12.5px; color:var(--sub); margin:2px 0 6px; }
+  .wrow { background:#fbfdff; border:1px solid var(--blue-bd); border-radius:12px; padding:10px 13px; margin:9px 0; }
   .wline { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
   .word { font-size:17.5px; font-weight:700; word-break:break-word; }
-  .st { font-size:11.5px; border-radius:6px; padding:1px 8px; font-weight:700; white-space:nowrap; }
+  .ipa { color:var(--blue); font-size:13.5px; }
+  .spk { border:none; background:var(--blue-lt); border:1px solid var(--blue-bd); color:var(--blue-dk);
+         border-radius:50%; width:26px; height:26px; font-size:13px; cursor:pointer; flex:0 0 auto;
+         display:inline-flex; align-items:center; justify-content:center; vertical-align:middle; }
+  .st { font-size:11.5px; border-radius:999px; padding:1px 9px; font-weight:700; white-space:nowrap; }
   .st.new { background:#eef1f6; color:#7a8496; }
   .st.mid { background:#fff3e2; color:#b26a00; }
   .st.ok  { background:#e5f3ea; color:var(--green); }
   .mng { font-size:15px; margin-top:2px; }
-  .exx { font-size:13.5px; color:#5a6472; margin-top:2px; }
-  .meta { font-size:12px; color:#8a94a6; margin-top:5px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .mnn { font-size:13px; color:#5a6472; margin-top:2px; background:var(--blue-lt);
+         border-radius:8px; padding:3px 9px; display:inline-block; }
+  .exx { font-size:13.5px; color:#5a6472; margin-top:5px; padding-left:10px; border-left:3px solid var(--blue-bd); }
+  .meta { font-size:12px; color:var(--sub); margin-top:5px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
   .ops { margin-left:auto; display:flex; gap:6px; }
   .op { border:1px solid var(--line); background:#fff; border-radius:7px; padding:2px 9px;
         font-size:12.5px; cursor:pointer; color:#5a6472; font-family:inherit; }
   .op.red { color:var(--red); border-color:#e6b8b5; }
-  .empty { text-align:center; color:#8a94a6; font-size:14.5px; padding:18px 6px; }
-  /* —— 滚动复习 —— */
-  .rv-top { display:flex; justify-content:space-between; font-size:12.5px; color:#8a94a6; margin:12px 2px 0; flex-wrap:wrap; gap:6px; }
-  .rvcard { background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:28px 16px 22px;
-            margin:10px 0 12px; text-align:center; cursor:pointer; user-select:none; }
-  .rvcard .rw { font-size:30px; font-weight:800; color:var(--blue); word-break:break-word; line-height:1.35; }
-  .rvcard .hint { font-size:13px; color:#8a94a6; margin-top:14px; }
-  .rvcard .rm { display:none; font-size:17.5px; margin-top:16px; line-height:1.65; }
-  .rvcard .rex { display:none; font-size:14px; color:#5a6472; margin-top:10px; border-top:1px dashed var(--line);
-                 padding-top:9px; user-select:text; }
-  .rvcard.open .rm, .rvcard.open .rex { display:block; }
+  .empty { text-align:center; color:var(--sub); font-size:14.5px; padding:18px 6px; }
+  /* —— 滚动复习卡(仿背单词App新词卡) —— */
+  .rv-top { display:flex; justify-content:space-between; font-size:12.5px; color:var(--sub); margin:12px 2px 0; flex-wrap:wrap; gap:6px; }
+  .rvcard { background:#fff; border:1px solid var(--line); border-radius:22px; padding:22px 18px 18px;
+            margin:10px 0 12px; text-align:center; cursor:pointer; user-select:none;
+            box-shadow:0 4px 18px rgba(35,50,90,.08); }
+  .rv-tag { display:inline-block; background:var(--blue-lt); color:var(--blue-dk); border:1px solid var(--blue-bd);
+            border-radius:999px; padding:2px 14px; font-size:13px; font-weight:700; }
+  .rv-wh { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:12px; flex-wrap:wrap; }
+  .rvcard .rw { font-size:34px; font-weight:800; color:#2b2f36; word-break:break-word; line-height:1.3; }
+  .rvcard .spk { width:34px; height:34px; font-size:16px; }
+  .rv-ipa { color:var(--blue); font-size:15.5px; margin-top:4px; word-break:break-word; }
+  .rvcard .hint { font-size:13px; color:var(--sub); margin-top:16px; }
+  .rv-mean { display:none; font-size:19px; font-weight:600; margin-top:14px; line-height:1.6; }
+  .rv-mn { display:none; background:var(--blue-lt); border-radius:12px; padding:8px 13px; margin-top:12px;
+           font-size:14px; color:#3c4657; text-align:left; line-height:1.65; }
+  .rv-mn b { color:var(--blue-dk); }
+  .rv-ex { display:none; margin-top:12px; text-align:left; padding-left:11px; border-left:4px solid var(--blue); }
+  .rv-ex .en { font-size:15.5px; color:var(--ink); user-select:text; }
+  .rv-ex .zh { font-size:13.5px; color:var(--sub); margin-top:2px; user-select:text; }
+  .rvcard.open .rv-mean, .rvcard.open .rv-mn, .rvcard.open .rv-ex { display:block; }
   .rvcard.open .hint { display:none; }
   .rv-btns { display:none; gap:10px; margin-top:20px; }
   .rvcard.open .rv-btns { display:flex; }
-  .rv-btns button { flex:1; border-radius:10px; padding:11px 0; font-size:16px; font-weight:700;
-                    cursor:pointer; border:1.5px solid; font-family:inherit; }
-  .rv-no { background:#fff; color:var(--red); border-color:#e6b8b5; }
-  .rv-yes { background:var(--green); color:#fff; border-color:var(--green); }
-  .rv-big { display:block; width:100%; border-radius:12px; padding:13px 0; font-size:17px; font-weight:800;
+  .rv-btns button { flex:1; border-radius:13px; padding:11px 0; font-size:16px; font-weight:700; cursor:pointer;
+                    font-family:inherit; background:var(--blue-lt); border:1.5px solid var(--blue-bd); color:var(--blue-dk); }
+  .rv-btns .rv-no { color:var(--red); }
+  .rv-big { display:block; width:100%; border-radius:13px; padding:13px 0; font-size:17px; font-weight:800;
             background:var(--blue); color:#fff; border:none; cursor:pointer; margin-top:10px; font-family:inherit; }
   .rv-done { text-align:center; padding:26px 8px 10px; }
   .rv-done .big { font-size:40px; }
-  .rv-done h2 { font-size:19px; color:var(--green); margin:8px 0 4px; }
+  .rv-done h2 { font-size:19px; color:var(--green); margin:8px 0 4px; border:none; padding:0; }
   .rv-done .sum { font-size:14.5px; color:#5a6472; line-height:2; }
-  @media (max-width:520px){ body{font-size:15.5px} .rvcard .rw{font-size:26px} .word{font-size:16.5px} }
+  @media (max-width:520px){ body{font-size:15.5px} .rvcard .rw{font-size:28px} .word{font-size:16.5px} }
 </style>
 </head>
 <body>
@@ -100,8 +118,8 @@
   </div>
   <div id="app"></div>
 
-  <div class="tip"><b>用法</b>:遇到不会的单词 →【词表 · 录入】记下单词+词义(例句可选) →【滚动复习】看单词想词义,点卡片翻面对答案 → <b>✓认识</b>间隔拉长(1/2/4/7/15 天后再见),<b>✗不认识</b>当场滚回队尾,一轮里反复见面直到认识。数据只存本机浏览器,换设备走全站备份页打包。</div>
-  <div class="foot">生词本 v1 · 滚动复习 ｜ 数据存本机(shengci_v1) ｜ 只收自己亲手遇到的词,不灌通用词表</div>
+  <div class="tip"><b>用法</b>:做阅读遇到不会的词 →【词表 · 录入】记下单词+词义(音标/例句原文/译文/助记可选) →【滚动复习】看单词想词义,点卡片翻面对答案 → <b>✓认识</b>间隔拉长(1/2/4/7/15 天后再见),<b>❌不认识</b>当场滚回队尾,一轮里反复见面直到认识。数据只存本机浏览器,换设备走全站备份页打包。</div>
+  <div class="foot">生词本 v2 · 滚动复习 ｜ 数据存本机(shengci_v1) ｜ 只收自己亲手遇到的词,不灌通用词表</div>
 </div>
 
 <script>
@@ -122,6 +140,8 @@ function diffDays(a, b){ const p = x => { const t = x.split('-').map(Number); re
 function toast(msg){ const t = document.createElement('div'); t.textContent = msg;
   t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(20,24,32,.92);color:#fff;border-radius:10px;padding:9px 18px;font-size:13.5px;z-index:99';
   document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
+function speak(t){ try { const u = new SpeechSynthesisUtterance(String(t).replace(/\/|\s*英|\s*美/g, ' ').trim() || t);
+  u.lang = 'en-US'; u.rate = .88; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch(e){} }
 
 /* —— 存储(解析失败自动封存旧数据,不丢词) —— */
 (function load(){
@@ -136,24 +156,31 @@ function save(){ try { localStorage.setItem(LS, JSON.stringify(DB)); return true
   catch(e){ toast('保存失败:浏览器存储空间不足'); return false; } }
 
 /* —— 词的等级徽章 —— */
-function stInfo(x){
-  if (x.box >= 5) return ['ok', '✓ 已掌握'];
-  if (!x.lr) return ['new', '新词'];
-  return ['mid', '巩固 ' + '●'.repeat(x.box) + '○'.repeat(5 - x.box)];
+function stTag(x){
+  if (x.box >= 5) return '✓ 已掌握';
+  if (!x.lr) return '✨ 新词';
+  return '🔁 巩固 ' + '●'.repeat(x.box) + '○'.repeat(5 - x.box);
 }
+function stCls(x){ return x.box >= 5 ? 'ok' : (!x.lr ? 'new' : 'mid'); }
 
 /* —— 录入 / 修改 —— */
-function addWord(w, m, ex){
-  w = w.trim(); m = m.trim(); ex = ex.trim();
+function addWord(w, m, ipa, ex, exz, mn){
+  w = w.trim(); m = m.trim(); ipa = ipa.trim(); ex = ex.trim(); exz = exz.trim(); mn = mn.trim();
   if (!w || !m) return '单词和词义都要填';
   const nw = w.toLowerCase();
   if (DB.words.some((x, i) => i !== editIdx && x.w.trim().toLowerCase() === nw)) return '「' + w + '」已经在生词本里了';
   if (editIdx >= 0){
     const x = DB.words[editIdx];
-    x.w = w; x.m = m; if (ex) x.ex = ex; else delete x.ex;
+    x.w = w; x.m = m;
+    if (ipa) x.ipa = ipa; else delete x.ipa;
+    if (ex) x.ex = ex; else delete x.ex;
+    if (exz) x.exz = exz; else delete x.exz;
+    if (mn) x.mn = mn; else delete x.mn;
     editIdx = -1; save(); return '';
   }
-  DB.words.unshift({ w, m, ex: ex || undefined, t: todayISO(), box: 0, due: todayISO(), ok: 0, nk: 0, lr: '' });
+  const o = { w, m, t: todayISO(), box: 0, due: todayISO(), ok: 0, nk: 0, lr: '' };
+  if (ipa) o.ipa = ipa; if (ex) o.ex = ex; if (exz) o.exz = exz; if (mn) o.mn = mn;
+  DB.words.unshift(o);
   save(); return '';
 }
 
@@ -184,15 +211,19 @@ function grade(knows){
 
 /* —— 词表视图 —— */
 function vList(){
-  const editing = editIdx >= 0 ? DB.words[editIdx] : null;
+  const e0 = editIdx >= 0 ? DB.words[editIdx] : null;
+  const v = x => e0 && x ? esc(e0[x]) : '';
   let h = `<div class="card frm">
-    <h2>${editing ? '✎ 修改单词' : '➕ 记生词'}</h2>
-    <label>单词 *</label><input id="f-w" type="text" placeholder="如 substantial / look into" value="${editing ? esc(editing.w) : ''}" autocomplete="off">
-    <label>词义 *</label><input id="f-m" type="text" placeholder="如 adj.大量的;结实的 / 深入调查" value="${editing ? esc(editing.m) : ''}" autocomplete="off">
-    <label>例句(可选)</label><input id="f-x" type="text" placeholder="遇到这个词的原句,复习时一起看" value="${editing && editing.ex ? esc(editing.ex) : ''}" autocomplete="off">
+    <h2>${e0 ? '✎ 修改单词' : '➕ 记生词'}</h2>
+    <label>单词 *</label><input id="f-w" type="text" placeholder="如 substantial / look into" value="${v('w')}" autocomplete="off">
+    <label>音标 <i>(可选)</i></label><input id="f-i" type="text" placeholder="如 英 /səbˈstænʃl/ 美 /-ˈstæn-/ ,只填一个也行" value="${v('ipa')}" autocomplete="off">
+    <label>词义 *</label><input id="f-m" type="text" placeholder="如 adj.大量的;结实的 / 深入调查" value="${v('m')}" autocomplete="off">
+    <label>例句原文 <i>(可选,建议填阅读原句)</i></label><input id="f-x" type="text" placeholder="阅读里遇到这个词的那句" value="${v('ex')}" autocomplete="off">
+    <label>例句译文 <i>(可选)</i></label><input id="f-z" type="text" placeholder="例句的中文翻译" value="${v('exz')}" autocomplete="off">
+    <label>助记 <i>(可选,词根拆解/联想)</i></label><input id="f-n" type="text" placeholder="如 sub-(下)+stan(站)→站在下面→结实的大量" value="${v('mn')}" autocomplete="off">
     <div class="frow">
-      <button class="btn" id="f-add">${editing ? '保存修改' : '➕ 添加'}</button>
-      ${editing ? '<button class="btn gray" id="f-cancel">取消</button>' : ''}
+      <button class="btn" id="f-add">${e0 ? '保存修改' : '➕ 添加'}</button>
+      ${e0 ? '<button class="btn gray" id="f-cancel">取消</button>' : ''}
     </div>
   </div>
   <div class="card">
@@ -206,19 +237,18 @@ function vList(){
     (x.w + ' ' + x.m + ' ' + (x.ex || '')).toLowerCase().includes(kw.toLowerCase())) : DB.words.map((x, i) => [x, i]);
   $('#cnt').textContent = kw ? `搜到 ${rows.length} / 共 ${DB.words.length} 词` :
     `共 ${DB.words.length} 词 · 掌握 ${DB.words.filter(x => x.box >= 5).length} · 巩固中 ${DB.words.filter(x => x.box > 0 && x.box < 5).length} · 新词 ${DB.words.filter(x => !x.lr).length}`;
-  $('#rows').innerHTML = rows.length ? rows.map(([x, i]) => {
-    const [cls, txt] = stInfo(x);
-    return `<div class="wrow">
-      <div class="wline"><span class="word">${esc(x.w)}</span><span class="st ${cls}">${txt}</span></div>
+  $('#rows').innerHTML = rows.length ? rows.map(([x, i]) => `<div class="wrow">
+      <div class="wline"><span class="word">${esc(x.w)}</span><button class="spk" data-say="${i}" title="朗读">🔊</button><span class="st ${stCls(x)}">${stTag(x)}</span></div>
+      ${x.ipa ? `<div class="ipa">${esc(x.ipa)}</div>` : ''}
       <div class="mng">${esc(x.m)}</div>
-      ${x.ex ? `<div class="exx">${esc(x.ex)}</div>` : ''}
+      ${x.mn ? `<div class="mnn">💡 ${esc(x.mn)}</div>` : ''}
+      ${x.ex ? `<div class="exx">${esc(x.ex)}${x.exz ? `<br> ${esc(x.exz)}` : ''}</div>` : ''}
       <div class="meta"><span>✓${x.ok} ✗${x.nk}</span><span>记于 ${(x.t || '').slice(5)}</span>${x.box > 0 ? `<span>下次 ${(x.due || '').slice(5)}</span>` : ''}
         <span class="ops"><button class="op" data-e="${i}">✎ 改</button><button class="op red" data-d="${i}">✕ 删</button></span></div>
-    </div>`;
-  }).join('') : `<div class="empty">${kw ? '没搜到,换个词试试' : '还是空的:把上面第一个不会的单词记进来 📝'}</div>`;
+    </div>`).join('') : `<div class="empty">${kw ? '没搜到,换个词试试' : '还是空的:把上面第一个不会的单词记进来 📝'}</div>`;
 
   const doAdd = () => {
-    const r = addWord($('#f-w').value, $('#f-m').value, $('#f-x').value);
+    const r = addWord($('#f-w').value, $('#f-m').value, $('#f-i').value, $('#f-x').value, $('#f-z').value, $('#f-n').value);
     if (r){ toast(r); return; }
     toast(editIdx >= 0 ? '已保存' : '已记入生词本');
     render();
@@ -226,9 +256,11 @@ function vList(){
   };
   $('#f-add').addEventListener('click', doAdd);
   const fc = $('#f-cancel'); if (fc) fc.addEventListener('click', () => { editIdx = -1; vList(); });
-  ['f-w', 'f-m', 'f-x'].forEach(id => $('#' + id).addEventListener('keydown', e => { if (e.key === 'Enter') doAdd(); }));
+  ['f-w', 'f-i', 'f-m', 'f-x', 'f-z', 'f-n'].forEach(id => $('#' + id).addEventListener('keydown', e => { if (e.key === 'Enter') doAdd(); }));
   $('#kw').addEventListener('input', e => { kw = e.target.value; const pos = e.target.selectionStart; vList();
     const k2 = $('#kw'); k2.focus(); k2.setSelectionRange(pos, pos); });
+  $('#app').querySelectorAll('[data-say]').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation(); speak(DB.words[+b.dataset.say].w); }));
   $('#app').querySelectorAll('[data-e]').forEach(b => b.addEventListener('click', () => {
     editIdx = +b.dataset.e; vList(); window.scrollTo(0, 0); $('#f-w').focus(); }));
   $('#app').querySelectorAll('[data-d]').forEach(b => b.addEventListener('click', () => {
@@ -245,7 +277,7 @@ function vList(){
 function vReview(){
   let h = '';
   if (!DB.words.length){
-    h = '<div class="notice">词表还是空的:先去【词表 · 录入】把不会的单词记进来。</div>';
+    h = '<div class="notice">词表还是空的:先去【词表 · 录入】把阅读里不会的单词记进来。</div>';
   } else if (q === 'done'){
     const left = buildQueue(true).length;
     h = `<div class="card rv-done"><span class="big">🎉</span>
@@ -260,7 +292,7 @@ function vReview(){
     const due = buildQueue(false), unfin = DB.words.filter(x => x.box < 5).length;
     if (due.length){
       h = `<div class="card"><h2>滚动复习</h2>
-        <div style="font-size:14.5px;color:#5a6472">今日到期 <b>${due.length}</b> 词${unfin > due.length ? `(全部未掌握共 ${unfin} 词,其余按 1/2/4/7/15 天排期自动到点)` : ''}。<br>流程:看单词 → 心里想词义 → 点卡片翻面对答案 → 自评。</div>
+        <div style="font-size:14.5px;color:#5a6472">今日到期 <b>${due.length}</b> 词${unfin > due.length ? `(全部未掌握共 ${unfin} 词,其余按 1/2/4/7/15 天排期自动到点)` : ''}。<br>流程:看单词想词义(可点🔊听发音) → 点卡片翻面对答案 → 自评。</div>
         <button class="rv-big" id="rv-go">▶ 开始复习(${due.length} 词)</button></div>`;
     } else {
       h = `<div class="notice blue">今天没有到期的词 🎯 刚认识过的会按 1/2/4/7/15 天排期自动回来。</div>
@@ -268,15 +300,18 @@ function vReview(){
         <button class="rv-big" id="rv-force">🔄 全部未掌握滚一轮(${unfin} 词)</button></div>` : ''}`;
     }
   } else {
-    const x = q[0], [cls, txt] = stInfo(x);
-    h = `<div class="rv-top"><span>剩 <b>${q.length}</b> 张 · 已过 ${session.seen} 次</span><span>${txt}</span></div>
+    const x = q[0];
+    h = `<div class="rv-top"><span>剩 <b>${q.length}</b> 张 · 已过 ${session.seen} 次</span><span>${stTag(x)}</span></div>
       <div class="rvcard" id="rv">
-        <div class="rw">${esc(x.w)}</div>
+        <div class="rv-tag">${stTag(x)}</div>
+        <div class="rv-wh"><div class="rw">${esc(x.w)}</div><button class="spk" id="rv-spk" title="朗读">🔊</button></div>
+        ${x.ipa ? `<div class="rv-ipa">${esc(x.ipa)}</div>` : ''}
         <div class="hint">👆 点卡片看词义</div>
-        <div class="rm">${esc(x.m)}</div>
-        ${x.ex ? `<div class="rex">${esc(x.ex)}</div>` : ''}
+        <div class="rv-mean">${esc(x.m)}</div>
+        ${x.mn ? `<div class="rv-mn"><b>💡 助记:</b>${esc(x.mn)}</div>` : ''}
+        ${x.ex ? `<div class="rv-ex"><div class="en">${esc(x.ex)}</div>${x.exz ? `<div class="zh">${esc(x.exz)}</div>` : ''}</div>` : ''}
         <div class="rv-btns">
-          <button class="rv-no" id="rv-no">✗ 不认识</button>
+          <button class="rv-no" id="rv-no">❌ 不认识</button>
           <button class="rv-yes" id="rv-yes">✓ 认识</button>
         </div>
       </div>`;
@@ -290,6 +325,7 @@ function vReview(){
   const rv = $('#rv');
   if (rv){
     rv.addEventListener('click', () => rv.classList.add('open'));
+    $('#rv-spk').addEventListener('click', e => { e.stopPropagation(); speak(q[0].w); });
     $('#rv-yes').addEventListener('click', e => { e.stopPropagation(); grade(true); });
     $('#rv-no').addEventListener('click', e => { e.stopPropagation(); grade(false); });
   }
