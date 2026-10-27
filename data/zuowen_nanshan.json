@@ -1,0 +1,1569 @@
+{
+ "meta": {
+  "version": 1,
+  "updated": "2026-10-28",
+  "exam": "2026-12-19",
+  "source": "27南山作文模板吃鸡计划(大作文P60-100+小作文P5-44+素材库+补充句+4.0学习计划)",
+  "note": "句子由PDF渲染图OCR转录并人工校对; 英二口径, 图画作文(英一)未收, 品质价值句作拓展"
+ },
+ "plan": [
+  {
+   "day": 1,
+   "cat": "xz",
+   "title": "小作文格式+总框架(第一段目的、第二段任务、第三段收尾)",
+   "book": "P5-17",
+   "learn": [
+    "xz-p1-gw-1",
+    "xz-p1-gw-2",
+    "xz-p1-mu-1",
+    "xz-p1-mu-2"
+   ],
+   "practice": [
+    "2026英语二答复信,只分析结构"
+   ],
+   "tip": "格式:称呼Dear+职务/名字+逗号 → 正文三段(段前空两格) → 结束语Yours sincerely,(正式)/Yours,(私人) → 署名Li Ming(右对齐)。三段思路:开头表明目的→中间展开→结尾期待收尾。"
+  },
+  {
+   "day": 2,
+   "cat": "xz",
+   "title": "公务书信开头结尾+私人书信开头结尾",
+   "book": "P17-20, P31-33",
+   "learn": [
+    "xz-p1-sr-1",
+    "xz-p1-sr-2",
+    "xz-p1-sr-3",
+    "xz-p1-sr-4",
+    "xz-p3-1",
+    "xz-p3-2",
+    "xz-p3-3",
+    "xz-p3-4"
+   ],
+   "practice": [
+    "2011英语二祝贺信(私人)",
+    "2014英语二咨询信(公务):第一、三段真题练习"
+   ]
+  },
+  {
+   "day": 3,
+   "cat": "xz",
+   "title": "讲事情类模板:活动主题、时间地点、具体安排",
+   "book": "P21-24",
+   "learn": [
+    "xz-p2-js-1",
+    "xz-p2-js-2",
+    "xz-p2-js-3",
+    "xz-p2-js-4",
+    "xz-p2-js-5"
+   ],
+   "practice": [
+    "2013英语二通知,第二段真题练习"
+   ]
+  },
+  {
+   "day": 4,
+   "cat": "xz",
+   "title": "讲事情类模板:介绍、答复、感谢、祝贺的替换方法",
+   "book": "P24+补充句",
+   "learn": [
+    "xz-p2-bc-1",
+    "xz-p2-bc-2",
+    "xz-p2-bc-3",
+    "xz-p2-bc-4"
+   ],
+   "practice": [
+    "2010英语二邀请信",
+    "2017英语二答复信:第二段真题练习"
+   ]
+  },
+  {
+   "day": 5,
+   "cat": "xz",
+   "title": "观点类模板:提出建议或推荐",
+   "book": "P24-27",
+   "learn": [
+    "xz-p2-gd-1"
+   ],
+   "practice": [
+    "2019英语二建议信,第二段真题练习"
+   ]
+  },
+  {
+   "day": 6,
+   "cat": "xz",
+   "title": "观点类模板:说明理由和补充好处",
+   "book": "P24-27",
+   "learn": [
+    "xz-p2-gd-2",
+    "xz-p2-gd-3",
+    "xz-p2-gd-4"
+   ],
+   "practice": [
+    "2020英语二介绍+建议信,第二段真题练习"
+   ]
+  },
+  {
+   "day": 7,
+   "cat": "xz",
+   "title": "解决问题类模板:说明问题、原因和影响",
+   "book": "P28-30",
+   "learn": [
+    "xz-p2-jj-1",
+    "xz-p2-jj-2",
+    "xz-p2-jj-3"
+   ],
+   "practice": [
+    "2012英语二投诉信,第二段真题练习"
+   ]
+  },
+  {
+   "day": 8,
+   "cat": "xz",
+   "title": "解决问题类模板:提出补救措施或解决要求",
+   "book": "P28-30",
+   "learn": [
+    "xz-p2-jj-4",
+    "xz-p2-jj-5"
+   ],
+   "practice": [
+    "2018英语二道歉信,第二段真题练习"
+   ]
+  },
+  {
+   "day": 9,
+   "cat": "xz",
+   "title": "通知告示类写作模板和写作思路",
+   "book": "P34-35",
+   "learn": [],
+   "practice": [
+    "2015英语二通知,只分析结构"
+   ],
+   "tip": "通知格式:标题NOTICE居中 → 日期右对齐 → 正文三段(发布信息→展开信息→提出行动) → 署名右对齐(如The Students' Union)。两大类:活动通知(什么活动/何时何地/如何参加)和招募通知(招募什么/有何要求/如何申请)。"
+  },
+  {
+   "day": 10,
+   "cat": "xz",
+   "title": "通知模板:活动通知",
+   "book": "P36-44",
+   "learn": [
+    "xz-tz-1-1",
+    "xz-tz-1-2",
+    "xz-tz-1-3",
+    "xz-tz-1-4",
+    "xz-tz-hd-1",
+    "xz-tz-hd-2",
+    "xz-tz-hd-3"
+   ],
+   "practice": [
+    "2015英语二通知+2010英语一通知,真题练习"
+   ]
+  },
+  {
+   "day": 11,
+   "cat": "xz",
+   "title": "通知模板:招募通知",
+   "book": "P36-44",
+   "learn": [
+    "xz-tz-zm-1",
+    "xz-tz-zm-2",
+    "xz-tz-zm-3",
+    "xz-tz-zm-4",
+    "xz-tz-zm-5",
+    "xz-tz-3-1",
+    "xz-tz-3-2",
+    "xz-tz-3-3",
+    "xz-tz-3-4"
+   ],
+   "practice": [
+    "2015英语二通知(招募志愿者角度)重写一遍"
+   ]
+  },
+  {
+   "day": 12,
+   "cat": "xz",
+   "title": "讲事情类综合训练",
+   "book": "复习",
+   "learn": [],
+   "review": "讲事情类(①②③+感谢祝贺补充)",
+   "practice": [
+    "英语二2010/2014/2015/2017真题练习"
+   ]
+  },
+  {
+   "day": 13,
+   "cat": "xz",
+   "title": "讲观点类综合训练",
+   "book": "复习",
+   "learn": [],
+   "review": "观点类(④⑤⑥)",
+   "practice": [
+    "英语二2011/2016/2019真题练习"
+   ]
+  },
+  {
+   "day": 14,
+   "cat": "xz",
+   "title": "解决问题类综合训练",
+   "book": "复习",
+   "learn": [],
+   "review": "解决问题类(⑦⑧⑨)",
+   "practice": [
+    "英语二2012/2018真题练习"
+   ]
+  },
+  {
+   "day": 15,
+   "cat": "dz",
+   "title": "大作文三段式总框架+图表第一段第一句模板",
+   "book": "P60-65, P77-78",
+   "learn": [
+    "dz-p1-1",
+    "dz-p1-2",
+    "dz-p1-3"
+   ],
+   "practice": [
+    "2014英语二真题,只分析结构"
+   ],
+   "tip": "三段式:第一段描述图表(引入+数据) → 第二段分析论证(过渡+原因/观点+影响+判断) → 第三段评论总结(总体评价+行动/展望)。"
+  },
+  {
+   "day": 16,
+   "cat": "dz",
+   "title": "图表第一段二三句·动态图表模板",
+   "book": "P79-80",
+   "learn": [
+    "dz-p1-dd-1",
+    "dz-p1-dd-2",
+    "dz-p1-dd-3"
+   ],
+   "practice": [
+    "2017英语二第一段真题练习"
+   ]
+  },
+  {
+   "day": 17,
+   "cat": "dz",
+   "title": "动态第一段巩固练习",
+   "book": "P79-80",
+   "learn": [],
+   "practice": [
+    "2022英语二第一段真题练习"
+   ]
+  },
+  {
+   "day": 18,
+   "cat": "dz",
+   "title": "图表第一段二三句·静态图表模板",
+   "book": "P81-82",
+   "learn": [
+    "dz-p1-jt-1",
+    "dz-p1-jt-2",
+    "dz-p1-jt-3",
+    "dz-p1-jt-4"
+   ],
+   "practice": [
+    "2015英语二第一段真题练习"
+   ]
+  },
+  {
+   "day": 19,
+   "cat": "dz",
+   "title": "静态第一段巩固练习",
+   "book": "P81-82",
+   "learn": [],
+   "practice": [
+    "2018英语二第一段真题练习"
+   ]
+  },
+  {
+   "day": 20,
+   "cat": "dz",
+   "title": "静态第一段巩固练习II",
+   "book": "P81-82",
+   "learn": [],
+   "practice": [
+    "2021英语二第一段真题练习"
+   ]
+  },
+  {
+   "day": 21,
+   "cat": "dz",
+   "title": "图表第一段·复合图表模板",
+   "book": "P83-84",
+   "learn": [
+    "dz-p1-fh-1",
+    "dz-p1-fh-2",
+    "dz-p1-fh-3",
+    "dz-p1-fh-4",
+    "dz-p1-fh-5"
+   ],
+   "practice": [
+    "英语一2024或2026复合图表,迁移训练"
+   ]
+  },
+  {
+   "day": 22,
+   "cat": "dz",
+   "title": "现象数据类第二段:宏观原因+个人需求",
+   "book": "P87-94",
+   "learn": [
+    "dz-p2-gd-1",
+    "dz-p2-gd-2",
+    "dz-p2-yy-1",
+    "dz-p2-yy-2"
+   ],
+   "practice": [
+    "2023英语二第二段真题练习"
+   ]
+  },
+  {
+   "day": 23,
+   "cat": "dz",
+   "title": "现象数据类第二段:原因+影响+趋势判断",
+   "book": "P87-94+补充",
+   "learn": [
+    "dz-p2-yy-3",
+    "dz-p2-yy-4",
+    "dz-p2-yy-5",
+    "dz-p2-yy-6",
+    "dz-p2-yy-7",
+    "dz-p2-yy-8",
+    "dz-p2-xy-1",
+    "dz-p2-xy-2",
+    "dz-p2-xy-3",
+    "dz-p2-zj-1",
+    "dz-p2-zj-2",
+    "dz-p2-zj-3"
+   ],
+   "practice": [
+    "2024英语二第二段真题练习"
+   ]
+  },
+  {
+   "day": 24,
+   "cat": "dz",
+   "title": "材料观点类第二段:不同选择背后的原因",
+   "book": "P90-91",
+   "learn": [
+    "dz-p1-cl-1",
+    "dz-p1-cl-2",
+    "dz-p2-gd-3",
+    "dz-p2-gd-4",
+    "dz-p2-cl-1",
+    "dz-p2-cl-2",
+    "dz-p2-cl-3",
+    "dz-p2-cl-4",
+    "dz-p2-cl-5",
+    "dz-p2-cl-6",
+    "dz-p2-zj-4"
+   ],
+   "practice": [
+    "2026英语二第二段真题练习"
+   ]
+  },
+  {
+   "day": 25,
+   "cat": "dz",
+   "title": "正向话题第三段:价值+行动+积极结果",
+   "book": "P95-100",
+   "learn": [
+    "dz-p3-1",
+    "dz-p3-2",
+    "dz-p3-xz-1",
+    "dz-p3-xz-2"
+   ],
+   "practice": [
+    "2024英语二第三段真题练习"
+   ]
+  },
+  {
+   "day": 26,
+   "cat": "dz",
+   "title": "负向/争议话题第三段",
+   "book": "P95-100",
+   "learn": [
+    "dz-p3-3",
+    "dz-p3-4",
+    "dz-p3-xz-3",
+    "dz-p3-xz-4",
+    "dz-p3-xz-5"
+   ],
+   "practice": [
+    "2018英语二第三段真题练习"
+   ]
+  },
+  {
+   "day": 27,
+   "cat": "dz",
+   "title": "中性趋势第三段:理性评价+合理引导",
+   "book": "P95-100",
+   "learn": [
+    "dz-p3-5",
+    "dz-p3-6",
+    "dz-p3-xz-6",
+    "dz-p3-xz-7",
+    "dz-p3-xz-8"
+   ],
+   "practice": [
+    "2025英语二第三段真题练习"
+   ]
+  },
+  {
+   "day": 28,
+   "cat": "dz",
+   "title": "图表类完整训练·动态图",
+   "book": "复习",
+   "learn": [],
+   "practice": [
+    "2010英语二整篇",
+    "2011英语二整篇",
+    "2014英语二整篇"
+   ]
+  },
+  {
+   "day": 29,
+   "cat": "dz",
+   "title": "图表类完整训练·静态图",
+   "book": "复习",
+   "learn": [],
+   "practice": [
+    "2012英语二整篇",
+    "2013英语二整篇",
+    "2015英语二整篇"
+   ]
+  },
+  {
+   "day": 30,
+   "cat": "dz",
+   "title": "英语二最终模拟",
+   "book": "冲刺",
+   "learn": [],
+   "practice": [
+    "选一套未练过的英语二图表真题,限时30分钟整篇",
+    "继续完整练习2010-2026历年完整真题"
+   ]
+  }
+ ],
+ "sents": [
+  {
+   "id": "xz-p1-gw-1",
+   "cat": "xz",
+   "grp": "第一段 · 公务书信",
+   "slot": "①自我介绍·经典版",
+   "en": "<span class=\"tpl\">I am a/an</span> <span class=\"blank\">身份</span> <span class=\"tpl\">from/at/in</span> <span class=\"blank\">单位</span><span class=\"tpl\">.</span>",
+   "zh": "我是……（单位）的一名……",
+   "lvl": 1,
+   "meta": "身份备选: undergraduate 本科生 / postgraduate student 研究生 / member of the Students' Union 学生会成员 / volunteer / regular user of the library 图书馆常客; 单位备选: at your university / in our community",
+   "page": "P17"
+  },
+  {
+   "id": "xz-p1-gw-2",
+   "cat": "xz",
+   "grp": "第一段 · 公务书信",
+   "slot": "①自我介绍·上岸版",
+   "en": "<span class=\"tpl\">As a/an</span> <span class=\"blank\">身份</span><span class=\"tpl\">, I</span> <span class=\"blank\">相关经历或背景</span><span class=\"tpl\">.</span>",
+   "zh": "作为……，我曾……（适合建议/投诉/申请）",
+   "lvl": 1,
+   "meta": "经历备选: have organized several charity sales / have used the library for several years / have recently experienced a problem with... / have relevant experience in...",
+   "page": "P17"
+  },
+  {
+   "id": "xz-p1-mu-1",
+   "cat": "xz",
+   "grp": "第一段 · 写作目的",
+   "slot": "②写作目的·较正式",
+   "en": "<span class=\"tpl\">The purpose of this letter is to</span> <span class=\"blank\">动词原形 + 目的</span><span class=\"tpl\">.</span>",
+   "zh": "本信旨在……",
+   "lvl": 1,
+   "meta": "按信型替换: 建议 offer several constructive suggestions on+话题 / 邀请 invite you to+活动 / 推荐 recommend+人或物 to you / 申请 apply for+职位 / 感谢道歉 express my heartfelt gratitude/apology to sb. for sth. / 祝贺 express my congratulations on+成就 / 投诉 make a complaint about+事 / 答复 share some relevant details about... / 辞职 inform you of my decision to resign from+职位",
+   "page": "P18"
+  },
+  {
+   "id": "xz-p1-mu-2",
+   "cat": "xz",
+   "grp": "第一段 · 写作目的",
+   "slot": "②写作目的·较轻松",
+   "en": "<span class=\"tpl\">I am writing this letter in order to</span> <span class=\"blank\">动词原形 + 目的</span><span class=\"tpl\">.</span>",
+   "zh": "我写此信意在……",
+   "lvl": 2,
+   "meta": "动词替换同上句",
+   "page": "P18"
+  },
+  {
+   "id": "xz-p1-sr-1",
+   "cat": "xz",
+   "grp": "第一段 · 私人书信",
+   "slot": "①寒暄·自然问候",
+   "en": "<span class=\"tpl\">It has been a long time since we last met. How is it going?</span>",
+   "zh": "好长时间没见，你好吗？",
+   "lvl": 1,
+   "page": "P20"
+  },
+  {
+   "id": "xz-p1-sr-2",
+   "cat": "xz",
+   "grp": "第一段 · 私人书信",
+   "slot": "①寒暄·客气礼貌",
+   "en": "<span class=\"tpl\">I hope this letter finds you well.</span>",
+   "zh": "展展佳。",
+   "lvl": 1,
+   "page": "P20"
+  },
+  {
+   "id": "xz-p1-sr-3",
+   "cat": "xz",
+   "grp": "第一段 · 私人书信",
+   "slot": "①寒暄·回应来信",
+   "en": "<span class=\"tpl\">It was</span> <span class=\"blank\">great / wonderful / lovely</span> <span class=\"tpl\">to hear from you.</span>",
+   "zh": "很高兴收到你的来信。得知……，我感到高兴！",
+   "lvl": 2,
+   "page": "P20"
+  },
+  {
+   "id": "xz-p1-sr-4",
+   "cat": "xz",
+   "grp": "第一段 · 私人书信",
+   "slot": "①寒暄·感谢分享",
+   "en": "<span class=\"tpl\">Thank you for sharing your</span> <span class=\"blank\">experience of...</span> <span class=\"tpl\">with me.</span>",
+   "zh": "感谢你与我分享……的经历。",
+   "lvl": 2,
+   "meta": "另备: I'm glad to know that you are interested in... 很高兴得知你对…感兴趣 / I still remember the wonderful time we spent together. 我仍记得我们一起度过的美好时光",
+   "page": "P20"
+  },
+  {
+   "id": "xz-p2-js-1",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情类",
+   "slot": "①核心事项",
+   "en": "<span class=\"tpl\">The activity will focus on</span> <span class=\"blank\">主题或核心内容</span><span class=\"tpl\">.</span>",
+   "zh": "本次活动将围绕……展开。",
+   "lvl": 1,
+   "meta": "activity 可替换 the event / the program / the lecture; focus on 可替换 center on / be devoted to / feature / be organized around",
+   "page": "P21"
+  },
+  {
+   "id": "xz-p2-js-2",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情类",
+   "slot": "②时间地点细节·版A",
+   "en": "<span class=\"tpl\">Scheduled for</span> <span class=\"blank\">时间</span> <span class=\"tpl\">at/in</span> <span class=\"blank\">地点</span><span class=\"tpl\">, it will include</span> <span class=\"blank\">具体内容</span><span class=\"tpl\">.</span>",
+   "zh": "本次活动定于……时间在……地点举行，具体包括……",
+   "lvl": 1,
+   "meta": "地点备选: at the school auditorium 学校礼堂 / in Room 201 / on the playground / at the student center; include 可替换 will feature / will consist of / will cover / will offer",
+   "page": "P21-22"
+  },
+  {
+   "id": "xz-p2-js-3",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情类",
+   "slot": "②时间地点细节·版B",
+   "en": "<span class=\"tpl\">It is scheduled to take place on</span> <span class=\"blank\">日期</span> <span class=\"tpl\">at</span> <span class=\"blank\">具体时间</span> <span class=\"tpl\">in/at</span> <span class=\"blank\">地点</span><span class=\"tpl\">, and will consist of</span> <span class=\"blank\">具体内容</span><span class=\"tpl\">.</span>",
+   "zh": "活动定于……日……时间在……地点举办，由……环节组成。",
+   "lvl": 2,
+   "meta": "两版选一背",
+   "page": "P22"
+  },
+  {
+   "id": "xz-p2-js-4",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情类",
+   "slot": "③安排收获意义·版A",
+   "en": "<span class=\"tpl\">Participants will also have the opportunity to</span> <span class=\"blank\">具体活动或收获</span><span class=\"tpl\">.</span>",
+   "zh": "参加者还将有机会……",
+   "lvl": 1,
+   "meta": "收获备选: exchange ideas with 与…交流 / learn more about / gain a better understanding of / develop their skills in / broaden their horizons 拓宽视野 / enrich their practical experience / make friends with like-minded peers / acquire professional knowledge",
+   "page": "P22"
+  },
+  {
+   "id": "xz-p2-js-5",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情类",
+   "slot": "③安排收获意义·版B",
+   "en": "<span class=\"tpl\">This experience will also enable all participants to</span> <span class=\"blank\">具体活动或收获</span><span class=\"tpl\">.</span>",
+   "zh": "这段经历也将使所有参与者能够……",
+   "lvl": 2,
+   "page": "P22"
+  },
+  {
+   "id": "xz-p2-bc-1",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情补充",
+   "slot": "①感谢信·核心帮助",
+   "en": "<span class=\"tpl\">Your support with</span> <span class=\"blank\">具体事项</span> <span class=\"tpl\">was particularly valuable.</span>",
+   "zh": "您在……方面给予的支持尤其宝贵。",
+   "lvl": 2,
+   "meta": "事项备选: my studies / my application / organizing the event / solving the problem; support with 可替换 help with / assistance with",
+   "page": "补充P23"
+  },
+  {
+   "id": "xz-p2-bc-2",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情补充",
+   "slot": "①祝贺信·核心成绩",
+   "en": "<span class=\"tpl\">Your success in</span> <span class=\"blank\">具体事项</span> <span class=\"tpl\">was particularly impressive.</span>",
+   "zh": "您在……方面取得的成功尤其令人钦佩。",
+   "lvl": 2,
+   "meta": "事项备选: the competition / your academic studies / completing the project / receiving the scholarship / gaining admission to your ideal university",
+   "page": "补充P23"
+  },
+  {
+   "id": "xz-p2-bc-3",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情补充",
+   "slot": "②感谢信·补充细节",
+   "en": "<span class=\"tpl\">This support included</span> <span class=\"blank\">帮助一</span> <span class=\"tpl\">and</span> <span class=\"blank\">帮助二</span><span class=\"tpl\">, reflecting your</span> <span class=\"blank\">品质一</span> <span class=\"tpl\">and</span> <span class=\"blank\">品质二</span><span class=\"tpl\">.</span>",
+   "zh": "这些帮助包括……和……，体现了您的……和……",
+   "lvl": 3,
+   "meta": "帮助备选: detailed guidance / useful advice / warm encouragement / thoughtful arrangements; 品质备选: kindness / patience / responsibility / generosity",
+   "page": "补充P24"
+  },
+  {
+   "id": "xz-p2-bc-4",
+   "cat": "xz",
+   "grp": "第二段 · 讲事情补充",
+   "slot": "③收获+进一步影响",
+   "en": "<span class=\"tpl\">It has also enabled</span> <span class=\"blank\">me/you</span> <span class=\"tpl\">to</span> <span class=\"blank\">直接收获</span> <span class=\"tpl\">and given</span> <span class=\"blank\">me/you</span> <span class=\"tpl\">the</span> <span class=\"blank\">confidence/opportunity</span> <span class=\"tpl\">to</span> <span class=\"blank\">进一步行动</span><span class=\"tpl\">.</span>",
+   "zh": "这也使我/您能够……，并给了我/您……的信心/机会去……（感谢信用 confidence，祝贺信用 opportunity）",
+   "lvl": 3,
+   "meta": "感谢信收获: complete the task successfully / solve the problem / adapt to the new environment; 祝贺信收获: gain greater confidence / receive wider recognition / make further progress",
+   "page": "补充P25"
+  },
+  {
+   "id": "xz-p2-gd-1",
+   "cat": "xz",
+   "grp": "第二段 · 观点类",
+   "slot": "④提出建议或推荐",
+   "en": "<span class=\"tpl\">I strongly recommend</span> <span class=\"blank\">推荐对象</span> <span class=\"tpl\">as</span> <span class=\"blank\">具体选择或用途</span><span class=\"tpl\">.</span>",
+   "zh": "我强烈推荐……作为/用于……",
+   "lvl": 1,
+   "meta": "strongly recommend 可替换 highly recommend / would recommend / suggest choosing; 选择备选 an ideal choice / a suitable option / your first destination / a valuable resource",
+   "page": "P24"
+  },
+  {
+   "id": "xz-p2-gd-2",
+   "cat": "xz",
+   "grp": "第二段 · 观点类",
+   "slot": "⑤说明主要理由",
+   "en": "<span class=\"tpl\">One major reason is that</span> <span class=\"blank\">理由</span><span class=\"tpl\">.</span>",
+   "zh": "一个主要原因是……",
+   "lvl": 1,
+   "meta": "one major reason 可替换 the primary reason / a key reason / what makes it particularly attractive; 万能理由: it offers an excellent opportunity to / it has rich historical and cultural value / it has great educational value / it offers considerable practical value",
+   "page": "P24-25"
+  },
+  {
+   "id": "xz-p2-gd-3",
+   "cat": "xz",
+   "grp": "第二段 · 观点类",
+   "slot": "⑥补充好处·推荐人",
+   "en": "<span class=\"tpl\">More importantly, these qualities will enable him/her to</span> <span class=\"blank\">工作结果</span><span class=\"tpl\">.</span>",
+   "zh": "更重要的是，这些品质将使他/她能够……",
+   "lvl": 1,
+   "meta": "工作结果备选: perform the duties effectively / cooperate effectively with others / deal with unexpected problems / adapt quickly to the new environment / make a valuable contribution to the team",
+   "page": "P25"
+  },
+  {
+   "id": "xz-p2-gd-4",
+   "cat": "xz",
+   "grp": "第二段 · 观点类",
+   "slot": "⑥补充好处·推荐事物",
+   "en": "<span class=\"tpl\">More importantly, this feature allows</span> <span class=\"blank\">visitors/readers</span> <span class=\"tpl\">to</span> <span class=\"blank\">实际收获</span><span class=\"tpl\">.</span>",
+   "zh": "更重要的是，这一特点能够让游客/读者……",
+   "lvl": 1,
+   "meta": "this feature 可替换 this advantage / its rich content / its unique design; 收获备选: gain a deeper understanding of / broaden their horizons / enjoy a memorable cultural experience / apply the ideas to their daily lives",
+   "page": "P26"
+  },
+  {
+   "id": "xz-p2-jj-1",
+   "cat": "xz",
+   "grp": "第二段 · 解决问题类",
+   "slot": "⑦说明具体问题",
+   "en": "<span class=\"tpl\">Unfortunately,</span> <span class=\"blank\">具体问题</span><span class=\"tpl\">.</span>",
+   "zh": "很遗憾，……",
+   "lvl": 1,
+   "meta": "Unfortunately 可替换 Regrettably / I am sorry to say that / I regret to inform you that; 问题备选: I will be unable to attend... / I cannot complete the task on time / the product failed to work properly / the service did not meet my expectations",
+   "page": "P28"
+  },
+  {
+   "id": "xz-p2-jj-2",
+   "cat": "xz",
+   "grp": "第二段 · 解决问题类",
+   "slot": "⑧A解释原因",
+   "en": "<span class=\"tpl\">This is mainly because</span> <span class=\"blank\">原因</span><span class=\"tpl\">.</span>",
+   "zh": "这主要是因为……",
+   "lvl": 1,
+   "meta": "可替换 is due to the fact that / results from +名词 / has been caused by; 原因备选: I have to attend an important examination / an unexpected emergency has arisen / I have fallen ill / there has been a change in my schedule",
+   "page": "P28"
+  },
+  {
+   "id": "xz-p2-jj-3",
+   "cat": "xz",
+   "grp": "第二段 · 解决问题类",
+   "slot": "⑧B说明影响",
+   "en": "<span class=\"tpl\">As a result,</span> <span class=\"blank\">问题造成的影响</span><span class=\"tpl\">.</span>",
+   "zh": "因此，……",
+   "lvl": 2,
+   "meta": "影响备选: I was unable to use the product / the problem caused considerable inconvenience / my work was seriously affected / additional time and money were wasted",
+   "page": "P29"
+  },
+  {
+   "id": "xz-p2-jj-4",
+   "cat": "xz",
+   "grp": "第二段 · 解决问题类",
+   "slot": "⑨A道歉·提出补救",
+   "en": "<span class=\"tpl\">To make up for</span> <span class=\"blank\">问题</span><span class=\"tpl\">, I will</span> <span class=\"blank\">补救办法</span><span class=\"tpl\">.</span>",
+   "zh": "为了弥补……，我将……",
+   "lvl": 1,
+   "meta": "To make up for 可替换 To compensate for; 补救备选: arrange another meeting / complete the task as soon as possible / ask a classmate to take notes",
+   "page": "P29"
+  },
+  {
+   "id": "xz-p2-jj-5",
+   "cat": "xz",
+   "grp": "第二段 · 解决问题类",
+   "slot": "⑨B投诉·解决办法",
+   "en": "<span class=\"tpl\">To resolve the matter, I would appreciate it if you could</span> <span class=\"blank\">解决办法</span><span class=\"tpl\">.</span>",
+   "zh": "为了解决此事，如果您能……，我将不胜感激。",
+   "lvl": 1,
+   "meta": "To resolve the matter 可替换 To address the problem / To deal with the issue; 办法备选: provide a replacement / offer a full refund / take appropriate measures / investigate the matter",
+   "page": "P29"
+  },
+  {
+   "id": "xz-p3-1",
+   "cat": "xz",
+   "grp": "第三段 · 结尾",
+   "slot": "①表达情感",
+   "en": "<span class=\"tpl\">I</span> <span class=\"blank\">sincerely / truly / genuinely</span> <span class=\"tpl\">hope that you will</span> <span class=\"blank\">动作</span> <span class=\"tpl\">my</span> <span class=\"blank\">事项</span><span class=\"tpl\">.</span>",
+   "zh": "我真诚地希望您能……我的……",
+   "lvl": 1,
+   "meta": "动作×事项搭配: accept invitation/apology 接受邀请/道歉 / consider suggestions 考虑建议 / adopt suggestions 采纳建议 / approve application 批准申请 / understand decision 理解决定 / respect decision 尊重决定",
+   "page": "P31"
+  },
+  {
+   "id": "xz-p3-2",
+   "cat": "xz",
+   "grp": "第三段 · 结尾",
+   "slot": "②期待回复·公务A",
+   "en": "<span class=\"tpl\">A reply at your earliest convenience would be highly appreciated.</span>",
+   "zh": "如能在您方便时尽早回复，我将十分感谢。",
+   "lvl": 1,
+   "page": "P31"
+  },
+  {
+   "id": "xz-p3-3",
+   "cat": "xz",
+   "grp": "第三段 · 结尾",
+   "slot": "②期待回复·公务B",
+   "en": "<span class=\"tpl\">Please let me know your decision at your earliest convenience.</span>",
+   "zh": "请您方便时尽早告知我您的决定。",
+   "lvl": 2,
+   "page": "P31"
+  },
+  {
+   "id": "xz-p3-4",
+   "cat": "xz",
+   "grp": "第三段 · 结尾",
+   "slot": "②期待回复·私人",
+   "en": "<span class=\"tpl\">Please let me know</span> <span class=\"blank\">回复内容</span> <span class=\"tpl\">when convenient.</span>",
+   "zh": "请在方便时告诉我……",
+   "lvl": 1,
+   "meta": "回复内容备选: your thoughts / your opinion / your plans / whether you can attend / whether the arrangement suits you; when convenient 可替换 when you have time / at your convenience / as soon as possible",
+   "page": "P32"
+  },
+  {
+   "id": "xz-tz-1-1",
+   "cat": "xz",
+   "grp": "通知 · 第一段",
+   "slot": "发布信息·版A",
+   "en": "<span class=\"tpl\">The Students' Union is pleased to announce that</span> <span class=\"blank\">活动名称</span> <span class=\"tpl\">will be held.</span>",
+   "zh": "学生会很高兴地宣布……将举办。",
+   "lvl": 1,
+   "meta": "活动名称备选: reading sharing session 读书分享会 / English speech contest / essay competition / campus cultural festival / art exhibition / campus food festival / volunteer recruitment",
+   "page": "P36"
+  },
+  {
+   "id": "xz-tz-1-2",
+   "cat": "xz",
+   "grp": "通知 · 第一段",
+   "slot": "发布信息·版B",
+   "en": "<span class=\"tpl\">It's a pleasure to inform everyone that a</span> <span class=\"blank\">活动名称</span> <span class=\"tpl\">will be held in our university.</span>",
+   "zh": "很高兴地通知大家，我校将举办……活动。",
+   "lvl": 2,
+   "page": "P36"
+  },
+  {
+   "id": "xz-tz-1-3",
+   "cat": "xz",
+   "grp": "通知 · 第一段",
+   "slot": "说明活动目的",
+   "en": "<span class=\"tpl\">The purpose of the event is to</span> <span class=\"blank\">活动目的</span><span class=\"tpl\">.</span>",
+   "zh": "本次活动的目的是……",
+   "lvl": 1,
+   "meta": "目的备选: promote cultural exchange / enrich campus life / raise environmental awareness / improve practical skills / encourage communication / provide learning opportunities / help students learn more about...",
+   "page": "P36"
+  },
+  {
+   "id": "xz-tz-1-4",
+   "cat": "xz",
+   "grp": "通知 · 第一段",
+   "slot": "通知目的·告知信息",
+   "en": "<span class=\"tpl\">The purpose of this notice is to provide</span> <span class=\"blank\">对象</span> <span class=\"tpl\">with details about</span> <span class=\"blank\">事项</span><span class=\"tpl\">.</span>",
+   "zh": "本通知旨在向……提供有关……的详细信息。",
+   "lvl": 2,
+   "meta": "with details about 可替换 with information regarding / with relevant information on",
+   "page": "P36"
+  },
+  {
+   "id": "xz-tz-hd-1",
+   "cat": "xz",
+   "grp": "通知 · 活动通知第二段",
+   "slot": "①时间地点",
+   "en": "<span class=\"tpl\">The event will be held at/in</span> <span class=\"blank\">地点</span> <span class=\"tpl\">at</span> <span class=\"blank\">时间</span> <span class=\"tpl\">on</span> <span class=\"blank\">日期</span><span class=\"tpl\">.</span>",
+   "zh": "该活动将于……在……举行。",
+   "lvl": 1,
+   "meta": "搭配: at+具体时刻 at 2:00 p.m. / on+具体日期 on May 10 / in+室内场所 in the school auditorium / at+具体地点 at the school gate; event 可替换 activity / lecture / competition / workshop",
+   "page": "P38"
+  },
+  {
+   "id": "xz-tz-hd-2",
+   "cat": "xz",
+   "grp": "通知 · 活动通知第二段",
+   "slot": "②参加对象",
+   "en": "<span class=\"tpl\">All students interested in</span> <span class=\"blank\">主题</span> <span class=\"tpl\">are welcome to attend.</span>",
+   "zh": "欢迎所有对……感兴趣的学生参加。",
+   "lvl": 1,
+   "meta": "are welcome to attend 可替换 are encouraged to participate / may attend / can participate",
+   "page": "P38"
+  },
+  {
+   "id": "xz-tz-hd-3",
+   "cat": "xz",
+   "grp": "通知 · 活动通知第二段",
+   "slot": "③活动内容",
+   "en": "<span class=\"tpl\">Highlights will include</span> <span class=\"blank\">活动1</span><span class=\"tpl\">,</span> <span class=\"blank\">活动2</span> <span class=\"tpl\">and</span> <span class=\"blank\">活动3</span><span class=\"tpl\">.</span>",
+   "zh": "本次活动亮点包括……",
+   "lvl": 1,
+   "page": "P38"
+  },
+  {
+   "id": "xz-tz-zm-1",
+   "cat": "xz",
+   "grp": "通知 · 招募通知第二段",
+   "slot": "④申请条件·版A",
+   "en": "<span class=\"tpl\">Ideal applicants should be</span> <span class=\"blank\">品质</span> <span class=\"tpl\">and possess</span> <span class=\"blank\">能力</span><span class=\"tpl\">.</span>",
+   "zh": "理想的申请者应当……并具备……",
+   "lvl": 1,
+   "meta": "品质(形容词): responsible / patient / reliable / enthusiastic / hard-working / cooperative / energetic; 能力(名词短语): good communication skills / strong organizational skills / excellent teamwork skills / a good command of English",
+   "page": "P40"
+  },
+  {
+   "id": "xz-tz-zm-2",
+   "cat": "xz",
+   "grp": "通知 · 招募通知第二段",
+   "slot": "④申请条件·版B",
+   "en": "<span class=\"tpl\">We are looking for applicants who are</span> <span class=\"blank\">品质</span> <span class=\"tpl\">and have</span> <span class=\"blank\">能力</span><span class=\"tpl\">.</span>",
+   "zh": "我们寻找的申请者需拥有……品质，掌握……能力。",
+   "lvl": 2,
+   "page": "P40"
+  },
+  {
+   "id": "xz-tz-zm-3",
+   "cat": "xz",
+   "grp": "通知 · 招募通知第二段",
+   "slot": "⑤优先条件·版A",
+   "en": "<span class=\"tpl\">Previous volunteer experience will be considered an advantage.</span>",
+   "zh": "具有志愿服务经验将被视为一项优势。",
+   "lvl": 1,
+   "meta": "volunteer experience 可替换 relevant experience / working experience / similar experience / social practice experience / event-organizing experience",
+   "page": "P41"
+  },
+  {
+   "id": "xz-tz-zm-4",
+   "cat": "xz",
+   "grp": "通知 · 招募通知第二段",
+   "slot": "⑤优先条件·版B",
+   "en": "<span class=\"tpl\">Candidates with good cross-cultural awareness will be preferred.</span>",
+   "zh": "具备良好跨文化意识的候选人将优先录用。",
+   "lvl": 2,
+   "meta": "cross-cultural awareness 可替换 strong organizational skills / effective teamwork spirit / time-management ability / problem-solving skills / fluent oral English / public speaking ability",
+   "page": "P41"
+  },
+  {
+   "id": "xz-tz-zm-5",
+   "cat": "xz",
+   "grp": "通知 · 招募通知第二段",
+   "slot": "⑥工作职责",
+   "en": "<span class=\"tpl\">The main duties involve</span> <span class=\"blank\">动名词1</span><span class=\"tpl\">,</span> <span class=\"blank\">动名词2</span> <span class=\"tpl\">and</span> <span class=\"blank\">动名词3</span><span class=\"tpl\">.</span>",
+   "zh": "主要工作包括……",
+   "lvl": 1,
+   "meta": "职责备选: receiving guests / answering inquiries / offering directions / preparing materials / maintaining order / providing language assistance / taking photos / distributing leaflets",
+   "page": "P41"
+  },
+  {
+   "id": "xz-tz-3-1",
+   "cat": "xz",
+   "grp": "通知 · 第三段",
+   "slot": "①参加/申请方式",
+   "en": "<span class=\"tpl\">Those who are interested should</span> <span class=\"blank\">参加/申请方式</span> <span class=\"tpl\">through/at</span> <span class=\"blank\">渠道</span> <span class=\"tpl\">by</span> <span class=\"blank\">截止时间</span><span class=\"tpl\">.</span>",
+   "zh": "感兴趣的同学应于……前通过……参加或申请。",
+   "lvl": 1,
+   "meta": "方式备选: register for the event / sign up for the activity / submit an application / send a brief self-introduction; 渠道备选: through the school website / through the online system / at the Students' Union office",
+   "page": "P42"
+  },
+  {
+   "id": "xz-tz-3-2",
+   "cat": "xz",
+   "grp": "通知 · 第三段",
+   "slot": "①申请方式·正式版",
+   "en": "<span class=\"tpl\">Interested applicants are expected to submit</span> <span class=\"blank\">材料</span> <span class=\"tpl\">via</span> <span class=\"blank\">渠道</span> <span class=\"tpl\">before the deadline.</span>",
+   "zh": "有意申请者需在截止日期前通过指定平台提交申请材料。",
+   "lvl": 2,
+   "meta": "材料备选: a brief self-introduction / application form / resume / personal statement",
+   "page": "P42"
+  },
+  {
+   "id": "xz-tz-3-3",
+   "cat": "xz",
+   "grp": "通知 · 第三段",
+   "slot": "②联系方式·版A",
+   "en": "<span class=\"tpl\">For further information, please contact</span> <span class=\"blank\">联系人/组织</span> <span class=\"tpl\">at/via</span> <span class=\"blank\">联系方式</span><span class=\"tpl\">.</span>",
+   "zh": "如需了解更多信息，请通过……联系……",
+   "lvl": 1,
+   "meta": "For further information 可替换 For more details / If you have any questions",
+   "page": "P43"
+  },
+  {
+   "id": "xz-tz-3-4",
+   "cat": "xz",
+   "grp": "通知 · 第三段",
+   "slot": "②联系方式·版B",
+   "en": "<span class=\"tpl\">Should you have any questions, feel free to reach out to</span> <span class=\"blank\">联系人/组织</span> <span class=\"tpl\">via</span> <span class=\"blank\">联系方式</span><span class=\"tpl\">.</span>",
+   "zh": "如您有任何疑问，可通过……联系……",
+   "lvl": 2,
+   "page": "P43"
+  },
+  {
+   "id": "dz-p1-1",
+   "cat": "dz",
+   "grp": "第一段 · 引入图表",
+   "slot": "总起句·版A",
+   "en": "<span class=\"tpl\">The</span> <span class=\"blank\">图表类型</span> <span class=\"tpl\">above clearly</span> <span class=\"blank\">shows / compares</span> <span class=\"blank\">主题内容</span> <span class=\"blank\">in 地点</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
+   "zh": "上述……清楚地展示/对比了……",
+   "lvl": 1,
+   "meta": "图表类型: bar chart 柱状图 / pie chart 饼状图 / line graph 折线图 / table 表格; 动词: show the changes in... / show the percentage of... / show the differences between... / compare... in terms of...",
+   "page": "P78"
+  },
+  {
+   "id": "dz-p1-2",
+   "cat": "dz",
+   "grp": "第一段 · 引入图表",
+   "slot": "总起句·版B",
+   "en": "<span class=\"tpl\">What the</span> <span class=\"blank\">图表类型</span> <span class=\"tpl\">provided is the</span> <span class=\"blank\">reasons / purpose / choices</span> <span class=\"tpl\">of</span> <span class=\"blank\">主题</span><span class=\"tpl\">.</span>",
+   "zh": "……提供了……的调查结果。",
+   "lvl": 2,
+   "page": "P78"
+  },
+  {
+   "id": "dz-p1-3",
+   "cat": "dz",
+   "grp": "第一段 · 引入图表",
+   "slot": "总起句·版C",
+   "en": "<span class=\"tpl\">According to the above</span> <span class=\"blank\">图表类型</span><span class=\"tpl\">, the percentages of</span> <span class=\"blank\">对象</span> <span class=\"tpl\">in</span> <span class=\"blank\">范围</span> <span class=\"tpl\">underwent an enormous change</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
+   "zh": "根据上面……所示，……的百分比在……年间发生了巨大的变化。",
+   "lvl": 2,
+   "page": "P78"
+  },
+  {
+   "id": "dz-p1-dd-1",
+   "cat": "dz",
+   "grp": "第一段 · 动态描述",
+   "slot": "显著变化句",
+   "en": "<span class=\"tpl\">There was a noticeable</span> <span class=\"blank\">rise / decline</span> <span class=\"tpl\">in</span> <span class=\"blank\">对象词</span> <span class=\"tpl\">from</span> <span class=\"blank\">A</span> <span class=\"tpl\">to</span> <span class=\"blank\">B</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
+   "zh": "在……时间内，……出现了显著的上升/下降（从A到B）。",
+   "lvl": 1,
+   "meta": "升降名词: increase/rise/growth/drop/decline/fall; 程度词: noticeable/remarkable/dramatic; 副词库见素材: dramatically/sharply/considerably/rapidly/steadily/gradually/slightly",
+   "page": "P79-80"
+  },
+  {
+   "id": "dz-p1-dd-2",
+   "cat": "dz",
+   "grp": "第一段 · 动态描述",
+   "slot": "对象变化句",
+   "en": "<span class=\"blank\">对象词</span> <span class=\"tpl\">rose / increased / dropped / fell / stood at</span> <span class=\"blank\">数字</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
+   "zh": "……（对象）在……（时间）上升/增长/下降/跌至/达到……",
+   "lvl": 1,
+   "meta": "词组备选: continue its upward trend / on the rise / on the decline / remain stable 保持平稳 / fluctuate between...and... 波动",
+   "page": "P80"
+  },
+  {
+   "id": "dz-p1-dd-3",
+   "cat": "dz",
+   "grp": "第一段 · 动态描述",
+   "slot": "双对象对比句",
+   "en": "<span class=\"tpl\">During this period, the percentage of</span> <span class=\"blank\">对象A</span> <span class=\"tpl\">has declined/increased sharply from</span> <span class=\"blank\">A</span> <span class=\"tpl\">to</span> <span class=\"blank\">B</span><span class=\"tpl\">, whereas those</span> <span class=\"blank\">doing sth</span> <span class=\"tpl\">declined/increased markedly from</span> <span class=\"blank\">A1</span> <span class=\"tpl\">and</span> <span class=\"blank\">A2</span> <span class=\"tpl\">to</span> <span class=\"blank\">B1</span> <span class=\"tpl\">and</span> <span class=\"blank\">B2</span> <span class=\"tpl\">respectively.</span>",
+   "zh": "在此期间，……的数量从A急剧下降/显著增长至B；而……则分别从A1、A2急剧下降/显著增长到B1、B2。",
+   "lvl": 1,
+   "page": "P80"
+  },
+  {
+   "id": "dz-p1-jt-1",
+   "cat": "dz",
+   "grp": "第一段 · 静态描述",
+   "slot": "高低对比句",
+   "en": "<span class=\"tpl\">The proportion of</span> <span class=\"blank\">A</span> <span class=\"tpl\">is higher than / lower than</span> <span class=\"blank\">B</span><span class=\"tpl\">, while</span> <span class=\"blank\">补充对比</span><span class=\"tpl\">.</span>",
+   "zh": "A的占比高于/低于B，而……。",
+   "lvl": 1,
+   "meta": "is higher than 可替换 is the same as / is equal to 与…持平",
+   "page": "P82"
+  },
+  {
+   "id": "dz-p1-jt-2",
+   "cat": "dz",
+   "grp": "第一段 · 静态描述",
+   "slot": "相比对照句",
+   "en": "<span class=\"tpl\">The percentage of</span> <span class=\"blank\">A</span><span class=\"tpl\">, compared with</span> <span class=\"blank\">B</span><span class=\"tpl\">,</span> <span class=\"blank\">数据描述</span><span class=\"tpl\">.</span>",
+   "zh": "A的数据，相较于B的数据……。",
+   "lvl": 2,
+   "meta": "compared with 可替换 compared to / in contrast to",
+   "page": "P82"
+  },
+  {
+   "id": "dz-p1-jt-3",
+   "cat": "dz",
+   "grp": "第一段 · 静态描述",
+   "slot": "相近持平句",
+   "en": "<span class=\"tpl\">The figure of</span> <span class=\"blank\">A</span> <span class=\"tpl\">is similar to / the same as</span> <span class=\"blank\">B</span><span class=\"tpl\">.</span>",
+   "zh": "A的数据和B组相近/持平。",
+   "lvl": 2,
+   "page": "P82"
+  },
+  {
+   "id": "dz-p1-jt-4",
+   "cat": "dz",
+   "grp": "第一段 · 静态描述",
+   "slot": "差距句",
+   "en": "<span class=\"tpl\">There was a huge gap between</span> <span class=\"blank\">A</span> <span class=\"tpl\">and</span> <span class=\"blank\">B</span><span class=\"tpl\">:</span> <span class=\"blank\">数据</span><span class=\"tpl\">.</span>",
+   "zh": "A与B之间存在很大差异/巨大差距。",
+   "lvl": 2,
+   "meta": "a huge gap 可替换 a big difference / a huge change",
+   "page": "P82"
+  },
+  {
+   "id": "dz-p1-fh-1",
+   "cat": "dz",
+   "grp": "第一段 · 复合图表",
+   "slot": "共同主题句",
+   "en": "<span class=\"tpl\">The two charts above jointly present the results of a survey concerning</span> <span class=\"blank\">共同主题</span><span class=\"tpl\">.</span>",
+   "zh": "上述两幅图表共同呈现了一项关于……的调查结果。",
+   "lvl": 1,
+   "page": "P83"
+  },
+  {
+   "id": "dz-p1-fh-2",
+   "cat": "dz",
+   "grp": "第一段 · 复合图表",
+   "slot": "分别概括句·版A",
+   "en": "<span class=\"tpl\">The pie chart shows</span> <span class=\"blank\">饼图信息</span><span class=\"tpl\">, while the bar chart displays</span> <span class=\"blank\">柱图信息</span><span class=\"tpl\">.</span>",
+   "zh": "饼图显示了……，而柱状图展示了……。",
+   "lvl": 1,
+   "page": "P84"
+  },
+  {
+   "id": "dz-p1-fh-3",
+   "cat": "dz",
+   "grp": "第一段 · 复合图表",
+   "slot": "分别概括句·版B",
+   "en": "<span class=\"tpl\">As can be seen from the two charts, the pie graph illustrates</span> <span class=\"blank\">饼图信息</span><span class=\"tpl\">, with the bar graph revealing</span> <span class=\"blank\">柱图信息</span><span class=\"tpl\">.</span>",
+   "zh": "从两幅图表中可以看出，饼图说明了……，同时柱状图揭示了……。",
+   "lvl": 2,
+   "page": "P84"
+  },
+  {
+   "id": "dz-p1-fh-4",
+   "cat": "dz",
+   "grp": "第一段 · 复合图表",
+   "slot": "揭示联系句",
+   "en": "<span class=\"tpl\">The two sets of data are closely related, as</span> <span class=\"blank\">A</span> <span class=\"tpl\">may be a major reason for</span> <span class=\"blank\">B</span><span class=\"tpl\">.</span>",
+   "zh": "两组数据紧密相关，因为……或许是造成……的主要原因。",
+   "lvl": 1,
+   "page": "P84"
+  },
+  {
+   "id": "dz-p1-fh-5",
+   "cat": "dz",
+   "grp": "第一段 · 复合图表",
+   "slot": "揭示联系句·版B",
+   "en": "<span class=\"tpl\">It is clear that</span> <span class=\"blank\">A</span> <span class=\"tpl\">has a close connection with</span> <span class=\"blank\">B</span> <span class=\"tpl\">reflected in the charts.</span>",
+   "zh": "显而易见，图表反映出……与……有着密切的联系。",
+   "lvl": 2,
+   "page": "P84"
+  },
+  {
+   "id": "dz-p1-cl-1",
+   "cat": "dz",
+   "grp": "第一段 · 材料作文",
+   "slot": "概括材料观点",
+   "en": "<span class=\"tpl\">In the passage, the author argues that</span> <span class=\"blank\">作者观点</span><span class=\"tpl\">.</span>",
+   "zh": "在文章中，作者认为……",
+   "lvl": 1,
+   "meta": "argues 可替换 claims / suggests / states / believes",
+   "page": "P85"
+  },
+  {
+   "id": "dz-p1-cl-2",
+   "cat": "dz",
+   "grp": "第一段 · 材料作文",
+   "slot": "表明自己立场",
+   "en": "<span class=\"tpl\">I fully agree with</span> <span class=\"blank\">this view</span><span class=\"tpl\">.</span>",
+   "zh": "我完全同意这个观点。",
+   "lvl": 1,
+   "meta": "完全同意: I fully agree with / support / share / subscribe to this view; 部分同意: I partly agree with the author; 不同意: I disagree with / oppose this opinion",
+   "page": "P85"
+  },
+  {
+   "id": "dz-p2-gd-1",
+   "cat": "dz",
+   "grp": "第二段 · 过渡句",
+   "slot": "现象分析类·版A",
+   "en": "<span class=\"tpl\">This phenomenon can be attributed to several factors.</span>",
+   "zh": "这种现象可以归因于几个因素。",
+   "lvl": 1,
+   "meta": "可替换 can be traced to / is caused by",
+   "page": "P86"
+  },
+  {
+   "id": "dz-p2-gd-2",
+   "cat": "dz",
+   "grp": "第二段 · 过渡句",
+   "slot": "现象分析类·版B",
+   "en": "<span class=\"tpl\">Several factors can account for this</span> <span class=\"blank\">phenomenon / trend</span><span class=\"tpl\">.</span>",
+   "zh": "有几个因素能解释这一现象/趋势。",
+   "lvl": 1,
+   "meta": "另备: The reasons behind this phenomenon are not difficult to identify. 这一现象背后的原因不难发现",
+   "page": "P86"
+  },
+  {
+   "id": "dz-p2-gd-3",
+   "cat": "dz",
+   "grp": "第二段 · 过渡句",
+   "slot": "材料观点类·版A",
+   "en": "<span class=\"tpl\">The differences in people's opinions can be explained by their diverse demands and concerns.</span>",
+   "zh": "人们观点的差异，可以通过他们不同的需求与关注点来解释。",
+   "lvl": 1,
+   "page": "P86-90"
+  },
+  {
+   "id": "dz-p2-gd-4",
+   "cat": "dz",
+   "grp": "第二段 · 过渡句",
+   "slot": "材料观点类·版B",
+   "en": "<span class=\"tpl\">Behind these survey results lie different considerations and expectations among different groups of people.</span>",
+   "zh": "这些调查结果的背后，是不同人群各异的考量与期待。",
+   "lvl": 2,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-yy-1",
+   "cat": "dz",
+   "grp": "第二段 · 现象原因",
+   "slot": "宏观原因句",
+   "en": "<span class=\"tpl\">First, the development of</span> <span class=\"blank\">宏观原因</span> <span class=\"tpl\">has provided people with</span> <span class=\"blank\">条件</span><span class=\"tpl\">, making it easier for them to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "首先，……的发展为人们提供了……，使他们更容易……",
+   "lvl": 1,
+   "meta": "development of 可替换 improvement of / continued growth of / widespread application of / growing popularity of / increasing availability of",
+   "page": "P89"
+  },
+  {
+   "id": "dz-p2-yy-2",
+   "cat": "dz",
+   "grp": "第二段 · 现象原因",
+   "slot": "个人观念原因句",
+   "en": "<span class=\"tpl\">Besides, with the growing awareness of / demand for</span> <span class=\"blank\">主题</span><span class=\"tpl\">, an increasing number of people are willing to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "此外，随着人们对……的意识/需求不断增强，越来越多的人愿意……",
+   "lvl": 1,
+   "meta": "growing awareness of 可替换 increasing attention paid to / rising demand for / changing attitudes toward / people attaching greater importance to",
+   "page": "P89-90"
+  },
+  {
+   "id": "dz-p2-yy-3",
+   "cat": "dz",
+   "grp": "第二段 · 万能原因",
+   "slot": "经济发展",
+   "en": "<span class=\"tpl\">Rising incomes have enabled more people to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "收入的增长使更多人能够……",
+   "lvl": 2,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-yy-4",
+   "cat": "dz",
+   "grp": "第二段 · 万能原因",
+   "slot": "科技进步",
+   "en": "<span class=\"tpl\">The rapid development of technology has made it easier for people to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "科技的快速发展使人们更容易……",
+   "lvl": 2,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-yy-5",
+   "cat": "dz",
+   "grp": "第二段 · 万能原因",
+   "slot": "政策支持",
+   "en": "<span class=\"tpl\">Supportive policies have created favorable conditions for</span> <span class=\"blank\">主题</span><span class=\"tpl\">.</span>",
+   "zh": "支持性政策为……创造了有利条件。",
+   "lvl": 2,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-yy-6",
+   "cat": "dz",
+   "grp": "第二段 · 万能原因",
+   "slot": "观念变化",
+   "en": "<span class=\"tpl\">Changing attitudes toward</span> <span class=\"blank\">主题</span> <span class=\"tpl\">have made people more willing to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "对……的态度变化使人们更愿意……",
+   "lvl": 2,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-yy-7",
+   "cat": "dz",
+   "grp": "第二段 · 万能原因",
+   "slot": "负面·个人意识不足",
+   "en": "<span class=\"tpl\">Many people lack sufficient awareness of the importance of</span> <span class=\"blank\">主题</span><span class=\"tpl\">.</span>",
+   "zh": "许多人没有充分意识到……的重要性。",
+   "lvl": 2,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-yy-8",
+   "cat": "dz",
+   "grp": "第二段 · 万能原因",
+   "slot": "负面·监管不足",
+   "en": "<span class=\"tpl\">The lack of effective supervision has allowed the problem to become increasingly serious.</span>",
+   "zh": "有效监管的缺失使这一问题日益严重。",
+   "lvl": 2,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-xy-1",
+   "cat": "dz",
+   "grp": "第二段 · 影响句",
+   "slot": "通用型·个人+社会",
+   "en": "<span class=\"tpl\">As a result, this phenomenon can not only</span> <span class=\"blank\">个人影响</span> <span class=\"tpl\">but also</span> <span class=\"blank\">社会影响</span><span class=\"tpl\">.</span>",
+   "zh": "因此，这一现象不仅能够……，还能够……（正负面都可以）",
+   "lvl": 1,
+   "meta": "例: weaken individuals' ability to think independently + increase society's dependence on technology; help individuals make better health decisions + reduce pressure on the healthcare system",
+   "page": "补充P90"
+  },
+  {
+   "id": "dz-p2-xy-2",
+   "cat": "dz",
+   "grp": "第二段 · 影响句",
+   "slot": "积极影响",
+   "en": "<span class=\"tpl\">This trend can improve</span> <span class=\"blank\">个人积极结果</span> <span class=\"tpl\">and promote</span> <span class=\"blank\">社会积极结果</span><span class=\"tpl\">.</span>",
+   "zh": "这一趋势能够改善……，并促进……",
+   "lvl": 2,
+   "meta": "improve 可替换 enhance; promote 可替换 support",
+   "page": "补充P90"
+  },
+  {
+   "id": "dz-p2-xy-3",
+   "cat": "dz",
+   "grp": "第二段 · 影响句",
+   "slot": "负面影响",
+   "en": "<span class=\"tpl\">This problem may harm</span> <span class=\"blank\">个人受损对象</span> <span class=\"tpl\">and increase</span> <span class=\"blank\">社会负担</span><span class=\"tpl\">.</span>",
+   "zh": "这一问题可能损害……，并增加……",
+   "lvl": 2,
+   "meta": "harm 可替换 damage; increase 可替换 add to",
+   "page": "补充P90"
+  },
+  {
+   "id": "dz-p2-cl-1",
+   "cat": "dz",
+   "grp": "第二段 · 材料观点类",
+   "slot": "第一种观点原因·版A",
+   "en": "<span class=\"tpl\">Those who choose</span> <span class=\"blank\">A</span> <span class=\"tpl\">mainly do so because they believe that</span> <span class=\"blank\">原因</span><span class=\"tpl\">.</span>",
+   "zh": "选择A的人主要是因为他们认为……",
+   "lvl": 1,
+   "page": "P90"
+  },
+  {
+   "id": "dz-p2-cl-2",
+   "cat": "dz",
+   "grp": "第二段 · 材料观点类",
+   "slot": "第一种观点原因·版B",
+   "en": "<span class=\"tpl\">One major reason why some people prefer</span> <span class=\"blank\">A</span> <span class=\"tpl\">is that it enables them to</span> <span class=\"blank\">具体好处</span><span class=\"tpl\">.</span>",
+   "zh": "一些人偏向A的一个主要原因是，它能够使他们……",
+   "lvl": 2,
+   "page": "P91"
+  },
+  {
+   "id": "dz-p2-cl-3",
+   "cat": "dz",
+   "grp": "第二段 · 材料观点类",
+   "slot": "第一种观点原因·版C",
+   "en": "<span class=\"tpl\">From their perspective,</span> <span class=\"blank\">A</span> <span class=\"tpl\">is a more practical choice, as it helps them</span> <span class=\"blank\">具体好处</span><span class=\"tpl\">.</span>",
+   "zh": "在他们看来，A是更加实际的选择，因为这有助于他们……",
+   "lvl": 2,
+   "page": "P91"
+  },
+  {
+   "id": "dz-p2-cl-4",
+   "cat": "dz",
+   "grp": "第二段 · 材料观点类",
+   "slot": "另一种观点·版A",
+   "en": "<span class=\"tpl\">By contrast, those who prefer</span> <span class=\"blank\">B</span> <span class=\"tpl\">tend to attach greater importance to</span> <span class=\"blank\">重视内容</span><span class=\"tpl\">.</span>",
+   "zh": "相比之下，偏向B的人往往更加重视……",
+   "lvl": 1,
+   "meta": "attach greater importance to 可替换 value / place emphasis on / give priority to",
+   "page": "P91"
+  },
+  {
+   "id": "dz-p2-cl-5",
+   "cat": "dz",
+   "grp": "第二段 · 材料观点类",
+   "slot": "另一种观点·版B",
+   "en": "<span class=\"tpl\">Others, however, choose</span> <span class=\"blank\">B</span> <span class=\"tpl\">because they believe it can introduce them to</span> <span class=\"blank\">好处</span><span class=\"tpl\">.</span>",
+   "zh": "然而，另一些人选择B，因为他们认为它能够……",
+   "lvl": 2,
+   "meta": "introduce them to 可替换 provide them with / give them access to",
+   "page": "P91"
+  },
+  {
+   "id": "dz-p2-cl-6",
+   "cat": "dz",
+   "grp": "第二段 · 材料观点类",
+   "slot": "另一种观点·版C",
+   "en": "<span class=\"tpl\">For another group,</span> <span class=\"blank\">B</span> <span class=\"tpl\">is more attractive, since it provides them with</span> <span class=\"blank\">机会/资源/经验</span><span class=\"tpl\">.</span>",
+   "zh": "对另一群体而言，B更具吸引力，因为它为他们提供了……",
+   "lvl": 2,
+   "meta": "attractive 可替换 appealing / suitable / valuable",
+   "page": "P91"
+  },
+  {
+   "id": "dz-p2-zj-1",
+   "cat": "dz",
+   "grp": "第二段 · 总结句",
+   "slot": "积极趋势",
+   "en": "<span class=\"tpl\">Overall, this change reflects social progress and people's pursuit of a better life.</span>",
+   "zh": "总体而言，这一变化反映了社会进步和人们对美好生活的追求。",
+   "lvl": 1,
+   "page": "P92"
+  },
+  {
+   "id": "dz-p2-zj-2",
+   "cat": "dz",
+   "grp": "第二段 · 总结句",
+   "slot": "负面现象",
+   "en": "<span class=\"tpl\">If left unaddressed, this problem may produce more serious consequences in the future.</span>",
+   "zh": "如果得不到解决，这一问题将来可能造成更加严重的后果。",
+   "lvl": 1,
+   "page": "P92"
+  },
+  {
+   "id": "dz-p2-zj-3",
+   "cat": "dz",
+   "grp": "第二段 · 总结句",
+   "slot": "中性趋势",
+   "en": "<span class=\"tpl\">Overall, this phenomenon is the result of both social development and changing individual needs.</span>",
+   "zh": "总体而言，这一现象是社会发展与个人需求变化共同作用的结果。",
+   "lvl": 1,
+   "page": "P92"
+  },
+  {
+   "id": "dz-p2-zj-4",
+   "cat": "dz",
+   "grp": "第二段 · 总结句",
+   "slot": "材料观点·归纳",
+   "en": "<span class=\"tpl\">In essence, these different choices reflect people's diverse needs, priorities and values.</span>",
+   "zh": "从本质上讲，这些不同选择反映了人们多样化的需求、优先考虑和价值观。",
+   "lvl": 1,
+   "meta": "另备: Taken together, these views reflect the diversity of public attitudes toward+主题. 综合来看，这些观点反映了公众对…态度的多样性",
+   "page": "P92"
+  },
+  {
+   "id": "dz-p2-zj-5",
+   "cat": "dz",
+   "grp": "第二段 · 总结句",
+   "slot": "图表数据变化",
+   "en": "<span class=\"tpl\">Therefore, the change shown in the chart is not accidental but the result of several interconnected factors.</span>",
+   "zh": "因此，图表所显示的变化并非偶然，而是多种相互关联因素共同作用的结果。",
+   "lvl": 2,
+   "page": "P92"
+  },
+  {
+   "id": "dz-p3-1",
+   "cat": "dz",
+   "grp": "第三段 · 总体评价",
+   "slot": "正向·版A",
+   "en": "<span class=\"tpl\">In conclusion,</span> <span class=\"blank\">主题词</span> <span class=\"tpl\">is essential for both individuals and society.</span>",
+   "zh": "总之，……对个人和社会都是必不可少的。",
+   "lvl": 1,
+   "meta": "In conclusion 可替换 To sum up / In summary / Overall; is essential for 可替换 is of great importance to / plays a key role in / is vital for",
+   "page": "P95"
+  },
+  {
+   "id": "dz-p3-2",
+   "cat": "dz",
+   "grp": "第三段 · 总体评价",
+   "slot": "正向·版B",
+   "en": "<span class=\"tpl\">Overall,</span> <span class=\"blank\">主题词</span> <span class=\"tpl\">plays a vital role in promoting personal growth and social progress.</span>",
+   "zh": "总体而言，……在促进个人成长和社会进步方面发挥着重要作用。",
+   "lvl": 1,
+   "meta": "promotes 可替换 encourages / facilitates / contributes to",
+   "page": "P95"
+  },
+  {
+   "id": "dz-p3-3",
+   "cat": "dz",
+   "grp": "第三段 · 总体评价",
+   "slot": "负向·版A",
+   "en": "<span class=\"tpl\">In conclusion, this issue deserves more attention from the public.</span>",
+   "zh": "总之，这个问题值得公众更多的关注。",
+   "lvl": 1,
+   "meta": "deserves more attention 可替换 calls for greater concern / requires immediate attention 亟待重视",
+   "page": "P95"
+  },
+  {
+   "id": "dz-p3-4",
+   "cat": "dz",
+   "grp": "第三段 · 总体评价",
+   "slot": "负向·版B",
+   "en": "<span class=\"tpl\">To sum up, effective measures should be taken to prevent this problem from becoming more serious.</span>",
+   "zh": "总之，应当采取有效措施，防止这一问题变得更加严重。",
+   "lvl": 1,
+   "meta": "effective measures 可替换 practical measures / concrete action / joint efforts; becoming more serious 可替换 growing worse / continuing to spread",
+   "page": "P95"
+  },
+  {
+   "id": "dz-p3-5",
+   "cat": "dz",
+   "grp": "第三段 · 总体评价",
+   "slot": "中性·趋势预测A",
+   "en": "<span class=\"tpl\">In conclusion, this trend is likely to continue in the coming years.</span>",
+   "zh": "总之，这一趋势很可能在未来几年继续下去。",
+   "lvl": 1,
+   "meta": "is likely to 可替换 is expected to / will probably / may well",
+   "page": "P96"
+  },
+  {
+   "id": "dz-p3-6",
+   "cat": "dz",
+   "grp": "第三段 · 总体评价",
+   "slot": "中性·趋势预测B",
+   "en": "<span class=\"tpl\">With the continued development of</span> <span class=\"blank\">相关因素</span><span class=\"tpl\">, an increasing number of people are likely to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "随着……的持续发展，越来越多的人可能会……",
+   "lvl": 1,
+   "meta": "in the coming years 可替换 in the years ahead / in the near future / in the foreseeable future",
+   "page": "P96"
+  },
+  {
+   "id": "dz-p3-xz-1",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "正向·基础版",
+   "en": "<span class=\"tpl\">Therefore, we should develop</span> <span class=\"blank\">主题品质</span> <span class=\"tpl\">in our daily lives. In this way, we can improve ourselves and achieve our goals.</span>",
+   "zh": "因此，我们应当在日常生活中培养……。这样，我们就能提升自我并实现目标。",
+   "lvl": 1,
+   "meta": "develop 可替换 cultivate 培养 / practice 践行; improve ourselves 可替换 make progress / develop our abilities; achieve our goals 可替换 realize our dreams / achieve success",
+   "page": "P97"
+  },
+  {
+   "id": "dz-p3-xz-2",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "正向·进阶版",
+   "en": "<span class=\"tpl\">It is therefore necessary for us to translate our recognition of</span> <span class=\"blank\">主题</span> <span class=\"tpl\">into concrete action. Only by integrating it into our daily practice can we achieve personal growth and contribute to social progress.</span>",
+   "zh": "因此，我们有必要将对……的认同转化为具体行动。只有将其融入日常实践，我们才能实现个人成长并推动社会进步。",
+   "lvl": 2,
+   "meta": "integrate it into 可替换 apply it to / incorporate it into",
+   "page": "P97"
+  },
+  {
+   "id": "dz-p3-xz-3",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "负向·基础版",
+   "en": "<span class=\"tpl\">Therefore, we should take effective measures to address this problem. In this way, we can reduce its harmful effects and prevent it from worsening.</span>",
+   "zh": "因此，我们应当采取有效措施解决这一问题。这样，我们就能减少其危害，并防止问题进一步恶化。",
+   "lvl": 1,
+   "meta": "take effective measures 可替换 take action / adopt proper measures; address this problem 可替换 solve this problem / deal with this issue",
+   "page": "P97"
+  },
+  {
+   "id": "dz-p3-xz-4",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "负向·进阶版1",
+   "en": "<span class=\"tpl\">To address this problem, individuals should</span> <span class=\"blank\">个人措施</span><span class=\"tpl\">, while</span> <span class=\"blank\">schools / the government</span> <span class=\"tpl\">should</span> <span class=\"blank\">社会措施</span><span class=\"tpl\">. These efforts can help reduce its negative effects and create a healthier social environment.</span>",
+   "zh": "为了解决这一问题，个人应当……，而学校/政府应当……。这些努力有助于减少其负面影响，并营造更加健康的社会环境。",
+   "lvl": 1,
+   "meta": "个人措施: control their behavior / develop good habits / raise their awareness / exercise greater self-discipline; 社会措施: offer more support / strengthen public education / provide proper guidance / improve relevant regulations",
+   "page": "P98"
+  },
+  {
+   "id": "dz-p3-xz-5",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "负向·进阶版2",
+   "en": "<span class=\"tpl\">Joint efforts should be made by individuals and relevant authorities to address the root causes of this problem. Only through coordinated action can we prevent it from causing further damage and bring about lasting improvement.</span>",
+   "zh": "个人和有关部门应当共同努力，从根源上解决这一问题。只有通过协调一致的行动，我们才能防止它造成进一步损害，并实现持久改善。",
+   "lvl": 2,
+   "meta": "relevant authorities 可替换 schools / communities / the government; address the root causes 可替换 tackle the problem at its source",
+   "page": "P98"
+  },
+  {
+   "id": "dz-p3-xz-6",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "中性·基础版1",
+   "en": "<span class=\"tpl\">Therefore, we should view this phenomenon rationally and make proper use of it. In this way,</span> <span class=\"blank\">主题</span> <span class=\"tpl\">can bring more benefits to</span> <span class=\"blank\">对象</span> <span class=\"tpl\">while minimizing potential harm.</span>",
+   "zh": "因此，我们应当理性看待这一现象，并对其加以合理利用。这样，……就能为……带来更多益处，同时尽可能减少潜在危害。",
+   "lvl": 1,
+   "meta": "make proper use of it 可替换 use it wisely / deal with it properly; bring more benefits 可替换 play a positive role / create greater value",
+   "page": "P99"
+  },
+  {
+   "id": "dz-p3-xz-7",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "中性·基础版2",
+   "en": "<span class=\"tpl\">Therefore, we should make full use of its advantages while keeping its possible risks under control. With proper guidance, it can develop in a healthier and more sustainable direction.</span>",
+   "zh": "因此，我们应当充分发挥其优势，同时控制可能存在的风险。通过合理引导，它能够朝着更加健康、可持续的方向发展。",
+   "lvl": 2,
+   "meta": "make full use of 可替换 take advantage of / bring...into full play; possible risks 可替换 potential problems / negative effects / limitations",
+   "page": "P99"
+  },
+  {
+   "id": "dz-p3-xz-8",
+   "cat": "dz",
+   "grp": "第三段 · 行动句",
+   "slot": "中性·进阶版",
+   "en": "<span class=\"tpl\">Rather than accepting or rejecting this trend blindly, we should evaluate it objectively and establish reasonable boundaries for its development. Only when its benefits are maximized and its risks minimized can it truly serve the long-term interests of individuals and society.</span>",
+   "zh": "我们不应盲目接受或排斥这一趋势，而应客观评价，并为其发展设定合理边界。只有充分发挥其优势并尽量降低风险，它才能真正服务于个人和社会的长远利益。",
+   "lvl": 3,
+   "meta": "evaluate it objectively 可替换 view it from a balanced perspective / assess it rationally",
+   "page": "P99"
+  },
+  {
+   "id": "dz-p2-pz-1",
+   "cat": "dz",
+   "grp": "第二段 · 品质价值(拓展)",
+   "slot": "正向价值1",
+   "en": "<span class=\"tpl\">For one thing, it enables us to</span> <span class=\"blank\">正向价值1</span><span class=\"tpl\">.</span>",
+   "zh": "一方面，它使我们能够……",
+   "lvl": 3,
+   "meta": "enables 可替换 allows / makes it possible for; 品质×价值搭配: perseverance 坚持→overcome difficulties and keep moving forward / innovation 创新→break free from conventional thinking / responsibility 责任感→fulfill our duties and deal with problems actively",
+   "page": "P87"
+  },
+  {
+   "id": "dz-p2-pz-2",
+   "cat": "dz",
+   "grp": "第二段 · 品质价值(拓展)",
+   "slot": "正向价值2",
+   "en": "<span class=\"tpl\">For another, it helps us</span> <span class=\"blank\">正向价值2</span><span class=\"tpl\">.</span>",
+   "zh": "另一方面，它帮助我们……",
+   "lvl": 3,
+   "meta": "helps 可替换 encourages / motivates",
+   "page": "P87"
+  }
+ ]
+}

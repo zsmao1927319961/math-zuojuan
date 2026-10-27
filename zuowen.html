@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>背作文 · 段落库(第一段→第三段)</title>
+<title>背作文 · 30天计划(南山模板)</title>
 <style>
   :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
   * { box-sizing:border-box; }
@@ -24,56 +24,72 @@
   .tabs button.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:700; }
   .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; }
   .card h2 { font-size:16.5px; margin:0 0 8px; color:var(--blue); border-left:4px solid var(--blue); padding-left:9px; }
-  .card h2.g { color:var(--green); border-color:var(--green); }
-  .card h2.o { color:#b26a00; border-color:#f0c060; }
-  .grp { margin:18px 2px 2px; font-size:14px; font-weight:800; color:#5a6472;
-         display:flex; align-items:center; gap:8px; }
-  .grp::after { content:""; flex:1; height:1px; background:var(--line); }
-  .bhead { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; cursor:pointer; }
-  .bhead .bno { font-size:12px; font-weight:800; color:#fff; background:var(--blue);
-                border-radius:6px; padding:1px 8px; white-space:nowrap; }
-  .bhead .btag { font-weight:700; color:var(--ink); font-size:15.5px; }
-  .bhead .bstat { margin-left:auto; font-size:12.5px; color:#8a94a6; white-space:nowrap; }
-  .bhead .bstat.ok { color:var(--green); font-weight:700; }
-  .card.closed .sbody { display:none; }
+  .notice { background:#eaf1ff; border:1px solid #c9d6f2; border-radius:10px; padding:9px 13px; font-size:14px; margin:10px 0; line-height:1.8; }
+  .tipbox { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px; font-size:13.5px; margin:9px 0; line-height:1.8; }
+  .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
+  /* —— 天卡片 —— */
+  .dayhead { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; cursor:pointer; }
+  .dno { font-size:12px; font-weight:800; color:#fff; border-radius:6px; padding:1px 8px; white-space:nowrap; }
+  .dno.xz { background:#0c7a5e; } .dno.dz { background:#123a8f; }
+  .dtag { font-weight:700; font-size:15px; flex:1 1 auto; min-width:150px; }
+  .dbk { font-size:11.5px; color:#8a94a6; white-space:nowrap; }
+  .dstat { margin-left:auto; font-size:12.5px; color:#8a94a6; white-space:nowrap; }
+  .dstat.ok { color:var(--green); font-weight:700; }
+  .dstat.today { color:var(--red); font-weight:800; }
+  .card.closed .dbody { display:none; }
+  .card.today { border:2px solid var(--red); }
+  .dsub { font-size:13px; color:#5a6472; margin:2px 0 4px; }
+  /* —— 句卡 —— */
   .sen { background:#f8faff; border:1px solid #dbe6fa; border-radius:10px; padding:10px 13px; margin:9px 0; }
-  .sen .zh { font-size:16.5px; }
-  .sen .zh .blank { color:var(--red); font-weight:700; }
-  .sen .cue { font-size:12.5px; color:#8a94a6; margin-top:2px; }
+  .sen .shead { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; color:#8a94a6; }
+  .sen .slot { font-weight:700; color:var(--blue); }
+  .lvl { font-size:10.5px; border-radius:5px; padding:0 6px; font-weight:700; white-space:nowrap; }
+  .lvl.l1 { background:#fdeaea; color:var(--red); }
+  .lvl.l2 { background:#fff3e2; color:#b26a00; }
+  .lvl.l3 { background:#eef1f6; color:#7a8496; }
+  .sen .zh { font-size:16px; margin-top:3px; }
   .sen .enwrap { filter:blur(7px); transition:filter .25s; cursor:pointer; margin-top:8px; user-select:none; }
   .sen.open .enwrap { filter:none; user-select:text; }
-  .sen .en { font-size:17.5px; font-weight:600; line-height:1.6; }
+  .sen .en { font-size:17px; font-weight:600; line-height:1.65; }
   .sen .en .tpl { color:var(--blue); }
   .sen .en .blank { color:var(--red); }
-  .sen .meta { display:none; font-size:13.5px; color:#5a6472; margin-top:7px; border-top:1px dashed var(--line); padding-top:6px; }
+  .sen .meta { display:none; font-size:13px; color:#5a6472; margin-top:7px; border-top:1px dashed var(--line); padding-top:6px; line-height:1.75; }
   .sen.open .meta { display:block; }
   .donebtn { border:none; border-radius:8px; padding:5px 12px; font-size:13.5px; font-weight:700; cursor:pointer;
              background:#fff; color:var(--green); border:1.5px solid #bfe0cd; margin-top:8px; }
   .donebtn.on { background:var(--green); color:#fff; border-color:var(--green); }
-  .donebtn.blue { color:var(--blue); border-color:#c9d6f2; }
-  .rbtn { border:1px solid var(--line); background:#fff; color:#8a94a6; border-radius:8px;
-          padding:4px 10px; font-size:12.5px; cursor:pointer; margin-top:8px; }
-  .notice { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px;
-            font-size:14px; margin:10px 0; }
-  .notice.red { background:#fdecec; border-color:#f2c4c0; }
-  .notice.green { background:#e5f3ea; border-color:#bfe0cd; }
-  .notice.blue { background:#eaf1ff; border-color:#c9d6f2; }
-  .tools { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:10px 0 2px; }
-  .tools button { border:1px solid var(--line); background:#fff; border-radius:999px;
-                  padding:5px 14px; font-size:13.5px; cursor:pointer; color:var(--blue); }
+  /* —— 练习任务 —— */
+  .ptitle { font-size:14px; font-weight:800; color:#5a6472; margin:14px 2px 2px; display:flex; align-items:center; gap:8px; }
+  .ptitle::after { content:""; flex:1; height:1px; background:var(--line); }
   .trow { display:flex; align-items:flex-start; gap:10px; background:#fff; border:1px solid var(--line);
           border-radius:10px; padding:9px 12px; margin:7px 0; font-size:14.5px; }
   .trow .tk { flex:0 0 auto; font-weight:700; cursor:pointer; color:var(--green); user-select:none; }
   .trow .tk.on { color:#fff; background:var(--green); border-radius:6px; padding:0 6px; }
-  .tip { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px; font-size:14px; margin-top:10px; }
-  .foot { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:24px; }
-  @media (max-width:520px){ body{font-size:15.5px} .sen .en{font-size:16px} }
+  /* —— 模板库 —— */
+  .grp { margin:18px 2px 2px; font-size:14px; font-weight:800; color:#5a6472; display:flex; align-items:center; gap:8px; }
+  .grp::after { content:""; flex:1; height:1px; background:var(--line); }
+  .grp .gn { font-size:11.5px; color:#8a94a6; font-weight:400; }
+  .catbtns { display:flex; gap:8px; margin:10px 0 2px; }
+  .catbtns button { flex:1; border:1px solid var(--line); background:#fff; border-radius:9px; padding:6px 0;
+                    font-size:14px; cursor:pointer; color:#5a6472; }
+  .catbtns button.on { background:#123a8f; color:#fff; border-color:#123a8f; font-weight:700; }
+  .search { width:100%; border:1px solid var(--line); border-radius:9px; padding:8px 11px;
+            font-size:15px; background:#fbfcff; font-family:inherit; margin:8px 0 2px; }
+  .empty { text-align:center; color:#8a94a6; font-size:14.5px; padding:18px 6px; }
+  .tools { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:10px 0 2px; }
+  .tools button { border:1px solid var(--line); background:#fff; border-radius:999px;
+                  padding:5px 14px; font-size:13.5px; cursor:pointer; color:var(--blue); }
+  .setrow { display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13.5px; color:#5a6472; }
+  .setrow input { border:1px solid var(--line); border-radius:8px; padding:5px 9px; font-size:14px; font-family:inherit; }
+  .setrow button { border:1px solid var(--blue); background:#fff; color:var(--blue); border-radius:8px;
+                   padding:5px 12px; font-size:13px; cursor:pointer; }
+  @media (max-width:520px){ body{font-size:15.5px} .sen .en{font-size:16px} .dtag{font-size:14px} }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top">
-    <h1>背作文 · 段落库</h1>
+    <h1>背作文 · 30天计划</h1>
     <a class="back" href="index.html">← 返回主站</a>
   </div>
   <div class="chips">
@@ -81,60 +97,72 @@
     <span class="chip" id="pc"></span>
   </div>
   <div class="tabs">
-    <button data-v="lib" class="on">段落库</button>
-    <button data-v="task">任务库</button>
+    <button data-v="plan" class="on">每日计划</button>
+    <button data-v="lib">模板库</button>
   </div>
   <div id="app"><div class="empty">加载中…</div></div>
 
-  <div class="tip"><b>用法(不按日期,按段落顺序背)</b>:从上往下——第一段(静态→动态→双图表)→第二段(三句成品→方面配对七类)→第三段(正面版→负面版)→备选句库眼熟。<b>红字=考场按题填</b>:批6的汉字占位不用背英文,批7的词组要背英文;蓝字=必背框架。点句子区域显示英文,背完打勾;整批变 ✓ 后自动展开下一批。复习节奏自己把握:背完的批隔 1/3/7 天回头遮住英文重背。数据只存本机浏览器,旧打卡进度按句子内容保留。</div>
-  <div class="foot">背作文 v6 · 段落库 ｜ 数据:data/sentences.json(11批41句 · 由 ZCode 维护) ｜ 第一段定动静 → 第二段换槽 → 第三段定正负</div>
+  <div class="tipbox"><b>用法</b>:按【每日计划】从第1天推进——每天先学当天模板句(看中文→回忆英文→点卡片核对→背过打勾),再做当天真题练习;「今天」按开始日期自动标红。没背熟的句子隔 1/3/7 天回【模板库】遮住英文重背。红字=考场按题填的槽,蓝字=必背框架。数据只存本机浏览器,打卡按句子内容记,换模板内容变了进度自然重算。</div>
+  <div class="foot">背作文 v7 · 27南山模板吃鸡计划 ｜ 小作文14天+大作文16天=30天 ｜ 数据:data/zuowen_nanshan.json(105句·由 ZCode 维护)</div>
 </div>
 
 <script>
 'use strict';
 const LS = 'zuowen_';
 let DATA = null, P = null;
-let view = 'lib';
-let libOpen = {};
+let view = 'plan';
+let dayOpen = {};
+let libCat = 'all', kw = '';
 
 const $ = s => document.querySelector(s);
 const esc = s => s;                  // 数据源是受信 HTML
-
 const todayISO = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
 function diffDays(a, b){ const p = x => { const q = x.split('-').map(Number); return new Date(q[0], q[1] - 1, q[2]); }; return Math.round((p(a) - p(b)) / 86400000); }
 
-/* —— 存储(与旧版同键,打卡进度保留) —— */
+/* —— 存储(与旧版同键,打卡进度按句子内容保留) —— */
 const get = k => localStorage.getItem(LS + k) === '1';
 const set = (k, v) => v ? localStorage.setItem(LS + k, '1') : localStorage.removeItem(LS + k);
 function hsh(s){ let h = 5381; for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) >>> 0; return h.toString(16); }
-const skey = s => 's2_' + hsh(s.en);
-const tkey = t => 'z4_tk_' + hsh(t);
+const skey = s => 's2_' + hsh(s.en);           // 模板句打卡键(同v6)
+const pkey = t => 'z7_pr_' + hsh(t);           // 练习任务键
+
+/* —— 开始日期 —— */
+function getStart(){
+  let v = localStorage.getItem('zuowen_ns_start');
+  if (!v || !/^\d{4}-\d{2}-\d{2}$/.test(v)){ v = todayISO(); localStorage.setItem('zuowen_ns_start', v); }
+  return v;
+}
+function todayNo(){ return diffDays(todayISO(), getStart()) + 1; }   // 第几天(1-based)
 
 /* —— 进度 —— */
+function sentDone(s){ return get(skey(s)); }
+function dayDone(d){
+  const all = (d.learn || []).length + (d.practice || []).length;
+  if (!all) return false;
+  const sents = (d.learn || []).every(id => { const s = DATA.smap[id]; return s && get(skey(s)); });
+  const prac = (d.practice || []).every(t => get(pkey(t)));
+  return sents && prac;
+}
 function stats(){
-  let total = 0, done = 0, bTotal = 0, bDone = 0;
-  DATA.days.forEach(d => {
-    bTotal++;
-    const all = d.sents.every(s => get(skey(s)));
-    if (all) bDone++;
-    d.sents.forEach(s => { total++; if (get(skey(s))) done++; });
-  });
-  return { total, done, bTotal, bDone };
+  let total = 0, done = 0, days = 0, daysDone = 0;
+  DATA.sents.forEach(s => { total++; if (sentDone(s)) done++; });
+  DATA.plan.forEach(d => { days++; if (dayDone(d)) daysDone++; });
+  return { total, done, days, daysDone };
 }
 
 /* —— 句卡 —— */
-function senHTML(d, i, s){
+const LVL = { 1: ['l1', '★必背'], 2: ['l2', '◎推荐'], 3: ['l3', '○眼熟'] };
+function senHTML(s, showPage){
   const key = skey(s), done = get(key);
+  const [lc, lt] = LVL[s.lvl || 1];
   return `<div class="sen" data-key="${key}">
-    <div class="zh">${s.zh}</div>
-    <div class="cue">第 ${d} 批 第 ${i + 1} 句 · 点下方区域显示英文</div>
-    <div class="enwrap"><div class="en">${esc(s.en)}</div>${s.meta ? `<div class="meta">${esc(s.meta)}</div>` : ''}</div>
+    <div class="shead"><span class="lvl ${lc}">${lt}</span><span class="slot">${esc(s.slot)}</span>${showPage && s.page ? `<span>📖${esc(s.page)}</span>` : ''}</div>
+    <div class="zh">${esc(s.zh)}</div>
+    <div class="enwrap"><div class="en">${esc(s.en)}</div>${s.meta ? `<div class="meta">💡 ${esc(s.meta)}</div>` : ''}</div>
     <button class="donebtn ${done ? 'on' : ''}" data-done="${key}">${done ? '✓ 已背过' : '✓ 背过'}</button>
   </div>`;
 }
-
-/* —— 事件绑定 —— */
-function bindAll(root){
+function bindSens(root){
   root.querySelectorAll('.sen .enwrap').forEach(el =>
     el.addEventListener('click', () => el.closest('.sen').classList.toggle('open')));
   root.querySelectorAll('[data-done]').forEach(btn =>
@@ -145,100 +173,149 @@ function bindAll(root){
     }));
 }
 
-/* —— 段落库视图 —— */
-function vLib(){
-  const st = stats();
-  let h = `<div class="card"><h2>段落库(${st.bTotal} 批 ${st.total} 句 · 按序背)</h2>
-    <div style="font-size:13px;color:#5a6472">顺序:第一段(静态→动态→双图表)→第二段(三句成品→方面配对)→第三段(正面→负面)→备选眼熟。组装/套用去【任务库】。</div>
-    <div class="tools" style="justify-content:flex-start"><button id="toggleAll">显示全部英文</button><button id="openAll">全部展开/收起</button></div></div>`;
-  let lastGrp = '', autoOpened = false;
-  DATA.days.forEach(d => {
-    if (d.grp && d.grp !== lastGrp){
-      const sub = { '第一段': '图表怎么描述(静/动/双图)', '第二段': '为什么会流行(三句+方面)', '第三段': '评论与建议(正/负)', '备选': '升级句·眼熟' }[d.grp] || '';
-      h += `<div class="grp">${d.grp}${sub ? ' · ' + sub : ''}</div>`;
-      lastGrp = d.grp;
-    }
-    const doneN = d.sents.filter(s => get(skey(s))).length, all = doneN === d.sents.length;
-    if (libOpen[d.day] === undefined) libOpen[d.day] = !autoOpened && !all ? (autoOpened = true) : false;
-    const open = libOpen[d.day];
-    h += `<div class="card${open ? '' : ' closed'}">
-      <div class="bhead" data-b="${d.day}">
-        <span class="bno">第 ${d.day} 批</span><span class="btag">${d.tag || ''}</span>
-        <span class="bstat ${all ? 'ok' : ''}">${all ? '✓ 完成' : doneN + '/' + d.sents.length + ' 句'}</span>
+/* —— 每日计划视图 —— */
+function vPlan(){
+  const st = stats(), tno = todayNo();
+  let h = `<div class="card">
+    <h2>30天计划 · 南山模板</h2>
+    <div class="setrow">开始日期 <input type="date" id="setdate" value="${getStart()}">
+      <button id="btn-date">设定</button>
+      <span id="datemsg">今天是计划第 ${Math.max(1, tno)} 天${tno > 30 ? '(已跑完,自由复盘)' : ''}</span></div>
+    <div class="tools"><button id="goto-today">↓ 回到今天</button><button id="open-all">全部展开/收起</button></div>
+  </div>`;
+  DATA.plan.forEach(d => {
+    const done = dayDone(d);
+    const isToday = d.day === Math.max(1, Math.min(30, tno));
+    const sents = (d.learn || []).map(id => DATA.smap[id]).filter(Boolean);
+    const sentN = sents.filter(sentDone).length;
+    const pracN = (d.practice || []).filter(t => get(pkey(t))).length;
+    const all = sents.length + (d.practice || []).length;
+    const cur = sentN + pracN;
+    if (dayOpen[d.day] === undefined) dayOpen[d.day] = isToday;
+    h += `<div class="card${dayOpen[d.day] ? '' : ' closed'}${isToday ? ' today' : ''}">
+      <div class="dayhead" data-d="${d.day}">
+        <span class="dno ${d.cat}">${d.cat === 'xz' ? '小' : '大'}作文·第${d.day}天</span>
+        <span class="dtag">${esc(d.title)}</span>
+        <span class="dstat ${done ? 'ok' : (isToday ? 'today' : '')}">${done ? '✓ 完成' : (all ? cur + '/' + all : '—')}</span>
       </div>
-      <div class="sbody">${d.sents.map((s, i) => senHTML(d.day, i, s)).join('')}
-        ${doneN ? `<div style="text-align:right"><button class="rbtn" data-reset="${d.day}">重置本批打卡</button></div>` : ''}
+      <div class="dbody">
+        <div class="dsub">${d.book ? '📖 ' + esc(d.book) + ' ｜ ' : ''}${(d.learn || []).length ? `学${(d.learn || []).length}句` : '巩固练习日'}${(d.practice || []).length ? ` · 练${(d.practice || []).length}项` : ''}${isToday ? ' · 🔥今天' : ''}</div>
+        ${d.tip ? `<div class="tipbox">${esc(d.tip)}</div>` : ''}
+        ${sents.map(s => senHTML(s, true)).join('')}
+        ${d.review ? `<div class="notice">🔁 今日复习:${esc(d.review)} —— 模板库对应分组遮英文重背一遍。</div>` : ''}
+        ${(d.practice || []).length ? `<div class="ptitle">今日真题练习</div>` +
+          d.practice.map(t => `<div class="trow"><span class="tk ${get(pkey(t)) ? 'on' : ''}" data-task="${pkey(t)}">${get(pkey(t)) ? '✓' : '○'}</span><span>${esc(t)}</span></div>`).join('') : ''}
       </div>
     </div>`;
   });
   $('#app').innerHTML = h;
-  bindAll($('#app'));
-  $('#app').querySelectorAll('.bhead').forEach(el =>
-    el.addEventListener('click', () => { const n = +el.dataset.b; libOpen[n] = !libOpen[n]; vLib(); }));
-  $('#app').querySelectorAll('[data-reset]').forEach(btn =>
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      if (!confirm('确定清除本批所有勾选?(不可恢复)')) return;
-      const d = DATA.days.find(x => x.day === +btn.dataset.reset);
-      d.sents.forEach(s => localStorage.removeItem(LS + skey(s)));
-      vLib();
-    }));
-  $('#toggleAll').addEventListener('click', () => {
-    const sens = document.querySelectorAll('#app .sen');
-    const anyClosed = [...sens].some(x => !x.classList.contains('open'));
-    sens.forEach(x => x.classList.toggle('open', anyClosed));
-    $('#toggleAll').textContent = anyClosed ? '隐藏全部英文' : '显示全部英文';
+  bindSens($('#app'));
+  $('#app').querySelectorAll('.dayhead').forEach(el =>
+    el.addEventListener('click', () => { const n = +el.dataset.d; dayOpen[n] = !dayOpen[n]; vPlan(); }));
+  $('#app').querySelectorAll('[data-task]').forEach(el =>
+    el.addEventListener('click', () => { set(el.dataset.task, !get(el.dataset.task)); render(); }));
+  $('#btn-date').addEventListener('click', () => {
+    const v = $('#setdate').value;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(v)){ toast('日期不对'); return; }
+    localStorage.setItem('zuowen_ns_start', v);
+    dayOpen = {}; render();
   });
-  $('#openAll').addEventListener('click', () => {
-    const anyClosed = DATA.days.some(d => !libOpen[d.day]);
-    DATA.days.forEach(d => libOpen[d.day] = anyClosed);
-    vLib();
+  $('#goto-today').addEventListener('click', () => {
+    const t = Math.max(1, Math.min(30, todayNo()));
+    dayOpen = {}; dayOpen[t] = true;
+    vPlan();
+    const el = document.querySelector(`.dayhead[data-d="${t}"]`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  $('#open-all').addEventListener('click', () => {
+    const anyClosed = DATA.plan.some(d => !dayOpen[d.day]);
+    DATA.plan.forEach(d => dayOpen[d.day] = anyClosed);
+    vPlan();
   });
 }
 
-/* —— 任务库视图(不按日期,按序领取) —— */
-function vTask(){
-  const groups = [
-    ['组装成文(默写检测 + 5 篇)', P.assembly, 'g'],
-    ['限时套用 · 精通期', P.practice, ''],
-    ['12 月保温(写一休一)', P.retention, 'o']
-  ];
-  let h = `<div class="card"><h2>任务库(不按日期,按序领取)</h2>
-    <div style="font-size:13px;color:#5a6472">段落库背得七八成后从【组装】开始:先闭卷默写,再逐篇组装/限时;写完对照原文订正,错词进本。</div></div>`;
-  groups.forEach(([title, arr, cls]) => {
-    h += `<div class="card"><h2 class="${cls}">${title}(${arr.length} 项)</h2>`;
-    arr.forEach(t => {
-      const k = tkey(t), done = get(k);
-      h += `<div class="trow"><span class="tk ${done ? 'on' : ''}" data-task="${k}">${done ? '✓' : '○'}</span><span${done ? ' style="opacity:.55"' : ''}>${esc(t)}</span></div>`;
-    });
-    h += `</div>`;
-  });
+/* —— 模板库视图(搜索框只渲染一次,输入只刷新列表,不打断输入法) —— */
+function vLib(){
+  const st = stats();
+  let h = `<div class="card">
+    <h2>模板库 · ${st.total}句</h2>
+    <div style="font-size:13.5px;color:#5a6472">已背 <b>${st.done}</b>/${st.total} 句 · 计划完成 <b>${st.daysDone}</b>/${st.days} 天。★必背=成文最小集,◎推荐=同功能备选,○眼熟=替换库看熟即可。</div>
+    <div class="catbtns">
+      <button data-c="all" class="${libCat === 'all' ? 'on' : ''}">全部</button>
+      <button data-c="xz" class="${libCat === 'xz' ? 'on' : ''}">小作文</button>
+      <button data-c="dz" class="${libCat === 'dz' ? 'on' : ''}">大作文</button>
+    </div>
+    <input class="search" id="kw" type="text" placeholder="搜模板句/中文/分组…" value="${kw ? esc(kw) : ''}" autocomplete="off">
+    <div class="tools"><button id="show-all-en">显示全部英文</button></div>
+  </div><div id="liblist"></div>`;
   $('#app').innerHTML = h;
-  $('#app').querySelectorAll('[data-task]').forEach(el =>
-    el.addEventListener('click', () => { set(el.dataset.task, !get(el.dataset.task)); vTask(); }));
+  renderLibList();
+  $('#app').querySelectorAll('.catbtns button').forEach(b =>
+    b.addEventListener('click', () => {
+      libCat = b.dataset.c;
+      $('#app').querySelectorAll('.catbtns button').forEach(x => x.classList.toggle('on', x === b));
+      renderLibList();
+    }));
+  $('#kw').addEventListener('input', e => { kw = e.target.value; renderLibList(); });
+  $('#show-all-en').addEventListener('click', () => {
+    const sens = document.querySelectorAll('#app .sen');
+    const anyClosed = [...sens].some(x => !x.classList.contains('open'));
+    sens.forEach(x => x.classList.toggle('open', anyClosed));
+    $('#show-all-en').textContent = anyClosed ? '隐藏全部英文' : '显示全部英文';
+  });
 }
+function renderLibList(){
+  const cats = libCat === 'all' ? ['xz', 'dz'] : [libCat];
+  const CATN = { xz: '小作文', dz: '大作文' };
+  let h = '', any = false;
+  cats.forEach(c => {
+    let pool = DATA.sents.filter(s => s.cat === c);
+    if (kw) pool = pool.filter(s => (s.grp + ' ' + s.slot + ' ' + s.zh + ' ' + s.en.replace(/<[^>]+>/g, '') + ' ' + (s.meta || '')).toLowerCase().includes(kw.toLowerCase()));
+    if (!pool.length) return;
+    any = true;
+    h += `<div class="grp" style="margin-top:22px">${CATN[c]} · ${pool.length} 句</div>`;
+    let lastGrp = '';
+    pool.forEach(s => {
+      if (s.grp !== lastGrp){
+        const gn = DATA.sents.filter(x => x.cat === c && x.grp === s.grp).length;
+        h += `<div class="grp">${esc(s.grp)}<span class="gn">${gn}句</span></div>`;
+        lastGrp = s.grp;
+      }
+      h += senHTML(s, true);
+    });
+  });
+  if (!any) h += '<div class="empty">没搜到,换个词试试</div>';
+  $('#liblist').innerHTML = h;
+  bindSens($('#liblist'));
+}
+
+function toast(msg){ const t = document.createElement('div'); t.textContent = msg;
+  t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(20,24,32,.92);color:#fff;border-radius:10px;padding:9px 18px;font-size:13.5px;z-index:99';
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
 
 function render(){
   const st = stats();
   $('#cd').innerHTML = `距初试还有 <b>${Math.max(diffDays(P.exam, todayISO()), 0)}</b> 天`;
-  $('#pc').innerHTML = `已背 <b>${st.done}/${st.total}</b> 句 · <b>${st.bDone}/${st.bTotal}</b> 批`;
-  if (view === 'lib') vLib(); else vTask();
+  $('#pc').innerHTML = `已背 <b>${st.done}/${st.total}</b> 句 · 计划 <b>${st.daysDone}/${st.days}</b> 天`;
+  if (view === 'plan') vPlan(); else vLib();
 }
 
 async function init(){
   try {
-    const r = await fetch('data/sentences.json?' + Date.now());
+    const r = await fetch('data/zuowen_nanshan.json?' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     DATA = await r.json();
   } catch(e){
-    $('#app').innerHTML = '<div class="notice red">数据加载失败,请联网后刷新重试。</div>';
+    $('#app').innerHTML = '<div class="notice">数据加载失败,请联网后刷新重试。</div>';
     return;
   }
-  if (!DATA || !Array.isArray(DATA.days) || !DATA.days.length || !DATA.plan || DATA.plan.version !== 4){
-    $('#app').innerHTML = '<div class="notice red">数据格式不对(plan v4 缺失),请联系 ZCode 检查 data/sentences.json。</div>';
+  if (!DATA || !Array.isArray(DATA.sents) || !Array.isArray(DATA.plan) || !DATA.meta){
+    $('#app').innerHTML = '<div class="notice">数据格式不对,请联系 ZCode 检查 data/zuowen_nanshan.json。</div>';
     return;
   }
-  P = DATA.plan;
+  P = DATA.meta;
+  DATA.smap = {};
+  DATA.sents.forEach(s => DATA.smap[s.id] = s);
   render();
   document.querySelectorAll('.tabs button').forEach(b =>
     b.addEventListener('click', () => {
