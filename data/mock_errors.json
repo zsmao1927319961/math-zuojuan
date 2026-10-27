@@ -2480,6 +2480,200 @@
      ]
     }
    ]
+  },
+  {
+   "paper": {
+    "name": "2021数二真题错题",
+    "date": "2021",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2021数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/d9547592913a430d844a7a182c9b52de.png",
+     "ztYear": 2021,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2021/T5/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2021/T5/2.png"
+     ]
+    },
+    {
+     "no": 9,
+     "type": "选择",
+     "score": 5,
+     "subject": "线代",
+     "chapter": "线性方程组",
+     "kp": "方程组求解",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/536c56a2aa594ff3a53050c54eac6caa.png",
+     "ztYear": 2021,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2021/T9/1.png"
+     ]
+    },
+    {
+     "no": 10,
+     "type": "选择",
+     "score": 5,
+     "subject": "线代",
+     "chapter": "矩阵",
+     "kp": "初等变换与初等矩阵",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/5a1d2e0d2e354a03bc97beb01924d32d.png",
+     "ztYear": 2021,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2021/T10/1.png"
+     ]
+    },
+    {
+     "no": 15,
+     "type": "填空",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/880b3f5789484bec916efb993ef061f2.png",
+     "ztYear": 2021,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2021/T15/1.png"
+     ]
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 12,
+     "subject": "线代",
+     "chapter": "特征值与特征向量",
+     "kp": "相似对角化",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/a8286f91d4054afcad59c36d95db7484.png",
+     "ztYear": 2021,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/beaaaa24-b6e3-4b7e-8e75-d33f31e69db0.png"
+     ]
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2022数二真题错题",
+    "date": "2022",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2022数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 3,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "极值、最值与拐点",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/be37d77cf25a4fb986943503b7b58b65.png",
+     "ztYear": 2022,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T3/1.png"
+     ]
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "反常积分",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/4ce8bf7ab8f749f4b59e8abfc7e53f7e.png",
+     "ztYear": 2022,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T5/1.png",
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T5/2.png"
+     ]
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "数列极限",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/05279690930e494787e788a022453b68.png",
+     "ztYear": 2022,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T6/1.png"
+     ]
+    },
+    {
+     "no": 7,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "其他积分题型",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/8b078df2cbca42feb4f2bcb327d4439a.png",
+     "ztYear": 2022,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T7/1.png"
+     ]
+    },
+    {
+     "no": 8,
+     "type": "选择",
+     "score": 5,
+     "subject": "线代",
+     "chapter": "特征值与特征向量",
+     "kp": "相似对角化",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/f87366f3c45b4340a11a92208fc72439.png",
+     "ztYear": 2022,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T8/1.png"
+     ]
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 12,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "已知解反求微分方程（逆问题）",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/91f402e84ef8447ead11f99fb7fee1b2.png",
+     "ztYear": 2022,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T20/1.png"
+     ]
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 12,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "其他积分题型",
+     "qimg": "https://oss.hzyankean.com/examMathQuestion/question/bde138930a37478989bf76f172cff5e7.png",
+     "ztYear": 2022,
+     "ztCol": "真题",
+     "anaimgs": [
+      "https://oss.hzyankean.com/examMathQuestion/analysis-v2/math/math2/2022/T21/1.png"
+     ]
+    }
+   ]
   }
  ],
  "series": [
