@@ -1,5 +1,5 @@
 {
- "note": "2026-10-25 v6(用户拍板:不按天数,段落库顺序背诵):顺序=第一段(静态批1-2/动态批3-4/双图表批5)→第二段(成品三句批6+方面配对七类批7)→第三段(苦瓜正面版批8+负面版批9+AI归来备选收尾批10,眼熟)→备选升级句库批11。打卡键=zuowen_s2_{djb2(en)}按句子内容记,重排不丢勾选。批8/9=苦瓜第三段:书内经济/校园/体育/文化各类印的是同一段,只分正/负两版;批7=第二段槽A/槽B七类配对词组(需背英文)。tpl蓝字=必背框架;blank红字=考场按题填(批6的汉字占位不用背英文)。历史:v5.2(10-25早)批6换书经济类过渡+槽A/B骨架;v5(10-24)成品9批;v4苦瓜第一段+AI归来;15批→v3(10-23)。",
+ "note": "2026-10-25 v6(用户拍板:不按天数,段落库顺序背诵):顺序=第一段(静态批1-2/动态批3-4/双图表批5)→第二段(成品三句批6+方面配对七类批7)→第三段(苦瓜正面版批8+负面版批9+AI归来备选收尾批10,眼熟)→备选升级句库批11。打卡键=zuowen_s2_{djb2(en)}按句子内容记,重排不丢勾选。批8/9=苦瓜第三段:书内经济/校园/体育/文化各类印的是同一段,只分正/负两版;批7=第二段槽A/槽B七类配对词组(需背英文)。tpl蓝字=必背框架;blank红字=考场按题填(批6的汉字占位不用背英文)。历史:v5.2(10-25早)批6换书经济类过渡+槽A/B骨架;v5(10-24)成品9批;v4苦瓜第一段+AI归来;15批→v3(10-23)。10-27三改:批6升级四句版=原三句+经济类第4句Equally important(用户已背,蓝字替换点已标注),句8(More importantly)留批11当补仓与句4同位二选一;考场默认三句80词,四句117词配动态短第一段或替换方案。",
  "days": [
   {
    "day": 1,
@@ -81,12 +81,12 @@
   {
    "day": 6,
    "grp": "第二段",
-   "tag": "★成品·第二段三句(动/静通用,槽A/槽B)",
+   "tag": "★成品·第二段四句(动/静通用,槽A/槽B+观念升级)",
    "sents": [
     {
      "en": "<span class=\"tpl\">Placed in the context of everyday life, the formation of</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">is propelled by the combined influence of multiple factors.</span>",
      "zh": "放在日常生活的语境中思考，题目相关词的形成受到多重因素的共同推动。",
-     "meta": "过渡句(书·经济类原句,已背零成本上岗);看法/流行/调查类图表把 the formation of 换 the popularity of。本段=过渡+原因1(现实升级)+原因2(意识加深),只换【题目相关词】【槽A】【槽B】三处空,三句约80词考场全写;字数富余再加批11句8。"
+     "meta": "过渡句(书·经济类原句,已背零成本上岗);看法/流行/调查类图表把 the formation of 换 the popularity of,动态增长换 the steady rise of。本段四句=过渡+原因1(现实升级/槽A)+原因2(意识加深/槽B)+原因3(观念升级/句4)。考场默认三句全写≈80词;第一段短的动态单线图(≈55词)四句全写≈117词。句4与批11句8(More importantly)同位二选一,不并用。"
     },
     {
      "en": "<span class=\"tpl\">As real life continues to develop, people's expectations for</span> <span class=\"blank\">槽A(期望对象)</span> <span class=\"tpl\">no longer remain at the level of superficial satisfaction, which has undoubtedly laid a more solid foundation for</span> <span class=\"blank\">题目相关词</span>.",
@@ -97,6 +97,11 @@
      "en": "<span class=\"tpl\">In addition, with public awareness of</span> <span class=\"blank\">槽B(意识对象)</span> <span class=\"tpl\">gradually deepening and related needs continuing to grow,</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">has been receiving increasing attention.</span>",
      "zh": "除此之外，伴随着公众对槽B意识的逐渐加深与相关需求的不断增长，题目相关词也越来越受到重视。",
      "meta": "谓语单复数:the popularity of X has been receiving / outdoor activities have been receiving。负面图表不用本段,字数留给第三段讲措施。"
+    },
+    {
+     "en": "<span class=\"tpl\">Equally important, people in the present age are more inclined to pursue</span> <span class=\"blank\">spiritual fulfillment(追求对象·按题换)</span><span class=\"tpl\">, and their attention has therefore shifted from</span> <span class=\"blank\">mere function to deeper meaning(对比两端·按题换)</span><span class=\"tpl\">, which has gradually enabled</span> <span class=\"blank\">题目相关词</span> <span class=\"tpl\">to become integrated into everyday life.</span>",
+     "zh": "同样重要的是，当今时代的人们更倾向于追求精神满足，他们的注意力也因此从单纯的功能转向更深层的意义，这使得题目相关词逐渐融入了日常生活。",
+     "meta": "经济类第4句(用户已背,零成本)。蓝字可替换两处+主语可选:①追求对象 spiritual fulfillment→their children's all-round growth之外另选维度(教育类S2已用此词,这里换 a brighter future for their children)/a higher quality of life(健康)/spiritual and cultural enrichment(文化)/convenience and efficiency(科技);②对比两端 mere function to deeper meaning→from mere exam scores to all-round growth(教育)/from quick fixes to long-term wellness(健康)/from owning goods to enjoying experiences(消费)/from fashion trends to cultural identity(文化);③主语 people 可换 parents/consumers/residents(可选)。默认原句直接适配经济消费类。四句全写时本句追求对象须与S2槽A错开维度防语义重复。"
     }
    ]
   },
