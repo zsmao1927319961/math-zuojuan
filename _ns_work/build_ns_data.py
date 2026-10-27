@@ -598,6 +598,14 @@ PLAN = [
    "practice":["选一套未练过的英语二图表真题,限时30分钟整篇","继续完整练习2010-2026历年完整真题"]},
 ]
 
+# ============================================================ 换序(用户拍板2026-10-28:先大作文后小作文)
+_dz = [d for d in PLAN if d["cat"] == "dz"]
+_xz = [d for d in PLAN if d["cat"] == "xz"]
+assert len(_dz) == 16 and len(_xz) == 14, "块数不对"
+PLAN = _dz + _xz
+for _i, d in enumerate(PLAN, 1):
+    d["day"] = _i
+
 # ============================================================ 校验+落盘
 ids = [s["id"] for s in S]
 assert len(ids) == len(set(ids)), "重复id"
