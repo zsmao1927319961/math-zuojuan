@@ -13,14 +13,16 @@
    "title": "大作文三段式总框架+图表第一段第一句模板",
    "book": "P60-65, P77-78",
    "learn": [
-    "dz-p1-1",
-    "dz-p1-2",
-    "dz-p1-3"
+    "dz-p1-1"
    ],
    "practice": [
     "2014英语二真题,只分析结构"
    ],
-   "tip": "三段式:第一段描述图表(引入+数据) → 第二段分析论证(过渡+原因/观点+影响+判断) → 第三段评论总结(总体评价+行动/展望)。"
+   "tip": "三段式:第一段描述图表(引入+数据) → 第二段分析论证(过渡+原因/观点+影响+判断) → 第三段评论总结(总体评价+行动/展望)。",
+   "skim": [
+    "dz-p1-2",
+    "dz-p1-3"
+   ]
   },
   {
    "day": 2,
@@ -29,11 +31,13 @@
    "book": "P79-80",
    "learn": [
     "dz-p1-dd-1",
-    "dz-p1-dd-2",
     "dz-p1-dd-3"
    ],
    "practice": [
     "2017英语二第一段真题练习"
+   ],
+   "skim": [
+    "dz-p1-dd-2"
    ]
   },
   {
@@ -44,7 +48,8 @@
    "learn": [],
    "practice": [
     "2022英语二第一段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 4,
@@ -52,13 +57,15 @@
    "title": "图表第一段二三句·静态图表模板",
    "book": "P81-82",
    "learn": [
-    "dz-p1-jt-1",
-    "dz-p1-jt-2",
-    "dz-p1-jt-3",
-    "dz-p1-jt-4"
+    "dz-p1-jt-1"
    ],
    "practice": [
     "2015英语二第一段真题练习"
+   ],
+   "skim": [
+    "dz-p1-jt-2",
+    "dz-p1-jt-3",
+    "dz-p1-jt-4"
    ]
   },
   {
@@ -69,7 +76,8 @@
    "learn": [],
    "practice": [
     "2018英语二第一段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 6,
@@ -79,7 +87,8 @@
    "learn": [],
    "practice": [
     "2021英语二第一段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 7,
@@ -89,12 +98,14 @@
    "learn": [
     "dz-p1-fh-1",
     "dz-p1-fh-2",
-    "dz-p1-fh-3",
-    "dz-p1-fh-4",
-    "dz-p1-fh-5"
+    "dz-p1-fh-4"
    ],
    "practice": [
     "英语一2024或2026复合图表,迁移训练"
+   ],
+   "skim": [
+    "dz-p1-fh-3",
+    "dz-p1-fh-5"
    ]
   },
   {
@@ -104,12 +115,14 @@
    "book": "P87-94",
    "learn": [
     "dz-p2-gd-1",
-    "dz-p2-gd-2",
     "dz-p2-yy-1",
     "dz-p2-yy-2"
    ],
    "practice": [
     "2023英语二第二段真题练习"
+   ],
+   "skim": [
+    "dz-p2-gd-2"
    ]
   },
   {
@@ -118,21 +131,23 @@
    "title": "现象数据类第二段:原因+影响+趋势判断",
    "book": "P87-94+补充",
    "learn": [
+    "dz-p2-xy-1"
+   ],
+   "practice": [
+    "2024英语二第二段真题练习"
+   ],
+   "skim": [
     "dz-p2-yy-3",
     "dz-p2-yy-4",
     "dz-p2-yy-5",
     "dz-p2-yy-6",
     "dz-p2-yy-7",
     "dz-p2-yy-8",
-    "dz-p2-xy-1",
     "dz-p2-xy-2",
     "dz-p2-xy-3",
     "dz-p2-zj-1",
     "dz-p2-zj-2",
     "dz-p2-zj-3"
-   ],
-   "practice": [
-    "2024英语二第二段真题练习"
    ]
   },
   {
@@ -144,17 +159,19 @@
     "dz-p1-cl-1",
     "dz-p1-cl-2",
     "dz-p2-gd-3",
-    "dz-p2-gd-4",
     "dz-p2-cl-1",
-    "dz-p2-cl-2",
-    "dz-p2-cl-3",
     "dz-p2-cl-4",
-    "dz-p2-cl-5",
-    "dz-p2-cl-6",
     "dz-p2-zj-4"
    ],
    "practice": [
     "2026英语二第二段真题练习"
+   ],
+   "skim": [
+    "dz-p2-gd-4",
+    "dz-p2-cl-2",
+    "dz-p2-cl-3",
+    "dz-p2-cl-5",
+    "dz-p2-cl-6"
    ]
   },
   {
@@ -164,12 +181,14 @@
    "book": "P95-100",
    "learn": [
     "dz-p3-1",
-    "dz-p3-2",
-    "dz-p3-xz-1",
-    "dz-p3-xz-2"
+    "dz-p3-xz-1"
    ],
    "practice": [
     "2024英语二第三段真题练习"
+   ],
+   "skim": [
+    "dz-p3-2",
+    "dz-p3-xz-2"
    ]
   },
   {
@@ -179,13 +198,15 @@
    "book": "P95-100",
    "learn": [
     "dz-p3-3",
-    "dz-p3-4",
-    "dz-p3-xz-3",
-    "dz-p3-xz-4",
-    "dz-p3-xz-5"
+    "dz-p3-xz-3"
    ],
    "practice": [
     "2018英语二第三段真题练习"
+   ],
+   "skim": [
+    "dz-p3-4",
+    "dz-p3-xz-4",
+    "dz-p3-xz-5"
    ]
   },
   {
@@ -195,13 +216,15 @@
    "book": "P95-100",
    "learn": [
     "dz-p3-5",
-    "dz-p3-6",
-    "dz-p3-xz-6",
-    "dz-p3-xz-7",
-    "dz-p3-xz-8"
+    "dz-p3-xz-6"
    ],
    "practice": [
     "2025英语二第三段真题练习"
+   ],
+   "skim": [
+    "dz-p3-6",
+    "dz-p3-xz-7",
+    "dz-p3-xz-8"
    ]
   },
   {
@@ -214,7 +237,8 @@
     "2010英语二整篇",
     "2011英语二整篇",
     "2014英语二整篇"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 15,
@@ -226,7 +250,8 @@
     "2012英语二整篇",
     "2013英语二整篇",
     "2015英语二整篇"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 16,
@@ -237,7 +262,8 @@
    "practice": [
     "选一套未练过的英语二图表真题,限时30分钟整篇",
     "继续完整练习2010-2026历年完整真题"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 17,
@@ -246,14 +272,16 @@
    "book": "P5-17",
    "learn": [
     "xz-p1-gw-1",
-    "xz-p1-gw-2",
-    "xz-p1-mu-1",
-    "xz-p1-mu-2"
+    "xz-p1-mu-1"
    ],
    "practice": [
     "2026英语二答复信,只分析结构"
    ],
-   "tip": "格式:称呼Dear+职务/名字+逗号 → 正文三段(段前空两格) → 结束语Yours sincerely,(正式)/Yours,(私人) → 署名Li Ming(右对齐)。三段思路:开头表明目的→中间展开→结尾期待收尾。"
+   "tip": "格式:称呼Dear+职务/名字+逗号 → 正文三段(段前空两格) → 结束语Yours sincerely,(正式)/Yours,(私人) → 署名Li Ming(右对齐)。三段思路:开头表明目的→中间展开→结尾期待收尾。",
+   "skim": [
+    "xz-p1-gw-2",
+    "xz-p1-mu-2"
+   ]
   },
   {
    "day": 18,
@@ -261,18 +289,20 @@
    "title": "公务书信开头结尾+私人书信开头结尾",
    "book": "P17-20, P31-33",
    "learn": [
-    "xz-p1-sr-1",
     "xz-p1-sr-2",
-    "xz-p1-sr-3",
-    "xz-p1-sr-4",
     "xz-p3-1",
     "xz-p3-2",
-    "xz-p3-3",
     "xz-p3-4"
    ],
    "practice": [
     "2011英语二祝贺信(私人)",
     "2014英语二咨询信(公务):第一、三段真题练习"
+   ],
+   "skim": [
+    "xz-p1-sr-1",
+    "xz-p1-sr-3",
+    "xz-p1-sr-4",
+    "xz-p3-3"
    ]
   },
   {
@@ -283,12 +313,14 @@
    "learn": [
     "xz-p2-js-1",
     "xz-p2-js-2",
-    "xz-p2-js-3",
-    "xz-p2-js-4",
-    "xz-p2-js-5"
+    "xz-p2-js-4"
    ],
    "practice": [
     "2013英语二通知,第二段真题练习"
+   ],
+   "skim": [
+    "xz-p2-js-3",
+    "xz-p2-js-5"
    ]
   },
   {
@@ -305,7 +337,8 @@
    "practice": [
     "2010英语二邀请信",
     "2017英语二答复信:第二段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 21,
@@ -317,7 +350,8 @@
    ],
    "practice": [
     "2019英语二建议信,第二段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 22,
@@ -331,7 +365,8 @@
    ],
    "practice": [
     "2020英语二介绍+建议信,第二段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 23,
@@ -345,7 +380,8 @@
    ],
    "practice": [
     "2012英语二投诉信,第二段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 24,
@@ -358,7 +394,8 @@
    ],
    "practice": [
     "2018英语二道歉信,第二段真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 25,
@@ -369,7 +406,8 @@
    "practice": [
     "2015英语二通知,只分析结构"
    ],
-   "tip": "通知格式:标题NOTICE居中 → 日期右对齐 → 正文三段(发布信息→展开信息→提出行动) → 署名右对齐(如The Students' Union)。两大类:活动通知(什么活动/何时何地/如何参加)和招募通知(招募什么/有何要求/如何申请)。"
+   "tip": "通知格式:标题NOTICE居中 → 日期右对齐 → 正文三段(发布信息→展开信息→提出行动) → 署名右对齐(如The Students' Union)。两大类:活动通知(什么活动/何时何地/如何参加)和招募通知(招募什么/有何要求/如何申请)。",
+   "skim": []
   },
   {
    "day": 26,
@@ -378,15 +416,17 @@
    "book": "P36-44",
    "learn": [
     "xz-tz-1-1",
-    "xz-tz-1-2",
     "xz-tz-1-3",
-    "xz-tz-1-4",
     "xz-tz-hd-1",
     "xz-tz-hd-2",
     "xz-tz-hd-3"
    ],
    "practice": [
     "2015英语二通知+2010英语一通知,真题练习"
+   ],
+   "skim": [
+    "xz-tz-1-2",
+    "xz-tz-1-4"
    ]
   },
   {
@@ -396,17 +436,19 @@
    "book": "P36-44",
    "learn": [
     "xz-tz-zm-1",
-    "xz-tz-zm-2",
     "xz-tz-zm-3",
-    "xz-tz-zm-4",
     "xz-tz-zm-5",
     "xz-tz-3-1",
-    "xz-tz-3-2",
-    "xz-tz-3-3",
-    "xz-tz-3-4"
+    "xz-tz-3-3"
    ],
    "practice": [
     "2015英语二通知(招募志愿者角度)重写一遍"
+   ],
+   "skim": [
+    "xz-tz-zm-2",
+    "xz-tz-zm-4",
+    "xz-tz-3-2",
+    "xz-tz-3-4"
    ]
   },
   {
@@ -418,7 +460,8 @@
    "review": "讲事情类(①②③+感谢祝贺补充)",
    "practice": [
     "英语二2010/2014/2015/2017真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 29,
@@ -429,7 +472,8 @@
    "review": "观点类(④⑤⑥)",
    "practice": [
     "英语二2011/2016/2019真题练习"
-   ]
+   ],
+   "skim": []
   },
   {
    "day": 30,
@@ -440,7 +484,8 @@
    "review": "解决问题类(⑦⑧⑨)",
    "practice": [
     "英语二2012/2018真题练习"
-   ]
+   ],
+   "skim": []
   }
  ],
  "sents": [
@@ -462,7 +507,7 @@
    "slot": "①自我介绍·上岸版",
    "en": "<span class=\"tpl\">As a/an</span> <span class=\"blank\">身份</span><span class=\"tpl\">, I</span> <span class=\"blank\">相关经历或背景</span><span class=\"tpl\">.</span>",
    "zh": "作为……，我曾……（适合建议/投诉/申请）",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "经历备选: have organized several charity sales / have used the library for several years / have recently experienced a problem with... / have relevant experience in...",
    "page": "P17"
   },
@@ -495,7 +540,7 @@
    "slot": "①寒暄·自然问候",
    "en": "<span class=\"tpl\">It has been a long time since we last met. How is it going?</span>",
    "zh": "好长时间没见，你好吗？",
-   "lvl": 1,
+   "lvl": 2,
    "page": "P20"
   },
   {
@@ -590,7 +635,7 @@
    "slot": "①感谢信·核心帮助",
    "en": "<span class=\"tpl\">Your support with</span> <span class=\"blank\">具体事项</span> <span class=\"tpl\">was particularly valuable.</span>",
    "zh": "您在……方面给予的支持尤其宝贵。",
-   "lvl": 2,
+   "lvl": 1,
    "meta": "事项备选: my studies / my application / organizing the event / solving the problem; support with 可替换 help with / assistance with",
    "page": "补充P23"
   },
@@ -601,7 +646,7 @@
    "slot": "①祝贺信·核心成绩",
    "en": "<span class=\"tpl\">Your success in</span> <span class=\"blank\">具体事项</span> <span class=\"tpl\">was particularly impressive.</span>",
    "zh": "您在……方面取得的成功尤其令人钦佩。",
-   "lvl": 2,
+   "lvl": 1,
    "meta": "事项备选: the competition / your academic studies / completing the project / receiving the scholarship / gaining admission to your ideal university",
    "page": "补充P23"
   },
@@ -612,7 +657,7 @@
    "slot": "②感谢信·补充细节",
    "en": "<span class=\"tpl\">This support included</span> <span class=\"blank\">帮助一</span> <span class=\"tpl\">and</span> <span class=\"blank\">帮助二</span><span class=\"tpl\">, reflecting your</span> <span class=\"blank\">品质一</span> <span class=\"tpl\">and</span> <span class=\"blank\">品质二</span><span class=\"tpl\">.</span>",
    "zh": "这些帮助包括……和……，体现了您的……和……",
-   "lvl": 3,
+   "lvl": 1,
    "meta": "帮助备选: detailed guidance / useful advice / warm encouragement / thoughtful arrangements; 品质备选: kindness / patience / responsibility / generosity",
    "page": "补充P24"
   },
@@ -623,7 +668,7 @@
    "slot": "③收获+进一步影响",
    "en": "<span class=\"tpl\">It has also enabled</span> <span class=\"blank\">me/you</span> <span class=\"tpl\">to</span> <span class=\"blank\">直接收获</span> <span class=\"tpl\">and given</span> <span class=\"blank\">me/you</span> <span class=\"tpl\">the</span> <span class=\"blank\">confidence/opportunity</span> <span class=\"tpl\">to</span> <span class=\"blank\">进一步行动</span><span class=\"tpl\">.</span>",
    "zh": "这也使我/您能够……，并给了我/您……的信心/机会去……（感谢信用 confidence，祝贺信用 opportunity）",
-   "lvl": 3,
+   "lvl": 1,
    "meta": "感谢信收获: complete the task successfully / solve the problem / adapt to the new environment; 祝贺信收获: gain greater confidence / receive wider recognition / make further progress",
    "page": "补充P25"
   },
@@ -700,7 +745,7 @@
    "slot": "⑧B说明影响",
    "en": "<span class=\"tpl\">As a result,</span> <span class=\"blank\">问题造成的影响</span><span class=\"tpl\">.</span>",
    "zh": "因此，……",
-   "lvl": 2,
+   "lvl": 1,
    "meta": "影响备选: I was unable to use the product / the problem caused considerable inconvenience / my work was seriously affected / additional time and money were wasted",
    "page": "P29"
   },
@@ -989,7 +1034,7 @@
    "slot": "对象变化句",
    "en": "<span class=\"blank\">对象词</span> <span class=\"tpl\">rose / increased / dropped / fell / stood at</span> <span class=\"blank\">数字</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
    "zh": "……（对象）在……（时间）上升/增长/下降/跌至/达到……",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "词组备选: continue its upward trend / on the rise / on the decline / remain stable 保持平稳 / fluctuate between...and... 波动",
    "page": "P80"
   },
@@ -1136,7 +1181,7 @@
    "slot": "现象分析类·版B",
    "en": "<span class=\"tpl\">Several factors can account for this</span> <span class=\"blank\">phenomenon / trend</span><span class=\"tpl\">.</span>",
    "zh": "有几个因素能解释这一现象/趋势。",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "另备: The reasons behind this phenomenon are not difficult to identify. 这一现象背后的原因不难发现",
    "page": "P86"
   },
@@ -1345,7 +1390,7 @@
    "slot": "积极趋势",
    "en": "<span class=\"tpl\">Overall, this change reflects social progress and people's pursuit of a better life.</span>",
    "zh": "总体而言，这一变化反映了社会进步和人们对美好生活的追求。",
-   "lvl": 1,
+   "lvl": 2,
    "page": "P92"
   },
   {
@@ -1355,7 +1400,7 @@
    "slot": "负面现象",
    "en": "<span class=\"tpl\">If left unaddressed, this problem may produce more serious consequences in the future.</span>",
    "zh": "如果得不到解决，这一问题将来可能造成更加严重的后果。",
-   "lvl": 1,
+   "lvl": 2,
    "page": "P92"
   },
   {
@@ -1365,7 +1410,7 @@
    "slot": "中性趋势",
    "en": "<span class=\"tpl\">Overall, this phenomenon is the result of both social development and changing individual needs.</span>",
    "zh": "总体而言，这一现象是社会发展与个人需求变化共同作用的结果。",
-   "lvl": 1,
+   "lvl": 2,
    "page": "P92"
   },
   {
@@ -1407,7 +1452,7 @@
    "slot": "正向·版B",
    "en": "<span class=\"tpl\">Overall,</span> <span class=\"blank\">主题词</span> <span class=\"tpl\">plays a vital role in promoting personal growth and social progress.</span>",
    "zh": "总体而言，……在促进个人成长和社会进步方面发挥着重要作用。",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "promotes 可替换 encourages / facilitates / contributes to",
    "page": "P95"
   },
@@ -1429,7 +1474,7 @@
    "slot": "负向·版B",
    "en": "<span class=\"tpl\">To sum up, effective measures should be taken to prevent this problem from becoming more serious.</span>",
    "zh": "总之，应当采取有效措施，防止这一问题变得更加严重。",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "effective measures 可替换 practical measures / concrete action / joint efforts; becoming more serious 可替换 growing worse / continuing to spread",
    "page": "P95"
   },
@@ -1451,7 +1496,7 @@
    "slot": "中性·趋势预测B",
    "en": "<span class=\"tpl\">With the continued development of</span> <span class=\"blank\">相关因素</span><span class=\"tpl\">, an increasing number of people are likely to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
    "zh": "随着……的持续发展，越来越多的人可能会……",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "in the coming years 可替换 in the years ahead / in the near future / in the foreseeable future",
    "page": "P96"
   },
@@ -1495,7 +1540,7 @@
    "slot": "负向·进阶版1",
    "en": "<span class=\"tpl\">To address this problem, individuals should</span> <span class=\"blank\">个人措施</span><span class=\"tpl\">, while</span> <span class=\"blank\">schools / the government</span> <span class=\"tpl\">should</span> <span class=\"blank\">社会措施</span><span class=\"tpl\">. These efforts can help reduce its negative effects and create a healthier social environment.</span>",
    "zh": "为了解决这一问题，个人应当……，而学校/政府应当……。这些努力有助于减少其负面影响，并营造更加健康的社会环境。",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "个人措施: control their behavior / develop good habits / raise their awareness / exercise greater self-discipline; 社会措施: offer more support / strengthen public education / provide proper guidance / improve relevant regulations",
    "page": "P98"
   },

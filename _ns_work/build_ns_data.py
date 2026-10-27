@@ -598,6 +598,47 @@ PLAN = [
    "practice":["选一套未练过的英语二图表真题,限时30分钟整篇","继续完整练习2010-2026历年完整真题"]},
 ]
 
+# ============================================================ 精背/备选拆分(用户10-28指出:书的设计是每槽"选一两句",不全背)
+# key=原天序(xz1-14,dz15-30); learn=精背主选(计入天完成), skim=备选眼熟(同槽替换,不强制)
+LEARN_SKIM = {
+  1:  (["xz-p1-gw-1","xz-p1-mu-1"], ["xz-p1-gw-2","xz-p1-mu-2"]),
+  2:  (["xz-p1-sr-2","xz-p3-1","xz-p3-2","xz-p3-4"], ["xz-p1-sr-1","xz-p1-sr-3","xz-p1-sr-4","xz-p3-3"]),
+  3:  (["xz-p2-js-1","xz-p2-js-2","xz-p2-js-4"], ["xz-p2-js-3","xz-p2-js-5"]),
+  4:  (["xz-p2-bc-1","xz-p2-bc-2","xz-p2-bc-3","xz-p2-bc-4"], []),
+  5:  (["xz-p2-gd-1"], []),
+  6:  (["xz-p2-gd-2","xz-p2-gd-3","xz-p2-gd-4"], []),
+  7:  (["xz-p2-jj-1","xz-p2-jj-2","xz-p2-jj-3"], []),
+  8:  (["xz-p2-jj-4","xz-p2-jj-5"], []),
+  9:  ([], []),
+  10: (["xz-tz-1-1","xz-tz-1-3","xz-tz-hd-1","xz-tz-hd-2","xz-tz-hd-3"], ["xz-tz-1-2","xz-tz-1-4"]),
+  11: (["xz-tz-zm-1","xz-tz-zm-3","xz-tz-zm-5","xz-tz-3-1","xz-tz-3-3"], ["xz-tz-zm-2","xz-tz-zm-4","xz-tz-3-2","xz-tz-3-4"]),
+  12: ([], []), 13: ([], []), 14: ([], []),
+  15: (["dz-p1-1"], ["dz-p1-2","dz-p1-3"]),
+  16: (["dz-p1-dd-1","dz-p1-dd-3"], ["dz-p1-dd-2"]),
+  17: ([], []),
+  18: (["dz-p1-jt-1"], ["dz-p1-jt-2","dz-p1-jt-3","dz-p1-jt-4"]),
+  19: ([], []), 20: ([], []),
+  21: (["dz-p1-fh-1","dz-p1-fh-2","dz-p1-fh-4"], ["dz-p1-fh-3","dz-p1-fh-5"]),
+  22: (["dz-p2-gd-1","dz-p2-yy-1","dz-p2-yy-2"], ["dz-p2-gd-2"]),
+  23: (["dz-p2-xy-1"], ["dz-p2-yy-3","dz-p2-yy-4","dz-p2-yy-5","dz-p2-yy-6","dz-p2-yy-7","dz-p2-yy-8","dz-p2-xy-2","dz-p2-xy-3","dz-p2-zj-1","dz-p2-zj-2","dz-p2-zj-3"]),
+  24: (["dz-p1-cl-1","dz-p1-cl-2","dz-p2-gd-3","dz-p2-cl-1","dz-p2-cl-4","dz-p2-zj-4"], ["dz-p2-gd-4","dz-p2-cl-2","dz-p2-cl-3","dz-p2-cl-5","dz-p2-cl-6"]),
+  25: (["dz-p3-1","dz-p3-xz-1"], ["dz-p3-2","dz-p3-xz-2"]),
+  26: (["dz-p3-3","dz-p3-xz-3"], ["dz-p3-4","dz-p3-xz-4","dz-p3-xz-5"]),
+  27: (["dz-p3-5","dz-p3-xz-6"], ["dz-p3-6","dz-p3-xz-7","dz-p3-xz-8"]),
+  28: ([], []), 29: ([], []), 30: ([], []),
+}
+for _d in PLAN:
+    _ln, _sk = LEARN_SKIM[_d["day"]]
+    assert set(_ln) | set(_sk) == set(_d.get("learn", [])), "day%d 拆分覆盖不全" % _d["day"]
+    _d["learn"] = _ln
+    _d["skim"] = _sk
+# lvl 重排: 精背=1(★), 备选=2(◎), 原3级(○眼熟)保留
+_learn_ids = {sid for ln, sk in LEARN_SKIM.values() for sid in ln}
+_skim_ids = {sid for ln, sk in LEARN_SKIM.values() for sid in sk}
+for _s in S:
+    if _s["id"] in _learn_ids: _s["lvl"] = 1
+    elif _s["id"] in _skim_ids and _s["lvl"] != 3: _s["lvl"] = 2
+
 # ============================================================ 换序(用户拍板2026-10-28:先大作文后小作文)
 _dz = [d for d in PLAN if d["cat"] == "dz"]
 _xz = [d for d in PLAN if d["cat"] == "xz"]
