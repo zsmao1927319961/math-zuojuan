@@ -13,12 +13,14 @@
    "title": "大作文三段式总框架+图表第一段第一句模板",
    "book": "P60-65, P77-78",
    "learn": [
-    "dz-p1-1"
+    "dz-p1-1",
+    "dz-p2-gd-2",
+    "dz-p3-1"
    ],
    "practice": [
     "2014英语二真题,只分析结构"
    ],
-   "tip": "三段式:第一段描述图表(引入+数据) → 第二段分析论证(过渡+原因/观点+影响+判断) → 第三段评论总结(总体评价+行动/展望)。",
+   "tip": "第一天先立三段骨架:第一段总起=引入图表句 → 第二段总起=过渡句(Several factors...) → 第三段总起=总体评价(In conclusion...)。三段句数:第一段2-4句/第二段4-5句/第三段2-3句。后面各天往骨架里填肉:第一段描述句→第二段原因/影响→第三段行动/展望。",
    "skim": [
     "dz-p1-2",
     "dz-p1-3"
@@ -114,7 +116,6 @@
    "title": "现象数据类第二段:宏观原因+个人需求",
    "book": "P87-94",
    "learn": [
-    "dz-p2-gd-1",
     "dz-p2-yy-1",
     "dz-p2-yy-2"
    ],
@@ -122,7 +123,7 @@
     "2023英语二第二段真题练习"
    ],
    "skim": [
-    "dz-p2-gd-2"
+    "dz-p2-gd-1"
    ]
   },
   {
@@ -180,7 +181,6 @@
    "title": "正向话题第三段:价值+行动+积极结果",
    "book": "P95-100",
    "learn": [
-    "dz-p3-1",
     "dz-p3-xz-1"
    ],
    "practice": [
@@ -494,11 +494,13 @@
    "cat": "xz",
    "grp": "第一段 · 公务书信",
    "slot": "①自我介绍·经典版",
-   "en": "<span class=\"tpl\">I am a/an</span> <span class=\"blank\">身份</span> <span class=\"tpl\">from/at/in</span> <span class=\"blank\">单位</span><span class=\"tpl\">.</span>",
+   "en": "<span class=\"tpl\">I am a/an</span> <span class=\"blank\">身份</span> <span class=\"tpl\">from</span> <span class=\"blank\">单位</span><span class=\"tpl\">.</span>",
    "zh": "我是……（单位）的一名……",
    "lvl": 1,
    "meta": "身份备选: undergraduate 本科生 / postgraduate student 研究生 / member of the Students' Union 学生会成员 / volunteer / regular user of the library 图书馆常客; 单位备选: at your university / in our community",
-   "page": "P17"
+   "page": "P17",
+   "ex": "I am a second-year student from the Department of Literature at your university.",
+   "exz": "我是贵校文学系的一名大二学生。"
   },
   {
    "id": "xz-p1-gw-2",
@@ -509,7 +511,9 @@
    "zh": "作为……，我曾……（适合建议/投诉/申请）",
    "lvl": 2,
    "meta": "经历备选: have organized several charity sales / have used the library for several years / have recently experienced a problem with... / have relevant experience in...",
-   "page": "P17"
+   "page": "P17",
+   "ex": "As a member of the Students' Union, I have organized several charity sales and volunteer activities on campus.",
+   "exz": "作为学生会成员，我曾在校内组织过多次慈善义卖和志愿活动。"
   },
   {
    "id": "xz-p1-mu-1",
@@ -520,7 +524,9 @@
    "zh": "本信旨在……",
    "lvl": 1,
    "meta": "按信型替换: 建议 offer several constructive suggestions on+话题 / 邀请 invite you to+活动 / 推荐 recommend+人或物 to you / 申请 apply for+职位 / 感谢道歉 express my heartfelt gratitude/apology to sb. for sth. / 祝贺 express my congratulations on+成就 / 投诉 make a complaint about+事 / 答复 share some relevant details about... / 辞职 inform you of my decision to resign from+职位",
-   "page": "P18"
+   "page": "P18",
+   "ex": "The purpose of this letter is to invite you to serve as a judge for the upcoming English speech contest.",
+   "exz": "本信旨在邀请您担任即将举行的英语演讲比赛的评委。"
   },
   {
    "id": "xz-p1-mu-2",
@@ -531,7 +537,9 @@
    "zh": "我写此信意在……",
    "lvl": 2,
    "meta": "动词替换同上句",
-   "page": "P18"
+   "page": "P18",
+   "ex": "I am writing to offer several suggestions in this regard.",
+   "exz": "我写信是想就此提出几点建议。（2007英语一）"
   },
   {
    "id": "xz-p1-sr-1",
@@ -551,15 +559,17 @@
    "en": "<span class=\"tpl\">I hope this letter finds you well.</span>",
    "zh": "展展佳。",
    "lvl": 1,
-   "page": "P20"
+   "page": "P20",
+   "ex": "I hope this letter finds you well. I am writing to recommend one of my favorite movies, The Pursuit of Happyness, to you.",
+   "exz": "希望你一切安好。我写信是想向你推荐我最喜欢的电影之一《当幸福来敲门》。（2011英语一）"
   },
   {
    "id": "xz-p1-sr-3",
    "cat": "xz",
    "grp": "第一段 · 私人书信",
    "slot": "①寒暄·回应来信",
-   "en": "<span class=\"tpl\">It was</span> <span class=\"blank\">great / wonderful / lovely</span> <span class=\"tpl\">to hear from you.</span>",
-   "zh": "很高兴收到你的来信。得知……，我感到高兴！",
+   "en": "<span class=\"tpl\">It was</span> <span class=\"blank\">wonderful</span> <span class=\"tpl\">to hear from you.</span>",
+   "zh": "很高兴收到你的来信。",
    "lvl": 2,
    "page": "P20"
   },
@@ -583,18 +593,22 @@
    "zh": "本次活动将围绕……展开。",
    "lvl": 1,
    "meta": "activity 可替换 the event / the program / the lecture; focus on 可替换 center on / be devoted to / feature / be organized around",
-   "page": "P21"
+   "page": "P21",
+   "ex": "The activity will focus on traditional Chinese culture.",
+   "exz": "本次活动将围绕中国传统文化展开。"
   },
   {
    "id": "xz-p2-js-2",
    "cat": "xz",
    "grp": "第二段 · 讲事情类",
    "slot": "②时间地点细节·版A",
-   "en": "<span class=\"tpl\">Scheduled for</span> <span class=\"blank\">时间</span> <span class=\"tpl\">at/in</span> <span class=\"blank\">地点</span><span class=\"tpl\">, it will include</span> <span class=\"blank\">具体内容</span><span class=\"tpl\">.</span>",
+   "en": "<span class=\"tpl\">Scheduled for</span> <span class=\"blank\">时间</span> <span class=\"tpl\">in</span> <span class=\"blank\">地点</span><span class=\"tpl\">, it will include</span> <span class=\"blank\">具体内容</span><span class=\"tpl\">.</span>",
    "zh": "本次活动定于……时间在……地点举行，具体包括……",
    "lvl": 1,
    "meta": "地点备选: at the school auditorium 学校礼堂 / in Room 201 / on the playground / at the student center; include 可替换 will feature / will consist of / will cover / will offer",
-   "page": "P21-22"
+   "page": "P21-22",
+   "ex": "Scheduled for May 10 in the school auditorium, it will include a lecture, a group discussion and a cultural performance.",
+   "exz": "本次活动定于5月10日在学校礼堂举行，包括讲座、小组讨论和文化表演。"
   },
   {
    "id": "xz-p2-js-3",
@@ -605,7 +619,9 @@
    "zh": "活动定于……日……时间在……地点举办，由……环节组成。",
    "lvl": 2,
    "meta": "两版选一背",
-   "page": "P22"
+   "page": "P22",
+   "ex": "It is scheduled to take place on October 15 at 14:00 in the lecture hall, and will consist of a keynote speech and an interactive Q&A session.",
+   "exz": "活动定于10月15日14点在报告厅举办，由主题演讲和互动问答环节组成。"
   },
   {
    "id": "xz-p2-js-4",
@@ -616,7 +632,9 @@
    "zh": "参加者还将有机会……",
    "lvl": 1,
    "meta": "收获备选: exchange ideas with 与…交流 / learn more about / gain a better understanding of / develop their skills in / broaden their horizons 拓宽视野 / enrich their practical experience / make friends with like-minded peers / acquire professional knowledge",
-   "page": "P22"
+   "page": "P22",
+   "ex": "Participants will also have the opportunity to exchange ideas with students from different countries.",
+   "exz": "参加者还将有机会与来自不同国家的学生交流观点。"
   },
   {
    "id": "xz-p2-js-5",
@@ -626,7 +644,9 @@
    "en": "<span class=\"tpl\">This experience will also enable all participants to</span> <span class=\"blank\">具体活动或收获</span><span class=\"tpl\">.</span>",
    "zh": "这段经历也将使所有参与者能够……",
    "lvl": 2,
-   "page": "P22"
+   "page": "P22",
+   "ex": "This experience will also enable all participants to develop their practical skills in cross-cultural communication.",
+   "exz": "这段经历也将使所有参与者培养跨文化交流的实践能力。"
   },
   {
    "id": "xz-p2-bc-1",
@@ -637,7 +657,9 @@
    "zh": "您在……方面给予的支持尤其宝贵。",
    "lvl": 1,
    "meta": "事项备选: my studies / my application / organizing the event / solving the problem; support with 可替换 help with / assistance with",
-   "page": "补充P23"
+   "page": "补充P23",
+   "ex": "Your support with my studies was particularly valuable.",
+   "exz": "您在我学习方面给予的支持尤其宝贵。"
   },
   {
    "id": "xz-p2-bc-2",
@@ -648,7 +670,9 @@
    "zh": "您在……方面取得的成功尤其令人钦佩。",
    "lvl": 1,
    "meta": "事项备选: the competition / your academic studies / completing the project / receiving the scholarship / gaining admission to your ideal university",
-   "page": "补充P23"
+   "page": "补充P23",
+   "ex": "Your success in the competition was particularly impressive.",
+   "exz": "你在这次比赛中取得的成功尤其令人钦佩。"
   },
   {
    "id": "xz-p2-bc-3",
@@ -659,18 +683,22 @@
    "zh": "这些帮助包括……和……，体现了您的……和……",
    "lvl": 1,
    "meta": "帮助备选: detailed guidance / useful advice / warm encouragement / thoughtful arrangements; 品质备选: kindness / patience / responsibility / generosity",
-   "page": "补充P24"
+   "page": "补充P24",
+   "ex": "This support included detailed guidance and warm encouragement, reflecting your kindness and patience.",
+   "exz": "这种支持包括详细的指导和热情的鼓励，体现了您的善良和耐心。"
   },
   {
    "id": "xz-p2-bc-4",
    "cat": "xz",
    "grp": "第二段 · 讲事情补充",
    "slot": "③收获+进一步影响",
-   "en": "<span class=\"tpl\">It has also enabled</span> <span class=\"blank\">me/you</span> <span class=\"tpl\">to</span> <span class=\"blank\">直接收获</span> <span class=\"tpl\">and given</span> <span class=\"blank\">me/you</span> <span class=\"tpl\">the</span> <span class=\"blank\">confidence/opportunity</span> <span class=\"tpl\">to</span> <span class=\"blank\">进一步行动</span><span class=\"tpl\">.</span>",
-   "zh": "这也使我/您能够……，并给了我/您……的信心/机会去……（感谢信用 confidence，祝贺信用 opportunity）",
+   "en": "<span class=\"tpl\">It has also enabled</span> <span class=\"blank\">me</span> <span class=\"tpl\">to</span> <span class=\"blank\">直接收获</span> <span class=\"tpl\">and given</span> <span class=\"blank\">me</span> <span class=\"tpl\">the</span> <span class=\"blank\">confidence</span> <span class=\"tpl\">to</span> <span class=\"blank\">进一步行动</span><span class=\"tpl\">.</span>",
+   "zh": "这也使我能够……，并给了我……的信心去……。（感谢信版）",
    "lvl": 1,
-   "meta": "感谢信收获: complete the task successfully / solve the problem / adapt to the new environment; 祝贺信收获: gain greater confidence / receive wider recognition / make further progress",
-   "page": "补充P25"
+   "meta": "感谢信收获: complete the task successfully / solve the problem / adapt to the new environment; 祝贺信收获: gain greater confidence / receive wider recognition / make further progress；祝贺信版: enabled you to + given you the opportunity to",
+   "page": "补充P25",
+   "ex": "It has also enabled me to complete the task successfully and given me the confidence to face similar challenges in the future.",
+   "exz": "这也使我顺利完成了任务，并给了我面对未来类似挑战的信心。（感谢信版）"
   },
   {
    "id": "xz-p2-gd-1",
@@ -681,7 +709,9 @@
    "zh": "我强烈推荐……作为/用于……",
    "lvl": 1,
    "meta": "strongly recommend 可替换 highly recommend / would recommend / suggest choosing; 选择备选 an ideal choice / a suitable option / your first destination / a valuable resource",
-   "page": "P24"
+   "page": "P24",
+   "ex": "I strongly recommend the Palace Museum as your first destination in Beijing.",
+   "exz": "我强烈推荐你将故宫作为北京之行的第一站。"
   },
   {
    "id": "xz-p2-gd-2",
@@ -692,7 +722,9 @@
    "zh": "一个主要原因是……",
    "lvl": 1,
    "meta": "one major reason 可替换 the primary reason / a key reason / what makes it particularly attractive; 万能理由: it offers an excellent opportunity to / it has rich historical and cultural value / it has great educational value / it offers considerable practical value",
-   "page": "P24-25"
+   "page": "P24-25",
+   "ex": "One major reason is that it offers an excellent opportunity to learn about Chinese history and traditional architecture.",
+   "exz": "一个主要原因是，它提供了了解中国历史和传统建筑的绝佳机会。"
   },
   {
    "id": "xz-p2-gd-3",
@@ -703,18 +735,22 @@
    "zh": "更重要的是，这些品质将使他/她能够……",
    "lvl": 1,
    "meta": "工作结果备选: perform the duties effectively / cooperate effectively with others / deal with unexpected problems / adapt quickly to the new environment / make a valuable contribution to the team",
-   "page": "P25"
+   "page": "P25",
+   "ex": "More importantly, these qualities will enable him to perform the duties effectively.",
+   "exz": "更重要的是，这些品质将使他能够高效履行职责。"
   },
   {
    "id": "xz-p2-gd-4",
    "cat": "xz",
    "grp": "第二段 · 观点类",
    "slot": "⑥补充好处·推荐事物",
-   "en": "<span class=\"tpl\">More importantly, this feature allows</span> <span class=\"blank\">visitors/readers</span> <span class=\"tpl\">to</span> <span class=\"blank\">实际收获</span><span class=\"tpl\">.</span>",
+   "en": "<span class=\"tpl\">More importantly, this feature allows</span> <span class=\"blank\">visitors</span> <span class=\"tpl\">to</span> <span class=\"blank\">实际收获</span><span class=\"tpl\">.</span>",
    "zh": "更重要的是，这一特点能够让游客/读者……",
    "lvl": 1,
-   "meta": "this feature 可替换 this advantage / its rich content / its unique design; 收获备选: gain a deeper understanding of / broaden their horizons / enjoy a memorable cultural experience / apply the ideas to their daily lives",
-   "page": "P26"
+   "meta": "this feature 可替换 this advantage / its rich content / its unique design; 收获备选: gain a deeper understanding of / broaden their horizons / enjoy a memorable cultural experience / apply the ideas to their daily lives；推荐书籍/电影/课程时 visitors 换 readers",
+   "page": "P26",
+   "ex": "More importantly, its grand ancient walls and beautiful mountain views allow visitors to enjoy amazing scenery and learn interesting historical stories.",
+   "exz": "更重要的是，宏伟的古墙和优美的山景让游客能够欣赏到壮丽的风景，并了解有趣的历史故事。（2020英语二）"
   },
   {
    "id": "xz-p2-jj-1",
@@ -725,7 +761,9 @@
    "zh": "很遗憾，……",
    "lvl": 1,
    "meta": "Unfortunately 可替换 Regrettably / I am sorry to say that / I regret to inform you that; 问题备选: I will be unable to attend... / I cannot complete the task on time / the product failed to work properly / the service did not meet my expectations",
-   "page": "P28"
+   "page": "P28",
+   "ex": "Unfortunately, I will be unable to attend the meeting as originally planned.",
+   "exz": "很遗憾，我无法按原计划参加会议。"
   },
   {
    "id": "xz-p2-jj-2",
@@ -736,7 +774,9 @@
    "zh": "这主要是因为……",
    "lvl": 1,
    "meta": "可替换 is due to the fact that / results from +名词 / has been caused by; 原因备选: I have to attend an important examination / an unexpected emergency has arisen / I have fallen ill / there has been a change in my schedule",
-   "page": "P28"
+   "page": "P28",
+   "ex": "This is mainly because I have to attend an important examination at the same time.",
+   "exz": "这主要是因为我必须在同一时间参加一场重要考试。"
   },
   {
    "id": "xz-p2-jj-3",
@@ -747,7 +787,9 @@
    "zh": "因此，……",
    "lvl": 1,
    "meta": "影响备选: I was unable to use the product / the problem caused considerable inconvenience / my work was seriously affected / additional time and money were wasted",
-   "page": "P29"
+   "page": "P29",
+   "ex": "As a result, I was unable to complete my work and suffered considerable inconvenience.",
+   "exz": "因此，我无法完成工作，并遭受了很大不便。"
   },
   {
    "id": "xz-p2-jj-4",
@@ -758,7 +800,9 @@
    "zh": "为了弥补……，我将……",
    "lvl": 1,
    "meta": "To make up for 可替换 To compensate for; 补救备选: arrange another meeting / complete the task as soon as possible / ask a classmate to take notes",
-   "page": "P29"
+   "page": "P29",
+   "ex": "To make up for my absence, I will ask a classmate to take notes and send me the relevant materials.",
+   "exz": "为了弥补缺席，我会请一位同学做记录，并把相关材料发给我。"
   },
   {
    "id": "xz-p2-jj-5",
@@ -769,18 +813,22 @@
    "zh": "为了解决此事，如果您能……，我将不胜感激。",
    "lvl": 1,
    "meta": "To resolve the matter 可替换 To address the problem / To deal with the issue; 办法备选: provide a replacement / offer a full refund / take appropriate measures / investigate the matter",
-   "page": "P29"
+   "page": "P29",
+   "ex": "To resolve the matter, I would appreciate it if you could provide a replacement or offer a full refund.",
+   "exz": "为了解决此事，如果您能更换产品或全额退款，我将不胜感激。"
   },
   {
    "id": "xz-p3-1",
    "cat": "xz",
    "grp": "第三段 · 结尾",
    "slot": "①表达情感",
-   "en": "<span class=\"tpl\">I</span> <span class=\"blank\">sincerely / truly / genuinely</span> <span class=\"tpl\">hope that you will</span> <span class=\"blank\">动作</span> <span class=\"tpl\">my</span> <span class=\"blank\">事项</span><span class=\"tpl\">.</span>",
+   "en": "<span class=\"tpl\">I</span> <span class=\"blank\">sincerely</span> <span class=\"tpl\">hope that you will</span> <span class=\"blank\">动作</span> <span class=\"tpl\">my</span> <span class=\"blank\">事项</span><span class=\"tpl\">.</span>",
    "zh": "我真诚地希望您能……我的……",
    "lvl": 1,
-   "meta": "动作×事项搭配: accept invitation/apology 接受邀请/道歉 / consider suggestions 考虑建议 / adopt suggestions 采纳建议 / approve application 批准申请 / understand decision 理解决定 / respect decision 尊重决定",
-   "page": "P31"
+   "meta": "动作×事项搭配: accept invitation/apology 接受邀请/道歉 / consider suggestions 考虑建议 / adopt suggestions 采纳建议 / approve application 批准申请 / understand decision 理解决定 / respect decision 尊重决定；sincerely 可替换 truly / genuinely",
+   "page": "P31",
+   "ex": "I sincerely hope that you will understand and respect my decision.",
+   "exz": "我真诚地希望您能够理解并尊重我的决定。"
   },
   {
    "id": "xz-p3-2",
@@ -811,7 +859,9 @@
    "zh": "请在方便时告诉我……",
    "lvl": 1,
    "meta": "回复内容备选: your thoughts / your opinion / your plans / whether you can attend / whether the arrangement suits you; when convenient 可替换 when you have time / at your convenience / as soon as possible",
-   "page": "P32"
+   "page": "P32",
+   "ex": "Please let me know your thoughts when convenient.",
+   "exz": "方便时请告诉我你的想法。（2011英语一）"
   },
   {
    "id": "xz-tz-1-1",
@@ -822,7 +872,9 @@
    "zh": "学生会很高兴地宣布……将举办。",
    "lvl": 1,
    "meta": "活动名称备选: reading sharing session 读书分享会 / English speech contest / essay competition / campus cultural festival / art exhibition / campus food festival / volunteer recruitment",
-   "page": "P36"
+   "page": "P36",
+   "ex": "The Students' Union is pleased to announce that a campus book fair will be held.",
+   "exz": "学生会很高兴地宣布，将举办校园书展。"
   },
   {
    "id": "xz-tz-1-2",
@@ -832,7 +884,9 @@
    "en": "<span class=\"tpl\">It's a pleasure to inform everyone that a</span> <span class=\"blank\">活动名称</span> <span class=\"tpl\">will be held in our university.</span>",
    "zh": "很高兴地通知大家，我校将举办……活动。",
    "lvl": 2,
-   "page": "P36"
+   "page": "P36",
+   "ex": "It's a pleasure to inform everyone that an English speech contest will be held in our university.",
+   "exz": "很高兴地通知大家，我校将举办英语演讲比赛。"
   },
   {
    "id": "xz-tz-1-3",
@@ -843,7 +897,9 @@
    "zh": "本次活动的目的是……",
    "lvl": 1,
    "meta": "目的备选: promote cultural exchange / enrich campus life / raise environmental awareness / improve practical skills / encourage communication / provide learning opportunities / help students learn more about...",
-   "page": "P36"
+   "page": "P36",
+   "ex": "The purpose of the event is to encourage students to develop an interest in reading.",
+   "exz": "本次活动旨在鼓励学生培养阅读兴趣。"
   },
   {
    "id": "xz-tz-1-4",
@@ -854,18 +910,22 @@
    "zh": "本通知旨在向……提供有关……的详细信息。",
    "lvl": 2,
    "meta": "with details about 可替换 with information regarding / with relevant information on",
-   "page": "P36"
+   "page": "P36",
+   "ex": "The purpose of this notice is to provide all students with details about the upcoming book fair.",
+   "exz": "本通知旨在向全体学生介绍即将举行的书展的具体信息。"
   },
   {
    "id": "xz-tz-hd-1",
    "cat": "xz",
    "grp": "通知 · 活动通知第二段",
    "slot": "①时间地点",
-   "en": "<span class=\"tpl\">The event will be held at/in</span> <span class=\"blank\">地点</span> <span class=\"tpl\">at</span> <span class=\"blank\">时间</span> <span class=\"tpl\">on</span> <span class=\"blank\">日期</span><span class=\"tpl\">.</span>",
+   "en": "<span class=\"tpl\">The event will be held in</span> <span class=\"blank\">地点</span> <span class=\"tpl\">at</span> <span class=\"blank\">时间</span> <span class=\"tpl\">on</span> <span class=\"blank\">日期</span><span class=\"tpl\">.</span>",
    "zh": "该活动将于……在……举行。",
    "lvl": 1,
-   "meta": "搭配: at+具体时刻 at 2:00 p.m. / on+具体日期 on May 10 / in+室内场所 in the school auditorium / at+具体地点 at the school gate; event 可替换 activity / lecture / competition / workshop",
-   "page": "P38"
+   "meta": "搭配: at+具体时刻 at 2:00 p.m. / on+具体日期 on May 10 / in+室内场所 in the school auditorium / at+具体地点 at the school gate; event 可替换 activity / lecture / competition / workshop；at 用于具体地点(at the school gate), in 用于室内场所",
+   "page": "P38",
+   "ex": "The event will be held in the school auditorium from 2:00 to 4:00 p.m. on May 10.",
+   "exz": "该活动将于5月10日下午2点至4点在学校礼堂举行。"
   },
   {
    "id": "xz-tz-hd-2",
@@ -876,7 +936,9 @@
    "zh": "欢迎所有对……感兴趣的学生参加。",
    "lvl": 1,
    "meta": "are welcome to attend 可替换 are encouraged to participate / may attend / can participate",
-   "page": "P38"
+   "page": "P38",
+   "ex": "All students interested in traditional Chinese culture are welcome to attend.",
+   "exz": "欢迎所有喜爱中国传统文化的同学到场参与。"
   },
   {
    "id": "xz-tz-hd-3",
@@ -886,7 +948,9 @@
    "en": "<span class=\"tpl\">Highlights will include</span> <span class=\"blank\">活动1</span><span class=\"tpl\">,</span> <span class=\"blank\">活动2</span> <span class=\"tpl\">and</span> <span class=\"blank\">活动3</span><span class=\"tpl\">.</span>",
    "zh": "本次活动亮点包括……",
    "lvl": 1,
-   "page": "P38"
+   "page": "P38",
+   "ex": "Highlights will include a keynote speech, a group discussion and a question-and-answer session.",
+   "exz": "本次活动亮点设有主旨演讲、小组讨论以及问答环节。"
   },
   {
    "id": "xz-tz-zm-1",
@@ -897,7 +961,9 @@
    "zh": "理想的申请者应当……并具备……",
    "lvl": 1,
    "meta": "品质(形容词): responsible / patient / reliable / enthusiastic / hard-working / cooperative / energetic; 能力(名词短语): good communication skills / strong organizational skills / excellent teamwork skills / a good command of English",
-   "page": "P40"
+   "page": "P40",
+   "ex": "Ideal applicants should be responsible and possess good communication skills.",
+   "exz": "理想人选需有责任心，并且具备良好的沟通能力。"
   },
   {
    "id": "xz-tz-zm-2",
@@ -907,7 +973,9 @@
    "en": "<span class=\"tpl\">We are looking for applicants who are</span> <span class=\"blank\">品质</span> <span class=\"tpl\">and have</span> <span class=\"blank\">能力</span><span class=\"tpl\">.</span>",
    "zh": "我们寻找的申请者需拥有……品质，掌握……能力。",
    "lvl": 2,
-   "page": "P40"
+   "page": "P40",
+   "ex": "We are looking for applicants who are patient and have good communication skills.",
+   "exz": "我们寻找的申请者需富有耐心，并且掌握良好的沟通能力。"
   },
   {
    "id": "xz-tz-zm-3",
@@ -940,18 +1008,22 @@
    "zh": "主要工作包括……",
    "lvl": 1,
    "meta": "职责备选: receiving guests / answering inquiries / offering directions / preparing materials / maintaining order / providing language assistance / taking photos / distributing leaflets",
-   "page": "P41"
+   "page": "P41",
+   "ex": "The main duties involve receiving guests, offering directions and preparing conference materials.",
+   "exz": "主要工作职责包括接待来宾、指引方向以及准备会议资料。"
   },
   {
    "id": "xz-tz-3-1",
    "cat": "xz",
    "grp": "通知 · 第三段",
    "slot": "①参加/申请方式",
-   "en": "<span class=\"tpl\">Those who are interested should</span> <span class=\"blank\">参加/申请方式</span> <span class=\"tpl\">through/at</span> <span class=\"blank\">渠道</span> <span class=\"tpl\">by</span> <span class=\"blank\">截止时间</span><span class=\"tpl\">.</span>",
-   "zh": "感兴趣的同学应于……前通过……参加或申请。",
+   "en": "<span class=\"tpl\">Those who are interested should</span> <span class=\"blank\">报名方式</span> <span class=\"tpl\">through</span> <span class=\"blank\">渠道</span> <span class=\"tpl\">by</span> <span class=\"blank\">截止时间</span><span class=\"tpl\">.</span>",
+   "zh": "感兴趣的同学应于……前通过……报名。",
    "lvl": 1,
    "meta": "方式备选: register for the event / sign up for the activity / submit an application / send a brief self-introduction; 渠道备选: through the school website / through the online system / at the Students' Union office",
-   "page": "P42"
+   "page": "P42",
+   "ex": "Those who are interested should register for the event through the school website by May 10.",
+   "exz": "感兴趣的同学应于5月10日前通过学校网站报名参加本次活动。"
   },
   {
    "id": "xz-tz-3-2",
@@ -969,11 +1041,13 @@
    "cat": "xz",
    "grp": "通知 · 第三段",
    "slot": "②联系方式·版A",
-   "en": "<span class=\"tpl\">For further information, please contact</span> <span class=\"blank\">联系人/组织</span> <span class=\"tpl\">at/via</span> <span class=\"blank\">联系方式</span><span class=\"tpl\">.</span>",
+   "en": "<span class=\"tpl\">For further information, please contact</span> <span class=\"blank\">联系人</span> <span class=\"tpl\">at</span> <span class=\"blank\">联系方式</span><span class=\"tpl\">.</span>",
    "zh": "如需了解更多信息，请通过……联系……",
    "lvl": 1,
    "meta": "For further information 可替换 For more details / If you have any questions",
-   "page": "P43"
+   "page": "P43",
+   "ex": "For further information, please contact the Students' Union at studentsunion@university.edu.",
+   "exz": "如需了解更多信息，请通过 studentsunion@university.edu 联系学生会。"
   },
   {
    "id": "xz-tz-3-4",
@@ -990,21 +1064,26 @@
    "cat": "dz",
    "grp": "第一段 · 引入图表",
    "slot": "总起句·版A",
-   "en": "<span class=\"tpl\">The</span> <span class=\"blank\">图表类型</span> <span class=\"tpl\">above clearly</span> <span class=\"blank\">shows / compares</span> <span class=\"blank\">主题内容</span> <span class=\"blank\">in 地点</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
-   "zh": "上述……清楚地展示/对比了……",
+   "en": "<span class=\"tpl\">The</span> <span class=\"blank\">图表类型</span> <span class=\"tpl\">above clearly</span> <span class=\"blank\">shows</span> <span class=\"blank\">主题内容</span> <span class=\"blank\">in 地点</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
+   "zh": "上述……清楚地展示了……。",
    "lvl": 1,
-   "meta": "图表类型: bar chart 柱状图 / pie chart 饼状图 / line graph 折线图 / table 表格; 动词: show the changes in... / show the percentage of... / show the differences between... / compare... in terms of...",
-   "page": "P78"
+   "meta": "图表类型: bar chart 柱状图 / pie chart 饼状图 / line graph 折线图 / table 表格; 动词: show the changes in... / show the percentage of... / show the differences between... / compare... in terms of...；compares 用于多类对比(如饼图各因素)",
+   "page": "P78",
+   "ex": "The pie charts above clearly show the factors that students considered when choosing a university in China in two different years.",
+   "exz": "上述饼状图清楚地展示了近两年中国学生选择大学时所考虑的因素。"
   },
   {
    "id": "dz-p1-2",
    "cat": "dz",
    "grp": "第一段 · 引入图表",
    "slot": "总起句·版B",
-   "en": "<span class=\"tpl\">What the</span> <span class=\"blank\">图表类型</span> <span class=\"tpl\">provided is the</span> <span class=\"blank\">reasons / purpose / choices</span> <span class=\"tpl\">of</span> <span class=\"blank\">主题</span><span class=\"tpl\">.</span>",
+   "en": "<span class=\"tpl\">What the</span> <span class=\"blank\">图表类型</span> <span class=\"tpl\">provided is the</span> <span class=\"blank\">purpose</span> <span class=\"tpl\">of</span> <span class=\"blank\">主题</span><span class=\"tpl\">.</span>",
    "zh": "……提供了……的调查结果。",
    "lvl": 2,
-   "page": "P78"
+   "page": "P78",
+   "meta": "purpose 可替换 reasons / choices / elements",
+   "ex": "What the pie chart provided is the purpose of mobile reading for students in a certain university.",
+   "exz": "该饼状图提供了某高校学生手机阅读目的的调查结果。"
   },
   {
    "id": "dz-p1-3",
@@ -1014,50 +1093,61 @@
    "en": "<span class=\"tpl\">According to the above</span> <span class=\"blank\">图表类型</span><span class=\"tpl\">, the percentages of</span> <span class=\"blank\">对象</span> <span class=\"tpl\">in</span> <span class=\"blank\">范围</span> <span class=\"tpl\">underwent an enormous change</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
    "zh": "根据上面……所示，……的百分比在……年间发生了巨大的变化。",
    "lvl": 2,
-   "page": "P78"
+   "page": "P78",
+   "ex": "According to the above bar chart, the percentages of graduates' choices after graduation in a certain university underwent an enormous change from 2013 to 2018.",
+   "exz": "根据上面柱状图所示，某高校毕业生去向的百分比在2013至2018年间发生了巨大的变化。"
   },
   {
    "id": "dz-p1-dd-1",
    "cat": "dz",
    "grp": "第一段 · 动态描述",
    "slot": "显著变化句",
-   "en": "<span class=\"tpl\">There was a noticeable</span> <span class=\"blank\">rise / decline</span> <span class=\"tpl\">in</span> <span class=\"blank\">对象词</span> <span class=\"tpl\">from</span> <span class=\"blank\">A</span> <span class=\"tpl\">to</span> <span class=\"blank\">B</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
-   "zh": "在……时间内，……出现了显著的上升/下降（从A到B）。",
+   "en": "<span class=\"tpl\">There was a noticeable</span> <span class=\"blank\">increase</span> <span class=\"tpl\">in</span> <span class=\"blank\">对象词</span> <span class=\"tpl\">from</span> <span class=\"blank\">A</span> <span class=\"tpl\">to</span> <span class=\"blank\">B</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
+   "zh": "在……时间内，……出现了显著的增长（从A到B）。",
    "lvl": 1,
-   "meta": "升降名词: increase/rise/growth/drop/decline/fall; 程度词: noticeable/remarkable/dramatic; 副词库见素材: dramatically/sharply/considerably/rapidly/steadily/gradually/slightly",
-   "page": "P79-80"
+   "meta": "升降名词: increase/rise/growth/drop/decline/fall; 程度词: noticeable/remarkable/dramatic; 副词库见素材: dramatically/sharply/considerably/rapidly/steadily/gradually/slightly；increase 可替换 rise / growth;下降用 decline / drop",
+   "page": "P79-80",
+   "ex": "There was a remarkable increase in the health literacy level among Chinese residents, from 8.80% in 2012 to 25.40% in 2021.",
+   "exz": "2012年至2021年，我国居民健康素养水平显著提高，从8.80%升至25.40%。（2023英语二真题数据）"
   },
   {
    "id": "dz-p1-dd-2",
    "cat": "dz",
    "grp": "第一段 · 动态描述",
    "slot": "对象变化句",
-   "en": "<span class=\"blank\">对象词</span> <span class=\"tpl\">rose / increased / dropped / fell / stood at</span> <span class=\"blank\">数字</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
-   "zh": "……（对象）在……（时间）上升/增长/下降/跌至/达到……",
+   "en": "<span class=\"blank\">对象词</span> <span class=\"tpl\">increased</span> <span class=\"blank\">数字</span> <span class=\"blank\">时间</span><span class=\"tpl\">.</span>",
+   "zh": "……（对象）在……（时间）增长到……。",
    "lvl": 2,
    "meta": "词组备选: continue its upward trend / on the rise / on the decline / remain stable 保持平稳 / fluctuate between...and... 波动",
-   "page": "P80"
+   "page": "P80",
+   "ex": "The volume of goods transported by rail increased to 40 million tons in 2002, and then it stood at this level in the rest of the period.",
+   "exz": "铁路运输货物的数量2002年增加到了4000万吨，之后就一直保持这一水平。"
   },
   {
    "id": "dz-p1-dd-3",
    "cat": "dz",
    "grp": "第一段 · 动态描述",
    "slot": "双对象对比句",
-   "en": "<span class=\"tpl\">During this period, the percentage of</span> <span class=\"blank\">对象A</span> <span class=\"tpl\">has declined/increased sharply from</span> <span class=\"blank\">A</span> <span class=\"tpl\">to</span> <span class=\"blank\">B</span><span class=\"tpl\">, whereas those</span> <span class=\"blank\">doing sth</span> <span class=\"tpl\">declined/increased markedly from</span> <span class=\"blank\">A1</span> <span class=\"tpl\">and</span> <span class=\"blank\">A2</span> <span class=\"tpl\">to</span> <span class=\"blank\">B1</span> <span class=\"tpl\">and</span> <span class=\"blank\">B2</span> <span class=\"tpl\">respectively.</span>",
-   "zh": "在此期间，……的数量从A急剧下降/显著增长至B；而……则分别从A1、A2急剧下降/显著增长到B1、B2。",
+   "en": "<span class=\"tpl\">During this period, the percentage of</span> <span class=\"blank\">对象A</span> <span class=\"tpl\">has increased sharply from</span> <span class=\"blank\">A</span> <span class=\"tpl\">to</span> <span class=\"blank\">B</span><span class=\"tpl\">, whereas those</span> <span class=\"blank\">doing sth</span> <span class=\"tpl\">increased markedly from</span> <span class=\"blank\">A1</span> <span class=\"tpl\">and</span> <span class=\"blank\">A2</span> <span class=\"tpl\">to</span> <span class=\"blank\">B1</span> <span class=\"tpl\">and</span> <span class=\"blank\">B2</span> <span class=\"tpl\">respectively.</span>",
+   "zh": "在此期间，……的数量从A急剧增长至B；而……分别从A1、A2显著增长到B1、B2。",
    "lvl": 1,
-   "page": "P80"
+   "page": "P80",
+   "meta": "下降方向: has declined sharply / declined markedly",
+   "ex": "During this period, the percentage of students choosing further education has increased sharply from 26.3% to 34%, whereas those running their own business increased markedly from 1.3% to 2.6%.",
+   "exz": "在此期间，选择升学的学生比例从26.3%急剧上升到34%，而自主创业的学生比例也从1.3%显著增长到2.6%。（2019英语二真题数据）"
   },
   {
    "id": "dz-p1-jt-1",
    "cat": "dz",
    "grp": "第一段 · 静态描述",
    "slot": "高低对比句",
-   "en": "<span class=\"tpl\">The proportion of</span> <span class=\"blank\">A</span> <span class=\"tpl\">is higher than / lower than</span> <span class=\"blank\">B</span><span class=\"tpl\">, while</span> <span class=\"blank\">补充对比</span><span class=\"tpl\">.</span>",
-   "zh": "A的占比高于/低于B，而……。",
+   "en": "<span class=\"tpl\">The proportion of</span> <span class=\"blank\">A</span> <span class=\"tpl\">is higher than</span> <span class=\"blank\">B</span><span class=\"tpl\">, while</span> <span class=\"blank\">补充对比</span><span class=\"tpl\">.</span>",
+   "zh": "A的占比高于B，而……。",
    "lvl": 1,
-   "meta": "is higher than 可替换 is the same as / is equal to 与…持平",
-   "page": "P82"
+   "meta": "is higher than 可替换 is the same as / is equal to 与…持平；下降用 is lower than;持平 is the same as",
+   "page": "P82",
+   "ex": "The proportion of spending on New Year gifts is higher than that on dinners, transportation and other items, whereas the percentages of the latter three categories are equal to one another.",
+   "exz": "新年礼物的花销占比高于聚餐、交通以及其他项目，而后三者的占比持平。（2015英语二）"
   },
   {
    "id": "dz-p1-jt-2",
@@ -1068,7 +1158,9 @@
    "zh": "A的数据，相较于B的数据……。",
    "lvl": 2,
    "meta": "compared with 可替换 compared to / in contrast to",
-   "page": "P82"
+   "page": "P82",
+   "ex": "The percentage of males choosing computer science stands at 10%, compared with 4% of females.",
+   "exz": "选择计算机专业的男生占10%，相比之下女生仅占4%。"
   },
   {
    "id": "dz-p1-jt-3",
@@ -1086,10 +1178,12 @@
    "grp": "第一段 · 静态描述",
    "slot": "差距句",
    "en": "<span class=\"tpl\">There was a huge gap between</span> <span class=\"blank\">A</span> <span class=\"tpl\">and</span> <span class=\"blank\">B</span><span class=\"tpl\">:</span> <span class=\"blank\">数据</span><span class=\"tpl\">.</span>",
-   "zh": "A与B之间存在很大差异/巨大差距。",
+   "zh": "A与B之间存在巨大差距。",
    "lvl": 2,
    "meta": "a huge gap 可替换 a big difference / a huge change",
-   "page": "P82"
+   "page": "P82",
+   "ex": "There was a huge gap between the proportions of males and females choosing medicine: about 4% for males and 15% for females.",
+   "exz": "选择医学专业的男女比例存在巨大差距：男生约4%，女生约15%。"
   },
   {
    "id": "dz-p1-fh-1",
@@ -1099,7 +1193,9 @@
    "en": "<span class=\"tpl\">The two charts above jointly present the results of a survey concerning</span> <span class=\"blank\">共同主题</span><span class=\"tpl\">.</span>",
    "zh": "上述两幅图表共同呈现了一项关于……的调查结果。",
    "lvl": 1,
-   "page": "P83"
+   "page": "P83",
+   "ex": "The two charts above jointly present the results of a survey concerning consumers' acceptance of elderly-care robots and their primary concerns about such products.",
+   "exz": "上述两幅图表共同呈现了一项关于消费者对养老机器人的接受度及对此类产品首要关注点的调查结果。"
   },
   {
    "id": "dz-p1-fh-2",
@@ -1109,7 +1205,9 @@
    "en": "<span class=\"tpl\">The pie chart shows</span> <span class=\"blank\">饼图信息</span><span class=\"tpl\">, while the bar chart displays</span> <span class=\"blank\">柱图信息</span><span class=\"tpl\">.</span>",
    "zh": "饼图显示了……，而柱状图展示了……。",
    "lvl": 1,
-   "page": "P84"
+   "page": "P84",
+   "ex": "The pie chart shows different levels of public acceptance of elderly-care robots, while the bar chart displays the three main factors that consumers care about most.",
+   "exz": "饼图显示了公众对养老机器人不同程度的接受情况，而柱状图展示了消费者最关心的三大主要因素。"
   },
   {
    "id": "dz-p1-fh-3",
@@ -1119,7 +1217,9 @@
    "en": "<span class=\"tpl\">As can be seen from the two charts, the pie graph illustrates</span> <span class=\"blank\">饼图信息</span><span class=\"tpl\">, with the bar graph revealing</span> <span class=\"blank\">柱图信息</span><span class=\"tpl\">.</span>",
    "zh": "从两幅图表中可以看出，饼图说明了……，同时柱状图揭示了……。",
    "lvl": 2,
-   "page": "P84"
+   "page": "P84",
+   "ex": "As can be seen from the two charts, the pie graph illustrates different attitudes towards elderly-care robots, with the bar graph revealing that safety is the top concern.",
+   "exz": "从两幅图表中可以看出，饼图说明了人们对养老机器人的不同态度，同时柱状图揭示出安全是首要的关注点。"
   },
   {
    "id": "dz-p1-fh-4",
@@ -1129,7 +1229,9 @@
    "en": "<span class=\"tpl\">The two sets of data are closely related, as</span> <span class=\"blank\">A</span> <span class=\"tpl\">may be a major reason for</span> <span class=\"blank\">B</span><span class=\"tpl\">.</span>",
    "zh": "两组数据紧密相关，因为……或许是造成……的主要原因。",
    "lvl": 1,
-   "page": "P84"
+   "page": "P84",
+   "ex": "The two sets of data are closely related, as safety concerns may be a major reason for some people's unwillingness to accept elderly-care robots.",
+   "exz": "两组数据紧密相关，因为安全顾虑或许是部分人不愿接受养老机器人的主要原因。"
   },
   {
    "id": "dz-p1-fh-5",
@@ -1139,7 +1241,9 @@
    "en": "<span class=\"tpl\">It is clear that</span> <span class=\"blank\">A</span> <span class=\"tpl\">has a close connection with</span> <span class=\"blank\">B</span> <span class=\"tpl\">reflected in the charts.</span>",
    "zh": "显而易见，图表反映出……与……有着密切的联系。",
    "lvl": 2,
-   "page": "P84"
+   "page": "P84",
+   "ex": "It is clear that public acceptance of elderly-care robots has a close connection with their attention to product safety and price.",
+   "exz": "显而易见，图表反映出公众对养老机器人的接受度与他们对产品安全和价格的关注度有着密切的联系。"
   },
   {
    "id": "dz-p1-cl-1",
@@ -1150,7 +1254,9 @@
    "zh": "在文章中，作者认为……",
    "lvl": 1,
    "meta": "argues 可替换 claims / suggests / states / believes",
-   "page": "P85"
+   "page": "P85",
+   "ex": "In the passage, the author argues that failure can be compensated by higher integrity.",
+   "exz": "在这篇文章中，作者认为失败可以通过更高的诚信来弥补。"
   },
   {
    "id": "dz-p1-cl-2",
@@ -1161,7 +1267,9 @@
    "zh": "我完全同意这个观点。",
    "lvl": 1,
    "meta": "完全同意: I fully agree with / support / share / subscribe to this view; 部分同意: I partly agree with the author; 不同意: I disagree with / oppose this opinion",
-   "page": "P85"
+   "page": "P85",
+   "ex": "In the passage, the author argues that failure can be compensated by higher integrity. I fully agree with this view.",
+   "exz": "在这篇文章中，作者认为失败可以通过更高的诚信来弥补。我完全同意这一观点。"
   },
   {
    "id": "dz-p2-gd-1",
@@ -1170,7 +1278,7 @@
    "slot": "现象分析类·版A",
    "en": "<span class=\"tpl\">This phenomenon can be attributed to several factors.</span>",
    "zh": "这种现象可以归因于几个因素。",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "可替换 can be traced to / is caused by",
    "page": "P86"
   },
@@ -1179,11 +1287,13 @@
    "cat": "dz",
    "grp": "第二段 · 过渡句",
    "slot": "现象分析类·版B",
-   "en": "<span class=\"tpl\">Several factors can account for this</span> <span class=\"blank\">phenomenon / trend</span><span class=\"tpl\">.</span>",
-   "zh": "有几个因素能解释这一现象/趋势。",
-   "lvl": 2,
-   "meta": "另备: The reasons behind this phenomenon are not difficult to identify. 这一现象背后的原因不难发现",
-   "page": "P86"
+   "en": "<span class=\"tpl\">Several factors can account for this</span> <span class=\"blank\">trend</span><span class=\"tpl\">.</span>",
+   "zh": "有几个因素能解释这一趋势。",
+   "lvl": 1,
+   "meta": "另备: The reasons behind this phenomenon are not difficult to identify. 这一现象背后的原因不难发现；trend 可替换 phenomenon",
+   "page": "P86",
+   "ex": "Several factors can account for this trend. First, the development of the economy has provided local governments with more financial resources.",
+   "exz": "有几个因素可以解释这一趋势。首先，经济发展为地方政府提供了更多资金。（英一2024城市公园真题套用）"
   },
   {
    "id": "dz-p2-gd-3",
@@ -1214,18 +1324,22 @@
    "zh": "首先，……的发展为人们提供了……，使他们更容易……",
    "lvl": 1,
    "meta": "development of 可替换 improvement of / continued growth of / widespread application of / growing popularity of / increasing availability of",
-   "page": "P89"
+   "page": "P89",
+   "ex": "First, the rapid development of technology has provided people with more convenient services, making it easier for them to obtain information.",
+   "exz": "首先，科技的快速发展为人们提供了更加便利的服务，使他们更容易获取信息。"
   },
   {
    "id": "dz-p2-yy-2",
    "cat": "dz",
    "grp": "第二段 · 现象原因",
    "slot": "个人观念原因句",
-   "en": "<span class=\"tpl\">Besides, with the growing awareness of / demand for</span> <span class=\"blank\">主题</span><span class=\"tpl\">, an increasing number of people are willing to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
-   "zh": "此外，随着人们对……的意识/需求不断增强，越来越多的人愿意……",
+   "en": "<span class=\"tpl\">Besides, with the growing awareness of</span> <span class=\"blank\">主题</span><span class=\"tpl\">, an increasing number of people are willing to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "此外，随着人们对……的意识不断增强，越来越多的人愿意……。",
    "lvl": 1,
    "meta": "growing awareness of 可替换 increasing attention paid to / rising demand for / changing attitudes toward / people attaching greater importance to",
-   "page": "P89-90"
+   "page": "P89-90",
+   "ex": "Besides, with the growing awareness of environmental protection, an increasing number of people are willing to adopt a greener lifestyle.",
+   "exz": "此外，随着环保意识不断增强，越来越多的人愿意选择更加环保的生活方式。"
   },
   {
    "id": "dz-p2-yy-3",
@@ -1296,7 +1410,9 @@
    "zh": "因此，这一现象不仅能够……，还能够……（正负面都可以）",
    "lvl": 1,
    "meta": "例: weaken individuals' ability to think independently + increase society's dependence on technology; help individuals make better health decisions + reduce pressure on the healthcare system",
-   "page": "补充P90"
+   "page": "补充P90",
+   "ex": "As a result, this phenomenon can not only weaken individuals' ability to think independently but also increase society's dependence on technology.",
+   "exz": "因此，这一现象不仅可能削弱个人独立思考的能力，还可能加深社会对技术的依赖。"
   },
   {
    "id": "dz-p2-xy-2",
@@ -1307,7 +1423,9 @@
    "zh": "这一趋势能够改善……，并促进……",
    "lvl": 2,
    "meta": "improve 可替换 enhance; promote 可替换 support",
-   "page": "补充P90"
+   "page": "补充P90",
+   "ex": "This trend can improve individuals' quality of life and promote public health.",
+   "exz": "这一趋势能够改善个人生活质量，并促进公共健康。"
   },
   {
    "id": "dz-p2-xy-3",
@@ -1318,7 +1436,9 @@
    "zh": "这一问题可能损害……，并增加……",
    "lvl": 2,
    "meta": "harm 可替换 damage; increase 可替换 add to",
-   "page": "补充P90"
+   "page": "补充P90",
+   "ex": "This phenomenon may harm individuals' health and increase pressure on the healthcare system.",
+   "exz": "这一现象可能损害个人健康，并增加医疗体系的压力。"
   },
   {
    "id": "dz-p2-cl-1",
@@ -1328,7 +1448,9 @@
    "en": "<span class=\"tpl\">Those who choose</span> <span class=\"blank\">A</span> <span class=\"tpl\">mainly do so because they believe that</span> <span class=\"blank\">原因</span><span class=\"tpl\">.</span>",
    "zh": "选择A的人主要是因为他们认为……",
    "lvl": 1,
-   "page": "P90"
+   "page": "P90",
+   "ex": "Those who choose not to attend the lecture mainly do so because they believe that a lecture unrelated to their major offers little practical value.",
+   "exz": "选择不参加讲座的学生，主要是因为他们认为与专业无关的讲座没有多少实际价值。"
   },
   {
    "id": "dz-p2-cl-2",
@@ -1338,7 +1460,9 @@
    "en": "<span class=\"tpl\">One major reason why some people prefer</span> <span class=\"blank\">A</span> <span class=\"tpl\">is that it enables them to</span> <span class=\"blank\">具体好处</span><span class=\"tpl\">.</span>",
    "zh": "一些人偏向A的一个主要原因是，它能够使他们……",
    "lvl": 2,
-   "page": "P91"
+   "page": "P91",
+   "ex": "One major reason why some students focus only on professional courses is that this enables them to use their limited time more efficiently.",
+   "exz": "一些学生只专注于专业课程的一个主要原因是，这能使他们更高效地利用有限的时间。"
   },
   {
    "id": "dz-p2-cl-3",
@@ -1348,7 +1472,9 @@
    "en": "<span class=\"tpl\">From their perspective,</span> <span class=\"blank\">A</span> <span class=\"tpl\">is a more practical choice, as it helps them</span> <span class=\"blank\">具体好处</span><span class=\"tpl\">.</span>",
    "zh": "在他们看来，A是更加实际的选择，因为这有助于他们……",
    "lvl": 2,
-   "page": "P91"
+   "page": "P91",
+   "ex": "From their perspective, skipping an unrelated lecture is a more practical choice, as it helps them concentrate on their professional studies.",
+   "exz": "在他们看来，不参加与专业无关的讲座是更加实际的选择，因为这有助于他们专注于专业学习。"
   },
   {
    "id": "dz-p2-cl-4",
@@ -1359,7 +1485,9 @@
    "zh": "相比之下，偏向B的人往往更加重视……",
    "lvl": 1,
    "meta": "attach greater importance to 可替换 value / place emphasis on / give priority to",
-   "page": "P91"
+   "page": "P91",
+   "ex": "By contrast, those who attend the lecture tend to attach greater importance to broadening their horizons and acquiring knowledge beyond their major.",
+   "exz": "相比之下，参加讲座的学生往往更加重视开阔视野以及获取专业之外的知识。"
   },
   {
    "id": "dz-p2-cl-5",
@@ -1370,7 +1498,9 @@
    "zh": "然而，另一些人选择B，因为他们认为它能够……",
    "lvl": 2,
    "meta": "introduce them to 可替换 provide them with / give them access to",
-   "page": "P91"
+   "page": "P91",
+   "ex": "Others, however, choose to attend the lecture because they believe it can introduce them to new ideas and inspire creative thinking.",
+   "exz": "然而，另一些学生选择参加讲座，因为他们认为讲座能够使他们接触新观点并激发创新思维。"
   },
   {
    "id": "dz-p2-cl-6",
@@ -1381,7 +1511,9 @@
    "zh": "对另一群体而言，B更具吸引力，因为它为他们提供了……",
    "lvl": 2,
    "meta": "attractive 可替换 appealing / suitable / valuable",
-   "page": "P91"
+   "page": "P91",
+   "ex": "For another group of students, attending the lecture is more attractive, since it provides them with opportunities to explore different fields of knowledge.",
+   "exz": "对另一部分学生而言，参加讲座更具吸引力，因为它为他们提供了探索不同知识领域的机会。"
   },
   {
    "id": "dz-p2-zj-1",
@@ -1443,7 +1575,9 @@
    "zh": "总之，……对个人和社会都是必不可少的。",
    "lvl": 1,
    "meta": "In conclusion 可替换 To sum up / In summary / Overall; is essential for 可替换 is of great importance to / plays a key role in / is vital for",
-   "page": "P95"
+   "page": "P95",
+   "ex": "In conclusion, the awareness of environmental protection is essential for both individuals and society.",
+   "exz": "总之，环保意识对个人和社会都至关重要。"
   },
   {
    "id": "dz-p3-2",
@@ -1454,7 +1588,9 @@
    "zh": "总体而言，……在促进个人成长和社会进步方面发挥着重要作用。",
    "lvl": 2,
    "meta": "promotes 可替换 encourages / facilitates / contributes to",
-   "page": "P95"
+   "page": "P95",
+   "ex": "Overall, perseverance plays a vital role in promoting personal growth and social progress.",
+   "exz": "总体而言，坚持在促进个人成长和社会进步方面发挥着重要作用。"
   },
   {
    "id": "dz-p3-3",
@@ -1509,7 +1645,9 @@
    "zh": "因此，我们应当在日常生活中培养……。这样，我们就能提升自我并实现目标。",
    "lvl": 1,
    "meta": "develop 可替换 cultivate 培养 / practice 践行; improve ourselves 可替换 make progress / develop our abilities; achieve our goals 可替换 realize our dreams / achieve success",
-   "page": "P97"
+   "page": "P97",
+   "ex": "Therefore, we should develop perseverance in our daily lives. In this way, we can better overcome difficulties and achieve our goals.",
+   "exz": "因此，我们应当在日常生活中培养坚持的品质。这样，我们就能更好地克服困难、实现目标。"
   },
   {
    "id": "dz-p3-xz-2",
@@ -1564,7 +1702,9 @@
    "zh": "因此，我们应当理性看待这一现象，并对其加以合理利用。这样，……就能为……带来更多益处，同时尽可能减少潜在危害。",
    "lvl": 1,
    "meta": "make proper use of it 可替换 use it wisely / deal with it properly; bring more benefits 可替换 play a positive role / create greater value",
-   "page": "P99"
+   "page": "P99",
+   "ex": "Therefore, we should view this phenomenon rationally and make proper use of it. In this way, AI can bring more benefits to individuals while minimizing potential harm.",
+   "exz": "因此，我们应当理性看待这一现象并加以合理利用。这样，人工智能就能为个人带来更多益处，同时尽可能减少潜在危害。"
   },
   {
    "id": "dz-p3-xz-7",

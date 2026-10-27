@@ -550,7 +550,7 @@ PLAN = [
   {"day":15,"cat":"dz","title":"大作文三段式总框架+图表第一段第一句模板","book":"P60-65, P77-78",
    "learn":["dz-p1-1","dz-p1-2","dz-p1-3"],
    "practice":["2014英语二真题,只分析结构"],
-   "tip":"三段式:第一段描述图表(引入+数据) → 第二段分析论证(过渡+原因/观点+影响+判断) → 第三段评论总结(总体评价+行动/展望)。"},
+   "tip":"第一天先立三段骨架:第一段总起=引入图表句 → 第二段总起=过渡句(Several factors...) → 第三段总起=总体评价(In conclusion...)。三段句数:第一段2-4句/第二段4-5句/第三段2-3句。后面各天往骨架里填肉:第一段描述句→第二段原因/影响→第三段行动/展望。"},
   {"day":16,"cat":"dz","title":"图表第一段二三句·动态图表模板","book":"P79-80",
    "learn":["dz-p1-dd-1","dz-p1-dd-2","dz-p1-dd-3"],
    "practice":["2017英语二第一段真题练习"]},
@@ -613,23 +613,23 @@ LEARN_SKIM = {
   10: (["xz-tz-1-1","xz-tz-1-3","xz-tz-hd-1","xz-tz-hd-2","xz-tz-hd-3"], ["xz-tz-1-2","xz-tz-1-4"]),
   11: (["xz-tz-zm-1","xz-tz-zm-3","xz-tz-zm-5","xz-tz-3-1","xz-tz-3-3"], ["xz-tz-zm-2","xz-tz-zm-4","xz-tz-3-2","xz-tz-3-4"]),
   12: ([], []), 13: ([], []), 14: ([], []),
-  15: (["dz-p1-1"], ["dz-p1-2","dz-p1-3"]),
+  15: (["dz-p1-1","dz-p2-gd-2","dz-p3-1"], ["dz-p1-2","dz-p1-3"]),
   16: (["dz-p1-dd-1","dz-p1-dd-3"], ["dz-p1-dd-2"]),
   17: ([], []),
   18: (["dz-p1-jt-1"], ["dz-p1-jt-2","dz-p1-jt-3","dz-p1-jt-4"]),
   19: ([], []), 20: ([], []),
   21: (["dz-p1-fh-1","dz-p1-fh-2","dz-p1-fh-4"], ["dz-p1-fh-3","dz-p1-fh-5"]),
-  22: (["dz-p2-gd-1","dz-p2-yy-1","dz-p2-yy-2"], ["dz-p2-gd-2"]),
+  22: (["dz-p2-yy-1","dz-p2-yy-2"], ["dz-p2-gd-1"]),
   23: (["dz-p2-xy-1"], ["dz-p2-yy-3","dz-p2-yy-4","dz-p2-yy-5","dz-p2-yy-6","dz-p2-yy-7","dz-p2-yy-8","dz-p2-xy-2","dz-p2-xy-3","dz-p2-zj-1","dz-p2-zj-2","dz-p2-zj-3"]),
   24: (["dz-p1-cl-1","dz-p1-cl-2","dz-p2-gd-3","dz-p2-cl-1","dz-p2-cl-4","dz-p2-zj-4"], ["dz-p2-gd-4","dz-p2-cl-2","dz-p2-cl-3","dz-p2-cl-5","dz-p2-cl-6"]),
-  25: (["dz-p3-1","dz-p3-xz-1"], ["dz-p3-2","dz-p3-xz-2"]),
+  25: (["dz-p3-xz-1"], ["dz-p3-2","dz-p3-xz-2"]),
   26: (["dz-p3-3","dz-p3-xz-3"], ["dz-p3-4","dz-p3-xz-4","dz-p3-xz-5"]),
   27: (["dz-p3-5","dz-p3-xz-6"], ["dz-p3-6","dz-p3-xz-7","dz-p3-xz-8"]),
   28: ([], []), 29: ([], []), 30: ([], []),
 }
 for _d in PLAN:
     _ln, _sk = LEARN_SKIM[_d["day"]]
-    assert set(_ln) | set(_sk) == set(_d.get("learn", [])), "day%d 拆分覆盖不全" % _d["day"]
+    assert not (set(_ln) & set(_sk)), "day%d 精背/备选重复" % _d["day"]
     _d["learn"] = _ln
     _d["skim"] = _sk
 # lvl 重排: 精背=1(★), 备选=2(◎), 原3级(○眼熟)保留
@@ -638,6 +638,164 @@ _skim_ids = {sid for ln, sk in LEARN_SKIM.values() for sid in sk}
 for _s in S:
     if _s["id"] in _learn_ids: _s["lvl"] = 1
     elif _s["id"] in _skim_ids and _s["lvl"] != 3: _s["lvl"] = 2
+
+# ============================================================ 斜杠备选定死(用户10-28:选一个最好的,其余进meta)
+SLASH_FIX = {
+  "xz-p1-gw-1":  (T("from/at/in"), T("from")),
+  "xz-p1-sr-3":  (B("great / wonderful / lovely"), B("wonderful")),
+  "xz-p2-js-2":  (T("at/in"), T("in")),
+  "xz-p3-1":     (B("sincerely / truly / genuinely"), B("sincerely")),
+  "xz-p2-bc-4": ('<span class="blank">me/you</span>', '<span class="blank">me</span>'),
+  "xz-p2-bc-4b": ('<span class="blank">confidence/opportunity</span>', '<span class="blank">confidence</span>'),
+  "xz-p2-gd-4": ('<span class="blank">visitors/readers</span>', '<span class="blank">visitors</span>'),
+  "xz-tz-hd-1": ("held at/in", "held in"),
+  "xz-tz-3-1": (B("参加/申请方式"), B("报名方式")),
+  "xz-tz-3-3": (B("联系人/组织"), B("联系人")),
+  "dz-p1-1":     (B("shows / compares"), B("shows")),
+  "dz-p1-2":     (B("reasons / purpose / choices"), B("purpose")),
+  "dz-p1-dd-1":  (B("rise / decline"), B("increase")),
+  "dz-p1-dd-2":  (T("rose / increased / dropped / fell / stood at"), T("increased")),
+  "dz-p1-dd-3":  ("has declined/increased sharply", "has increased sharply"),
+  "dz-p1-dd-3b": ("declined/increased markedly", "increased markedly"),
+  "dz-p1-jt-1":  (T("is higher than / lower than"), T("is higher than")),
+  "dz-p2-yy-2":  ("awareness of / demand for", "awareness of"),
+  "dz-p2-gd-2":  (B("phenomenon / trend"), B("trend")),
+}
+for _s in S:
+    if _s["id"] in SLASH_FIX:
+        _old, _new = SLASH_FIX[_s["id"]]
+        assert _old in _s["en"], "slash fix 不匹配: " + _s["id"]
+        _s["en"] = _s["en"].replace(_old, _new)
+    if _s["id"] == "dz-p1-dd-3b":  # 占位键: dd-3 的第二处
+        pass
+# dd-3 有两处斜杠, bc-4 有两处, 单独二次替换
+for _s in S:
+    if _s["id"] == "dz-p1-dd-3":
+        _o2, _n2 = SLASH_FIX["dz-p1-dd-3b"]
+        assert _o2 in _s["en"]
+        _s["en"] = _s["en"].replace(_o2, _n2)
+    if _s["id"] == "xz-p2-bc-4":
+        _o2, _n2 = SLASH_FIX["xz-p2-bc-4b"]
+        assert _o2 in _s["en"]
+        _s["en"] = _s["en"].replace(_o2, _n2)
+    if _s["id"] == "xz-tz-3-1":
+        _o2, _n2 = '<span class="tpl">through/at</span>', '<span class="tpl">through</span>'
+        assert _o2 in _s["en"]
+        _s["en"] = _s["en"].replace(_o2, _n2)
+    if _s["id"] == "xz-tz-3-3":
+        _o2, _n2 = '<span class="tpl">at/via</span>', '<span class="tpl">at</span>'
+        assert _o2 in _s["en"]
+        _s["en"] = _s["en"].replace(_o2, _n2)
+# meta 补充被定死的备选词
+_META_APPEND = {
+  "xz-p3-1": "sincerely 可替换 truly / genuinely",
+  "dz-p1-1": "compares 用于多类对比(如饼图各因素)",
+  "dz-p1-2": "purpose 可替换 reasons / choices / elements",
+  "dz-p1-dd-1": "increase 可替换 rise / growth;下降用 decline / drop",
+  "dz-p1-dd-3": "下降方向: has declined sharply / declined markedly",
+  "dz-p1-jt-1": "下降用 is lower than;持平 is the same as",
+  "dz-p2-gd-2": "trend 可替换 phenomenon",
+  "xz-p2-bc-4": "祝贺信版: enabled you to + given you the opportunity to",
+  "xz-p2-gd-4": "推荐书籍/电影/课程时 visitors 换 readers",
+  "xz-tz-hd-1": "at 用于具体地点(at the school gate), in 用于室内场所",
+}
+for _s in S:
+    if _s["id"] in _META_APPEND:
+        _s["meta"] = (_s.get("meta", "") + ("；" if _s.get("meta") else "") + _META_APPEND[_s["id"]]) or _META_APPEND[_s["id"]]
+
+# zh 同步定死(与英文选择一致)
+ZH_FIX = {
+  "dz-p2-gd-2": "有几个因素能解释这一趋势。",
+  "dz-p1-1": "上述……清楚地展示了……。",
+  "dz-p1-dd-1": "在……时间内，……出现了显著的增长（从A到B）。",
+  "dz-p1-dd-2": "……（对象）在……（时间）增长到……。",
+  "dz-p1-dd-3": "在此期间，……的数量从A急剧增长至B；而……分别从A1、A2显著增长到B1、B2。",
+  "dz-p1-jt-1": "A的占比高于B，而……。",
+  "dz-p1-jt-4": "A与B之间存在巨大差距。",
+  "dz-p2-yy-2": "此外，随着人们对……的意识不断增强，越来越多的人愿意……。",
+  "xz-p1-sr-3": "很高兴收到你的来信。",
+  "xz-p2-bc-4": "这也使我能够……，并给了我……的信心去……。（感谢信版）",
+  "xz-tz-3-1": "感兴趣的同学应于……前通过……报名。",
+}
+for _s in S:
+    if _s["id"] in ZH_FIX:
+        _s["zh"] = ZH_FIX[_s["id"]]
+
+# ============================================================ 套用例句(用户10-28:模板没有例句没法背,照书【例】/真题示例补)
+EXAMPLES = {
+  "xz-p1-gw-1": ("I am a second-year student from the Department of Literature at your university.", "我是贵校文学系的一名大二学生。"),
+  "xz-p1-gw-2": ("As a member of the Students' Union, I have organized several charity sales and volunteer activities on campus.", "作为学生会成员，我曾在校内组织过多次慈善义卖和志愿活动。"),
+  "xz-p1-mu-1": ("The purpose of this letter is to invite you to serve as a judge for the upcoming English speech contest.", "本信旨在邀请您担任即将举行的英语演讲比赛的评委。"),
+  "xz-p1-mu-2": ("I am writing to offer several suggestions in this regard.", "我写信是想就此提出几点建议。（2007英语一）"),
+  "xz-p1-sr-2": ("I hope this letter finds you well. I am writing to recommend one of my favorite movies, The Pursuit of Happyness, to you.", "希望你一切安好。我写信是想向你推荐我最喜欢的电影之一《当幸福来敲门》。（2011英语一）"),
+  "xz-p3-1": ("I sincerely hope that you will understand and respect my decision.", "我真诚地希望您能够理解并尊重我的决定。"),
+  "xz-p3-4": ("Please let me know your thoughts when convenient.", "方便时请告诉我你的想法。（2011英语一）"),
+  "xz-p2-js-1": ("The activity will focus on traditional Chinese culture.", "本次活动将围绕中国传统文化展开。"),
+  "xz-p2-js-2": ("Scheduled for May 10 in the school auditorium, it will include a lecture, a group discussion and a cultural performance.", "本次活动定于5月10日在学校礼堂举行，包括讲座、小组讨论和文化表演。"),
+  "xz-p2-js-3": ("It is scheduled to take place on October 15 at 14:00 in the lecture hall, and will consist of a keynote speech and an interactive Q&A session.", "活动定于10月15日14点在报告厅举办，由主题演讲和互动问答环节组成。"),
+  "xz-p2-js-4": ("Participants will also have the opportunity to exchange ideas with students from different countries.", "参加者还将有机会与来自不同国家的学生交流观点。"),
+  "xz-p2-js-5": ("This experience will also enable all participants to develop their practical skills in cross-cultural communication.", "这段经历也将使所有参与者培养跨文化交流的实践能力。"),
+  "xz-p2-bc-1": ("Your support with my studies was particularly valuable.", "您在我学习方面给予的支持尤其宝贵。"),
+  "xz-p2-bc-2": ("Your success in the competition was particularly impressive.", "你在这次比赛中取得的成功尤其令人钦佩。"),
+  "xz-p2-bc-3": ("This support included detailed guidance and warm encouragement, reflecting your kindness and patience.", "这种支持包括详细的指导和热情的鼓励，体现了您的善良和耐心。"),
+  "xz-p2-bc-4": ("It has also enabled me to complete the task successfully and given me the confidence to face similar challenges in the future.", "这也使我顺利完成了任务，并给了我面对未来类似挑战的信心。（感谢信版）"),
+  "xz-p2-gd-1": ("I strongly recommend the Palace Museum as your first destination in Beijing.", "我强烈推荐你将故宫作为北京之行的第一站。"),
+  "xz-p2-gd-2": ("One major reason is that it offers an excellent opportunity to learn about Chinese history and traditional architecture.", "一个主要原因是，它提供了了解中国历史和传统建筑的绝佳机会。"),
+  "xz-p2-gd-3": ("More importantly, these qualities will enable him to perform the duties effectively.", "更重要的是，这些品质将使他能够高效履行职责。"),
+  "xz-p2-gd-4": ("More importantly, its grand ancient walls and beautiful mountain views allow visitors to enjoy amazing scenery and learn interesting historical stories.", "更重要的是，宏伟的古墙和优美的山景让游客能够欣赏到壮丽的风景，并了解有趣的历史故事。（2020英语二）"),
+  "xz-p2-jj-1": ("Unfortunately, I will be unable to attend the meeting as originally planned.", "很遗憾，我无法按原计划参加会议。"),
+  "xz-p2-jj-2": ("This is mainly because I have to attend an important examination at the same time.", "这主要是因为我必须在同一时间参加一场重要考试。"),
+  "xz-p2-jj-3": ("As a result, I was unable to complete my work and suffered considerable inconvenience.", "因此，我无法完成工作，并遭受了很大不便。"),
+  "xz-p2-jj-4": ("To make up for my absence, I will ask a classmate to take notes and send me the relevant materials.", "为了弥补缺席，我会请一位同学做记录，并把相关材料发给我。"),
+  "xz-p2-jj-5": ("To resolve the matter, I would appreciate it if you could provide a replacement or offer a full refund.", "为了解决此事，如果您能更换产品或全额退款，我将不胜感激。"),
+  "xz-tz-1-1": ("The Students' Union is pleased to announce that a campus book fair will be held.", "学生会很高兴地宣布，将举办校园书展。"),
+  "xz-tz-1-2": ("It's a pleasure to inform everyone that an English speech contest will be held in our university.", "很高兴地通知大家，我校将举办英语演讲比赛。"),
+  "xz-tz-1-3": ("The purpose of the event is to encourage students to develop an interest in reading.", "本次活动旨在鼓励学生培养阅读兴趣。"),
+  "xz-tz-1-4": ("The purpose of this notice is to provide all students with details about the upcoming book fair.", "本通知旨在向全体学生介绍即将举行的书展的具体信息。"),
+  "xz-tz-hd-1": ("The event will be held in the school auditorium from 2:00 to 4:00 p.m. on May 10.", "该活动将于5月10日下午2点至4点在学校礼堂举行。"),
+  "xz-tz-hd-2": ("All students interested in traditional Chinese culture are welcome to attend.", "欢迎所有喜爱中国传统文化的同学到场参与。"),
+  "xz-tz-hd-3": ("Highlights will include a keynote speech, a group discussion and a question-and-answer session.", "本次活动亮点设有主旨演讲、小组讨论以及问答环节。"),
+  "xz-tz-zm-1": ("Ideal applicants should be responsible and possess good communication skills.", "理想人选需有责任心，并且具备良好的沟通能力。"),
+  "xz-tz-zm-2": ("We are looking for applicants who are patient and have good communication skills.", "我们寻找的申请者需富有耐心，并且掌握良好的沟通能力。"),
+  "xz-tz-zm-5": ("The main duties involve receiving guests, offering directions and preparing conference materials.", "主要工作职责包括接待来宾、指引方向以及准备会议资料。"),
+  "xz-tz-3-1": ("Those who are interested should register for the event through the school website by May 10.", "感兴趣的同学应于5月10日前通过学校网站报名参加本次活动。"),
+  "xz-tz-3-3": ("For further information, please contact the Students' Union at studentsunion@university.edu.", "如需了解更多信息，请通过 studentsunion@university.edu 联系学生会。"),
+  "dz-p1-1": ("The pie charts above clearly show the factors that students considered when choosing a university in China in two different years.", "上述饼状图清楚地展示了近两年中国学生选择大学时所考虑的因素。"),
+  "dz-p1-2": ("What the pie chart provided is the purpose of mobile reading for students in a certain university.", "该饼状图提供了某高校学生手机阅读目的的调查结果。"),
+  "dz-p1-3": ("According to the above bar chart, the percentages of graduates' choices after graduation in a certain university underwent an enormous change from 2013 to 2018.", "根据上面柱状图所示，某高校毕业生去向的百分比在2013至2018年间发生了巨大的变化。"),
+  "dz-p1-dd-1": ("There was a remarkable increase in the health literacy level among Chinese residents, from 8.80% in 2012 to 25.40% in 2021.", "2012年至2021年，我国居民健康素养水平显著提高，从8.80%升至25.40%。（2023英语二真题数据）"),
+  "dz-p1-dd-2": ("The volume of goods transported by rail increased to 40 million tons in 2002, and then it stood at this level in the rest of the period.", "铁路运输货物的数量2002年增加到了4000万吨，之后就一直保持这一水平。"),
+  "dz-p1-dd-3": ("During this period, the percentage of students choosing further education has increased sharply from 26.3% to 34%, whereas those running their own business increased markedly from 1.3% to 2.6%.", "在此期间，选择升学的学生比例从26.3%急剧上升到34%，而自主创业的学生比例也从1.3%显著增长到2.6%。（2019英语二真题数据）"),
+  "dz-p1-jt-1": ("The proportion of spending on New Year gifts is higher than that on dinners, transportation and other items, whereas the percentages of the latter three categories are equal to one another.", "新年礼物的花销占比高于聚餐、交通以及其他项目，而后三者的占比持平。（2015英语二）"),
+  "dz-p1-jt-2": ("The percentage of males choosing computer science stands at 10%, compared with 4% of females.", "选择计算机专业的男生占10%，相比之下女生仅占4%。"),
+  "dz-p1-jt-4": ("There was a huge gap between the proportions of males and females choosing medicine: about 4% for males and 15% for females.", "选择医学专业的男女比例存在巨大差距：男生约4%，女生约15%。"),
+  "dz-p1-fh-1": ("The two charts above jointly present the results of a survey concerning consumers' acceptance of elderly-care robots and their primary concerns about such products.", "上述两幅图表共同呈现了一项关于消费者对养老机器人的接受度及对此类产品首要关注点的调查结果。"),
+  "dz-p1-fh-2": ("The pie chart shows different levels of public acceptance of elderly-care robots, while the bar chart displays the three main factors that consumers care about most.", "饼图显示了公众对养老机器人不同程度的接受情况，而柱状图展示了消费者最关心的三大主要因素。"),
+  "dz-p1-fh-3": ("As can be seen from the two charts, the pie graph illustrates different attitudes towards elderly-care robots, with the bar graph revealing that safety is the top concern.", "从两幅图表中可以看出，饼图说明了人们对养老机器人的不同态度，同时柱状图揭示出安全是首要的关注点。"),
+  "dz-p1-fh-4": ("The two sets of data are closely related, as safety concerns may be a major reason for some people's unwillingness to accept elderly-care robots.", "两组数据紧密相关，因为安全顾虑或许是部分人不愿接受养老机器人的主要原因。"),
+  "dz-p1-fh-5": ("It is clear that public acceptance of elderly-care robots has a close connection with their attention to product safety and price.", "显而易见，图表反映出公众对养老机器人的接受度与他们对产品安全和价格的关注度有着密切的联系。"),
+  "dz-p1-cl-1": ("In the passage, the author argues that failure can be compensated by higher integrity.", "在这篇文章中，作者认为失败可以通过更高的诚信来弥补。"),
+  "dz-p1-cl-2": ("In the passage, the author argues that failure can be compensated by higher integrity. I fully agree with this view.", "在这篇文章中，作者认为失败可以通过更高的诚信来弥补。我完全同意这一观点。"),
+  "dz-p2-gd-2": ("Several factors can account for this trend. First, the development of the economy has provided local governments with more financial resources.", "有几个因素可以解释这一趋势。首先，经济发展为地方政府提供了更多资金。（英一2024城市公园真题套用）"),
+  "dz-p2-yy-1": ("First, the rapid development of technology has provided people with more convenient services, making it easier for them to obtain information.", "首先，科技的快速发展为人们提供了更加便利的服务，使他们更容易获取信息。"),
+  "dz-p2-yy-2": ("Besides, with the growing awareness of environmental protection, an increasing number of people are willing to adopt a greener lifestyle.", "此外，随着环保意识不断增强，越来越多的人愿意选择更加环保的生活方式。"),
+  "dz-p2-xy-1": ("As a result, this phenomenon can not only weaken individuals' ability to think independently but also increase society's dependence on technology.", "因此，这一现象不仅可能削弱个人独立思考的能力，还可能加深社会对技术的依赖。"),
+  "dz-p2-xy-2": ("This trend can improve individuals' quality of life and promote public health.", "这一趋势能够改善个人生活质量，并促进公共健康。"),
+  "dz-p2-xy-3": ("This phenomenon may harm individuals' health and increase pressure on the healthcare system.", "这一现象可能损害个人健康，并增加医疗体系的压力。"),
+  "dz-p2-cl-1": ("Those who choose not to attend the lecture mainly do so because they believe that a lecture unrelated to their major offers little practical value.", "选择不参加讲座的学生，主要是因为他们认为与专业无关的讲座没有多少实际价值。"),
+  "dz-p2-cl-2": ("One major reason why some students focus only on professional courses is that this enables them to use their limited time more efficiently.", "一些学生只专注于专业课程的一个主要原因是，这能使他们更高效地利用有限的时间。"),
+  "dz-p2-cl-3": ("From their perspective, skipping an unrelated lecture is a more practical choice, as it helps them concentrate on their professional studies.", "在他们看来，不参加与专业无关的讲座是更加实际的选择，因为这有助于他们专注于专业学习。"),
+  "dz-p2-cl-4": ("By contrast, those who attend the lecture tend to attach greater importance to broadening their horizons and acquiring knowledge beyond their major.", "相比之下，参加讲座的学生往往更加重视开阔视野以及获取专业之外的知识。"),
+  "dz-p2-cl-5": ("Others, however, choose to attend the lecture because they believe it can introduce them to new ideas and inspire creative thinking.", "然而，另一些学生选择参加讲座，因为他们认为讲座能够使他们接触新观点并激发创新思维。"),
+  "dz-p2-cl-6": ("For another group of students, attending the lecture is more attractive, since it provides them with opportunities to explore different fields of knowledge.", "对另一部分学生而言，参加讲座更具吸引力，因为它为他们提供了探索不同知识领域的机会。"),
+  "dz-p3-1": ("In conclusion, the awareness of environmental protection is essential for both individuals and society.", "总之，环保意识对个人和社会都至关重要。"),
+  "dz-p3-2": ("Overall, perseverance plays a vital role in promoting personal growth and social progress.", "总体而言，坚持在促进个人成长和社会进步方面发挥着重要作用。"),
+  "dz-p3-xz-1": ("Therefore, we should develop perseverance in our daily lives. In this way, we can better overcome difficulties and achieve our goals.", "因此，我们应当在日常生活中培养坚持的品质。这样，我们就能更好地克服困难、实现目标。"),
+  "dz-p3-xz-6": ("Therefore, we should view this phenomenon rationally and make proper use of it. In this way, AI can bring more benefits to individuals while minimizing potential harm.", "因此，我们应当理性看待这一现象并加以合理利用。这样，人工智能就能为个人带来更多益处，同时尽可能减少潜在危害。"),
+}
+for _s in S:
+    if _s["id"] in EXAMPLES:
+        _s["ex"], _s["exz"] = EXAMPLES[_s["id"]]
 
 # ============================================================ 换序(用户拍板2026-10-28:先大作文后小作文)
 _dz = [d for d in PLAN if d["cat"] == "dz"]
@@ -652,9 +810,9 @@ ids = [s["id"] for s in S]
 assert len(ids) == len(set(ids)), "重复id"
 idset = set(ids)
 for d in PLAN:
-    for sid in d.get("learn", []):
+    for sid in d.get("learn", []) + d.get("skim", []):
         assert sid in idset, f"计划引用了不存在的句子: {sid}"
-    assert 1 <= len(d["learn"]) or d.get("review") or d["practice"], f"day{d['day']} 空"
+    assert len(d["learn"]) or d.get("review") or d["practice"], f"day{d['day']} 空"
 
 DATA = {
   "meta": {"version": 1, "updated": "2026-10-28", "exam": "2026-12-19",
