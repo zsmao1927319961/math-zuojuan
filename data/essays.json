@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-10-29",
+    "title": "南山30天Day1·2014英二城乡人口(三段总起句套写,骨架练习)",
+    "type": "大作文",
+    "words": 41,
+    "score": {
+      "total": 5,
+      "max": 15
+    },
+    "comment": "Day1只学三段总起句(练习要求'只分析结构'),动笔套写超额完成。骨架分5/15(4-6档,衡量纸上现有内容,非水平分): 三段框架立住,第二段dz-p2-gd-2默写零错误;第一段没默南山dz-p1-1,退回苦瓜旧句'presents the temporal changes of'且所有格/搭配两处硬伤,两句开头The bar chart重复;第三段dz-p3-1主题词槽填'the fulfillment of spiritual'词性错+离题(本图应填urbanization);全篇无任何图表数据(300/834→458/807→666/674)。首句划掉一词无法辨认待确认。",
+    "issues": [
+      "第一段未用Day1模板dz-p1-1(The...above clearly shows...in...),自创句+旧句混写,与第二句开头重复",
+      "Chinese'所有格错位(应China's);population of city and countryside搭配生硬(应urban and rural population)",
+      "第三段主题词槽: the fulfillment of spiritual词性错误(spiritual是形容词)+离题,应填urbanization",
+      "核心数据全部未写(Day1不要求,记为最大缺口,单位=million)",
+      "首句划掉一词无法辨认(形似visa/rise),待用户确认"
+    ],
+    "essay": "The bar chart has a clear [划掉一词,无法辨认] trend. The bar chart presents the temporal changes of Chinese' population of city and countryside. Several factors can account for this trend. In conclusion, the fulfillment of spiritual is essential for both individuals and society."
+  },
+  {
     "date": "2026-10-26",
     "title": "2026英二真题·儿童户外活动(静态柱状图·段落库首练)",
     "type": "大作文",
