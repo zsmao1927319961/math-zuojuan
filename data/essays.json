@@ -1,6 +1,27 @@
 [
   {
     "date": "2026-10-29",
+    "title": "南山30天Day3·2022英二快递业务量(动态第一段练习)",
+    "type": "大作文",
+    "words": 48,
+    "score": {
+      "total": 6,
+      "max": 15
+    },
+    "comment": "Day3只写第一段(任务范围达成), 6/15(4-6档全卷口径折算)。亮点: 四个数据全对、换算对、无编造(较Day1零数据进步), China's所有格这次写对了, Taken together划掉是正确的自我叫停。硬伤: special delivery题眼词错贯穿4处(应为express delivery), of后接名词第三次错(develop/fluctuate乱入, 前科spiritual), 单位billion全漏, the all搭配错, of countryside搭配错; 本图主要特征'农村增速更快(150→300翻倍)'未点出, whereas对比句缺位; Day2精背句dz-p1-dd-1/dd-3零调用, 总起句第三次退回旧句'presented the temporal changes of'——自创句惯性成为当前最大卡点。",
+    "issues": [
+      "题眼词错贯穿: special delivery×4, 应为express delivery(快递)",
+      "of后接名词三连错: develop(→development)+fluctuate乱入(且图上无波动, 描述不符)",
+      "Day2精背句dz-p1-dd-1/dd-3零调用, 总起句第三次退回旧句presented the temporal changes of——自创句惯性",
+      "数据单位billion全漏(12/30/51/83后无单位)",
+      "the all special delivery搭配错(→the total express delivery volume); delivery of countryside(→rural express volume/in rural areas)",
+      "主要特征'农村增速更快'未点出, dz-p1-dd-3的whereas对比结构缺位",
+      "51被划掉但数值正确(510亿=51 billion), 划痕疑笔误; Taken together划掉正确(第一段不用)"
+    ],
+    "essay": "The bar chart presented the temporal changes of China's [划掉se] special delivery & fluctuate and revealed a clear pattern of develop over time. From 2018 to 2020, China's special delivery of countryside rose from 12 to 30. During the same period, the all special delivery increased from [划掉又保留]51 to 83. [划掉]Taken together"
+  },
+  {
+    "date": "2026-10-29",
     "title": "南山30天Day1·2014英二城乡人口(三段总起句套写,骨架练习)",
     "type": "大作文",
     "words": 41,
