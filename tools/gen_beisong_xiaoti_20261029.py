@@ -32,8 +32,8 @@ def clean_tex(t):
     t = re.sub(r'\^\{([^{}]{1,4})\}', lambda m: sup(m.group(1)), t)
     t = re.sub(r'_\{([^{}]{1,6})\}', r'_\1', t)
     t = re.sub(r'\^(\w)', lambda m: sup(m.group(1)), t)
-    for k, v in SUBS.items():
-        t = t.replace(k, v)
+    for k in sorted(SUBS, key=len, reverse=True):  # 长键优先, 防 \le 吃掉 \left
+        t = t.replace(k, SUBS[k])
     t = t.replace('{', '').replace('}', '')
     return t.strip()
 
@@ -53,26 +53,69 @@ for i, l in enumerate(lines):
     if m: years.append((int(m.group(1)), i))
 years.append((9999, len(lines)))
 
-SEC_PAT = re.compile(r'^##\s*(一|二|三)、\s*(选择填空|选择|填空|判断)')
+SEC_PAT = re.compile(r'^##\s*(一|二|三)、\s*(选择填空|选择|单选|填空|判断)')
+ITEM1 = re.compile(r'^\*\*第(\d+)(?:题|空)(?:（([^）]*)）)?\*\*\s*(.*)')
+ITEMG = re.compile(r'^\*\*第(\d+)(?:空)?[~～](?:第)?(\d+)空(?:（([^）]*)）)?\*\*\s*(.*)')
 zt = []
 for (y, a), (_, b) in zip(years, years[1:]):
     if y == 9999: break
     cur_sec = None
+    # 节级预扫: 收集"题目:"编号段(分组卡拼题干 + 单条目补题干), 容许前导空格
+    titems_by_sec = {}  # sec -> {num: (text, blanks)}  按节隔离, 防不同节编号互覆
+    cur2 = None
+    seen_item = False  # 只收节内"逐空精解/条目"开始前的编号行(真题目块)
+    for i in range(a, b):
+        l = lines[i]
+        m_s = SEC_PAT.match(l)
+        if m_s: cur2 = m_s.group(2); seen_item = False; continue
+        if re.match(r'^##\s', l): cur2 = None; continue
+        if not cur2: continue
+        if re.match(r'^\*\*第\d+', l): seen_item = True
+        if seen_item: continue
+        if re.match(r'^\*\*', l) or re.match(r'^-\s*【', l): continue
+        m_t = re.match(r'^\s*(\d+)[.、]\s*(.+)', l)
+        if m_t:
+            txt = m_t.group(2).strip()
+            titems_by_sec.setdefault(cur2, {})[int(m_t.group(1))] = (
+                txt, set(int(x) for x in re.findall(r'（(\d+)）', txt)))
     for i in range(a, b):
         l = lines[i]
         m = SEC_PAT.match(l)
         if m: cur_sec = m.group(2); continue
         if re.match(r'^##\s', l): cur_sec = None; continue
         if not cur_sec: continue
-        m2 = re.match(r'^\*\*第(\d+)题\*\*\s*(.*)', l)
-        if m2:
-            # 整块收集到下一题/下一节为止
+        mg, m1 = ITEMG.match(l), ITEM1.match(l)
+        if mg or m1:
+            if mg:  # 分组制: 第a空～第b空 / 第a~b空
+                ga, gb = int(mg.group(1)), int(mg.group(2))
+                label = (mg.group(3) or '').strip()
+                rest = (mg.group(4) or '').strip()
+                blk = []
+                j = i + 1
+                while j < b and not re.match(r'^\*\*第\d+', lines[j]) and not re.match(r'^#{2,3}\s', lines[j]):
+                    blk.append(lines[j]); j += 1
+                txt = '\n'.join(blk)
+                am2 = re.search(r'-\s*【答案】\s*(.*)', txt)
+                ans = am2.group(1).strip() if am2 else ''
+                km = re.search(r'-\s*【知识点】\s*(.*)', txt)
+                kp = km.group(1).strip() if km else ''
+                sec_t = titems_by_sec.get(cur_sec, {})
+                subj = [t for t, bl in sec_t.values() if bl and (bl & set(range(ga, gb+1)))]
+                if subj:
+                    stem = f"第{ga}~{gb}空 ｜ " + ' '.join(subj)
+                else:
+                    stem = f"第{ga}~{gb}空 {label} {re.sub(r'（答案[^）]*）', '', rest)}".strip()
+                zt.append({'year': y, 'sec': cur_sec, 'no': ga, 'stem': stem, 'ans': ans, 'kp': kp})
+                continue
+            no = int(m1.group(1))
+            label = (m1.group(2) or '').strip()
+            stem = (m1.group(3) or '').strip()
             blk = []
             j = i + 1
-            while j < b and not re.match(r'^\*\*第\d+题\*\*', lines[j]) and not re.match(r'^#{2,3}\s', lines[j]):
+            while j < b and not re.match(r'^\*\*第\d+', lines[j]) and not re.match(r'^#{2,3}\s', lines[j]):
                 blk.append(lines[j]); j += 1
             txt = '\n'.join(blk)
-            stem, ans = m2.group(2).strip(), ''
+            ans = ''
             am = re.search(r'【答案】\s*(.*)', stem)
             if am:
                 ans = am.group(1).strip()
@@ -80,9 +123,16 @@ for (y, a), (_, b) in zip(years, years[1:]):
             if not ans:
                 am2 = re.search(r'-\s*【答案】\s*(.*)', txt)
                 if am2: ans = am2.group(1).strip()
+            if not stem or re.match(r'^（[^）]*选[^）]*）$', stem):  # 2022式答案提示当头 → 用【题目】bullet
+                am3 = re.search(r'-\s*【题目】\s*(.*)', txt)
+                stem = am3.group(1).strip() if am3 else stem
+            if not stem and no in titems_by_sec.get(cur_sec, {}):  # 判断/精解分组制: 按题号取本节"题目"编号行
+                stem = re.sub(r'（\s*）\s*$', '', titems_by_sec[cur_sec][no][0]).strip()
+            if not stem and label:
+                stem = f"第{no}空（{label}）"
             km = re.search(r'-\s*【知识点】\s*(.*)', txt)
             kp = km.group(1).strip() if km else ''
-            zt.append({'year': y, 'sec': cur_sec, 'no': int(m2.group(1)), 'stem': stem, 'ans': ans, 'kp': kp})
+            zt.append({'year': y, 'sec': cur_sec, 'no': no, 'stem': stem, 'ans': ans, 'kp': kp})
 
 # ---------- 来源B: 299 小题 ----------
 q = json.load(io.open(QJ, encoding='utf-8'))
@@ -98,7 +148,7 @@ for x in tk:
 # ---------- 过滤计算类 ----------
 CALC_STEM = re.compile(r'((?<![要需请告要])求[^。]{0,12}(带宽|速率|门限|容量|熵|误码率|功率|码距|码字|监督|校正子|输出)|计算|画出|画一画|等于多少|为多少|是多少|多少\s*(dB|Hz|bps|bit|V|W|kHz|MHz)|试求|编码结果|写出.{0,8}(码字|编码|码组|HDB3|CMI))')
 CALC_ANS = re.compile(r'\d')
-UNIT = re.compile(r'(dB|Hz|bps|Baud|bit/s|kbit|Mbit|kHz|MHz|GHz|μs|μA)')
+UNIT = re.compile(r'(dB|Hz|bps|Baud|bit/s|kbit|Mbit|kHz|MHz|GHz|μs|μA|mV|kV|\bs\b)')
 def is_calc(item):
     st, an = item['stem'] + ' ' + item.get('kp',''), item['ans']
     if CALC_STEM.search(st): return True
