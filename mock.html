@@ -126,6 +126,13 @@ body.side-off .mk-side{display:none}
   padding:7px 14px;font-size:12.5px;cursor:pointer;font-weight:700}
 .done-btn.on{background:var(--ok);border-color:var(--ok);color:#fff}
 .done-hint{font-size:11.5px;color:var(--sub);margin-top:6px}
+.rw-btn{border:1px solid var(--line);background:#fff;color:#9a8f80;border-radius:9px;
+  padding:7px 14px;font-size:12.5px;cursor:pointer;font-weight:700}
+.rw-btn.on{background:#d93025;border-color:#d93025;color:#fff}
+.rw-badge{flex:none;font-size:11px;font-weight:800;color:#fff;background:#d93025;border-radius:999px;padding:2px 9px;animation:rwPulse 1.8s ease infinite}
+@keyframes rwPulse{0%,100%{opacity:1}50%{opacity:.72}}
+.err.err-rw{border-color:#f0b9b3;box-shadow:0 0 0 1px #f0b9b3 inset}
+.ph-badge.rw{background:#d93025}
 
 /* ---------- 空态 ---------- */
 .empty-card{background:var(--card);border:1px dashed #e4d5c2;border-radius:16px;padding:34px 22px;text-align:center}
@@ -223,6 +230,7 @@ function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; }
 function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 function reasonKey(pk,no){ return 'mock_reason_'+pk+'_'+no; }
 function doneKey(pk,no){ return 'mock_done_'+pk+'_'+no; }
+function rwKey(pk,no){ return 'mock_rewrong_'+pk+'_'+no; }
 
 /* ---------- 数据归一 ---------- */
 /* 统一成 [{key, title, sub, meta, answers, group, name, errors, spages, done}] */
@@ -307,9 +315,12 @@ function typeName(t){
 
 function renderMain(p){
   var total=p.errors.length;
+  var nrew=0;
+  p.errors.forEach(function(e){ if(ls(rwKey(p.key,e.no))==='1') nrew++; });
   var html='<div class="paper-card"><div class="ph-row">'
     +'<span class="ph-title">'+escHtml(p.name)+'</span>'
     +(total?'<span class="ph-badge">错题 '+total+'</span>'
+           +(nrew?'<span class="ph-badge rw">🔁 二刷还错 '+nrew+'</span>':'')
            :(p.vol&&p.vol.done?'<span class="ph-badge done">已做 · 待录错题</span>':'<span class="ph-badge zero">未做</span>'))
     +'</div><div class="ph-meta">'+escHtml(p.sub)+'<br>'+escHtml(p.meta)+'</div>';
   if(p.answers){
@@ -354,9 +365,11 @@ function renderMain(p){
 function errHtml(p,e,src){
   var open=ls(doneKey(p.key,e.no))==='1';
   var reason=ls(reasonKey(p.key,e.no));
-  var h='<div class="err" id="err-'+p.key+'-'+e.no+'">'
+  var rw=ls(rwKey(p.key,e.no))==='1';
+  var h='<div class="err'+(rw?' err-rw':'')+'" id="err-'+p.key+'-'+e.no+'">'
     +'<div class="err-h" data-act="tog"><span class="no-badge">'+String(e.no).padStart(2,'0')+'</span>'
     +'<span class="type-chip">'+escHtml(e.type||'')+(e.score?' · '+e.score+'分':'')+'</span>'
+    +(rw?'<span class="rw-badge">🔁 二刷还错</span>':'')
     +(src?'<span class="src-chip">'+escHtml(src)+'</span>':'')
     +'<span class="err-kp"><span id="kp-'+p.key+'-'+e.no+'"></span>'
     +(e.subject?'<span class="kk">'+escHtml(e.subject)+(e.chapter?' · '+escHtml(e.chapter):'')+'</span>':'')
@@ -392,8 +405,10 @@ function errHtml(p,e,src){
   });
   h+='</div>'
     +'<textarea class="rs-ta" id="ta-'+p.key+'-'+e.no+'" placeholder="错因笔记（自动保存，只存本机）…"></textarea>'
-    +'<div style="margin-top:10px"><button class="done-btn'+(open?' on':'')+'" data-act="done">'+(open?'✓ 已重做（点此取消）':'○ 标记已重做')+'</button>'
+    +'<div style="margin-top:10px"><button class="done-btn'+(open?' on':'')+'" data-act="done">'+(open?'✓ 已重做（点此取消）':'○ 标记已重做')+'</button> '
+    +'<button class="rw-btn'+(rw?' on':'')+'" data-act="rw">'+(rw?'🔁 二刷还错（点此取消）':'🔁 二刷又错了')+'</button>'
     +(open?'<span class="done-hint">　重做于 '+escHtml(ls(doneKey(p.key,e.no)+'_at')||'')+'</span>':'')
+    +(rw?'<span class="done-hint rw-hint">　二刷错于 '+escHtml(ls(rwKey(p.key,e.no)+'_at')||'')+'</span>':'')
     +'</div></div></div>';
   return h;
 }
@@ -430,6 +445,22 @@ function bindCard(p, box){
         lsSet(doneKey(p.key,no), on?'1':'');
         if(on){ lsSet(doneKey(p.key,no)+'_at', TODAY); }
         toast(on?'已标记重做':'已取消重做标');
+      } else if(act==='rw'){
+        var won=!this.classList.contains('on');
+        this.classList.toggle('on',won);
+        this.textContent=won?'🔁 二刷还错（点此取消）':'🔁 二刷又错了';
+        lsSet(rwKey(p.key,no), won?'1':'');
+        lsSet(rwKey(p.key,no)+'_at', won?TODAY:'');
+        var cd=this.closest('.err');
+        cd.classList.toggle('err-rw',won);
+        var hd=cd.querySelector('.err-h');
+        var ob=hd.querySelector('.rw-badge');
+        if(won&&!ob){ ob=document.createElement('span'); ob.className='rw-badge'; ob.textContent='🔁 二刷还错'; hd.insertBefore(ob, hd.querySelector('.err-kp')); }
+        if(!won&&ob){ ob.parentNode.removeChild(ob); }
+        var oh=this.parentNode.querySelector('.rw-hint');
+        if(won&&!oh){ oh=document.createElement('span'); oh.className='done-hint rw-hint'; oh.textContent='　二刷错于 '+TODAY; this.parentNode.appendChild(oh); }
+        if(!won&&oh){ oh.parentNode.removeChild(oh); }
+        toast(won?'已标二刷还错——卡片挂红牌':'已取消二刷还错标');
       }
     };
   }
@@ -520,7 +551,9 @@ function renderContent(){
 fetch('data/mock_errors.json').then(function(r){ return r.json(); }).then(function(d){
   DATA=buildPapers(d);
   var nerr=DATA.reduce(function(s,p){ return s+p.errors.length; },0);
-  $('mk-stat').innerHTML='共 <b>'+DATA.length+'</b> 套<br>已录错题 <b>'+nerr+'</b>';
+  var nrw=0;
+  DATA.forEach(function(p){ p.errors.forEach(function(e){ if(ls(rwKey(p.key,e.no))==='1') nrw++; }); });
+  $('mk-stat').innerHTML='共 <b>'+DATA.length+'</b> 套<br>已录错题 <b>'+nerr+'</b>'+(nrw?'<br>🔁 二刷还错 <b style="color:#d93025">'+nrw+'</b>':'');
   renderSide();
   var first=DATA.filter(function(p){return p.errors.length;})[0] || DATA[0];
   if(first){ CUR=first; }
