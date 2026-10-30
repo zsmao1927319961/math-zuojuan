@@ -1,5 +1,28 @@
 [
   {
+    "date": "2026-10-30",
+    "title": "南山30天Day4·2015英二春节花销(静态第一段练习)",
+    "type": "大作文",
+    "words": 43,
+    "score": {
+      "total": 7,
+      "max": 15
+    },
+    "comment": "Day4只写第一段(任务范围达成), 7/15(7-9档全卷口径折算, 非水平分)。亮点: pie chart替换听劝到位、40%数据对、takes the largest share at 40%框架对、其余三项持平的关系表达到(本图主要特征算抓住)、无编造。硬伤: 精背句dz-p1-jt-1零调用=自创句惯性连续第三天(Day2零调用/Day3退旧句/Day4再零调用); 苦瓜静态总起框架how...is distributed across被砍成of短语, 分布义丢失; civilians误'居民'(应residents)+'我国某市'范围丢; followed漏by(10-26那篇写过followed by, 属退步); having a party≠聚餐; 逗号粘连; gifts takes主谓不一致(待确认插入s); 其余三项各20%数值未写出(数据4个只写1个); visualzation拼写; It's书面语缩写。",
+    "issues": [
+      "精背句dz-p1-jt-1(The proportion of A is higher than B, while...)零调用, 自创/半默写惯性连续第三天",
+      "苦瓜静态总起句框架不完整: how 主题 is distributed across 范围被砍成 of 短语, 静态分布义丢失——模板句要整句默",
+      "civilians=平民(与军人/警察相对), 误当'居民'(应residents), 且图表'我国某市'范围未写出",
+      "followed the traffic漏by(应followed by); traffic指车流/交通量, 花销类别'交通'应用transport/travel",
+      "having a party=开派对≠聚餐(应family gatherings/dining out), 且与traffic不平行(应统一名词短语)",
+      "逗号粘连: ..., they are equal to one another两个独立句逗号硬接, 应用each accounting for 20%分词收尾",
+      "数据只有40%一个数值, 其余三项各20%未写出(equal关系对但数值缺失)",
+      "gifts takes主谓不一致(应take; 以插入符号读作gifts计, 待用户确认)",
+      "拼写visualzation→visualization(漏i); 书面语It's→It is不缩写"
+    ],
+    "essay": "The pie chart offers a clear visualzation of the Spring Festival's expenditure of civilians. It's immediately apparent that the New Year's gift[^插入s→gifts] takes the largest share at 40%, followed the traffic and having a party and others, they are equal to one another."
+  },
+  {
     "date": "2026-10-29",
     "title": "2011英二翻译·IT产业温室气体与谷歌数据中心(整段英译汉)",
     "type": "翻译",
