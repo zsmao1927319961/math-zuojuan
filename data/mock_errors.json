@@ -2743,6 +2743,333 @@
      ]
     }
    ]
+  },
+  {
+   "paper": {
+    "name": "2023数二真题错题",
+    "date": "2023",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2023数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 3,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "无穷小比阶",
+     "qimg": "images/yka/examMathQuestion/question/96613e138c984130b78daa9672da9427.png",
+     "ztYear": 2023,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T3/1.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T3/2.png"
+     ]
+    },
+    {
+     "no": 4,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "images/yka/examMathQuestion/question/0e2a61c2b57c4dadb5d34b0a23331ed2.png",
+     "ztYear": 2023,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T4/1.png"
+     ]
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "反常积分",
+     "qimg": "images/yka/examMathQuestion/question/f388e611c8914f83a88d2499b38c3824.png",
+     "ztYear": 2023,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T6/1.png"
+     ]
+    },
+    {
+     "no": 8,
+     "type": "选择",
+     "score": 5,
+     "subject": "线代",
+     "chapter": "矩阵",
+     "kp": "伴随矩阵",
+     "qimg": "images/yka/examMathQuestion/question/f812fc913290473da2e4f7b8c457326a.png",
+     "ztYear": 2023,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T8/1.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T8/2.png"
+     ]
+    },
+    {
+     "no": 11,
+     "type": "填空",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "无穷小比阶",
+     "qimg": "images/yka/examMathQuestion/question/55e6711d8eb64f32a9e049c21c9ea959.png",
+     "ztYear": 2023,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T11/1.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T11/2.png"
+     ]
+    },
+    {
+     "no": 12,
+     "type": "填空",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "几何应用",
+     "qimg": "images/yka/examMathQuestion/question/a7de15682ad64194b7f110225dabbecf.png",
+     "ztYear": 2023,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T12/1.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T12/2.png"
+     ]
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 12,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "images/yka/examMathQuestion/question/4148bb170cbc4e218190cd35326945e0.png",
+     "ztYear": 2023,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2023/T21/1.png"
+     ]
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2024数二真题错题",
+    "date": "2024",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2024数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 1,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "函数极限概念题",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T1/b2477ab2d1434e118e449ee0cdbcfaf1.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T1/c053a2da441d418283476e1089d2a8d3.png"
+     ]
+    },
+    {
+     "no": 4,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "极限",
+     "kp": "数列极限",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T4/25071aed631f43c0ac9d97304bcbdc2a.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T4/a2c98d979b784e95bf5df0901a58b8c5.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T4/7feb67f8a76c473787b1a2004bc4c955.png"
+     ]
+    },
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "多元微分",
+     "kp": "偏导数",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T5/588e9fd87c214374b0494374f12f61bf.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T5/4dbf9ad90c4b4e13ba0fb3a328934059.png"
+     ]
+    },
+    {
+     "no": 7,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "反常积分",
+     "qimg": "images/yka/examMathQuestion/analysis-v2/eae0ffa6-2c0e-4448-8438-4157702b99b1.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T7/ab79988291764144888a502ea8afc45e.png"
+     ]
+    },
+    {
+     "no": 9,
+     "type": "选择",
+     "score": 5,
+     "subject": "线代",
+     "chapter": "矩阵",
+     "kp": "伴随矩阵",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T9/fc8c4b1c7f67464da2aae9ea5bbf4e70.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T9/0488fbd4b8464b669b577fa50a23f9ad.png"
+     ]
+    },
+    {
+     "no": 10,
+     "type": "选择",
+     "score": 5,
+     "subject": "线代",
+     "chapter": "特征值与特征向量",
+     "kp": "相似对角化",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T10/29de936524634df4a4d30c2444f44fad.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T10/0e41d055bbe846f2b2b0900a7e78f3d4.png"
+     ]
+    },
+    {
+     "no": 11,
+     "type": "填空",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "曲率",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T11/48fe345744d84fe885becd974aef844b.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T11/17ab9775935a454cb66b2193d0687303.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T11/f514ec4f520347dab098aa03ea9812bb.png"
+     ]
+    },
+    {
+     "no": 13,
+     "type": "填空",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T13/ea0c9202eb2d443ea3e402ed31043e1a.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T13/cb4309035cd446bd918332b603c9751c.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T13/7ef5d74bbca448a8b9f40f4bdf9b4d0c.png"
+     ]
+    },
+    {
+     "no": 14,
+     "type": "填空",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "导数计算",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T14/ad1ab6639f5c4bf79207c9bf60b3aeec.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T14/58bc5d0316c04bfc89b7317a0f308441.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T14/63311057731d418b9b43fc84598305c1.png"
+     ]
+    },
+    {
+     "no": 17,
+     "type": "解答",
+     "score": 10,
+     "subject": "高数",
+     "chapter": "二重积分",
+     "kp": "交换积分次序",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T17/67b6a13d3aa346289ddda8985dbfc33e.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T17/33b80ec05ced402abb9b6603ff308814.png",
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T17/911405806cd84b7080b1f0f97edec2ba.png"
+     ]
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 12,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T18/1674a2fe11014b2aae62587f4c9eab13.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T18/a26ff65a805648c48697cdb43ffde10e.png"
+     ]
+    },
+    {
+     "no": 20,
+     "type": "解答",
+     "score": 12,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "已知解反求微分方程（逆问题）",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T20/18ee067e1cb848248344e3871c2c0723.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T20/593611f0ac884e658683979e1ac19f15.png"
+     ]
+    },
+    {
+     "no": 21,
+     "type": "解答",
+     "score": 12,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T21/6852294b22c547b09f98e3bf8d58b6be.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T21/2af122c8665e4afe907863181a0f9c38.png"
+     ]
+    },
+    {
+     "no": 22,
+     "type": "解答",
+     "score": 12,
+     "subject": "线代",
+     "chapter": "二次型",
+     "kp": "标准型",
+     "qimg": "images/yka/examMathQuestion/question/math/math2/2024/T22/86a18e01daf44a93b5491144f1c78766.png",
+     "ztYear": 2024,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2024/T22/22a4550343654c34b5ec41cb090019e0.png"
+     ]
+    }
+   ]
   }
  ],
  "series": [
