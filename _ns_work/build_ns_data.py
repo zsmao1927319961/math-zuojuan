@@ -328,6 +328,12 @@ add("dz-p2-gd-3", DZ, "第二段 · 过渡句", "材料观点类·版A",
 add("dz-p2-gd-4", DZ, "第二段 · 过渡句", "材料观点类·版B",
     f"{T('Behind these survey results lie different considerations and expectations among different groups of people.')}",
     "这些调查结果的背后，是不同人群各异的考量与期待。", None, 2, "P90")
+# —— 第二段·考场定版 (10-31用户自组装拍板"以后用这个"; yy-1/yy-2原句降为部件/备胎)
+add("dz-p2-zd-1", DZ, "第二段 · 考场定版", "自组装模板",
+    f"{T('Several factors can account for this phenomenon. First, the growing popularity of')} {B('原因')} {T('has offered people more opportunities to')} {B('机会做的事')}{T(', enabling them to')} {B('行为')}{T('.')} {T('Besides, with the growing awareness of')} {B('主题')}{T(', people from different age groups are more likely to')} {B('行为')}{T('.')} {B('收尾句·四选一(判据见meta)')}",
+    "有几个因素可以解释这一现象。首先，【原因】的日益流行给人们提供了更多机会去做【机会做的事】，使他们能够【行为】。此外，随着对【主题】意识的增强，不同年龄段的人更有可能【行为】。最后加收尾判断句(四选一)：积极=这一变化反映了社会进步和人们对美好生活的追求；负面=如果得不到解决，这一问题将来可能造成更加严重的后果；中性=这一现象是社会发展与个人需求变化共同作用的结果；纯数据=图表所示的变化并非偶然，而是多种相互关联因素共同作用的结果。",
+    "10-31用户拍板：本卡=第二段考场定版，批改照此核。填槽：原因=能流行的事物(online shopping网购/fitness apps健身App/short videos短视频)；机会做的事=动词短语，to后不接名词(buy whatever they like/exercise at any time)；行为=图表核心动作照抄图注口径，两个行为槽错开；主题=与图相关的意识(health/rational consumption)。切题开关：经济/政策类原因，growing popularity of换回development of(见yy-1)；特定群体图(学生/农村/老人)，people from different age groups换回an increasing number of people(见yy-2)；负面图整套换=yy-7/yy-8负面原因+zj-2收尾+Day26负向第三段。收尾四选一=zj-1积极/zj-2负面/zj-3中性/zj-5纯数据(见次日备选区)。全段约62词；全篇偏瘦时插万能原因句(In addition, supportive policies…)或第一段加dd-1。",
+    1)
 # —— 第二段·现象数据类原因 (P89-90)
 add("dz-p2-yy-1", DZ, "第二段 · 现象原因", "宏观原因句",
     f"{T('First, the development of')} {B('宏观原因')} {T('has provided people with')} {B('条件')}{T(', making it easier for them to')} {B('行为')}{T('.')}",
@@ -569,9 +575,10 @@ PLAN = [
   {"day":21,"cat":"dz","title":"图表第一段·复合图表模板","book":"P83-84",
    "learn":["dz-p1-fh-1","dz-p1-fh-2","dz-p1-fh-3","dz-p1-fh-4","dz-p1-fh-5"],
    "practice":["英语一2024或2026复合图表,迁移训练"]},
-  {"day":22,"cat":"dz","title":"现象数据类第二段:宏观原因+个人需求","book":"P87-94",
+  {"day":22,"cat":"dz","title":"第二段考场定版(自组装)+原因句部件","book":"P87-94",
    "learn":["dz-p2-gd-1","dz-p2-gd-2","dz-p2-yy-1","dz-p2-yy-2"],
-   "practice":["2023英语二第二段真题练习"]},
+   "practice":["2023英语二第二段真题练习"],
+   "tip":"考场第二段=定版卡dz-p2-zd-1(必背)：popularity槽只装能流行的事物，经济/政策类原因换回yy-1的development of；特定群体图(学生/农村/老人)把age groups换回an increasing number of people(yy-2)；收尾四选一zj-1/2/3/5在次日备选区；负面图整套换=yy-7/yy-8+zj-2+Day26负向第三段。"},
   {"day":23,"cat":"dz","title":"现象数据类第二段:原因+影响+趋势判断","book":"P87-94+补充",
    "learn":["dz-p2-yy-3","dz-p2-yy-4","dz-p2-yy-5","dz-p2-yy-6","dz-p2-yy-7","dz-p2-yy-8","dz-p2-xy-1","dz-p2-xy-2","dz-p2-xy-3","dz-p2-zj-1","dz-p2-zj-2","dz-p2-zj-3"],
    "practice":["2024英语二第二段真题练习"]},
@@ -619,8 +626,8 @@ LEARN_SKIM = {
   18: (["dz-p1-jt-1"], ["dz-p1-jt-2","dz-p1-jt-3","dz-p1-jt-4"]),
   19: ([], []), 20: ([], []),
   21: (["dz-p1-fh-1","dz-p1-fh-2","dz-p1-fh-4"], ["dz-p1-fh-3","dz-p1-fh-5"]),
-  22: (["dz-p2-yy-1","dz-p2-yy-2"], ["dz-p2-gd-1"]),
-  23: (["dz-p2-xy-1"], ["dz-p2-yy-3","dz-p2-yy-4","dz-p2-yy-5","dz-p2-yy-6","dz-p2-yy-7","dz-p2-yy-8","dz-p2-xy-2","dz-p2-xy-3","dz-p2-zj-1","dz-p2-zj-2","dz-p2-zj-3"]),
+  22: (["dz-p2-zd-1","dz-p2-yy-1","dz-p2-yy-2"], ["dz-p2-gd-1"]),
+  23: (["dz-p2-xy-1"], ["dz-p2-yy-3","dz-p2-yy-4","dz-p2-yy-5","dz-p2-yy-6","dz-p2-yy-7","dz-p2-yy-8","dz-p2-xy-2","dz-p2-xy-3","dz-p2-zj-1","dz-p2-zj-2","dz-p2-zj-3","dz-p2-zj-5"]),
   24: (["dz-p1-cl-1","dz-p1-cl-2","dz-p2-gd-3","dz-p2-cl-1","dz-p2-cl-4","dz-p2-zj-4"], ["dz-p2-gd-4","dz-p2-cl-2","dz-p2-cl-3","dz-p2-cl-5","dz-p2-cl-6"]),
   25: (["dz-p3-xz-1"], ["dz-p3-2","dz-p3-xz-2"]),
   26: (["dz-p3-3","dz-p3-xz-3"], ["dz-p3-4","dz-p3-xz-4","dz-p3-xz-5"]),
@@ -723,6 +730,7 @@ for _s in S:
 
 # ============================================================ 套用例句(用户10-28:模板没有例句没法背,照书【例】/真题示例补)
 EXAMPLES = {
+  "dz-p2-zd-1": ("Several factors can account for this phenomenon. First, the growing popularity of national fitness has offered people more opportunities to exercise at any time, enabling them to take regular exercise. Besides, with the growing awareness of health, people from different age groups are more likely to do sports in their daily lives. Overall, this change reflects social progress and people's pursuit of a better life.", "2021英语二健身（填槽示例）：有几个因素可以解释这一现象。首先，全民健身的日益流行给人们提供了更多随时锻炼的机会，使他们能够定期锻炼。此外，随着健康意识的增强，不同年龄段的人更有可能在日常生活中运动。总体而言，这一变化反映了社会进步和人们对美好生活的追求。"),
   "xz-p1-gw-1": ("I am a second-year student from the Department of Literature at your university.", "我是贵校文学系的一名大二学生。"),
   "xz-p1-gw-2": ("As a member of the Students' Union, I have organized several charity sales and volunteer activities on campus.", "作为学生会成员，我曾在校内组织过多次慈善义卖和志愿活动。"),
   "xz-p1-mu-1": ("The purpose of this letter is to invite you to serve as a judge for the upcoming English speech contest.", "本信旨在邀请您担任即将举行的英语演讲比赛的评委。"),
