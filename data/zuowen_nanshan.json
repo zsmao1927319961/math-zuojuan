@@ -113,19 +113,20 @@
   {
    "day": 8,
    "cat": "dz",
-   "title": "第二段考场定版(自组装)+原因句部件",
+   "title": "现象数据类第二段:宏观原因+个人需求",
    "book": "P87-94",
    "learn": [
-    "dz-p2-zd-1",
-    "dz-p2-yy-1",
-    "dz-p2-yy-2"
+    "dz-p2-yy-1b",
+    "dz-p2-yy-2b"
    ],
    "practice": [
     "2023英语二第二段真题练习"
    ],
-   "tip": "考场第二段=定版卡dz-p2-zd-1(必背)：popularity槽只装能流行的事物，经济/政策类原因换回yy-1的development of；特定群体图(学生/农村/老人)把age groups换回an increasing number of people(yy-2)；收尾四选一zj-1/2/3/5在次日备选区；负面图整套换=yy-7/yy-8+zj-2+Day26负向第三段。",
+   "tip": "第二段槽位顺序=过渡句(gd-2)→宏观原因句(yy-1b流行版/yy-1发展版按题选)→个人需求句(yy-2b全龄版/yy-2按题选)→收尾(zj-1/2/3/5四选一,见次日备选区)。",
    "skim": [
-    "dz-p2-gd-1"
+    "dz-p2-gd-1",
+    "dz-p2-yy-1",
+    "dz-p2-yy-2"
    ]
   },
   {
@@ -1319,16 +1320,30 @@
    "page": "P90"
   },
   {
-   "id": "dz-p2-zd-1",
+   "id": "dz-p2-yy-1b",
    "cat": "dz",
-   "grp": "第二段 · 考场定版",
-   "slot": "自组装模板",
-   "en": "<span class=\"tpl\">Several factors can account for this phenomenon. First, the growing popularity of</span> <span class=\"blank\">原因</span> <span class=\"tpl\">has offered people more opportunities to</span> <span class=\"blank\">机会做的事</span><span class=\"tpl\">, enabling them to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span> <span class=\"tpl\">Besides, with the growing awareness of</span> <span class=\"blank\">主题</span><span class=\"tpl\">, people from different age groups are more likely to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span> <span class=\"blank\">收尾句·四选一(判据见meta)</span>",
-   "zh": "有几个因素可以解释这一现象。首先，【原因】的日益流行给人们提供了更多机会去做【机会做的事】，使他们能够【行为】。此外，随着对【主题】意识的增强，不同年龄段的人更有可能【行为】。最后加收尾判断句(四选一)：积极=这一变化反映了社会进步和人们对美好生活的追求；负面=如果得不到解决，这一问题将来可能造成更加严重的后果；中性=这一现象是社会发展与个人需求变化共同作用的结果；纯数据=图表所示的变化并非偶然，而是多种相互关联因素共同作用的结果。",
+   "grp": "第二段 · 现象原因",
+   "slot": "宏观原因句·流行版",
+   "en": "<span class=\"tpl\">First, the growing popularity of</span> <span class=\"blank\">原因</span> <span class=\"tpl\">has offered people more opportunities to</span> <span class=\"blank\">机会做的事</span><span class=\"tpl\">, enabling them to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "首先，【原因】的日益流行给人们提供了更多机会去做【机会做的事】，使他们能够【行为】。",
    "lvl": 1,
-   "meta": "10-31用户拍板：本卡=第二段考场定版，批改照此核。填槽：原因=能流行的事物(online shopping网购/fitness apps健身App/short videos短视频)；机会做的事=动词短语，to后不接名词(buy whatever they like/exercise at any time)；行为=图表核心动作照抄图注口径，两个行为槽错开；主题=与图相关的意识(health/rational consumption)。切题开关：经济/政策类原因，growing popularity of换回development of(见yy-1)；特定群体图(学生/农村/老人)，people from different age groups换回an increasing number of people(见yy-2)；负面图整套换=yy-7/yy-8负面原因+zj-2收尾+Day26负向第三段。收尾四选一=zj-1积极/zj-2负面/zj-3中性/zj-5纯数据(见次日备选区)。全段约62词；全篇偏瘦时插万能原因句(In addition, supportive policies…)或第一段加dd-1。",
-   "ex": "Several factors can account for this phenomenon. First, the growing popularity of national fitness has offered people more opportunities to exercise at any time, enabling them to take regular exercise. Besides, with the growing awareness of health, people from different age groups are more likely to do sports in their daily lives. Overall, this change reflects social progress and people's pursuit of a better life.",
-   "exz": "2021英语二健身（填槽示例）：有几个因素可以解释这一现象。首先，全民健身的日益流行给人们提供了更多随时锻炼的机会，使他们能够定期锻炼。此外，随着健康意识的增强，不同年龄段的人更有可能在日常生活中运动。总体而言，这一变化反映了社会进步和人们对美好生活的追求。"
+   "meta": "10-31用户拍板为主选。原因槽=能流行的事物(online shopping网购/fitness apps健身App/short videos短视频)；机会做的事=动词短语，to后不接名词(buy whatever they like)；行为=照抄图注口径，与yy-2系行为槽错开。经济/政策类原因popularity装不下，换用yy-1(development of)。约22词。",
+   "page": "P89",
+   "ex": "First, the growing popularity of national fitness has offered people more opportunities to exercise at any time, enabling them to take regular exercise.",
+   "exz": "2021英语二健身：首先，全民健身的日益流行给人们提供了更多随时锻炼的机会，使他们能够定期锻炼。"
+  },
+  {
+   "id": "dz-p2-yy-2b",
+   "cat": "dz",
+   "grp": "第二段 · 现象原因",
+   "slot": "个人观念原因句·全龄版",
+   "en": "<span class=\"tpl\">Besides, with the growing awareness of</span> <span class=\"blank\">主题</span><span class=\"tpl\">, people from different age groups are more likely to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
+   "zh": "此外，随着对【主题】意识的增强，不同年龄段的人更有可能【行为】。",
+   "lvl": 1,
+   "meta": "yy-2的全龄版(10-31用户拍板为主选)。age groups只配全民类话题(健身/手机/消费)；学生/农村/老人类图换回yy-2(an increasing number of people)。行为槽与yy-1系错开。",
+   "page": "P89-90",
+   "ex": "Besides, with the growing awareness of health, people from different age groups are more likely to do sports in their daily lives.",
+   "exz": "此外，随着健康意识的增强，不同年龄段的人更有可能在日常生活中运动。（接yy-1b后使用）"
   },
   {
    "id": "dz-p2-yy-1",
@@ -1337,7 +1352,7 @@
    "slot": "宏观原因句",
    "en": "<span class=\"tpl\">First, the development of</span> <span class=\"blank\">宏观原因</span> <span class=\"tpl\">has provided people with</span> <span class=\"blank\">条件</span><span class=\"tpl\">, making it easier for them to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
    "zh": "首先，……的发展为人们提供了……，使他们更容易……",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "development of 可替换 improvement of / continued growth of / widespread application of / growing popularity of / increasing availability of",
    "page": "P89",
    "ex": "First, the rapid development of technology has provided people with more convenient services, making it easier for them to obtain information.",
@@ -1350,7 +1365,7 @@
    "slot": "个人观念原因句",
    "en": "<span class=\"tpl\">Besides, with the growing awareness of</span> <span class=\"blank\">主题</span><span class=\"tpl\">, an increasing number of people are willing to</span> <span class=\"blank\">行为</span><span class=\"tpl\">.</span>",
    "zh": "此外，随着人们对……的意识不断增强，越来越多的人愿意……。",
-   "lvl": 1,
+   "lvl": 2,
    "meta": "growing awareness of 可替换 increasing attention paid to / rising demand for / changing attitudes toward / people attaching greater importance to",
    "page": "P89-90",
    "ex": "Besides, with the growing awareness of environmental protection, an increasing number of people are willing to adopt a greener lifestyle.",
