@@ -284,33 +284,6 @@ add("dz-p1-jt-4", DZ, "第一段 · 静态描述", "差距句",
     "A与B之间存在很大差异/巨大差距。",
     "a huge gap 可替换 a big difference / a huge change",
     2, "P82")
-# —— 第一段·复合图表 (P83-84)
-add("dz-p1-fh-1", DZ, "第一段 · 复合图表", "共同主题句",
-    f"{T('The two charts above jointly present the results of a survey concerning')} {B('共同主题')}{T('.')}",
-    "上述两幅图表共同呈现了一项关于……的调查结果。", None, 1, "P83")
-add("dz-p1-fh-2", DZ, "第一段 · 复合图表", "分别概括句·版A",
-    f"{T('The pie chart shows')} {B('饼图信息')}{T(', while the bar chart displays')} {B('柱图信息')}{T('.')}",
-    "饼图显示了……，而柱状图展示了……。", None, 1, "P84")
-add("dz-p1-fh-3", DZ, "第一段 · 复合图表", "分别概括句·版B",
-    f"{T('As can be seen from the two charts, the pie graph illustrates')} {B('饼图信息')}{T(', with the bar graph revealing')} {B('柱图信息')}{T('.')}",
-    "从两幅图表中可以看出，饼图说明了……，同时柱状图揭示了……。", None, 2, "P84")
-add("dz-p1-fh-4", DZ, "第一段 · 复合图表", "揭示联系句",
-    f"{T('The two sets of data are closely related, as')} {B('A')} {T('may be a major reason for')} {B('B')}{T('.')}",
-    "两组数据紧密相关，因为……或许是造成……的主要原因。", None, 1, "P84")
-add("dz-p1-fh-5", DZ, "第一段 · 复合图表", "揭示联系句·版B",
-    f"{T('It is clear that')} {B('A')} {T('has a close connection with')} {B('B')} {T('reflected in the charts.')}",
-    "显而易见，图表反映出……与……有着密切的联系。", None, 2, "P84")
-# —— 第一段·材料作文 (P85)
-add("dz-p1-cl-1", DZ, "第一段 · 材料作文", "概括材料观点",
-    f"{T('In the passage, the author argues that')} {B('作者观点')}{T('.')}",
-    "在文章中，作者认为……",
-    "argues 可替换 claims / suggests / states / believes",
-    1, "P85")
-add("dz-p1-cl-2", DZ, "第一段 · 材料作文", "表明自己立场",
-    f"{T('I fully agree with')} {B('this view')}{T('.')}",
-    "我完全同意这个观点。",
-    "完全同意: I fully agree with / support / share / subscribe to this view; 部分同意: I partly agree with the author; 不同意: I disagree with / oppose this opinion",
-    1, "P85")
 # —— 第二段·过渡句 (P86)
 add("dz-p2-gd-1", DZ, "第二段 · 过渡句", "现象分析类·版A",
     f"{T('This phenomenon can be attributed to several factors.')}",
@@ -322,12 +295,6 @@ add("dz-p2-gd-2", DZ, "第二段 · 过渡句", "现象分析类·版B",
     "有几个因素能解释这一现象/趋势。",
     "另备: The reasons behind this phenomenon are not difficult to identify. 这一现象背后的原因不难发现",
     1, "P86")
-add("dz-p2-gd-3", DZ, "第二段 · 过渡句", "材料观点类·版A",
-    f'{T("The differences in people\'s opinions can be explained by their diverse demands and concerns.")}',
-    "人们观点的差异，可以通过他们不同的需求与关注点来解释。", None, 1, "P86-90")
-add("dz-p2-gd-4", DZ, "第二段 · 过渡句", "材料观点类·版B",
-    f"{T('Behind these survey results lie different considerations and expectations among different groups of people.')}",
-    "这些调查结果的背后，是不同人群各异的考量与期待。", None, 2, "P90")
 # —— 第二段·原因句变体 (10-31用户自组拍板: 同槽替换用, 不设整段卡)
 add("dz-p2-yy-1b", DZ, "第二段 · 现象原因", "宏观原因句·流行版",
     f"{T('First, the growing popularity of')} {B('原因')} {T('has offered people more opportunities to')} {B('机会做的事')}{T(', enabling them to')} {B('行为')}{T('.')}",
@@ -385,31 +352,6 @@ add("dz-p2-xy-3", DZ, "第二段 · 影响句", "负面影响",
     "这一问题可能损害……，并增加……",
     "harm 可替换 damage; increase 可替换 add to",
     2, "补充P90")
-# —— 第二段·材料观点类展开 (P90-91)
-add("dz-p2-cl-1", DZ, "第二段 · 材料观点类", "第一种观点原因·版A",
-    f"{T('Those who choose')} {B('A')} {T('mainly do so because they believe that')} {B('原因')}{T('.')}",
-    "选择A的人主要是因为他们认为……", None, 1, "P90")
-add("dz-p2-cl-2", DZ, "第二段 · 材料观点类", "第一种观点原因·版B",
-    f"{T('One major reason why some people prefer')} {B('A')} {T('is that it enables them to')} {B('具体好处')}{T('.')}",
-    "一些人偏向A的一个主要原因是，它能够使他们……", None, 2, "P91")
-add("dz-p2-cl-3", DZ, "第二段 · 材料观点类", "第一种观点原因·版C",
-    f"{T('From their perspective,')} {B('A')} {T('is a more practical choice, as it helps them')} {B('具体好处')}{T('.')}",
-    "在他们看来，A是更加实际的选择，因为这有助于他们……", None, 2, "P91")
-add("dz-p2-cl-4", DZ, "第二段 · 材料观点类", "另一种观点·版A",
-    f"{T('By contrast, those who prefer')} {B('B')} {T('tend to attach greater importance to')} {B('重视内容')}{T('.')}",
-    "相比之下，偏向B的人往往更加重视……",
-    "attach greater importance to 可替换 value / place emphasis on / give priority to",
-    1, "P91")
-add("dz-p2-cl-5", DZ, "第二段 · 材料观点类", "另一种观点·版B",
-    f"{T('Others, however, choose')} {B('B')} {T('because they believe it can introduce them to')} {B('好处')}{T('.')}",
-    "然而，另一些人选择B，因为他们认为它能够……",
-    "introduce them to 可替换 provide them with / give them access to",
-    2, "P91")
-add("dz-p2-cl-6", DZ, "第二段 · 材料观点类", "另一种观点·版C",
-    f"{T('For another group,')} {B('B')} {T('is more attractive, since it provides them with')} {B('机会/资源/经验')}{T('.')}",
-    "对另一群体而言，B更具吸引力，因为它为他们提供了……",
-    "attractive 可替换 appealing / suitable / valuable",
-    2, "P91")
 # —— 第二段·总结句 (P92)
 add("dz-p2-zj-1", DZ, "第二段 · 总结句", "积极趋势",
     f'{T("Overall, this change reflects social progress and people\'s pursuit of a better life.")}',
@@ -420,11 +362,6 @@ add("dz-p2-zj-2", DZ, "第二段 · 总结句", "负面现象",
 add("dz-p2-zj-3", DZ, "第二段 · 总结句", "中性趋势",
     f"{T('Overall, this phenomenon is the result of both social development and changing individual needs.')}",
     "总体而言，这一现象是社会发展与个人需求变化共同作用的结果。", None, 1, "P92")
-add("dz-p2-zj-4", DZ, "第二段 · 总结句", "材料观点·归纳",
-    f'{T("In essence, these different choices reflect people\'s diverse needs, priorities and values.")}',
-    "从本质上讲，这些不同选择反映了人们多样化的需求、优先考虑和价值观。",
-    "另备: Taken together, these views reflect the diversity of public attitudes toward+主题. 综合来看，这些观点反映了公众对…态度的多样性",
-    1, "P92")
 add("dz-p2-zj-5", DZ, "第二段 · 总结句", "图表数据变化",
     f"{T('Therefore, the change shown in the chart is not accidental but the result of several interconnected factors.')}",
     "因此，图表所显示的变化并非偶然，而是多种相互关联因素共同作用的结果。", None, 2, "P92")
@@ -577,9 +514,6 @@ PLAN = [
   {"day":20,"cat":"dz","title":"静态第一段巩固练习II","book":"P81-82",
    "learn":[],
    "practice":["2021英语二第一段真题练习"]},
-  {"day":21,"cat":"dz","title":"图表第一段·复合图表模板","book":"P83-84",
-   "learn":["dz-p1-fh-1","dz-p1-fh-2","dz-p1-fh-3","dz-p1-fh-4","dz-p1-fh-5"],
-   "practice":["英语一2024或2026复合图表,迁移训练"]},
   {"day":22,"cat":"dz","title":"现象数据类第二段:宏观原因+个人需求","book":"P87-94",
    "learn":["dz-p2-gd-1","dz-p2-gd-2","dz-p2-yy-1","dz-p2-yy-2"],
    "practice":["2023英语二第二段真题练习"],
@@ -587,9 +521,6 @@ PLAN = [
   {"day":23,"cat":"dz","title":"现象数据类第二段:原因+影响+趋势判断","book":"P87-94+补充",
    "learn":["dz-p2-yy-3","dz-p2-yy-4","dz-p2-yy-5","dz-p2-yy-6","dz-p2-yy-7","dz-p2-yy-8","dz-p2-xy-1","dz-p2-xy-2","dz-p2-xy-3","dz-p2-zj-1","dz-p2-zj-2","dz-p2-zj-3"],
    "practice":["2024英语二第二段真题练习"]},
-  {"day":24,"cat":"dz","title":"材料观点类第二段:不同选择背后的原因","book":"P90-91",
-   "learn":["dz-p1-cl-1","dz-p1-cl-2","dz-p2-gd-3","dz-p2-gd-4","dz-p2-cl-1","dz-p2-cl-2","dz-p2-cl-3","dz-p2-cl-4","dz-p2-cl-5","dz-p2-cl-6","dz-p2-zj-4"],
-   "practice":["2026英语二第二段真题练习"]},
   {"day":25,"cat":"dz","title":"正向话题第三段:价值+行动+积极结果","book":"P95-100",
    "learn":["dz-p3-1","dz-p3-2","dz-p3-xz-1","dz-p3-xz-2"],
    "practice":["2024英语二第三段真题练习"]},
@@ -630,10 +561,8 @@ LEARN_SKIM = {
   17: ([], []),
   18: (["dz-p1-jt-1"], ["dz-p1-jt-2","dz-p1-jt-3","dz-p1-jt-4"]),
   19: ([], []), 20: ([], []),
-  21: (["dz-p1-fh-1","dz-p1-fh-2","dz-p1-fh-4"], ["dz-p1-fh-3","dz-p1-fh-5"]),
   22: (["dz-p2-yy-1b","dz-p2-yy-2b"], ["dz-p2-gd-1","dz-p2-yy-1","dz-p2-yy-2"]),
   23: (["dz-p2-xy-1"], ["dz-p2-yy-3","dz-p2-yy-4","dz-p2-yy-5","dz-p2-yy-6","dz-p2-yy-7","dz-p2-yy-8","dz-p2-xy-2","dz-p2-xy-3","dz-p2-zj-1","dz-p2-zj-2","dz-p2-zj-3","dz-p2-zj-5"]),
-  24: (["dz-p1-cl-1","dz-p1-cl-2","dz-p2-gd-3","dz-p2-cl-1","dz-p2-cl-4","dz-p2-zj-4"], ["dz-p2-gd-4","dz-p2-cl-2","dz-p2-cl-3","dz-p2-cl-5","dz-p2-cl-6"]),
   25: (["dz-p3-xz-1"], ["dz-p3-2","dz-p3-xz-2"]),
   26: (["dz-p3-3","dz-p3-xz-3"], ["dz-p3-4","dz-p3-xz-4","dz-p3-xz-5"]),
   27: (["dz-p3-5","dz-p3-xz-6"], ["dz-p3-6","dz-p3-xz-7","dz-p3-xz-8"]),
@@ -783,25 +712,12 @@ EXAMPLES = {
   "dz-p1-jt-1": ("The proportion of spending on New Year gifts is higher than that on dinners, transportation and other items, whereas the percentages of the latter three categories are equal to one another.", "新年礼物的花销占比高于聚餐、交通以及其他项目，而后三者的占比持平。（2015英语二）"),
   "dz-p1-jt-2": ("The percentage of males choosing computer science stands at 10%, compared with 4% of females.", "选择计算机专业的男生占10%，相比之下女生仅占4%。"),
   "dz-p1-jt-4": ("There was a huge gap between the proportions of males and females choosing medicine: about 4% for males and 15% for females.", "选择医学专业的男女比例存在巨大差距：男生约4%，女生约15%。"),
-  "dz-p1-fh-1": ("The two charts above jointly present the results of a survey concerning consumers' acceptance of elderly-care robots and their primary concerns about such products.", "上述两幅图表共同呈现了一项关于消费者对养老机器人的接受度及对此类产品首要关注点的调查结果。"),
-  "dz-p1-fh-2": ("The pie chart shows different levels of public acceptance of elderly-care robots, while the bar chart displays the three main factors that consumers care about most.", "饼图显示了公众对养老机器人不同程度的接受情况，而柱状图展示了消费者最关心的三大主要因素。"),
-  "dz-p1-fh-3": ("As can be seen from the two charts, the pie graph illustrates different attitudes towards elderly-care robots, with the bar graph revealing that safety is the top concern.", "从两幅图表中可以看出，饼图说明了人们对养老机器人的不同态度，同时柱状图揭示出安全是首要的关注点。"),
-  "dz-p1-fh-4": ("The two sets of data are closely related, as safety concerns may be a major reason for some people's unwillingness to accept elderly-care robots.", "两组数据紧密相关，因为安全顾虑或许是部分人不愿接受养老机器人的主要原因。"),
-  "dz-p1-fh-5": ("It is clear that public acceptance of elderly-care robots has a close connection with their attention to product safety and price.", "显而易见，图表反映出公众对养老机器人的接受度与他们对产品安全和价格的关注度有着密切的联系。"),
-  "dz-p1-cl-1": ("In the passage, the author argues that failure can be compensated by higher integrity.", "在这篇文章中，作者认为失败可以通过更高的诚信来弥补。"),
-  "dz-p1-cl-2": ("In the passage, the author argues that failure can be compensated by higher integrity. I fully agree with this view.", "在这篇文章中，作者认为失败可以通过更高的诚信来弥补。我完全同意这一观点。"),
   "dz-p2-gd-2": ("Several factors can account for this trend. First, the development of the economy has provided local governments with more financial resources.", "有几个因素可以解释这一趋势。首先，经济发展为地方政府提供了更多资金。（英一2024城市公园真题套用）"),
   "dz-p2-yy-1": ("First, the rapid development of technology has provided people with more convenient services, making it easier for them to obtain information.", "首先，科技的快速发展为人们提供了更加便利的服务，使他们更容易获取信息。"),
   "dz-p2-yy-2": ("Besides, with the growing awareness of environmental protection, an increasing number of people are willing to adopt a greener lifestyle.", "此外，随着环保意识不断增强，越来越多的人愿意选择更加环保的生活方式。"),
   "dz-p2-xy-1": ("As a result, this phenomenon can not only weaken individuals' ability to think independently but also increase society's dependence on technology.", "因此，这一现象不仅可能削弱个人独立思考的能力，还可能加深社会对技术的依赖。"),
   "dz-p2-xy-2": ("This trend can improve individuals' quality of life and promote public health.", "这一趋势能够改善个人生活质量，并促进公共健康。"),
   "dz-p2-xy-3": ("This phenomenon may harm individuals' health and increase pressure on the healthcare system.", "这一现象可能损害个人健康，并增加医疗体系的压力。"),
-  "dz-p2-cl-1": ("Those who choose not to attend the lecture mainly do so because they believe that a lecture unrelated to their major offers little practical value.", "选择不参加讲座的学生，主要是因为他们认为与专业无关的讲座没有多少实际价值。"),
-  "dz-p2-cl-2": ("One major reason why some students focus only on professional courses is that this enables them to use their limited time more efficiently.", "一些学生只专注于专业课程的一个主要原因是，这能使他们更高效地利用有限的时间。"),
-  "dz-p2-cl-3": ("From their perspective, skipping an unrelated lecture is a more practical choice, as it helps them concentrate on their professional studies.", "在他们看来，不参加与专业无关的讲座是更加实际的选择，因为这有助于他们专注于专业学习。"),
-  "dz-p2-cl-4": ("By contrast, those who attend the lecture tend to attach greater importance to broadening their horizons and acquiring knowledge beyond their major.", "相比之下，参加讲座的学生往往更加重视开阔视野以及获取专业之外的知识。"),
-  "dz-p2-cl-5": ("Others, however, choose to attend the lecture because they believe it can introduce them to new ideas and inspire creative thinking.", "然而，另一些学生选择参加讲座，因为他们认为讲座能够使他们接触新观点并激发创新思维。"),
-  "dz-p2-cl-6": ("For another group of students, attending the lecture is more attractive, since it provides them with opportunities to explore different fields of knowledge.", "对另一部分学生而言，参加讲座更具吸引力，因为它为他们提供了探索不同知识领域的机会。"),
   "dz-p3-1": ("In conclusion, the awareness of environmental protection is essential for both individuals and society.", "总之，环保意识对个人和社会都至关重要。"),
   "dz-p3-2": ("Overall, perseverance plays a vital role in promoting personal growth and social progress.", "总体而言，坚持在促进个人成长和社会进步方面发挥着重要作用。"),
   "dz-p3-xz-1": ("Therefore, we should develop perseverance in our daily lives. In this way, we can better overcome difficulties and achieve our goals.", "因此，我们应当在日常生活中培养坚持的品质。这样，我们就能更好地克服困难、实现目标。"),
@@ -814,7 +730,7 @@ for _s in S:
 # ============================================================ 换序(用户拍板2026-10-28:先大作文后小作文)
 _dz = [d for d in PLAN if d["cat"] == "dz"]
 _xz = [d for d in PLAN if d["cat"] == "xz"]
-assert len(_dz) == 16 and len(_xz) == 14, "块数不对"
+assert len(_dz) == 14 and len(_xz) == 14, "块数不对"
 PLAN = _dz + _xz
 for _i, d in enumerate(PLAN, 1):
     d["day"] = _i

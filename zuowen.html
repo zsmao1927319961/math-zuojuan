@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>背作文 · 30天计划(南山模板)</title>
+<title>背作文 · 28天计划(南山模板)</title>
 <style>
   :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
   * { box-sizing:border-box; }
@@ -101,7 +101,7 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <h1>背作文 · 30天计划</h1>
+    <h1>背作文 · 28天计划</h1>
     <a class="back" href="index.html">← 返回主站</a>
   </div>
   <div class="chips">
@@ -115,7 +115,7 @@
   <div id="app"><div class="empty">加载中…</div></div>
 
   <div class="tipbox"><b>用法</b>:按【每日计划】从第1天推进——每天只精背当天主选句(看中文→回忆英文→点卡片核对→背过打勾),灰色的「同功能备选」挑一句合手感的换着背也行、其余看熟即可,不做完天也算完成;然后做当天真题练习;「今天」按开始日期自动标红。没背熟的句子隔 1/3/7 天回【模板库】遮住英文重背。红字=考场按题填的槽,蓝字=必背框架。数据只存本机浏览器。</div>
-  <div class="foot">背作文 v7.1 · 27南山模板吃鸡计划 ｜ 大作文16天+小作文14天=30天(大作文先背) ｜ 数据:data/zuowen_nanshan.json(105句·由 ZCode 维护)</div>
+  <div class="foot">背作文 v7.2 · 27南山模板吃鸡计划 ｜ 大作文14天+小作文14天=28天(大作文先背；10-31用户裁定去除材料观点类与复合图表) ｜ 数据:data/zuowen_nanshan.json(91句·由 ZCode 维护)</div>
 </div>
 
 <script>
@@ -189,7 +189,7 @@ function bindSens(root){
 function vPlan(){
   const st = stats(), tno = todayNo();
   let h = `<div class="card">
-    <h2>30天计划 · 南山模板</h2>
+    <h2>28天计划 · 南山模板</h2>
     <div class="setrow">开始日期 <input type="date" id="setdate" value="${getStart()}">
       <button id="btn-date">设定</button>
       <span id="datemsg">今天是计划第 ${Math.max(1, tno)} 天${tno > 30 ? '(已跑完,自由复盘)' : ''}</span></div>
