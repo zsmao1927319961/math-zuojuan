@@ -1,5 +1,28 @@
 [
   {
+    "date": "2026-11-02",
+    "title": "2012英二翻译·人才流失brain drain(整段英译汉)",
+    "type": "翻译",
+    "words": 278,
+    "score": {
+      "total": 8.5,
+      "max": 15
+    },
+    "comment": "翻译采分点制第2篇(模拟划分6句合计15): 采分点9, 错别字(常识→尝试/长时间的→长时间地)2处-0.25, 总分8.5/15(5-8档上缘; 2011同口径10)。原文经研招网+中国教育在线双源核实后才动批(2021数据教训落实)。亮点: S3(Lots of studies...emigrate)整句全对、S6主体(剥夺迫切需要的工人/在医院工作/新产品供工厂制造)全对、S5人才流失+困扰达意、全段无整句漏译。失分三源: ①best and brightest名词性习语误读成'最好前景和光明未来'+departure漏译(S1核心, 2012标志坑, 熟词僻义连续两篇第一失分源); ②over the age 25方向译反('低于25岁')——数据方向词硬伤; ③could have taught虚拟语气丢(变定语'受过大学教育的')+households误译'家用企业'+S2'the kind of workers that countries like'结构拆散+Britain英文残留。",
+    "issues": [
+      "best and brightest误读: their best and brightest departure=其最优秀最聪明的人才的外流, 学生拆成'最好前景和光明未来'——the+最高级+and+最高级=名词性习语(人才); 2012标志坑, 熟词僻义连续两篇第一失分源(前科2011 industry/search)",
+      "over the age 25译成'低于25岁'——比较方向译反, 数据句方向词(over/under)必须回原文核对",
+      "could have taught at their universities虚拟语气漏译: 本可以在本国大学任教(却外流), 被读成定语'受到过大学教育的'——could have done=本可以做(却没有)",
+      "households误译'家用企业'(应家庭); a big survey of Indian households=一项针对印度家庭的大型调查",
+      "S2结构拆散: the kind of workers that countries like Britain, Canada and Australia try to attract=像英加澳这类国家想吸引的这类工人, 学生译'有好几个类型的国家的工人', 且Britain未译(英文残留)",
+      "immigration rules that privilege college graduates译'移民规则的特权'生硬(应优待大学毕业生的移民法规); policymakers译'政策建立者'生硬(应决策者)",
+      "more than a high-school education译'高等教育'(应高中以上教育, 口径抬高)",
+      "错别字2处扣0.25: 常识→尝试、长时间的→长时间地",
+      "亮点: S3整句全对, S6主体三分采分点拿二, 无整句漏译"
+    ],
+    "essay": "发展中国家的人们开始担心移民，他们经常关心去硅谷，医院和大学的最好前景和光明未来在发达国家，有好几个类型的国家的工人，例如Britain，加拿大和澳大利亚，他们常识通过使用移民规则的特权来吸引大学毕业生。\n\n许多研究发现，发展中国家中教育良好的人更加可能移民，在2004年一个印度家用企业调查发现几乎有百分之40的移民都受到过高等教育，与全部低于25岁的百分之3.3的印度人相比，这种\"人才流失\"已经长时间的困扰贫穷国家的政策建立者。他们害怕它会危害经济，并且剥夺他们迫切需要的受到过大学教育的技艺精湛的工人，他们在医院里工作，并且能想出新颖的产品让工厂去制作"
+  },
+  {
     "date": "2026-10-30",
     "title": "2021英二居民锻炼方式(静态第一段练习)",
     "type": "大作文",
