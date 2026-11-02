@@ -95,6 +95,28 @@
   .mprog.g { color:var(--green); font-weight:700; }
   .mprog.w { color:#8a94a6; }
   .ilab .gradtag { color:var(--green); font-weight:800; }
+  /* 空/题子项紧凑行 */
+  .item.slim { padding:9px 12px 10px; margin:8px 0; }
+  .item.slim .mrow { display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+  .item.slim .slab { font-size:13px; color:var(--blue); font-weight:700; white-space:nowrap; }
+  .item.slim .gradtag { font-size:12px; }
+  .item.slim .mk { border:1.5px solid var(--line); background:#fff; border-radius:8px;
+                   width:36px; height:29px; font-size:14px; cursor:pointer; line-height:1; padding:0; }
+  .item.slim .mk.on-ok { background:var(--green); border-color:var(--green); }
+  .item.slim .mk.on-half { background:#ff9800; border-color:#ff9800; }
+  .item.slim .mk.on-bad { background:var(--red); border-color:var(--red); }
+  .item.slim .sdots { display:inline-flex; gap:3px; align-items:center; }
+  .item.slim .sdots .mdot { width:9px; height:9px; margin-right:0; }
+  .item.slim .sprog { font-size:11.5px; color:#8a94a6; }
+  .item.slim .sprog.g { color:var(--green); font-weight:700; }
+  .keybtn { margin-left:auto; border:1px solid #c9d6f2; background:#f8faff; color:var(--blue);
+            border-radius:8px; padding:4px 11px; font-size:12px; cursor:pointer; flex:0 0 auto; }
+  .keybtn:hover { background:#eaf1ff; }
+  .keybtn2 { border:1px solid var(--line); background:#fff; color:#5a6472; border-radius:8px;
+             padding:4px 10px; font-size:12px; cursor:pointer; }
+  .slimkey { border:1px solid #dbe6fa; background:#f8faff; border-radius:9px; padding:8px 12px;
+             margin-top:8px; font-size:14.5px; }
+  .slimkey p { margin:.4em 0; }
   .notice { background:#fff7e8; border:1px solid #f0dfb8; border-radius:10px; padding:8px 13px;
             font-size:14px; margin:10px 0; }
   .notice.red { background:#fdecec; border-color:#f2c4c0; }
@@ -122,9 +144,9 @@
   <div class="trow" id="ztselrow" hidden></div>
   <div id="app"><div class="empty">加载中…</div></div>
 
-  <div class="tip"><b>用法</b>:点年份进卷册 → 展开大题看题面自己作答 → 逐小题(第1空/第1题…)标 <b>🟢会 / 🟡半会 / 🔴错</b>(每标一次记一轮,再点最后一轮同色可撤销);<b>红/黄留池下轮重刷,同一小题连绿 3 次 → 🏅 出池</b>(不再排重刷,标记史保留);标错的记错因、点重做打卡;<b>看精解</b>默认打码防偷瞄。<br>
+  <div class="tip"><b>用法</b>:点年份进卷册 → 展开大题看题面自己作答 → 逐空/逐小题标 <b>🟢会 / 🟡半会 / 🔴错</b>(每标一次记一轮,再点最后一轮同色可撤销);<b>红/黄留池下轮重刷,同一小题连绿 3 次 → 🏅 出池</b>(不再排重刷,标记史保留);标错的记错因、点重做打卡;答案核对默认收起(🔍精解按钮),防偷瞄。<br>
   标记口径:🟢=独立做对 · 🟡=有思路但算不出结果 · 🔴=完全做错。状态存本机浏览器,换设备前先去「全站备份」打包。</div>
-  <div class="foot">801 真题错题模块 ｜ 数据:data/zhenti801.json(28 年 251 大题 · 707 追踪项,精解由 ZCode 维护) ｜ 状态:z801_state_v1 ｜ 连绿3次出池 ｜ 题型标注:平界冲刺直播课 2014–2026 大题分布(2014–2025 已逐题核对精解标题)</div>
+  <div class="foot">801 真题错题模块 ｜ 数据:data/zhenti801.json(28 年 251 大题 · 722 追踪项,精解由 ZCode 维护;11-02 补 2016 年 16~18/21~22/25/26 空 + 2022/2023 判断题拆分) ｜ 状态:z801_state_v1 ｜ 连绿3次出池 ｜ 题型标注:平界冲刺直播课 2014–2026 大题分布(2014–2025 已逐题核对精解标题)</div>
 </div>
 
 <script src="katex/katex.min.js"></script>
@@ -220,8 +242,8 @@ function todayISO(){ const d = new Date(); const p = n => String(n).padStart(2, 
 /* 大题 → 追踪项列表(有小题拆小题,无小题整题一项) */
 function itemsOf(q){
   if (q.subs && q.subs.length >= 2)
-    return q.subs.map(s => ({ sid: q.id + '#' + s.n, label: s.t || ('第' + s.n + s.k), stem: s.stem || '', key: s.key || '' }));
-  return [{ sid: q.id, label: '精解', stem: '', key: q.key }];
+    return q.subs.map(s => ({ sid: q.id + '#' + s.n, label: s.t || ('第' + s.n + s.k), stem: s.stem || '', key: s.key || '', sub: true }));
+  return [{ sid: q.id, label: '精解', stem: '', key: q.key, sub: false }];
 }
 function secState(q){  // 大题聚合: {ok,half,bad,none,n,marked}
   const items = itemsOf(q);
@@ -407,13 +429,39 @@ function vYear(){
     }));
 }
 
-/* 单个追踪项块:label + 精解(打码) + 三态 + 错因 + 重做/归档 */
-function itemBlock(sid, label, stem, key){
+/* 单个追踪项块:sub=空/题子项(紧凑行) | 整题项(label+打码精解+三态+错因+重做/归档) */
+function itemBlock(sid, label, stem, key, sub){
   const s = stOf(sid) || {};
   const st = s.st || '', reason = s.reason || '', rs = s.rs || [];
   const REASONS = ['概念不清', '公式记错', '计算失误', '思路错误', '审题失误', '没时间'];
   const mi = markInfo(sid);
   const lastM = mi.marks.length ? mi.marks[mi.marks.length - 1].m : '';
+  const badTail = () => isBad(s) ? `
+      <div class="reasons">${REASONS.map(r =>
+        `<button data-rs="${r}" class="${reason === r ? 'on' : ''}">${r}</button>`).join('')}</div>
+      <div class="reasonbox" style="margin-top:7px"><textarea placeholder="补充错因/卡壳点(可选)…">${reason && !REASONS.includes(reason) ? reason : ''}</textarea></div>
+      <div class="metabar">重做 ${rs.length} 次${rs.length ? ' · 最近 ' + rs[rs.length - 1] : ' · 还没重做过'}</div>` : '';
+  if (sub){
+    /* 空/题子项: 紧凑行。子题面是精解复述句(括号里带答案)防剧透不渲染; 精解收起为🔍按钮 */
+    const dots = mi.marks.map(m => `<i class="mdot ${m.m}" title="${m.d ? '标记于 ' + m.d : '旧进度播种'}"></i>`).join('');
+    const prog = mi.grad ? '<span class="sprog g">🏅 已出池</span>'
+      : mi.streak > 0 ? `<span class="sprog g">连绿 ${mi.streak}/${PASS_N} · 再对 ${PASS_N - mi.streak} 次</span>`
+      : (mi.marks.length ? '<span class="sprog">留池重刷</span>' : '');
+    let h = `<div class="item slim" data-item="${sid}">
+      <div class="mrow">
+        <span class="slab">${label}</span>${mi.grad ? '<span class="gradtag">🏅</span>' : ''}
+        <button class="mk ${lastM === 'G' ? 'on-ok' : ''}" title="独立做对(绿)" data-st="ok">🟢</button>
+        <button class="mk ${lastM === 'Y' ? 'on-half' : ''}" title="有思路算不出(黄)" data-st="half">🟡</button>
+        <button class="mk ${lastM === 'R' ? 'on-bad' : ''}" title="完全做错(红)" data-st="bad">🔴</button>
+        ${dots ? `<span class="sdots">${dots}</span>` : ''}${prog}
+        ${isBad(s) ? `<button class="keybtn2" data-act="redo">🔁打卡${rs.length ? '(' + rs.length + ')' : ''}</button>
+        <button class="keybtn2" data-act="master">✓归档</button>` : ''}
+        ${key ? '<button class="keybtn" data-act="key">🔍 精解</button>' : ''}
+      </div>
+      ${key ? `<div class="slimkey" hidden><div class="inner" data-md="${sid}"></div></div>` : ''}`;
+    h += badTail();
+    return h + `</div>`;
+  }
   let h = `<div class="item" data-item="${sid}">
     <div class="ilab">${label}${mi.grad ? ' · <span class="gradtag">🏅 三绿出池</span>' : ''}${(!st && !mi.marks.length) ? ' · 未标' : ''}</div>`;
   if (stem) h += `<div class="stem istem" data-stem="${sid}"></div>`;
@@ -436,12 +484,7 @@ function itemBlock(sid, label, stem, key){
     h += `<div class="mhist">${dots}<span class="mlab">标记史 ${mi.marks.length} 轮</span>${prog}</div>`;
   }
   if (!stem && !key) h += `<div class="metabar">(本题内容见上方题面)</div>`;
-  if (isBad(s)){
-    h += `<div class="reasons">${REASONS.map(r =>
-      `<button data-rs="${r}" class="${reason === r ? 'on' : ''}">${r}</button>`).join('')}</div>
-      <div class="reasonbox" style="margin-top:7px"><textarea placeholder="补充错因/卡壳点(可选)…">${reason && !REASONS.includes(reason) ? reason : ''}</textarea></div>
-      <div class="metabar">重做 ${rs.length} 次${rs.length ? ' · 最近 ' + rs[rs.length - 1] : ' · 还没重做过'}</div>`;
-  }
+  h += badTail();
   return h + `</div>`;
 }
 function bindItem(box, it){
@@ -459,6 +502,13 @@ function bindItem(box, it){
       hint.remove();
     });
   }
+  const slimkey = el.querySelector('.slimkey');
+  if (slimkey) mdInto(slimkey.querySelector('.inner'), it.key);
+  const keybtn = el.querySelector('[data-act="key"]');
+  if (keybtn) keybtn.addEventListener('click', () => {
+    if (slimkey) slimkey.hidden = false;
+    keybtn.remove();
+  });
   el.querySelectorAll('[data-st]').forEach(btn =>
     btn.addEventListener('click', () => {
       const v = btn.dataset.st, mcol = ST2M[v];
@@ -507,7 +557,7 @@ function fillQuestion(box, q){
   box.dataset.q = q.id;
   const items = itemsOf(q);
   let h = `<div class="stem" id="stem-${q.id}"></div>`;
-  items.forEach(it => { h += itemBlock(it.sid, it.label, it.stem, it.key); });
+  items.forEach(it => { h += itemBlock(it.sid, it.label, it.stem, it.key, it.sub); });
   box.innerHTML = h;
   box.dataset.q = q.id;
   mdInto(box.querySelector('#stem-' + q.id), q.stem);
