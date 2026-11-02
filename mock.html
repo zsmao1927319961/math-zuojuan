@@ -126,13 +126,28 @@ body.side-off .mk-side{display:none}
   padding:7px 14px;font-size:12.5px;cursor:pointer;font-weight:700}
 .done-btn.on{background:var(--ok);border-color:var(--ok);color:#fff}
 .done-hint{font-size:11.5px;color:var(--sub);margin-top:6px}
-.rw-btn{border:1px solid var(--line);background:#fff;color:#9a8f80;border-radius:9px;
-  padding:7px 14px;font-size:12.5px;cursor:pointer;font-weight:700}
-.rw-btn.on{background:#d93025;border-color:#d93025;color:#fff}
-.rw-badge{flex:none;font-size:11px;font-weight:800;color:#fff;background:#d93025;border-radius:999px;padding:2px 9px;animation:rwPulse 1.8s ease infinite}
-@keyframes rwPulse{0%,100%{opacity:1}50%{opacity:.72}}
-.err.err-rw{border-color:#f0b9b3;box-shadow:0 0 0 1px #f0b9b3 inset}
-.ph-badge.rw{background:#d93025}
+
+/* ---------- 绿黄红标记 ---------- */
+.mk-btn{border:1px solid var(--line);background:#fff;color:#9a8f80;border-radius:9px;
+  padding:7px 13px;font-size:12.5px;cursor:pointer;font-weight:700}
+.mk-btn.on-g{background:var(--ok);border-color:var(--ok);color:#fff}
+.mk-btn.on-y{background:#e09600;border-color:#e09600;color:#fff}
+.mk-btn.on-r{background:#d93025;border-color:#d93025;color:#fff}
+.mk-dots{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:9px}
+.mk-dots .dt{width:14px;height:14px;border-radius:50%;flex:none;display:inline-block}
+.mk-dots .dt.G{background:var(--ok)}
+.mk-dots .dt.Y{background:#e09600}
+.mk-dots .dt.R{background:#d93025}
+.mk-dots .lb{font-size:11.5px;color:var(--sub);font-weight:700}
+.mk-prog{font-size:11.5px;margin-top:5px;font-weight:700}
+.mk-prog .g{color:var(--ok)}
+.mk-prog .w{color:var(--sub);font-weight:400}
+.ph-badge.grad{background:var(--ok)}
+.hdots{display:inline-flex;align-items:center;gap:3px;flex:none}
+.hdots .dt{width:10px;height:10px;border-radius:50%;display:inline-block}
+.hdots .dt.G{background:var(--ok)}
+.hdots .dt.Y{background:#e09600}
+.hdots .dt.R{background:#d93025}
 
 /* ---------- 空态 ---------- */
 .empty-card{background:var(--card);border:1px dashed #e4d5c2;border-radius:16px;padding:34px 22px;text-align:center}
@@ -174,7 +189,7 @@ body.side-off .mk-side{display:none}
 <div class="mk-body">
   <aside class="mk-side" id="mk-side"></aside>
   <main class="mk-main">
-    <div class="viewbar"><button class="vchip" id="v-paper">📚 按卷册</button><button class="vchip" id="v-kp">🎯 按考点</button></div>
+    <div class="viewbar"><button class="vchip" id="v-paper">📚 按卷册</button><button class="vchip" id="v-kp">🎯 按考点</button><button class="vchip" id="v-pool">🔁 重刷池</button></div>
     <div id="mk-content"><div class="empty-card"><div class="ei">⏳</div><div class="ed">加载中…</div></div></div>
   </main>
 </div>
@@ -189,7 +204,7 @@ body.side-off .mk-side{display:none}
 var DATA = null, CUR = null, CURNAME = '';
 var REASONS = ['概念不清','计算失误','方法不会','审题踩坑','粗心大意'];
 var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
-var VIEW = ls('mock_view')==='kp' ? 'kp' : 'paper';
+var VIEW = (ls('mock_view')==='kp'||ls('mock_view')==='pool') ? ls('mock_view') : 'paper';
 
 /* ---------- 工具 ---------- */
 function escHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -231,6 +246,99 @@ function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 function reasonKey(pk,no){ return 'mock_reason_'+pk+'_'+no; }
 function doneKey(pk,no){ return 'mock_done_'+pk+'_'+no; }
 function rwKey(pk,no){ return 'mock_rewrong_'+pk+'_'+no; }
+function marksKey(pk,no){ return 'mock_marks_'+pk+'_'+no; }
+
+/* ---------- 绿黄红标记：绿=独立做对 黄=有思路算不出 红=完全做错; 红/黄→下轮重刷, 连绿3次→出池(记录保留) ---------- */
+var PASS_N = 3;
+function marksOf(pk,no){
+  try{ var a=JSON.parse(ls(marksKey(pk,no))); if(a instanceof Array) return a; }catch(e){}
+  return [];
+}
+/* 旧进度播种轮（已重做=旧一轮：二刷还错→红轮，否则→绿轮） */
+function seedOf(pk,no){
+  if(ls(doneKey(pk,no))!=='1') return null;
+  var rwSeed=ls(rwKey(pk,no))==='1';
+  var at=ls((rwSeed?rwKey(pk,no):doneKey(pk,no))+'_at');
+  return {d:at||'', m:rwSeed?'R':'G'};
+}
+/* 状态推导：播种轮（未固化时）排在显式标记前；固化过的（首项带 seed 标记）不再重复播种 */
+function markState(p,no){
+  var ms=marksOf(p.key,no).slice();
+  if(!(ms.length && ms[0].seed)){
+    var sd=seedOf(p.key,no);
+    if(sd){ sd.seed=1; ms.unshift(sd); }
+  }
+  var streak=0;
+  for(var i=ms.length-1;i>=0;i--){ if(ms[i].m==='G') streak++; else break; }
+  return { marks:ms, streak:streak, grad:streak>=PASS_N };
+}
+/* 标记圆点行 + 连绿进度行 */
+function markStatusHtml(p,no){
+  var ms=markState(p,no);
+  var h='';
+  if(ms.marks.length){
+    h+='<div class="mk-dots">';
+    ms.marks.forEach(function(m){
+      h+='<span class="dt '+m.m+'" title="'+(m.d?'标记于 '+m.d:'旧进度播种（已重做/二刷还错）')+'"></span>';
+    });
+    h+='<span class="lb">标记史 '+ms.marks.length+' 轮</span></div>';
+  }
+  var prog='';
+  if(ms.grad) prog='<span class="g">🏅 三绿出池 · 已掌握（记录保留，再标黄/红会回池）</span>';
+  else if(ms.streak>0) prog='<span class="g">连绿 '+ms.streak+'/'+PASS_N+' · 再对 '+(PASS_N-ms.streak)+' 次出池</span>';
+  else if(ms.marks.length) prog='<span class="w">上轮未过关（红/黄）→ 留池下轮重刷</span>';
+  if(prog) h+='<div class="mk-prog">'+prog+'</div>';
+  return h;
+}
+/* 卡头右侧小圆点：连绿中显示绿点进度；上轮黄/红显示对应色点（一眼看出没过关） */
+function headDotsHtml(p,no){
+  var ms=markState(p,no);
+  if(ms.grad) return '';
+  if(ms.streak){
+    var d='';
+    for(var i=0;i<ms.streak;i++) d+='<span class="dt G" title="连绿 '+ms.streak+'/'+PASS_N+'"></span>';
+    return '<span class="hdots">'+d+'</span>';
+  }
+  var last=ms.marks.length?ms.marks[ms.marks.length-1].m:'';
+  if(last==='Y'||last==='R'){
+    return '<span class="hdots"><span class="dt '+last+'" title="上轮未过关（'+(last==='Y'?'黄':'红')+'）→ 下轮重刷"></span></span>';
+  }
+  return '';
+}
+/* 用新状态整体重绘单张卡（保留展开态），并重渲染 KaTeX 与错因笔记 */
+function refreshCard(p,e){
+  var old=document.getElementById('err-'+p.key+'-'+e.no);
+  if(!old) return;
+  var wasOpen=old.classList.contains('open');
+  var wrap=document.createElement('div');
+  wrap.innerHTML=errHtml(p,e,(VIEW==='paper')?'':srcShort(p));
+  var neu=wrap.firstElementChild;
+  if(wasOpen) neu.classList.add('open');
+  old.parentNode.replaceChild(neu,old);
+  bindCard(p,neu);
+  hydrateCard(p,e);
+}
+/* 渲染卡片 KaTeX（考点/题面/答案/解析）+ 恢复错因笔记值 */
+function hydrateCard(p,e){
+  renderMixed($('kp-'+p.key+'-'+e.no), e.kp||'');
+  if(e.q){ renderMixed($('q-'+p.key+'-'+e.no), e.q); }
+  if(e.ans){ renderMixed($('ans-'+p.key+'-'+e.no), e.ans); }
+  if(e.sol){ renderMixed($('sol-'+p.key+'-'+e.no), e.sol); }
+  else if(e.note){ renderMixed($('sol-'+p.key+'-'+e.no), e.note); }
+  var ta=$('ta-'+p.key+'-'+e.no);
+  if(ta){ ta.value=ls(reasonKey(p.key,e.no)); }
+}
+/* 顶栏统计：池内待重刷 / 已出池 */
+function refreshTopStat(){
+  if(!DATA) return;
+  var nerr=0,ngrad=0;
+  DATA.forEach(function(p){ p.errors.forEach(function(e){
+    nerr++;
+    if(markState(p,e.no).grad) ngrad++;
+  });});
+  $('mk-stat').innerHTML='共 <b>'+DATA.length+'</b> 套<br>已录错题 <b>'+nerr+'</b>'
+    +((nerr-ngrad)||ngrad?'<br>🔁 待重刷 <b>'+(nerr-ngrad)+'</b> · 🏅 已出池 <b>'+ngrad+'</b>':'');
+}
 
 /* ---------- 数据归一 ---------- */
 /* 统一成 [{key, title, sub, meta, answers, group, name, errors, spages, done}] */
@@ -315,12 +423,12 @@ function typeName(t){
 
 function renderMain(p){
   var total=p.errors.length;
-  var nrew=0;
-  p.errors.forEach(function(e){ if(ls(rwKey(p.key,e.no))==='1') nrew++; });
+  var ngrad=0;
+  p.errors.forEach(function(e){ if(markState(p,e.no).grad) ngrad++; });
   var html='<div class="paper-card"><div class="ph-row">'
     +'<span class="ph-title">'+escHtml(p.name)+'</span>'
     +(total?'<span class="ph-badge">错题 '+total+'</span>'
-           +(nrew?'<span class="ph-badge rw">🔁 二刷还错 '+nrew+'</span>':'')
+           +(ngrad?'<span class="ph-badge grad">🏅 出池 '+ngrad+'</span>':'')
            :(p.vol&&p.vol.done?'<span class="ph-badge done">已做 · 待录错题</span>':'<span class="ph-badge zero">未做</span>'))
     +'</div><div class="ph-meta">'+escHtml(p.sub)+'<br>'+escHtml(p.meta)+'</div>';
   if(p.answers){
@@ -351,25 +459,19 @@ function renderMain(p){
   $('mk-content').innerHTML=html;
   bindErrs(p);
 
-  errs.forEach(function(e){
-    renderMixed($('kp-'+p.key+'-'+e.no), e.kp||'');
-    if(e.q){ renderMixed($('q-'+p.key+'-'+e.no), e.q); }
-    if(e.ans){ renderMixed($('ans-'+p.key+'-'+e.no), e.ans); }
-    if(e.sol){ renderMixed($('sol-'+p.key+'-'+e.no), e.sol); }
-    else if(e.note){ renderMixed($('sol-'+p.key+'-'+e.no), e.note); }
-    var ta=$('ta-'+p.key+'-'+e.no);
-    if(ta){ ta.value=ls(reasonKey(p.key,e.no)); }
-  });
+  errs.forEach(function(e){ hydrateCard(p,e); });
 }
 
 function errHtml(p,e,src){
   var open=ls(doneKey(p.key,e.no))==='1';
   var reason=ls(reasonKey(p.key,e.no));
-  var rw=ls(rwKey(p.key,e.no))==='1';
-  var h='<div class="err'+(rw?' err-rw':'')+'" id="err-'+p.key+'-'+e.no+'">'
+  var ms=markState(p,e.no);
+  var lastM=ms.marks.length?ms.marks[ms.marks.length-1].m:'';
+  var h='<div class="err" id="err-'+p.key+'-'+e.no+'">'
     +'<div class="err-h" data-act="tog"><span class="no-badge">'+String(e.no).padStart(2,'0')+'</span>'
     +'<span class="type-chip">'+escHtml(e.type||'')+(e.score?' · '+e.score+'分':'')+'</span>'
-    +(rw?'<span class="rw-badge">🔁 二刷还错</span>':'')
+    +(ms.grad?'<span class="ph-badge grad">🏅 出池</span>':'')
+    +headDotsHtml(p,e.no)
     +(src?'<span class="src-chip">'+escHtml(src)+'</span>':'')
     +'<span class="err-kp"><span id="kp-'+p.key+'-'+e.no+'"></span>'
     +(e.subject?'<span class="kk">'+escHtml(e.subject)+(e.chapter?' · '+escHtml(e.chapter):'')+'</span>':'')
@@ -405,10 +507,14 @@ function errHtml(p,e,src){
   });
   h+='</div>'
     +'<textarea class="rs-ta" id="ta-'+p.key+'-'+e.no+'" placeholder="错因笔记（自动保存，只存本机）…"></textarea>'
-    +'<div style="margin-top:10px"><button class="done-btn'+(open?' on':'')+'" data-act="done">'+(open?'✓ 已重做（点此取消）':'○ 标记已重做')+'</button> '
-    +'<button class="rw-btn'+(rw?' on':'')+'" data-act="rw">'+(rw?'🔁 二刷还错（点此取消）':'🔁 二刷又错了')+'</button>'
+    +'<div class="rs-row mk-row"><span class="rs-lab">标记</span>'
+    +'<button class="mk-btn'+(lastM==='G'?' on-g':'')+'" data-act="mark" data-m="G">🟢 独立做对</button>'
+    +'<button class="mk-btn'+(lastM==='Y'?' on-y':'')+'" data-act="mark" data-m="Y">🟡 有思路·没算出</button>'
+    +'<button class="mk-btn'+(lastM==='R'?' on-r':'')+'" data-act="mark" data-m="R">🔴 完全做错</button>'
+    +'</div>'
+    +markStatusHtml(p,e.no)
+    +'<div style="margin-top:10px"><button class="done-btn'+(open?' on':'')+'" data-act="done">'+(open?'✓ 已重做（点此取消）':'○ 标记已重做')+'</button>'
     +(open?'<span class="done-hint">　重做于 '+escHtml(ls(doneKey(p.key,e.no)+'_at')||'')+'</span>':'')
-    +(rw?'<span class="done-hint rw-hint">　二刷错于 '+escHtml(ls(rwKey(p.key,e.no)+'_at')||'')+'</span>':'')
     +'</div></div></div>';
   return h;
 }
@@ -445,22 +551,36 @@ function bindCard(p, box){
         lsSet(doneKey(p.key,no), on?'1':'');
         if(on){ lsSet(doneKey(p.key,no)+'_at', TODAY); }
         toast(on?'已标记重做':'已取消重做标');
-      } else if(act==='rw'){
-        var won=!this.classList.contains('on');
-        this.classList.toggle('on',won);
-        this.textContent=won?'🔁 二刷还错（点此取消）':'🔁 二刷又错了';
-        lsSet(rwKey(p.key,no), won?'1':'');
-        lsSet(rwKey(p.key,no)+'_at', won?TODAY:'');
-        var cd=this.closest('.err');
-        cd.classList.toggle('err-rw',won);
-        var hd=cd.querySelector('.err-h');
-        var ob=hd.querySelector('.rw-badge');
-        if(won&&!ob){ ob=document.createElement('span'); ob.className='rw-badge'; ob.textContent='🔁 二刷还错'; hd.insertBefore(ob, hd.querySelector('.err-kp')); }
-        if(!won&&ob){ ob.parentNode.removeChild(ob); }
-        var oh=this.parentNode.querySelector('.rw-hint');
-        if(won&&!oh){ oh=document.createElement('span'); oh.className='done-hint rw-hint'; oh.textContent='　二刷错于 '+TODAY; this.parentNode.appendChild(oh); }
-        if(!won&&oh){ oh.parentNode.removeChild(oh); }
-        toast(won?'已标二刷还错——卡片挂红牌':'已取消二刷还错标');
+      } else if(act==='mark'){
+        var mcol=this.getAttribute('data-m');
+        var cur=marksOf(p.key,no);
+        var last=cur.length?cur[cur.length-1]:null;
+        if(last && last.m===mcol && last.d===TODAY){
+          cur.pop();
+          lsSet(marksKey(p.key,no), JSON.stringify(cur));
+          var eU=p.errors.filter(function(x){ return String(x.no)===String(no); })[0];
+          if(eU){ refreshCard(p,eU); }
+          refreshTopStat();
+          toast('已撤销最近一次标记');
+        } else {
+          /* 首次标记时把旧进度播种固化进历史，避免旧标志随后变动改写历史 */
+          if(!cur.length){
+            var sd=seedOf(p.key,no);
+            if(sd){ sd.seed=1; cur.push(sd); }
+          }
+          cur.push({d:TODAY,m:mcol});
+          lsSet(marksKey(p.key,no), JSON.stringify(cur));
+          /* 任意标记=已重做（自动带上日期） */
+          lsSet(doneKey(p.key,no),'1');
+          lsSet(doneKey(p.key,no)+'_at',TODAY);
+          var ms2=markState(p,no);
+          var eM=p.errors.filter(function(x){ return String(x.no)===String(no); })[0];
+          if(eM){ refreshCard(p,eM); }
+          refreshTopStat();
+          toast(ms2.grad ? '🏅 三绿出池 · 真正掌握！'
+              : (ms2.streak>0 ? '连绿 '+ms2.streak+'/'+PASS_N+'，再对 '+(PASS_N-ms2.streak)+' 次出池'
+              : (mcol==='G' ? '已记一轮绿（独立做对）' : '上轮未过关——留池下轮重刷')));
+        }
       }
     };
   }
@@ -485,7 +605,7 @@ $('burger').onclick=function(){
   lsSet('mock_side_off', off?'1':'');
   toast(off?'卷册已收起 · 点左上角 ☰ 展开':'卷册已展开');
 };
-[['v-paper','paper'],['v-kp','kp']].forEach(function(v){
+[['v-paper','paper'],['v-kp','kp'],['v-pool','pool']].forEach(function(v){
   $(v[0]).onclick=function(){
     if(VIEW===v[1]) return;
     VIEW=v[1]; lsSet('mock_view', VIEW==='kp'?'kp':'');
@@ -495,6 +615,7 @@ $('burger').onclick=function(){
 function syncViewbar(){
   $('v-paper').classList.toggle('on', VIEW==='paper');
   $('v-kp').classList.toggle('on', VIEW==='kp');
+  $('v-pool').classList.toggle('on', VIEW==='pool');
 }
 function srcShort(p){ return p.name.replace('（数学二）','').replace('2027考研数学','').replace(/^24\s/,''); }
 
@@ -531,29 +652,68 @@ function renderKp(){
         if(!secEl) secEl=el.closest('.sec');
         bindCard(it.p, el);
       }
-      renderMixed($('kp-'+it.p.key+'-'+it.e.no), it.e.kp||'');
-      if(it.e.q){ renderMixed($('q-'+it.p.key+'-'+it.e.no), it.e.q); }
-      if(it.e.ans){ renderMixed($('ans-'+it.p.key+'-'+it.e.no), it.e.ans); }
-      if(it.e.sol){ renderMixed($('sol-'+it.p.key+'-'+it.e.no), it.e.sol); }
-      else if(it.e.note){ renderMixed($('sol-'+it.p.key+'-'+it.e.no), it.e.note); }
-      var ta=$('ta-'+it.p.key+'-'+it.e.no);
-      if(ta){ ta.value=ls(reasonKey(it.p.key,it.e.no)); }
+      hydrateCard(it.p, it.e);
+    });
+    if(secEl) secEl.querySelector('.sec-bar').onclick=function(){ secEl.classList.toggle('open'); };
+  });
+}
+/* ---------- 重刷池视图：跨卷册聚合全部未毕业错题（红/黄→下轮重刷） ---------- */
+function renderPool(){
+  var pool=[], ngrad=0;
+  DATA.forEach(function(p){
+    p.errors.forEach(function(e){
+      if(markState(p,e.no).grad) ngrad++;
+      else pool.push({p:p,e:e});
+    });
+  });
+  var html='<div class="paper-card" style="padding:14px 18px"><div class="ph-row">'
+    +'<span class="ph-title">🔁 重刷池</span>'
+    +'<span class="ph-badge">池内 '+pool.length+'</span>'
+    +(ngrad?'<span class="ph-badge grad">🏅 已出池 '+ngrad+'</span>':'')
+    +'</div><div class="ph-meta">规则：🟢独立做对 · 🟡有思路算不出 · 🔴完全做错 ｜ 红/黄→下轮重刷 · 连绿3次→🏅出池（标记史永久保留）</div></div>';
+  if(!pool.length){
+    html+='<div class="empty-card"><div class="ei">🏅</div><div class="et">池子空了</div>'
+      +'<div class="ed">所有已录错题都已三绿出池（或还没录入错题）。</div></div>';
+    $('mk-content').innerHTML=html;
+    return;
+  }
+  var byP={}, order=[];
+  pool.forEach(function(it){
+    if(!byP[it.p.key]){ byP[it.p.key]={p:it.p,list:[]}; order.push(it.p.key); }
+    byP[it.p.key].list.push(it.e);
+  });
+  order.forEach(function(k){
+    var g=byP[k];
+    html+='<div class="sec open"><div class="sec-bar"><span class="caret">▶</span><span class="bar"></span>'
+      +'<span class="t">'+escHtml(g.p.name)+'</span><span class="c">待重刷 '+g.list.length+'</span></div>'
+      +'<div class="errlist">';
+    g.list.forEach(function(e){ html+=errHtml(g.p,e,srcShort(g.p)); });
+    html+='</div></div>';
+  });
+  $('mk-content').innerHTML=html;
+  order.forEach(function(k){
+    var secEl=null;
+    byP[k].list.forEach(function(e){
+      var el=document.getElementById('err-'+byP[k].p.key+'-'+e.no);
+      if(el){
+        if(!secEl) secEl=el.closest('.sec');
+        bindCard(byP[k].p, el);
+      }
+      hydrateCard(byP[k].p, e);
     });
     if(secEl) secEl.querySelector('.sec-bar').onclick=function(){ secEl.classList.toggle('open'); };
   });
 }
 function renderContent(){
   if(VIEW==='kp'){ renderKp(); return; }
+  if(VIEW==='pool'){ renderPool(); return; }
   if(CUR) renderMain(CUR);
 }
 
 /* ---------- 启动 ---------- */
 fetch('data/mock_errors.json').then(function(r){ return r.json(); }).then(function(d){
   DATA=buildPapers(d);
-  var nerr=DATA.reduce(function(s,p){ return s+p.errors.length; },0);
-  var nrw=0;
-  DATA.forEach(function(p){ p.errors.forEach(function(e){ if(ls(rwKey(p.key,e.no))==='1') nrw++; }); });
-  $('mk-stat').innerHTML='共 <b>'+DATA.length+'</b> 套<br>已录错题 <b>'+nerr+'</b>'+(nrw?'<br>🔁 二刷还错 <b style="color:#d93025">'+nrw+'</b>':'');
+  refreshTopStat();
   renderSide();
   var first=DATA.filter(function(p){return p.errors.length;})[0] || DATA[0];
   if(first){ CUR=first; }
