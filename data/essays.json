@@ -8,11 +8,11 @@
       "total": 8,
       "max": 15
     },
-    "comment": "同题复测(10-18版12/15), 按切题性强化版指令重出批改。内容(50%): 对象/时间/单位/双系列终点全对, 双升主趋势抓到; 不足=反超点未提+暴涨vs缓增反差弱(仅remarkable vs rose)+评论泛(经济原因未挂靠发展中国家暴涨这一核心对比)+P3仅一句趋势预测, 评论充分性不足。语言(30%): 硬伤约10处(develop丢ment/billon×4/句中大写4处/formation of...increase名词堆叠/Mobile-phone has主谓单复数/subscription number孤用)。组织(20%): 三段齐全, P3一句失衡。词数118, 题目约150词口径偏少(计入内容完成度, 不编造固定扣分规则)。数据起点0.4/0.7与10-18篇0.25/0.6冲突+图表类型词line/bar, 以手头书图为准待核暂未计错。档位7-9, 得8/15; 若核图确认起点为0.25/0.6, 数据准确度失分档内调整7/15。",
+    "comment": "同题复测(10-18版12/15), 按切题性强化版指令重出批改。内容(50%): 对象/时间/单位/双系列终点全对, 双升主趋势抓到; 不足=反超点未提+暴涨vs缓增反差弱(仅remarkable vs rose)+评论泛(经济原因未挂靠发展中国家暴涨这一核心对比)+P3仅一句趋势预测, 评论充分性不足。语言(30%): 硬伤约10处(develop丢ment/billon×4/句中大写4处/formation of...increase名词堆叠/Mobile-phone has主谓单复数/subscription number孤用)。组织(20%): 三段齐全, P3一句失衡。词数118, 题目约150词口径偏少(计入内容完成度, 不编造固定扣分规则)。11-03晚核图定案: 图为柱状图(本篇line chart类型词错), 起点发展中国家0.4(写对)/发达国家应0.6(本篇写0.7, 数据错1处)。两项已确认错误计入内容评价, 档位7-9维持8/15(0.4写对, 未触发两起点皆错降7的条件)。",
     "issues": [
       "图表切题核查: 主趋势双升抓到; 反超点(约2004)未提+暴涨vs缓增反差弱=主要特征描述不完整",
       "评论与图表相关但泛: 经济增长/财富原因未挂靠核心对比(发展中国家暴涨), P3仅一句趋势预测, 评论充分性不足",
-      "数据起点0.4/0.7与10-18篇0.25/0.6冲突, 图表类型词line chart待核, 以手头书图为准暂未计错",
+      "核图定案: 柱状图, 本篇line chart类型词错; 发展中国家起点0.4写对, 发达国家起点应0.6本篇写0.7(数据错1处)",
       "语言硬伤: develop丢ment/billon×4/句中大写×4(Developing/Developed/Mobile-phone×2)/formation of...increase名词堆叠/Mobile-phone has主谓单复数/subscription number孤用",
       "词数118, 题目约150词口径偏少(计入内容完成度, 不编造固定扣分规则)"
     ],
@@ -178,7 +178,8 @@
     "issues": [
       "描述漏掉图上关键对比: 发展中国家约2004年反超发达国家未点出",
       "P2归因万能套话, 加 especially in developing countries 才能焊在图上",
-      "P3第3句与第1句语义重复(today's society复现), 应换成具体行为建议"
+      "P3第3句与第1句语义重复(today's society复现), 应换成具体行为建议",
+      "11-03核图追记: 图为柱状图, 发展中国家起点实为0.4, 本篇写0.25系数据误(当时批改未检出); 发达国家0.6无误"
     ],
     "essay": "This bar chart presented the temporal changes of mobile-phone subscriptions and revealed a clear pattern of development over time. From 2000 to 2008, the number in developing countries rose from about 0.25 billion to 4 billion. During the same period, the subscriptions in developed countries increased from 0.6 billion to 1 billion, with the growth leveling off in the later years. Taken together, these trends outlined the overall trajectory of global mobile communication and underscored its changing influence in modern society.\n\nPlaced in the context of everyday life, the mobile-phone boom is propelled by the combined influence of multiple factors. The continuous growth of national economic strength has undoubtedly laid a solid foundation for the emergence of this trend. In addition, with the increase in citizens' wealth and the expansion of available choices, mobile phones have become increasingly popular. Equally important, people today are more inclined to pursue a convenient and connected life, which has gradually enabled the mobile phone to become integrated into everyday life.\n\nWe need to think rationally about the impact of the mobile-phone boom on the present era, and provide deliberate guidance. Government should clarify relevant strategies, so that mobile communication can better adapt to the development of today's society. Notably, individuals should maintain a rational mindset when considering the impact of mobile phones on today's society."
   }
