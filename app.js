@@ -144,8 +144,8 @@ async function init() {
   fillFilters();
   bindEvents();
   bindBackup();
-  renderBank();
-  renderCuoti();
+  /* 优化(11-04)：题库/错题本不再首屏全量渲染（合计约300KB隐藏DOM拖慢载入），
+     switchMorePane 切到对应页时才渲染（见 824/825 行），深链 #more 亦会触发 */
   /* 深链：#more 直达更多页·题库 */
   if (location.hash === '#more') { switchTab('more'); switchMorePane('bank'); }
   await refreshToday();

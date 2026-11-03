@@ -246,7 +246,22 @@ const DMACROS = { '\frac': '\dfrac' };
     sec.innerHTML = '<div class="reheat-h">🔁 回炉重做（' + qs.length + '）· 到期错题单独刷，不占今日五题</div>';
     if (!qs.length) sec.innerHTML += '<div class="reheat-empty">当前没有到期的回炉题 ✓ 做错的题会按 1/3/7 天排到这里</div>';
     root.appendChild(sec);
-    qs.forEach(function(q, i){ sec.appendChild(card(q, i, '回炉 ' + (i + 1))); });
+    /* 优化(11-04)：回炉积压多时首屏只渲染最逾期的10道（dueReheat 已按 due 升序=最逾期在前），
+       其余点「展开」再渲染，避免一次塞爆 DOM 卡顿 */
+    var CAP = 10;
+    var head = Math.min(CAP, qs.length);
+    for (var i = 0; i < head; i++) sec.appendChild(card(qs[i], i, '回炉 ' + (i + 1)));
+    if (qs.length > CAP) {
+      var more = document.createElement('button');
+      more.type = 'button';
+      more.textContent = '▾ 还有 ' + (qs.length - CAP) + ' 道到期题，点开继续刷';
+      more.style.cssText = 'display:block;margin:8px auto;padding:5px 14px;border:1px solid #b9c6d8;border-radius:16px;background:#fff;color:#1f6fb2;font-size:12.5px;cursor:pointer;';
+      more.onclick = function(){
+        for (var j = CAP; j < qs.length; j++) sec.appendChild(card(qs[j], j, '回炉 ' + (j + 1)));
+        more.remove();
+      };
+      sec.appendChild(more);
+    }
   }
   function loadPicks(pool){ return drawPicks(pool, rollNonce()).picks; }
 

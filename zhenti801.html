@@ -578,7 +578,10 @@ function render(){
 async function init(){
   loadState();
   try {
-    const r = await fetch('data/zhenti801.json?' + Date.now());
+    /* 优化(11-04)：去掉 Date.now() 缓存穿透——GitHub Pages 带 max-age=600 + ETag，
+       10 分钟内命中缓存、过期走 304 互验（数据更新最迟 10 分钟可见）；
+       之前每次打开都整包重下 ~900KB */
+    const r = await fetch('data/zhenti801.json');
     if (!r.ok) throw new Error('HTTP ' + r.status);
     DATA = await r.json();
   } catch(e){

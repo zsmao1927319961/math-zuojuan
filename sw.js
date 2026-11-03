@@ -1,5 +1,5 @@
 /* Service Worker：网络优先 + 静态壳缓存。支持 iPad PWA 主屏打开，断网时仍能显示界面壳。 */
-const CACHE = 'shuxue-zuojuan-v120';
+const CACHE = 'shuxue-zuojuan-v121';
 const SHELL = [
   './',
   './index.html',
@@ -40,7 +40,8 @@ const SHELL = [
   './style.css',
   './manifest.json',
   './icon-192.png',
-  './icon-512.png'
+  './icon-512.png',
+  './favicon.ico'
 ];
 
 self.addEventListener('install', (e) => {
