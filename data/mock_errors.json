@@ -3070,6 +3070,117 @@
      ]
     }
    ]
+  },
+  {
+   "paper": {
+    "name": "2025数二真题错题",
+    "date": "2025",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2025数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 3,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "微分方程",
+     "kp": "解微分方程",
+     "qimg": "images/yka/examMathQuestion/question/6cd0e97bb5964f5d9a1b328081a05430.png",
+     "ztYear": 2025,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/fe9b23e9-8c46-41b4-894d-d8dbb6911f6c.png",
+      "images/yka/examMathQuestion/analysis-v2/9187420b-1cbb-47a9-b595-7a8a823d964b.png"
+     ]
+    },
+    {
+     "no": 6,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "物理应用（数一二）",
+     "qimg": "images/yka/examMathQuestion/question/df01a8fc0aa843209f81775e20e37765.png",
+     "ztYear": 2025,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/70d28f2d-5823-4325-b5fb-9fae4f44f701.png",
+      "images/yka/examMathQuestion/analysis-v2/a85aa3d7-9ee8-4f35-980c-dad0ec7e3be4.png"
+     ]
+    },
+    {
+     "no": 18,
+     "type": "解答",
+     "score": 12,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "微分中值定理",
+     "qimg": "images/yka/examMathQuestion/question/cf4c28a5ea054251be545fdf305a2cb1.png",
+     "ztYear": 2025,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/b80b6fba-9a01-4961-b395-386d14cb229f.png"
+     ]
+    }
+   ]
+  },
+  {
+   "paper": {
+    "name": "2026数二真题错题",
+    "date": "2026",
+    "group": "真题错题",
+    "taken": true,
+    "sub": "真题错题 · 2026数学二 · 题面/解析源自研可岸真题网",
+    "answers": ""
+   },
+   "errors": [
+    {
+     "no": 5,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元微分",
+     "kp": "极值、最值与拐点",
+     "qimg": "images/yka/examMathQuestion/question/2026/数学二/T5/question.png",
+     "ztYear": 2026,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2026/T5/2.png",
+      "images/yka/examMathQuestion/analysis-v2/62c73182-f681-4c69-a80e-cec88019900f.png"
+     ]
+    },
+    {
+     "no": 7,
+     "type": "选择",
+     "score": 5,
+     "subject": "高数",
+     "chapter": "一元积分",
+     "kp": "奇偶性",
+     "qimg": "images/yka/examMathQuestion/question/2026/数学二/T7/question.png",
+     "ztYear": 2026,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2026/T7/1.png"
+     ]
+    },
+    {
+     "no": 10,
+     "type": "选择",
+     "score": 5,
+     "subject": "线代",
+     "chapter": "行列式",
+     "kp": "行列式",
+     "qimg": "images/yka/examMathQuestion/question/2026/数学二/T10/question.png",
+     "ztYear": 2026,
+     "ztCol": "真题",
+     "anaimgs": [
+      "images/yka/examMathQuestion/analysis-v2/math/math2/2026/T10/1.png"
+     ]
+    }
+   ]
   }
  ],
  "series": [
