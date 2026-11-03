@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-03",
+    "title": "2010英二手机订阅量·定稿模板重写(复测10-18版)",
+    "type": "大作文",
+    "words": 118,
+    "score": {
+      "total": 8,
+      "max": 15
+    },
+    "comment": "同题复测(10-18版12/15)。调用纪律滑坡成最大失分源: 定版自组第二段四槽(gd-2/yy-1b/yy-2b/zj-1)整段零调用退回苦瓜旧版, 第三段弃正面版仅一句16词不成段, 反超句备而不用(上次点名项复犯); 词数118腰斩, 官方150口径都不够。亮点=dd-1首次上岗(remarkable属程度词库合规)。语言硬伤约10处: develop丢ment(上岗红线明文复犯)/billon拼写×4/句中大写4处/formation of...increase名词堆叠/Mobile-phone has主谓单复数。数据起点0.4/0.7与10-18篇0.25/0.6冲突、图表类型词line/bar待核, 均以手头书图为准暂未计错——若确认0.25/0.6则改判7/15。",
+    "issues": [
+      "调用纪律: P2整段退苦瓜旧版(自组四槽零调用)+P3仅dz-p3-5变体一句不成段",
+      "词数118, 低于官方150口径更低于老师200-220口径(10-18同题为221)",
+      "develop丢ment(上岗红线明文复犯)+billon拼写×4+句中大写4处(Developing/Developed/Mobile-phone×2)",
+      "反超点(约2004)再次未提; 归因未焊especially in developing countries(上次补丁再缺席)",
+      "数据起点0.4/0.7与10-18篇0.25/0.6冲突, 图表类型词line chart待核(以手头图为准)"
+    ],
+    "essay": "The line chart presented the temporal changes of mobile-phone subscriptions and revealed a clear pattern of develop over time. There was a remarkable increase in Developing countries from 0.4 billon to 4 billon between 2000 and 2008. During the same period, Developed countries rose from 0.7 billon to 1 billon.\n\nPlaced in the context of everyday life, the formation of Mobile-phone subscriptions increase is propelled by the combined influence of multiple factors. The continuous growth of national economic strength has undoubtedly laid a solid foundation for the improvement of subscription number. With the increase in citizens' wealth, Mobile-phone has become increasingly popular.\n\nTo sum up, this trend will probably continue and exert a growing influence on people's lives."
+  },
+  {
     "date": "2026-11-02",
     "title": "2012英二翻译·人才流失brain drain(整段英译汉)",
     "type": "翻译",
