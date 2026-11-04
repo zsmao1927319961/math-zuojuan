@@ -129,6 +129,7 @@ for (const id in U) PLAIN[id] = (U[id].title + " " + U[id].lines.map(ln => ln[2]
 
 // ----- quiz / cloze support -----
 const ACCENT = new Set(["#ff0000", "#009fff", "#ff6000", "#8000ff", "#ff00bf", "#df00ff", "#dc7705", "#eb9e27", "#178344"]);
+const NGRAY = new Set(["#ff0000", "#009fff", "#ff6000", "#8000ff", "#ff00bf", "#df00ff", "#dc7705", "#eb9e27", "#178344", "#2000ff", "#275bd1", "#0040ff"]);
 const GROUP_OF = {};
 D.GROUPS.forEach((g, gi) => g.ids.forEach(id => GROUP_OF[id] = gi));
 const QAPOOL = {};
@@ -194,19 +195,31 @@ function escA(t) { return esc(t).replace(/"/g, "&quot;"); }
 function clozeHTML(u) {
   let n = 0;
   const body = u.lines.map(ln => {
-    const isStem = /：\s*$/.test(ln[2].map(s => s[0]).join(""));
-    const inner = ln[2].map(s => {
-      if (ACCENT.has(s[1]) && !isStem) {
+    const segs = ln[2];
+    const lineText = segs.map(s => s[0]).join("");
+    const isStem = /：\s*$/.test(lineText) || lineText.trim() === u.title.trim();
+    const single = segs.length === 1 && lineText.trim().length <= 24;
+    const flags = segs.map(s => !isStem && (ACCENT.has(s[1]) || (single && NGRAY.has(s[1]))));
+    const parts = [];
+    let i = 0;
+    while (i < segs.length) {
+      if (!flags[i]) {
+        const s = segs[i];
+        let st = "color:" + s[1];
+        if (s[2]) st += ";border-bottom:2px solid " + s[2];
+        if (s[3]) st += ";background:" + s[3];
+        parts.push('<span class="seg" style="' + st + '">' + esc(s[0]) + "</span>");
+        i++;
+      } else {
+        let j = i, txt = "";
+        while (j < segs.length && flags[j]) { txt += segs[j][0]; j++; }
+        parts.push('<span class="blk" data-t="' + escA(txt) + '" data-c="' + segs[i][1] + '">＿＿＿＿</span>');
         n++;
-        return '<span class="blk" data-t="' + escA(s[0]) + '" data-c="' + s[1] + '">＿＿＿＿</span>';
+        i = j;
       }
-      let st = "color:" + s[1];
-      if (s[2]) st += ";border-bottom:2px solid " + s[2];
-      if (s[3]) st += ";background:" + s[3];
-      return '<span class="seg" style="' + st + '">' + esc(s[0]) + "</span>";
-    }).join("");
+    }
     const stl = "margin-left:" + Math.round(ln[0] * 0.9) + "px;" + (ln[3] ? "background:" + ln[3] + ";border-radius:4px;" : "");
-    return '<div class="bl' + (ln[1] ? " p1" : "") + '" style="' + stl + '">' + inner + "</div>";
+    return '<div class="bl' + (ln[1] ? " p1" : "") + '" style="' + stl + '">' + parts.join("") + "</div>";
   }).join("");
   return body + (n ? '<div class="skipwrap"><button class="rb1 revall" style="background:#fff4e0;color:#b8860b">👀 全部显示</button></div>' : "");
 }
@@ -260,7 +273,7 @@ function dueBadge(id) {
   const late = DI - st.due;
   return '<span class="badge b-due">' + (late > 0 ? "拖" + late + "天" : "到期") + "</span>";
 }
-function rowHTML(id, norate, planBadge) {
+function rowHTML(id, norate, planBadge, plain) {
   const u = U[id];
   let flags = "";
   if (planBadge) flags += '<span class="badge b-plan">D' + PLAN_DAY[id] + "</span>";
@@ -268,7 +281,7 @@ function rowHTML(id, norate, planBadge) {
   return '<div class="row' + (norate ? " norate" : "") + '" data-id="' + id + '">' +
     '<div class="rowhead"><span class="chip">' + u.label + '</span><span class="rtitle">' + esc(u.title) +
     '</span><span class="rflags">' + flags + "</span></div>" +
-    '<div class="cardbody">' + modeBody(id) +
+    '<div class="cardbody">' + (plain ? bodyHTML(u) : modeBody(id)) +
     (MODE === "quiz" ? "" : '<div class="ratebar"><button class="rb0" data-r="0">😵 不会</button><button class="rb1" data-r="1">🤔 模糊</button><button class="rb2" data-r="2">😎 掌握</button></div>') +
     "</div></div>";
 }
@@ -388,15 +401,29 @@ document.getElementById("tab-today").addEventListener("click", e => {
   if (sk) { rate(sk.closest(".row").dataset.id, 0); return; }
   const ra = e.target.closest(".revall");
   if (ra) {
-    ra.closest(".cardbody").querySelectorAll(".blk").forEach(bl => {
-      bl.classList.add("rv"); bl.textContent = bl.dataset.t; bl.style.color = bl.dataset.c;
+    const cb = ra.closest(".cardbody");
+    const blks = [...cb.querySelectorAll(".blk")];
+    const allRv = blks.length && blks.every(b => b.classList.contains("rv"));
+    blks.forEach(bl => {
+      if (allRv) { bl.classList.remove("rv"); bl.textContent = "＿＿＿＿"; bl.style.color = ""; }
+      else { bl.classList.add("rv"); bl.textContent = bl.dataset.t; bl.style.color = bl.dataset.c; }
     });
-    ra.parentElement.classList.add("hidden");
+    ra.textContent = allRv ? "👀 全部显示" : "🙈 全部遮上";
     return;
   }
   const blk = e.target.closest(".blk");
-  if (blk && !blk.classList.contains("rv")) {
-    blk.classList.add("rv"); blk.textContent = blk.dataset.t; blk.style.color = blk.dataset.c;
+  if (blk) {
+    if (blk.classList.contains("rv")) {
+      blk.classList.remove("rv"); blk.textContent = "＿＿＿＿"; blk.style.color = "";
+    } else {
+      blk.classList.add("rv"); blk.textContent = blk.dataset.t; blk.style.color = blk.dataset.c;
+    }
+    const cb = blk.closest(".cardbody");
+    const rbtn = cb && cb.querySelector(".revall");
+    if (rbtn) {
+      const blks = [...cb.querySelectorAll(".blk")];
+      rbtn.textContent = blks.length && blks.every(b => b.classList.contains("rv")) ? "🙈 全部遮上" : "👀 全部显示";
+    }
   }
 });
 document.querySelectorAll("#modebar button").forEach(b => {
@@ -418,7 +445,7 @@ function buildBrowse(filter) {
     const ids = g.ids.filter(id => !f || PLAIN[id].includes(f) || id.includes(f));
     if (!ids.length) continue;
     h += '<div class="grp"><h3>' + esc(g.name) + " · " + ids.length + "</h3>" +
-      ids.map(id => rowHTML(id, true, true)).join("") + "</div>";
+      ids.map(id => rowHTML(id, true, true, true)).join("") + "</div>";
   }
   document.getElementById("browsebody").innerHTML = h || '<div class="muted" style="padding:20px;text-align:center">没有匹配的卡片</div>';
 }
