@@ -55,6 +55,7 @@ main{max-width:720px;margin:0 auto;padding:12px 12px 40px}
 .good{color:#2e8b57;font-weight:700}
 .bad{color:#c0392b;font-weight:700}
 .quizfb{margin-top:10px;font-size:13.5px}
+.qprog{font-size:11.5px;color:#999;margin-bottom:4px}
 .fbcard{background:#fff;border:1px dashed #e0d5c5;border-radius:8px;padding:8px;margin-top:8px}
 .skipwrap{margin-top:10px}
 .skipwrap button{width:100%;border:0;border-radius:8px;padding:10px 0;font-size:13.5px;font-weight:700;cursor:pointer}
@@ -243,13 +244,40 @@ function makeOpts(id, correct) {
   while (ds.length < 3) ds.push("以上都不对");
   return shuffle([correct].concat(ds));
 }
+const QSESS = {};
 function quizHTML(id) {
   const u = U[id];
-  const p = u.qa[Math.floor(Math.random() * u.qa.length)];
+  QSESS[id] = { order: shuffle(u.qa.map((_, k) => k)), i: 0, wrong: 0, answered: 0 };
+  return '<div class="quizbox">' + quizPairHTML(id) + "</div>";
+}
+function quizPairHTML(id) {
+  const s = QSESS[id], u = U[id];
+  const p = u.qa[s.order[s.i]];
   const opts = makeOpts(id, p[1]);
-  return '<div class="qq">' + esc(p[0]) + '</div><div class="opts" data-a="' + escA(p[1]) + '">' +
-    opts.map((o, k) => '<button class="opt">' + "ABCD"[k] + ". " + esc(o) + "</button>").join("") +
-    '</div><div class="quizfb hidden"></div><div class="skipwrap"><button class="rb0 skipq" style="background:#fdecea;color:#c0392b">😵 不会（看卡，明天再来）</button></div>';
+  return '<div class="qprog">第 ' + (s.i + 1) + " / " + s.order.length + " 题" + (s.answered ? " · 已错 " + s.wrong : "") + "</div>" +
+    '<div class="qq">' + esc(p[0]) + '</div>' +
+    '<div class="opts" data-a="' + escA(p[1]) + '">' + opts.map((o, k) => '<button class="opt">' + "ABCD"[k] + ". " + esc(o) + "</button>").join("") + "</div>" +
+    '<div class="quizfb hidden"></div>' +
+    '<div class="skipwrap"><button class="rb0 skipq" style="background:#fdecea;color:#c0392b">😵 不会（剩余算错，看卡）</button></div>';
+}
+function continueQuiz(id) {
+  const s = QSESS[id];
+  s.i++;
+  const box = document.querySelector('#tab-today .row[data-id="' + id + '"] .quizbox');
+  if (!box) return;
+  if (s.i < s.order.length) box.innerHTML = quizPairHTML(id);
+  else finalizeQuiz(id, box);
+}
+function finalizeQuiz(id, box) {
+  const s = QSESS[id];
+  const r = s.wrong === 0 ? 2 : (s.wrong === s.order.length ? 0 : 1);
+  const msg = r === 2
+    ? '<span class="good">✅ ' + s.order.length + " 题全对 · 已记「掌握」（继续走 1/3/7 链）</span>"
+    : r === 0
+      ? '<span class="bad">😵 全不会 · 已记「不会」，明天从头再来。原卡如下：</span>'
+      : '<span class="bad">⚠️ 对 ' + (s.order.length - s.wrong) + " 错 " + s.wrong + " · 已记「模糊」，明天再来。原卡如下：</span>";
+  box.innerHTML = '<div class="quizfb">' + msg + "</div>" + bodyHTML(U[id]);
+  rateQuiet(id, r);
 }
 function modeBody(id) {
   const u = U[id];
@@ -370,25 +398,26 @@ function rateQuiet(id, r) {
   if (row) row.querySelector(".rflags").innerHTML = flagsHTML(id);
 }
 function answerQuiz(opt) {
-  const row = opt.closest(".row"), id = row.dataset.id;
   const optsEl = opt.closest(".opts");
   if (optsEl.dataset.done) return;
   optsEl.dataset.done = "1";
+  const row = opt.closest(".row"), id = row.dataset.id;
+  const s = QSESS[id];
   const correct = optsEl.dataset.a;
   const chosen = opt.textContent.slice(3);
   const right = chosen === correct;
+  if (!right) s.wrong++;
+  s.answered++;
   optsEl.querySelectorAll("button").forEach(b => {
     b.disabled = true;
     if (b.textContent.slice(3) === correct) b.classList.add("correct");
   });
   if (!right) opt.classList.add("wrong");
-  const fb = row.querySelector(".quizfb");
-  fb.innerHTML = (right ? '<span class="good">✅ 答对了 · 已记「掌握」（继续走 1/3/7 链）</span>' : '<span class="bad">❌ 答错 · 已记「模糊」，明天再来。原卡如下：</span>') +
-    '<div class="fbcard">' + bodyHTML(U[id]) + "</div>";
+  const fb = optsEl.parentElement.querySelector(".quizfb");
+  fb.innerHTML = right ? '<span class="good">✅ 对</span>' : '<span class="bad">❌ 错 · 正确答案：<b>' + esc(correct) + "</b></span>";
   fb.classList.remove("hidden");
-  const sk = row.querySelector(".skipwrap");
-  if (sk) sk.classList.add("hidden");
-  rateQuiet(id, right ? 2 : 1);
+  const sk = optsEl.parentElement.querySelector(".skipwrap");
+  sk.innerHTML = '<button class="rb2 contq" style="background:#e6f6ec;color:#2e8b57">继续 →（' + (s.i + 1) + "/" + s.order.length + "）</button>";
 }
 document.getElementById("tab-today").addEventListener("click", e => {
   const rh = e.target.closest(".rowhead");
@@ -398,7 +427,16 @@ document.getElementById("tab-today").addEventListener("click", e => {
   const opt = e.target.closest(".opt");
   if (opt && !opt.disabled) { answerQuiz(opt); return; }
   const sk = e.target.closest(".skipq");
-  if (sk) { rate(sk.closest(".row").dataset.id, 0); return; }
+  if (sk) {
+    const row = sk.closest(".row"), id = row.dataset.id;
+    const s = QSESS[id];
+    s.wrong += s.order.length - s.answered;
+    s.answered = s.order.length;
+    finalizeQuiz(id, row.querySelector(".quizbox"));
+    return;
+  }
+  const cq = e.target.closest(".contq");
+  if (cq) { continueQuiz(cq.closest(".row").dataset.id); return; }
   const ra = e.target.closest(".revall");
   if (ra) {
     const cb = ra.closest(".cardbody");
