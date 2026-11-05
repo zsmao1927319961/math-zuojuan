@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-11-05",
+    "title": "2011英二大作文·国产轿车品牌市场份额(全篇首练)",
+    "type": "大作文",
+    "words": 141,
+    "score": {
+      "total": 8,
+      "max": 15
+    },
+    "comment": "手写照片提交, 按切题性强化版指令批改(涂改两处按改后文批: of→for自改对/emergence→increase)。内容(50%): bar chart类型词首次写对(2010篇曾错写line chart), 对象(三品牌)/时间/单位全对, 主趋势国产升·日系降抓住, 26%→32%数据准; 评论(经济+财富双原因)挂靠国产车崛起, 与图表相关。不足: 日系尾值写25%(对图读2009柱顶明显在25%线上方约27%, 以书为准待确认)+美系plateaued around 12%未体现12%→14%微升+词数141低于题目at least 150。语言(30%): 必改硬伤约15处, 最大簇=可数名词裸单数brand/car×7贯穿全文(一类事物用复数), 粘连句comma splice×3, 句首Whereas误用, between 2008 to 2009搭配错, 词义(tap→market share/formulation of boom名词堆叠/national economic→economy/continue→continued), 拼写3处(temporary/foundation/stabilized), has becoming→have become。组织(20%): 总-分-总三段完整, 衔接意识好。综合定档第三档(7-9): 8/15。",
+    "issues": [
+      "图表切题核查: 柱状图类型词首次写对✓; 对象(国产/日系/美系)·时间(2008-2009)·单位(%)全对✓; 主趋势国产升·日系降抓住✓; 评论与图表相关✓; 离题句=Placed in the context of everyday life(空泛悬垂, 建议删)",
+      "数据核对(以书上图为唯一准据, 我按照片读): 国产26%→32%✓; 日系35%→写25%, 图读约27%(2009柱顶明显在25%线上方), 偏低约2个百分点, 趋势对; 美系plateaued around 12%未体现约12%→14%微升且plateaued与growth slowed语义纠缠",
+      "可数名词裸单数贯穿全文×7: Chinese/Japanese/American brand→brands, Chinese car→cars — 表一类事物用复数(或the+单数), 本篇最高频硬伤",
+      "句子粘连comma splice×3: ...32%, During... / ...choices, Chinese brand has becoming... / ...important, an increasing number... — 逗号不能连两套主谓, 改句号或加连接词",
+      "连接词与介词搭配: Whereas(从属连词)句首独立误用→However/In contrast; between 2008 to 2009→between 2008 and 2009",
+      "词义与构词: different cars' tap→the market share of different car brands(tap=水龙头/轻敲); the formulation of boom→the boom in(名词堆叠, 与上篇formation of...increase同款复发); national economic→the national economy; continue growth→continued growth",
+      "拼写3处: tempory→temporary / fondation→foundation(照片上看无u, 若已拼对请告知改判) / stablized→stabilized",
+      "其他语法: has becoming→have become(完成时用过去分词); in market→in the market; with the increase the citizen's wealth→with the increase in citizens' wealth(increase in+复数所有格); developing in chinese brand→the development of Chinese brands(chinese须大写); equally important比较对象缺失(改of great importance/crucial)",
+      "词数141, 题目at least 150口径略欠约10词",
+      "亮点: 三段结构完整; 26%→32%数据准; be propelled by the combined influence of multiple factors / laid a solid foundation(自改of→for正确) / plateaued / an increasing number of 均为好表达, 修改稿尽量保留"
+    ],
+    "essay": "The bar chart presented the tempory changes of different cars' tap in the market and revealed a clear pattern of development over time. From 2008 to 2009, Chinese brand rose from 26% to 32%, During the same period, Japanese brand declined from 35% to 25%. Whereas, between 2008 to 2009, American brand plateaued around 12%, and its growth slowed and stablized.\n\nPlaced in the context of everyday life, the formulation of boom in Chinese brand is propelled by the combined influence in multiple factors. The continue growth of national economic has undoubtedly laid a solid foundation for the increase of Chinese brand in market, with the increase the citizen's wealth and the alternative choices, Chinese brand has becoming increasingly popular.\n\nTo sum up, developing in chinese brand is equally important, an increasing number of people are likely to use Chinese car."
+  },
+  {
     "date": "2026-11-03",
     "title": "2010英二手机订阅量·定稿模板重写(复测10-18版)",
     "type": "大作文",
