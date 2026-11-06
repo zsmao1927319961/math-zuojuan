@@ -1,6 +1,30 @@
 [
   {
     "date": "2026-11-06",
+    "title": "2013英二大作文·学生兼职情况(全篇首练)",
+    "type": "大作文",
+    "words": 170,
+    "score": {
+      "total": 7,
+      "max": 15
+    },
+    "comment": "手写照片提交; 版面事故第一例: 答题卡写不下→尾句中断于aclapt(=adapt), 按实际写出内容批7/15(7-9档下缘, 结尾缺失+数据2错本身压档非同情分)。图表端: bar chart类型词连续第二篇写对+主趋势(年级越高兼职越多)抓住+词数170达标; 但中间两档数据双错=大三误写71.93%(张冠李戴=大二值, 实87.62%)+大二误写71.13%(无出处, 实71.93%), 新浪教育双源核实待书图终认, 首尾88.24%/67.77%对; P1末句'growing influence of income'图表读不出=描述段掺无据推断。语言端: 双谓语has offers+主干断裂×3(how many...is distributed/increase of number of students go to work/impact of stucents go to work, 中心名词缺taking part-time jobs后置定语同型三现=新硬伤型)+go to work≠兼职题眼词错贯穿4处(与special delivery同型)+comma splice×1(较上篇3处收敛)+economic national economic词簇(national economic→economy上篇复发)+the increase number名词堆叠(两篇连犯)+'a such smaller portion'+拼写5处(illstrate/stucents×2/guidence/aclapt)+It's缩写第3次复发。亮点: visualization这次拼对+followed by/In contrast/propelled by/laid a solid foundation稳定输出+涂改自纠两处(of→for/improving)。修改后全文已按原意补尾(...adapt to the job market)并加粗, 中间数值保留原文待书图核后自换。",
+    "issues": [
+      "数据错×2: 大三应87.62%写成71.93%(张冠李戴=大二值), 大二应71.93%写成71.13%(无出处)",
+      "描述段掺无据推断: figures illustrate the growing influence of income——图表只有各年级兼职比例, 读不出'收入影响'",
+      "双谓语: The bar chart has offers(保留其一)",
+      "主干断裂×3: 中心名词students后缺taking part-time jobs后置定语, 同型三现(新硬伤型)",
+      "题眼词错: go to work≠兼职(=去上班), 应take part-time jobs, 贯穿4处(与special delivery同型)",
+      "national economic→the national economy(名词词性, 上篇复发); the increase number名词堆叠(两篇连犯)",
+      "comma splice: university, It's(较上篇3处收敛); It's缩写第3次复发",
+      "a such smaller portion→a much smaller portion(such a不接比较级)",
+      "拼写5处: illstrate/stucents×2/guidence/aclapt(=illustrate/students/guidance/adapt)",
+      "尾句中断(版面): can better aclapt后截断, adapt不及物须to..., 已按原意补to the job market"
+    ],
+    "essay": "The bar chart has offers a clear visualization of how many students go to work is distributed across a certain university, It's immediately apparent that the grade four takes the largest share of 88.24%, followed by grade three and grade two, which hold shares at 71.93% and 71.13% respectively. In contrast, grade one accounts for a such smaller portion, at 67.77%. Taken together, these figures illstrate the growing influence of income around students.\nPlaced in the context of everyday life, the increase of number of students go to work is propelled by the combined influence of multiple factors. The continuous growth of economic national economic has laid a solid foundation for the emergence of the increase number. The growing demand for improving the life quality has encouraged more students to go to work.\nWe need to think rationally about the impact of stucents go to work on the present era, and provide deliberate guidence. The governments should clarify relevant strategies, so that the stucents that will graduate can better aclapt"
+  },
+  {
+    "date": "2026-11-06",
     "title": "2013英二翻译·超忆症记忆(整段英译汉)",
     "type": "翻译",
     "words": 290,
