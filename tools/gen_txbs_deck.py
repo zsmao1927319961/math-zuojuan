@@ -35,6 +35,7 @@ SEC_PAT = re.compile(r'^##\s*(一|二|三)、\s*(选择填空|选择|单选|填�
 ITEM1 = re.compile(r'^\*\*第(\d+)(?:题|空)(?:（([^）]*)）)?\*\*\s*(.*)')
 ITEMG = re.compile(r'^\*\*第(\d+)(?:空)?[~～](?:第)?(\d+)空(?:（([^）]*)）)?\*\*\s*(.*)')
 zt = []
+TITEMS_ALL = {}
 for (y, a), (_, b) in zip(years, years[1:]):
     if y == 9999:
         break
@@ -65,6 +66,8 @@ for (y, a), (_, b) in zip(years, years[1:]):
             txt = m_t.group(2).strip()
             titems_by_sec.setdefault(cur2, {})[int(m_t.group(1))] = (
                 txt, set(int(x) for x in re.findall(r'（(\d+)）', txt)))
+    for sec_k, v in titems_by_sec.items():
+        TITEMS_ALL[(y, sec_k)] = v
     for i in range(a, b):
         l = lines[i]
         m = SEC_PAT.match(l)
@@ -78,6 +81,8 @@ for (y, a), (_, b) in zip(years, years[1:]):
             continue
         mg, m1 = ITEMG.match(l), ITEM1.match(l)
         if not (mg or m1):
+            continue
+        if cur_sec == '填空':
             continue
         blk = []
         j = i + 1
@@ -98,12 +103,18 @@ for (y, a), (_, b) in zip(years, years[1:]):
             if subj:
                 stem = f"第{ga}~{gb}空 ｜ " + ' '.join(subj)
             else:
-                stem = f"第{ga}~{gb}空 {label} {re.sub(r'（答案[^）]*）', '', rest)}".strip()
+                stem = f"第{ga}~{gb}空 {re.sub(r'（答案[^）]*）', '', rest)}".strip()
             no = ga
         else:
             no = int(m1.group(1))
             label = (m1.group(2) or '').strip()
             stem = (m1.group(3) or '').strip()
+            if cur_sec != '判断':
+                titem = titems_by_sec.get(cur_sec, {}).get(no)
+                if titem and titem[0]:
+                    stem = titem[0]
+                elif re.match(r'^（[^）]*）$', stem):
+                    stem = ''
             ans = ''
             am = re.search(r'【答案】\s*(.*)', stem)
             if am:
@@ -118,7 +129,7 @@ for (y, a), (_, b) in zip(years, years[1:]):
                 stem = am3.group(1).strip() if am3 else stem
             if not stem and no in titems_by_sec.get(cur_sec, {}):
                 stem = re.sub(r'（\s*）\s*$', '', titems_by_sec[cur_sec][no][0]).strip()
-            if not stem and label:
+            if not stem and label and cur_sec == '判断':
                 stem = f"第{no}空（{label}）"
             km = re.search(r'-\s*【知识点】\s*(.*)', txt)
             kp = km.group(1).strip() if km else ''
@@ -127,6 +138,24 @@ for (y, a), (_, b) in zip(years, years[1:]):
                         and not re.match(r'^#{2,3}\s', x.strip()))
         zt.append({'year': y, 'sec': cur_sec, 'no': no, 'stem': stem,
                    'ans': ans, 'kp': kp, 'sol': sol})
+
+# ---------- 主题-only 分组卡修复: 组序↔题目序对齐回填完整题干 (2018/2019 a~z选词年份) ----------
+from collections import defaultdict
+grp_by_ys = defaultdict(list)
+for x in zt:
+    if re.match(r'^第\d+~\d+空 ', x['stem']) and '｜' not in x['stem']:
+        grp_by_ys[(x['year'], x['sec'])].append(x)
+aligned = 0
+for (yy, sec_k), cards_g in grp_by_ys.items():
+    ti = TITEMS_ALL.get((yy, sec_k), {})
+    items = [ti[k][0] for k in sorted(ti)]
+    if len(items) != len(cards_g):
+        continue
+    for x, txt in zip(cards_g, items):
+        m = re.match(r'^第(\d+)~(\d+)空 ', x['stem'])
+        x['stem'] = f"第{m.group(1)}~{m.group(2)}空 ｜ " + txt
+        aligned += 1
+print('grouped stems aligned:', aligned)
 
 q = json.load(io.open(QJ, encoding='utf-8'))
 tk = [x for x in q if x.get('source') == 'tk299' and x.get('type') in ('选择', '填空', '判断')]
@@ -183,6 +212,9 @@ def is_calc(item):
 
 zt_keep = [x for x in zt if not is_calc(x)]
 tk_keep = [x for x in tk if not is_calc(x)]
+# 用户 2026-11-07 裁定: 只留真题第一大题(选择/选择填空/单选)+判断题, 填空题与299库卡全部删除
+# (如需恢复 299 库小题卡: 删除下一行即可)
+tk_keep = []
 
 TYPE_MAP = {'选择填空': '选择', '选择': '选择', '单选': '选择', '填空': '填空', '判断': '判断'}
 SHORT = {'选择': '选', '填空': '填', '判断': '判'}

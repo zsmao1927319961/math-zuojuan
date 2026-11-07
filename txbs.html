@@ -404,6 +404,7 @@ document.querySelectorAll('nav button').forEach(function(b) {
 function renderStats() {
   var grad = 0, weak = [], seenR = 0;
   for (var id in S.units) {
+    if (!U[id]) continue;
     var st = S.units[id];
     if (st.grad) grad++;
     if (st.weak && !st.grad) weak.push(id);
