@@ -122,7 +122,7 @@ footer{max-width:720px;margin:0 auto;padding:0 12px 30px;color:#b0a79a;font-size
       <div class="ht">🏛 政治一页纸 <span class="hsub">知识点背诵站</span></div>
       <div class="hd">澄潇宇《这就是一页纸》知识点手册 · 2027 考研 · <b>130</b> 单元原色还原 · <b>10</b> 天一轮 · 掌握链 <b>1/3/7</b> · 三种自测模式</div>
     </div>
-    <div class="rulebar">铁律：<b>先复测 → 再新卡 → 会议加餐收尾</b>，每晚清空今日队列。</div>
+    <div class="rulebar">铁律：<b>先复测 → 再新卡 → 会议加餐收尾</b>，每晚清空今日队列。<b>三种模式独立打卡</b>：一个模式完成后，切到其他模式还能加练同一批卡（当天首个评分计入巩固链，加练不重复推进）。</div>
     <div class="modebar" id="modebar">
       <button data-m="recite">📖 背诵对照</button>
       <button data-m="quiz">🎯 选择自测</button>
@@ -183,6 +183,8 @@ for (const d in MAIN) MAIN[d].forEach(id => { if (!(id in PLAN_DAY)) PLAN_DAY[id
 for (const d in MEET) MEET[d].forEach(id => { if (!(id in PLAN_DAY)) PLAN_DAY[id] = +d; });
 
 function stOf(id) { return S.units[id] || (S.units[id] = {}); }
+function doneIn(id, m) { const st = S.units[id]; return !!(st && st.dm && st.dm[DI] && st.dm[DI].indexOf(m) >= 0); }
+function markDone(id, m) { const st = stOf(id); if (!st.dm) st.dm = {}; const d = st.dm[DI] || (st.dm[DI] = []); if (d.indexOf(m) < 0) d.push(m); }
 function inNew(id) {
   if (PLAN_DAY[id] > DAY) return false;
   const st = S.units[id];
@@ -335,7 +337,7 @@ function rowHTML(id, norate, planBadge, plain) {
     '<div class="rowhead"><span class="chip">' + u.label + '</span><span class="rtitle">' + esc(u.title) +
     '</span><span class="rflags">' + flags + "</span></div>" +
     '<div class="cardbody">' + (plain ? bodyHTML(u) : modeBody(id)) +
-    (MODE === "quiz" ? "" : '<div class="ratebar"><button class="rb0" data-r="0">😵 不会</button><button class="rb1" data-r="1">🤔 模糊</button><button class="rb2" data-r="2">😎 掌握</button></div>') +
+    (MODE === "quiz" && u.qa && u.qa.length ? "" : '<div class="ratebar"><button class="rb0" data-r="0">😵 不会</button><button class="rb1" data-r="1">🤔 模糊</button><button class="rb2" data-r="2">😎 掌握</button></div>') +
     "</div></div>";
 }
 function queueHTML(el, name, title, ids, badgePlan) {
@@ -368,15 +370,23 @@ function render() {
   if (NOTES[DAY]) nh += '<div class="daynote">📌 ' + NOTES[DAY] + "</div>";
   if (Q.review.length) nh += '<div class="daynote">🔁 今天有 ' + Q.review.length + " 张到期复测卡，先清它们</div>";
   noteEl.innerHTML = nh;
-  queueHTML(document.getElementById("q-review"), "review", "🔁 到期复测", Q.review, false);
-  queueHTML(document.getElementById("q-new"), "newq", "📖 今日新卡（主线）", Q.newq, false);
-  queueHTML(document.getElementById("q-meet"), "meet", "🏛 会议大观 · 每日切片", Q.meet, false);
-  const empty = !Q.review.length && !Q.newq.length && !Q.meet.length;
+  const V = {
+    review: Q.review.filter(x => !doneIn(x, MODE)),
+    newq: Q.newq.filter(x => !doneIn(x, MODE)),
+    meet: Q.meet.filter(x => !doneIn(x, MODE))
+  };
+  queueHTML(document.getElementById("q-review"), "review", "🔁 到期复测", V.review, false);
+  queueHTML(document.getElementById("q-new"), "newq", "📖 今日新卡（主线）", V.newq, false);
+  queueHTML(document.getElementById("q-meet"), "meet", "🏛 会议大观 · 每日切片", V.meet, false);
+  const left = V.review.length + V.newq.length + V.meet.length;
+  const allDoneOnce = ["review", "newq", "meet"].every(k => Q[k].every(id => ["recite", "quiz", "cloze"].some(m => doneIn(id, m))));
+  const empty = allDoneOnce || left === 0;
   const ad = document.getElementById("alldone");
   ad.classList.toggle("hidden", !empty);
   if (empty) {
     const lg = S.log[DI] || { g: 0, m: 0, w: 0 };
-    ad.innerHTML = "🎉 今日打卡完成！<br><span style='font-weight:400;font-size:12.5px'>掌握 " + lg.g + " · 模糊 " + lg.m + " · 不会 " + lg.w + "（明天见）</span>";
+    ad.innerHTML = "🎉 今日打卡完成！<br><span style='font-weight:400;font-size:12.5px'>掌握 " + lg.g + " · 模糊 " + lg.m + " · 不会 " + lg.w + "（明天见）" +
+      (allDoneOnce && left > 0 ? " · 切换模式还可加练当前的 " + left + " 张" : "") + "</span>";
   }
   document.getElementById("dday").textContent = Math.max(0, Math.ceil((new Date(EXAM + "T00:00:00") - new Date(todayStr() + "T00:00:00")) / 864e5));
 }
@@ -395,9 +405,13 @@ function rate(id, r) {
   const lg = S.log[DI] || (S.log[DI] = { g: 0, m: 0, w: 0 });
   if (r === 2) lg.g++; else if (r === 1) lg.m++; else lg.w++;
   persist();
-  for (const k of ["review", "newq", "meet"]) {
-    const q = Q[k], i = q.indexOf(id);
-    if (i >= 0) { q.splice(i, 1); if (r === 0) q.push(id); }
+  if (r === 0) {
+    for (const k of ["review", "newq", "meet"]) {
+      const q = Q[k], i = q.indexOf(id);
+      if (i >= 0) { q.splice(i, 1); q.push(id); }
+    }
+  } else {
+    markDone(id, MODE);
   }
   render();
   // keep the rated card's neighbours usable: open next row
@@ -419,14 +433,12 @@ function rateQuiet(id, r) {
   const lg = S.log[DI] || (S.log[DI] = { g: 0, m: 0, w: 0 });
   if (r === 2) lg.g++; else if (r === 1) lg.m++; else lg.w++;
   persist();
-  for (const k of ["review", "newq", "meet"]) {
-    const q = Q[k], i = q.indexOf(id);
-    if (i >= 0) q.splice(i, 1);
-  }
+  markDone(id, MODE);
   document.querySelectorAll("#tab-today .qhead").forEach(qh => {
     const cont = qh.parentElement;
     const key = cont.id === "q-review" ? "review" : cont.id === "q-new" ? "newq" : "meet";
-    const done = Q0[key] - Q[key].length;
+    const rem = Q[key].filter(x => !doneIn(x, MODE)).length;
+    const done = Q0[key] - rem;
     const pct = Q0[key] ? Math.round(done * 100 / Q0[key]) : 100;
     const cnt = qh.querySelector(".cnt"), pb = qh.querySelector(".pbar i");
     if (cnt) cnt.textContent = done + "/" + Q0[key];
