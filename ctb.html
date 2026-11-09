@@ -150,7 +150,7 @@ body{margin:0; background:var(--bg); color:var(--ink);
 <div class="hero">
   <div class="wrap">
     <h1>通信错题本 · 全题库按考点</h1>
-    <div class="sub">强化讲义 113 + 《299题》317 + 801真题 722 追踪项 + 冲刺压轴 40 ｜ 🟢掌握 · 🟡有思路 · 🔴不会 ｜ 三次全绿 = 通过出池</div>
+    <div class="sub">强化讲义 113 + 《299题》317 + 801真题 743 追踪项（含拆分小题） + 冲刺压轴 40 ｜ 🟢掌握 · 🟡有思路 · 🔴不会 ｜ 三次全绿 = 通过出池</div>
     <div class="chips" id="statchips"></div>
   </div>
 </div>
@@ -170,7 +170,7 @@ body{margin:0; background:var(--bg); color:var(--ink);
   </div>
   <div id="app"><div class="empty">加载中…</div></div>
   <div class="tip"><b>口径</b>：🟢=独立做对（掌握）· 🟡=有思路但算不出 · 🔴=完全不会。每标一次记一轮，<b>再点最后一轮同色=撤销</b>；红/黄留池下轮重刷，<b>同一题连续 3 轮绿 → 🏅 通过出池</b>（不再排重刷，标记史保留；出池后再标黄/红会回池）。旧进度已自动带入：在线刷题的「掌握」直接算已通过、「不熟练」🟡、「不会」🔴，801真题页的绿黄红轮次原样复制。状态存本机浏览器，换设备先去「全站备份」打包。</div>
-  <div class="foot">数据：data/questions.json（讲义+299）· data/zhenti801.json（1998-2025 真题）· data/z801_kp.json（真题考点映射）· data/yz40.json（冲刺宝典压轴40，题36-39 题干原书 p76-77 缺拍未录入、解析齐全）｜ 状态键：ctb_state_v1 ｜ 与在线刷题/真题页相互独立、互不回写</div>
+  <div class="foot">数据：data/questions.json（讲义+299）· data/zhenti801.json（1998-2025 真题）· data/z801_kp.json（真题考点映射）· data/z801_split.json（2014/2015填空+2017/2018/2019选词填空 逐题拆分）· data/yz40.json（冲刺宝典压轴40，题36-39 题干原书 p76-77 缺拍未录入、解析齐全）｜ 状态键：ctb_state_v1 ｜ 与在线刷题/真题页相互独立、互不回写</div>
 </div>
 <script src="katex/katex.min.js"></script>
 <script src="katex/auto-render.min.js"></script>
@@ -181,7 +181,7 @@ var LS = 'ctb_state_v1';
 var PASS_N = 3;
 var ST2M = { ok: 'G', half: 'Y', bad: 'R' };
 var M2ST = { G: 'ok', Y: 'half', R: 'bad' };
-var TREE = null, UNITS = [], UNIT_SIDS = {}, IDX = {}, CT = {};
+var TREE = null, UNITS = [], UNIT_SIDS = {}, IDX = {}, CT = {}, SPLIT = {};
 var VIEW = 'kp', FILTER = 'all', CARDS_OPEN = false;
 var MISSING = [];
 
@@ -380,6 +380,7 @@ function buildUnits(qs, zt, zkp, yz){
     y.qs.forEach(function(q){
       var noS = ztNoShort(q.no);
       var subs = q.subs;
+      var sp = SPLIT[q.id];
       if (subs && subs.length >= 2){
         subs.forEach(function(s){
           var sid = q.id + '#' + s.n;
@@ -388,6 +389,17 @@ function buildUnits(qs, zt, zkp, yz){
           addUnit({ sid: sid, src: 'zt', ch: loc[0], kp: loc[1],
             lab: y.year + ' · ' + noS + ' · ' + (s.t || ('第' + s.n + s.k)), typ: '小题',
             page: '', key: s.key || '', bstem: q.stem || '', no: y.year * 1000 + (+s.n || 0) });
+        });
+      } else if (sp){
+        /* 数据侧逐题拆分的无subs小题块（2014/2015填空 + 2017/2018/2019选词填空） */
+        sp.parts.forEach(function(p){
+          var sid = q.id + '#' + p.n;
+          var loc = zkp[sid];
+          if (!loc){ MISSING.push(sid); return; }
+          addUnit({ sid: sid, src: 'zt', ch: loc[0], kp: loc[1],
+            lab: y.year + ' · ' + noS + ' · 第' + p.n + '题', typ: '小题',
+            page: '', stem: p.stem || '', key: p.key || '', bstem: q.stem || '',
+            no: y.year * 1000 + (+p.n || 0) });
         });
       } else {
         var loc2 = zkp[q.id];
@@ -438,6 +450,21 @@ function seedIfNeeded(){
         if (Array.isArray(r.marks) && r.marks.length) rec.marks = r.marks.map(function(m){ return { d: m.d || '', m: m.m }; });
         if (r.gradFlag) rec.gradFlag = true;
         if (rec.st || rec.marks || rec.gradFlag) u[sid] = rec;
+      });
+      /* 拆分块迁移：整块旧标记 → 各分题（该块无任何分题标记时） */
+      Object.keys(SPLIT).forEach(function(qid){
+        var w = z[qid];
+        if (!w) return;
+        if (!(w.st || (w.marks && w.marks.length) || w.gradFlag)) return;
+        SPLIT[qid].parts.forEach(function(p){
+          var sid = qid + '#' + p.n;
+          if (!UNIT_SIDS[sid] || u[sid]) return;
+          var rec = {};
+          if (w.st) rec.st = w.st;
+          if (w.marks && w.marks.length) rec.marks = w.marks.map(function(m){ return { d: m.d || '', m: m.m }; });
+          if (w.gradFlag) rec.gradFlag = true;
+          u[sid] = rec;
+        });
       });
     }
   } catch(e){}
@@ -842,11 +869,12 @@ Promise.all([
   fetch('data/questions.json').then(function(r){ return r.json(); }),
   fetch('data/zhenti801.json').then(function(r){ return r.json(); }),
   fetch('data/z801_kp.json').then(function(r){ return r.json(); }),
-  fetch('data/yz40.json').then(function(r){ return r.json(); })
+  fetch('data/yz40.json').then(function(r){ return r.json(); }),
+  fetch('data/z801_split.json').then(function(r){ return r.json(); })
 ]).then(function(rs){
   TREE = rs[0];
   var qs = rs[1].filter(function(q){ return q.source === 'qhzt' || q.source === 'tk299'; });
-  ztData = rs[2]; zkpData = rs[3]; yzData = rs[4];
+  ztData = rs[2]; zkpData = rs[3]; yzData = rs[4]; SPLIT = rs[5] || {};
   buildUnits(qs, ztData, zkpData, yzData);
   UNITS.forEach(function(u){ UMAP[u.sid] = u; });
   buildIndex();
