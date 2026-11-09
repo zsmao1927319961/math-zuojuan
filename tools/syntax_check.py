@@ -4,7 +4,7 @@ import re, subprocess, sys, tempfile, os
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 files_js = ['beisheng/app.js', 'sw.js']
-files_html = ['index.html', 'zy.html', 'lianxi.html', 'ditu.html', 'dxy.html', 'beifen.html', 'beisheng/index.html']
+files_html = ['index.html', 'zy.html', 'lianxi.html', 'ditu.html', 'dxy.html', 'beifen.html', 'beisheng/index.html', 'ctb.html', 'mock.html', 'zhenti801.html', 'txbs.html', 'zhengzhi.html', 'zuowen.html', 'shengci.html', 'math.html']
 
 def check(src, tag):
     with tempfile.NamedTemporaryFile('w', suffix='.js', delete=False, encoding='utf-8') as f:
