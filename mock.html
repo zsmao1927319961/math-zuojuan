@@ -205,7 +205,7 @@ body.side-off .mk-side{display:none}
 <div class="mk-body">
   <aside class="mk-side" id="mk-side"></aside>
   <main class="mk-main">
-    <div class="viewbar"><button class="vchip" id="v-paper">📚 按卷册</button><button class="vchip" id="v-kp">🎯 按考点</button><button class="vchip" id="v-pool">🔁 重刷池</button></div>
+    <div class="viewbar"><button class="vchip" id="v-paper">📚 按卷册</button><button class="vchip" id="v-kp">🎯 按考点</button><button class="vchip" id="v-pool">🔁 重刷池</button><button class="vchip" id="v-open">📄 收起全部</button></div>
     <div id="mk-content"><div class="empty-card"><div class="ei">⏳</div><div class="ed">加载中…</div></div></div>
   </main>
 </div>
@@ -222,6 +222,7 @@ var REASONS = ['概念不清','计算失误','方法不会','审题踩坑','粗�
 var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
 var VIEW = (ls('mock_view')==='kp'||ls('mock_view')==='pool') ? ls('mock_view') : 'paper';
 if(location.search.indexOf('view=kp')>=0) VIEW='kp';
+var CARDS_OPEN = ls('mock_cards_open')==='1';   /* 错题卡默认收起（答案/解析手动出），可用「📄展开全部」临时铺开 */
 
 /* ---------- 工具 ---------- */
 function escHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -484,7 +485,7 @@ function errHtml(p,e,src){
   var reason=ls(reasonKey(p.key,e.no));
   var ms=markState(p,e.no);
   var lastM=ms.marks.length?ms.marks[ms.marks.length-1].m:'';
-  var h='<div class="err" id="err-'+p.key+'-'+e.no+'">'
+  var h='<div class="err'+(CARDS_OPEN?' open':'')+'" id="err-'+p.key+'-'+e.no+'">'
     +'<div class="err-h" data-act="tog"><span class="no-badge">'+String(e.no).padStart(2,'0')+'</span>'
     +'<span class="type-chip">'+escHtml(e.type||'')+(e.score?' · '+e.score+'分':'')+'</span>'
     +(ms.grad?'<span class="ph-badge grad">🏅 出池</span>':'')
@@ -633,7 +634,14 @@ function syncViewbar(){
   $('v-paper').classList.toggle('on', VIEW==='paper');
   $('v-kp').classList.toggle('on', VIEW==='kp');
   $('v-pool').classList.toggle('on', VIEW==='pool');
+  $('v-open').textContent = CARDS_OPEN ? '📄 收起全部' : '📄 展开全部';
 }
+$('v-open').onclick=function(){
+  CARDS_OPEN=!CARDS_OPEN;
+  lsSet('mock_cards_open', CARDS_OPEN?'':'0');
+  syncViewbar(); renderContent();
+  toast(CARDS_OPEN?'已全部展开（答案/解析仍需点出）':'已全部收起');
+};
 function srcShort(p){ return p.name.replace('（数学二）','').replace('2027考研数学','').replace(/^24\s/,''); }
 
 /* ---------- 按考点视图：章 → 小考点 → 错题（数二考纲顺序；歧义考点按数据 chapter 字段佐证落位） ---------- */
@@ -687,7 +695,7 @@ function renderKp(){
     var tot=0; kpsArr.forEach(function(kk){ tot+=g[kk].length; });
     if(!tot) continue;
     var cn=c2===CH_OTHER?'📌 其他（待归类）':CHAPTERS[c2].n;
-    html+='<div class="chb open" id="ch-'+c2+'">'
+    html+='<div class="chb" id="ch-'+c2+'">'
         +'<div class="ch-bar"><span class="caret">▶</span><span class="t">'+escHtml(cn)+'</span><span class="c">错 '+tot+'</span></div>'
         +'<div class="kpwrap">';
     kpsArr.forEach(function(kk){
@@ -718,7 +726,7 @@ function renderKp(){
   for(var c=0;c<chips.length;c++){
     (function(btn){ btn.onclick=function(){
       var t=document.getElementById(btn.getAttribute('data-ch'));
-      if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+      if(t){ t.classList.add('open'); t.scrollIntoView({behavior:'smooth',block:'start'}); }
     }; })(chips[c]);
   }
 }
