@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-11-09",
+    "title": "2014英二大作文·城乡人口20年变化(全篇首练)",
+    "type": "大作文",
+    "words": 155,
+    "score": {
+      "total": 9,
+      "max": 15
+    },
+    "comment": "手写照片提交, 数据已对用户所拍书图逐个核验(300/666/834/674四个全对, 零数据争议首例)。内容端生涯最佳: 单位百万→million换算正确(避开2010篇单位陷阱)+城乡双趋势whereas对照清晰+生涯首次全篇零离题句(2013篇P1掺无据推断本次没有)+词数155达标+卷面涂改自纠5处(real/ia/boom in/cos/chaninc→changing按改后文批)。语言端拉住档位(7-9档上缘): 必须修改约11类=拼写6处(millon×4/contempory/mutiple)+语法4类(changes is主谓一致/live原形作主语/main动词误用/revealed时态不呼应)+overall误作动词+countrysides'不可数所有格+changing population名词堆叠缺冠词。million拼写二进宫(11-03 billon×4→本次millon×4, 同词两种错法); main→maintain系11-06补尾句改槽复用, 三天退化。与10-29南山Day1同题骨架(41词5/15)对比, 十天后全篇155词9/15。修改后全文150词。",
+    "issues": [
+      "拼写×4: millon→million(m-i-ll-i-o-n双l; 11-03曾billon×4, 同词两种错法二进宫)",
+      "拼写: contempory→contemporary / mutiple→multiple(词尾丢字母集中爆发)",
+      "词性: main→maintain(11-06补尾句曾拼对, 三天退化, 入错词本)",
+      "主谓一致: the changes of population is→are; 动名词主语: live in the city has become→living in cities has become",
+      "时态不呼应: presents...and revealed→has revealed(图表描述保持现在时态链)",
+      "overall误作动词: these trends overall the trajectory→outline the overall trajectory(overall不作动词)",
+      "不可数: countrysides'→the rural population / the countryside(countryside不可数)",
+      "搭配: changes of population→changes in population",
+      "名词堆叠+缺冠词歧义: the impact of changing population→the impact of population changes",
+      "可选: population number孤用×4→the urban/rural population; Notably收尾→Above all/Ultimately(2013篇同款建议); boom in自删正确但删后语义空→this population shift"
+    ],
+    "essay": "The bar chart presents the temporal changes of cities and countrysides' population in China and revealed a clear pattern of development over time within the twenty years. From 1990 to 2010, the cities' population number rose from 300 millon to 666 millon, whereas the countrysides' population number declined from 834 millon to 674 millon. Taken together, these trends overall the trajectory of population number.\nPlaced in the context of contempory society, the changes of population is propelled by the combined influence of mutiple factors. The continuous growth of national economic strength has undoubtedly laid a solid foundation for the changes of population number. With the increase in citizens' wealth and the expansion of available choices, live in the city has become increasingly popular.\nGovernments should formulate relevant strategies, so that more people can adapt to the city's life. Notably, individuals should main a rational mindset when considering the impact of changing population on today's society."
+  },
+  {
     "date": "2026-11-06",
     "title": "2013英二大作文·学生兼职情况(全篇首练)",
     "type": "大作文",
