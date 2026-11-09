@@ -162,6 +162,22 @@ body.side-off .mk-side{display:none}
 #mk-modal.show{display:flex}
 #mk-modal img{max-width:100%;max-height:92vh;border-radius:12px;background:#fff}
 
+/* ---------- 按考点：章 → 小考点 ---------- */
+.jchips{display:flex;gap:6px;overflow-x:auto;padding:2px 0 12px;-webkit-overflow-scrolling:touch}
+.jchips button{white-space:nowrap;flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;
+  padding:5px 12px;font-size:12px;color:#7a7268;cursor:pointer}
+.jchips button:hover{border-color:var(--orgline);color:var(--org)}
+.chb{margin-bottom:4px}
+.ch-bar{display:flex;align-items:center;gap:9px;margin:16px 2px 4px;padding:10px 12px;cursor:pointer;user-select:none;
+  background:var(--orgbg);border:1px solid var(--orgline);border-radius:12px}
+.ch-bar .caret{flex:none;font-size:10px;color:#c98d4f;transition:transform .15s}
+.chb.open .ch-bar .caret{transform:rotate(90deg)}
+.ch-bar .t{font-size:14px;font-weight:800;color:#9a5b12}
+.ch-bar .c{font-size:12px;color:#b78a54;margin-left:auto}
+.chb:not(.open) .kpwrap{display:none}
+.kpwrap{padding:0 2px}
+.chb .sec .sec-bar{margin:10px 2px 8px}
+
 @media (max-width:860px){
   .mk-burger{display:block}
   .mk-body{padding:0 10px}
@@ -205,6 +221,7 @@ var DATA = null, CUR = null, CURNAME = '';
 var REASONS = ['概念不清','计算失误','方法不会','审题踩坑','粗心大意'];
 var TODAY = (function(){ var d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
 var VIEW = (ls('mock_view')==='kp'||ls('mock_view')==='pool') ? ls('mock_view') : 'paper';
+if(location.search.indexOf('view=kp')>=0) VIEW='kp';
 
 /* ---------- 工具 ---------- */
 function escHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -619,43 +636,91 @@ function syncViewbar(){
 }
 function srcShort(p){ return p.name.replace('（数学二）','').replace('2027考研数学','').replace(/^24\s/,''); }
 
-/* ---------- 按考点视图：跨卷聚合同 kp 错题 ---------- */
+/* ---------- 按考点视图：章 → 小考点 → 错题（数二考纲顺序；歧义考点按数据 chapter 字段佐证落位） ---------- */
+var CHAPTERS = [
+  { n:'高数第1章 · 函数、极限、连续', kps:['数列极限','无穷小比阶','渐近线','函数','分段函数','极限计算','函数极限概念题','无穷小'] },
+  { n:'高数第2章 · 一元函数微分学', kps:['微分中值定理','导数计算','泰勒多项式','极值、最值与拐点','导数定义','曲率','不等式','已知极限推极值拐点','微分概念','高阶导数','方程根/曲线交点/函数零点','导数应用（切法线、曲率）','某点的可导问题','参数方程求导','相关变化率'] },
+  { n:'高数第3章 · 一元函数积分学', kps:['积分计算','几何应用','变限积分相关','反常积分','积分三大定理','物理应用（数一二）','对称性','其他积分题型','定积分定义求 $n$ 项和极限','旋转体体积','定积分几何意义','奇偶性','表（侧）面积（数一二）'] },
+  { n:'高数第4章 · 多元函数微积分', kps:['二重积分','偏导数','多元微分应用','条件极值','交换积分次序','二重积分定义求 $n$ 项和极限','概念题'] },
+  { n:'高数第5章 · 常微分方程', kps:['解微分方程','已知解反求微分方程（逆问题）','微分方程解的性质与结构'] },
+  { n:'线代第1章 · 行列式', kps:['行列式','抽象行列式计算'] },
+  { n:'线代第2章 · 矩阵', kps:['伴随矩阵','初等变换与初等矩阵','矩阵方程','逆'] },
+  { n:'线代第3章 · 向量组', kps:['极大无关组','线性相关与无关','正交矩阵'] },
+  { n:'线代第4章 · 线性方程组', kps:['方程组求解','公共解','解的关系'] },
+  { n:'线代第5章 · 特征值与特征向量', kps:['相似对角化','实对称矩阵','特征值与特征向量'] },
+  { n:'线代第6章 · 二次型', kps:['标准型','合同','正定','正负惯性指数','规范形'] }
+];
+var CH_OTHER = CHAPTERS.length;
+var KP2CH = {};
+CHAPTERS.forEach(function(ch,i){ ch.kps.forEach(function(k){ KP2CH[k]=i; }); });
+
 function renderKp(){
-  var groups={};
+  var chGroups={};
+  CHAPTERS.forEach(function(_,i){ chGroups[i]={}; });
+  chGroups[CH_OTHER]={};
   DATA.forEach(function(p){
     p.errors.forEach(function(e){
       var k=e.kp||'未分类';
-      (groups[k]=groups[k]||[]).push({p:p,e:e});
+      var ci=(k in KP2CH)?KP2CH[k]:CH_OTHER;
+      (chGroups[ci][k]=chGroups[ci][k]||[]).push({p:p,e:e});
     });
   });
-  var keys=Object.keys(groups).sort(function(a,b){
-    var dd=groups[b].length-groups[a].length;
-    return dd || a.localeCompare(b,'zh');
-  });
-  if(!keys.length){
+  var html='<div class="jchips">';
+  var any=false;
+  for(var ci=0;ci<=CH_OTHER;ci++){
+    var cnt=0; for(var kk in chGroups[ci]) cnt+=chGroups[ci][kk].length;
+    if(!cnt) continue;
+    any=true;
+    html+='<button data-ch="ch-'+ci+'">'+escHtml(ci===CH_OTHER?'📌 其他':CHAPTERS[ci].n)+' '+cnt+'</button>';
+  }
+  html+='</div>';
+  if(!any){
     $('mk-content').innerHTML='<div class="empty-card"><div class="ei">🗒️</div><div class="et">还没有错题</div></div>';
     return;
   }
-  var html='';
-  keys.forEach(function(k){
-    var g=groups[k];
-    html+='<div class="sec open"><div class="sec-bar"><span class="caret">▶</span><span class="bar"></span><span class="t">'+escHtml(k)+'</span><span class="c">错 '+g.length+'</span></div><div class="errlist">';
-    g.forEach(function(it){ html+=errHtml(it.p, it.e, srcShort(it.p)); });
-    html+='</div></div>';
-  });
-  $('mk-content').innerHTML=html;
-  keys.forEach(function(k){
-    var secEl=null;
-    groups[k].forEach(function(it){
-      var el=document.getElementById('err-'+it.p.key+'-'+it.e.no);
-      if(el){
-        if(!secEl) secEl=el.closest('.sec');
-        bindCard(it.p, el);
-      }
-      hydrateCard(it.p, it.e);
+  for(var c2=0;c2<=CH_OTHER;c2++){
+    var g=chGroups[c2];
+    var kpsArr=Object.keys(g).sort(function(a,b){
+      var dd=g[b].length-g[a].length;
+      return dd || a.localeCompare(b,'zh');
     });
-    if(secEl) secEl.querySelector('.sec-bar').onclick=function(){ secEl.classList.toggle('open'); };
+    var tot=0; kpsArr.forEach(function(kk){ tot+=g[kk].length; });
+    if(!tot) continue;
+    var cn=c2===CH_OTHER?'📌 其他（待归类）':CHAPTERS[c2].n;
+    html+='<div class="chb open" id="ch-'+c2+'">'
+        +'<div class="ch-bar"><span class="caret">▶</span><span class="t">'+escHtml(cn)+'</span><span class="c">错 '+tot+'</span></div>'
+        +'<div class="kpwrap">';
+    kpsArr.forEach(function(kk){
+      var list=g[kk];
+      html+='<div class="sec open"><div class="sec-bar"><span class="caret">▶</span><span class="bar"></span><span class="t">'+escHtml(kk)+'</span><span class="c">错 '+list.length+'</span></div><div class="errlist">';
+      list.forEach(function(it){ html+=errHtml(it.p, it.e, srcShort(it.p)); });
+      html+='</div></div>';
+    });
+    html+='</div></div>';
+  }
+  $('mk-content').innerHTML=html;
+  var chbs=$('mk-content').querySelectorAll('.chb');
+  for(var a=0;a<chbs.length;a++){
+    (function(el){ el.querySelector('.ch-bar').onclick=function(){ el.classList.toggle('open'); }; })(chbs[a]);
+  }
+  var secs=$('mk-content').querySelectorAll('.sec');
+  for(var b=0;b<secs.length;b++){
+    (function(el){ el.querySelector('.sec-bar').onclick=function(){ el.classList.toggle('open'); }; })(secs[b]);
+  }
+  DATA.forEach(function(p){
+    p.errors.forEach(function(e){
+      var el=document.getElementById('err-'+p.key+'-'+e.no);
+      if(el) bindCard(p,el);
+      hydrateCard(p,e);
+    });
   });
+  var chips=$('mk-content').querySelectorAll('.jchips button');
+  for(var c=0;c<chips.length;c++){
+    (function(btn){ btn.onclick=function(){
+      var t=document.getElementById(btn.getAttribute('data-ch'));
+      if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+    }; })(chips[c]);
+  }
 }
 /* ---------- 重刷池视图：跨卷册聚合全部未毕业错题（红/黄→下轮重刷） ---------- */
 function renderPool(){
