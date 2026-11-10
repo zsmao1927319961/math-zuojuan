@@ -877,6 +877,16 @@ Promise.all([
   var qs = rs[1].filter(function(q){ return q.source === 'qhzt' || q.source === 'tk299'; });
   ztData = rs[2]; zkpData = rs[3]; yzData = rs[4]; SPLIT = rs[5] || {}; QS = rs[6] || {};
   buildUnits(qs, ztData, zkpData, yzData);
+  /* 题面去提示：【知识点】【对应课件】【切入点】【要点】【答案要点】等从题干切出并入答案（防剧透） */
+  var STEM_MARK = /^[ \t]*[-*>]?[ \t]*【(?:知识点|对应课件|切入点|要点|答案要点|答案|解题过程|易错点|备注|考点)】/m;
+  UNITS.forEach(function(u){
+    if (u.src !== 'zt' || !u.stem) return;
+    var m = u.stem.search(STEM_MARK);
+    if (m < 0) return;
+    var tail = u.stem.slice(m).trim();
+    u.stem = u.stem.slice(0, m).trim();
+    if (tail) u.key = tail + (u.key ? '\n\n' + u.key : '');
+  });
   UNITS.forEach(function(u){ UMAP[u.sid] = u; });
   buildIndex();
   var seeded = seedIfNeeded();

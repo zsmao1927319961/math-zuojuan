@@ -22,15 +22,27 @@ def main():
     t = open(REPO + r"\txbs_data.js", encoding="utf-8").read()
     tx = json.loads(t.split("=", 1)[1].strip().rstrip(";").strip())["cards"]
 
-    # txbs 索引：判断+选择 按年份；选择再按 norm_ans 文本
+    # txbs 索引：判断+选择 按年份；选择按 norm_ans 文本（仅当该年答案文本无碰撞=content 风格时启用，
+    # 字母风格年（2007/2012/2013 等）答案文本全塌缩成单字母，文本匹配必错位，改走题号对齐）
     tx_by_year = collections.defaultdict(lambda: {"选择": [], "判断": []})
     tx_by_ans = collections.defaultdict(dict)
+    tx_no = collections.defaultdict(dict)
+    tx_style = {}
+    seen = collections.defaultdict(collections.Counter)
     for c in tx:
         if c.get("src") != "zt" or not c.get("stem"):
             continue
         tx_by_year[c["year"]][c["type"]].append(c)
         if c["type"] == "选择":
-            tx_by_ans[c["year"]][norm_ans(c.get("ans"))] = c
+            seen[c["year"]][norm_ans(c.get("ans"))] += 1
+    for yr2, cnt in seen.items():
+        tx_style[yr2] = "letter" if any(len(k) <= 2 for k in cnt) else "content"
+    for c in tx:
+        if c.get("src") == "zt" and c.get("stem"):
+            if c["type"] == "选择":
+                tx_no[c["year"]][c["no"]] = c
+                if tx_style[c["year"]] == "content" and seen[c["year"]][norm_ans(c.get("ans"))] == 1:
+                    tx_by_ans[c["year"]][norm_ans(c.get("ans"))] = c
 
     out, report, cov = {}, [], collections.Counter()
     for y in z["years"]:
@@ -92,20 +104,24 @@ def main():
             # C. txbs 匹配
             yr = y["year"]
             if block_type == "判断":
-                tx_no = {c["no"]: c for c in tx_by_year[yr]["判断"]}
+                tx_n = {c["no"]: c for c in tx_by_year[yr]["判断"]}
                 for s in subs:
                     if str(s["n"]) in got:
                         continue
-                    c = tx_no.get(s["n"]) or tx_no.get(int(re.sub(r"\D", "", s.get("t") or "0") or 0))
+                    c = tx_n.get(s["n"]) or tx_n.get(int(re.sub(r"\D", "", s.get("t") or "0") or 0))
                     if c and c.get("stem"):
                         got[str(s["n"])] = c["stem"]
-            elif block_type == "选择" or (block_type in ("填空", "其他") and yr >= 2007):
+            elif block_type == "选择" or (block_type in ("填空", "其他") and yr >= 2007 and tx_style.get(yr) == "content"):
+                tx_n = {c["no"]: c for c in tx_by_year[yr]["选择"]}
                 for s in subs:
                     if str(s["n"]) in got:
                         continue
-                    a = norm_ans(re.search(r"【答案】([^【\n]*)", s.get("key") or "").group(1) if re.search(r"【答案】", s.get("key") or "") else "")
-                    c = tx_by_ans[yr].get(a)
-                    if c:
+                    # 主策略：题号对齐（txbs no = 卷面题号）
+                    c = tx_n.get(s["n"]) if tx_style.get(yr) == "letter" else None
+                    if not c:
+                        a = norm_ans(re.search(r"【答案】([^【\n]*)", s.get("key") or "").group(1) if re.search(r"【答案】", s.get("key") or "") else "")
+                        c = tx_by_ans[yr].get(a)
+                    if c and c.get("stem"):
                         got[str(s["n"])] = c["stem"]
 
             n_all, n_got = len(subs), len(got)
@@ -117,6 +133,23 @@ def main():
             if n_got < n_all:
                 report.append(f"{qid} {block_type} {n_got}/{n_all} 缺:{[s['n'] for s in subs if str(s['n']) not in got][:8]}")
 
+    # 自检：同一块内两道小题拿到同一题干 = 匹配错位，必须为零
+    byblk = collections.defaultdict(dict)
+    for sid, st in out.items():
+        byblk[sid.rsplit("#", 1)[0]][re.sub(r"\s+", "", st)[:60]] = sid
+    dup_err = [(m[k], sid, k[:30]) for blk, m in byblk.items() for k, sid in m.items() if list(m.values()).count(sid) > 1 and list(m.keys()).count(k) > 1]
+    dup_report = []
+    for blk, m in byblk.items():
+        inv = collections.defaultdict(list)
+        for k, sid in m.items():
+            inv[k].append(sid)
+        for k, sids in inv.items():
+            if len(sids) > 1:
+                dup_report.append(f"{blk}: {sids} → {k[:30]}")
+    if dup_report:
+        print("!! 同块重复题干:")
+        for r in dup_report:
+            print("  ", r)
     json.dump(out, open(REPO + r"\data\z801_qstems.json", "w", encoding="utf-8", newline="\n"), ensure_ascii=False, indent=0, sort_keys=True)
     print("题面覆盖:", len(out), "/", sum(len(q["subs"]) for y in z["years"] for q in y["qs"] if q.get("subs") and len(q["subs"]) >= 2))
     print("块覆盖分布:", dict(cov))
