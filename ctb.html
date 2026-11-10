@@ -403,8 +403,14 @@ function buildUnits(qs, zt, zkp, yz){
             ? g.ms.map(function(m){ return '**' + (m.t || ('第' + m.n + m.k)) + '**\n' + (m.key || ''); }).join('\n\n')
             : (s.key || '');
           if (g.ms.length > 1){
-            g.ms.slice(1).forEach(function(m){ SID_ALIAS[q.id + '#' + m.n] = sid; });
-            MERGED.push({ primary: sid, members: g.ms.slice(1).map(function(m){ return q.id + '#' + m.n; }) });
+            var mids = [], mlocs = [];
+            g.ms.slice(1).forEach(function(m){
+              var mid = q.id + '#' + m.n;
+              SID_ALIAS[mid] = sid;
+              mids.push(mid);
+              mlocs.push(zkp[mid] || null);
+            });
+            MERGED.push({ primary: sid, members: mids, locs: mlocs });
           }
           addUnit({ sid: sid, src: 'zt', ch: loc[0], kp: loc[1],
             lab: lab, typ: '小题',
@@ -452,6 +458,16 @@ function buildIndex(){
   UNITS.forEach(function(u){
     var g = IDX[u.ch] && IDX[u.ch][u.kp];
     if (g) g[u.src].push(u); else MISSING.push(u.sid);
+  });
+  /* 合并卡多考点挂载：成员空各自的考点组也放同一张卡（按考点筛选时各考点都能筛到，2026-11-10 用户要求） */
+  MERGED.forEach(function(g){
+    var u = UMAP[g.primary];
+    if (!u) return;
+    (g.locs || []).forEach(function(loc){
+      if (!loc) return;
+      var g2 = IDX[loc[0]] && IDX[loc[0]][loc[1]];
+      if (g2 && g2.zt.indexOf(u) < 0) g2.zt.push(u);
+    });
   });
 }
 
@@ -513,11 +529,15 @@ function seedIfNeeded(){
 
 /* ---------- 原题块内容重组：块级 stem 只是"第1题…"预览或整块原文，改为逐题清单 ---------- */
 function composeBlockStem(q, items){
+  var useful = items.filter(function(s){
+    return ((s.stem || '').replace(/[\s－-]/g, '').length >= 6);   /* 老年份分题题干多为"-"，视为无用 */
+  }).length;
   var body = items.map(function(s){
-    return '**' + (s.t || ('第' + s.n + (s.k || '题'))) + '** ' + (s.stem || '－');
+    var st = (s.stem || '').trim();
+    if (!st || st === '-') st = '（暂无题干）';
+    return '**' + (s.t || ('第' + s.n + (s.k || '题'))) + '** ' + st;
   }).join('\n\n');
-  var rich = body.replace(/[\s*＊－]/g, '');
-  if (rich.length < 40) return q.stem || body;   /* 分题题干太稀疏（老年份转录为"-"）→ 回退整块原文 */
+  if (useful < 3) return q.stem || body;   /* 有题干的分题太少 → 回退整块原文（滚动查看） */
   return (q.no ? '**' + q.no + '**\n\n' : '') + body;
 }
 
@@ -808,8 +828,9 @@ function renderKp(){
   app.innerHTML = h;
   var jc = '';
   TREE.chapters.forEach(function(c, i){
-    var tot = 0;
-    Object.keys(IDX[c.n]).forEach(function(k){ tot += IDX[c.n][k].jy.length + IDX[c.n][k].t299.length + IDX[c.n][k].zt.length + IDX[c.n][k].yz.length; });
+    var seenC = {};
+    Object.keys(IDX[c.n]).forEach(function(k){ ['jy','t299','zt','yz'].forEach(function(sk){ IDX[c.n][k][sk].forEach(function(u){ seenC[u.sid] = 1; }); }); });
+    var tot = Object.keys(seenC).length;
     if (!tot) return;
     var pool = 0;
     c.ks.forEach(function(k){ (IDX[c.n][k].jy.concat(IDX[c.n][k].t299, IDX[c.n][k].zt, IDX[c.n][k].yz)).forEach(function(u){ if (markInfo(u.sid).pool) pool++; }); });
@@ -824,8 +845,8 @@ function renderKp(){
   });
   var cl = '';
   TREE.chapters.forEach(function(c, i){
-    var all = [];
-    c.ks.forEach(function(k){ Object.keys(IDX[c.n][k]).forEach(function(sk){ IDX[c.n][k][sk].forEach(function(u){ all.push(u); }); }); });
+    var all = [], seenAll = {};
+    c.ks.forEach(function(k){ Object.keys(IDX[c.n][k]).forEach(function(sk){ IDX[c.n][k][sk].forEach(function(u){ if (!seenAll[u.sid]){ seenAll[u.sid] = 1; all.push(u); } }); }); });
     var vis = all.filter(function(u){ return passFilter(u.sid); });
     if (!vis.length) return;
     var gs = groupStats(vis);
