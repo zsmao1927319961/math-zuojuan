@@ -592,6 +592,18 @@ async function init(){
     YMAP[y.year] = y;
     y.qs.forEach(q => QMAP[q.id] = { y: y.year, q });
   });
+  /* 大题题面去提示(2026-11-10)：精解合订本的整题 stem 内嵌【答案】【知识点】【对应课件】等，
+     直接渲染会裸奔答案——切出并入该题精解项（与 ctb.html v136 同款） */
+  const STEM_MARK = /^[ \t]*[-*>]?[ \t]*【(?:知识点|对应课件|切入点|要点|答案要点|答案|解题过程|易错点|备注|考点)】/m;
+  DATA.years.forEach(y => y.qs.forEach(q => {
+    if (q.subs && q.subs.length >= 2) return;   /* 小题块头是预览行，子题面本就不渲染 */
+    const st = q.stem || '';
+    const m = st.search(STEM_MARK);
+    if (m < 0) return;
+    const tail = st.slice(m).trim();
+    q.stem = st.slice(0, m).trim();
+    if (tail) q.key = tail + (q.key ? '\n\n' + q.key : '');
+  }));
   render();
 
   $('#filters').querySelectorAll('button').forEach(b =>
