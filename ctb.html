@@ -130,7 +130,7 @@ body{margin:0; background:var(--bg); color:var(--ink);
   font-size:11.5px; color:var(--ink); cursor:pointer}
 .sbtn:hover{border-color:var(--blue); color:var(--blue)}
 .sblk{display:none; margin-top:7px; border-top:1px dashed var(--line); padding-top:7px; font-size:13.5px}
-.sblk.show{display:block}
+.sblk.show{display:block; max-height:46vh; overflow:auto; padding-right:4px}
 .notice{background:#fff7e8; border:1px solid #eeddb8; border-radius:8px; padding:8px 12px; font-size:13px; margin:8px 0}
 .empty{padding:40px 0; text-align:center; color:var(--mut)}
 .tip{background:#eef2f9; border-radius:10px; padding:10px 14px; font-size:12.5px; margin-top:16px; color:#5a6778}
@@ -182,6 +182,7 @@ var PASS_N = 3;
 var ST2M = { ok: 'G', half: 'Y', bad: 'R' };
 var M2ST = { G: 'ok', Y: 'half', R: 'bad' };
 var TREE = null, UNITS = [], UNIT_SIDS = {}, IDX = {}, CT = {}, SPLIT = {}, QS = {};
+var SID_ALIAS = {}, MERGED = [];   /* 同题干多空合并卡：成员 sid → 主 sid 映射 + 合并组清单 */
 var VIEW = 'kp', FILTER = 'all', CARDS_OPEN = false;
 var MISSING = [];
 
@@ -288,6 +289,7 @@ function marksOfSid(sid){
   return [];
 }
 function markInfo(sid){
+  sid = SID_ALIAS[sid] || sid;
   var s = CT.u[sid] || null;
   var ms = marksOfSid(sid);
   var streak = 0;
@@ -382,13 +384,31 @@ function buildUnits(qs, zt, zkp, yz){
       var subs = q.subs;
       var sp = SPLIT[q.id];
       if (subs && subs.length >= 2){
+        /* 同题干连续空合并为一卡（同一道原卷多空题不拆分，2026-11-10 用户拍板） */
+        var groups = [], cur = null;
         subs.forEach(function(s){
+          var st = QS[q.id + '#' + s.n] || '';
+          if (st && cur && cur.stem === st) cur.ms.push(s);
+          else { cur = { stem: st, ms: [s] }; groups.push(cur); }
+        });
+        groups.forEach(function(g){
+          var s = g.ms[0];
           var sid = q.id + '#' + s.n;
           var loc = zkp[sid];
           if (!loc){ MISSING.push(sid); return; }
+          var lab = y.year + ' · ' + noS + ' · ' + (g.ms.length > 1
+            ? ('第' + s.n + '-' + g.ms[g.ms.length - 1].n + (s.k || ''))
+            : (s.t || ('第' + s.n + s.k)));
+          var key = g.ms.length > 1
+            ? g.ms.map(function(m){ return '**' + (m.t || ('第' + m.n + m.k)) + '**\n' + (m.key || ''); }).join('\n\n')
+            : (s.key || '');
+          if (g.ms.length > 1){
+            g.ms.slice(1).forEach(function(m){ SID_ALIAS[q.id + '#' + m.n] = sid; });
+            MERGED.push({ primary: sid, members: g.ms.slice(1).map(function(m){ return q.id + '#' + m.n; }) });
+          }
           addUnit({ sid: sid, src: 'zt', ch: loc[0], kp: loc[1],
-            lab: y.year + ' · ' + noS + ' · ' + (s.t || ('第' + s.n + s.k)), typ: '小题',
-            page: '', stem: QS[sid] || '', key: s.key || '', bstem: q.stem || '', no: y.year * 1000 + (+s.n || 0) });
+            lab: lab, typ: '小题',
+            page: '', stem: g.stem, key: key, bstem: composeBlockStem(q, subs), no: y.year * 1000 + (+s.n || 0) });
         });
       } else if (sp){
         /* 数据侧逐题拆分的无subs小题块（2014/2015填空 + 2017/2018/2019选词填空） */
@@ -398,7 +418,7 @@ function buildUnits(qs, zt, zkp, yz){
           if (!loc){ MISSING.push(sid); return; }
           addUnit({ sid: sid, src: 'zt', ch: loc[0], kp: loc[1],
             lab: y.year + ' · ' + noS + ' · 第' + p.n + '题', typ: '小题',
-            page: '', stem: p.stem || '', key: p.key || '', bstem: q.stem || '',
+            page: '', stem: p.stem || '', key: p.key || '', bstem: composeBlockStem(q, sp.parts),
             no: y.year * 1000 + (+p.n || 0) });
         });
       } else {
@@ -489,6 +509,55 @@ function seedIfNeeded(){
   CT = { u: u, seeded: 1 };
   saveCT();
   return true;
+}
+
+/* ---------- 原题块内容重组：块级 stem 只是"第1题…"预览或整块原文，改为逐题清单 ---------- */
+function composeBlockStem(q, items){
+  var body = items.map(function(s){
+    return '**' + (s.t || ('第' + s.n + (s.k || '题'))) + '** ' + (s.stem || '－');
+  }).join('\n\n');
+  var rich = body.replace(/[\s*＊－]/g, '');
+  if (rich.length < 40) return q.stem || body;   /* 分题题干太稀疏（老年份转录为"-"）→ 回退整块原文 */
+  return (q.no ? '**' + q.no + '**\n\n' : '') + body;
+}
+
+/* ---------- 合并卡状态归一：成员分题旧状态并入主 sid（幂等，beifen 恢复旧备份后重跑仍成立） ---------- */
+function mergeStates(){
+  if (!MERGED.length) return;
+  var WORSE = { G: 1, Y: 2, R: 3 };
+  var changed = false;
+  MERGED.forEach(function(g){
+    var pri = CT.u[g.primary] || null;
+    var all = [];
+    if (pri){
+      if (pri.marks && pri.marks.length) all = pri.marks.slice();
+      else if (pri.st && ST2M[pri.st]) all = [{ d: '', m: ST2M[pri.st] }];
+    }
+    var worst = all.length ? all[all.length - 1].m : '';
+    var grad = pri ? !!pri.gradFlag : false;
+    var had = false;
+    g.members.forEach(function(msid){
+      var r = CT.u[msid];
+      if (!r) return;
+      had = true;
+      var ml = (r.marks && r.marks.length) ? r.marks.slice() : ((r.st && ST2M[r.st]) ? [{ d: '', m: ST2M[r.st] }] : []);
+      all = all.concat(ml);
+      grad = grad || !!r.gradFlag;
+      var lm = ml.length ? ml[ml.length - 1].m : '';
+      if (lm && (!worst || WORSE[lm] > WORSE[worst])) worst = lm;
+      delete CT.u[msid];
+    });
+    if (!had) return;
+    var seen = {}, ded = [];
+    all.forEach(function(m){ var k2 = (m.d || '') + '|' + m.m; if (!seen[k2]){ seen[k2] = 1; ded.push(m); } });
+    ded.sort(function(a, b){ return (a.d || '').localeCompare(b.d || ''); });
+    var rec = CT.u[g.primary] || (CT.u[g.primary] = {});
+    rec.marks = ded;
+    if (worst) rec.st = M2ST[worst];
+    if (grad) rec.gradFlag = true;
+    changed = true;
+  });
+  if (changed) saveCT();
 }
 
 /* ---------- 统计 ---------- */
@@ -891,6 +960,7 @@ Promise.all([
   buildIndex();
   var seeded = seedIfNeeded();
   loadCT();
+  mergeStates();
   if (seeded) { /* 刚播种完，loadCT 已含数据 */ }
   if (MISSING.length) console.warn('未落位单元', MISSING.length, MISSING.slice(0, 20));
   render();
