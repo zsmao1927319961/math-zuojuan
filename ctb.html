@@ -181,7 +181,7 @@ var LS = 'ctb_state_v1';
 var PASS_N = 3;
 var ST2M = { ok: 'G', half: 'Y', bad: 'R' };
 var M2ST = { G: 'ok', Y: 'half', R: 'bad' };
-var TREE = null, UNITS = [], UNIT_SIDS = {}, IDX = {}, CT = {}, SPLIT = {};
+var TREE = null, UNITS = [], UNIT_SIDS = {}, IDX = {}, CT = {}, SPLIT = {}, QS = {};
 var VIEW = 'kp', FILTER = 'all', CARDS_OPEN = false;
 var MISSING = [];
 
@@ -388,7 +388,7 @@ function buildUnits(qs, zt, zkp, yz){
           if (!loc){ MISSING.push(sid); return; }
           addUnit({ sid: sid, src: 'zt', ch: loc[0], kp: loc[1],
             lab: y.year + ' · ' + noS + ' · ' + (s.t || ('第' + s.n + s.k)), typ: '小题',
-            page: '', key: s.key || '', bstem: q.stem || '', no: y.year * 1000 + (+s.n || 0) });
+            page: '', stem: QS[sid] || '', key: s.key || '', bstem: q.stem || '', no: y.year * 1000 + (+s.n || 0) });
         });
       } else if (sp){
         /* 数据侧逐题拆分的无subs小题块（2014/2015填空 + 2017/2018/2019选词填空） */
@@ -611,7 +611,7 @@ function slimHtml(u){
   return h;
 }
 function unitHtml(u){
-  return (u.src === 'zt' && u.typ === '小题') ? slimHtml(u) : cardHtml(u);
+  return (u.src === 'zt' && u.typ === '小题' && !u.stem) ? slimHtml(u) : cardHtml(u);
 }
 function fillBody(el, u){
   var st = el.querySelector('[data-stem]');
@@ -870,11 +870,12 @@ Promise.all([
   fetch('data/zhenti801.json').then(function(r){ return r.json(); }),
   fetch('data/z801_kp.json').then(function(r){ return r.json(); }),
   fetch('data/yz40.json').then(function(r){ return r.json(); }),
-  fetch('data/z801_split.json').then(function(r){ return r.json(); })
+  fetch('data/z801_split.json').then(function(r){ return r.json(); }),
+  fetch('data/z801_qstems.json').then(function(r){ return r.json(); })
 ]).then(function(rs){
   TREE = rs[0];
   var qs = rs[1].filter(function(q){ return q.source === 'qhzt' || q.source === 'tk299'; });
-  ztData = rs[2]; zkpData = rs[3]; yzData = rs[4]; SPLIT = rs[5] || {};
+  ztData = rs[2]; zkpData = rs[3]; yzData = rs[4]; SPLIT = rs[5] || {}; QS = rs[6] || {};
   buildUnits(qs, ztData, zkpData, yzData);
   UNITS.forEach(function(u){ UMAP[u.sid] = u; });
   buildIndex();
