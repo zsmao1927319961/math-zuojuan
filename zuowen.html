@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>背作文 · AI归来大作文14天</title>
+<title>背作文 · AI归来大作文模板</title>
 <style>
   :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
   * { box-sizing:border-box; }
@@ -81,10 +81,6 @@
   .grp { margin:18px 2px 2px; font-size:14px; font-weight:800; color:#5a6472; display:flex; align-items:center; gap:8px; }
   .grp::after { content:""; flex:1; height:1px; background:var(--line); }
   .grp .gn { font-size:11.5px; color:#8a94a6; font-weight:400; }
-  .catbtns { display:flex; gap:8px; margin:10px 0 2px; }
-  .catbtns button { flex:1; border:1px solid var(--line); background:#fff; border-radius:9px; padding:6px 0;
-                    font-size:14px; cursor:pointer; color:#5a6472; }
-  .catbtns button.on { background:#123a8f; color:#fff; border-color:#123a8f; font-weight:700; }
   .search { width:100%; border:1px solid var(--line); border-radius:9px; padding:8px 11px;
             font-size:15px; background:#fbfcff; font-family:inherit; margin:8px 0 2px; }
   .empty { text-align:center; color:#8a94a6; font-size:14.5px; padding:18px 6px; }
@@ -101,30 +97,24 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <h1>背作文 · 14天计划</h1>
+    <h1>背作文 · AI归来模板</h1>
     <a class="back" href="index.html">← 返回主站</a>
   </div>
   <div class="chips">
     <span class="chip" id="cd"></span>
     <span class="chip" id="pc"></span>
   </div>
-  <div class="tabs">
-    <button data-v="plan" class="on">每日计划</button>
-    <button data-v="lib">模板库</button>
-  </div>
   <div id="app"><div class="empty">加载中…</div></div>
 
-  <div class="tipbox"><b>用法</b>:按【每日计划】从第1天推进——每天只精背当天主选句(看中文→回忆英文→点卡片核对→背过打勾),灰色的「同功能备选」挑一句合手感的换着背也行、其余看熟即可,不做完天也算完成;然后做当天真题练习;「今天」按开始日期自动标红。没背熟的句子隔 1/3/7 天回【模板库】遮住英文重背。红字=考场按题填的槽,蓝字=必背框架。数据只存本机浏览器。</div>
-  <div class="foot">背作文 v8.0 · 27AI归来大作文模板 ｜ 三段全槽位=14天(11-12整页替换,南山28天版在git历史可恢复) ｜ 数据:data/zuowen_ai.json(46句·由 ZCode 维护)</div>
+  <div class="tipbox"><b>用法</b>:无日程,按顺序从【第一段 · 首句按图选型】一路背到【备用库】——每张卡看中文→回忆英文→点卡片核对→背过打勾;灰色的「同功能备选」挑一句合手感的换着背也行、其余看熟即可。★必背33句=成文最小集,先啃完;词库10个定版词集中过一遍;○眼熟备用库不强制打卡。没背熟的句子隔 1/3/7 天回来遮住英文重背。红字=考场按题填的槽,蓝字=必背框架。数据只存本机浏览器。</div>
+  <div class="foot">背作文 v8.1 · 27AI归来大作文模板 ｜ 无日程:按第一段→第二段→第三段顺序自推进(11-12整页替换南山版,git历史可恢复) ｜ 数据:data/zuowen_ai.json(46句·由 ZCode 维护)</div>
 </div>
 
 <script>
 'use strict';
 const LS = 'zuowen_';
 let DATA = null, P = null;
-let view = 'plan';
-let dayOpen = {};
-let libCat = 'all', kw = '';
+let kw = '';
 
 const $ = s => document.querySelector(s);
 const esc = s => s;                  // 数据源是受信 HTML
@@ -136,30 +126,13 @@ const get = k => localStorage.getItem(LS + k) === '1';
 const set = (k, v) => v ? localStorage.setItem(LS + k, '1') : localStorage.removeItem(LS + k);
 function hsh(s){ let h = 5381; for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) >>> 0; return h.toString(16); }
 const skey = s => 's2_' + hsh(s.en);           // 模板句打卡键(同v6)
-const pkey = t => 'z7_pr_' + hsh(t);           // 练习任务键
-
-/* —— 开始日期 —— */
-function getStart(){
-  let v = localStorage.getItem('zuowen_ns_start');
-  if (!v || !/^\d{4}-\d{2}-\d{2}$/.test(v)){ v = todayISO(); localStorage.setItem('zuowen_ns_start', v); }
-  return v;
-}
-function todayNo(){ return diffDays(todayISO(), getStart()) + 1; }   // 第几天(1-based)
 
 /* —— 进度 —— */
 function sentDone(s){ return get(skey(s)); }
-function dayDone(d){
-  const all = (d.learn || []).length + (d.practice || []).length;
-  if (!all) return false;
-  const sents = (d.learn || []).every(id => { const s = DATA.smap[id]; return s && get(skey(s)); });
-  const prac = (d.practice || []).every(t => get(pkey(t)));
-  return sents && prac;
-}
 function stats(){
-  let total = 0, done = 0, days = 0, daysDone = 0, l1t = 0, l1d = 0;
+  let total = 0, done = 0, l1t = 0, l1d = 0;
   DATA.sents.forEach(s => { total++; if (sentDone(s)) done++; if (s.lvl === 1){ l1t++; if (sentDone(s)) l1d++; } });
-  DATA.plan.forEach(d => { days++; if (dayDone(d)) daysDone++; });
-  return { total, done, days, daysDone, l1t, l1d };
+  return { total, done, l1t, l1d };
 }
 
 /* —— 句卡 —— */
@@ -185,97 +158,17 @@ function bindSens(root){
     }));
 }
 
-/* —— 每日计划视图 —— */
-function vPlan(){
-  const st = stats(), tno = todayNo();
-  let h = `<div class="card">
-    <h2>14天计划 · AI归来模板</h2>
-    <div class="setrow">开始日期 <input type="date" id="setdate" value="${getStart()}">
-      <button id="btn-date">设定</button>
-      <span id="datemsg">今天是计划第 ${Math.max(1, tno)} 天${tno > 14 ? '(已跑完,自由复盘)' : ''}</span></div>
-    <div class="tools"><button id="goto-today">↓ 回到今天</button><button id="open-all">全部展开/收起</button></div>
-  </div>`;
-  DATA.plan.forEach(d => {
-    const done = dayDone(d);
-    const isToday = d.day === Math.max(1, Math.min(14, tno));
-    const sents = (d.learn || []).map(id => DATA.smap[id]).filter(Boolean);
-    const skims = (d.skim || []).map(id => DATA.smap[id]).filter(Boolean);
-    const sentN = sents.filter(sentDone).length;
-    const pracN = (d.practice || []).filter(t => get(pkey(t))).length;
-    const all = sents.length + (d.practice || []).length;
-    const cur = sentN + pracN;
-    if (dayOpen[d.day] === undefined) dayOpen[d.day] = isToday;
-    h += `<div class="card${dayOpen[d.day] ? '' : ' closed'}${isToday ? ' today' : ''}">
-      <div class="dayhead" data-d="${d.day}">
-        <span class="dno ${d.cat}">${d.cat === 'xz' ? '小' : '大'}作文·第${d.day}天</span>
-        <span class="dtag">${esc(d.title)}</span>
-        <span class="dstat ${done ? 'ok' : (isToday ? 'today' : '')}">${done ? '✓ 完成' : (all ? cur + '/' + all : '—')}</span>
-      </div>
-      <div class="dbody">
-        <div class="dsub">${d.book ? '📖 ' + esc(d.book) + ' ｜ ' : ''}${(d.learn || []).length ? `精背${(d.learn || []).length}句` : '巩固练习日'}${skims.length ? ` · 备选${skims.length}句` : ''}${(d.practice || []).length ? ` · 练${(d.practice || []).length}项` : ''}${isToday ? ' · 🔥今天' : ''}</div>
-        ${d.tip ? `<div class="tipbox">${esc(d.tip)}</div>` : ''}
-        ${sents.map(s => senHTML(s, true)).join('')}
-        ${skims.length ? `<div class="skimhead" data-sk="${d.day}">▸ 同功能备选 ${skims.length} 句(书标"选一句":挑一句合手感的换着背也行,其余看熟即可,不强制打卡)</div><div class="skimbody" id="sk-${d.day}">${skims.map(s => senHTML(s, true)).join('')}</div>` : ''}
-        ${d.review ? `<div class="notice">🔁 今日复习:${esc(d.review)} —— 模板库对应分组遮英文重背一遍。</div>` : ''}
-        ${(d.practice || []).length ? `<div class="ptitle">今日真题练习</div>` +
-          d.practice.map(t => `<div class="trow"><span class="tk ${get(pkey(t)) ? 'on' : ''}" data-task="${pkey(t)}">${get(pkey(t)) ? '✓' : '○'}</span><span>${esc(t)}</span></div>`).join('') : ''}
-      </div>
-    </div>`;
-  });
-  $('#app').innerHTML = h;
-  bindSens($('#app'));
-  $('#app').querySelectorAll('.dayhead').forEach(el =>
-    el.addEventListener('click', () => { const n = +el.dataset.d; dayOpen[n] = !dayOpen[n]; vPlan(); }));
-  $('#app').querySelectorAll('.skimhead').forEach(el =>
-    el.addEventListener('click', () => {
-      const body = document.getElementById('sk-' + el.dataset.sk);
-      const open = body.classList.toggle('open');
-      el.textContent = (open ? '▾ ' : '▸ ') + el.textContent.replace(/^[▸▾] /, '');
-    }));
-  $('#app').querySelectorAll('[data-task]').forEach(el =>
-    el.addEventListener('click', () => { set(el.dataset.task, !get(el.dataset.task)); render(); }));
-  $('#btn-date').addEventListener('click', () => {
-    const v = $('#setdate').value;
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(v)){ toast('日期不对'); return; }
-    localStorage.setItem('zuowen_ns_start', v);
-    dayOpen = {}; render();
-  });
-  $('#goto-today').addEventListener('click', () => {
-    const t = Math.max(1, Math.min(14, todayNo()));
-    dayOpen = {}; dayOpen[t] = true;
-    vPlan();
-    const el = document.querySelector(`.dayhead[data-d="${t}"]`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-  $('#open-all').addEventListener('click', () => {
-    const anyClosed = DATA.plan.some(d => !dayOpen[d.day]);
-    DATA.plan.forEach(d => dayOpen[d.day] = anyClosed);
-    vPlan();
-  });
-}
-
 /* —— 模板库视图(搜索框只渲染一次,输入只刷新列表,不打断输入法) —— */
 function vLib(){
   const st = stats();
   let h = `<div class="card">
     <h2>模板库 · ${st.total}句</h2>
-    <div style="font-size:13.5px;color:#5a6472">必背 <b>${st.l1d}/${st.l1t}</b> 句 · 全库已背 <b>${st.done}</b>/${st.total} 句 · 计划完成 <b>${st.daysDone}</b>/${st.days} 天。★必背=每天精背的主选句(${st.l1t}句成文最小集);◎备选=同功能替换句,书标"选一句"——挑合手感的背,其余看熟;○眼熟=词典级素材。</div>
-    <div class="catbtns">
-      <button data-c="all" class="${libCat === 'all' ? 'on' : ''}">全部</button>
-      <button data-c="xz" class="${libCat === 'xz' ? 'on' : ''}">小作文</button>
-      <button data-c="dz" class="${libCat === 'dz' ? 'on' : ''}">大作文</button>
-    </div>
+    <div style="font-size:13.5px;color:#5a6472">必背 <b>${st.l1d}/${st.l1t}</b> 句 · 全库已背 <b>${st.done}</b>/${st.total} 句。★必背=成文最小集(${st.l1t}句),按分组顺序从头啃;◎推荐=同功能替换句,挑合手感的背,其余看熟;○眼熟=备用库素材,不强制打卡。</div>
     <input class="search" id="kw" type="text" placeholder="搜模板句/中文/分组…" value="${kw ? esc(kw) : ''}" autocomplete="off">
     <div class="tools"><button id="show-all-en">显示全部英文</button></div>
   </div><div id="liblist"></div>`;
   $('#app').innerHTML = h;
   renderLibList();
-  $('#app').querySelectorAll('.catbtns button').forEach(b =>
-    b.addEventListener('click', () => {
-      libCat = b.dataset.c;
-      $('#app').querySelectorAll('.catbtns button').forEach(x => x.classList.toggle('on', x === b));
-      renderLibList();
-    }));
   $('#kw').addEventListener('input', e => { kw = e.target.value; renderLibList(); });
   $('#show-all-en').addEventListener('click', () => {
     const sens = document.querySelectorAll('#app .sen');
@@ -285,7 +178,7 @@ function vLib(){
   });
 }
 function renderLibList(){
-  const cats = libCat === 'all' ? ['xz', 'dz'] : [libCat];
+  const cats = ['dz'];
   const CATN = { xz: '小作文', dz: '大作文' };
   let h = '', any = false;
   cats.forEach(c => {
@@ -316,8 +209,8 @@ function toast(msg){ const t = document.createElement('div'); t.textContent = ms
 function render(){
   const st = stats();
   $('#cd').innerHTML = `距初试还有 <b>${Math.max(diffDays(P.exam, todayISO()), 0)}</b> 天`;
-  $('#pc').innerHTML = `必背 <b>${st.l1d}/${st.l1t}</b> · 全库 <b>${st.done}/${st.total}</b> · 计划 <b>${st.daysDone}/${st.days}</b> 天`;
-  if (view === 'plan') vPlan(); else vLib();
+  $('#pc').innerHTML = `必背 <b>${st.l1d}/${st.l1t}</b> · 全库 <b>${st.done}/${st.total}</b>`;
+  vLib();
 }
 
 async function init(){
@@ -329,7 +222,7 @@ async function init(){
     $('#app').innerHTML = '<div class="notice">数据加载失败,请联网后刷新重试。</div>';
     return;
   }
-  if (!DATA || !Array.isArray(DATA.sents) || !Array.isArray(DATA.plan) || !DATA.meta){
+  if (!DATA || !Array.isArray(DATA.sents) || !DATA.meta){
     $('#app').innerHTML = '<div class="notice">数据格式不对,请联系 ZCode 检查 data/zuowen_ai.json。</div>';
     return;
   }
@@ -337,12 +230,6 @@ async function init(){
   DATA.smap = {};
   DATA.sents.forEach(s => DATA.smap[s.id] = s);
   render();
-  document.querySelectorAll('.tabs button').forEach(b =>
-    b.addEventListener('click', () => {
-      view = b.dataset.v;
-      document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
-      render(); window.scrollTo(0, 0);
-    }));
 }
 init();
 </script>
