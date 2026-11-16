@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-16",
+    "title": "2026英二真题·儿童户外活动(AI归来模板全篇手写复刷)",
+    "type": "大作文",
+    "words": 153,
+    "score": {
+      "total": 10,
+      "max": 15
+    },
+    "comment": "AI归来三段模板首次全篇手写部署(10-26段落库版11/15的同题复刷)。内容档12-13(数据4/4全对/全篇零离题/153词达标/三段完整/tops the list句自划处理54.6-54.5近平合理), 语言档8(13处必须修改: cautiousity×3图表关键词+childrens'×5三进宫+Never we can倒装语序+not only does→do+believe that后接原形+initiatives to后缺动词+outside→outdoor题眼词2处), 结构档12(连接词三连缺Last but not least)。内容端持平略优(离题句清零), 语言端密度反升, 净-1分。修curiosity+两处倒装+that从句可稳12档。",
+    "issues": [
+      "cautiousity×3(图表关键词curiosity拼错, curious→-iosity)——采分词拼写比框架词更伤",
+      "childrens'所有格×5(children本身复数, 所有格=children's)——10-26篇×4同类三进宫, 已固化需进错词本置顶",
+      "两个倒装亮点架: Never we can underestimate语序错(须Never can we)+not only does→do(复数主语口诀复犯)",
+      "believe that后接原形satisfy(须satisfying作主语)+platform to接名词(须for)+initiatives to后缺动词(须to promote)",
+      "题眼词outside→outdoor×2+并列主语improve→improving+which may enhance→widen horizons搭配"
+    ],
+    "essay": "The bar chart above presents parents' views on the benefits of children's outdoor activities. The percentages of satisfying children's curiosity, boosting their observation, building up their bodies and improving parent-child interaction account for 54.6%, 54.5%, 37.2% and 33.2% respectively. Several factors contribute to this phenomenon. First and foremost, the majority of parents believe that satisfying children's curiosity will provide them with a broader platform for personal growth, which may widen their horizons. Furthermore, not only do children's outdoor activities contribute to a healthy lifestyle, but they also enable children to achieve all-round development. Last but not least, if we ignored the importance of children's development, they would never become a better version of themselves. Never can we underestimate the profound impact of these activities on children's development. It is imperative for the authorities to launch public initiatives to promote children's outdoor activities. We ought to spare no pains to deepen family bonds. In this way, a brighter and more promising future is well within our reach."
+  },
+  {
     "date": "2026-11-09",
     "title": "2014英二大作文·城乡人口20年变化(全篇首练)",
     "type": "大作文",
