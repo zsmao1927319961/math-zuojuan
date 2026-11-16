@@ -211,6 +211,7 @@ function renderLatexMixed(el, str) {
     el.appendChild(span);
     last = re.lastIndex;
   }
+  if (last < str.length) el.appendChild(document.createTextNode(str.slice(last)));
 }
 
 function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
