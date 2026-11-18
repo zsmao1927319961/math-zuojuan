@@ -1,5 +1,28 @@
 [
   {
+    "date": "2026-11-18",
+    "title": "2023英二大作文·居民健康素养水平(全篇首练)",
+    "type": "大作文",
+    "words": 174,
+    "score": {
+      "total": 9,
+      "max": 15
+    },
+    "comment": "7-9档上缘(AI归来模板第2篇全篇手写)。数据3/3全对(11.58%/25.40%/增量13.82与书图一致)+词数174达标; 语言端较11-16进步(必改13→8处: not only does倒装+promote原形修复、连接词三连齐、措施三开头错开保持、people→residents槽词自纠)。拉分三件事: ①首句选型硬伤=把2012-2021十年趋势线图当静态分布图写(presents the distribution of), 应走动态单方向①句; ②两处离题=现象句physical and mental health(图表读不出身心健康改善)+原因①槽词enrich spiritual life(书上例词照搬, 10-29 Day1同错复发); ③Never we can倒装二进宫(11-16口诀处方未落实)+oppotunities/Futhermore/understimate拼写×3+13.82%应为13.82 percentage points(指令明文百分比≠百分点首踩)+initiatives to have more exercise主语错位。涂改自纠2处按改后文批; clynamic/understimate字迹与adults后标点待用户确认, 不影响档位。",
+    "issues": [
+      "首句选型硬伤: 动态趋势线图误用静态句 presents the distribution of → 应 The line chart above presents the changes in ... from 2012 to 2021, during which it rose steadily",
+      "P1现象句离题: improvement of physical and mental health 图表读不出身心健康本身改善 → the nation's health literacy",
+      "百分比口径: an increase of 13.82% → 13.82 percentage points (百分比≠百分点, 指令明文检查项首踩)",
+      "P2原因①槽词离题: enrich spiritual life 书上例词照搬(10-29 Day1同错复发) → 换健康语境槽词 enjoy a better quality of life",
+      "Never we can underestimate → Never can we underestimate (否定倒装语序二进宫, 11-16倒装口诀未落实)",
+      "拼写×3: oppotunities→opportunities / Futhermore→Furthermore / understimate→underestimate(待确认)",
+      "launch public initiatives to have more exercise 主语错位(读作当局自己做锻炼) → to promote regular exercise",
+      "achieve personal goals and values 搭配(values不与achieve连用) → achieve personal goals",
+      "标点: mental health 后逗号断句 + adults 后逗号连写两个We句(若为逗号即comma splice) + 全文结尾缺句号(待确认)"
+    ],
+    "essay": "The chart above presents the distribution of residents' health literacy. The proportion of health literacy was 11.58% in 2016, compared with 25.40% in 2021, showing an increase of 13.82%. The chart clearly communicates its intended meaning: recent years have witnessed the rapid improvement of physical and mental health. Several factors contribute to this phenomenon. First and foremost, the majority of residents believe that a healthy lifestyle will create more oppotunities to enrich spiritual life. Futhermore, not only does health literacy promote residents' all-round development, but it also enables them to foster a positive and dynamic mindset. Last but not least, if we ignored the importance of health, we would never become a better version of ourselves. Never we can understimate the profound impact of health. It is imperative for the authorities to launch public initiatives to have more exercise. We should also raise health awareness among children and adults. We ought to spare no pains to achieve personal goals and values. In this way, a brighter and more promising future is well within our reach"
+  },
+  {
     "date": "2026-11-16",
     "title": "2026英二真题·儿童户外活动(AI归来模板全篇手写复刷)",
     "type": "大作文",
