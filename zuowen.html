@@ -91,7 +91,45 @@
   .setrow input { border:1px solid var(--line); border-radius:8px; padding:5px 9px; font-size:14px; font-family:inherit; }
   .setrow button { border:1px solid var(--blue); background:#fff; color:var(--blue); border-radius:8px;
                    padding:5px 12px; font-size:13px; cursor:pointer; }
-  @media (max-width:520px){ body{font-size:15.5px} .sen .en{font-size:16px} .dtag{font-size:14px} }
+  /* —— 装配分区(11-18) —— */
+  .sec { margin:20px 0 0; }
+  .sechead { background:#fff; border:1px solid var(--line); border-radius:12px; padding:9px 13px; }
+  .sechead .st { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .sno { font-size:12px; font-weight:800; color:#fff; background:var(--blue); border-radius:6px; padding:1px 8px; white-space:nowrap; }
+  .snm { font-weight:800; font-size:15.5px; color:var(--blue); flex:1; min-width:120px; }
+  .spg { font-size:12.5px; color:#8a94a6; white-space:nowrap; }
+  .spg b { color:var(--green); }
+  .sdesc { font-size:13px; color:#5a6472; margin-top:4px; line-height:1.75; }
+  .grp2 { margin:14px 2px 0; font-size:13px; font-weight:800; color:#5a6472; display:flex; align-items:center; gap:8px; }
+  .grp2::after { content:""; flex:1; height:1px; background:var(--line); }
+  .grp2 .gn { font-size:11px; color:#8a94a6; font-weight:400; }
+  .tipsline { margin-top:8px; border-left:3px solid #f0dfb8; background:#fffdf5; padding:5px 10px; border-radius:8px; font-size:13px; color:#5a6472; line-height:1.8; }
+  .tipsline b { color:#b26a00; }
+  /* —— 逐句过卡(11-18) —— */
+  .fcwrap { position:fixed; inset:0; background:#f6f7fb; z-index:50; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+  .fcinner { max-width:640px; margin:0 auto; padding:18px 16px 46px; }
+  .fctop { display:flex; align-items:center; gap:10px; font-size:12.5px; color:#8a94a6; margin-bottom:12px; }
+  .fctop .fcp2 { font-weight:700; color:var(--blue); }
+  .fcquit { margin-left:auto; border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 12px; font-size:12.5px; cursor:pointer; color:#5a6472; }
+  .fccard { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 16px; box-shadow:0 2px 10px rgba(18,58,143,.07); }
+  .fclvl { display:flex; align-items:center; gap:8px; font-size:12px; color:#8a94a6; flex-wrap:wrap; }
+  .fclvl .fcgrp { font-weight:700; color:#5a6472; }
+  .fczh { font-size:19px; line-height:1.8; margin-top:10px; }
+  .fcenwrap { filter:blur(8px); transition:filter .25s; cursor:pointer; margin-top:14px; user-select:none; }
+  .fccard.open .fcenwrap { filter:none; user-select:text; }
+  .fcen { font-size:18px; font-weight:600; line-height:1.7; }
+  .fcen .tpl { color:var(--blue); }
+  .fcen .blank { color:var(--red); }
+  .fcmeta { margin-top:10px; border-top:1px dashed var(--line); padding-top:8px; font-size:13px; color:#5a6472; line-height:1.75; }
+  .fcex { margin-top:10px; border-left:3px solid #c9d6f2; padding-left:10px; font-size:14.5px; color:#3c4657; }
+  .fcex i { font-style:normal; color:#8a94a6; font-size:12px; margin-right:4px; }
+  .fcexz { font-size:12.5px; color:#8a94a6; margin-top:1px; }
+  .fcreveal { text-align:center; color:#8a94a6; font-size:12.5px; margin-top:14px; }
+  .fcbtns { display:flex; gap:10px; margin-top:16px; }
+  .fcbtns button { flex:1; border-radius:10px; padding:11px 0; font-size:15px; font-weight:800; cursor:pointer; }
+  .fc-no { background:#fff; color:var(--red); border:1.5px solid #f0c4c0; }
+  .fc-yes { background:var(--green); color:#fff; border:1.5px solid var(--green); }
+  @media (max-width:520px){ body{font-size:15.5px} .sen .en{font-size:16px} .dtag{font-size:14px} .fczh{font-size:17.5px} }
 </style>
 </head>
 <body>
@@ -106,8 +144,8 @@
   </div>
   <div id="app"><div class="empty">加载中…</div></div>
 
-  <div class="tipbox"><b>用法</b>:无日程,按顺序从【第一段 · 首句按图选型】一路背到【备用库】——每张卡看中文→回忆英文→点卡片核对→背过打勾;灰色的「同功能备选」挑一句合手感的换着背也行、其余看熟即可。★必背33句=成文最小集,先啃完;词库10个定版词集中过一遍;○眼熟备用库不强制打卡。没背熟的句子隔 1/3/7 天回来遮住英文重背。红字=考场按题填的槽,蓝字=必背框架。数据只存本机浏览器。</div>
-  <div class="foot">背作文 v8.1 · 27AI归来大作文模板 ｜ 无日程:按第一段→第二段→第三段顺序自推进(11-12整页替换南山版,git历史可恢复) ｜ 数据:data/zuowen_ai.json(46句·由 ZCode 维护)</div>
+  <div class="tipbox"><b>用法</b>:四区按考场装配排——P1 图表描述(判型→细节→现象) / P2 原因分析(过渡→三原因) / P3 总结措施展望(总结→措施三连→畅想) / 工具区(词库+备用库)。两种背法:①列表式:看中文→回忆英文→点卡核对→背过打勾;②<b>「逐句过卡」</b>:一次只出一句话,✓背过 / ✗没背住(自动排队尾),可只过★必背33句。动笔流程:<b>先判型</b>(图上有年份轴→动态①/②;只分项占比→静态③;两幅图→④总分)→写<b>备菜卡</b>(标题名词英译+从词组卡挑3-4个,槽只从卡里取词)→行数预算→套框架→完卷查"一句一谓语"。★必背33句=成文最小集;红字=考场按题填的槽(每槽备选词组藏在核对区🧩),蓝字=必背框架;没背熟的隔 1/3/7 天遮住英文重背。数据只存本机浏览器。</div>
+  <div class="foot">背作文 v8.2 · 27AI归来大作文模板 ｜ 11-18改版:三段装配分区+逐句过卡+槽位词组🧩(接万能词组卡25词) ｜ 数据:data/zuowen_ai.json(46句·由 ZCode 维护)</div>
 </div>
 
 <script>
@@ -143,7 +181,7 @@ function senHTML(s, showPage){
   return `<div class="sen" data-key="${key}">
     <div class="shead"><span class="lvl ${lc}">${lt}</span><span class="slot">${esc(s.slot)}</span>${showPage && s.page ? `<span>📖${esc(s.page)}</span>` : ''}</div>
     <div class="zh">${esc(s.zh)}</div>
-    <div class="enwrap"><div class="en">${esc(s.en)}</div>${s.ex ? `<div class="exd"><div class="exen"><i>例</i>${esc(s.ex)}</div>${s.exz ? `<div class="exzh">${esc(s.exz)}</div>` : ''}</div>` : ''}${s.meta ? `<div class="meta">💡 ${esc(s.meta)}</div>` : ''}</div>
+    <div class="enwrap"><div class="en">${esc(s.en)}</div>${s.tips ? `<div class="tipsline">🧩 <b>槽位词组</b> ${esc(s.tips)}</div>` : ''}${s.ex ? `<div class="exd"><div class="exen"><i>例</i>${esc(s.ex)}</div>${s.exz ? `<div class="exzh">${esc(s.exz)}</div>` : ''}</div>` : ''}${s.meta ? `<div class="meta">💡 ${esc(s.meta)}</div>` : ''}</div>
     <button class="donebtn ${done ? 'on' : ''}" data-done="${key}">${done ? '✓ 已背过' : '✓ 背过'}</button>
   </div>`;
 }
@@ -158,6 +196,52 @@ function bindSens(root){
     }));
 }
 
+/* —— 装配分区(11-18改版) —— */
+const SECS = [
+  { tag:'P1', name:'第一段 · 图表描述', pres:['第一段'], desc:'装配顺序:首句按图选型(5选1)→细节公式(动态2选1/静态1)→现象句。判型口诀:图上有年份轴→动态①/②;只分项占比→静态③;两幅图→④总分。动笔前30秒先判型。' },
+  { tag:'P2', name:'第二段 · 原因分析', pres:['第二段'], desc:'装配顺序:过渡句→原因①大众受益→原因②倒装句(Not only提前=亮点)→原因③虚拟恐吓(个人/社会/国家三层选一,优先个人或社会层)。' },
+  { tag:'P3', name:'第三段 · 总结措施展望', pres:['第三段'], desc:'装配顺序:总结否定倒装(默认 Never can we underestimate…)→措施三连(政府/公民/个人,开头已错开)→畅想两句(Only倒装+In this way收尾)。' },
+  { tag:'工具', name:'工具区 · 词库与备用库', pres:['词库','备用库'], desc:'词库10个定版词(每类一词,禁现场造词);备用库○眼熟,不强制打卡。' },
+];
+
+/* —— 逐句过卡(11-18改版) —— */
+let FC = null;
+function startFC(onlyL1){
+  FC = { deck: DATA.sents.filter(s => !onlyL1 || s.lvl === 1).map(s => s.id),
+         i:0, wrong:[], done:0, seen:0, open:false };
+  renderFC();
+}
+function fcQuit(){ FC = null; const w = document.getElementById('fc'); if (w) w.remove(); render(); }
+function renderFC(){
+  let wrap = document.getElementById('fc');
+  if (!wrap){ wrap = document.createElement('div'); wrap.id = 'fc'; document.body.appendChild(wrap); }
+  if (!FC || FC.i >= FC.deck.length){
+    const w = FC ? FC.wrong.length : 0;
+    wrap.innerHTML = `<div class="fcwrap"><div class="fcinner"><div class="fccard" style="text-align:center">
+      <div style="font-size:18px;font-weight:800;color:var(--blue)">本轮过卡完成</div>
+      <div style="font-size:14.5px;color:#5a6472;margin-top:8px">共过 ${FC ? FC.seen : 0} 张 · 打卡 ${FC ? FC.done : 0} 张 · 没背住 ${w} 张</div>
+      <div class="fcbtns" style="margin-top:18px">${w ? '<button class="fc-no" id="fc-retry">✗ 的再来一轮</button>' : ''}<button class="fc-yes" id="fc-finish">收工回列表</button></div>
+    </div></div></div>`;
+    if (w) $('#fc-retry').addEventListener('click', () => { FC.deck = FC.wrong.slice(); FC.wrong = []; FC.i = 0; FC.seen = 0; FC.open = false; renderFC(); });
+    $('#fc-finish').addEventListener('click', fcQuit);
+    return;
+  }
+  const s = DATA.smap[FC.deck[FC.i]];
+  wrap.innerHTML = `<div class="fcwrap"><div class="fcinner">
+    <div class="fctop"><span>逐句过卡 · ${esc(s.grp)}</span><span class="fcp2">${FC.i + 1}/${FC.deck.length}</span><button class="fcquit" id="fc-quit">退出</button></div>
+    <div class="fccard ${FC.open ? 'open' : ''}" id="fccard">
+      <div class="fclvl"><span class="lvl ${LVL[s.lvl || 1][0]}">${LVL[s.lvl || 1][1]}</span><span class="fcgrp">${esc(s.slot)}</span></div>
+      <div class="fczh">${esc(s.zh)}</div>
+      <div class="fcenwrap" id="fcenwrap"><div class="fcen">${esc(s.en)}</div>${s.tips ? `<div class="tipsline">🧩 <b>槽位词组</b> ${esc(s.tips)}</div>` : ''}${s.meta ? `<div class="fcmeta">💡 ${esc(s.meta)}</div>` : ''}${s.ex ? `<div class="fcex"><i>例</i>${esc(s.ex)}</div>${s.exz ? `<div class="fcexz">${esc(s.exz)}</div>` : ''}` : ''}</div>
+      <div class="fcreveal">点上方模糊区核对英文</div>
+      <div class="fcbtns"><button class="fc-no" id="fc-no">✗ 没背住,待会儿再来</button><button class="fc-yes" id="fc-yes">✓ 背过了</button></div>
+    </div></div></div>`;
+  $('#fc-quit').addEventListener('click', fcQuit);
+  $('#fcenwrap').addEventListener('click', () => { FC.open = true; $('#fccard').classList.add('open'); });
+  $('#fc-no').addEventListener('click', () => { FC.wrong.push(FC.deck[FC.i]); FC.i++; FC.seen++; FC.open = false; renderFC(); });
+  $('#fc-yes').addEventListener('click', () => { set(skey(s), true); FC.done++; FC.i++; FC.seen++; FC.open = false; renderFC(); });
+}
+
 /* —— 模板库视图(搜索框只渲染一次,输入只刷新列表,不打断输入法) —— */
 function vLib(){
   const st = stats();
@@ -165,7 +249,7 @@ function vLib(){
     <h2>模板库 · ${st.total}句</h2>
     <div style="font-size:13.5px;color:#5a6472">必背 <b>${st.l1d}/${st.l1t}</b> 句 · 全库已背 <b>${st.done}</b>/${st.total} 句。★必背=成文最小集(${st.l1t}句),按分组顺序从头啃;◎推荐=同功能替换句,挑合手感的背,其余看熟;○眼熟=备用库素材,不强制打卡。</div>
     <input class="search" id="kw" type="text" placeholder="搜模板句/中文/分组…" value="${kw ? esc(kw) : ''}" autocomplete="off">
-    <div class="tools"><button id="show-all-en">显示全部英文</button></div>
+    <div class="tools"><button id="show-all-en">显示全部英文</button><button id="fc-all">▶ 逐句过卡 · 全部${st.total}句</button><button id="fc-l1">▶ 逐句过卡 · ★必背${st.l1t}句</button></div>
   </div><div id="liblist"></div>`;
   $('#app').innerHTML = h;
   renderLibList();
@@ -176,26 +260,31 @@ function vLib(){
     sens.forEach(x => x.classList.toggle('open', anyClosed));
     $('#show-all-en').textContent = anyClosed ? '隐藏全部英文' : '显示全部英文';
   });
+  $('#fc-all').addEventListener('click', () => startFC(false));
+  $('#fc-l1').addEventListener('click', () => startFC(true));
 }
 function renderLibList(){
-  const cats = ['dz'];
-  const CATN = { xz: '小作文', dz: '大作文' };
   let h = '', any = false;
-  cats.forEach(c => {
-    let pool = DATA.sents.filter(s => s.cat === c);
-    if (kw) pool = pool.filter(s => (s.grp + ' ' + s.slot + ' ' + s.zh + ' ' + s.en.replace(/<[^>]+>/g, '') + ' ' + (s.meta || '')).toLowerCase().includes(kw.toLowerCase()));
+  SECS.forEach(sc => {
+    const inSec = s => sc.pres.some(p => s.grp.startsWith(p));
+    const full = DATA.sents.filter(inSec);
+    if (!full.length) return;
+    let pool = full;
+    if (kw) pool = pool.filter(s => (s.grp + ' ' + s.slot + ' ' + s.zh + ' ' + s.en.replace(/<[^>]+>/g, '') + ' ' + (s.meta || '') + ' ' + (s.tips || '')).toLowerCase().includes(kw.toLowerCase()));
     if (!pool.length) return;
     any = true;
-    h += `<div class="grp" style="margin-top:22px">${CATN[c]} · ${pool.length} 句</div>`;
+    const dn = full.filter(sentDone).length;
+    h += `<div class="sec"><div class="sechead"><div class="st"><span class="sno">${sc.tag}</span><span class="snm">${esc(sc.name)}</span><span class="spg">已背 <b>${dn}/${full.length}</b></span></div><div class="sdesc">${esc(sc.desc)}</div></div>`;
     let lastGrp = '';
     pool.forEach(s => {
       if (s.grp !== lastGrp){
-        const gn = DATA.sents.filter(x => x.cat === c && x.grp === s.grp).length;
-        h += `<div class="grp">${esc(s.grp)}<span class="gn">${gn}句</span></div>`;
+        const gn = DATA.sents.filter(x => x.grp === s.grp).length;
+        h += `<div class="grp2">${esc(s.grp)}<span class="gn">${gn}句</span></div>`;
         lastGrp = s.grp;
       }
       h += senHTML(s, true);
     });
+    h += `</div>`;
   });
   if (!any) h += '<div class="empty">没搜到,换个词试试</div>';
   $('#liblist').innerHTML = h;
