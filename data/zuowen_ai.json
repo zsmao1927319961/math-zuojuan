@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": 4,
-    "updated": "2026-11-18",
+    "version": 5,
+    "updated": "2026-11-19",
     "exam": "2026-12-19",
     "source": "AI归来《27考研英语大作文模板》(B站AI归来课程讲义, 11-10~11-12逐句精选+改编定稿)",
     "note": "2026-11-12整页替换南山28天版(旧版在git历史可恢复); 英二图表口径; 蓝字tpl=必背框架, 红字blank=考场按题填槽; 词库每类只留定版词; 全模板填满约230词, 超200-220口径时删P1细节公式2; 2026-11-18 v8.2改版: 前端三段装配分区+逐句过卡+tips槽位词组字段(接万能词组卡25词), 句子en字段零改动→打卡键s2_哈希全保留"
@@ -112,6 +112,17 @@
       "en": "<span class='tpl'>The percentages/proportions of</span> <span class='blank'>A</span><span class='tpl'>,</span> <span class='blank'>B</span><span class='tpl'>,</span> <span class='blank'>C</span> <span class='tpl'>and</span> <span class='blank'>D</span> <span class='tpl'>account for</span> <span class='blank'>X%, X%, X% and X%</span> <span class='tpl'>respectively. Notably, / In particular,</span> <span class='blank'>A</span> <span class='tpl'>tops the list, at</span> <span class='blank'>X%</span><span class='tpl'>, followed by</span> <span class='blank'>B</span> <span class='tpl'>at</span> <span class='blank'>X%</span><span class='tpl'>.</span>",
       "zh": "A、B、C、D的占比分别为……。尤其值得注意的是，A以X%居首，其次是B（X%）。",
       "meta": "主语 percentages/proportions（或A,B,C,D并列）→ 谓语复数 account；排名只点前两项即可"
+    },
+    {
+      "id": "ai-p1-t1",
+      "cat": "dz",
+      "grp": "第一段 · 细节衔接",
+      "slot": "细节句开头 · To be specific,",
+      "lvl": 2,
+      "en": "<span class='tpl'>To be specific,</span> <span class='blank'>+细节公式整句(首字母改小写)</span>",
+      "zh": "具体来说，……（放在细节句最前面，衔接首句与数据）",
+      "tips": "首句 → To be specific, → 数据；后接完整细节公式，公式首字母 The→the",
+      "meta": "衔接词非完整句：几乎任何图都能用，2个词换衔接分；注意逗号后首字母小写(如 the number/proportion of…)"
     },
     {
       "id": "ai-p1-x1",
