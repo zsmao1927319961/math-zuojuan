@@ -85,7 +85,7 @@ footer{text-align:center;font-size:11.5px;color:#94a3b8;padding:14px 0 26px}
 <body>
 <header>
   <div class="hrow">
-    <div class="brand">通信背诵<span class="sub">小题卡 · 583</span></div>
+    <div class="brand">通信背诵<span class="sub">小题卡 · <span id="cnt">…</span></span></div>
     <div id="dayinfo"></div>
   </div>
   <nav>
@@ -119,6 +119,9 @@ for (var i = 0; i < DATA.cards.length; i++) U[DATA.cards[i].id] = DATA.cards[i];
 var MAIN = DATA.MAIN, GROUPS = DATA.GROUPS;
 var CYCLE = DATA.cycle || 15;
 var TOTAL = DATA.cards.length;
+document.getElementById('cnt').textContent = TOTAL;
+/* 卡片来源名: zt=历年真题 / t299=299题库 / cbd=冲刺宝典 */
+var SRC_NAME = { zt: '历年真题', t299: '299题库', cbd: '冲刺宝典·易错判断' };
 var EXAM = '2026-12-19';
 
 var PLAIN = {};
@@ -239,7 +242,7 @@ function ansboxHTML(id, open) {
   var meta = [];
   if (c.kp) meta.push('考点：' + c.kp);
   if (c.page) meta.push('📖 书p' + c.page);
-  meta.push(c.src === 'zt' ? '历年真题' : '299题库');
+  meta.push(SRC_NAME[c.src] || String(c.src));
   var h = '<div class="ansbox' + (open ? '' : ' hidden') + '">';
   h += '<div class="alab">答案</div><div class="atex"></div>';
   if (c.sol) h += '<div class="solwrap"><div class="slab">解析</div><div class="asol"></div></div>';
