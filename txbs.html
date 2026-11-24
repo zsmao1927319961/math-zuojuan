@@ -122,6 +122,12 @@ var TOTAL = DATA.cards.length;
 document.getElementById('cnt').textContent = TOTAL;
 /* 卡片来源名: zt=历年真题 / t299=299题库 / cbd=冲刺宝典 */
 var SRC_NAME = { zt: '历年真题', t299: '299题库', cbd: '冲刺宝典·易错判断' };
+/* 冲刺宝典判断: 新卡每天最多引入几张 (50 张 ÷ 10 = 5 天过完); 0 = 不限。
+   cbdStart = 起始日, 这天之前宝典新卡不进队列 */
+var CBD_PER_DAY = DATA.cbdPerDay || 0;
+var CBD_START = DATA.cbdStart || '';
+var CBD_TOTAL = 0;
+for (var ci = 0; ci < DATA.cards.length; ci++) if (DATA.cards[ci].src === 'cbd') CBD_TOTAL++;
 var EXAM = '2026-12-19';
 
 var PLAIN = {};
@@ -172,6 +178,17 @@ function buildQueues() {
       var cid = lst[m];
       if (inNew(cid) && !seen[cid]) { newq.push(cid); seen[cid] = 1; }
     }
+  }
+  /* 冲刺宝典判断: 起始日之前不发; 起始后新卡每天封顶, 没轮到的顺延到后面几天, 不一次堆积 */
+  var nCbd = 0;
+  var cbdOpen = !CBD_START || todayStr() >= CBD_START;
+  if (CBD_PER_DAY) {
+    newq = newq.filter(function(id) {
+      var c = U[id];
+      if (!c || c.src !== 'cbd') return true;
+      if (!cbdOpen) return false;
+      return ++nCbd <= CBD_PER_DAY;
+    });
   }
   Q = { review: review, newq: newq };
   Q0 = { review: review.length, newq: newq.length };
@@ -295,6 +312,9 @@ function render() {
   var nh = '';
   if (Q.review.length) nh += '<div class="daynote">🔁 今天有 ' + Q.review.length + ' 张到期复测卡，先清它们</div>';
   nh += '<div class="daynote">📖 今日新卡 ' + Q.newq.length + ' 张 · 本轮计划 ' + (MAIN[DAY] || []).length + ' 张</div>';
+  var nC = 0;
+  if (CBD_PER_DAY) for (var cj = 0; cj < Q.newq.length; cj++) { var cc = U[Q.newq[cj]]; if (cc && cc.src === 'cbd') nC++; }
+  if (nC) nh += '<div class="daynote">📘 其中冲刺宝典·易错判断 ' + nC + ' 张（每天 ' + CBD_PER_DAY + ' 张，' + Math.ceil(CBD_TOTAL / CBD_PER_DAY) + ' 天过完，穿插在真题卡里）</div>';
   document.getElementById('daynote').innerHTML = nh;
   queueHTML('q-review', 'review', '🔁 到期复测', Q.review);
   queueHTML('q-new', 'newq', '📖 今日新卡', Q.newq);
@@ -434,9 +454,14 @@ function renderStats() {
     }
     var heads = ids.slice(0, 4).map(function(x) { return U[x].label; }).join('、');
     var short = '共' + ids.length + '张：' + heads + (ids.length > 4 ? ' …' : '');
+    var nc = CBD_PER_DAY ? ids.filter(function(x) { var c = U[x]; return c && c.src === 'cbd'; }).length : 0;
+    if (nc) short += '｜含宝典判断 ' + nc;
     plan += '<tr class="' + (d === DAY ? 'today' : '') + '"><td>D' + d + (d === DAY ? ' ●' : '') + '</td><td>' + esc(short) + '</td><td>' + done + '/' + ids.length + '<br><span class="note">🟢' + gd + '</span></td></tr>';
   }
   plan += '</table>';
+  if (CBD_PER_DAY && CBD_TOTAL) plan += '<div class="muted" style="margin-top:6px">📘 冲刺宝典·易错判断 ' + CBD_TOTAL + ' 题：' +
+    (CBD_START ? CBD_START.slice(5).replace('-', '/') + ' 起，' : '') + '每天 ' + CBD_PER_DAY + ' 道，' +
+    Math.ceil(CBD_TOTAL / CBD_PER_DAY) + ' 天过完，排在 D1~D' + Math.ceil(CBD_TOTAL / CBD_PER_DAY) + '（之后每轮这几天复现）</div>';
   var streak = 0;
   for (var dd2 = DI; dd2 >= 1; dd2--) { if (S.log[dd2]) streak++; else if (dd2 !== DI) break; }
   document.getElementById('statsbody').innerHTML =

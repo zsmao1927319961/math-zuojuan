@@ -1,6 +1,8 @@
 // add_txbs_cbd50.js — 2026-11-24
 // 冲刺宝典「易错判断50题」(书 p51-53 题目 / p54 √× 总表) 追加进通信背诵小题卡 txbs_data.js。
-// 只追加: 现有 387 张真题卡逐字节不动; 50 张新卡 (src=cbd) 按天匀入 15 天排期 (每天 +3~4 张)。
+// 只追加: 现有 387 张真题卡逐字节不动; 50 张新卡 (src=cbd) 按题号每 10 道一天排进 D1~D5 (用户 2026-11-24 指定: 5 天完成),
+// 叠加在当天原有真题卡上; 页面侧另设"起始日 11-25 之前不发"(DATA.cbdStart) + "每天最多 10 张"(DATA.cbdPerDay),
+// 轮次没对齐时也不会一次堆出 50 张。
 // 幂等: 重复运行先摘掉旧 cbd 卡再重新加入。
 // 用法: node tools/add_txbs_cbd50.js
 const fs = require('fs');
@@ -158,11 +160,13 @@ const newCards = Q.map(q => ({
   page: q[1],
 }));
 
-// ---------- 排期: 新卡按题号取模匀到 15 天 (同一天 3~4 张, 且来自不同章节), 再均匀插进当天原队列 ----------
+// ---------- 排期: 新卡按题号每 10 道一天落 D1~D5 (第1~10道→D1, 11~20→D2 … 41~50→D5), 再均匀插进当天原队列 ----------
+const PER_DAY = 10;             // 与页面 DATA.cbdPerDay 同源
+const START = '2026-11-25';     // 与页面 DATA.cbdStart 同源: 这天之前宝典新卡不进队列 (用户指定从 25 号开始)
 const MAIN = {};
 for (const d of Object.keys(o.MAIN)) MAIN[d] = o.MAIN[d].filter(id => !id.startsWith('cbd判断'));
 const perDay = {};
-newCards.forEach(c => { const d = (c.no - 1) % CYCLE + 1; (perDay[d] = perDay[d] || []).push(c.id); });
+newCards.forEach(c => { const d = Math.ceil(c.no / PER_DAY); (perDay[d] = perDay[d] || []).push(c.id); });
 for (const d of Object.keys(perDay)) {
   const base = MAIN[d].slice();
   const add = perDay[d];
@@ -178,12 +182,14 @@ o.cards = cardsBefore.concat(newCards);
 o.MAIN = MAIN;
 o.GROUPS = GROUPS;
 o.ncbd = newCards.length;
+o.cbdPerDay = PER_DAY;
+o.cbdStart = START;
 o.generated = '2026-11-24';
 // note = 本次说明 + 历史说明 (历史里若已带本次说明则先摘掉, 保证重跑字节一致)
 const hist = String(o.note || '').replace(/^2016-11-16/, '2026-11-16').split(' | ')
   .filter(seg => !seg.startsWith('2026-11-24: 追加冲刺宝典')).join(' | ');
 o.note = '2026-11-24: 追加冲刺宝典·易错判断50题(src=cbd, 书p51-53题目/p54 √×总表), 387→' + o.cards.length +
-  '卡, 新卡按题号取模匀入15天排期(每天+3~4张), 现有真题卡未动' + (hist ? ' | ' + hist : '');
+  '卡, 宝典50卡按题号每10道一天排D1~D5(5天完成, 11-25起, 用户指定)+页面每天封顶10张, 现有真题卡未动' + (hist ? ' | ' + hist : '');
 
 // ---------- 写回 + 复核 ----------
 const out = 'window.TXBS_DATA=' + JSON.stringify(o) + ';';
@@ -205,7 +211,7 @@ console.log('bad/dup refs:', bad, '| not in MAIN:', o2.cards.filter(c => !inMain
 console.log('MAIN per-day:', Object.keys(o2.MAIN).map(d => o2.MAIN[d].length).join(','), '=', mainTotal, '| every card in MAIN once:', mainTotal === o2.cards.length && inMain.size === o2.cards.length);
 console.log('cbd ans:', JSON.stringify(shape), '| pages:', [...new Set(o2.cards.filter(c => c.src === 'cbd').map(c => c.page))].join(','));
 console.log('GROUPS:', o2.GROUPS.length, '| last:', o2.GROUPS[o2.GROUPS.length - 1].name, o2.GROUPS[o2.GROUPS.length - 1].ids.length);
-[1, 2, 3].forEach(d => console.log('  D' + d + ' cbd:', o2.MAIN[d].filter(id => id.startsWith('cbd判断')).map(id => id.replace('cbd判断', '#')).join(' '),
-  '| positions', o2.MAIN[d].map((id, i) => id.startsWith('cbd判断') ? i : -1).filter(i => i >= 0).join('/')));
+console.log('cbd per-day:', Object.keys(o2.MAIN).map(d => d + ':' + o2.MAIN[d].filter(id => id.startsWith('cbd判断')).length).join(' '), '| cbdPerDay:', o2.cbdPerDay);
+[1, 5].forEach(d => console.log('  D' + d + ' cbd:', o2.MAIN[d].filter(id => id.startsWith('cbd判断')).map(id => id.replace('cbd判断', '#')).join(' ')));
 if (!unchanged || bad) throw new Error('post-write audit failed');
 console.log('file bytes:', s2.length);
