@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>背作文 · AI归来大作文模板</title>
+<title>背作文 · 我的独有模板</title>
 <style>
   :root { --blue:#123a8f; --red:#b3261e; --green:#0c5c46; --orange:#ff7d1a; --ink:#1c2330; --line:#dfe4ee; }
   * { box-sizing:border-box; }
@@ -135,7 +135,7 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <h1>背作文 · AI归来模板</h1>
+    <h1>背作文 · 我的模板</h1>
     <a class="back" href="index.html">← 返回主站</a>
   </div>
   <div class="chips">
@@ -144,8 +144,8 @@
   </div>
   <div id="app"><div class="empty">加载中…</div></div>
 
-  <div class="tipbox"><b>用法</b>:四区按考场装配排——P1 图表描述(判型→细节→现象) / P2 原因分析(过渡→三原因) / P3 总结措施展望(总结→措施三连→畅想) / 工具区(词库+备用库)。两种背法:①列表式:看中文→回忆英文→点卡核对→背过打勾;②<b>「逐句过卡」</b>:一次只出一句话,✓背过 / ✗没背住(自动排队尾),可只过★必背33句。动笔流程:<b>先判型</b>(图上有年份轴→动态①/②;只分项占比→静态③;两幅图→④总分)→写<b>备菜卡</b>(标题名词英译+从词组卡挑3-4个,槽只从卡里取词)→行数预算→套框架→完卷查"一句一谓语"。★必背33句=成文最小集;红字=考场按题填的槽(每槽备选词组藏在核对区🧩),蓝字=必背框架;没背熟的隔 1/3/7 天遮住英文重背。数据只存本机浏览器。</div>
-  <div class="foot">背作文 v8.2 · 27AI归来大作文模板 ｜ 11-18改版:三段装配分区+逐句过卡+槽位词组🧩(接万能词组卡25词) ｜ 数据:data/zuowen_ai.json(46句·由 ZCode 维护)</div>
+  <div class="tipbox"><b>用法</b>:只背两套——第一段分<b>动态/静态两版</b>(只差三处),第二三段两版通用,共15句必背+1句推荐。四区按考场装配排:P1 图表描述(动态→静态) / P2 原因分析(过渡→大环境→为什么去做→得到什么) / P3 总结、措施与收尾 / 工具区(开头词链+填空规则+六大方面+高危拼写)。两种背法:①列表式:看中文→<b>遮住默写英文</b>→点卡核对(少一个 the 也算错)→背过打勾;②<b>「逐句过卡」</b>:一次只出一句话,✓背过 / ✗没背住(自动排队尾),可只过★必背15句。动笔流程:<b>先判动/静</b>→<b>备菜</b>(把每个空的词先写下来;三句原因每句对应图里一项)→套框架→写不下按序删(第3句结尾范围→第5句 especially→第2句第二个变化量)。蓝字=必背框架,红字=考场填的槽(填法在核对区🧩);默错的隔 1/3/7 天重默。数据只存本机浏览器。</div>
+  <div class="foot">背作文 v9.0 · 我的独有模板 ｜ 11-25定稿:第一段动态/静态两版(只差三处)+第二三段通用, 全程无倒装 ｜ 数据:data/zuowen_my.json(30句, 其中必背15句·由 ZCode 维护)</div>
 </div>
 
 <script>
@@ -198,10 +198,10 @@ function bindSens(root){
 
 /* —— 装配分区(11-18改版) —— */
 const SECS = [
-  { tag:'P1', name:'第一段 · 图表描述', pres:['第一段'], desc:'装配顺序:首句按图选型(5选1)→细节公式(动态2选1/静态1)→现象句。判型口诀:图上有年份轴→动态①/②;只分项占比→静态③;两幅图→④总分。动笔前30秒先判型。' },
-  { tag:'P2', name:'第二段 · 原因分析', pres:['第二段'], desc:'装配顺序:过渡句→原因①大众受益→原因②倒装句(Not only提前=亮点)→原因③虚拟恐吓(个人/社会/国家三层选一,优先个人或社会层)。' },
-  { tag:'P3', name:'第三段 · 总结措施展望', pres:['第三段'], desc:'装配顺序:总结否定倒装(默认 Never can we underestimate…)→措施三连(政府/公民/个人,开头已错开)→畅想两句(Only倒装+In this way收尾)。' },
-  { tag:'工具', name:'工具区 · 词库与备用库', pres:['词库','备用库'], desc:'词库10个定版词(每类一词,禁现场造词);备用库○眼熟,不强制打卡。' },
+  { tag:'P1', name:'第一段 · 图表描述(动态/静态两版)', pres:['第一段'], desc:'装配顺序:首句→细节(数字照图抄)→小结(主题词照抄首句)。两版只差三处:第1句的时间空、第2句、第3句的概括词(a marked change in / the main features of)。先背熟一版,再记另一版这三处不同。' },
+  { tag:'P2', name:'第二段 · 原因分析', pres:['第二段'], desc:'装配顺序:过渡句→原因①大环境(especially 接图里最显眼的那项)→原因②人们为什么去做→原因③得到什么(六大方面挑两个)。每句原因都要能指着图里的一项说“这就是它的原因”;第6句写“做什么”,第7句写“得到什么”,别重复。' },
+  { tag:'P3', name:'第三段 · 总结、措施与收尾', pres:['第三段'], desc:'装配顺序:承上(仍有改进余地)→措施三连(政府 / 学校·社区·公司+媒体 / 每个人,主语各不相同)→收尾。全段没有倒装。' },
+  { tag:'工具', name:'工具区 · 词链、填空规则、六大方面、高危拼写', pres:['工具区'], desc:'○眼熟,不强制打卡。动笔前先来这里:按开头词链定顺序,把每个空的词挑好再写。' },
 ];
 
 /* —— 逐句过卡(11-18改版) —— */
@@ -247,7 +247,7 @@ function vLib(){
   const st = stats();
   let h = `<div class="card">
     <h2>模板库 · ${st.total}句</h2>
-    <div style="font-size:13.5px;color:#5a6472">必背 <b>${st.l1d}/${st.l1t}</b> 句 · 全库已背 <b>${st.done}</b>/${st.total} 句。★必背=成文最小集(${st.l1t}句),按分组顺序从头啃;◎推荐=同功能替换句,挑合手感的背,其余看熟;○眼熟=备用库素材,不强制打卡。</div>
+    <div style="font-size:13.5px;color:#5a6472">必背 <b>${st.l1d}/${st.l1t}</b> 句 · 全库已背 <b>${st.done}</b>/${st.total} 句。★必背=成文最小集(${st.l1t}句),按分组顺序从头啃;◎推荐=必背熟了再背的变体句;○眼熟=工具区(词链/填空规则/六大方面/高危拼写),不强制打卡。</div>
     <input class="search" id="kw" type="text" placeholder="搜模板句/中文/分组…" value="${kw ? esc(kw) : ''}" autocomplete="off">
     <div class="tools"><button id="show-all-en">显示全部英文</button><button id="fc-all">▶ 逐句过卡 · 全部${st.total}句</button><button id="fc-l1">▶ 逐句过卡 · ★必背${st.l1t}句</button></div>
   </div><div id="liblist"></div>`;
@@ -304,7 +304,7 @@ function render(){
 
 async function init(){
   try {
-    const r = await fetch('data/zuowen_ai.json?' + Date.now());
+    const r = await fetch('data/zuowen_my.json?' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     DATA = await r.json();
   } catch(e){
@@ -312,7 +312,7 @@ async function init(){
     return;
   }
   if (!DATA || !Array.isArray(DATA.sents) || !DATA.meta){
-    $('#app').innerHTML = '<div class="notice">数据格式不对,请联系 ZCode 检查 data/zuowen_ai.json。</div>';
+    $('#app').innerHTML = '<div class="notice">数据格式不对,请联系 ZCode 检查 data/zuowen_my.json。</div>';
     return;
   }
   P = DATA.meta;
