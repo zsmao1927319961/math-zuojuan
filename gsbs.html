@@ -109,7 +109,7 @@ footer{text-align:center;font-size:11.5px;color:#94a3b8;padding:14px 0 26px}
   </section>
   <section id="tab-stats" class="hidden"><div id="statsbody"></div></section>
 </main>
-<footer>数据只存本机浏览器 · 13天首轮 · 全对三次（间隔 1/3/7 天）毕业 · 距数学考试约 <span id="dday"></span> 天</footer>
+<footer>数据只存本机浏览器 · 13天首轮 · 全对三次毕业（次日、第 4 天各回滚一次）· 距数学考试约 <span id="dday"></span> 天</footer>
 <script src="gsbs_data.js"></script>
 <script>
 (function(){
@@ -201,7 +201,7 @@ function computeQueues(S, DI, ROUND, DAY) {
   if (NEW_CAP && newq.length > NEW_CAP) newq = newq.slice(0, NEW_CAP);
   return { review: review, newq: newq };
 }
-/* 打分: 全对 = 沿 1/3/7 往前走一级, 走满三次毕业; 差一点/不会 = 明天再来 (不会的从链头重来), 都记为弱卡 */
+/* 打分: 全对 = 沿回滚链往前走一级 (次日、第 4 天各再见一次), 第三次全对毕业; 差一点/不会 = 明天再来 (不会的从链头重来), 都记为弱卡 */
 function applyRate(st, r, DI, ROUND) {
   st.intro = 1; st.seenRound = ROUND; st.times = (st.times || 0) + 1; st.last = r;
   if (r === 2) {
@@ -351,7 +351,7 @@ function queueHTML(elId, name, title, ids) {
 function render() {
   document.getElementById('dayinfo').innerHTML = '<b>第' + ROUND + '轮·D' + DAY + '</b> · ' + todayStr().slice(5).replace('-', '/');
   var nh = '';
-  if (Q.review.length) nh += '<div class="daynote">🔁 今天有 ' + Q.review.length + ' 张到期回滚卡（1/3/7 排到的，加上前一天没过的），先清它们</div>';
+  if (Q.review.length) nh += '<div class="daynote">🔁 今天有 ' + Q.review.length + ' 张到期回滚卡（按回滚计划今天该见的，加上前一天没过的），先清它们</div>';
   var planN = (MAIN[DAY] || []).length;
   nh += '<div class="daynote">📖 今日新卡 ' + Q.newq.length + ' 张' + (ROUND === 1 ? ' · 今天排期 ' + planN + ' 张' : '') + '</div>';
   document.getElementById('daynote').innerHTML = nh;
@@ -497,7 +497,7 @@ function renderStats() {
   for (var dd2 = DI; dd2 >= 1; dd2--) { if (S.log[dd2]) streak++; else if (dd2 !== DI) break; }
   document.getElementById('statsbody').innerHTML =
     '<div class="statcard"><h3>总体进度</h3><span class="big">' + grad + '</span> / ' + TOTAL +
-    ' 张已毕业（全对三次，间隔 1/3/7 天）<div class="muted" style="margin-top:4px">本轮已过 ' + seenR + ' 张 · 连续打卡 ' + streak + ' 天</div></div>' +
+    ' 张已毕业（全对三次：当天、次日、第 4 天）<div class="muted" style="margin-top:4px">本轮已过 ' + seenR + ' 张 · 连续打卡 ' + streak + ' 天</div></div>' +
     '<div class="statcard"><h3>🔴 弱卡池：标过“差一点/不会”的（' + weak.length + '）</h3>' +
     (weak.length ? '<div class="wchips">' + weak.map(function(w) { return '<span data-jump="' + w + '">' + esc(U[w].label + ' ' + U[w].sec) + '</span>'; }).join('') + '</div>' : '<span class="muted">暂无弱卡，继续保持</span>') + '</div>' +
     '<div class="statcard"><h3>未来 ' + CYCLE + ' 天到期回滚</h3>' + cal + '</div>' +
