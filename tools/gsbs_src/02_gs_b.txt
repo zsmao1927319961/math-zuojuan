@@ -1,0 +1,141 @@
+// 公式默写卡 · 高数 §11–§23（数二范围：§13 只做 (1)–(4)，§20 只做 (1)(2)(6)–(9)，§23 只做 (1)）
+
+# 11 | 平面面积与旋转体积 | 面积与旋转体 | gs | 默写本p12 | 5 | hot
+P: （$a<b$，$\alpha<\beta$；各边界连续）
+## (1) | 面积·对 x 积分
+Q: 直角坐标：$y=f(x)$ 与 $y=g(x)$，$a\le x\le b$ 围成的面积 $S=$ ＿＿
+A: $S=\displaystyle\int_{a}^{b}|f(x)-g(x)|\,dx$
+## (2) | 面积·对 y 积分
+Q: 直角坐标：$x=\varphi(y)$ 与 $x=\psi(y)$，$\alpha\le y\le\beta$ 围成的面积 $S=$ ＿＿
+A: $S=\displaystyle\int_{\alpha}^{\beta}|\varphi(y)-\psi(y)|\,dy$
+## (3) | 面积·极坐标
+Q: 极坐标：内边界 $r=r_{1}(\theta)$，外边界 $r=r_{2}(\theta)$（$0\le r_{1}\le r_{2}$），$\alpha\le\theta\le\beta$：$S=$ ＿＿
+A: $S=\dfrac{1}{2}\displaystyle\int_{\alpha}^{\beta}\left[r_{2}^{2}(\theta)-r_{1}^{2}(\theta)\right]d\theta$
+N: 极坐标面积是两个平方相减再乘 $\dfrac{1}{2}$，不是“外减内”再平方。
+## (4) | 绕 x 轴·圆盘法
+Q: 区域由 $y=y(x)$、$x=a$、$x=b$ 与 $x$ 轴围成，绕 $x$ 轴旋转一周：$V_{x}=$ ＿＿
+A: $V_{x}=\pi\displaystyle\int_{a}^{b}[y(x)]^{2}\,dx$
+## (5) | 绕 y 轴·圆柱壳
+Q: 同一区域绕 $y$ 轴旋转一周（$0\le a<b$）：$V_{y}=$ ＿＿
+A: $V_{y}=2\pi\displaystyle\int_{a}^{b}x\,|y(x)|\,dx$
+N: 圆柱壳法：壳半径 $x$，壳高 $|y(x)|$；别漏 $x$，也别漏绝对值。
+## (6) | 两曲线之间绕 x 轴
+Q: 两曲线 $0\le y_{1}(x)\le y_{2}(x)$ 与 $x=a$、$x=b$ 围成区域，绕 $x$ 轴旋转一周：截面面积 $A(x)=$ ＿＿；体积 $V=$ ＿＿
+A: $A(x)=\pi\left[y_{2}^{2}(x)-y_{1}^{2}(x)\right]$
+A: $V=\pi\displaystyle\int_{a}^{b}\left[y_{2}^{2}(x)-y_{1}^{2}(x)\right]dx$
+N: 是平方相减，不是差的平方。
+## (7) | 两曲线之间绕 y 轴
+Q: 同一区域（$0\le a<b$）绕 $y$ 轴旋转一周：圆柱壳半径＝＿＿，高度＝＿＿；$V=$ ＿＿
+A: 半径 $x$，高度 $y_{2}(x)-y_{1}(x)$
+A: $V=2\pi\displaystyle\int_{a}^{b}x\left[y_{2}(x)-y_{1}(x)\right]dx$
+## (8) | 已知截面面积
+Q: （数一数二）立体在 $x=a$ 与 $x=b$ 之间，垂直于 $x$ 轴的截面面积为 $A(x)$：$V=$ ＿＿
+A: $V=\displaystyle\int_{a}^{b}A(x)\,dx$
+
+# 12 | 弧长与旋转曲面面积 | 弧长与侧面积 | gs | 默写本p13 | 5 | hot
+P: （曲线分段光滑，不重复描绘）
+## (1) | 弧长·直角坐标
+Q: （数一数二）$y=f(x)$，$a\le x\le b$：$L=$ ＿＿
+A: $L=\displaystyle\int_{a}^{b}\sqrt{1+[f'(x)]^{2}}\,dx$
+## (2) | 弧长·参数方程
+Q: 参数方程 $x=x(t)$，$y=y(t)$，$\alpha\le t\le\beta$：$L=$ ＿＿
+A: $L=\displaystyle\int_{\alpha}^{\beta}\sqrt{[x'(t)]^{2}+[y'(t)]^{2}}\,dt$
+## (3) | 弧长·极坐标
+Q: 极坐标 $\rho=\rho(\theta)$，$\alpha\le\theta\le\beta$：$L=$ ＿＿
+A: $L=\displaystyle\int_{\alpha}^{\beta}\sqrt{\rho^{2}(\theta)+[\rho'(\theta)]^{2}}\,d\theta$
+## (4) | 侧面积·直角坐标
+Q: 曲线 $y=f(x)$（$a\le x\le b$）绕 $x$ 轴旋转一周的侧面积 $S_{\text{侧}}=$ ＿＿
+A: $S_{\text{侧}}=2\pi\displaystyle\int_{a}^{b}|f(x)|\sqrt{1+[f'(x)]^{2}}\,dx$
+## (5) | 侧面积·参数方程
+Q: 曲线 $x=x(t)$，$y=y(t)\ge0$，$\alpha\le t\le\beta$，绕 $x$ 轴旋转一周：$S=$ ＿＿
+A: $S=2\pi\displaystyle\int_{\alpha}^{\beta}y(t)\sqrt{[x'(t)]^{2}+[y'(t)]^{2}}\,dt$
+## (6) | 侧面积·极坐标
+Q: 曲线 $r=r(\theta)\ge0$，$\alpha\le\theta\le\beta$，且 $r(\theta)\sin\theta\ge0$，绕 $x$ 轴旋转一周：到旋转轴的距离＝＿＿；侧面积 $S=$ ＿＿
+A: 距离 $=r(\theta)\sin\theta$
+A: $S=2\pi\displaystyle\int_{\alpha}^{\beta}r(\theta)\sin\theta\sqrt{r^{2}(\theta)+[r'(\theta)]^{2}}\,d\theta$
+N: 三种坐标统一记成 $S=2\pi\displaystyle\int_{L}y\,ds$：一圈的周长 × 弧微元；弧微元 $ds$ 就是 (1)(2)(3) 里根号下的东西。
+
+# 13 | 质心与形心 | 质心形心 | gs | 默写本p13-14 | 6 | -
+## (1) | 曲线质量
+Q: （数一数二）平面曲线 $L$ 的线密度为 $\rho$：质量 $m=$ ＿＿
+A: $m=\displaystyle\int_{L}\rho\,ds$
+## (2) | 曲线质心
+Q: 曲线 $L$ 的线密度为 $\rho$，总质量为 $m$：质心坐标 $\bar{x}=$ ＿＿，$\bar{y}=$ ＿＿
+A: $\bar{x}=\dfrac{1}{m}\displaystyle\int_{L}x\rho\,ds$；$\bar{y}=\dfrac{1}{m}\displaystyle\int_{L}y\rho\,ds$
+## (3) | 薄片质量
+Q: 薄片 $D$ 的面密度为 $\rho(x,y)$：质量 $m=$ ＿＿
+A: $m=\iint_{D}\rho(x,y)\,d\sigma$
+## (4) | 薄片质心
+Q: 薄片 $D$ 的面密度为 $\rho$，总质量为 $m$：质心坐标 $\bar{x}=$ ＿＿，$\bar{y}=$ ＿＿
+A: $\bar{x}=\dfrac{1}{m}\iint_{D}x\rho\,d\sigma$；$\bar{y}=\dfrac{1}{m}\iint_{D}y\rho\,d\sigma$
+N: 密度均匀时质心就是形心：$\bar{x}=\dfrac{1}{A}\iint_{D}x\,d\sigma$（$A$ 为面积）。
+
+# 20 | 多元微分、二元极值与切法线 | 二元微分与极值 | gs | 默写本p18-20 | 6 | -
+## (1) | 极值的必要条件
+Q: 二元函数 $f$ 在定义域的内点 $(x_{0},y_{0})$ 可微，并在该点取得局部极值：$f'_{x}(x_{0},y_{0})=$ ＿＿，$f'_{y}(x_{0},y_{0})=$ ＿＿
+A: 都是 $0$
+N: 可微的前提下，极值点必是驻点。
+## (2) | 二元极值判别法
+Q: 在驻点记 $\Delta=AC-B^{2}$（$A=f''_{xx}$，$B=f''_{xy}$，$C=f''_{yy}$）：$\Delta>0,\ A>0$ ／ $\Delta>0,\ A<0$ ／ $\Delta<0$ ／ $\Delta=0$ 各是什么点？
+A: $\Delta>0,\ A>0$：极小值点；$\Delta>0,\ A<0$：极大值点
+A: $\Delta<0$：鞍点（非极值点）；$\Delta=0$：该判别法无法判定
+## (6) | 二元复合求偏导
+Q: 二元复合函数 $z=f(u,v)$，其中 $u=u(x,y)$，$v=v(x,y)$，各函数可微：$\dfrac{\partial z}{\partial x}=$ ＿＿，$\dfrac{\partial z}{\partial y}=$ ＿＿
+A: $\dfrac{\partial z}{\partial x}=f'_{u}u'_{x}+f'_{v}v'_{x}$；$\dfrac{\partial z}{\partial y}=f'_{u}u'_{y}+f'_{v}v'_{y}$
+N: 按 $u$、$v$ 两条路径各走一遍再相加（链式法则不漏路）。
+## (7) | 隐函数求偏导
+Q: $F(x,y,z)=0$ 在给定解点附近确定 $z=z(x,y)$，设 $F$ 有连续一阶偏导数且 $F'_{z}\ne0$：$\dfrac{\partial z}{\partial x}=$ ＿＿，$\dfrac{\partial z}{\partial y}=$ ＿＿
+A: $\dfrac{\partial z}{\partial x}=-\dfrac{F'_{x}}{F'_{z}}$；$\dfrac{\partial z}{\partial y}=-\dfrac{F'_{y}}{F'_{z}}$
+N: 三个偏导数都在 $(x,y,z(x,y))$ 处取值；负号别丢。
+## (8) | 全微分与增量
+Q: $z=f(x,y)$ 在 $(x_{0},y_{0})$ 处可微，记 $\rho=\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}$：全微分 $dz=$ ＿＿；完整增量 $\Delta z=$ ＿＿（余项用 $\rho$ 的小 $o$）
+A: $dz=f'_{x}(x_{0},y_{0})\,dx+f'_{y}(x_{0},y_{0})\,dy$
+A: $\Delta z=f'_{x}(x_{0},y_{0})\Delta x+f'_{y}(x_{0},y_{0})\Delta y+o(\rho)$（$\rho\to0$）
+N: 取 $dx=\Delta x$，$dy=\Delta y$ 时 $\Delta z-dz=o(\rho)$；反过来，增量能这样分解就说明 $f$ 在该点可微。
+## (9) | 连续、偏导、可微
+Q: 二元函数的连续、偏导数存在与可微：① 可微时是否连续？偏导数是否存在？② 两偏导数在邻域存在且在该点连续，能否推出可微？③ 仅知函数在该点连续且两偏导数存在，能否保证可微？
+A: ① 可微 $\Rightarrow$ 连续，且两个偏导数都存在；② 能：偏导数存在且在该点连续 $\Rightarrow$ 可微；③ 不能。
+N: 连续、偏导存在都推不出可微；验证可微用定义：$\lim\limits_{\rho\to0}\dfrac{\Delta z-dz}{\rho}=0$。
+
+# 22 | 二重积分：坐标与对称 | 二重积分 | gs | 默写本p21-22 | 7 | hot
+## (1) | 直角坐标微元
+Q: 将面积元素 $d\sigma$ 改为直角坐标的微元：$\displaystyle\iint_{D}f(x,y)\,d\sigma=$ ＿＿
+A: $\displaystyle\iint_{D}f(x,y)\,dx\,dy$
+## (2) | 极坐标·含雅可比
+Q: 极坐标 $x=r\cos\theta$，$y=r\sin\theta$：$\displaystyle\iint_{D}f(x,y)\,d\sigma=$ ＿＿
+A: $\displaystyle\iint_{\tilde{D}}f(r\cos\theta,r\sin\theta)\,r\,dr\,d\theta$
+N: $\tilde D$ 是对应的极坐标区域；$r\ge0$，面积雅可比为 $r$，这个 $r$ 别漏。
+## (3) | 对称·奇函数
+Q: $D$ 关于 $x$ 轴对称，$f$ 对 $y$ 为奇函数：$\displaystyle\iint_{D}f(x,y)\,d\sigma=$ ＿＿
+A: $0$
+## (4) | 对称·偶函数
+Q: $D$ 关于 $x$ 轴对称，$f$ 对 $y$ 为偶函数，$D_{+}=D\cap\{y\ge0\}$：$\displaystyle\iint_{D}f(x,y)\,d\sigma=$ ＿＿
+A: $2\displaystyle\iint_{D_{+}}f(x,y)\,d\sigma$
+## (5) | 对称·关于 y 轴
+Q: 设 $I=\displaystyle\iint_{D}f(x,y)\,d\sigma$，$D$ 关于 $y$ 轴对称，$D_{R}=D\cap\{x\ge0\}$：$f$ 对 $x$ 为奇函数时 $I=$ ＿＿；为偶函数时 $I=$ ＿＿
+A: 奇函数：$I=0$；偶函数：$I=2\displaystyle\iint_{D_{R}}f(x,y)\,d\sigma$
+## (6) | X 型区域累次积分
+Q: $X$ 型区域 $D$：$a\le x\le b$，$\varphi_{1}(x)\le y\le\varphi_{2}(x)$：内层变量及其上下限＝＿＿；外层变量及其上下限＝＿＿；写出累次积分＝＿＿
+A: 内层 $y$：从 $\varphi_{1}(x)$ 到 $\varphi_{2}(x)$；外层 $x$：从 $a$ 到 $b$
+A: $\displaystyle\iint_{D}f(x,y)\,d\sigma=\int_{a}^{b}\left[\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(x,y)\,dy\right]dx$
+## (7) | Y 型区域累次积分
+Q: $Y$ 型区域 $D$：$c\le y\le d$，$\psi_{1}(y)\le x\le\psi_{2}(y)$：内层变量及其上下限＝＿＿；外层变量及其上下限＝＿＿；写出累次积分＝＿＿
+A: 内层 $x$：从 $\psi_{1}(y)$ 到 $\psi_{2}(y)$；外层 $y$：从 $c$ 到 $d$
+A: $\displaystyle\iint_{D}f(x,y)\,d\sigma=\int_{c}^{d}\left[\int_{\psi_{1}(y)}^{\psi_{2}(y)}f(x,y)\,dx\right]dy$
+## (8) | 极坐标累次积分
+Q: $D$ 的极坐标范围 $\alpha\le\theta\le\beta$，$0\le r_{1}(\theta)\le r\le r_{2}(\theta)$（无重复覆盖）：内层变量及上下限＝＿＿；外层变量及上下限＝＿＿；写出含面积元的累次积分＝＿＿
+A: 内层 $r$：从 $r_{1}(\theta)$ 到 $r_{2}(\theta)$；外层 $\theta$：从 $\alpha$ 到 $\beta$
+A: $\displaystyle\iint_{D}f(x,y)\,d\sigma=\int_{\alpha}^{\beta}\left[\int_{r_{1}(\theta)}^{r_{2}(\theta)}f(r\cos\theta,r\sin\theta)\,r\,dr\right]d\theta$
+## (9) | 二重积分估值
+Q: 估值：$D$ 的面积为 $A$，在 $D$ 上 $m\le f(x,y)\le M$：用 $m,A$ 写下界＝＿＿；用 $M,A$ 写上界＝＿＿；$\left|\displaystyle\iint_{D}f\,d\sigma\right|\le$ ＿＿
+A: $mA\le\displaystyle\iint_{D}f\,d\sigma\le MA$；$\left|\displaystyle\iint_{D}f\,d\sigma\right|\le\displaystyle\iint_{D}|f|\,d\sigma$
+## (10) | 二重积分中值定理
+Q: 中值定理：$f$ 在连通闭区域 $D$ 上连续，$D$ 的面积 $A>0$：用 $A$ 和某点 $(\xi,\eta)\in D$ 处的函数值表示积分＝＿＿
+A: $\displaystyle\iint_{D}f(x,y)\,d\sigma=f(\xi,\eta)A$，$(\xi,\eta)\in D$
+
+# 23 | 二重与三重积分 | 轮换对称 | gs | 默写本p22 | 7 | hot
+## (1) | 关于 y=x 对称
+Q: $D$ 关于 $y=x$ 对称，$I=\displaystyle\iint_{D}f(x,y)\,d\sigma$：交换 $x,y$ 后 $I=$ ＿＿；把原式与交换式平均，$I=$ ＿＿
+A: 交换后 $I=\displaystyle\iint_{D}f(y,x)\,d\sigma$
+A: 平均 $I=\dfrac{1}{2}\displaystyle\iint_{D}\left[f(x,y)+f(y,x)\right]d\sigma$
+N: 轮换对称：常把只含 $x$ 的积分和只含 $y$ 的积分配成一对，相加后折半。

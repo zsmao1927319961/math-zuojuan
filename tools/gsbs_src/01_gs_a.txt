@@ -1,0 +1,348 @@
+// 公式默写卡 · 高数 §1–§10（茶楠Cian《考研数学公式默写》数二范围，答案照答案本）
+// 行首 # = 节；## = 卡；Q 题干 / A 答案 / N 提醒；P: 节前提（拼到本节每张卡题干末尾）；NOPRE = 本卡不带节前提
+
+# 1 | 等价无穷小与常用极限 | 等价无穷小 | gs | 默写本p4 | 1 | hot
+P: （$x\to0$）
+## (1) | 基础型
+Q: $\sin x\sim$ ＿＿
+A: $x$
+## (2) | 基础型
+Q: $\tan x\sim$ ＿＿
+A: $x$
+## (3) | 反三角型
+Q: $\arcsin x\sim$ ＿＿
+A: $x$
+## (4) | 反三角型
+Q: $\arctan x\sim$ ＿＿
+A: $x$
+## (5) | 指数型
+Q: $e^{x}-1\sim$ ＿＿
+A: $x$
+## (6) | 对数型
+Q: $\ln(1+x)\sim$ ＿＿
+A: $x$
+## (7) | 一般底数
+Q: $a^{x}-1\sim$ ＿＿（$a>0$，$a\ne1$）
+A: $x\ln a$
+## (8) | 二阶型
+Q: $1-\cos x\sim$ ＿＿
+A: $\dfrac{x^{2}}{2}$
+## (9) | 幂函数型
+Q: $(1+x)^{\alpha}-1\sim$ ＿＿（$\alpha\ne0$）
+A: $\alpha x$
+N: 同趋于零的幂直接相加：若 $n>m>0$ 且 $x\to0^{+}$，则 $x^{m}+x^{n}\sim x^{m}$（低阶为主）。
+## (10) | 高阶差值
+Q: $x-\ln(1+x)\sim$ ＿＿
+A: $\dfrac{x^{2}}{2}$
+## (11) | 高阶差值
+Q: $x-\sin x\sim$ ＿＿
+A: $\dfrac{x^{3}}{6}$
+## (12) | 高阶差值
+Q: $\arcsin x-x\sim$ ＿＿
+A: $\dfrac{x^{3}}{6}$
+## (13) | 高阶差值
+Q: $\tan x-x\sim$ ＿＿
+A: $\dfrac{x^{3}}{3}$
+## (14) | 高阶差值
+Q: $x-\arctan x\sim$ ＿＿
+A: $\dfrac{x^{3}}{3}$
+## (15) | 高阶差值
+Q: $\tan x-\sin x\sim$ ＿＿
+A: $\dfrac{x^{3}}{2}$
+## (16) | 高阶差值
+Q: $\arcsin x-\arctan x\sim$ ＿＿
+A: $\dfrac{x^{3}}{2}$
+N: (11)–(16) 口径：sin、arcsin 的差是 $\frac{x^{3}}{6}$；tan、arctan 的差是 $\frac{x^{3}}{3}$；两个 $\frac{x^{3}}{2}$ 都是“两个一次等价相减”。
+## (17) | 第二个重要极限
+Q: $\lim\limits_{x\to0}(1+x)^{1/x}=$ ＿＿
+A: $e$
+N: 若 $u\to0$ 且 $u\ne0$，可把式中的 $x$ 换成 $u$。
+## (18) | 根式极限
+NOPRE
+Q: 设 $a>0$：$\lim\limits_{n\to\infty}\sqrt[n]{n}=$ ＿＿；$\lim\limits_{n\to\infty}\sqrt[n]{a}=$ ＿＿
+A: 都是 $1$
+## (19) | 增长比较
+NOPRE
+Q: 设 $\delta>0$，$k>0$：$\lim\limits_{x\to0^{+}}x^{\delta}|\ln x|^{k}=$ ＿＿；$\lim\limits_{x\to+\infty}x^{k}e^{-\delta x}=$ ＿＿
+A: 都是 $0$
+N: 幂函数压得住对数，指数压得住幂。极限四则：若 $u\to A$、$v\to B$，则 $u\pm v\to A\pm B$，$cu\to cA$，$uv\to AB$；$B\ne0$ 时 $u/v\to A/B$。
+
+# 2 | 基本求导公式 | 基本求导 | gs | 默写本p5 | 1 | -
+P: （在定义域内部求导；$a>0$，$a\ne1$；$C$ 为常数）
+## (1) | 常数
+Q: $(C)'=$ ＿＿
+A: $0$
+## (2) | 幂函数
+Q: $(x^{\alpha})'=$ ＿＿（一般实数 $\alpha$ 时 $x>0$）
+A: $\alpha x^{\alpha-1}$
+## (3) | 三角函数
+Q: $(\sin x)'=$ ＿＿
+A: $\cos x$
+## (4) | 三角函数
+Q: $(\cos x)'=$ ＿＿
+A: $-\sin x$
+## (5) | 三角函数
+Q: $(\tan x)'=$ ＿＿（$\cos x\ne0$）
+A: $\sec^{2}x$
+## (6) | 三角函数
+Q: $(\cot x)'=$ ＿＿（$\sin x\ne0$）
+A: $-\csc^{2}x$
+## (7) | 三角函数
+Q: $(\sec x)'=$ ＿＿（$\cos x\ne0$）
+A: $\sec x\tan x$
+## (8) | 三角函数
+Q: $(\csc x)'=$ ＿＿（$\sin x\ne0$）
+A: $-\csc x\cot x$
+## (9) | 指数函数
+Q: $(a^{x})'=$ ＿＿
+A: $a^{x}\ln a$
+## (10) | 指数函数
+Q: $(e^{x})'=$ ＿＿
+A: $e^{x}$
+## (11) | 对数函数
+Q: $(\log_{a}x)'=$ ＿＿（$x>0$）
+A: $\dfrac{1}{x\ln a}$
+## (12) | 对数函数
+Q: $(\ln x)'=$ ＿＿（$x>0$）
+A: $\dfrac{1}{x}$
+## (13) | 反三角函数
+Q: $(\arcsin x)'=$ ＿＿（$|x|<1$）
+A: $\dfrac{1}{\sqrt{1-x^{2}}}$
+## (14) | 反三角函数
+Q: $(\arccos x)'=$ ＿＿（$|x|<1$）
+A: $-\dfrac{1}{\sqrt{1-x^{2}}}$
+## (15) | 反三角函数
+Q: $(\arctan x)'=$ ＿＿
+A: $\dfrac{1}{1+x^{2}}$
+## (16) | 反三角函数
+Q: $(\operatorname{arccot}x)'=$ ＿＿（取值范围 $(0,\pi)$）
+A: $-\dfrac{1}{1+x^{2}}$
+## (17) | 四则求导
+Q: 设 $u,v$ 可导（商式中 $v\ne0$）：$(u\pm v)'=$ ＿＿；$(uv)'=$ ＿＿；$\left(\dfrac{u}{v}\right)'=$ ＿＿
+A: $(u\pm v)'=u'\pm v'$；$(uv)'=u'v+uv'$；$\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^{2}}$
+N: $(cu)'=cu'$。
+## (18) | 一阶微分形式不变性
+Q: $y=f(u)$，$u=\varphi(x)$：先用 $du$ 表示 $dy$＝＿＿；再改写成含 $dx$ 的式子＝＿＿
+A: $dy=f'(u)\,du=f'(\varphi(x))\varphi'(x)\,dx$
+N: $d(u\pm v)=du\pm dv$，$d(uv)=v\,du+u\,dv$，$d\left(\dfrac{u}{v}\right)=\dfrac{v\,du-u\,dv}{v^{2}}$（$v\ne0$）。
+
+# 3 | 复合、反函数与参数求导 | 复合与参数求导 | gs | 默写本p6 | 2 | -
+## (1) | 链式法则
+Q: 复合函数 $y=f(u)$，$u=\varphi(x)$：$\dfrac{dy}{dx}=$ ＿＿
+A: $f'(\varphi(x))\varphi'(x)=\dfrac{dy}{du}\cdot\dfrac{du}{dx}$
+## (2) | 反函数一阶导
+Q: $x=\varphi(y)$；$y=f(x)$ 且 $f'(x)\ne0$：$\dfrac{dx}{dy}=$ ＿＿
+A: $\varphi'(y)=\dfrac{1}{f'(x)}$
+## (3) | 隐函数求导
+Q: $F$ 有连续一阶偏导数，$F(x,y(x))=0$，且 $F'_{y}\ne0$：对恒等式关于 $x$ 求导后的等式＝＿＿；解出 $y'=$ ＿＿
+A: $F'_{x}+F'_{y}\,y'=0$；$y'=-\dfrac{F'_{x}}{F'_{y}}$
+N: 两个偏导数均在 $(x,y(x))$ 处取值。
+## (4) | 参数方程一阶导
+Q: （数一数二）$x=\varphi(t)$，$y=\psi(t)$，$\varphi'(t)\ne0$：$\dfrac{dy}{dx}=$ ＿＿
+A: $\dfrac{\psi'(t)}{\varphi'(t)}$
+## (5) | 参数方程二阶导
+Q: 同上参数方程：用参数导数表示二阶导 $\dfrac{d^{2}y}{dx^{2}}=$ ＿＿
+A: $\dfrac{\psi''(t)\varphi'(t)-\psi'(t)\varphi''(t)}{[\varphi'(t)]^{3}}$
+N: 分子是“交叉相乘相减”，分母是 $[\varphi'(t)]^{3}$。
+## (6) | 反函数二阶导
+Q: $x=\varphi(y)$ 为 $y=f(x)$ 的反函数，$f$ 二阶可导且 $f'(x)\ne0$：$\varphi''(y)=$ ＿＿
+A: $-\dfrac{f''(x)}{[f'(x)]^{3}}$
+## (7) | 幂指函数
+Q: $y=u(x)^{v(x)}$，其中 $u(x)>0$，$u,v$ 可导：$y'=$ ＿＿
+A: $u^{v}\left(v'\ln u+\dfrac{vu'}{u}\right)$
+N: 括号里是“后导乘 $\ln$ 前 + 前导乘后除以前”。
+
+# 4 | 高阶导数与展开 | 高阶导数与展开 | gs | 默写本p7 | 2 | -
+P: （在 $x=0$ 展开；$n$ 为正整数）
+## (1) | 莱布尼兹公式
+NOPRE
+Q: $u,v$ 均 $n$ 阶可导：$(uv)^{(n)}=$ ＿＿
+A: $\sum\limits_{k=0}^{n}C_{n}^{k}u^{(k)}v^{(n-k)}$
+N: $n$ 阶导数满足线性：$(au+bv)^{(n)}=au^{(n)}+bv^{(n)}$。
+## (2) | 指数函数展开
+Q: $e^{x}=$ ＿＿（展开至 $x^{n}$，余项写成 $o(x^{n})$）
+A: $e^{x}=\sum\limits_{k=0}^{n}\dfrac{x^{k}}{k!}+o(x^{n})$
+## (3) | 正弦展开
+Q: $\sin x=$ ＿＿（展开至 $x^{2n+1}$）
+A: $\sin x=\sum\limits_{k=0}^{n}\dfrac{(-1)^{k}x^{2k+1}}{(2k+1)!}+o(x^{2n+1})$
+## (4) | 余弦展开
+Q: $\cos x=$ ＿＿（展开至 $x^{2n}$）
+A: $\cos x=\sum\limits_{k=0}^{n}\dfrac{(-1)^{k}x^{2k}}{(2k)!}+o(x^{2n})$
+## (5) | 对数展开
+Q: $\ln(1+x)=$ ＿＿（展开至 $x^{n}$）
+A: $\ln(1+x)=\sum\limits_{k=1}^{n}\dfrac{(-1)^{k-1}x^{k}}{k}+o(x^{n})$
+## (6) | 幂函数展开
+Q: $(1+x)^{m}=$ ＿＿（展开至 $x^{n}$）
+A: $(1+x)^{m}=\sum\limits_{k=0}^{n}C_{m}^{k}x^{k}+o(x^{n})$
+N: 广义二项式系数：$C_{m}^{0}=1$；$C_{m}^{k}=\dfrac{m(m-1)\cdots(m-k+1)}{k!}$（$k\ge1$）。
+## (7) | 指数函数 n 阶导
+NOPRE
+Q: $a$ 为常数（第二式 $a>0$）：$(e^{ax})^{(n)}=$ ＿＿；$(a^{x})^{(n)}=$ ＿＿
+A: $(e^{ax})^{(n)}=a^{n}e^{ax}$；$(a^{x})^{(n)}=a^{x}(\ln a)^{n}$
+## (8) | 三角函数 n 阶导
+NOPRE
+Q: $a$ 为常数，结果用正弦和余弦表示：$(\sin ax)^{(n)}=$ ＿＿；$(\cos ax)^{(n)}=$ ＿＿
+A: $(\sin ax)^{(n)}=a^{n}\sin\left(ax+\dfrac{n\pi}{2}\right)$；$(\cos ax)^{(n)}=a^{n}\cos\left(ax+\dfrac{n\pi}{2}\right)$
+## (9) | 对数与幂函数 n 阶导
+NOPRE
+Q: $x>-1$，$\alpha$ 为常数：$[\ln(1+x)]^{(n)}=$ ＿＿；$[(1+x)^{\alpha}]^{(n)}=$ ＿＿
+A: $[\ln(1+x)]^{(n)}=\dfrac{(-1)^{n-1}(n-1)!}{(1+x)^{n}}$；$[(1+x)^{\alpha}]^{(n)}=\alpha(\alpha-1)\cdots(\alpha-n+1)(1+x)^{\alpha-n}$
+
+# 5 | 函数的渐近线 | 渐近线 | gs | 默写本p8 | 2 | -
+## (1) | 水平渐近线
+Q: $\lim\limits_{x\to+\infty}f(x)=b$ 或 $\lim\limits_{x\to-\infty}f(x)=b$（$b$ 为有限实数）$\Longrightarrow$ 直线方程：＿＿
+A: $y=b$
+N: 正无穷、负无穷两个方向可以有各自不同的水平渐近线。
+## (2) | 垂直渐近线
+Q: $x\to x_{0}$ 的任一侧 $f(x)\to+\infty$ 或 $-\infty$ $\Longrightarrow$ 直线方程：＿＿
+A: $x=x_{0}$
+N: 只需至少一侧趋于无穷。
+## (3) | 斜渐近线
+Q: 在同一个无穷远方向 $x\to\pm\infty$，斜渐近线 $y=k_{\pm}x+b_{\pm}$：$k_{\pm}=$ ＿＿；$b_{\pm}=$ ＿＿
+A: $k_{\pm}=\lim\limits_{x\to\pm\infty}\dfrac{f(x)}{x}$；$b_{\pm}=\lim\limits_{x\to\pm\infty}\left[f(x)-k_{\pm}x\right]$
+N: 两个极限在同一个方向上求；都有限且 $k_{\pm}\ne0$ 时才是该方向的斜渐近线。有界因子别看走眼：$x\to\infty$ 时 $e^{1/x}\to1$、$\arctan x$ 有界，都不是 $e^{x}$。
+
+# 6 | 曲率与曲率半径 | 曲率 | gs | 默写本p8 | 3 | hot
+## (1) | 直角坐标曲率
+Q: （数一数二）曲线 $y=f(x)$ 二阶可导：曲率 $k=$ ＿＿
+A: $k=\dfrac{|f''(x)|}{\left[1+(f'(x))^{2}\right]^{3/2}}$
+## (2) | 参数曲线曲率
+Q: 参数曲线 $x=\varphi(t)$，$y=\psi(t)$（$[\varphi'(t)]^{2}+[\psi'(t)]^{2}>0$）：曲率 $k=$ ＿＿
+A: $k=\dfrac{|\varphi'(t)\psi''(t)-\varphi''(t)\psi'(t)|}{\left[[\varphi'(t)]^{2}+[\psi'(t)]^{2}\right]^{3/2}}$
+## (3) | 曲率半径
+Q: 曲率半径（$k\ne0$）：$R=$ ＿＿
+A: $R=\dfrac{1}{k}$
+
+# 7 | 基本积分公式 I | 基本积分 I | gs | 默写本p9 | 3 | hot
+P: （$a>0$，$a\ne1$；$C$ 为任意常数）
+## (1) | 幂函数
+Q: $\displaystyle\int x^{k}\,dx=$ ＿＿（$k\ne-1$）
+A: $\dfrac{x^{k+1}}{k+1}+C$
+## (2) | 倒数
+Q: $\displaystyle\int\dfrac{1}{x}\,dx=$ ＿＿（$x\ne0$）
+A: $\ln|x|+C$
+## (3) | 指数函数
+Q: $\displaystyle\int a^{x}\,dx=$ ＿＿
+A: $\dfrac{a^{x}}{\ln a}+C$
+## (4) | 指数函数
+Q: $\displaystyle\int e^{x}\,dx=$ ＿＿
+A: $e^{x}+C$
+## (5) | 三角函数
+Q: $\displaystyle\int\cos x\,dx=$ ＿＿
+A: $\sin x+C$
+## (6) | 三角函数
+Q: $\displaystyle\int\sin x\,dx=$ ＿＿
+A: $-\cos x+C$
+## (7) | 三角函数
+Q: $\displaystyle\int\csc x\,dx=$ ＿＿
+A: $\ln|\csc x-\cot x|+C$
+## (8) | 三角函数
+Q: $\displaystyle\int\sec x\,dx=$ ＿＿
+A: $\ln|\sec x+\tan x|+C$
+## (9) | 三角函数
+Q: $\displaystyle\int\csc^{2}x\,dx=$ ＿＿
+A: $-\cot x+C$
+## (10) | 三角函数
+Q: $\displaystyle\int\sec^{2}x\,dx=$ ＿＿
+A: $\tan x+C$
+## (11) | 三角函数
+Q: $\displaystyle\int\tan x\,dx=$ ＿＿
+A: $-\ln|\cos x|+C$
+## (12) | 三角函数
+Q: $\displaystyle\int\cot x\,dx=$ ＿＿
+A: $\ln|\sin x|+C$
+## (13) | 三角函数
+Q: $\displaystyle\int\sec x\tan x\,dx=$ ＿＿
+A: $\sec x+C$
+## (14) | 三角函数
+Q: $\displaystyle\int\csc x\cot x\,dx=$ ＿＿
+A: $-\csc x+C$
+
+# 8 | 基本积分公式 II | 基本积分 II | gs | 默写本p9 | 3 | hot
+P: （$a>0$；不定积分写 $+C$）
+## (1) | 平方和型
+Q: $\displaystyle\int\dfrac{dx}{a^{2}+x^{2}}=$ ＿＿
+A: $\dfrac{1}{a}\arctan\dfrac{x}{a}+C$
+## (2) | 平方和型
+Q: $\displaystyle\int\dfrac{dx}{1+x^{2}}=$ ＿＿
+A: $\arctan x+C$
+## (3) | 根式型
+Q: $\displaystyle\int\dfrac{dx}{\sqrt{a^{2}-x^{2}}}=$ ＿＿（$|x|<a$）
+A: $\arcsin\dfrac{x}{a}+C$
+## (4) | 根式型
+Q: $\displaystyle\int\dfrac{dx}{\sqrt{1-x^{2}}}=$ ＿＿（$|x|<1$）
+A: $\arcsin x+C$
+## (5) | 平方差型
+Q: $\displaystyle\int\dfrac{dx}{a^{2}-x^{2}}=$ ＿＿（$x\ne\pm a$）
+A: $\dfrac{1}{2a}\ln\left|\dfrac{a+x}{a-x}\right|+C$
+## (6) | 平方差型
+Q: $\displaystyle\int\dfrac{dx}{1-x^{2}}=$ ＿＿（$x\ne\pm1$）
+A: $\dfrac{1}{2}\ln\left|\dfrac{1+x}{1-x}\right|+C$
+## (7) | 根式型
+Q: $\displaystyle\int\dfrac{dx}{\sqrt{x^{2}+a^{2}}}=$ ＿＿
+A: $\ln\left|x+\sqrt{x^{2}+a^{2}}\right|+C$
+## (8) | 根式型
+Q: $\displaystyle\int\dfrac{dx}{\sqrt{x^{2}-a^{2}}}=$ ＿＿（$|x|>a$）
+A: $\ln\left|x+\sqrt{x^{2}-a^{2}}\right|+C$
+## (9) | 变限积分求导
+Q: $f$ 在积分所涉区间连续，$\varphi,\psi$ 可导：$\dfrac{d}{dx}\left[\displaystyle\int_{\psi(x)}^{\varphi(x)}f(t)\,dt\right]=$ ＿＿
+A: $f(\varphi(x))\varphi'(x)-f(\psi(x))\psi'(x)$
+N: 下限那一项带负号：上限函数 × 上限的导数 − 下限函数 × 下限的导数。见积分想求导，见乘积想凑导。
+
+# 9 | 定积分的常用结论 | 定积分结论 | gs | 默写本p10 | 4 | hot
+P: （$l>0$，$f$ 连续；周期题 $T>0$；华里士公式 $n$ 为非负整数）
+## (1) | 奇函数对称积分
+Q: $f(-x)=-f(x)$ $\Longrightarrow$ $\displaystyle\int_{-l}^{l}f(x)\,dx=$ ＿＿
+A: $0$
+## (2) | 偶函数对称积分
+Q: $f(-x)=f(x)$ $\Longrightarrow$ $\displaystyle\int_{-l}^{l}f(x)\,dx=$ ＿＿
+A: $2\displaystyle\int_{0}^{l}f(x)\,dx$
+## (3) | 周期函数
+Q: $f$ 是连续的 $T$ 周期函数，$I=\displaystyle\int_{a}^{a+T}f(x)\,dx$：区间改取 $[0,T]$ 时 $I=$ ＿＿；改取 $\left[-\dfrac{T}{2},\dfrac{T}{2}\right]$ 时 $I=$ ＿＿
+A: 都是 $\displaystyle\int_{0}^{T}f(x)\,dx$（长度为一个周期，与起点无关）
+N: $m$ 为正整数时 $\displaystyle\int_{a}^{a+mT}f(x)\,dx=mI$。
+## (4) | 点火公式初值
+Q: $I_{n}=\displaystyle\int_{0}^{\pi/2}\sin^{n}x\,dx$：用余弦积分表示 $I_{n}=$ ＿＿；初值 $I_{0}=$ ＿＿，$I_{1}=$ ＿＿
+A: $I_{n}=\displaystyle\int_{0}^{\pi/2}\cos^{n}x\,dx$；$I_{0}=\dfrac{\pi}{2}$；$I_{1}=1$
+N: 递推式 $I_{n}=\dfrac{n-1}{n}I_{n-2}$（$n\ge2$）。
+## (5) | 华里士公式·偶数
+Q: 华里士公式（逐项相乘，偶数 $n\ge2$）：$I_{n}=$ ＿＿
+A: $I_{n}=\dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{1}{2}\cdot\dfrac{\pi}{2}$
+N: 分母依次减 2，乘到 2 为止，最后补一个 $\dfrac{\pi}{2}$。
+## (6) | 华里士公式·奇数
+Q: 华里士公式（逐项相乘，奇数 $n\ge3$）：$I_{n}=$ ＿＿
+A: $I_{n}=\dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{2}{3}\cdot1$
+N: 乘到 3 为止，最后乘 1（不带 $\pi$）。
+## (7) | 不定积分分部积分
+Q: 用 $u,v,du$ 写右端：$\displaystyle\int u\,dv=$ ＿＿
+A: $uv-\displaystyle\int v\,du$
+N: 写出具体原函数时须加任意常数 $C$。
+## (8) | 定积分分部积分
+Q: $u,v$ 在 $[a,b]$ 有连续的导数：$\displaystyle\int_{a}^{b}u\,dv=$ ＿＿（右端含边界项与上下限）
+A: $\left[uv\right]_{a}^{b}-\displaystyle\int_{a}^{b}v\,du$
+## (9) | 定积分估值及中值
+Q: $f$ 在 $[a,b]$ 连续，$a<b$，且 $m\le f(x)\le M$：积分下界＝＿＿，上界＝＿＿；中值 $\xi$ 的取值范围＝＿＿；用 $f(\xi)$ 表示积分＝＿＿
+A: $m(b-a)\le\displaystyle\int_{a}^{b}f(x)\,dx\le M(b-a)$；$a<\xi<b$；$\displaystyle\int_{a}^{b}f(x)\,dx=f(\xi)(b-a)$
+N: 换向变号：$\int_{a}^{b}=-\int_{b}^{a}$；区间可加：$\int_{a}^{b}=\int_{a}^{c}+\int_{c}^{b}$。
+## (10) | 区间再现
+Q: $f$ 在 $[a,b]$ 连续：用代换 $x=a+b-t$ 改写积分（保持下限小于上限）：$\displaystyle\int_{a}^{b}f(x)\,dx=$ ＿＿
+A: $\displaystyle\int_{a}^{b}f(a+b-t)\,dt$
+N: 这就是区间再现公式：$\displaystyle\int_{a}^{b}f(x)\,dx=\displaystyle\int_{a}^{b}f(a+b-x)\,dx$，常与原式相加来消掉复杂因子。
+## (11) | 去掉因子 x
+Q: $f$ 在 $[0,1]$ 连续，$I=\displaystyle\int_{0}^{\pi}xf(\sin x)\,dx$：先用区间 $[0,\pi]$ 上的积分表示 $I=$ ＿＿；再用区间 $\left[0,\dfrac{\pi}{2}\right]$ 上的积分表示 $I=$ ＿＿
+A: $I=\dfrac{\pi}{2}\displaystyle\int_{0}^{\pi}f(\sin x)\,dx=\pi\displaystyle\int_{0}^{\pi/2}f(\sin x)\,dx$
+
+# 10 | 常见反常积分的敛散性 | 反常积分敛散 | gs | 默写本p11 | 4 | hot
+P: （$p\in\mathbb{R}$）
+## (1) | 无穷区间
+Q: $\displaystyle\int_{a}^{+\infty}x^{-p}\,dx$（$a>0$）：收敛时 $p$ 的范围＝＿＿；发散时＝＿＿；临界参数 $p=$ ＿＿，在该值处＝＿＿
+A: 收敛：$p>1$；发散：$p\le1$；临界值 $p=1$，发散
+N: 无穷区间上 $p$ 越大越容易收敛，分界线是 1（此时积分值为 $\dfrac{a^{1-p}}{p-1}$）。
+## (2) | 带对数的无穷区间
+Q: $\displaystyle\int_{a}^{+\infty}\dfrac{dx}{x(\ln x)^{p}}$（$a>1$）：收敛时 $p$ 的范围＝＿＿；发散时＝＿＿；临界参数 $p=$ ＿＿，在该值处＝＿＿
+A: 收敛：$p>1$；发散：$p\le1$；临界值 $p=1$，发散
+N: 换元 $u=\ln x$ 就化成 (1)。
+## (3) | 有限瑕点
+Q: $\displaystyle\int_{a}^{b}(x-a)^{-p}\,dx$（$a<b$，瑕点在左端）：收敛时 $p$ 的范围＝＿＿；发散时＝＿＿；临界参数 $p=$ ＿＿，在该值处＝＿＿
+A: 收敛：$p<1$；发散：$p\ge1$；临界值 $p=1$，发散
+N: 有限瑕点上与无穷区间相反：$p$ 要小才收敛。两端都是瑕点、或一端含无穷限时必须拆开，每一段都收敛才收敛。

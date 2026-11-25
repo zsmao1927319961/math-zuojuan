@@ -1,0 +1,84 @@
+// 公式默写卡 · 高数 §40–§45（数二范围：§40 只做 (1)–(4)，§44 只做 (4)(5)）
+
+# 40 | 一阶微分方程 I | 一阶微分方程 | gs | 默写本p35-36 | 8 | hot
+## (1) | 可分离变量
+Q: 可分离变量方程 $f_{1}(x)g_{1}(y)\,dx+f_{2}(x)g_{2}(y)\,dy=0$（设 $f_{2}(x)g_{1}(y)\ne0$）：分离变量后的微分关系＝＿＿；两边积分后的隐式通解＝＿＿
+A: $\dfrac{f_{1}(x)}{f_{2}(x)}dx+\dfrac{g_{2}(y)}{g_{1}(y)}dy=0$
+A: $\displaystyle\int\dfrac{f_{1}(x)}{f_{2}(x)}dx+\int\dfrac{g_{2}(y)}{g_{1}(y)}dy=C$
+N: 被除因子为零时，须回到原方程检查有没有漏掉的解。
+## (2) | 齐次方程代换
+Q: 齐次方程 $y'=f\left(\dfrac{y}{x}\right)$，令 $u=\dfrac{y}{x}$（$x\ne0$）：$x\dfrac{du}{dx}=$ ＿＿
+A: $f(u)-u$（其中 $y=ux$）
+## (3) | 齐次方程积分
+Q: 同上，在 $x\ne0$ 且 $f(u)\ne u$ 时完成分离变量后的积分：$\displaystyle\int\dfrac{du}{f(u)-u}=$ ＿＿
+A: $\ln|x|+C$
+N: 当 $f(u_{0})=u_{0}$ 时，$y=u_{0}x$ 也是解，不能因为除以 $f(u)-u$ 而漏掉。
+## (4) | 一阶线性方程
+Q: 在系数连续的区间上求解 $y'+p(x)y=q(x)$，取 $P$ 为 $p$ 的一个原函数：积分因子 $\mu(x)=$ ＿＿；用 $P,q$ 和任意常数 $C$ 写通解 $y(x)=$ ＿＿
+A: $\mu(x)=e^{P(x)}$（$P'(x)=p(x)$）
+A: $y(x)=e^{-P(x)}\left(\displaystyle\int q(x)e^{P(x)}\,dx+C\right)$
+
+# 42 | 二阶常系数齐次方程 | 二阶齐次方程 | gs | 默写本p36 | 8 | hot
+P: （$y''+py'+qy=0$，$p,q$ 为实常数；$C_{1},C_{2}$ 为任意实常数）
+## (1) | 两个互异实根
+Q: 特征方程有两个互异实根 $\lambda_{1}\ne\lambda_{2}$：齐次方程的通解 $y=$ ＿＿
+A: $y=C_{1}e^{\lambda_{1}x}+C_{2}e^{\lambda_{2}x}$
+## (2) | 二重实根
+Q: 二重实根 $\lambda_{1}=\lambda_{2}=\lambda$：通解 $y=$ ＿＿
+A: $y=(C_{1}+C_{2}x)e^{\lambda x}$
+## (3) | 一对共轭复根
+Q: 一对共轭复根 $\alpha\pm i\beta$（$\beta>0$）：通解 $y=$ ＿＿
+A: $y=e^{\alpha x}\left(C_{1}\cos\beta x+C_{2}\sin\beta x\right)$
+## (4) | 特征方程
+Q: 给定 $y''+py'+qy=0$，用特征变量 $\lambda$ 写出特征方程：＿＿
+A: $\lambda^{2}+p\lambda+q=0$
+## (5) | 非齐次通解结构
+Q: 以 $Y$ 表示对应齐次方程的通解，$y^{*}$ 表示非齐次方程的一个特解：非齐次方程的通解 $y=$ ＿＿
+A: $y=Y+y^{*}$
+
+# 43 | 非齐次方程：特解形式 | 特解形式 | gs | 默写本p37 | 9 | hot
+P: （$y''+py'+qy=f(x)$；$\beta>0$；$R_{j},W_{j}$ 为次数不超过 $j$ 的待定多项式）
+## (1) | α 不是特征根
+Q: $f(x)=e^{\alpha x}P_{n}(x)$（$P_{n}$ 的次数为 $n$），$\alpha$ 不是特征根：待定特解 $y^{*}=$ ＿＿
+A: $y^{*}=R_{n}(x)e^{\alpha x}$
+## (2) | α 是单根
+Q: 同上，$\alpha$ 是特征方程的单根：$y^{*}=$ ＿＿
+A: $y^{*}=xR_{n}(x)e^{\alpha x}$
+## (3) | α 是二重根
+Q: 同上，$\alpha$ 是特征方程的二重根：$y^{*}=$ ＿＿
+A: $y^{*}=x^{2}R_{n}(x)e^{\alpha x}$
+## (4) | 带三角函数的右端
+Q: $f(x)=e^{\alpha x}\left[P_{l}(x)\cos\beta x+Q_{s}(x)\sin\beta x\right]$，两项都有时 $m=\max(l,s)$：用 $R_{m}(x),W_{m}(x)$ 和 $x^{k}$ 写出待定特解 $y^{*}=$ ＿＿
+A: $y^{*}=x^{k}e^{\alpha x}\left[R_{m}(x)\cos\beta x+W_{m}(x)\sin\beta x\right]$
+N: 右端只有正弦项或只有余弦项时，待定特解仍须同时写两项。
+## (5) | x^k 的幂次
+Q: 上式中 $x^{k}$ 的幂次：$\alpha\pm i\beta$ 不是特征根时 $k=$ ＿＿；是特征根时 $k=$ ＿＿
+A: 不是特征根：$k=0$；是特征根：$k=1$
+N: 二阶实系数方程的非实特征根成对出现，都是单根。
+
+# 44 | 欧拉方程与高阶线性方程 | 高阶线性方程 | gs | 默写本p37-38 | 9 | -
+## (4) | n 阶特征方程
+Q: （数一数二）$n$ 阶常系数齐次线性方程 $y^{(n)}+p_{1}y^{(n-1)}+\cdots+p_{n}y=0$ 的特征方程：＿＿
+A: $\lambda^{n}+p_{1}\lambda^{n-1}+\cdots+p_{n-1}\lambda+p_{n}=0$
+## (5) | n 个互异实根的通解
+Q: （数一数二）特征方程 $n$ 个互异实根时的通解 $y=$ ＿＿
+A: $y=\sum\limits_{j=1}^{n}C_{j}e^{\lambda_{j}x}$
+
+# 45 | 高阶方程与降阶 | 高阶方程与降阶 | gs | 默写本p38 | 9 | hot
+## (1) | k 重实根
+Q: $\lambda_{0}$ 为 $k$ 重实根时，通解中对应的部分 $y_{\lambda_{0}}=$ ＿＿
+A: $y_{\lambda_{0}}=e^{\lambda_{0}x}\sum\limits_{j=0}^{k-1}C_{j}x^{j}$
+## (2) | k 重共轭复根
+Q: $\alpha\pm i\beta$ 为 $k$ 重共轭复根时，通解中对应的部分 $y_{\alpha\pm i\beta}=$ ＿＿
+A: $y_{\alpha\pm i\beta}=e^{\alpha x}\left[\left(\sum\limits_{j=0}^{k-1}A_{j}x^{j}\right)\cos\beta x+\left(\sum\limits_{j=0}^{k-1}B_{j}x^{j}\right)\sin\beta x\right]$
+## (3) | 逐次积分
+Q: $n\ge1$，$f$ 在区间 $I$ 上连续，$x_{0}\in I$ 固定，对 $y^{(n)}=f(x)$ 逐次积分：积分次数＝＿＿，独立任意常数的个数＝＿＿；用从 $x_{0}$ 到 $x$ 的定积分写出通解 $y(x)=$ ＿＿
+A: 积分 $n$ 次，独立任意常数 $n$ 个
+A: $y(x)=\displaystyle\int_{x_{0}}^{x}\dfrac{(x-t)^{n-1}}{(n-1)!}f(t)\,dt+\sum\limits_{j=0}^{n-1}C_{j}(x-x_{0})^{j}$
+## (4) | 缺 y 型降阶
+Q: $y''=f(x,y')$，令 $u(x)=y'$，先降阶：关于 $u(x)$ 的方程 $\dfrac{du}{dx}=$ ＿＿；再用 $u(x)$ 写 $y=$ ＿＿
+A: $\dfrac{du}{dx}=f(x,u)$；$y=\displaystyle\int u(x)\,dx+C$
+## (5) | 缺 x 型降阶
+Q: $y''=f(y,y')$，令 $u(y)=y'$（$u\ne0$）：关于 $u(y)$ 的方程（含 $du/dy$）＝＿＿；分离变量后的积分关系＝＿＿
+A: $u\dfrac{du}{dy}=f(y,u)$；$\displaystyle\int\dfrac{dy}{u(y)}=x+C$
+N: 因为 $y''=u\dfrac{du}{dy}$；原方程允许的常数解要另检验，即检查 $f(y_{0},0)=0$。
