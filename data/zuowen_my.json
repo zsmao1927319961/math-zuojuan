@@ -4,7 +4,7 @@
   "updated": "2026-11-25",
   "exam": "2026-12-19",
   "source": "我的独有模板（2026-11-25 与 ZCode 逐句共创定稿）",
-  "note": "2026-11-25 整页替换 AI 归来精选 47 句版（旧版 zuowen_ai.json 留在仓库，git 历史可恢复）。只背两套：第一段分动态/静态两版（只差三处），第二三段通用。蓝字 tpl=必背框架，红字 blank=考场按题填的槽。全模板填好约 215 词，全程无倒装。工具区 14 句为 ○眼熟，不强制打卡。"
+  "note": "2026-11-25 整页替换 AI 归来精选 47 句版（旧版 zuowen_ai.json 留在仓库，git 历史可恢复）。只背两套：第一段分动态/静态两版（只差三处），第二三段通用。蓝字 tpl=必背框架，红字 blank=考场按题填的槽。全模板填好约 215 词，全程无倒装。工具区 15 句为 ○眼熟，不强制打卡。"
 },
 "sents": [
 {"id":"my-p1d-1","cat":"dz","grp":"第一段 · 动态图","slot":"第1句 · 首句","lvl":1,"en":"<span class='tpl'>The chart above offers a clear picture of</span> <span class='blank'>主题词</span> <span class='tpl'>from</span> <span class='blank'>起始年</span> <span class='tpl'>to</span> <span class='blank'>结束年</span><span class='tpl'>.</span>","zh":"上图清晰地呈现了……从……年到……年的情况。","meta":"of 后面必须接名词；picture 的结尾是 -ture。","tips":"主题词写成名词短语：数量用 the number of …，比例用 the percentage of …，其他用 …'s 名词"},
@@ -30,6 +30,7 @@
 {"id":"my-rl-4","cat":"tl","grp":"工具区 · 填空规则","slot":"原因句怎么挑","lvl":3,"en":"每句原因都要能指着图里的一项说“这就是它的原因”：第 5 句对应最显眼的一项，第 6 句写“做什么”，第 7 句写“得到什么”。一句原因换到任何图上都能照用，就是空话。","zh":"三句原因怎么填才不空、不重复？"},
 {"id":"my-rl-5","cat":"tl","grp":"工具区 · 填空规则","slot":"坏现象图怎么改","lvl":3,"en":"第 6 句不用改，第一个空写人们越来越着迷的别的东西；第 7 句换成 it brings them a number of problems, such as … and …（填名词短语）。","zh":"图里是坏现象时，哪几句要改？"},
 {"id":"my-rl-6","cat":"tl","grp":"工具区 · 填空规则","slot":"写不下时怎么删","lvl":3,"en":"填好后全文约 215 词。写不下按这个顺序删：① 第 3 句结尾的地点或范围；② 第 5 句 especially 那一段；③ 第 2 句第二个变化量（静态图删第三项）。","zh":"答题卡写不下时，按什么顺序删？"},
+{"id":"my-rl-7","cat":"tl","grp":"工具区 · 填空规则","slot":"图例是收获或好处时怎么填","lvl":3,"en":"① 第 1 句主题词用 the benefits of …；② 第 2 句把图例翻成 -ing 开头（gaining knowledge / improving hands-on ability）；③ 第 5、6 句写“为什么能收获”（教育的发展、人们重视并且去做）；④ 第 7 句把图里的收获换成六大方面的说法；⑤ 第 8 句的“仍有改进余地”接占比最低的那一项，后面三句措施冲着它写。","zh":"图例本身就是收获、好处时，各句怎么填？"},
 {"id":"my-lc-1","cat":"tl","grp":"工具区 · 六大方面短语","slot":"个人","lvl":3,"en":"improve their physical and mental health（增进身心健康）｜ increase their knowledge and skills（增长知识和技能）｜ widen their horizons（开阔眼界）","zh":"个人方面的三个好处短语","meta":"填在第 7 句 them 后面或第 11 句 to 后面（有 their 的改成 our）。挑两个各对应图里一项，不和第 6 句重复；短语要一字不差地背。"},
 {"id":"my-lc-2","cat":"tl","grp":"工具区 · 六大方面短语","slot":"社会","lvl":3,"en":"promote economic growth【它】（促进经济增长）｜ enjoy a better quality of life【人】（享受更好的生活质量）｜ contribute to social progress（促进社会进步）","zh":"社会方面的三个好处短语","meta":"标【它】的不能填在人后面，想用就另起一句写 It also 加动词 s。"},
 {"id":"my-lc-3","cat":"tl","grp":"工具区 · 六大方面短语","slot":"交流","lvl":3,"en":"enhance mutual understanding（增进相互理解）｜ strengthen family bonds（增进家人感情）｜ shorten the distance between people【它】（拉近人与人的距离）","zh":"交流方面的三个好处短语"},
